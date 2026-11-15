@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>7卫道-第六章 你们心持两意要到几时呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>7卫道-第六章 你们心持两意要到几时呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·7卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/6你们心持两意要到几时呢/卫你们心持两意要到几时呢.mp3">🎧 收听本章音频</a></p>
+<p><strong>正文</strong></p>
+<p>「你们心持两意要到几时呢？若耶和华是神，就当顺从耶和华：若巴力是神，就当顺从巴力。」（王上十八21）。</p>
+<p>上文的一段话是先知伊莱贾在迦密山上对以色列众民说的。那时以色列民的信仰非常混乱败坏。亚哈王的后耶洗别本是西顿王的女儿。嫁给亚哈之后，不但她自己未曾离弃偶像归向耶和华，而且引诱亚哈去敬拜巴力。在撒玛利亚建造巴力的庙，在庙里为巴力筑坛。（事见王上十六30～33）以色列民本来就与耶和华疏远，不热诚事奉他，如今他们的王与后又都这样敬拜巴力，他们随从这样的领袖，景况自然更不堪闻问了。幸喜神不丢弃他自己的百姓，在这信仰败坏的时代，兴起了他的仆人伊莱贾，大声疾呼，警教责备这些歧途徘徊的以色列民，又藉着坚确的证据显明耶和华是神，巴力乃是虚假不足恃的。然而这是何等困难何等危险的一件事！「作耶和华先知的只剩下我一个人。巴力的先知却有四百五十个人。」以孑然一身孤立无援的伊莱贾，要去敌挡四百五十个巴力的先知，岂不像是以卵击石，自取祸败？何况以色列国的王与后，又都是拜巴力的领袖呢？虽然如此，神的仆人受神的差遣就是为要导引民众走正路。败坏民众的事物是神的仆人必须起来攻击的，不能如此，便不足称为神的仆人；不能如此，便不配作耶和华的先知。在这举国若狂敬拜巴力的时期，竟能不顾艰险，不畏强御，为耶和华和他的真道作这一番美好的见证，伊莱贾的忠诚与勇敢真可作历代神仆的模范了。</p>
+<p>今日的教会也走到了以色列国那时的景况中，本来大多数的信徒在信仰上就模糊不清，在事奉神上不冷又不热，近代又有抵挡真道的不信学说引进到教会中来，引诱人，败坏人。许多的教会领袖教训人对圣经中的要道发生怀疑，更进而否认神的全能与全智，（由于他们不信奇事与豫言可证明）并创造的事工；否认人类犯罪坠落的事实；否认灵界的事物；不信基督由童女降生，被钉十架代人赎罪，身体复活，被接升天，将来还要再来；不信罪人因信称义得救，靠圣灵成圣，与死人复活，并将来审判种种的要道。这种人若真明然别树一帜，反对基督，也就罢了，可叹他们完全不信圣经中的要道，一面却说甚么高举基督，效法他的模范，遵行他的教训，以他的精神去服务社会，去造福人群。这种不信的论调，乍一听来好像是很冠冕堂皇，其实完全是一种抵挡真道败坏信徒引人步入迷途的恶酵。牠的为害丝毫不减于昔日以色列民所拜的巴力。传扬这种错误道理的人的罪恶也不亚于巴力的先知。</p>
+<p>亚哈与耶洗别并巴力的众先知都不足责，最可怜的就是这些以色列民。先知奉耶和华的命讲道，他们来听，耶洗别所筑的巴力坛前，他们也去献祭。他们或者还以为他们是何等的热心。他们陷于这类错误，一个缘故是因为耶和华是他们的眼睛看不见的，巴力却是他们的眼睛看得见的。事奉耶和华是凭着信心，自然还是凭着眼见事奉巴力容易得多。以外大约还有一个缘故，就是他们以为亚哈是王，耶洗别是后，王与后都是有学识有权柄有尊荣的大人物，他们必不至有错谬。那知就是他们所崇拜的大人物将他们全数引入迷途呢！</p>
+<p>今日大群的信徒不也是这样么？接受神的真理须要凭着信心。不信派所讲的却是样样都要凭着眼见。这正适合许多信徒的弱点，所以许多信徒很容易受他们的害。此外尚有一个原因，就是多数人的通病最容易因崇拜大人物而盲目的随从他们。许多人总以为有学识有声望的人所说的话必定都是真实有价值不会错误的。许多人接受一个人的讲解，并不是因为得了他的实益，也未曾证明他所讲的是真实可信的，不过因为他是博士，他是牧师，或是教会中有声望的领袖，或是多人所仰望的，便以为他必定不至错误。也不晓得有多少信徒竟因为存这种心理受了大害尚不自觉！殊不知真属神的工人常是没有高深学识的。因为他们没有高深的学识，所以他们容易虚心在神面前受教，因而领会上面的事。真属神的工人也常是难以博得多人的崇拜尊重，更得不着社会的好评。这是因为他们奉神命所传的信息所讲的真理正是违反世人的心理。除了一部分属神的人以外，大多数的世人总不能欢迎神的仆人，正像他们不欢迎神的儿子耶稣与古昔的先知使徒一般那些八面玲珑，十方讨好，连在不信与作恶的人中间，都能博得他们的欢迎与好感的教会领袖，正是诡诈卑污被神所厌弃的人。许多信徒竟因为存了一种崇拜大人物的心理，以致随从他们的指引，请问还有甚么事比这事更危险更可怕？</p>
+<p>「你们心持两意要到几时呢？若耶和华是神，就当顺从耶和华：若巴力是神，就当顺从巴力。」这是邪恶世代中一种极重要的呼声。是古时背道的以色列民应当倾耳细听的，也是今日这堕落的教会所应当注意领受的警告。</p>
+<p>耶和华与巴力是立在极端相反的地位。事奉耶和华，就必须完全弃绝巴力：敬拜巴力，就是悖叛耶和华。一面事奉耶和华，另一面敬拜巴力，这是耶和华所绝对不能容许的，耶和华永远不能与巴力并立。作耶和华百姓的，同时决不能敬拜巴力。他们必须弃绝巴力：若不然，便须弃绝耶和华。</p>
+<p>神的真理与不信派所讲错误的理论不能并立也是如此。圣经若是可信的，不信派所讲的理论就绝对不能存在。如果照不信派所讲的否认了许多圣经中的要道，圣经与圣经中的基督就该一并根本推翻。真理与错误永远不能并立。信的和不信的永远不能相合。真理与错误中间总没有中立的余地。信的和不信的二者决不能讲调停与妥协。</p>
+<p>可惜今日许多的信徒既说信耶稣为救主，以圣经为信仰的标准，同时又听从不信派的教训，接受他们的讲解，拥戴他们为领袖。一面事奉耶和华一面又敬拜巴力的事实充满在今日的教会中。这是何等可痛又是何等可怕的现象！</p>
+<p>基督徒啊，你们心持两意要到几时呢？你们信耶稣么？既然信他，就当信他口中所说一切的话，和他所作的大事，并他为你们在十字架上所成全的救工，同时你们也当信那为他作见证的圣经。（他也为这圣经作了见证）这样，你们就该毅然决然弃绝一切背乎圣经抵挡基督的教训，慎防一切讲这种教训的人，也当警教他们，若是他们不肯悔改归向真道，你们就当远离他们。当知道他们所撒的一点恶酵能叫全团都发起来。你们不要以为你们可以从两方面都得着益处。不能，绝对不能。不信派所讲的是谎言，谎言是从谎言之父──魔鬼──所来的。这些谎言乍听或是很足悦耳，但是信从这谎言的人无一不是受了大害。我们的始祖已经因信谎言失去了信心，以致犯了罪，受了咒诅，败坏了他们自己，又败坏了我们。我们现今既已因信得了救恩，就再不要蹈他们的覆辙，信从魔鬼所发使人怀疑的教训。真理就是真理，错误就是错误。这两者中间有深沟相隔，总不能混合在一处。神的道好像乳汁，从魔鬼所来错误的教训如同酖毒，一样能养育你，一样能杀害你，请问你能不能将这两样东西混合在一处，仍然得益而不致受害？</p>
+<p>神不容许他的百姓又事奉他又敬拜巴力。神也不容许他的孩子又信从他的真理又听从不信派的教训。是与非，正与邪，真理与错误，信与不信，中间都没有立足的地方。有些信徒从前或是因为无知，或是因为未曾清楚明了不信派的错误，所以心持两意。但现今你们知道了，你们今日就当决定或是事奉耶和华，或是敬拜巴力。</p>
+<p>有许多信徒不能清楚分辨真理与错误，但称呼笃信圣经的信徒为旧派，称呼不信圣经的人为新派。意思是说，前一种人接受历代教会是旧的道理，后一种人推崇近代发明维新的讲解。这两种称呼实在是很不适宜的。神的真理是最旧的。旧约前几卷的成就远在三千几百年以前，全部圣经至今也有将近二千年的历史。神的救赎法在人类起始犯罪的时候就已经显明。（见创三15～21）他的选召在创立世界以先就已经豫备完妥。（见林前二7；弗一4）同时神的真理也是万古常新的。他的言语在古时怎样有能力，在今日仍然照样有能力；基督在古时怎样能救罪人，他在今日仍然照样能救罪人；神既是真实永存的，他的言语，他的作为，他的救法，他的应许，他的意旨，就必定古今如一。世界是逐渐改变的，世人也是逐渐改变的，但神的真理却是永不改变，因此牠也永远是新的。我们决定要不要接受一种道理，不当看牠是新是旧，乃当看牠是真是假，是正是邪。我们承认教会中有不少属人的旧遗传，我们不因这些是旧的便接受牠们。我们也确知属神的人藉着圣灵的启迪在圣道上常有新的发现，我们也不因这些是新的便拒绝牠们。惟独背乎真理的错误，牠是旧的我们应当离弃，是新的我们也要拒绝。不信派将圣经中种种的要道凡需要用信心去接受的都一概抹煞。他们中间有些人公然说这些道理都不可信，也有人说我们不必注重这些无关紧要的事，（其实这些事都是十分紧要的）还有人改变经上明确的记载，造谎言去谬解这些道理。他们的说法虽有种种的不同，但他们的不信却是一样。他们不信神的全能与全知，他们不信基督的救赎，复活，并他的再来，他们已经显然是不信的人：就称他们为不信派岂不是名符其实。</p>
+<p>我们以这般不信派为败坏信徒的么？诚然是的。不过他们在教会中却也有一部分的用处。因为藉着他们许多信徒可以被显明到底是真实的还是虚伪的。以前的时代教会中没有人讲错误的学说，但是圣经中的要道也很少有人去讲。许多教会中的领袖所讲的不过是敷衍塞责不关痛痒的道理，真信的与假信的自然不易分明。若是有些属灵的领袖讲解圣经中的真理，但是没有悖道的讲解，那些假信徒虽然心中不信圣经的要道，表面却不能表示他们的不信，因此便不容易被人认出来，及至不信派的领袖一讲不信的学说，这种虚伪的信徒自然极喜欢随从，因为他们二者乃是臭味相投的。惟独真诚信主的圣徒听了这种不信的讲解，必要感到极大的不安，因而起来抵拒，这样，素日混杂在一处的麦子与稗子因着不信派的讲解，却显然分别出来了，著者曾看见许多毫无信仰的假信徒。他们与神相隔不知几千万里。他们毫无灵修的工夫，他们的品德异常腐败。他们厌烦听见属灵的事。他们以祈祷读经为极苦的事。他们终日与罪恶的世界为友。他们讥诮热诚爱神的人为迷信愚痴。但是他们听见不信派的讲解却是欢欣随从，倍觉甘甜。这种现象不但可以将真假的信徒分别出来，更可以证明不信派的讲解到底是正的，还是邪的，是好的，还是坏的。</p>
+<p>不信派在教会中固然是有这一点功用，但同时他们的为害却是极为剧烈。一则他们拦阻不信的人总不能信，二则他们能败坏信徒的信心。容我们略述这两种害处：</p>
+<p>每一个信徒都不是本来就信的，乃是先听了道，然后生发出信心来。如经上所说，「信道是从听道来的。」不信派既否认圣经中的要道，或者闭口不讲，或者任意谬解，或者教训人不当信这些要道，这样，不信的人既然听不见真道，自然总不能信，有的人甚至因为先听了这种不信的讲解，以致心里刚硬，俟后再听见真道也不能领受，岂不是受害更大了么？</p>
+<p>除了未信的人以外，已经信了的人有时也能大受不信派的害，我们所信的有许多现今确是不能看见。因我们肉体的软弱，很容易因为不能看见就发生疑惑，疑惑一生，便很容易流于不信。就是没有不信派所讲使人疑惑不信的教训，我们因肉体的软弱也常发生疑惑，何况再加上不信派的教训，那岂不是更加危险？著者曾亲自见过很蒙恩爱主的信徒，因为喜欢听不信派的讲解，看不信派的著作，渐至于全然失去信心，落到很可怜的地步，这是何等令人痛心的事！</p>
+<p>基督徒啊，你们心持两意要到几时呢？不信派的教训已经拦阻了许多尚未信主的人，也已经败坏了许多信徒，你们还不急速分辨清楚，选择你们自己所当随从的么？你们不但不当疑惑神的言语，你们也不当再接受再容纳不信派的教训。离弃耶和华单单的去拜巴力是犯罪，又事奉耶和华又敬拜巴力也是犯罪。耶和华是忌邪的神。他不要人敬拜别的神，他也不要人听从抵挡他圣道的教训。首鼠两端的人不能得神的喜悦。</p>
+<p>现代教会还有一种人。他们说，「新的与旧的（其实是不信的与信的）不当各走极端。既同信一位神，（其实一种人信神自己，一种人信自己的神。）同宗一位基督，（其实一种人以基督为救主，一种人以基督为傀儡。）两派应当互相容纳，协力合作；以发展教会的事业，进行传道的工作。」于是他们便起来作调停的运动。咳！可叹极了！怎么信的与不信的中间还讲互相容纳协力合作呢？真理与错误还能合而冶之于一炉么？基督与撒但还能携手言欢么？信的与不信的若要互相容纳，协力合作，除非不信的能悔改信主，若不然就叫信的失去信心，也变作不信的。如果二者都不能改变却要互相容纳，怎样容纳呢？协力合作，合作甚么呢？我真希奇，世上竟会有这种令人大惑不解的事！我怕倡这种说法的人不是不信派的份子，便是愚昧无知的信徒。对于这种人我要大声疾呼，用先知伊莱贾的话来警教他们说，「你们心持两意要到几时呢？若耶和华是神，就当顺从耶和华：若巴力是神，就当顺从巴力。」耶和华与巴力中间没有调和的余地，信的与不信的中间也不能讲妥协，真理是出于神，错误是出于魔鬼，二者永远不能混合在一处。</p>
+<p>我信有许多信徒不是甘愿随从错误的教训，只因信仰不坚固，属灵的知识太缺乏的缘故，以致不知不觉的被引诱走入迷途。因此现今急需帮助他们明了圣经中的真理与不信派的错误，二者的分别是在甚么地方。作比较表在下面：</p>
+<p>圣经中的真理 不信派的错误</p>
+<p>圣经由灵感而成，是神的道。 圣经是人的著作，是希伯来民族的宗教史。</p>
+<p>创世记前几章的记载真实可信。 创世记前几章是渺茫的神话不足置信。</p>
+<p>人类是直接由神创造成。 人类是由下等动物进化而成。</p>
+<p>豫言是出于神，都必一一成就。 豫言是不可信的。</p>
+<p>人是败坏邪恶的。 人是良善优美的。</p>
+<p>圣经中的奇事神迹都是真实可信的。 奇事神迹不可信。</p>
+<p>魔鬼是一种实际存在的邪灵。 没有魔鬼。</p>
+<p>天使是神前服役的灵。 没有天使。</p>
+<p>耶稣是由童女诞生的。 耶稣的诞生与常人相同。</p>
+<p>耶稣被钉十架而死是代世人赎罪。 赎罪的道是犹太人的遗传。</p>
+<p>耶稣死后三日自死人中复活。 耶稣身体未曾复活乃精神复活。</p>
+<p>耶稣复活后被接升天，坐在神的右 复活既非事实，升天更属渺茫。</p>
+<p>边。</p>
+<p>耶稣是赐人生命的救主。 耶稣是改良社会的领袖。</p>
+<p>耶稣是罪人见神必经的惟一道路。 各宗教都可以救人。</p>
+<p>悔改认罪，信靠耶稣必能称义得救。 个人得救是渺茫而且自私的道理。</p>
+<p>信赖耶稣接受救恩方得称义得救。 世人都是神的儿子。</p>
+<p>成圣是藉着基督的血，神的道，与圣 自己努力奋，便可以提高人格增进道德。</p>
+<p>灵。</p>
+<p>世界是日渐败坏邪恶。 世界是日渐改良完全。</p>
+<p>基督必要再有形有体的来到世上。 基督再来是寓意。</p>
+<p>基督再来以后，神要建立他的国在地 人当尽力建设天国。</p>
+<p>上。</p>
+<p>基督再来时死人要复活。 死人不能复活。</p>
+<p>教会的使命是宣传救恩的福音。 教会的使命是改良腐败的社会。</p>
+<p>看过以上所列不信派的讲论，已经将基督徒所信的真理完全离弃，请问一个基督徒不信这些要道还怎能称为基督徒？再请问这些不信派与那些未曾加入教会的不信者有甚么分别？不信派承认有耶稣这一个人么？略有知识的人谁能不承认有耶稣这一个人。不信派尊重耶稣的精神与人格么？许多反基督教的和无神派何尝不尊重耶稣的精神与人格。不信派讲说耶稣的教训么？许多以耶稣为西方圣人的人，岂不也是照样讲说耶稣的教训。一个人所以能称为信耶稣的人，就是因为他信耶稣为神的儿子，为罪人的救主，信耶稣代人赎罪受死，又从死人里复活升天，将来仍要临世，又信耶稣所讲解所证实的一切要道。不信派如今既然完全不信这些，怎么还能称为基督徒？他们这样甘心自欺也就罢了，怎么许多信徒还能承认他们是基督徒？更怎么还能听从他们的教训，拥戴他们为领袖，随从他们盲目的引导？如今许多信徒竟这样愚昧无知，怎能不令人痛心长叹呢？不信派明明是不信，却自称为信徒，这也是许多人容易受他们欺骗损害的缘故。让我们今日揭破他们的这种假面具，将事实完全显明出来，好使信徒谨慎防备他们。</p>
+<p>不信派中有一些人公然否认圣经中的要道。他们表示他们所有的见解。他们肯直率的说出他们心中所存的思想，他们不戴假面具，对于这种人，我至少还能尊重他们的诚实，但是有许多的不信派他们心中全然不信圣经中的要道，同时他们口中并不表示他们心中所存的意思，不过专一讲那不明显抵挡圣经的理论。他们不信耶稣钉死代人赎罪的要道，但他们却不明说耶稣不能代人赎罪。只讲耶稣怎样杀身成仁，舍生取义，怎样为社会人群的幸福奋而牺牲流血。他们不信耶稣复活，但他们却不明说耶稣未曾复活，只说耶稣的精神与人格至今仍存在宇宙间。他们不信基督再来，但他们不表示他们不信，只说我们当努力奋建设天国在人间。那就是我们最终的目的与希望。他们不信救恩，但他们口中不明说他们不信，只说个人得救的道理是自私的，狭义的，我们现在要注重利他的，广义的，社会得救的福音。（社会得救即指社会改良而言）他们不信来生的应许，但他们不公布他们不信，只说与其多讲那遥远的来生问题，不如注重这切近的今世实际的生活。他们不信圣经中所记主耶稣与先知使徒们所行的神迹奇事，但他们不说他们不信有奇事，只编造一些谎言，改变经上的事实，去任意曲解这些奇事。他们是不信派，但是他们却不将他们的不信明然显露出来。他们的讲论在许多人看似乎是较为良好，似乎是不走极端，其实这种人为害更烈，因为他们所给人的乃是包着糖皮的毒药：牠的危险与害处远超过那些公然否认圣经要道的人所讲的。</p>
+<p>不信派中还有一种人更加败坏，这种人全然不信圣经中的要道，但他们却善于戴假面具。他们善于见甚么人说甚么话。在不信的人中间他们就发表不信的讲论，及至遇见热心信道的圣徒，他们会立时承认一切的要道。（虽然他们心中仍是全然不信）他们不要得罪任何人。他们善于八面玲珑，十方讨好，他们这样作伪说谎，无非是为保全地盘，获得金钱，增加自己的荣誉。他们因善于戴假面具！所以能作各种人的朋友。他们就是主耶稣所说的那「粉饰的坟墓，外面好看，里面却装满了死人的骨头，和一切的污秽。」</p>
+<p>在信耶稣为救主的人眼中所看为至宝的，就是神的言语和基督的救恩；他们所视为最重要的工作，就是指示人以罪恶的危险，引领他们认罪悔改信靠基督；他们心中所存最大的希望就是见着他们救主的荣面，得与他同在；因此他们口中所讲论的所见证的，和他们作工的目的处世的态度，无不以这几样为标准。一个信徒（更是教会的领袖）开口就是提高人格，改良社会，服务模范，牺牲精神，不用他再发表他不信救恩，已经足可以知道在他里面所存的是甚么了。用这个作标准去测验信徒，去测验那些教会的领袖，大半是不至错误的。</p>
+<p>基督徒啊，你们心持两意要到几时呢？不信派的错误与危险，你们如今已经知道了；信徒与不信派不能合作不能和交的理由你们也已经明了了；怎么可以认清不信派的方法我们也略略说过了：这样，你们今后当作甚么呢？仍然一面敬拜巴力一面事奉耶和华呢？还是拆毁巴力的坛，打碎巴力的偶像，驱逐巴力的先知，专心归向耶和华呢？</p>
+<p>谁觉悟以前的错谬与迷误，想即刻出离迷途？谁了解神的意旨和真理，愿奋起为道战争？请急速兴起，</p>
+<p>坚定信仰，</p>
+<p>高举圣经；</p>
+<p>弃绝不信派的错误，</p>
+<p>宣扬神救恩的福音。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
