@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>以别神代替耶和华的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>以别神代替耶和华的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2以别神..-03 .mp3">🎧 以别神代替耶和华的人（1/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2以别神代替耶和华的人-03.mp3">🎧 以别神代替耶和华的人（2/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2以别神...-04 .mp3">🎧 以别神代替耶和华的人（3/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2以别神代替耶和华的人-04.mp3">🎧 以别神代替耶和华的人（4/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2以别神...-05 .mp3">🎧 以别神代替耶和华的人（5/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2以别神代替耶和华的人-05.mp3">🎧 以别神代替耶和华的人（6/6）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「以别神代替耶和华的，他们的愁苦必加增。他们所浇奠的血我不献上，我的嘴唇也不提别神的名号。」（诗十六4）。</p>
+<p>除了耶和华以外并没有别的神。别的神都是人的心所揣想，人的手所造作的。那些神「有口却不能言，有眼却不能看，有耳却不能听，有鼻却不能闻，有手却不能摸，有脚却不能走，有喉咙也不能出声。造他的要和他一样，凡靠他的也耍如此。」（诗一一五5～8）。那些神不能使贫穷的人富足，不能使软弱的人刚强，不能使愁苦的人得喜乐，不能使伤心的人得安慰。因为他们根本不是神，根本一无所有，也一无所能。人本来就软弱无能，他们比人更软弱无能；人本来就愚昧无知，他们比人更愚昧无知。那些以这些神代替耶和华的人，他们的愁苦焉能不加增呢？</p>
+<p>从一方面说，今日的人类好像比从前明白了一些许多人已经觉悟，知道人用金银木石所制造的神是不可靠的，是无用的，因此许多略有知识的人已经不再去敬拜那些神。但同时他们却去另外寻找一些神来代替耶和华。他们离弃了偶像以后，并没有归向耶和华，不过是离弃了那些人手所造的神以后，另外又去事奉一些别的神而已。我说的这些人，不但是指着那些不信有神的人，这里面也有许多是称为基督徒的，是自以为事奉耶和华的。阅者疑惑我的话么？容我举出这些人所事奉的一些神来。</p>
+<p>许多人所事奉的一种神就是金钱。世界上不拜其它假神的确有不少。惟独不敬拜这种假神的人真如同清晨的星辰那样稀少。东方人敬拜这个神，西方人也敬拜这个神。老年人敬拜这个神，少年人也敬拜这个神。拜偶像的人敬拜这个神，自称不信有神的人也敬拜这个神，连多少自命为敬拜耶和华的人也敬拜这个神。虽然这个神是不当拜的，但是拜他的人却比拜任何神的人更多。人称这个神为万能的──「金钱万能」。人以为拜他可以得着各样的好处。人想他会赐大福给一切敬拜他的人。人想他是世上最可靠的一位神。人以为他会替人解决一切的难题，他会为人消除一切的痛苦。因此这些人便以他代替了耶和华。结果怎样呢？他们拜他不但没有得着一点幸福，反倒加增了许多愁苦。因为人在没有得着他以前，绞脑汁，耗心血，欺骗人还必须防备人的欺骗，苦害人还必须避免人的苦害。为此不晓得受了多少烦恼与痛苦。及至得着他以后，又需要计算怎样保守他，免得被别人夺了去。为这个又不知道费多少心机，受多少痛苦。幸而保守得住，已经是饱尝了祸患痛苦。不幸忽然遭逢了意外的打击，多日受痛苦所换来的金钱一旦之间完全飞去，在这时候所感受的愁苦简直无法述说。多少人因此患病，多少人因此发狂，多少人因此杀人，多少人因此自杀。因为他们以金钱代替耶和华，所以他们的愁苦就加增了。</p>
+<p>还有一些人以名誉为神代替耶和华。这些人是比较有思想有知识的。他们看重名誉，追求名誉。他们可以不要钱，但不甘心不要名。他们说，「大丈夫不能留芳百世，亦当遗臭万年，焉能庸庸碌碌与草木同腐乎？」他们认定「名誉为人生之第二生命」。他们以为「无名誉之人犹劣于死」。他们读书是为求名，他们作事是为求名。他们竭力显露自己，高举自己，设法使别人注意他们，称赞他们。他们将事奉耶和华的心思力量完全用在事奉「名誉之神」身上。结果是甚么呢？得不着名誉的时候，那种愁苦，那种不满足，自然不用我们说；及至得了大的名誉以后，因为受别人的嫉妒，遭别人的暗算，被人毁谤辱骂到痛不欲生的地步，这时想要回到从前没有美名也没有恶名的景况中，也无法办到。这也是「以别神代替耶和华的，他们的愁苦必加增」。</p>
+<p>还有一些人以房屋田产代替耶和华。他们的心思完全放在这些东西上面。他们置买良好的肥田，建造高大的房屋。他们将他们的光阴力量都用在这些事上。他们看着自己的良田美屋踌躇满志，他们昼夜计划怎样耕种他们的良田，怎样享用他们的巨厦。他们的产业完全成了他们的神。不料天有不测风云，人有旦夕祸福。他们的美屋因为邻舍失火不幸被延及，竟被焚烧成为瓦砾灰烬。他们的良田因为江河决口，竟一变而成为池沼川泽。或是因为遭遇其它不幸的事，以致自己的良田美屋归了别人。到这时候他们眼看着他们惟一心爱的东西竟毁坏到不可收拾的地步，或是完全与他们脱离了关系，那种痛苦愁烦将要大到甚么地步呢？假使他们起初就不这样崇拜他们的田产房屋，他们虽然遭遇这种损失，也决不至受这样重大的击，这也是「以别神代替耶和华的，他们的愁苦必加增。」</p>
+<p>还有一些人以他们的情人代替耶和华去崇拜。他们的心有所想，必是想他们的情人。他们的口有所谈，必是谈他们的情人。他们无论作甚么，总要讨他们情人的欢心。他们日间所注重的是他们的情人，他们夜间所梦见的也是他们的情人。他们以为他们活着完全是为他们的情人而活。他们将耶和华从他们心中的宝座上推下去，请他们的情人坐在上面。他们以为他们的情人比耶和华更可爱，更能使他们的心满足。谁想到他们的情人竟会有一天向他们变了心，弃绝了他们，忘记了他们，使他们的心完全破碎，再不能复原。使他们的人生充满了愁苦和不能想象的悲哀，以致他们伤心、生病、癫狂、自杀。这些极惨痛的事迹，我们不知道听见了多少。自然有些人所崇拜的情人不是这样负义，不会这样变心。但是许多事实竟是与人所怀的愿望背道而驰。他们崇拜他们的情人，他们的情人也真心爱慕他们，不过因为家庭，因为环境，或是因为其它的原因，他们互相爱恋，却不能结合，甚至亲眼看着自己所恋慕的情人与别人结合。这种情形会使他们郁闷成疾，会使他们神经失常，会使他们绝望自杀。也有的时候有些人侥幸竟得与他们所崇拜的情人相结合，有情人成了眷属，这自然没有愁苦了。不错，没有愁苦的时候固然是好，但有一天忧起愁苦来，恐怕比前两种人更苦。我们不是看见许多美满的姻缘，当局的人正在志得意满，旁观的人正在啧啧称羡的时候，忽然其中的一方面竟尔因病长逝，或是发生其它的危险以致丧生，剩下一方面形单影只，痛不欲生么？因为他们以他们的情人为神，所以当他们的情人死了的时候，他们的神也就死了，他们的喜乐安慰幸福也一齐都死了。请想这种人是何等愁苦可怜呢？因为他们以别神代替耶和华，所以他们的愁苦就加增了。</p>
+<p>又有一些人以他们的儿女为神。这些人看甚么也不及他们的儿女宝贵。他们的喜乐、希望、安慰、倚靠，都在他们的儿女身上。他们以为天上地上再没有任何人任何物比他们的儿女更可靠，更能给他们幸福。他们拿巨量的金钱供儿女的挥霍，他们把他们的精神力量产业都献给他们的儿女。他们除了他们的儿女以外，再不敬拜别的神。他们把使他们生存赐福给他们的神抛在九霄云外。结果怎样呢？因为他们这样宠爱他们的儿女，以致他们儿女的身体特别软弱多病，他们儿女的性情特别乖戾不驯，他们儿女的品德特别卑污恶劣（被父母宝爱的子女很少不这样的）。他们的儿女患病的时候他们受了许多痛苦愁烦。他们的儿女任性发气的时候他们受了许多痛苦愁烦。他们的儿女犯法惹祸的时候他们受的痛苦愁烦更多。及至有一天他们老迈龙钟须发皆白的时候，他们所崇拜的儿女会指着他们的脸面斥责他们，辱骂他们，咒诅他们，说他们「老而不死是为贼」。以致他们白发苍苍悲悲惨惨的下到坟墓里去。这更是「以别神代替耶和华的，他们的愁苦必加增」。</p>
+<p>还有人以自己特别喜爱的某种事物为他们的神。就如有人酷嗜金石古玩，有人专心搜求名贵字画，有人喜爱蓄鸟，有人注意养鱼，还有人爱马爱狗成僻。这些人起初喜爱这些东西，也许不过是因为它们好玩，或是因为作工疲劳藉此消遣一下。不料日久天长，这些东西竟进入他们的心，占据了神的地位。到这时他们便将他们整个的心都献给这些东西。他们伏俯在这些东西面前敬拜他们。他们的喜乐幸福好似都在这些东西里面。但是犬、马、鸟、鱼，会死，金石、古玩、名贵字画，会损坏，会遗失。虽然他们聚精会神的保守他们所爱的这些东西，可是总会有人力不能防御的灾祸，不定甚么时候忽然来到，毁坏了他们所爱的这些东西。那时他们耍感受何等大的痛苦烦恼呢？感受痛苦烦恼还是小事，有时竟会因此惹出极大的祸患，弄出极惨痛的结果来。十几年前有一个人家中遭遇盗劫。这位大量的家主很慷慨的让那些强盗随便拿他家中一切的财物。但是他有一只心爱的时表，不肯交给那些暴徒，结果竟因此丧了性命。我作小孩子的时候，听说有一个青年人豢养着一只可爱的八哥（鸟名），因为他的母亲在疏忽之间放进一只野猫，吃了他所爱的八哥，以致他在最懊丧最烦恼的时候，用刀砍死了他的母亲，结果被法院判处了死刑。这都是极好的例子，可以证明一个人以心爱的东西为神，不但愁苦加增，有时还会惹出不可挽救的大祸。</p>
+<p>神禁止人在他以外敬拜别的神岂是没有意义的呢？他出这个禁令难道是因为他自私，恐怕我们因为爱别的神便不爱他么？不，他不许我们拜别的神，并不是为他自己的好处，乃是为我们的好处。因为他知道我们如果离弃他去敬拜别的神，我们一定要因此受损害，遭祸患。他爱我们，不愿意我们受这些损害，遭这些祸患，这至少是他禁止我们敬拜别的神重要的原因中的一个。如果我们专一敬拜他，事奉他，倚靠他，我们一定不会感受因为敬拜别的神所感受的那些痛苦烦恼，也不会遭遇因为敬拜别的神所遭遇的那些损害或祸患。因为他是神，他是永活的神，他是永不改变的神。他的能力永不改变，他的慈爱永不改变。他有极大的智慧，他也有极大的权柄。他能补满靠他的人一切的缺乏。他能供给求他的人一切的需要。他「不疲乏，也不困倦；他的智慧无法测度。疲乏的他赐能力，软弱的他加力量。」（赛四十28、29）。他「不打盹，也不睡觉。」（诗一二一4）。他的「慈爱高及诸天」；他的「诚实达到穹苍。」（诗五十七10）。他「必赐力量给他的百姓」，「必赐平安的福给他的百姓」（诗二十九11）。无怪写诗的人说，「以耶和华为神的，那国是有福的；他所拣选为自己产业的，那民是有福的」了。（诗三十三12）。</p>
+<p>亲爱的阅者，可以醒悟了罢。金钱、名誉、产业、情人、子女、玩好，那一样是可倚靠的呢？那一样能使我们得着真正的满足呢？那一样永远不改变呢？那一样永远不会使我们失望呢？世界上有无数的人从他们痛苦的经验中能述说他们是怎样受了这些事物的欺骗，他们是怎样因着以这些事物为神代替耶和华，因而加增了许多愁苦，遭遇了许多祸患。同时还有许多人从他们的经验中能告诉我们说，他们从来没有因为敬拜事奉耶和华以致后悔，以致失望。神从来不欺骗我们，他到永远也不会欺骗我们。容我们紧记他警教我们的这一句话罢──</p>
+<p>「以别神代替耶和华的，他们的愁苦必加增。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

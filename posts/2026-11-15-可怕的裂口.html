@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>可怕的裂口 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>可怕的裂口</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2可怕的裂口-03.mp3">🎧 可怕的裂口（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2可怕的裂口-04.mp3">🎧 可怕的裂口（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「你要将这话对他们说，愿我眼泪汪汪，昼夜不息，因为我民的处女受了裂口破坏的大伤。」（耶十四17）。</p>
+<p>「耶路撒冷的民哪，我可用甚么向你证明呢？我可用甚么与你相比呢？锡安的民哪，我可拿甚么和你比较，好安慰你呢？因为你的裂口大如海，谁能医治你呢？」（哀二13）。</p>
+<p>「所以以色列的圣者如此说，因为你们藐视这训诲的话，倚赖欺压和乖僻，以此为可靠的，故此这罪孽在你们身上好像将要破裂凸出来的高墙，顷刻之间，忽然坍塌。」（赛三十12、13）。</p>
+<p>无论甚么东西一经有了裂口，便有发生极大的危险的可能性，杯盘有了裂口，便会破碎不堪使用。衣服有了裂口，便会越裂越大，一直从这边扯破到那边。房顶有了裂口，雨水便会流到屋子里面，以致人再不能居住。墙壁有了裂口，渐渐便会倒塌。城垣有了裂口，贼寇便会闯入。最起初的裂口也许是很小而且没有大害的，但有了这很小的裂口，若不赶快设法堵塞修补，这个很小的裂口便会渐渐的扩大，至终酿成不可挽救的结局。我们都知道在夏季河水暴涨的时候，河水高过地面，这时候两岸的堤防关系多少人的性命财产。如果发生小小的一处裂口，若不及时堵塞，不多几时就会变为极大的决口，滔滔的浊流便淹没广大的地面，毁坏多少田宅，淹毙多少人畜。我们也都知道人的皮肉上因为不谨慎弄出一个裂口，若不及早消毒包扎，偶然染了毒菌，轻者要受许多日子的痛苦，重者也许会因此丧命。所有的裂口无论是大的，是小的，都是同样的危险，同样的可怕。可是一般人都知道大裂口是可怕的，却轻忽小的裂口。他们以为小小的裂口能有甚么大的害处。就因为他们这样思想，所以他们一点不介意这微小的裂口。这微小的裂口也就在他们不经意的时候渐渐变大。及至有一天他们看见了那可怕的结局已经临到，要想挽救也来不及了。如果他们在裂口还小的时候看出它的危险，便急速豫防挽救，本来可以消患于未然，避免了那极可怕的结局。可惜大多数的人心都是那样愚昧，大多数人的眼睛都为魔鬼和罪恶所蒙蔽，不到事情不堪挽救的地步，他们总是不能醒悟。有一日到了不堪挽救的地步，再醒悟也没有用处了。</p>
+<p>在基督徒的人生中最可怕的裂口就是罪恶。这个裂口起初无论多么微小，若不赶快堵塞治疗，不久就会越裂越大。上文我们看见神吩咐杰里迈亚告诉民众说，「愿我眼泪汪汪，昼夜不息；因为我民的处女受了裂口破坏的大伤。」这里所说的「我民的处女」不是单指着犹大民中的处女，也是指着全体的人民。在杰里迈亚哀歌里先知形容民众的裂口已经到了不可挽救的地步说，「你的裂口大如海，谁能医治你呢？」像海那样大的裂口当然是无法可治了。可是这大如海的裂口在最初也不过是一个极微小的裂口。就因为他们漫不经心，容这个微小的裂口越裂越大，至终便破得像海一样大。上文我们所引证的第三段经文便告诉我们说这裂口是甚么。「这罪孽在你们身上，好像将要破裂凸出来的高墙，顷刻之间，忽然坍塌。」这一段经文里在原文中有一个字，在诗篇一百零六篇二十三节，和以赛亚书五十八章十二节，并以西结书十三章五节，与以西结书二十二章三十节，全都译作「破口」。但在这一节（赛三十13）里，中文译本并没有把这一个字照那四处译出来。这是中文译本的缺点。若照中文译本读来，好像是说罪孽如同将要破裂的高墙。但原文的意思乃是说罪孽如同高墙上的「破口」。是，罪孽就如同破口一样。它像高墙上的破口，它也像堤防上的破口，房顶上的破口，城垣上的破口，衣服上的破口，皮肉上的破口。这个破口起初无论怎样微小，怎样不为人所注意，只要它存在那里，迟早它便会酿成大祸。以色列民就因为在起初的时候忽略这微小的破口，结果竟弄得「受了裂口破坏的大伤」，弄得「裂口大如海」。在汉译圣经里的裂口和破口在原文里也是两个不同的字，但它们的意思实在也差不很多的。因此我们称它为裂口也好，称它为破口也好，总起来说，就是「破裂的地方」。</p>
+<p>阅者，请你留意你人生中的裂口罢。一点疑惑，一点贪心，一点淫念，一点好名的心，一点嫉妒，一点诡诈，一点骄傲，存在你心中，也许半点都没有显露出来。这都是小的裂口，都能酿成大的祸患。或是说几句谎话，几句谤语，几句怨言，取少许不义的财物，作少许暗昧的恶事，与人同处弄一点诡诈，戴一点假面，生活习于一点奢侈，行为倾向一点苟且，这也都是小的裂口，也都能酿成大的祸患。魔鬼不怕你不投降他，只怕你不给他留地步，你只要给他留一点地步，早晚你会完全屈服在他的权下。魔鬼不怕你不犯大罪，只怕你不犯小罪，你只要犯小罪，迟早你就会犯大罪。魔鬼不怕你不作许多恶事，只怕你不作一件恶事，你只要作一件恶事，不久你便会作许多恶事。没有一样罪恶是独立的。你只要犯一样罪恶，不久你就必须犯第二样，第三样，第四样，第五样，不知到甚么地步纔算止境。你先有了一点贪心，继续着便会谄媚人，便会舞弊营私，便会损人利己，便会欺骗说谎，便会偷窃攘夺。你先有了一点淫念，便会目染淫色，口吐秽语，背着人去作苟且淫邪的事，以后再作伪说谎遮掩自己的罪恶，事情再演得严重一些，便会争风吃醋去杀人流血。你先有了一点好名的心，便会标奇立异，钓誉沽名，如果有人比你更好，你便要嫉妒他，有人高过你，你便要陷害他，并且还要说谎言，弄诡诈，无中生有，妄诞自夸，因为不这样，你便得不着你所希冀的虚名。以此类推，没有一样罪不是这样渐渐把你引到许多罪恶里面。</p>
+<p>裂口的害处是有两方面的，一方面是好的流了出去，另一方面是不好的流了进来，你把一些贵重的饮料倒在一个杯子里，豫备过些时候去喝，不料那个杯子上有一个裂口，及至你回来，便发现那一杯贵重的饮料都从那个裂口流了出来，这是一方面的损失。你看守河堤，恐怕河水流到地面上来，当你打盹睡觉的时候堤防出了裂口，以致滚滚的浊流都从那个裂口流了进来，这是另一方面的损失。罪恶的裂口要使你受到两方面的损失，一方面你因着这个裂口，把你里面的喜乐、平安、能力、恩赐，都流了出去，另一方面那可怕的罪恶的浊流要流到你的里面，使你受到无穷的祸害，正像大河的浊流毁灭了田园财物牲畜人口一样。</p>
+<p>真的，许多圣徒都能作见证，证明他们自从在生活中有了罪恶的裂口以后，心中的喜乐和平安一日比一日减少，他们的能力与恩赐渐渐都失掉净尽。他们追忆以前所有的那种胜利光明的生活是多么宝贵，多么可爱，但是再不能得回来。同时他们也能述说自从他们有了罪恶的裂口以后，他们便继续着陷入一样又一样的罪恶。他们在仇敌的面前如同拉枯摧朽一般，不再有丝毫抵抗的力量。他们一直的堕落到极深的坑中，罪恶在他们的人生中掌了整个的权柄。这些人的见证都证实了我们上文所说的裂口的危险和害处。</p>
+<p>裂口的危险和害处我们已经知道了。自然我们应当时时儆醒，常常祈求，免得在我们的人生中发生这种裂口。可是如果不幸我们的人生中有了裂口，是不是还有方法能挽救呢？还是一有裂口，便无法挽救，只好容它越裂越大，一直裂到不堪收拾的地步呢？有方法，有挽救的方法。这方法就是一发现自己的人生中有了罪恶的裂口，立时就在神面前认罪悔改。我们一认罪悔改便蒙神的赦免，便得回所失去的喜乐、平安、能力、恩赐。我们认罪悔改，便堵住已经裂开的破口，使它不能再往大处裂；我们认罪，除了在神面前承认以外，如果所犯的罪是与别人有关系的，也当向人承认。犯了罪以后立时就承认悔改，正如同河堤裂了口立刻就堵住，又如同皮肉裂了口立时就消毒包扎起来一样。这件事越早办越好。迟延一刻，就不知道在这短短的时间内发生甚么意外的变故，以致小的裂口忽然变大，酿出极严重的祸害来。认罪这件事应当像堵塞河堤的决口，又像施行救急的手术那样急速，那样刻不容缓；只怕太迟，不怕太快。</p>
+<p>一个极小的裂口所惹出来的祸患已经足能毁坏一个很好的基督徒了，何况大多数的基督徒的人生中所有的裂口还不止于一个，还不止于小的，那种危险还堪设想么？愿神怜恤我们，使我们能看见我们人生中一切的裂口，更愿神怜恤我们，使我们能靠着他的恩典堵塞这一切的裂口。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

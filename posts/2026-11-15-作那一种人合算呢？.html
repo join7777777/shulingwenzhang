@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>作那一种人合算呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>作那一种人合算呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/6作那一种人合算呢？-01.mp3">🎧 作那一种人合算呢？（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/6作那一种人合算呢？-02.mp3">🎧 作那一种人合算呢？（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「口吐真言永远坚立；舌说谎话只存片时。」（箴十二19）。</p>
+<p>世界上的每一个人都愿意得着成功与胜利，但他们所走的道路却是与成功和胜利背道而驰。因为成功与胜利的道路是说实话，作真事，但世上大多数的人却想藉着说谎言，行诈术，得着成功与胜利。他们所以这样作，是因为他们曾藉着说谎言，行诈术，得着过少许的成功与利益。他们因着说谎言发过一点财，因着弄诡诈得过一点势力，因着行欺骗得过一点尊荣，他们便认为说谎言是成功的秘诀，行诡诈是胜利的快捷方式。他们不晓得说谎言虽然可以得着暂时的成功，最后却要招来极大的失败，行诡诈虽然可以得着短期的胜利，最后却要变为不可挽救的损害。为甚么这样呢？圣经中的话清清楚楚的解释了这个问题。</p>
+<p>「说谎言的嘴为耶和华所憎恶；行事诚实的为他所喜悦。」（箴十二22）。</p>
+<p>神是一位信实的神，在他没有一点诡诈，也没有一句谎言，因此他恨恶一切的谎言和诡诈。一个人说了谎言，行了诡诈，便招来神的憎恶与咒诅，还有甚么成功和胜利可希望呢？无论他怎样聪明能干，无论他的计谋如何周到，他的手段如何高明，他的布置如何精密，只要神动一下手指，便可以把他垂成的事工完全毁坏。从古至今，我们看见许多说谎言行诡诈的人在一个时期中确实是有了很大的成就，他们也得着了他们所希冀要得的许多好处。不料正在他们志得意满的时候，忽然遭了不可挽救的大失败，弄得焦头烂额，身败名裂。这种事实在历史上真是数不胜数，就是在今日的世界上也是屡见不鲜的。除非天地间没有神，或者神也是像人一样的说谎言，行诡诈；不然，说谎言行诡诈的人绝不会不失败。</p>
+<p>说谎言行诡诈的人不只在神的面前要受咒诅，就是在人面前他们也不能长久亨通。世界上任何人也不会喜爱一个说谎言行诡诈的人。任何人也不会甘心把责任财物交付给一个不诚实的人。就连那些说谎言行诡诈的人也愿意别人用诚实待他们，也愿意寻找诚实可靠的人为他们作事，也愿意把责任财物托付给诚实的人。虽然有许多人因为事实方面的需要，选择一些能说谎言弄诡诈的人，为他们去作一些欺骗人陷害人的事工，但他们对这些人绝不会完全信任。因为他们明白这些人今日能为他们去欺骗别人，将来这些人也能为别人再转过来欺骗他们。他们也明白那些诚实的人今日不肯被他们利用去欺骗别人，将来那些人也绝不会被别人利用来欺骗他们。因此诡诈的人虽然常有活动的机会，常得人的使用，但他们却不能得人的信任靠托；那些用他们的人总是对他们怀着戒心，总是提防着他们，到不需要他们的时候，便要把他们抛弃，好断绝后患。惟独诚实的人虽然常被人轻看，被人称作愚蠢，笨伯，傻瓜，但人却放心他们，而且能信任靠托他们，到了那些诡诈的人被人抛弃不顾的时候，这些人便成为不可少的人物了。诡诈的人虽然能在一时被人重用，但后来他们却要长期被人抛弃；诚实的人虽然一时被人轻视，但他们却要永久受人信任。究竟作那一种人合算？这个问题大约连小孩子也会回答了。</p>
+<p>说谎言行诡诈的人都以为自己是非常聪明，其实他们是最愚蠢不过的人。谎言只能在一个很短的时期中有效用。没有一句谎言能长久不被人揭穿的。一个人的智能有限，记忆力也有限。他说过一句谎言以后，虽然竭思尽虑要去遮盖他所说的谎言，到底他总不能顾虑得十分周到，稍一疏忽，他便会露了破绽，被人发觉。况且一个人说了谎言以后，他心中总要挂虑担忧，惟恐他的谎言被人识透，因此他需要不断的筹划怎么继续着说谎。在这种情形之下，他的心中不但没有平安，而且昼夜感觉疲劳，把他弄得越来越愚笨，不用等到别人来审讯，他会自己把自己的谎言都供了出来。古语说，「作伪者心劳日拙」，就是这个意思。那些说实话的人便不受这种痛苦了。他们不需要昼夜筹划怎样去说实话。无论在甚么地方，甚么时间，对甚么人谈话，事实就是事实，不怕多少人查问，不怕人讯问他多少次，他们总不提心吊胆，也不必绞脑汁，耗心血，豫备怎样应付别人的查问。这种人的心境和那些说谎的人的心境互相比较起来，一劳一逸，真不可以道理计了。说谎的人即使幸而能遮掩一时，他们心中所受的痛苦比他们所得的那一点外面的利益已经是大得许多倍，不幸他们的谎言被人识破，立时会弄得头破血流，当场出彩。从此以后，他们在人面前便失去了信用，再不能得人的尊敬、信任，即使他们以后再说实话，人也不敢置信，这种损失真是无法弥补的。世上一切的罪恶中没有一样比谎言更能毁灭一个人的信用和前途。损失了金钱、财产、事业、地盘、名誉，都是暂时的损失，不久还能恢复；惟独损失了信用，是一生的损失，要想恢复，纵使不是绝不可能，也是十分困难的事。一个聪明的人宁可损失那些身外之物，绝不损失自己的信用。为了少许易得易失的名利，竟甘心丧失信用的人，真是愚蠢到了极点。</p>
+<p>读者中间如果有人已经因为说谎，在人中间失去了信用，也不可灰心绝望。还有一个机会摆在你的面前，你可以抓住这个机会作一件事，挽回你所失去的信用，就是诚诚实实的向人承认你以前说谎的罪，并且从今以后弃绝一切的谎言；即使不幸在疏忽中又蹈了覆辙，又说了谎言，便再诚诚实实的承认。这种诚实坦白的认罪，可以帮助你挽回你以前所失去的信用。切不可心中不真实悔改，只在外面作一些虚伪的表示，希图藉此遮掩别人的耳目。这种虚伪的悔改不只在神的面前加重了你的罪戾，而且一旦被人识破，便一生再没有机会挽回你的信用了。这好像一个人在严冬的夜间走到旷野，受不住寒风的打击，想要燃着身旁的干草取得温暖，等候明日早晨的阳光出现。这时在他的袋中只有一根火柴。他若战战兢兢的小心谨慎，善用这根火柴，把他四围的干草燃着，便可以保住他的性命。假若他浪费了这一根火柴，便只有冻死在寒冷的夜间了。一个人如果存着欺骗人的心，外面表示认罪，在认罪的时候还是说谎，一旦被人识破，他便一生没有希望取信于人了。纵使有一天他真实认罪，别人也要认为他又是在那里行欺诈，说谎言。再进一步说，一个人如果藉着认罪去行欺骗，那个人的心也就刚硬到极点，再不容易悔改了。</p>
+<p>说来也真希奇。许多人明明看见别人因为说谎言行诡诈受了损害，遭了祸患，但他们自己却仍走这条道路，好像别人说谎言，行诡诈，都能受损害，遭祸患，惟独他总不能似的。这到底是甚么缘故呢？这就是因为他们的眼光太近，未曾看见远处的危险。别人受害已经成了事实，他们清清楚楚看见了，但在他们自己所走的道路上，他们却只看见了因说谎言行诡诈所得的利益，尊荣，势力，享受，看不见那将来要遭遇的损失与祸害。及至他们有一日落在祸害的坑中，纔明白了说谎言行诡诈的害处，但是已经太晚了。</p>
+<p>不用提一般世人了，就是在基督徒中间又有几个人真是完全弃掉了谎言诡诈，在神和人面前存诚实的心，说诚实的话，作诚实的事呢？不希奇在基督徒中间能得神喜悦能得人尊敬信任的人是那样少了。偶然遇见几个诚实的基督徒，差不多还都是一些资质比较低，头脑比较钝的人。至于那些资质超人，头脑灵敏的人，大多数是自作聪明，流于狡猾诡诈，不把他们那灵敏的头脑超人的天资奉献给神，反倒献给不义，以致他们欺哄了人，又欺哄了自己，天下可悲的事中还有比这个更可悲的么？如果一个人有超人的天资，灵敏的头脑，却不妄用他的天资，也不自作聪明，只是一心一意敬畏神，弃绝神所憎恶的谎言，在凡事上都诚实无伪，神要用他成就何等重要的事工！他所要得的福又将要何等浩大呢！大群的基督徒中间有几个肯作这种人？这就看谁真是聪明人了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

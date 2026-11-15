@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>谨防法利赛人和撒都该人的酵 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>谨防法利赛人和撒都该人的酵</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/1谨防法利赛人和撒都该人的酵-01.mp3">🎧 谨防法利赛人和撒都该人的酵（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/1谨防法利赛人和撒都该人的酵-02.mp3">🎧 谨防法利赛人和撒都该人的酵（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/1谨防法利赛人和撒都该人的酵-你的房子盖在甚么上面呢？-03.mp3">🎧 谨防法利赛人和撒都该人的酵（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「耶稣对他们说，『你们要谨慎，防备法利赛人和撒都该人的酵』。」（太十六6）。</p>
+<p>「门徒这纔晓得他说的不是叫他们防备饼的酵，乃是防备法利赛人和撒都该人的教训。」（太十六12）。</p>
+<p>法利赛人和撒都该人是当主耶稣在世上的时候常和他作对的两种人。我们读四福音屡次看见他们来试探耶稣，来寻找耶稣的把柄陷害他。有时法利赛人单独来，（太十九3，二十二34～36），有时他们与希律一党的人同来，（太二十二15～22），有时他们和文士同来，（太十二38，十五1、2），还有时法利赛人与撒都该人一同来，（太十六1），也有时撒都该人单独来。（太二十二23～28）。最希奇的就是法利赛人与撒都该人的信仰见解本是完全相反的，但他们在试探耶稣反对耶稣这件事上不但一致，并且时常合作。</p>
+<p>我们读使徒行传上的一段记载，便可以看出来法利赛人和撒都该人不同的地方。「撒都该人说没有复活，也没有天使和灵；（中文圣经译「鬼魂」，误）法利赛人却说两样都有。」（徒二十三8）。在这里我们看出来法利赛人与撒都该人的信仰是完全相反的。拿这两种人的信仰和主耶稣所讲的道理相比，便看出撒都该人的信仰与主耶稣所讲的真理完全立在敌对的地位。主耶稣讲复活的道理，也讲有天使和灵，但撒都该人完全不信这些。他们与耶稣为敌，试探耶稣，这原不足为奇。法利赛人与耶稣为敌却不可解了。耶稣所讲的都是他们所信的，按理他们应当拥护耶稣，爱戴耶稣了。怎么他们还能起来与耶稣为敌，陷害耶稣？更希奇的就是他们怎么能与那些信仰完全不同的撒都该人合作，一同来试探耶稣？这令人难解的问题从主耶稣责备法利赛人的话中便得了答案。</p>
+<p>「你们为甚么因着你们的遗传犯神的诫命呢？神说，『当孝敬父母』；又说，『咒骂父母的必治死他』。你们倒说，『无论何人对父母说，我所当奉给你的已经作了供献，他就可以不孝敬父母』。这就是你们藉着遗传废了神的诫命。假冒为善的人哪，以赛亚指着你们说的豫言是不错的，他说，『这百姓用嘴唇尊敬我，心却远离我。他们将人的吩咐当作道理教导人，所以拜我也是枉然』。」（太十五3～9）。</p>
+<p>「你们这假冒为善的文士和法利赛人有祸了！因为你们将薄荷、茴香、芹菜，献上十分之一，那律法上更重的事，就是公义、怜悯、信实，反倒不行了；这是你们当行的，那也是不可不行的。你们这瞎眼领路的，蠓虫你们就滤出来，骆驼你们倒吞下去！」（太二十三23、24）。</p>
+<p>「你们这假冒为善的文士和法利赛人有祸了！因为你们洗净杯盘的外面，里面却盛满了勒索和放荡。你这瞎眼的法利赛人，先洗净杯盘的里面，好叫外面也干净了。」（太二十三25、26）。</p>
+<p>「你们这假冒为善的文士和法利赛人有祸了！因为你们好像粉饰的坟墓，外面好看，里面却装满了死人的骨头，和一切的污秽。你们也是如此，在人前外面显出公义来，里面却装满了假善和不法的事。」（太二十三27、28）。</p>
+<p>我们认清了法利赛人的真面目，就不希奇他们这样与耶稣为敌了。他们信复活。他们信有天使和灵。他们的信仰是纯正的信仰，但他们的信仰与他们的人生丝毫不发生关系。他们有纯正的信仰，然而他们没有纯正的人生。他们遵守人的遗传，废弃神的诫命。他们以轻为重。以重为轻；奉献十分之一物产，然而不行公义、怜悯、信实。他们在人面前装得很好看，很虔诚，然而他们里面充满了一切的不义，他们的信仰是头脑里面的，不是心灵中的。虽然在表面上他们与撒都该人完全不同，然而实际上他们却是与撒都该人一样的不敬虔，一样的活在罪恶之中，一样的属于黑暗的权势。因此当主耶稣讲到复活的道理和天使与灵的事，就惹起撒都该人的讪笑讥议，及至他讲到生活中的教训并竭力斥责罪恶的时候，就招来法利赛人的攻击逼迫了。法利赛人与撒都该人讲到信仰的问题的时候便分道扬镳，及至起来反对耶稣的时候又携手合作。仔细说起来，他们实在是一丘之貉，并没有甚么很大的分别。</p>
+<p>说起来真可叹！古时犹太人中间有这样两等不敬虔的人，今日教会里面也有这两等不敬虔的人。撒都该人正可以代表今日教会中的那一些不信派。（或称新神学派）。这般不信派虽自称为信徒，自称为传道人，但他们不信灵界的事，正像古时的撒都该人一样。他们不信复活，不信有天使和灵，不信圣经中许多需要用信心接受的要道。这般人不断的与耶稣和真跟随耶稣的人反对。他们轻看那些笃信圣经热心爱主的人。他们骂那些笃信圣经热心爱主的人为迷信，为落伍，为迂腐，为无知。如果主耶稣今日仍在世上讲道，他们一定要攻击他，反对他，像当日那些撒都该人一样。</p>
+<p>今日教会中除了那些像撒都该人的不信派以外，还有一些人正像当日的法利赛人一样。这些人口里承认他们信复活，信有天使和灵，信圣经，信耶稣为人赎罪，复活，升天，再来。他们自命为基要派。但一详细观察他们的行为和生活，便晓得他们与古时那些法利赛人实在是如出一辙。他们承认他们有纯正的信仰，然而他们的信仰与他们的人生丝毫不发生关系。他们像法利赛人一样，重看人的遗传，废弃神的命令。他们注重礼拜、歌诗、查经、听道，然而他们不注重远离罪恶，行神所喜悦的事。他们明白圣经，他们擅长讲道，他们也会讲述一切灵界的事，然而他们却不追求在每日的生活中遵行神的旨意，活出像基督那样的生活来。他们以为一个人只要有仪式上的敬拜，只要明白圣经，就可以蒙神的悦纳。他们完全忘记神看敬虔的人生比这一切更重要。他们的信仰只是在头脑里和嘴唇上，却不是在心灵中和生活里。他们自以为他们是敬畏神的，是与不信派完全不同的，其实他们与不信派的分别不过是在头脑和嘴唇上罢了。</p>
+<p>使徒还需要防备法利赛人和撒都该人的教训么？他们还能走到法利赛人和撒都该人所走的路上去么？主耶稣明白他所说的是甚么。他知道一切人的软弱和需要。如果使徒没有这种危险，他绝不说这样警告他们的话。他知道「一点酵能叫全团都发起来」。他知道他的门徒虽是新团，但只要有少许的旧酵引进来，不久全团就都会发起来，都会变坏。他看出这种危险来，所以他警告使徒防备法利赛人和撒都该人的酵。</p>
+<p>连使徒都需要这样的警告，我们岂不更需要么？今日教会中到处有这两等人──像撒都该人一样的不信派，和像法利赛人一样的，那些自称笃信圣经，其实是重看遗传，假冒为善的人。我们真是应当谨慎，不要受不信派的迷惑，以致失去信心；但我们也当一样的谨慎，不要效法那些自称为基要派的假冒为善的信徒，只注重仪式、外表、查经、讲道，但忽略那更重要的人生中的敬虔。我们当有十分合乎圣经的信仰，同时我们也当有十分合乎圣经的人生。若是只注重任何一方面，却忽略另外的一方面，不是蹈了撒都该人的覆辙，便是步了法利赛人的后尘。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

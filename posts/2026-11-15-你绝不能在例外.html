@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>你绝不能在例外 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>你绝不能在例外</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2你绝不能在例外-01.mp3">🎧 你绝不能在例外（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2你绝不能在例外-02.mp3">🎧 你绝不能在例外（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「不要自欺，神是轻慢不得的；人种的是甚么，收的也是甚么。」（加六7）。</p>
+<p>世界上有不少欺哄人的，但欺哄自己的人数目却更多许多倍，连信主的人里面这种人也不在少数。保罗深知道这种情形，所以他纔教训加拉太的信徒们说，「不要自欺」，接着他又说，「神是轻慢不得的」。那是甚么意思呢？一个人自欺，就是因为他没有把神放在眼中，他轻看神，他侮慢神，他认为神不能管束他，不能制裁他。如果一个人尊重神，敬畏神，他绝不敢自欺。再往下，他说出一个千古不变的真理来──「人种的是甚么，收的也是甚么。」</p>
+<p>「人种的是甚么，收的也是甚么。」这个真理适用于古时，也适用于今日，适用于东方，也适用于西方；适用于不信的人，也适用于信徒。男的、女的、老的、少的、富的、贫的、贵的、贱的、有知识的、无知识的；这个真理在每一个人的身上都是如影随形，如响斯应。任何人不能改变它，不能消灭它。没有人能种上瓜子，以后在瓜秧上摘下豆子来。也没有人能种上桃核，以后在桃树上摘下杏子来。同样也没有人能种上欺诈，以后摘下信用，种上残暴，以后摘下仁爱。世上每一个人将来所得到的结果，必与他今日所播种所栽植的完全相同。</p>
+<p>你看见一个人蒙神赐福受人尊重么？那决不是一朝一夕所成就的。乃是那个人多日多年与神同行，为人服劳，所得的结局。你看见一个人信用素孚，名誉昭著，认识他的人肯把重要的责任，大量的财物，交托他，只要他说甚么话，别人便不再怀疑，只要他允诺甚么事，别人便完全放心么？那正是他多日多年为人诚实，说话谨慎，在财物上廉洁，在工作上忠心，践约守信，言出必行，所得的收获。你看见一个人得到许多人的敬爱、关心、同情、记念么？那就是他多日多年帮助人，体恤人，安慰人，顾念人，所得的报酬。一个人在职务上尽忠，在事工上殷勤，绝不会觅不到职业。一个人在言行上圣洁自守，不沾染污秽不义，绝不会不得人的尊敬钦佩。孝敬父母的人纔能得子女的孝敬，友爱弟兄的人纔能得弟兄的友爱。谦卑的人必不受羞辱，勤劳的人必不至缺乏。只要一个人种下好的种子，他迟早一定会收到好的果子。</p>
+<p>反过来说，一个人得着坏的果子，也正是因为他以前种下了坏的种子。不敬畏神的人绝不会蒙神的赐福。自私自利的人绝不会得人的敬爱。说谎言行诡诈的人绝不会受人的信任。思想卑鄙言行污浊的人绝不会受人的尊重。贪财的人一定受害，行淫的人一定遭殃。不孝父母的人必生忤逆的子女，卖主卖友的人必受近人的暗算。狂傲自大目中无人的人必受挫折遭羞辱，懒惰成性不肯作工的人必遭冻馁，受贫穷。欺骗行诈舞弊营私所得的利益将来必变成戕害身家的灾祸疠疫。结党营私倾轧排挤所树的势力迟早必成为吞噬己身的猛兽毒蛇。你不要看许多犯罪作恶的人暂时也能境遇顺利，事务亨通，迟早他们一定要吃到罪恶的苦果。神是信实公义的，他怎样说了，也必怎样成就。「人种的是甚么，收的也是甚么。」</p>
+<p>播种和收成是完全相连系的，但那两件事中间却有相当的一个距离。种菜蔬，种庄稼，种豆，种瓜，种树木，有些东西二者中间的距离是几日，几旬，几月，甚至几年，但人生中的播种和收成二者中间的距离却比这些更为遥远。一个人所收成的有些时候是他几个月以前所播种的，也有些时候是他几年以前所播种的，更有些时候是他几十年以前所播种的。如果你的眼光太近，不会往远处看，你便要看见说谎的能发财，损人的能得利，陷害人的居高位，行强暴的享亨通。但你若放大目光，望远处看，你便要看见这些人将来都要吃他们自己的恶行所结出来的果子，那种果子是又酸、又辣、又苦、又涩，难吃到极点的。</p>
+<p>人们在生活中播种所结的果子与他们在土壤中播种所结的果子还有一点是不同的。后者人们可以吃，也可以不吃，但前者却是必须吃下去的。你播了酸的种子，苦的种子，到它们结出酸果苦果的时候，你如果不愿意吃，便可以卖给别人，送给别人。如果没有人买，没有人要，你可以把它抛弃在路旁或田间。但如果你播了诡诈、自私、贪婪、淫乱、强暴、凶杀、嫉妒、仇恨、狂妄、懒惰等等的种子，到了时候它们结出一些酸得不能形容，苦得难以下咽的果子，你必须一个一个的都吃下去。那时候不论你愿意吃或不愿意吃，你都必须勉强着吃，而且必须仔细咀嚼。慢慢下咽。你看见许多人受痛苦，遭侮辱，身体疼痛，心中悲伤么？你看见许多人受神咒诅，被人厌弃，天怒人怨，众叛亲离么？你看见许多人终日短叹长吁，以泪洗面，神经失常，厌世轻生么？他们都是在那里吃自己以前播下的种子所结的苦果。播种子的时候并不艰难，咀嚼那种极酸极苦的果子却是极难忍受的事。</p>
+<p>说来也真希奇！许多人亲眼看见别人播下坏种子，然后去吃那些又苦又酸的果子，他们不能不承认这「种甚么收甚么」的真理。可是一临到他们自己的身上，他们便想这个真理可以改变，可以失效，因而任意妄为，终日播下一些罪恶的种子。不多日子以后，他们的结局也和他们所看见的那些人一样。这种人真愚昧到极点，但是站在他们旁边的人还是顺着他们所走的这条取祸的道路走去。前者仆，后者继，就像毫无所见毫无所闻一般。这种情形怎能不令人哀叹哭泣阿！</p>
+<p>有一些信徒认为不信主的人犯罪作恶必受神的报应，信主的人因信得了拯救，赖恩蒙了赦免，所以这「种甚么收甚么」的真理在他们身上是不适用的。他们认为他们已经被基督释放已经得了自由，任何对世人所适用的定律在他们身上都失去了效力，因此「将他们的自由当作放纵情欲的机会。」（加五13）。殊不知道「种甚么收甚么」的真理在信的人和不信的人身上都是同样的真实，同样的有效，没有一个人能在例外。当然信主的人以前一切的罪都已经因基督的血得了洁净，那些罪再不能害他们，再不能使神因此向他们发怒。他们再也不能和不信的人一同被定罪，但他们信主以后每日所播的种子却一定都要收成结果。为甚么许多信徒在信主以前都是同样的邪恶败坏。在信主的时候也都是同样的得了救，但在信主以后过了些年，有些人蒙神的喜爱得人的尊敬，又有些人却受神的咒诅，遭人的厌弃呢？为甚么有些信徒过着平安快乐的生活，又有些信徒过着愁苦烦恼的生活呢？为甚么有些信徒那样得人的信任倚重，又有些信徒那样被人轻看怀疑呢？为甚么有些信徒纔有去职的消息，便有许多人设法要延聘罗致他们，又有些信徒失业很久，多方托人帮助，却仍找不到职业呢？为甚么有些信徒在别人家中住了几天，在他们走去以后使别人不断的想念他们，并且希望他们再来多住些日子，又有些信徒只在别人家里住了两三天，就使别人盼望他们快些离开，并且再不愿意他们回来住一天呢？这没有别的缘故，就是因为他们都在那里收他们自己所播种所栽植的果子。</p>
+<p>「不要自欺，神是轻慢不得的；人种的是甚么，收的也是甚么。」这几句话不是对不信的人说的，乃是对加拉太的信徒说的。保罗是在那里警戒他们，劝告他们，教他们不要忽略这件严重的事实，免得他们自己受损失，遭祸患。如果加拉太的信徒需要这种劝告，又有那些信徒不需要呢？如果保罗必须劝告加拉太的教会，我岂不也同样需要劝告今日的教会么？阅者，神的话是永远有效的，神的定律是永远不改变的，没有任何人能在例外，当然你也绝对不能。如果你不愿意得到坏的收获，不愿吃到又酸又苦的果子，请你留意你今天所播的种子。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

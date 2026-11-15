@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>谁是属灵的呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>谁是属灵的呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/2谁是属灵的呢？-01.mp3">🎧 谁是属灵的呢？（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/2谁是属灵的呢？-02.mp3">🎧 谁是属灵的呢？（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/2谁是属灵的呢？-03.mp3">🎧 谁是属灵的呢？（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>几年以来，多次听人在谈话中说到某人是属灵的基督徒，某人是属灵的传道人，或说某人不是属灵的。详细一查问他们所说的「属灵」是甚么意思，原来有些人所说的「属灵」竟是指着「热心」说的。他们以为一个人热心聚会，热心奉献，热心作见证，便是属灵的基督徒。又有些人所说的「属灵」乃是指着「信仰纯正」说的。他们以为一个人信圣经中的要道，不随从不信派的谬说，便是属灵的基督徒；一个人本着圣经讲道，传扬基督代死、复活、再来的福音，便是属灵的传道人。不用提那些外面看着好像热心事奉神的人有许多并不是真热心，口里说笃信圣经笃信福音的人有许多并不是心中真这样信。即使他们真是热心事奉神，真是笃信圣经，也不能就因此称他们为属灵的人。因为圣经中所说的「属灵」既不是指着热心，又不是指着笃信圣经。自然属灵的人一定都是热心的，都是笃信圣经的，但热心的人和笃信圣经的人却不都是属灵的。有许多人真是热心，然而并不属灵；也有许多人确实笃信圣经中的一切要道，然而连一点属灵的气味也没有。热心和信仰纯正怎么能代表「属灵」的意思呢？</p>
+<p>有一般人将「属灵」这个名词用得更奇特了。他们称一切注意说方言、见异像、作梦、被提、仆倒在地、跳舞喊叫的人为属灵的基督徒，也称讲这些道理的人为属灵的传道人。他们称一切不注重不追求这些事的基督徒为不属灵的基督徒，称一切不宣传这些道理的传道人为不属灵的传道人。有些注重这些事的人竟至大言不惭的称自己为属灵的，批评那些不随从他们的人为不属灵。可叹！可叹！圣经中极好的名称竟被人错用到这种地步！</p>
+<p>圣经中所说的「属灵」不是指着热心和信仰纯正，更不是指着注重异象、异梦、仆倒、跳舞等等。我们要明白「属灵」究竟是甚么意思，必须细细的读经上的话──</p>
+<p>「弟兄们，我从前对你们说话，不能把你们当作属灵的，只得把你们当作属肉体，在基督里为婴孩的。我是用奶餧你们，没有用饭餧你们；那时你们不能吃，就是如今还是不能。你们仍是属肉体的，因为在你们中间有嫉妒分争。这岂不是属乎肉体，照着世人的样子行么？有说，『我是属保罗的』；有说，『我是属亚波罗的』；这岂不是你们和世人一样么？」（林前三1～4）。</p>
+<p>在这一段经文里我们清楚看出来保罗将信徒分作两种：一种是属肉体，在基督里为婴孩，只能吃奶的，一种是属灵能吃饭的。他又告诉我们，「照着人的样子行」就是属肉体的。「这岂不是属乎肉体，照着人（中译本作世人，不对。当译作人）的样子行么？」在这里他责备他们不当有「嫉妒分争」。他指明嫉妒分争是「人」的样子。他使他们知道在他们中间有「嫉妒分争」，就证明他们是属肉体不是属灵的。在这里我们可以清清楚楚的看出来，凡照着「人」的样子去行的都是属肉体的。纵使一个人极热心，信仰也极纯正，他若照着「人」的样子行，他就是属肉体的。纵使一个人天天说方言，常常见异像，他若照着「人」的样子行，他仍旧是属肉体的。纵使一个人能讲道，也能帮助许多人，并能引领许多人信主，若是他照着「人」的样子行，他还是属肉体的。反过来说，惟有不照着「人」的样子，只照着「圣灵」的样子行的人，纔可称为属灵的。我们若是详细念诵这一段经文，谁也不能不承认这就是经上所说「属灵」和「属肉体」的正意。</p>
+<p>岂独「嫉妒分争」是「人」的样子呢？看见财物利益就起贪心，用不诚实不光明的方法获得自己不当得的财物，这不是「人」的样子么？无论作甚么好事，都愿意叫人知道，希望博得人的称赞，这不是「人」的样子么？无论在甚么地方作甚么事，都设法显露自己，荣耀自己，这不是「人」的样子么？心存虚假，口出谎言，行事诡诈，与人同处不相见以诚，这不是「人」的样子么？看见别人比自己强，或比自己多得了利益尊荣，便心存嫉妒，这不是「人」的样子么？骄傲狂妄，自高自大，看别人都不好，惟独自己好，这不是「人」的样子么？一开口就批评人，论断人，辱骂人，定人的罪，这不是「人」的样子么？刚愎自用，毫不虚心，一点不肯接受别人的规劝忠言，这不是「人」的样子么？说话作事暴躁激烈，一点不能忍耐，言谈举止缺少温柔良善的美德，这不是「人」的样子么？阿附自己谄谀自己的，就喜爱他，与自己意见不合的，就憎恶他，反对他，攻击他，这不是「人」的样子么？除去这几样以外，还有许多事都是「人」的样子。有许多信徒是很热心的，然而他们有许多事就是这样「照着人的样子行」。有许多信徒有很纯正的信仰，笃信圣经，拥护圣经，然而他们有许多事就是这样「照着人的样子行」。有许多信徒说他们被圣灵充满了，他们得了属灵的恩赐，然而他们在许多事上就是这样「照着人的样子行」。「照着人的样子行」的就不是属灵的，就是属肉体的。那样请问这些被人称为属灵的人究竟是属灵的呢，还是属肉体的呢？</p>
+<p>弄清楚些罢。不要以为热心的信徒就都是属灵的。也不要以为信仰纯正的信徒就都是属灵的。更不要以为自称被圣灵充满了的人就都是属灵的。我们若彻底明白「属灵」是甚么意思，我们便晓得会说「属灵的话」的人不都是「属灵的人」，明白「属灵的教训」的人也不都是「属灵的人」。事实告诉我们，许多热心的信徒，信仰纯正的信徒，自称被圣灵充满的信徒，不但不属灵，而且很属肉体。因为在他们的生活中有许多事都是「照着人的样子行」，正像保罗所责备的的那些哥林多的信徒一样。</p>
+<p>那样，谁是属灵的呢？说话、行事、待人、作工，都不「照着人的样子行」，只「顺着圣灵而行」，在生活中满有「圣灵所结的果子，就是仁爱、喜乐、和平、忍耐、恩慈、良善、信实、温柔、节制」，这样的人纔真是圣经中所说的「属灵的人」。这样的人是以言以行一同为基督作见证。这样的人不为神招羞辱，却在一切的事上荣耀神。这样的人到处使人得帮助，受造就。这样的人是世上最需要的，也是教会中所最缺少的。自然我不是说这样的人到处都得人的欢迎。这样的人要受世界的恨恶，像他们的主受世界恨恶一样。不信的人和作恶的人有时要逼迫他们，毁谤他们，杀害他们，但人却「查不出他们有甚么罪来」。有时人乍遇见他们，看不出他们有甚么特点来，及至与他们同处日久，方觉得他们真是高尚可爱。他们的人生虽是这样高尚，但他们自己却常以为不足，因此孜孜勉勉，追求进步。他们是那样的「虚怀若谷」。他们乐意接受人一切的善言和劝告。他们常「存心谦卑，看别人比自己强」。他们凡事不求自己的荣耀，只求神的荣耀，不求自己的益处，只求别人的益处。他们常常开口劝勉人，提醒人，责备人，安慰人，但他们却不在人的背后批评人，论断人，辱骂人，定人的罪。他们恨罪，但他们爱人。他们是那样严厉的拒绝罪恶不义，和一切抵挡真道的事，一点不肯妥协，但他们待人却是非常宽大，能容纳人，谅解人，顾恤人。总起来说，他们在一切的大事小事上都「顺着圣灵而行」，不再「照着人的样子行」；因此基督在他们身上得以显大，神的名因他们得着荣耀，许多人因他们得着益处。</p>
+<p>遍观各地的教会，像这样的基督徒有多少呢？未曾真悔改得救的假基督徒，我们不必提他们。就是那些真信了主得了救的人里面，又有多少不是属肉体，在基督里为婴孩的呢？不冷不热的信徒我们暂且不提，就是那些热心服事神，勇敢为神的圣道争战的信徒中，又有多少真是「顺着圣灵而行」，不「照着人的样子行」的呢？至于今日许多注重五旬节的经验，追求属灵的恩赐，自己说得了圣灵充满的那些信徒，更不用提了。他们开口就论断人，定人的罪，武断说，不同他们一样的信徒都没有圣灵，都不能蒙主悦纳；固执一己的偏见；否认摆在面前的事实，到处作一些张大其辞，有枝添叶的见证，弄出许多属乎情感属乎血气的举动，讲出许多穿凿附会不合经义的道理，有的甚至演出许多羞辱神绊倒人的奇态怪状来。这些明显的事实不但证明他们不是属灵的，而且证明他们是「属肉体」到了极点。这些人怎能算为属灵的呢？</p>
+<p>圣经中所说的属灵不是指着信仰，不是指着知识，也不是指着所讲的道理，更不是指着一些特异的经验，乃是指着生活说的。一个人必须有顺着圣灵而行的那种圣洁高尚的生活，纔能称为属灵的人。若没有这种属灵的生活，无论一个人有怎样纯正的信仰，有怎样丰富的圣经知识，或是有过多少奇异的经验，或是为神作过多少工，引领帮助过多少人，都不能称为属灵的。这并不是我给这个名词下的定义，这是哥林多前书第二章里所讲的。</p>
+<p>或有人要问我说，「你怎么说，为神作过多少工，引领帮助过许多人的人，还有不属灵的呢？不属灵的人能为神作工么？」我要回答这个问题说，是，这样的人有不属灵的，而且很不少。不属灵的人也能为神作工。许多不属灵的信徒也能得着恩赐。哥林多的教会几乎全体都是不属灵的，因为他们都在那里分门别户，嫉妒分争，但他们中间有不少人得了恩赐。神若只选择属灵的人使用，请问有几个人能被他使用呢？神能使用并且也常使用不属灵的信徒，不过这种信徒若前进追求而成为属灵的人，他们的用处便更大了。我们实在看见不少被神使用作了许多事工的信徒，在生活上并不属灵，但神也使用了他们。我信如果这些人奋勉前进，再追求得着属灵的生活，他们的见证一定比现在更有能力，他们所帮助的人也一定比现在更多。</p>
+<p>「属灵」这一个名词被人错用了，好像没有多少关系，其实若详细思想起来，因误解这个名词所发生的恶结果实在不小。因为这能使许多不属灵的信徒误认自己已经到了属灵的地步，再不追求前进，因此就长久站在属肉体的地步中。如果他们真明白了「属灵」的意思，他们必要认识自己是属肉体的，是不够程度的，因此自觉惭愧，勉力前进，这样，他们纔有指望真成为一个属灵的人。经上说，「人若无有，自己还以为有，就是自欺了。」（加六3）。「不认识自己」的害处与危险已经够大了，何况「自欺」呢？</p>
+<p>从今以后，我们都不要因为别人称我们为「属灵的」，便自以为真是属灵的，也不要因为自己看自己是属灵的，便以属灵的人自居。我们当用神的尺来量一量自己究竟够不够尺寸。如果够呢，我们不要骄傲，不要自满，要「百尺竿头，再进一步」。如果不够呢，就赶快求神修理造就，使我们快些走到属灵的地步。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

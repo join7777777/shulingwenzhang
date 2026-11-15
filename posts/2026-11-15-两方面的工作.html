@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>两方面的工作 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>两方面的工作</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/2往下扎根，向上结果/6两方面的工作-04.mp3">🎧 两方面的工作（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/2往下扎根，向上结果/6两方面的工作-05.mp3">🎧 两方面的工作（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/2往下扎根，向上结果/6两方面的工作-06.mp3">🎧 两方面的工作（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「在该撒利亚有一个人，名叫哥尼流，是意大利营的百夫长。他是个虔诚人，他和他全家都敬畏神，多多赒济百姓，常常祷告神。有一天约在申初，他在异象中，明明看见神的一个使者进去，到他那里，说，『哥尼流』。哥尼流定睛看他，惊怕说，『主阿，甚么事呢？』天使说，『你的祷告和你的赒济达到神面前，已蒙记念了。现在你当打发人往约帕去，请那称呼彼得的西门来。他住在海边一个硝皮匠西门的家里，房子在海边上。』向他说话的天使去后，哥尼流叫了两个家人，和常伺候他的一个虔诚的兵来，把这件事都述说给他们听，就打发他们往约帕去。」（徒十1～8）。</p>
+<p>「彼得心里正在猜疑之间，不知道所看见的异象是甚么意思，哥尼流所差来的人已经访问到西门的家，站在门外，喊着问，『有称呼彼得的西门住在这里没有？』彼得还思想那异像的时候，圣灵向他说，『有三个人来找你，起来下去，和他们同往，不要疑惑，因为是我差他们来的』。」（徒十17～20）。</p>
+<p>哥尼流素来不认识彼得，彼得也素来不认识哥尼流。哥尼流全家都是敬畏神的人，可惜他们尚未曾认识耶稣是基督，因此圣灵差遣彼得到哥尼流家中去，把耶稣的事讲给他们听，使他们可以信耶稣为基督，可以作基督的门徒。但这两个人非但彼此素来不认识，而且谁也未曾听说过谁，这可怎么办呢？这便只有圣灵自己去作工了。可是圣灵在这两个人中的那一个人身上去作工呢？他若指示彼得到哥尼流家中去，哥尼流因为素来不认识彼得，恐怕他未必肯接待。他若指示哥尼流派人去请彼得呢？彼得因为素来不认识哥尼流，恐怕他也未必敢去。在这种情形之下，圣灵便在两方面一齐作工了。他一方面指示哥尼流去请彼得，另一方面指示彼得到哥尼流家中去。这样一来，不但两方面都可以互相认识，而且也都可以确实知道这事是出于神的旨意，请的可以放心邀请，去的也可以放心前去，这件奇妙的工作就这样完成了。</p>
+<p>从这件事上我们可以看出来一个真理，就是神所作的工如果是与两个人都有关系的，他一定要指示两方面，绝不会单指示一方面，却令那一方面瞢然莫觉。譬如说，神要差他的一个仆人到某处教会去传信息，他一定一方面感动那个教会的领袖去邀请他，另一方面感动那个人叫他到那个教会去。如果只有一方面有这个意思，另一方面却一点没有得着神的引导，那便只是单方面的愿望，却不能说是神的旨意。再譬如说，神的旨意是要某某两个圣徒结为夫妇，他一定把同样的意思放在男女两方面的心中。如果只有一方面有这个意思，另一方面却一点没有神的引导，那便是单方面的愿望，却不能说是神的旨意。再譬如说，神要一个富足的圣徒帮补一位贫乏的圣徒，他一方面感动那位富足的圣徒去作这件事，他也感动那位贫乏的圣徒接受他的帮助。如果只有一方面起了这个意思，另一方面却一点没有神的引导，那便是单方面的愿望，却不能说是神的旨意。再譬如说，神要一个圣徒接待另一个圣徒到他家中去，他必定感动那接待人的愿意接待，他也感动那被接待的，叫他接受对方的接待。如果只有一方面有这个意思，另一方面却一点没有神的指示，那便是单方面的愿望，不能说是神的旨意。</p>
+<p>与两个人有关系的事，神不但指示两方面，他在两个人身上的引导也有先后的分别。他先指示主人去请宾客，他再指示那宾客到主人那里去。在哥尼流请彼得这一件事上，哥尼流是主，彼得是宾，所以他先指示哥尼流去邀请彼得，以后再指示彼得接受哥尼流的邀请。如果他今日要叫他的一个仆人到一个别的教会里去讲道，他必定先感动那个教会的领袖邀请他，以后再指示他，叫他前去，因为在这件事上那个教会是主，他却是宾。如果神要一个圣徒接待另一个圣徒，他不能先指示那被接待的人去请求对方接待他，因为那接待人的是主，被接待的人是宾。如果神要一个富足的圣徒济助一个贫乏的圣徒，他不能先感动那贫乏的圣徒，叫他向那个富足的圣徒求济助，因为在这件事上，那济助人的是主，那被济助的是宾。只有主人邀请客人去吃饭，以后客人接受主人的邀请，却没有客人要求主人请他吃饭的道理。人情是这样，神的真理也是这样。方纔我们引证了哥尼流邀请彼得的事，证明这个真理，我们现在再引证一段保罗在犹太人的会堂中讲道的事：</p>
+<p>「保罗和他的同人从帕弗开船，来到旁非利亚的别加，约翰就离开他们，回耶路撒冷去。他们离了别加往前行，来到彼西底的安提阿，在安息日进会堂坐下，读完了律法和先知的书；管会堂的叫人过去，对他们说，『二位兄台，若有甚么劝勉众人的话，请说。』保罗就站起来，举手说，『以色列人和一切敬畏神的人，请听……』」（徒十三13～42）。在彼西底的安提阿城中的会堂里，管会堂的是主，保罗是宾。宾不能在别人的地方随便说话，当主人请他说话的时候，他纔可以站起来说话。这是作人的次序，这也是神叫属他的人遵守的法则。圣灵藉着使徒彼得所写的书信里面，也是教导教会说「你们为主的缘故，要顺服人的一切制度。……」（彼前二13）。「客从主便」是人的制度，圣徒应当顺服。只有那些不法的人才作「喧宾夺主」的事。</p>
+<p>我们常听见一些人凭着自己的私意，而且是为自己的好处，去作一些事，去向别人作一些请求，却对人说，是神的旨意，是神吩咐他们作的。别的信徒因为他们这样说，竟不敢拒绝他们的请求，恐怕因此得罪了神。他们一次两次获得了成功，胆量越来越大，法术越来越精，渐渐的竟利用这一套说法，作起属灵的生意来。其它投机份子看见这套法术有灵，竟也争先恐后的起来追随仿效，于是教会中在原有的那些可叹可哭的现象以外，又增加了一种新的可叹可哭的现象──属灵的骗术。举几个例子说罢：一个人到一个圣徒的家中去，他说他近日生活艰难，他向神呼求，神指示他到这个圣徒家中来，而且叫这个圣徒给他豫备一笔款。这个圣徒一听他说是神指示他来的，便一点都不疑惑的送给他那么多的钱。在这个圣徒还以为自己是听从了神的命令，作了神所喜悦的事，谁知道竟是中了属灵的骗术呢？神绝不作这种事。如果神叫我帮助一位缺乏的圣徒，神一定先感动我帮助他，以后感动他接受我的帮助。如果我这方面一点没有神的感动和指示，无论他怎样说有神的指示，叫他来找我，我也不信他的话，因为这不合乎圣经中的真理。假若他不提神的指示，只说是他想来向我求帮助，我或者还可以给他一些钱。如果他假传神旨，我一定丝毫不给他，免得使他因藉谎言得到成功，越发大胆说起谎来。再举一个例子说罢，一个自称为神的仆人的，来到一处教会里，对那个教会负责任的人说，他蒙圣灵的差遣，叫他到这里来讲道。那个教会的领袖本来不清楚认识他，但因为他说他是奉了神的差遣，当然不敢拒绝，只好请他讲道。谁知道他竟是一个指着传道骗饭吃的人，甚或是一个心怀叵测品行不端的人。他竟利用这个讲道的机会，愚弄勾引一些有热心而无知识的信徒，利用他们，达到自己某种的私图。如果他到我这里来，对我说，神差遣他，叫他到我这里来讲道，我要毫不留情的拒绝他说，「你不能在这里讲道，因为神并未曾指示我，叫我请你。」我不怕因此得罪神，因为我知道神不作这样的事。如果神要他到我这里来讲道，神绝不会单指示他，却不指示我。如果一个男人向一个女圣徒求婚，他说神指示他，叫他和她订婚，这个女子如果没有神的引导，便可以爽快的拒绝他说，「神没有指示我，叫我允许你的请求。」我常听说男子向女子求婚，动不动就抬出「神的旨意」来，想用这顶大帽子压住那个女子。许多虔诚的女圣徒真怕不允婚而得罪了神，虽然觉得这门婚姻并不适宜，却不敢不允诺。其实他的求婚根本就是他自己的意思。他因为恐怕不能成功，所以假传神旨，好使那个女子允诺。自然也有人并不是这样坏，他们不是有意假传神旨，他们以为他们所想的是神的旨意。他们没有意思欺骗人，但他们却在无意中欺骗了自己。我们这篇中所讲的这个真理，可以帮助圣徒不受别人的欺骗，也可以帮助圣徒不自己欺骗自己。如果神不在两方面作工，那便不是他的旨意。被求的可以放胆拒绝，求婚的也绝不应当勉强对方，非允诺不可。如果一个素不相识的人到一个圣徒家中来，说神指示他叫这个圣徒接待他，这个圣徒可以直接了当的拒绝不接待他。请想神如果真要这个圣徒接待那个人，怎能不指示这个圣徒，却单指示那个人呢？</p>
+<p>热心敬畏神的人都是想尽心竭力的讨神的喜悦。他们一听见神叫他们作甚么事，便争先恐后的去作。那些欺骗人的便利用这种心理来欺骗他们，明明是骗术，偏说是神的旨意。那些热心敬畏神的人因为怕违背了神的命令，所以便赶快去作。在他们以为是顺服了神，实际他们是受了人的欺骗。越热心爱主的人，越容易受这种人的欺骗，原因就在这里。只有真理的光能把这种属灵的骗术揭露出来。也只有真理的光能照明那些热心的圣徒的眼睛，使他们不再受那些假传神旨的人的欺骗。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

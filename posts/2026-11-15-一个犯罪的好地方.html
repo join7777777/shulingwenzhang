@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个犯罪的好地方 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个犯罪的好地方</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/3一个犯罪的好地方-01.mp3">🎧 一个犯罪的好地方（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/3一个犯罪的好地方-02.mp3">🎧 一个犯罪的好地方（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/3一个犯罪的好地方-03.mp3">🎧 一个犯罪的好地方（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「恶人的罪过在他心里说，我眼中不怕神。他自夸自媚，以为他的罪孽终不显露，不被恨恶。他口中的言语尽是罪孽诡诈，他与智慧善行已经断绝。他在床上图谋罪孽，定意行不善的道，不憎恶恶事。」（诗三十六1～4）。</p>
+<p>「祸哉，那些在床上图谋罪孽造作奸恶的！天一发亮，因手有能力，就行出来了。」（弥二1）。</p>
+<p>床上真是一个犯罪的好地方。世界上多多少少的罪恶祸患都是从这个地方起始的。许多人在这个地方「图谋罪孽，造作奸恶。」许多人躺在床上思想别人的不好，计划怎样施行报复。许多人躺在床上设恶谋陷害人，筹算怎样损人利己。许多人躺在床上思量怎样说谎，怎样欺骗，用甚么手腕，戴甚么假面具。许多人躺在床上思想别人的妻子怎样美貌，别人的丈夫怎样富足。许多人躺在床上思想怎样多弄些不义的钱财，怎样放纵自己的情欲。晚间临睡以前，早晨醒来以后，床上就是他们犯罪的最好的地方。</p>
+<p>本来是么，大多数的人从早晨起床到晚间上床，都是没有多少闲工夫的。清晨学生忙着入学，教员忙着上课，商人忙着开市，工人忙着上工，医生忙着开诊，妇女忙着料理家务，其它各种人也都忙着作一天的工作，在这个时候是没有甚么机会多思想别的事的。到了日中，更是众人忙到极点的时候，除去吃一顿午饭以外，下午还需要接连着作事。到了日暮的时候，事工作完了，吃过晚饭，大家都想找点娱乐，消遣一下：有点钱的就去打球、观剧、看电影、打麻将；高雅一些的就去鼓琴、奏乐、下棋、赏花、唱歌、赋诗；又有些人同家里的人围炉共话，或邀几位知己的朋友月下谈心。及至夜深兴尽，躺在床上的时候，既不能出到外边去活动，又不能起来作甚么事工，这正是最好的机会，可以安静思想，好的事物在心中没有地位，各样的恶念便风起云涌的拥进心中来。在这个时候就要想到怎样发大财，怎样欺骗人，怎样陷害人，怎样出风头，怎样营私，怎样舞弊，怎样谄媚，怎样逢迎，怎样作伪，怎样说谎，怎样施行强暴，怎样放纵肉欲，怎样勾引青年的女子，怎样牢拢别人的丈夫，怎样夺取他人的资财，怎样霸占他人的产业。一夜的工夫，把这些事都计划妥当，明天就寻找机会进行夜间在床上所计划的。如果我们对恶人的生活作一种缜密详尽的调查，一定会发现他们所作的恶事一大半都是在床上酝酿成功的。经上说，「恶人在床上图谋罪孽，定意行不善的道。」又说，他们「在床上图谋罪孽，造作奸恶，天一发亮，因手上有能力就行出来。」实在是千真万确的纪实。</p>
+<p>不用说眼中不怕神的恶人了，就连许多基督徒何尝不是在床上犯了许多罪呢？躺下以后，入梦以前，真是魔鬼向他们进攻最好的机会。那试探人的进前来，对他们说，「你忘了今天午前你的亲戚所说的辱骂你的那些话么？那样难听，那样羞辱你，你就善罢罢休，将来你还有甚么脸面再见人呢？你忘了今日午间你的邻舍打了你儿子一个耳光么？你的儿子就是你的宝贝，怎可以容他那样苦待呢？这件事若可以忍受，还有甚么事不可忍受呢？你忘记了今日晚间你的同人给你造的谣言么？他那样含沙射影，败坏你的名誉，是何等可恨的事。这样的恶行怎可以不报复呢？」也有的时候那试探人的对他们说，「你没有看见你的那位老同学发了多大的财么？他的才能本领又那能赶得上你呢？不过他会逢迎谄媚，会钻营运动，因此就能高车驷马，呼奴唤婢。凭你这种本领学问，只要随和一点，便不愁不飞黄腾达，直上青云。你没有看见你的同事么？他不像你这样迂腐固执。只因为他会随时弄钱，现在已经置得一片房产，储蓄了一笔巨款。你呢，一定要清廉正直，非义不取。弄到如今房无一间，地无一亩，又没有存下甚么钱。一旦失了业，我看你怎样维持一家的生活。你今日只要稍微聪明一点，经手钱财的时候略微分润一二分，一年半载，就可以多少有些积蓄，免去异日的冻饿。讹诈商民的撒该还得了救呢，得了救的人弄几个不义的钱财又有甚么关系呢？你今日阅报，没有看见那个商店的伙计花一圆钱买一张彩票，竟中了头奖，得到一万圆么？拿出一圆钱，两个月后一开彩就得一万圆，真是一本万利。你何不试一下子呢？纵使得不着，也不过是损失一圆钱而已。何况头奖得不着，还有得二奖，三奖，四奖，五奖的机会呢？钱是多么宝贵的东西阿。「有钱使得鬼推磨」，你若发了大财，我要打发许多小鬼来伺候你。要紧还是趁机会多弄几个钱罢。」也有时那试探人的对他们说，「你看你的那位女同事，面貌多么美丽，手腕多么灵敏，谈吐多么文雅，举止多么活泼。再看你的妻子怎样呢，谈学识，中学未曾毕过业，谈本领，除去作衣服，烧饭菜，抱孩子以外，简直就不会作甚么；而且年岁是那样大，面貌是那样丑，同你走在路上，别人若不说她是你的老嫂子，就会以为她是你家中的女仆。一个有本领的男子配这样的一个女人，这纔真要把人气死呢？好在现今离婚自由，结婚更自由。来罢，从明天起，好好下点工夫追逐那位女同事罢。纵使碍于物议，不能与你家中那位黄面婆离异，也不妨别营金屋，与那位女友实行同居。今日这种社会里，谁又能说甚么话呢？你看见你朋友的丈夫么？人才那样出众，面貌那样俊美，又作着那样阔绰的事情，拥有那样多的财产。如果你嫁得这样的一个丈夫，该是多么幸福的事阿。不要紧，虽然他已经有了妻子，你要知道男子是最薄幸的。只要你用些手段向他献一点媚，不愁他不弃了他的妻子来追求你。虽然你这样作有一点对不住你的那位朋友，就是这个男人的妻子，但是没有甚么关系。这样作的人多得很呢。况且这也不是你用强暴将她的丈夫夺了来，乃是她的丈夫甘心愿意追求你。这件事就是作得不对，罪也不都在你一个人身上。你又何必过于心软呢？」除去这些说法以外，那试探人的还有千言万语，在那夜深人静，万籁无声的时候，送到那些躺在床上的基督徒心中。多少有经验的基督徒都能证实，他们的床也许是他们在世上最大的战场，而且在这个战场上所遭遇的战争乃是最严重的战争。这种战争决定了许多基督徒一生的胜败。床上真是一个极危险的地方阿！</p>
+<p>床上既是这样危险的一个地方，我们真应当设法离开它了。不过我们生活在世界上又不能不睡眠。有几夜睡眠不足，我们的体健就要受亏损，时间再久一些，我们会患精神病。如果总不睡眠，没有多少日子我们就会死去。既需要睡眠，便不能离开床，同时床上又是那样危险的地方，这可怎样好呢？感谢神，他指示我们一个最好的方法，使我们把这最危险最可怕的地方变成一个最可爱最蒙福的地方。容我们听他藉着他的一位仆人指教我们的话──</p>
+<p>「神阿，你是我的神，我要切切的寻求你。在干旱疲乏无水之地，我渴想你，我的心切慕你。……我在床上记念你，在夜更的时候思想你，我的心就像饱足了骨随髓肥油，我也要以欢乐的嘴唇赞美你。」（诗六十三1～6）。</p>
+<p>这真是在这个可怕的战场上一个最好得胜的方法──「在床上记念你，在夜更的时候思想你。」用这个方法不但能胜过那试探者所施的攻击，而且使他没有机会向你进攻。当我们记念神思想神的时候，一切的恶念必定都从我们的心中逃避一空。无论是虚伪、诡诈、嫉妒、恼恨、贪财、自私、淫乱、骄傲、或是别样可耻可憎的意念，都再不能有片刻的停留。它们也不敢停留在那里。如果我们在床上记念神，思想神，床上就再不是危险的地方，也不再是可怕的战场。不但如此，而且这个地方要成为一个使人得福的所在，因为写诗的人告诉我们说，在那里「他的心就使饱足了骨髓肥油」，他又说，在那里「他要以欢乐的嘴唇赞美神」。床并不是不好的东西，床上也不是可怕的地方，可怕的乃是我们忘记神，离弃神。如果我们记念神，思想神，床不但能帮助我们的身体得着充足的说睡眠，合宜的休息，而且还能使我们的心「饱足了骨髓肥油」，使我们的灵快乐到「以欢乐的嘴唇赞美神」的地步。这样，床便成为世界上最好的东西中的一种，床上也就成为世界上最可爱的地方里的一处了。</p>
+<p>是的，有许多从来不知道需要神，深深沉溺在罪恶中的人，就因为患病睡在床上一些日子，竟觉悟悔改，归向了神，得了神的救恩。也有许多堕落失败的圣徒，屡次听见神提醒招呼的声音，听不肯转回神的家中；但后来因为身体受了伤，染了病，躺在床上很长的时间，就在这个时间里，回到神的怀中来，重新享受着父家的福乐。还有许多属神的人因着患病卧床，增长了爱心、信心、顺服、忍耐，和许多别样的美德，就是因为他们在床上记念神思想神的缘故。如果躺在床上记念神，思想神，就是有疾病痛苦在身上，仍是可以得大福，蒙大恩，何况身体健康精神爽快的时候呢。但如果不记念神，不思想神，身体健康的时候，躺在床上不住的犯罪，身体患病的时候，躺在床上也只有怨天尤人，多犯一些不同的罪。或得福，或犯罪，不在乎处在甚么地方，只在乎记念神、思想神，或不记念神、思想神而已。</p>
+<p>其实岂止床上呢。一个人的心中若不记念神，不思想神，无论在甚么地方都会犯罪，都会受魔鬼的诱惑以致跌倒，就是在礼拜堂中也会犯许多罪。一个人的心如果常记念神，思想神，就是处在一个最恶劣、污秽、黑暗、危险的地方，仍是十分安全。他不但不犯罪，而且还能饱尝神恩典甘美的滋味。床不害人，害人的乃是人自己。床上是好地方，真正不好的地方乃是忘记神的人的心。我们不必防备我们的床，也不必惧怕我们的床，最要紧乃是防备我们的心不要忘记神，以忘记神为最可怕的事，这样，我们便万分的安全了。</p>
+<p>我的心哪，不可忘记你的神；要常常记念他，多多思想他。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

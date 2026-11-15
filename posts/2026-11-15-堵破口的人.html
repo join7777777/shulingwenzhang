@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>堵破口的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>堵破口的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2堵破口的人-05.mp3">🎧 堵破口的人（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2堵破口的人-06.mp3">🎧 堵破口的人（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/4前车已覆，后车之鉴/2堵破口的人-07.mp3">🎧 堵破口的人（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「他们在何烈山造了牛犊，叩拜铸成的像。如此，将他们荣耀的主换为吃草之牛的像，忘了神他们的救主；他曾在埃及行大事，在含地行奇事，在红海行可畏的事。所以他说要灭绝他们。若非有他所拣选的摩西站在破口，使他的忿怒转消，恐怕他就灭绝他们。」（诗一○六19～23）。</p>
+<p>「以色列阿，你的先知好像荒场中的狐狸，没有上去堵挡破口，也没有为以色列家重修墙垣，使他们当耶和华的日子，在阵上站立得住。」（结十三4、5）。</p>
+<p>「我在他们中间寻找一人重修墙垣，在我面前为这国站在破口防堵，使我不灭绝这国，却找不着一个。所以我将恼恨倒在他们身上，用烈怒的火灭了他们，照他们所行的报应在他们头上，这是主耶和华说的。」（结二十二30、31）。</p>
+<p>在前面所写的「可怕的裂口」一篇里，我们看见了破口的危险和害处，也看见了神是怎样为他百姓的裂口焦急。今日我们所读的三段经文是提到堵破口的人。第一段经文说到以色列人在何烈山下铸造金牛犊，惹神的震怒，因此神要灭绝他们。神对摩西说，「我看这百姓真是硬着颈项的百姓。你且由着我，我要向他们发烈怒，将他们灭绝，使你的后裔成为大国。」（出三十二9、10）。以色列人这次因拜金牛犊而有了一个极大的破口，这个破口几乎使他们全国的人都归于灭亡。幸而有摩西站在破口，替他们将这个破口堵住，他们纔脱免了这场全遭覆灭的大祸。他怎样为他们堵破口呢？第一，他为他们呼求，求神怜悯他们，宽容他们。第二，他为他们的罪严严的责备他们，惩罚他们。就因为他这样作，便为他们堵住了破口，使神所说的咒诅没有临到他们身上。</p>
+<p>以色列人不但在旷野这样犯罪，就是到了迦南地以后，仍是接续不断的犯罪。他们在每一个时代都有破口，神因为爱他们的缘故，便在每一个时代都为他们设立一些先知，作堵破口的人。一方面为他们呼求，一方面招呼他们，责备他们，劝他们悔改。不料这些先知竟放弃了他们的责任，轻忽了他们的使命。他们不照着神的旨意去责备那犯罪的百姓，反倒顺着百姓的意思，迎合民众的心理，说了许多悦耳的言语，只顾讨百姓的喜悦。「这些人所见的是虚假，是谎诈的占卜。」（结十三6）。「他们诱惑我的百姓，说『平安』，其实没有平安，就像有人立起墙壁，他们倒用未泡透的灰抹上。」（结十三10）。因此神称他们为「荒场中的狐狸，没有上去堵挡破口，也没有为以色列家重修墙垣，使他们当耶和华的日子，在阵上站立得住。」（结十三4、5）。</p>
+<p>上面所引的第三段经文是说到神在以色列人身上所感到的失望。他看见以色列人的裂口很大，他希望有人出来，「为这国站在破口防堵；使他不灭绝这国。」可是他竟感到极大的失望，因为他找不着一个堵破口的人。有了破口，却没有人去堵，结果他便「将恼恨倒在他们身上，用烈怒的火灭了他们，照他们所行的报应在他们头上。」有了破口是极不幸的事，但如果有人出来堵塞，还是不幸中之大幸。如果有了破口，却没有堵破口的人，结果便不堪设想了。</p>
+<p>今日整个的教会中所有的破口，和许多信徒个人生活中的破口，是何等大，何等多，何等严重呢！不信、胆怯、背道、从俗、诡诈、说谎、贪婪、淫乱、嫉妒、恼恨、不孝、不忠、偷窃、营私、强暴、凶杀、还有许多别种的破口，都充满在教会中。这些破口中的任何一样都能酿出极严重的结果来，何况这么多的破口都存在呢？破口这样多已经是最不幸的事了，但更不幸的就是只有破口，却没有堵破口的人。传道的人们本来应当为众信徒堵破口，可惜他们竟和以色列中的先知一样，「好像荒场中的狐狸，没有上去堵挡破口。」他们怕得罪人，怕毁坏自己的地盘和饭碗，怕遭遇名誉和财产上的损失，因此不敢为众人堵破口。他们也不配为别人堵破口，因为他们自己身上的破口已经多得不可胜数。我们看得极清楚，教会中有那样多的破口，但传道的人在讲台上所讲的却是一些不关痛痒，不触犯人，但也不能帮助人的话语。众人因为有破口，已经临近危险的深坑，传道的人却对他们说，「平安了，平安了。」这样一来，信徒们不但不为自己的破口战兢恐惧，甚至根本看不见自己的破口，于是破口便越破越大，最后便破得像海那样大，再无法堵塞，极可怕的结局便不能脱免了。</p>
+<p>堵破口的人真是世界上的活宝贝阿！一国中有堵破口的人，这国便不至灭亡。一个教会中有堵破口的人，这个教会便不至败落。一个信徒有堵破口的人，在他旁边为他堵破口，这个信徒便不至堕落到不可收拾的地步。堵破口的人不说奉承谄媚讨人喜悦的话，只说正直规劝责备提醒的话。堵破口的人口中所出的言语如同良药，吃到嘴里虽然味苦，却是与人有极大的好处。因为他们所说的话能为人堵住罪恶的破口，免得这个破口越破越大，以致酿出大祸来。我国古人说，「良药苦口利于病，忠言逆耳利于行。故武王谔谔而昌，纣嘿嘿而亡。君无谔谔之臣，父无谔谔之子，兄无谔谔之弟，夫无谔谔之妇，士无谔谔之友，其亡可立而待。」也是这个意思。谔谔就是口出正直的言语。为君的没有口吐直言的臣仆，为父的没有口吐直言的儿子，为兄的没有口吐直言的弟弟，为夫的没有口吐直言的妻子，读书人没有口吐直言的朋友，不久便会灭亡。说直言的人便是堵破口的人。为君的有了破口，说直言的臣仆能为他堵塞。为父的有了破口，说直言的儿子能为他堵塞。为兄的有了破口，说直言的弟弟能为他堵塞。为夫的有了破口，说直言的妻子能为他堵塞。读书人有了破口，说直言的朋友能为他堵塞。可惜世界上说直言的人太少，因此人们的破口便越破越大了。</p>
+<p>作一个堵破口的人真不是一件容易的事阿。大多数人的心理都是喜爱听人对他们说奉承、谄媚、恭维、夸奖的话，却不愿意有人把他们的缺点过失告诉他们。他们认为这是侮辱他们，损害他们。他们爱护他们的罪恶，像爱护他们自己的子女一般，惟恐有人伤害它们，触犯它们。如果有人对他们说直言，责备他们的罪恶，他们便以这些人为仇敌，对这些人生恶感。因此堵破口的人存了善意去为别人堵破口，结果不但得不着别人的感谢，反倒惹来许多的误会、攻击、反对、辱骂。人都有肉体和肉体中的弱点，都不愿意遭遇别人的误会和攻击。这样一来，谁也不愿意去为别人堵破口了。</p>
+<p>作一个堵破口的人还有一样困难，就是自己必须没有破口。一个自己有破口的人不敢去为别人堵破口。他的良心不容许他去为别人堵破口，即使他昧着自己的良心去为别人堵破口，别人也会对他说，「你这自己有破口的人，还是先堵住你自己的破口，以后再来为我们堵破口吧。」一个自己犯罪的人不能责备人，不敢责备人，一个自己犯罪的人也不能被神使用。惟有从心里敬畏神，远离罪恶，遵行神的旨意的人，纔有资格有胆量去为别人堵破口。也只有这种人纔能被神所使用，去为别人堵破口，正如经上所说的──</p>
+<p>「我所拣选的禁食，不是要松开凶恶的绳，解下轭上的索，使被欺压的得自由，折断一切的轭么？不是要把你的饼分给饥饿的人，将飘流的穷人接到你家中，见赤身的给他衣服遮体，顾恤自己的骨肉而不掩藏么？这样，你的光就必发现如早晨的光，你所得的医治要速速发明；你的公义必在你前面行，耶和华的荣光必作你的后盾。那时，你求告，耶和华必应允；你呼求，他必说，我在这里。你若从你中间除掉重轭，和指摘人的指头，并发恶言的事；你的心若向饥饿的人发怜悯，使困苦的人得满足；你的光就必在黑暗中发现，你的幽暗必变如正午；耶和华也必时常引导你，在干旱之地使你心满意足，骨头强壮；你必像浇灌的园子，又像水流不绝的泉源。那些出于你的人必修造久已荒废之处，你要建立累代的根基；你必称为补破口的，和重修路径与人居住的。」（赛五十八6～12）。</p>
+<p>是，惟独离弃罪恶遵行神的旨意的人纔是神所喜悦的。他们为自己和别人所献上的祷告纔能蒙神的垂听。「你求告，耶和华必应允；你呼求，他必说，我在这里。」假使摩西不是遵行神的旨意为神所喜悦的人，神绝不会听他的呼求，因而宽容那些悖逆的以色列民。假使摩西不是离弃罪孽嫉恶如仇的人，他也绝不会那样因为百姓的罪大发烈怒，责备他们，惩治他们。这样，他便不能为他们堵破口了。堵破口的人必须在神和人的面前都有权柄。在神面前有权柄，因为神不能不听他们的祷告。在人面前有权柄，因为人不能不怕他们的责备。惟独离弃罪恶遵行神的旨意的人纔能有这种权柄，所以也惟独这样的人纔能作堵破口的。这样的人既有资格和权柄作堵破口的人，神的灵便感动他们，神的手便扶持他们，神也赐给他们充足的能力和勇气，使他们甚么都不畏惧，只是充满了爱神爱人恨恶罪恶的心，去为众人堵塞他们的破口。如果世界上多有一些这种堵破口的人，世界和教会的破口虽然很多，也不足虑了。</p>
+<p>茫茫大地，芸芸众生，到处都满了可怕的破口。堵破口的人在那里呢？堵破口的人在那里呢？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

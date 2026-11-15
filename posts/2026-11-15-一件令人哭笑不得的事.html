@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一件令人哭笑不得的事 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一件令人哭笑不得的事</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/8一件令人哭笑不得的事-04.mp3">🎧 一件令人哭笑不得的事（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/8一件令人哭笑不得的事-05.mp3">🎧 一件令人哭笑不得的事（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「在白发的人面前，你要站起来，也要尊敬老人，又要敬畏你的神；我是耶和华。」（利十九32）。</p>
+<p>「不可严责老年人，只要劝他如同父亲；劝少年人如同弟兄；劝老年妇女如同母亲；劝少年妇女如同姊妹，总要清清洁洁的。」（提前五1、2）。</p>
+<p>神给以色列民的律法，和使徒所写的教训，都是教导人要尊敬老人。我们只看一个人怎样对待老年人，便可以知道他的人品道德如何。我们看一个信徒是否尊敬老年人，便可以晓得他是否敬畏神。没有一个品格道德高尚的人对老年人傲慢无礼。没有一个敬畏神的人不尊敬老年人。看上文所引的这条律法说，「在白发的人面前你要站起来，也要尊敬老人，又要敬畏你的神；我是耶和华。」便知道神怎样要他的百姓敬畏他，也照样要他的百姓尊敬老年人。更使我们注意的，是他先说，「在白发的人面前你要站起来，也要尊敬老人，」以后纔说，「又要敬畏你的神。」按情理，他似乎应当先说，「要敬畏你的神」，以后再说，「在白发的人面前你要站起来，也要尊敬老人。」但他却将这两件事颠倒过来说，这是甚么缘故呢？我想必是因为尊敬老人是浅近易学的功课，敬畏神却是较深较难的功课。神要他的百姓先学那浅易的功课。如果一个人连这浅易的功课都学习不好，自然更不能学较难的功课了。我们所看见的事实也是告诉我们说，一个人如果不尊敬老人，他也一定不敬畏神。站在他面前，他的眼睛所看得见的老人，他尚且不知道尊敬，又如何能敬畏那位眼睛看不见的神呢？</p>
+<p>不但普通的人应当尊敬老年人，就连神的仆人们也应当尊敬老人。提摩太是神的一位青年仆人，是被神所拣选所使用的。他在神的教会中是一个领袖，而且是一个重要的领袖。保罗仍是教训他说，「不可严责老年人，只要劝他如同父亲；」又说，「劝老年妇女如同母亲」。保罗要提摩太看老年圣徒像父亲，看老年女圣徒像母亲。。儿子应当尊敬父母，保罗也要提摩太尊敬老年圣徒，像尊敬父母一样。连神的仆人都必须尊敬老年人，何况其它的圣徒呢？一个信主的青年人对任何老年人都当尊敬。在路上遇见熟识的老年人，应当行礼致敬。在甚么地方见熟识的老年人进来，应当起立让坐。老年人未曾坐下，不可自己坐下。与老年人同坐或同立的时候，总要坐立在老年人的下方。与老年人谈话，应当先用适宜的称呼招呼一下，以后再说话。不可与老年人争着说话，或走路。走路或进门出门的时候，当让老年人在前面走。与老年人说话，态度声调都当恭敬谦和。看见老年人拿着甚么重东西，应当替他们拿。看见老年人作甚么用力气的事，应当帮助他们作。老年人如果步履艰难，应当搀扶他们，免得他们跌倒。你怎样应当尊敬你的父母，也当照样尊敬一切老年人。</p>
+<p>在今日的教会中，我们看见一件令人哭不得笑不得的事，就是有些信徒因为想大家在神面前都是弟兄姊妹，所以他们中间的少年人对老年人也以弟兄或姊妹相称，甚至创出「老弟兄」和「老姊妹」的称呼来。一个青年人敢称一位老年人为「老弟兄」，「老姊妹」，实际这位「老弟兄」或「老姊妹」比那位青年人的父母岁数还大得很多。你若问他为甚么这样称呼老年人？他的回答是，「我们都是一位天父的儿子，所以大家都是弟兄姊妹。」他们忘记了他们还活在世上，还有人和人中间的种种区别──男女的区别，长幼的区别，尊卑的区别。当我们还活在世上的时候，我们绝不能也不可完全不顾这些。因为完全不顾这些，不但使我们的肉体大得活动的机会，而且要拦阻许多人，使他们不能信主，不敢信主，又要使神的名被人亵渎。再进一步说，不顾这些也是明显不合圣经中的真理，因为圣灵藉着保罗曾教训提摩太说，「要劝老年人如同父亲；劝少年人如同弟兄；劝老年妇女如同母亲；劝少年妇女如同姊妹。」这几句话不是明明的告诉我们，长幼应当有序么？不是明明告诉我们，青年圣徒待老年圣徒当像对父母那样尊敬么？不错，所有的圣徒在神面前都是弟兄姊妹，但你和你的父母都是基督徒，你总不能称你父亲为老哥哥，称你母亲为老姊姊罢？你既不能这样称你的父母，你也不能这样称那些老年的圣徒。一个年轻的信徒称呼一位老年的圣徒，或是用公共的称呼，称他为老先生，或某先生，或是用家族的称呼，称他为伯父，或叔父，称呼一位老年女圣徒，或是用公共的称呼，称她为老太太，或某太太，或是用家族的称呼，称她为伯母，婶母，姨母，姑母，都可以。要照着各人中间的关系和环境的情形，任择一种适宜的称呼。无论如何，绝不可用平辈的称呼。</p>
+<p>前几年我在一个地方被一位圣徒约去聚餐，在座的有六七位圣徒。其中有一位六十多岁的老先生，其余的人都是二十岁到四十岁中间的人。他们都称那位老先生为「老弟兄」。我听着真觉得刺耳。我当时问那位老先生的年岁，知道他已经六十多岁，又问一位最年轻的人的年岁，他回答说，他二十几岁。我又问他父亲多大岁数，他回答说五十几岁。我当时就告诉他，断不可称一位比他父亲岁数还大的老年人为老弟兄。我告诉他，应当称那位老年人为老先生，或老伯父，纔合理。还有一次我在某处遇见一位信徒，他同我谈话的时候，问我认识不认识某老姊妹。我回答他说，我想不起来。他告诉我说，那位老姊妹曾同我说过话，接着他又对我说，「那位老姊妹是家母」。我听了以后真觉得啼笑皆非。「老姊妹是家母」。这是甚么话？一个人信主，信得连伦常都不顾了，请问这种信徒给别人的影响是甚么？既称老姊妹，又何必再说家母，爽快就称老姊妹得了。请想这种事情是多么可气呢！</p>
+<p>礼记上有话说，「年长以倍，则父事之，十年以长，则兄事之，五年以长，则肩随之。」（礼记曲礼上）。这话是教导青年人遇见比自己年长一倍左右的人，便应当照父母那样尊敬事奉。世上的人无论有知识的，或没有知识的，遇见和自己的父母年岁不相上下的人，都知道称呼一声老先生，老太太，或称呼一声老伯父，老伯母。基督徒当中竟有些人称呼起「老弟兄」「老姊妹」来，这岂不是还不如不信的人？不信的人知道尊敬老年人，基督徒应当比不信的人更尊敬老年人。这纔能使不信的人对信主的人有良好的印象，也使神的名得到荣耀，这纔合乎圣经中的教训。</p>
+<p>有些老年人自己谦卑，愿意称青年人为弟弟，或妹妹；但青年人却不能因此便称呼老年人为哥哥，或姊姊。比方说一位六七十岁的老年人写信给一位二三十岁的青年人，称他为老弟，那是他自己谦卑，我们不能责备他。但那位青年人写回信的时候，却不能因为那位老年人称他为弟，便也以弟自居，回信便称呼那老年人为兄。他回信的时候仍当称老先生或老伯父，自称为晚生或小侄。不论老年人怎样坚持，愿意与他以弟兄相称，他总不能越分这样作。只许老年人自卑，愿意与青年人论平辈；总不许青年人自高，去与老年人论平辈。</p>
+<p>热心信主是极好的事，但我们总不可忘记我们还住在世界上，还需要通人情，还需要按着情理与人交接同处，还需要有作人当知道的礼节；尤不可在读经的时候，只看见一部分的真理，却不顾真理的其它部分。如果读圣经的时候只看见真理的一部分，并且不顾人情，不问世事，就在那里闭门造车，那样，不但会闹出「老弟兄」和「老姊妹」的笑话来，就是再发生比这个更令人啼笑皆非到三倍，五倍，七倍，八倍的事，也不是不可能的阿！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

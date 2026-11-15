@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>作智慧人呢？作愚昧人呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>作智慧人呢？作愚昧人呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/2往下扎根，向上结果/8作智慧人呢？作愚昧人呢？-04.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>若想到人待你的好处，凡与你同处过的人，或与你来往过的人，都待你有过好处。父母待你有恩情，那不必说了；就是你家中的人，你的亲戚、本家、邻舍、朋友、师长、同学、同事、引导你信主的人，和主里的弟兄姊妹们，谁不曾待你有过好处呢？你缺乏的时候，没有得过他们的济助么？你忧愁的时候。没有得过他们的安慰么？你幼小的时候，是谁帮助你的父母照料你，看护你？你读书的时候，是谁教导你，造就你？没有你的同学的介绍，你怎么会入到社会里作事？你初到一个地方作事的时候，一切的事都寻不着门径，若不是同事的指导帮助，你焉能有今日驾轻就熟的景况？若不是你属灵的父亲传福音给你，用真理生了你，你焉能得着神奇妙的救恩？若不是在主里的众弟兄姊妹用主的爱提携你，扶助你，你焉能在圣道上站立到今天？不用说这样多的好处，这样厚的恩情，就是别人在你饥饿的时候，留你吃过一顿饭，在你干渴的时候，曾送给你一杯凉水喝，在你疲乏劳顿的时候，留你在他家里住过一夜，在你感觉寒冷衣服不够暖和的时候，将他的棉衣借给你穿了一天，当你卧病在床上的时候，来看过你一次，在你忧苦流泪的时候，向你说过几句安慰的话，你在路上旅行的时候，得过一次别人的照料，你在手中艰窘周转不灵的时候，别人曾借给过你几圆钱，你在遭遇甚么特别事故需要保证的时候，别人为你作过一次保，你有甚么不明白的事，得过人一次的指教，这也都是别人待你的好处和恩情。你若真这样数算起来，凡与你同处过或有过来往的人，大约没有一个人不曾待你有过好处，也就可以说，没有一个人不是你的恩人。这样，你自然觉得人人爱你，人人可爱，人人是你的恩人，是你的朋友。你若常这样想，如何能不快乐？不但这样，你既觉得人人爱你，人人可爱，当然你就爱那些人，那些人得了你的爱，自然也就反过来爱你。你以人人为可爱，为朋友，人人也以你为可爱，为朋友。这样，你要处处得着人的同情、爱护、安慰、帮助。你将要成为何等明智何等有福的人呢！</p>
+<p>反过来说，若想到人待你不好的地方，凡与你同处或与你来往过的人，都难免有过待你不好的地方。同事同学在一处日久，总免不了彼此有些冲突，有些意见；亲戚本家常有来往，总免不了有些彼此亏负的地方；朋友邻舍之间，语言失检，礼貌不周，这更是很平常的事；一同信主的圣徒都有肉体，都有软弱，发生误会和意见，也是在所难免的事。不用说这些人，就是生你的父母那样爱你，也常有对不起你的地方；有时你的母亲应许给你买一样东西，后来竟食言，未曾给你买来；也有时你的父亲在外面同人吵了嘴，回到家中竟对你发气；还有时你的父母因为误会，竟责打了你，惩罚了你，枉了你。你若一一的数算起来，恐怕凡与你同处过或与你常有来往的人，没有一个未曾亏负过你，也可以说没有一个人不是你的仇敌。这样，你自然觉得人人恨你，人人可恨，人人是你的仇敌。你若这样想，如何能不痛苦，不难过，不但这样，你既觉得人人恨你，人人可恨，当然你就恨那些人，那些人受了你的恨，自然也就反过来恨你。你以人人为可恨，为仇敌，人人也以你为可恨，为仇敌，你的心中终日充满了怨恨、忿怒、痛苦、不安；与你来往的人，也都仇视你，恨恶你，你的人生将要痛苦可怜到甚么地步呢！</p>
+<p>人都待你有过好处，也都有过不好的地方。多想人待你的好处，你的心中便充满了感谢与快乐，并且将人人都造成你的朋友，你爱人，人爱你；多想人待你不好的地方，你的心中便充满了仇恨与痛苦，并且将人人都造成你的仇敌，你恨人，人恨你。过快乐的人生，自己享福，还使别人得福，或过痛苦的人生，自己受苦，还使别人受苦，就在你自己一转念之间，便可决定。</p>
+<p>明白了这个道理，我们应当怎样忘记别人待我们不好的地方，只想别人待我们的好处。别人待我们有八分的不好，都把它们丢在背后，别人待我们有一分的好处，也要常常思念。纵使别人待我们有一百分的不好，只有半分好处，我们也当想念这半分好处，忘记那一百分不好的地方。谁能这样作，谁便是世界上第一等聪明人，因为他会自己享福，也会使别人得福。</p>
+<p>可叹！可叹！世上大多数的人（许多基督徒也在内）不但不这样作，反倒专一记念别人待他们不好的地方，将别人待他们的好处一概丢在背后。别人待他们无论有多少好处，他们总觉得是别人当尽的本分，是他们应当得的。别人待他们只要有一样不好的地方，便将以前多少好处一概抹杀，怪罪人，恨恶人，仇视人。别人如果待他们只有不多的好处，或是完全没有好处，那更不用说了。结果自己终日受痛苦，还使许多人与他们一同受痛苦。世上充满了痛苦祸患，这也是一个最大的原因。这些可怜的愚人到甚么时候才能醒悟呢？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

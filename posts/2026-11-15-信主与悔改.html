@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>信主与悔改 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>信主与悔改</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2信主与悔改-01.mp3">🎧 信主与悔改（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/1埋葬旧人 ，活出新样/2信主与悔改-02.mp3">🎧 信主与悔改（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「约翰下监以后，耶稣来到加利利，宣传神的福音，说，『日期满了，神的国近了；你们当悔改，信福音』。」（可一14、15）。</p>
+<p>「众人听见这话，觉得扎心，就对彼得和其余的使徒说，『弟兄们，我们当怎样行？』彼得说，『你们各人要悔改，奉耶稣基督的名受浸，叫你们的罪得赦，就必领受所赐的圣灵』。」（徒二37、38）。</p>
+<p>「你们也知道，凡与你们有益的，我没有一样避讳不说的，或在众人面前，或在各人家里，我都教导你们；又对犹太人和希利尼人，证明当向神悔改，信靠我主耶稣基督。」（徒二十20、21）。</p>
+<p>上面所引的三段经文中的第一段，是主耶稣开始传道的时候对犹太人所发的呼声。第二段是彼得在五旬节对聚在耶路撒冷从各处来的犹太人所传的福音。第三段是保罗在米利都对以弗所的众长老所说的话语。这三段话都是新约中最重要的记载，因为它们不但说明了主耶稣和那位犹太人的使徒彼得并那位外邦人的使徒保罗所讲的要道完全是一致的，而且也说明了他们所讲的要道的大纲不外乎两件事，第一件是悔改，第二件是相信耶稣替罪人死的福音。对这第一件事，他们三位所说的话是一样的──悔改。对第二件事，他们三位虽然用了不同的说法，但意思却是一样。主耶稣说，「你们当悔改，信福音。」福音是甚么呢？保罗告诉我们说，「弟兄们，我如今把先前所传给你们的福音告诉你们知道，这福音你们也领受了，又靠着站立得住。……我当日所领受又传给你们的，第一，就是基督照圣经所说，为我们的罪死了，而且埋葬了，又照圣经所说，第三天复活了。」（林前十五1～4）。信福音便是信耶稣的代死，信耶稣的复活。反过来说，信耶稣便是信福音了。使徒彼得说，「你们各人要悔改，奉耶稣基督的名受浸。」若只看字句，似乎他没有说信耶稣。但我们若仔细思想一下。奉耶稣的名受浸，岂不是信耶稣为救主以后便接续着去作的一件事么？不信耶稣又焉能奉他的名受浸呢？受浸是表示与主耶稣同死、同埋、同复活；那样，当然需要先信主耶稣的代死、埋葬、和复活了。保罗说，他「对犹太人和希利尼人，证明当向神悔改，信靠我主耶稣基督。」这句话不需要解释，便可以看出它是与主耶稣和彼得所讲的完全相同。</p>
+<p>真诚信主耶稣的人必定先在神的面前悔改。反过来说，必须在神面前悔改，纔提得到信主耶稣。「悔改」里面不一定包括信耶稣，但「信耶稣」里面一定包括着悔改。有谁不承认离弃自己的罪却能信耶稣呢？有谁甘心愿意活在罪里，死在罪里，却肯作耶稣的门徒呢？我们传道的时候一定要传耶稣为罪人死的福音，但我们需要先使人知道他们的罪，并他们因犯罪所招来的痛苦和结局。我们必需招呼他们悔改归向神。当他们看见他们自己的罪，为他们自己的罪自责、自恨、自惭、自卑的时候，我们接续着便把神给他们所设立的救主和救法介绍给他们。当他们在神面前悔改，承认离弃自己的罪，用信心的眼睛仰望耶稣的时候，他们便得赦免蒙拯救了。因此所有真实信了耶稣的人都是在神面前诚心悔改过的，换一句话说，他们都是承认离弃了自己的罪恶的。只有诚心悔改承认离弃了罪恶的人纔能真信耶稣。悔改与信主不但是相连着的事，而且悔改还是在信主以前。</p>
+<p>不幸得很，许多传道的人竟把福音讲错了。他们只讲信耶稣得救，却没有讲悔改的道理。他们未曾叫人看见自己的罪，更未曾叫人承认离弃他们的罪。他们虽然讲了耶稣为罪人死的事迹，但因为那些听的人既没有看见自己的罪，更没有在神面前认罪悔改，自然不会信靠耶稣。在这种情形之下，如果他们中间还有人表示信耶稣，愿意加入教会，请想那些人是甚么样的人呢？他们中间最好的也不过是钦佩耶稣那种杀身成仁舍生取义的精神，或是景仰耶稣那种高尚的道德，伟大的人格。比这个更低一些的人，就更不用说了。当传道的人问他们信不信耶稣为罪人死的时候，他们回答说「信」。在他们也许是真以为他们是信了耶稣，可是实际他们只是「知道了耶稣的事迹」而已。殊不知信耶稣是一件事，知道耶稣的事迹另是一件事。信耶稣的人必须知道耶稣的事迹，知道耶稣事迹的人却不都是信耶稣的。知道耶稣的事迹是头脑里晓得了关于耶稣的一些记载，信耶稣乃是心中真实靠赖他，并且呼求他的拯救。我们不能因为知道耶稣的事迹而得救。我们得救乃是因为诚心信靠他。可惜许多人以为自己知道了耶稣的事迹便是信了耶稣。更可惜的是许多传道的人也以为那些知道了耶稣的事迹的人便都是信了耶稣的。有一件很普遍的事实可以证明我所说的，就是许多教会考问那些要求受洗或受浸的人的时候，所发的问题多是一些圣经中的知识方面的问题。只要他们能答得出这些问题，便可以被允许受洗或受浸。从此以后，他们便被人承认为信耶稣的人了。至于他们有没有在神面前悔改？有没有真心信靠主耶稣？便少有人过问了。</p>
+<p>不查考一个人曾否确实向神悔改，曾否真心信靠耶稣，只考问他一些圣经中的知识，便接纳他加入教会，这种情形已经足够使人痛心的了。可是还有些教会连这件事也不作。他们收人的时候只求多多益善。劝人、拖人、勉强人，叫他们到自己的教会里来受洗或受浸。对于那些在世界上有地位、有势力、有金钱、有声望的人，更是极尽拉拢、谄媚、巴结、奉承之能事，设法把他们弄到教会里来。我看见许多教会大批的收教友，受洗或受浸的时候往往一次便有几十、几百人，心中便为他们担忧惧怕。可是那些教会的领袖们却得意洋洋，认为神在他们中间行了大事。及至详细调查一下那些人信主的经过，真实悔改信了主的人有时连十分之一都没有。清楚知道耶稣的事迹的人已经可算为他们中间的优秀份子。此外尚有盲听盲从的，因为人的情面难却而加入教会的，还有为希冀获得物质方面的好处而表示信主的，为达到求婚的目的而作基督徒的，为求上司或主人的欢心而受洗或受浸的，为想在教会中出风头求虚荣而请求教会接纳的。这些人加入教会根本就不是为信主，乃是别有希图，可是教会的领袖仍是照样的收他们，承认他们是基督徒。更可叹的，就是作这些事的不只是那些以传道为职业并不真心为主作工的人，就连许多热心为主作工的人中间也有不少这样作的。这种作法的结果是甚么呢？教会的册子上增加了许多人名，礼拜堂中的捐款数目扩大了起来，传道的人被许多人誉为「得人的渔夫」、「大布道家」，同时麦田中也多长了一些稗子，「无而为有，虚而为实，不信而以为信的教徒」，大批的加入了教会，神的名受了世人的亵渎，教会变成了「魔鬼的巢穴」。教会腐败堕落的原因虽然不止一个，但大批的收纳那些未曾悔改未曾信主的人加入教会，实在是一个主要的原因。为神作工的人若不在这一点上悔改，教会的前途绝不会光明的。</p>
+<p>我再大声疾呼警告一般自认为基督徒的人们，请你们仔细看看自己究竟在神面前真诚悔改信了耶稣没有。如果你们仍是生活在许多罪恶中，意念言语行为仍是充满了不信、不义、诡诈、谎言、贪婪、淫乱、欺骗、盗窃、舞弊、营私、嫉妒、仇恨、分争、结党、倾轧、排挤、欺压、残暴、自私、自利、狂妄、骄傲，并且不知道为这些事自惭自愧，自责自恨，不知道在神面前认罪求赦，不想脱离这些罪恶的捆绑，不靠着耶稣进到神的面前求他的怜悯和拯救，仍这样继续着活在罪恶中，我就告诉你们说，你们一定未曾悔改信主。你们千万不要自欺，以为自己是已经信了主的人。不但这样，你们既常听道，而且知道这些事是神所憎恶的，又承认自己是信耶稣的人，却仍像那些未听道不信主的人一样去犯罪，你们的罪便比他们更重得多，因此也一定要受更重的刑罚。你们若在今日幡然悔悟，急速向神悔改，承认离弃你们的罪，靠着主耶稣进到神面前，求他的怜悯和拯救，一点还不算迟。但你们若仍硬着心，强着项，名义上是基督徒，实际却生活在你们的罪恶和不信中，你们就当记得，迟早有一日你们要后悔自己欺骗了自己，毁灭了自己。我不忍看见你们落到那种地步，所以今日纔大声疾呼，警告你们，希望你们醒悟。你们肯接受我的警告么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

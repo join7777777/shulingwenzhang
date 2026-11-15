@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>奉献与传道 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>奉献与传道</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/2往下扎根，向上结果/2奉献与传道-06.mp3">🎧 奉献与传道（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/2往下扎根，向上结果/2奉献与传道-07.mp3">🎧 奉献与传道（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「弟兄们，我以神的慈悲劝你们，将身体献上，当作活祭，是圣洁的，是神所喜悦的，你们如此事奉，乃是理所当然的。不要效法这个世界，只要心意更新而变化，叫你们察验何为神的善良纯全可喜悦的旨意。」（罗十一1、2）。</p>
+<p>今日有些热心的信徒在讲奉献的真理的时候，常把两件不同的事混成了一件事，这两件事就是奉献与传道。他们说，「我们得了神那样多那样大的恩惠，不应当再为自己活，应当把自己的身心完全奉献给神，因此我们不当再去作世界上的事，为自己谋求衣食享受。我们应当奉献我们整个的身心光阴，去为神作传道的事工。」许多热心有余知识不足的信徒听了这样的教训深深的受了感动。他们觉得他们实在应当这样奉献，因此便抛弃了自己本来的学业、事工、责任、家庭，去作传道的准备。学生退了学，职员辞了职，商人停了业，工人休了工，治家的妇女丢下了家务和子女。他们去入神学院，去读圣经，去担任传道的事工。过了不久，他们中间的一些人发现他们并没有传道的能力和恩赐，同时他们的家庭和事业仍十分的需要他们照料，他们不得已再回到自己原来的岗位上去。在他们回去以后，他们又感觉不平安。他们觉得他们已经是奉献了的人，如今不传道而作着世上的事工，无异乎以色列人从迦南地又回到埃及去。他们自责，他们惭愧，他们痛苦，他们悲哀。在这种景况中，他们既不能传道，又作不好自己的事工，上不着天，下不着地，悬挂在半空中，那种苦味真不能形容。我见过不少这种信徒，我爱他们的忠诚，我敬他们的热心，但我不能不哀怜他们的无知。我觉得这些人陷入这种可怜的地步并不是他们的错，乃是错在一种不正确的教训上，就是把奉献与传道混为一谈的那种教训。</p>
+<p>完全奉献与专一传道是两件绝对不能混在一处的事。专一传道的信徒一定需要先完全奉献，但完全奉献的信徒却不必须都去专一传道。每一个得救蒙恩的人都应当完全奉献，但只有少数特别蒙了神差遣的人纔应当去专一传道。罗马书是写给一切圣徒的。保罗在第一章七节说，「我写信给你们在罗马为神所爱奉召作圣徒的众人。」在第十二章一节他对他们说，「弟兄们，我以神的慈悲劝你们，将身体献上，当作活祭，是圣洁的，是神所喜悦的，你们如此事奉乃是理所当然的。」罗马所有的圣徒都应当把身体献上，但我们决不能说罗马所有的圣徒都应当专一传道而不作别的事工。今日各地的圣徒也都应当把身体献上，但我们也决不能说所有的圣徒都应当专一传道，而不作其它的工作。完全奉献是说把自己奉献在神的手里，以后不再是属自己的，乃是完全属神的，所以无论甚么事自己都不作主，只容神作主；神吩咐我走那一条路，我便走那一条路，神命令我作甚么工，我便作甚么工，神把我放在那里，我便在那里，不再有自己的选择，不再有自己的计划，不再有自己的安排；神要我经商，我便经商，神要我作工，我便作工，神要我教授生徒，我便教授生徒，神要我看护病人，我便看护病人，神要我作邮差，我便作邮差，神要我当院长，我便当院长，神把我放在家庭里，我便治家，神把我放在门房里，我便看门，神要我下乡传福音，我便下乡传福音，神要我站在讲台上讲道，我便站在讲台上讲道。奉献的人没有选择，只有顺服。如果你说，我决定不再作别的事，我决定专一传道，那便证明你还没有完全奉献，因为一个完全奉献的人是不应当说这句话的。</p>
+<p>神的旨意是要他所有的孩子们都把自己奉献给他，然后他照着他的美旨把他们放在不同的地位，不同的环境，不同的职业中，去服事他。他放一些人在商界里，放一些人在工界里，放一些人在教育界里，放一些人在政界里，放一些人在医院中，放一些人在农场上，放一些人在家庭中，此外他也召选一些人去专一为他传道，为他牧养他的羊群。这些信徒所作的事业虽然不同，可是如果他们都在自己的地位事工上殷勤忠心，好好的事奉神，荣耀神，他们便都是作神的工，都是服事神，都得神的悦纳和夸奖。我们决不当看传道的圣徒比作其它事工的圣徒更高尚，更属灵。我们也决不当看除了传道的工作以外，其它的事工都是属世界的，属肉体的。一个在世界工作岗位上工作的圣徒，如果存着事奉神的心去作，他得神的喜悦决不在一个传道的人以下。反过来说，如果一个传道的人不忠心，不爱神，只为衣食或虚荣而传道，他在神面前实在还远不及那在其它职业上忠心事奉神的人。</p>
+<p>在许多热心信主的人心中有一个极错误的观念，就是他们把信徒人生中的事务分为两种：一种他们认为是属灵的，就如祈祷、读经、歌诗赞美神，为主传扬福音，治理教会，拜访圣徒，登台讲道；另外一种他们认为是属世界的事，就如治理家务，教育子女，作饭、洗衣、经商、作工、耕地、诊病、教读，在公事房里办事，在社会里服务。他们称前者为圣工，称后者为俗事。这种错误的观念所造成的结果是甚么呢？热心的信徒都想撇下自己的家庭事业，去专心以祈祷传道为事。那些不能撇弃家庭事业的人在作事的时候便都垂头丧气，无精打彩。他们自恨不能撇弃世俗专心事奉神。他们羡慕那些专一传道的人。在这种情形之下，他们的工作当然不能作到好处。如果他们没有这种错误的观念，他们本来可以藉着他们所处的环境，所作的事工，服事神，荣耀神，但因为这种错误的观念，便使他们不能好好的事奉神，而且受了许多苦痛；同时那些撇弃家庭事业但没有奉差遣的人，又弄出我们上文所提的那种可怜的结果来。这是多么可惜阿！</p>
+<p>我们现在应当帮助圣徒知道奉献的必要，也当帮助他们明白奉献过的人便完全是属神的。无论作甚么事，只要存心是为神而作的，便都是服事神。牧养教会的，传扬福言的，耕田的，作木匠的，作泥水匠的，作铁工的，当邮差的，开汽车的，拉人力车的，作小买卖的，当经理的，学徒的，当警察的，作法官的，作行政官的，作医生的，作看护的，当教员的，驾驶飞机的，收发电报的，看门的，作饭的，洗衣服的，作律师的，作会计师的，治理家务的，只要他们都把自己奉献，都存着事奉神的心去作他们的本分，作事不是为求发财，不是为求虚荣，也不是追求自己的享受，乃是为讨神的喜悦，为荣耀神的名，为使别人得福，他们便都是为神作工，他们所作的工也就都是神圣的工作，属灵的工作。有些教会称传道人为圣品人。圣经里并没有这个称呼。如果这个称呼是指着服事神的人说的，我认为有些瓦匠、木匠、车夫、仆役、农人、医生、铁匠、护士、教员、小商人，比那些称为神父、会长、牧师的，也许更配称为圣品人。</p>
+<p>我们并不拦阻信徒献身专一去作传道的工作。现在世界各处都需要一些把一切事务抛下专一去为主传道作工的人。但我们却不愿意人把真理讲错，以致使许多热心的信徒受了损害和打击。因着世界和教会的需要，神确是在每一个时代都选召一些人，兴起一些人来，使他们「撇了网，别了父亲」，丢下了一切，去作神的工，去传神的话，去牧养他的羊群。神会把他的呼声放在他们心中，招呼他们，豫备他们，差遣他们，用他们去作工。也有时神藉着他的仆人把这种呼声传达出来，送到他所选召的人耳中。但我们决不可用人的力量和方法，去替神选召人，差遣人。这种被人选召被人差遣的人不但作不了神的工，反倒毁坏了神的工，不但不能荣耀神，反倒使神受了羞辱。为神的道和工作大发热心固然是极好的事，但如果不按着真知识发热心，常是会演出极不幸的结果来。我们真不可不加注意。</p>
+<p>今日的教会中太缺少好的传道人，也同样的缺少把自己完全奉献给神的圣徒。我们希望多有真实被神选召被神差遣的传道人，我们同样希望多有完全奉献的圣徒。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

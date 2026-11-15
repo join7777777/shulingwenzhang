@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>谈谈为人作保 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>谈谈为人作保</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·灵食</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/10谈谈为人作保-01.mp3">🎧 谈谈为人作保（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/3三、灵食/3正对弊端，圣徒药石/10谈谈微软作保-02.mp3">🎧 谈谈为人作保（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「我儿，你若为朋友作保，替外人击掌，你就被口中的话语缠住，被嘴里的言语捉住。」（箴六1、2）。</p>
+<p>「为外人作保的必受亏损；恨恶击掌的却得安稳。」（箴十一15）。</p>
+<p>「在邻舍面前击掌作保，乃是无知的人。」（箴十七18）。</p>
+<p>「谁为生人作保，就拿谁的衣服；谁为外人作保，谁就要承当。」（箴二十16）。</p>
+<p>「不要与人击掌，不要为欠债的作保。你若没有甚么偿还，何必使人夺去你睡卧的床呢？」（箴二十二26、27）。</p>
+<p>为人作保是社会里常有的事，也是许多纠纷祸患的起源。一个不信的人轻易为人作保，以后受了连累，不过是自己受损失罢了。一个基督徒如果因为代人作保，受了连累，除了自己受损失以外，还要使神的名受羞辱，这是多么严重的事阿！</p>
+<p>人心是何等诡诈的东西！一个人求你为他作保的时候，苦苦的哀求你，你因为爱他的缘故，便为他作了保。谁料到他后来竟狠心陷害你，使你受到无穷的连累呢？如果他向你借钱，你手中也有钱，当时就借给他，他存心不良，竟赖债不还，或是远远逃走，你不过是自己受了一些金钱的损失而已。如果你为他作保，他存心不良，竟赖债不还，或是逃避不知去向，你当然必须负责代他偿还，但你的手中却没有这笔钱，那就只好使人夺去你睡觉的床，或是破你的产代他还债了。如果你破了产仍不能偿还，那就只有为他的缘故去坐监了。你想一个基督徒如果遭遇这种事，除了你自己受的损失以外，还要使神的名受多大的羞辱呢？</p>
+<p>许多人因为这样代人作保，受了连累，是因为他们没有想到他们作了保以后就必须负起极大的责任来。他们想，为人作保有甚么关系？他们以为这就如同请人吃一次茶那样简单。及至受了连累，这纔明白作保的关系是多么重大，但是已经太迟了！</p>
+<p>当然我们不能说求我们作保的人每一个都是存心不良，有意骗人。有许多人向人借贷，满心豫备到时候偿还。但是世上的事绝不会像一般人所料想的那样简单。事情的变化常是出乎人的意外。到了时候竟会使人有心无力，徒唤奈何。譬如说，一个人向人借了一笔款，办理婚丧大事，他豫备在二年之内竭力撙节，到第二年年终，足可以偿还所负的债。不料几个月以后，忽然失了业，度日尚且艰难，更不用提还债了。也许这个人是一个最可良最忠实的人，他绝没有存恶意要借债不还，但是事实却不容许他还债，可又有甚么法子呢？再譬如说，一个人向别人借一笔款去作买卖，他本豫料着这宗买卖在年终足能大大获一些利。及至他作了不久，忽然因为行情的改变，使他不但未曾获利，反倒赔了本。他毫无亏负人的意思，可是事情演到这种地步，他想不亏负人，也办不到了。再譬如说，一个人需用二千圆钱，因此向别人借贷。他本来有五千圆被别人借了去，应许在明年归还。他向人借这二千圆的时候，应许人说，到收回那五千圆的时候，一准归还这二千圆。不料本年夏季欠他五千圆的那个人忽然破了产，或是忽然离了世，那五千圆竟无望归还，因此他这二千圆也连带着没有了着落。世上的事有许多就是这样一点不能由人计算，如果你为一个人作保，你必须想到这一切事。你若不能负起这一切的责任来，就不要轻易为人作保。当然如果你同一个人很熟识，你很信任他，而且很愿意帮他的忙，纵使他到时不能偿还，你也甘心替他偿还，就是为他破产，也满心情愿，那样，你就可以放心为他作保，不然，你就必须在为他作保的时候十分审慎。</p>
+<p>除了关系钱财为人作保以外，别人就一种职业，或入一个学校读书，请你作保证人，也需要同样的谨慎。如果一个人不是你素日所深认识的，你就不要轻易为他作保。假使这个人的品行不端正，以后发生了意外的事故，你除了必须赔偿别人的损失以外，也许还要使你的名誉和信用都受损害，连带着还要使神的名受羞辱。作这种保所负的责任，一点不在为钱财的事作保以下。</p>
+<p>为别人作保受连累的原因不外乎以下的几样：第一，是作事不知慎重。有些人很热心帮别人的忙，有人求他为他们担保，便慨然允诺。他一点不详细想一想作保的人所负的责任是何等重大。别人看这个人容易求，便都来求他帮忙，不可靠的人便乘机利用他，于是他便因此多受连累，多遭祸患了。第二，是作事太顾情面。有些人面皮很薄，别人无论求他们甚么事，总不好推辞。当人求他们作保的时候，或者他们也想到了作保的关系是何等重大，想到了将来也许要受连累，但他们总不好意思拒绝人的请求。这种顾情面的弱点，就使他们受了极多的痛苦。第三，是因为有贪心，以致被人利用。有人要求他帮忙作保以前，先给他一点利益。他因为贪爱好处，在人求他作保的时候，就不能推辞，一方面是因为得过别人的好处，不能不去为人帮忙，另一方面也许还希望以后再多从人得一些利益。在这种见利而不见害的情形之下，便放胆为人作保了。谁想到吃了恶人的饵，便上了恶人的呢？</p>
+<p>我认识一位信徒，他在世的时候曾开了一个小商店，生意并不太好，仅仅能赡养家庭。一次有一个他所认识的人（还是一个称为基督徒的人），到他家中来与他谈谈，临走的时候给他的小孩子几圆钱。这位信徒因为生活不甚宽裕，看这几圆钱很有些用处，便不免生一点贪心。过了些日子，那个人又来拜访他，而且又给他的小孩子一点东西，他便因此发了软弱。再过几天，那个人又来访问他，请他打一个铺保，他因为受过那个人的好处，而且还希望以后再从那个人得些帮助，便为那个人作了保。谁想到过了没有几天，那个人因为造假契行骗，被人发觉，远远逃去。受害的人便来找这个保人，把他扭送到法院。他到这时方醒悟是受了坏人的欺骗，但已经后悔无及。结果破了产还不够抵偿被害人的损失，又坐了几个月的监。及至出监以后，生活便遭遇了空前的困难。他自己告诉我说，他受这次大害，就是因为存了一点贪心。「人见利而不见害，鱼见食而不见」，这两句话正好为这位信徒写照了。</p>
+<p>也许有人说，「如果人人都这样慎重，不为别人作保，那样，不是使许多遭遇困难的人无路可走，无处求帮了么？谁也保不住有遭遇意外的时候。谁到一个地方就事，或入一个学校读书，也不免需要一个保证人。如果人人都不肯为人作保，那不是太残忍，太自私了么？」不，我并未曾说绝对不可为人作保，我乃是说「不要轻易为人作保」。绝对不为人作保，实在是太残忍太自私的行为。但不轻易为人作保，不但可以保守自己免受许多的连累，而且又能帮助别人少犯许多罪，少受许多苦。如果人人都知道谨慎，不轻易作保，那些想要利用别人行骗的人，可以少犯许多罪，少欺骗许多人，那些想要借贷去作投机的买卖的人，和那些为一点虚荣去借钱摆场面的人，可以少犯许多贪财求荣的罪，而且少受许多痛苦和烦恼。实在说起来，一百个借债的人中间，不一定有十个人是必须借债的，也许连五个人都没有。许多人是为想要投机发财而借债，许多人是为贪慕虚荣而借债，许多人是为挥霍放荡而借债，还有许多人以借债当作了家常便饭。如果人人都不轻易为人作保，人人都不轻易借钱给人，世界上可以减少许多罪恶，社会中可以减少许多纠纷，法庭中可以减少许多案件，监狱里可以减少许多囚犯。不轻易为人作保的人不但救自己免了许多祸患，而且救别人免了许多祸患。不轻易作保并不是残忍自私，轻易为人作保纔真是残忍自私呢。</p>
+<p>不但这样，不轻易为人作保正是勉励人作诚实可靠的人。如果人人为别人作保的时候，都要好好察验一下被保的人是否诚实可靠，假若素日他们言行不诚实清洁，没有良好的信用，便不为他们作保，那样，一个人为了将来一旦有事能博得别人的同情帮助，便不能不敦品励行，建设一种好的信用。不这样，便不能希望有人出来帮助他。同时那些素日言行不诚实，在人中间没有好名誉，没有好信用的人，到处得不着别人的同情，遇见难处和需要，没有人肯为他们作保，这种情形足能警戒许多人，使人不敢再蹈他们的覆辙。不轻易为人作保正是鼓励别人向善，岂单是只为保守自己免受连累呢？</p>
+<p>我并不是教导信徒总不要为人作保，我乃是说「不要轻易为人作保」。许多时候我们应当为人作保。一个诚实殷勤的人谋到一个职业，或一个品行端正殷勤向学的青年，要入一个学校读书来请我们作保证人，或是一个我们素日深深认识而且确实可靠的人，偶然有甚么事来求我们作保，我们一定应当帮助他。不过在为一个人作保之前，要好好察验一下这个人是否诚实可靠？更要想一想你能否为他负完全的责任？也要考虑一下，如果有一日发生意外的情形，你能不能为他忍受一切的损失？你会不会在那信靠你的人面前失去信用？如果这些问题你都好好考虑过，你发觉这个人确实需要你的帮助，各方面你也都有充分的准备，然后去为他作保，那种保便作得有价值了。一个信徒不允许别人甚么事就罢了，如果允许了，就当负责任一直负到底。一个基督徒说出一句话，应当像签字盖章那样可靠，像立一份合同那样不能更改。无论甚么事，允诺了别人以后，无论受多大的艰难和损失，都不可食言，不可卸脱责任。世界上需要这种人，教会中需要这种人。惟有这种人纔能荣耀神，惟有这种人纔能帮助人。这种人是世上的珍宝。我希望阅者都作这种人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
