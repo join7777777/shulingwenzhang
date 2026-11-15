@@ -82,6 +82,16 @@ padding:1px 6px;border-radius:6px;color:var(--accent)}
 color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
 .read-tools button:hover{border-color:var(--accent)}
 .read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.volnav{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 2px}
+.vbtn{padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);
+color:var(--muted);font-size:13px;text-decoration:none}
+.vbtn:hover{border-color:var(--accent);color:var(--accent)}
+.volsec{margin-top:24px}
+.voltl{font-size:21px;font-weight:900;color:var(--head);margin:18px 0 4px;padding-left:12px;
+border-left:5px solid var(--accent);display:flex;align-items:baseline;gap:10px;scroll-margin-top:76px}
+.voltl small{font-weight:400;color:var(--muted);font-size:13px}
+.toast{position:fixed;left:50%;bottom:64px;transform:translateX(-50%);background:#242A38;color:#fff;
+padding:10px 18px;border-radius:999px;font-size:14px;z-index:9999;box-shadow:var(--shadow)}
 </style></head>
 <body>
 <div class="gate-ov" id="gate-ov" style="display:none">
@@ -196,6 +206,7 @@ else{err.textContent="口令不正确";}
 <button id="rt-plus" title="增大字号">A+</button>
 <button id="rt-minus" title="减小字号">A-</button>
 <button id="rt-bold" title="加粗开关">B</button>
+<button id="rt-share" title="复制免密分享链接">分享</button>
 </div>
 <footer>© 2026 · 静态博客</footer>
 <script>
@@ -213,6 +224,17 @@ bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
 paint();
 document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
 document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+var sp=document.getElementById("rt-share");
+if(sp){sp.addEventListener("click",function(){
+var url=location.origin+location.pathname+"?password=7777777";
+function done(){var t=document.createElement("div");t.className="toast";
+t.textContent="免密链接已复制，可直接分享";document.body.appendChild(t);
+setTimeout(function(){t.remove()},1800)}
+if(navigator.share){navigator.share({title:document.title,url:url}).catch(function(){})}
+else if(navigator.clipboard&&navigator.clipboard.writeText){
+navigator.clipboard.writeText(url).then(done,function(){prompt("复制链接:",url)})}
+else{prompt("复制链接:",url)}
+})}
 apply();
 })();
 </script>
