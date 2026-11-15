@@ -29,7 +29,7 @@ POSTS_DIR = ROOT / "posts"
 DIST = ROOT / "dist"
 
 # ---- site config (edit freely) ----
-SITE_NAME = "述灵文章"
+SITE_NAME = "属灵文章"
 SITE_SUBTITLE = ""
 SITE_AUTHOR = "shuling"
 SITE_PASSWORD = "7777777"  # client-side gate for the published site ('' = no gate)
