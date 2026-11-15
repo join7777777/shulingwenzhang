@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个青年女子的悔声 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个青年女子的悔声</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·2四悲剧</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/2四悲剧/3一个青年女子的悔声.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>「唉！我绝未料到会有今天这种景况！两年以前的今天，我不是还和两个爱主的同学在月光之下坐在校园的青草地上谈着话么？那时我的心是何等纯洁！我对主的爱是何等真挚！我同两位爱主的同学谈论我们在离校以后愿意完全随从神的引导，善用我们一生的光阴服事神，并为神的缘故服事人。我们三个人对于职业有着三种不同的选择，但我们向着神却是抱着同一的心志。两年的时光虽然过去了，当时的情景却如同在眼前一般。我巴不得我这两年的经过完全是一场梦，现在醒来还是睡在学校的宿舍里。可惜不是！唉！两年的事我真不忍回想了！</p>
+<p>「魔鬼诱惑人的方法是多么可怕呀！但是我不能怪么魔鬼，因为他虽然诱惑我，但是随从不随从，权柄到底还是在我手中阿。如果我不受他的诱惑，他又能作甚么呢？我不能怪魔鬼，还是怪我自己罢！</p>
+<p>「唉！我怪我自己太大意了！我因为自己爱主的心是那样恳挚，便觉得别人都会在爱情上跌倒，我总不能。我完全蹈了彼得的覆辙。我还记得我在学校中的时候，一次主领同学们的一个小聚会，我对同学们谈论彼得的事说：『甚么时候夸口，甚么时候便出丑』。万没有料到我今日就是这样出了丑，而且较彼得更甚。我悔恨我没有天天念诵经上的教训说：『所以自己以为站得稳的，须要谨慎，免得跌倒。』我更悔恨我没有听从主耶稣的警告说：『总要儆醒祷告，免得入了迷惑；你们心灵固然愿意，肉体却软弱了。」我从前以为心灵愿意，便不再有甚么问题了，谁知道肉体是这样软弱呢！我如今认识自己了。但可惜认识得太迟了！</p>
+<p>「我悔恨我不该与试诱狎玩。我记得几年前曾听神的一位仆人讲道，提到战胜试诱的第一步是远避试诱。我记得那一段教训，可惜我没有听从。当他──那一个心怀叵测的男人──第一次向我表示好感的时候，我的心中已经清楚听见圣灵督责我警戒我的声音了。我知道我应当立时远离他，不给他一点陷害我的机会。我知道他不是敬畏神的人。可惜我当时竟存了一种试探神的心，以为同他玩玩又有甚么关系呢。就因为这样一想，我便与他开始接近了。我今日所受的痛苦，确是我该受的。因为那时我心中实在是存了一种恶念，就是我明明知道他不是敬畏神的人，我却喜爱他那美丽的面容，和他那种活泼的态度。我知道正当的爱情，应当建立在信仰和德行的基础上，我却存了那样的恶心。不，我当时并没有意思同他发生爱情。不过因为这个人看着可爱──用这两个字，我现在想起来又觉可耻，又觉可痛。──我愿意同他在一处玩玩就是了。谁知道就因为这一点错误的思想，竟造出今日无穷的悔恨来呢！经上说：『不可给魔鬼留地步』。我当时给魔鬼留了地步，又怎能怪他把我害了呢。我还是说，我只能怪我自己。</p>
+<p>「我在未曾悔改以前，虽然有时也到电影院去，但并不是常常沉溺在那里。从悔改以后，三年多的时日，我再没有去过一次。我知道那不是敬畏神的人应当去的地方。我也曾劝戒信主的同学不要到那种地方去。我不去并不是出于勉强，实在一点不想去。因为我觉得在基督里所享受的快乐是任何娱乐场所里所找不到的。万没有料到我会再到一个电影院里去，并且从那里开始踏入坠落的途径。</p>
+<p>「那一天才下了班──我那时是在一个学校里执着教鞭──他来看我。我们在客室谈了几分钟的话，以后他忽然问我，肯不肯同他去看一次电影，又说那一天那个电影院里要开演一套宗教的影片──他知道我是热心信基督的。我听了他的话以后，心中立时起了极大的战争。一方面圣灵提醒我说，我和一个不敬畏神的人来往已经是不合理了，还要同他到我自己绝对不去并且劝人不要去的地方去么。另一方面魔鬼也告诉我说，如果我拒绝了这个人第一次的约请，他必定会因为碰了钉子，就再不肯和我来往──这种来往我心中明知道不蒙神的喜悦，但我实在舍不得放弃。那时我还不明白这是怎么一回事，现在我纔知道那时我已经和他发生爱情了。一个属神的人竟和一个不敬畏神的人发生爱情，不希奇我会落到今日这种地步！想到这里，我的心碎了！我懊悔！我自恨！我巴不得以前的事都是一场梦境，不是事实！魔鬼又对我说：『坏的电影实在不可看，但宗教影片，而且是与圣经有关系的影片，基督徒还不可以看么？』如果那天他不说是去看宗教影片也许我还不敢去，只因他这一说，我又得了一个为自己辩护的理由，至终我同他去了。在路上走着的时候，我的心中十分不平安。圣灵在我里面履次责备我。我几次想半途向他告辞回去。但那是多么无情而且使人伤心的事。我怕伤了那个不敬畏神的朋友的心，却忘记我在那里已经大大的伤了我的心。我那时怎么竟会这样愚昧阿！</p>
+<p>「我们在电影院里了。我的心匉訇的跳着。我里面更不平安了。当电灯熄灭了以后，我的心中也照样充满了黑暗。我觉得黑暗的权势已经抓住了我。我完全被那恶者所压倒。我恨不能立时跑回学校去。但当我转脸看我的朋友的时候，我的勇气消失了。我胜不过他那笑脸的吸力。我陷在魔鬼的网罗里了。</p>
+<p>「是宗教影片么？是的。不过尚未开演那套伟大的宗教影片以前，先映了十几分钟爱情滑稽短片。那套片子里充满了撩动青年人性欲的材料。我是一个二十几岁的少女，我还活在肉体中，如何能禁得住这种诱惑。我为魔鬼开了心中的门，他进入我的里面作王了。我当时还未想到那个朋友有甚么恶意，后来却从他自己的口中明白了，那天他口头上说是约我看宗教影片，他的心中就是想藉着那爱情短片诱惑我。结果他的目的是达到了，我却陷入万丈的深渊中，我怎么那样无知！我怎么那样轻易信人的话！我忘记了神的话，『人心比万物都诡诈，坏到极处，谁能识透呢？』我更忽略了神的警告说：『你们各人当谨防邻舍，不可信靠弟兄，因为弟兄尽行欺骗，邻舍都往来谗谤人。他们各人欺哄邻舍，不说真话，他们教舌头学习说谎，劳劳碌碌的作孽。』这些话我都念过，可惜我不在意。我受人的欺骗了！男人是多么诡诈阿！岂但男人呢？女子又何尝比男人诚实多少！『人心比万物都诡诈』。神并没有分别男人的心与女子的心。不过我是因为受了男人的欺骗，所以特别容易看到男人的诡诈。</p>
+<p>「我本来丝毫没有同他发生爱情的意思，只是喜欢同他交往就是了──我现在明白这是我堕落的开始。这次一同看过电影以后，我里面少女的热情遏止不住了。我胜不过我的肉体，我爱上了他。我有意同他谈到婚姻。当然我不能先开口，我指望他向我开口，当然那是他求之不得的事。不多几日以后，我们果然谈到婚姻了。在那个时候我的心中又起了极剧烈的战争。一方面我清楚知道信的和不信的原不相配，不当同负一轭。另一方面我满心爱着这个朋友，舍不得离开他。我初同他来往的时候，绝对没有同他结婚的意思，就是到了这个时期，我还是明白我们不当结合，不过我却无力脱离爱情的牵缠。我从前常常听人说『作茧自缚』，我却不明白这个比喻的意思。我以为我总可以随意支配爱情。到那时候我不但明白了『作茧自缚』的意思，而且我就把自己缚在我自己所作的茧中了。我现在深知道男女两个人如果不能结合，或是不可结合，起初就不可特别亲近，更不可存一种『不妨一同玩玩』的思想。多少人就是因为在这里走错了一步，以致弄出不可收拾的结局来。</p>
+<p>「神爱属他的人真是无微不至。我远离他、悖逆他，他却仍然怜悯我。正在我被情丝缠绕的时候，我的一个爱主的同学忽然来看我。她就是我两年前的今日在校园中的青草地上与我一同谈话的两个同学中间的一位。我们同时毕业以后，她到离这里千里外的一个医学校里去学医。这时候因为她父亲患病，请假回来看望。她来到的时候，她的父亲病势已经减轻。她趁便来看我。我起初还隐瞒不肯将我的事告诉她。可是她已经发觉我的人生起了变化。她详细的问我，我只得向她说了。她恳切的用神的道规劝我，告诉我决不可与不信的人结合，以致得罪神。后来我们一同祷告。我在神面前痛哭，承认我的悖逆，并且应许我的同学决不再同那个人进行婚事。第二天我的同学走了，我就写了一封信给那个男友，告诉他说我们不必再提到婚事，不过我们不妨仍作朋友。现在我懊悔我不当写这第二句话。因为『信的和不信的原不相配』的教训，不但通用于婚姻上，也通用于友谊上，神不许他的孩子们与不信的人结婚，也不许他们与不信的人为友，尤其是我们两个曾发生过爱情的人。实在说起来，我心灵的深处还是舍不得这个人，因此虽然不再想同他订婚，但是仍旧愿意与他交往。我那天与我的同学在一处祷告的时候虽然痛哭悔改，但那一种悔改实在并不彻底，我到底未曾将那不敬畏神的人从我心中拿出去。如果我那天的悔改实在是彻底的，我就决不至于像今天这样痛苦可怜了。不彻底的悔改与根本不悔改简直没有多少分别阿。</p>
+<p>「婚姻的问题暂时搁浅了，我们的友谊却仍然继续着。我不愿意到电影院去，但他却常常邀我去。我不愿意过拂他的盛意，便常常陪着他。在那里我们常常看到一些爱情的片子，我的心又活动了。再加上他屡次向我作亲昵的表示，几个月以后我们又重谈婚姻了。我的同学离开我以后也曾几次写信给我，打听我的近况。我因为不好回复她，便总不给她写信，想把这件事瞒过她。现在我觉得不但对不起爱我的神，也对不起关心我的那位同学。</p>
+<p>「婚姻的事我们两个人都同意了，我纔写信给我那远在三千里地以外的父母──两位敬虔可爱的老人。我一向是爱着他们，无论大事小事都听从他们的话。可是希奇的很，我同这个男人有了来往以后，我从来没有写信告诉他们这件事。我怕他们知道，因为我想他们不会赞成。其实岂止他们呢，连我的天父我也不愿意告诉阿。八九个月的长久，我很少写信给我的父母，也很少与神交通。在我的生命里面生了大病。那个男友──一个不敬畏神的人──占据了我心中重要的位置。我想我能从他得着完满的幸福，万也没有料到就是从他尝到了世间最苦的苦味。『以别神代替耶和华的，他们的愁苦必加增。』这可怕的咒诅完全落在我身上了！</p>
+<p>「我知道我那敬虔的父母一定不会赞同我和一个不敬畏神的人结婚，因此我欺骗他们。我告诉他们说，这个男人是在那里追求真理，寻找基督，但我自己知道他一点没有这样的心志。我为了欺骗自己的良心，就竭力请他到礼拜堂聚会。他为敷衍我的缘故，也去过几次，不过都是没有诚意的。我就根据这几次他到礼拜堂中去的事实，欺骗我那可爱的父母。不用再说别的事，单就我这种欺骗父母的罪来说，我就应当受今日这种报应。</p>
+<p>「我的父母因为我一向诚实可靠，就信了我的话，并且想我已经二十几岁，也不是小孩子了，更信神必保守爱他的人──可惜我这时已经不爱神了──便回信同意我们的婚事。按理说我接到他们的信的时候应当十分快乐了。谁知道我读那封信的时候，无异乎读我被定罪的判决书。如果我的父母写信来责备我，反对我的婚事，我想我还能比较舒服些。我的父母在他们的信里写了许多勉励我安慰我的话，并且对我说，最好等对方完全信靠了基督以后再订婚。他们那里知道我说的都是一些谎言，更那里知道对方根本就没有诚意信主呢。在我读那封信的时候，圣灵责备我说：『你悖逆神。你欺骗父母。你与不信的人相交。你若不赶快回头，你的祸患就在眼前了。』同时魔鬼也将许多的好处摆在我面前。他叫我幻想到一位如意的青年丈夫，一个美满的小家庭，一座新式的小楼房。他对我说：『你若俯伏拜我，我就把这一切都给你。』在这胜负莫决的时候，我觉得我应当赶快跪下祷告。但我知道如果我一祷告，我必定被神得着，我要失去我的情人和我所希望的幸福。我不舍得这些。我的心中交战了许久，至终决定不去祷告，我躺在床上睡了。那时我完全作了撒但的俘虏。我真没有料到我会堕落得这样快。我的悲惨的生活就这样的开始了。</p>
+<p>「一觉醒来，红日已经照到窗上，离上课还有半小时。我急忙起来，收拾完了，吃了几块饼干，便到课堂里去上课。正午下了班，我的朋友已经在客室里等候着我，邀我到一家饭馆里去吃饭，意思就在探讯我家中的信息。当时我回答他说回信已经来了，父母对我们的婚事不加拦阻。我却把父母所说等对方信了基督以后再订婚的话语隐瞒起来。他呢，当然是高兴得很。我们的婚事就在那家饭馆里吃午饭的时候定规了。我们没有经过甚么正式订婚的手续。还有比这个更可怜的事呢，我们结婚也未曾正式的行过甚么婚礼。我的父母远在三千里地以外，他们的年纪已经老迈了，路途又遥远，当然是不能前来参加。他呢，没有父母，没有尊长！今日我才知道那都是谎言，可惜我却都信为事实！当然更不会有人参加。我们没有在礼拜堂里结婚，因为我已经有好几个月不到礼拜堂去。我因为同一个不信的人结婚，不愿意再到礼拜堂里去行礼，而且我知道我们的牧人一向反对信徒与不信的人结婚，他也决不会为我主理这次婚礼的。我们在一家饭店里办了事，一切的事都是由他摆布的。如果没有人认识我是基督徒，决不会有人想到这两个新人中间有一个是信主的。在这时候我已经堕落到与不信的人一样的地步了。我对父母却写了一封充满谎言的信，欺骗了他们。我完全陷在罪恶里面了。</p>
+<p>「我们是在学校放暑假的时候结婚的。我因为听从他的要求，将学校的教职辞掉了，整天住在家中。我们在一条清静的巷子里租了一所小房子，还雇用着一个女仆。他还是在他几年以来任事的洋行里作着事。结婚后的几天内，我的心中充满了种种的幻想和希望，同时我的心受着圣灵严厉的责备。我没有一日的平安和快乐。我感觉我因为离弃神，快要遭遇祸患了。</p>
+<p>「果然不到两个月，他对我开始感觉到厌烦了。他很少回到家中来。又过了不久，我发现他又在那里勾引别的女子了。再过一些日子，我更发现他是一个极不诚实极污秽的人，他曾经与好几个女子发生过关系。他以前对我所说的都是谎言。自从我发现他的恶行以后，起初他还遮掩隐藏，后来公然告诉我他的一些劣迹，故意气我。甚至说如果我愿意离开他，只管走去。他知道我的父母年老，而且住在远方。从我的谈话中，他也明了他们是虔诚的信徒，决不会同他起诉。他也知道我孑然一身，懦弱无能，而且因为我们的婚事得不到别人的同情，以致我的朋友和同人没有一个再肯帮我的忙，因此他更大胆的欺侮我、虐待我。我吃我自己悖逆神所结的苦果了。</p>
+<p>「事情还不止于这样呢！他的父亲──他曾对我说，他的父母都不在了──因为听说他这几年不正经作人，特意来到这里调查他。及至发现他的劣迹，便大发雷霆，逼令他辞去洋行的职务，随着他父亲回到故乡。他因为他的父亲严厉，不敢抗命，便收拾一点随身的行李，离了洋行，随同父亲回去了。他并没有将他和我结婚的事告诉他父亲，他也不敢告诉，因为他家中早已娶了妻子还有两个孩子。他父亲来是住在旅社里，同他见面是在洋行内，我一点都不知道。他的父亲也不知道有我这个可怜的女子，曾受了他的欺骗。</p>
+<p>「他同他的父亲走了三天，我纔发现这件事。他有两夜没有回来，我以为他在路上遇了甚么危险，第三天我到他的洋行里去打听。嗳呀！可把我害苦了！洋行里的人把他的父亲怎样来找他，怎样向他大发烈怒，怎样逼令他回家，怎样责备他这已经有了妻子和两个孩子的人不当在外面胡闹，和他怎样辞了事，陪了父亲返里的事，都一一的告诉了我。我听了这些事，好似晴天霹雳一般。我的心碎了。我几乎晕倒。洋行里的职员恐怕我在那里发生变故，赶快雇了一辆车把我送了回来。我从那一天起就病倒了。</p>
+<p>「我受人欺骗了！我失身于一个歹人，而且又失了业，他不辞而别。我手中没有多少积蓄。等花完了这二百多圆钱，我再去卖我的几件衣服，和这几间屋子里的木器。为五个月的生活还可以维持。我不怕饿死。我愿意早点死去。因为我太痛苦了！我怎么见我的父母？我怎么见我的朋友？我怎么见谆谆警教我的那位同学？我怎么见我的同事？我怎么见我的神？他们爱我，我不接受他们的爱。他们警教我，我不留意他们的警教。我一意孤行。我信一个骗子所说的谎言。我放任我的肉体。神那样一次又一次的招呼我、警戒我，我总是置若罔闻。今日落到这个地步，我还有甚么可说的呢？</p>
+<p>「唉！事情已经到这个地步了！我可以不顾我自己，但我那白发苍苍的老父母怎样呢？有一天他们听见我的事，要伤心悲哀到甚么地步呢？我将来怎样回去见他们？我将来怎样回到社会里作人？虽然神肯赦免我，但有几个人能像神一样不记念我以前的事呢？前路茫茫，寄身何处？弄到了这种地步，都是我自己造成的阿！我听见经上的话对我说：『我呼唤，你们不肯听从；我伸手，无人理会；反轻弃我一切的劝戒，不肯受我的责备。你们遭灾难，我就发笑；惊恐临到你们，我必嗤笑；惊恐临到你们好像狂风，灾难临到如同暴风；急难痛苦临到你们身上。那时你们必呼求我，我却不答应；恳切的寻找我，却寻不见。因为你们恨恶知识，不喜爱敬畏耶和华，不听我的劝戒，藐视我一切的责备。所以必吃自结的果子，充满自设的计谋。」（箴一24～\cs1631）</p>
+<p>「从那一天卧床直到今日，转瞬已经是半个月了。病是一点没有起色。没有父母在我旁边，没有朋友来安慰我，他们也无从知道我的景况。我那白发苍苍的老父母必是早在那里盼望我的信了。神哪，我怎么写信给他们呢？他们仍在三千里以外，幻想着他们的女儿是怎样热心事奉神，是怎样同一个贤德的丈夫过着快活的日子。他们怎么会想到我今日落到这种困苦凄惨的地步呢！</p>
+<p>「夜是这样深了，皎洁的月光射到我的床前。我惟一的伴侣──那个头脑简单一点知识都没有的女仆──是在隔壁的一间屋子里酣睡了。滴达滴达的声音从墙上所挂的时辰钟里发出来送到我的耳中。我回忆着两年前的今日与两位爱主的同学在校园中的青草地上坐着谈心的景况，再追想这两年中一切的经过，我的心好似被刀割一般，我的枕套已经被眼泪湿透了！</p>
+<p>「神哪，怜恤我罢！」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

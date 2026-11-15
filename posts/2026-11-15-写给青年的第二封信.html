@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>写给青年的第二封信 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>写给青年的第二封信</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·1五封信</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/1五封信（写给青年的基督徒）/2写给青年的第二封信.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>青年的基督徒们，我在上面已经写过一篇给你们的劝告，劝告你们防备魔鬼藉着少年人的情欲陷害你们。今日我把魔鬼陷害你们所用的另外一样利器再告诉你们知道，使你们好加以防备。这一样利器便是金钱。我先要对你们说明，金钱并不是坏东西，按着正道得金钱，用金钱，也不是罪。我们不需要效法晋朝的王夷甫那样自呜清高，口不言钱，称钱为「阿堵物」。我们更不必厌恶金钱，仇视钱如同毒蛇瘟疫一样。我所要劝告你们的乃是希望你们谨慎，不要容魔鬼藉着金钱把你们掳去。</p>
+<p>世人常以多有金钱为荣耀、为高贵。这种错误的思想我们必须彻底加以改正。在神的眼中看来，那些最尊荣的人并不是多有金钱的人，乃是那些敬畏神，有高尚的品德，为人类服务的人。有钱的人到那里都受到别人的欢迎推崇。一般人择业的时候都选择那能多得金钱的职业。青年人结婚的时候都愿意寻觅家产富有的配偶。这种种事实都足证明一般人崇拜金钱的心理。这种心理不但卑鄙到极点，而且它还会把人领到各样的罪恶里去。这种卑鄙的心理能使人谄媚富贵，轻看贫穷，能使人说谎作伪，欺骗行诈，能使人舞弊营私，贪赃受贿，能使人骨肉相残，兄弟阋墙，能使人牺牲节操，出卖廉耻，能使人离弃真道，投降撒但。世上种种的罪恶一大半是因为人类崇拜金钱而酿成的。无怪乎圣经中说：「贪财是万恶之根」了（提前六10）。人一切的行为生活都起源于思想，正如经上的话说：「你要保守你的心，胜过保守一切，因为一生的果效，是由心发出。」（箴四23）如果一个青年人看见别人高车驷马，锦衣美食，便馋涎欲滴，啧啧称羡，这个人决不会不作一个热衷利禄蝇营狗苟的人。所以我们必须先把这种崇拜金钱的心理从我们里面彻底的铲除出去。让我们的心不羡慕那些富有金钱的人，却羡慕那些敬畏神有德行的人。我们择业的时候，不当选择那些多能获得金钱的职业，却要选择那些多能荣耀神多能帮助人的职业。我们择偶的时候不当注重对方是否多有金钱，却当注重对方是否有良好的信仰，高尚的品德。我们应当把喜爱财物的心转移在喜爱神的命令上面，正如大卫所写的诗说：「我喜悦你的法度，如同喜悦一切的财物。」（诗一一九14）又说：「求你使我的心趋向你的法度，不趋向非义之财。」（诗一一九36）又说：「你口中的训言与我有益，胜于千万的金银。」（诗一一九72）又说：「我爱你的命令胜于金子，更胜于精金。」（诗一一九127）如果我们能从心里喜爱神的言语命令，如同世人喜爱金钱一般，魔鬼便再不能藉着金钱把我们掳去了。</p>
+<p>我们的心不注重金钱，不贪爱金钱，这固然是最要紧的事，但我们生活在世间既不能不用金钱，那样在用金钱得金钱的时候，也不可不豫防魔鬼的试探。要记牢，不是按着正路得来的金钱我们连一文都不可取。总不可为得金钱说一句谎言，总不可为得金钱作一件不能见人的事。千万不可想极少数的金钱没有甚么大的关系。要知道青年人如果在几文钱上苟且，将来他们一定要在千万的巨款上贪污。主耶稣说的话是千真万确的。他说：「人在最小的事上忠心，在大事上也忠心，在最小的事上不义，在大事上也不义。」（路十六10）世上所有巨大的事物都是微细的事物积累而成的。没有一个人第一次犯罪便敢犯极大的罪。人犯罪都是先从小事上起始，以后胆量越来越大，良心也越来越麻木不仁，最后便犯出大罪来了。如果一个青年学生能在向父母要钱的时候说几句谎，在为同学办事的时候暗中取用他们几角钱，这便足能使他将来成为一个贪官污吏，或是强盗窃贼。如果一个青年学生在乘电车的时候为要省下几分钱，而借用同学的季票，或是当考试的时候，因为试题回答不上来，便询问一下旁边坐着的同学，这些事便足可以奠定他将来舞弊营私的基础。青年的圣徒如果希望战败撒但，成为属灵的勇士，作神手中圣洁的器皿，成为神面前伟大的人物，必须拒绝魔鬼藉着金钱向我们所施的一切诱惑。在学校读书的时候，向父母要钱或报账，决不说一句谎言，决不在暗中取用学校或同学的任何东西，决不贪爱不属于自己的任何财物，决不羡慕那些富足的同学所有的享受。在社会中作事的时候决不吃一点私，决不舞一点弊，无论如何艰苦，决不取用一文不义之财，别人无论如何营私舞弊，自己决不参加，决不分润一丝一毫。为这件事不怕得罪任何人，不怕受任何种的逼迫，不怕打破饭碗，失落地盘。宁可作一个清廉的小贩、车夫，不作一个贪污的高官巨贾。宁可作一个蒙神喜爱的穷人，不作一个惹神忿怒的富户。要看用不正当的方法得来的财物为奇耻大辱。要笃信神所给我们的那些宝贵的应许──「耶和华的圣民哪，你们当敬畏他，因敬畏他的一无所缺。少壮狮子还缺食忍饿，但寻求耶和华的，甚么好处都不缺。」（诗三十四9、10）「耶和华神是日头，是盾牌，要赐下恩惠和荣耀；他未尝留下一样好处，不给那些行动正直的人。」（诗八十四11）「不要忧虑说，吃甚么？喝甚么？穿甚么？这都是外邦人所求的。你们需用的这一切东西，你们的天父是知道的。你们要先求他的国，和他的义，这些东西都要加给你们了。」（太六31～33）当确信神一定要照他的应许使我们不致遭遇冻馁。退一步说，纵使神容我们冻饿而死，我们也决不可随从世人去作神所憎恶的那些恶事。我们应当拒绝恶人的诱惑与恐吓，像沙得拉、米煞、埃布尔尼哥，拒绝尼布甲尼撒一样。（事见但以理书三章十三至十八节）我们不但应当不贪富贵，我们也应当不畏权势，不避苦难。我们现今是在我们的主帅基督的麾下当兵，我们是跟随他与那在空中掌权的魔鬼战斗。苦难逼迫是绝对不能避免的，但属灵的胜利就是从这里得来。</p>
+<p>要在金钱的试诱上得胜，也必须学习节俭。习于奢侈挥霍的人很难保守自己的清廉。神赐给我们的财物足够我们用的，但他并未曾应许供给我们挥霍。无论怎样敬虔的圣徒，一流于奢侈挥霍，便会感到他手中的钱不彀使用，因此便不得不另外想个生财之道。在这时候魔鬼便为他出主意，他也不得不接受魔鬼的建议。习于奢侈的人想要学习节俭实在是极不容易的事。因此你们在青年的时代务要养成节俭的好习惯，食足以养生，衣足以蔽体，就应当知足。万不可饮食必求味美，衣履务求艳丽，陈设务求华贵。不用说手中的钱没有多余的时候不可这样，就是手中的钱富裕的时候，也应当谨慎自己，免得一经养成奢侈的习惯，到入款减少的时候再不容易过艰苦的日子，便要去得不义之财了。一个人在钱财上贪污苟且，原因虽然有好几个，但奢侈的习惯实在也是一个主要的原因。摆场面，尚虚荣，成为我国一般人的通病。无论家境怎样艰难，出门总要穿一身华美讲究的服装。怕别人说自己贫穷，不惜借贷典当，假装着富有。办喜事丧事的时候，总要大大的铺张一气。许多人为这两件事拉下几年偿还不清的债务。请客的时候必须把菜肴摆满了桌面，等客人们都吃饱以后还剩下多一半，纔算主人的客气恭敬。手头无论怎样缺乏，与人酬酢交际的时候总要舍得花钱，纔显得慷慨大方。纵使家中明日没有一粒米下锅，今天也不能不陪着朋友去洗澡、吃饭、看电影，不然，便怕别人看不起自己。请想一个人如果习惯了这种生活，他所得的那一点有限的入款如何能供他这种大量的开销？钱既不够用的，还必须用，那便只有另辟财源。赚钱窃物，舞弊营私，受贿贪赃，欺诈勒索，胁肩谄笑，阿谀取容，这种种的罪恶便接连着产生了。有些为神作工的人也胜不过这种试探，因为习于养尊处优，摆场面，爱虚荣，便不得不失去操守，丧掉品格，辜负了神的选召与付托。奢侈的习惯害人是这样剧烈，我们怎可不战兢恐惧的防备它阿！</p>
+<p>在用钱上有一个重要的原则，就是量入为出。永远不要使你所用出去的超过你的收入。如果那样作，你纵使不去舞弊营私，也不免向人借贷。可是借贷来的钱早晚是要偿还的，如果偿还不了，便要与人发生纠纷，使人受了亏损，使自己失了信用，那种结果并不下于舞弊营私。要知道借贷是一件极危险的事。因为你把别人的钱借到手中的时候，极容易花出去，但到了偿还的时候，便成了一个重担。许多人因为养成借贷的习惯，竟至丧失他们的信用，毁坏了他们的品格。自然我们不能限定说绝对不可借贷。有时偶然遇见特别的困难，自己的手中一时周转不灵，向可靠的亲友暂借一些钱，以济燃眉之急，这原不是绝对不可的事。但当你向人借贷以后，必须及早尽最大的努力，把所借的债偿还。在你负着债务的时候，断不可吃好食物（有病的时候例外），不可买新衣服，不可置新家具，不可馈赠宴会，更不可买地盖房，应当极力撙节，凑出钱来还清所欠的债。在你未还清债务以前，不可一日忘记这事。要看债务在身上像芒刺在背上那样的不舒服，那样痛苦。如果不是万不得已，最好不要借债。总不要因吃好食物借债，总不要因为买新衣服置新家具借债，总不要因为置地盖房子借贷。吃粗食穿旧衣服却没有债务，比吃美食穿华服而负债舒服得多，荣耀得多。有了田产房屋而欠别人的债，实在不如没有田产房屋也没有债务那样逍遥自在。总不要因为求虚荣而借债。那是求荣反辱的事。许多人因为结婚作寿，大事铺张去借债，为要使亲友们称赞他们富足大方，结果因为偿不清债务，遭人的唾骂嘲笑，甚至被人控诉于法院，不但失了体面，而且丧了信用。还有人给父母办理丧事，愿意博得一个孝子的虚名，因此借了钱来购买上好的棺材，举行盛大的葬仪。及至事后竟无力清还债务，整日遭债主的追讨责问，得了几日孝子的头衔，以后便成年累月的被人称为无赖骗徒。看看究竟那个上算？婚丧事故总当量自己的力量举办。经济不充足的人便应当一切从简。千万不可图几日的虚荣，受多年的痛苦和羞辱。</p>
+<p>还有一件与借贷相同的事，便是买物的时候赊欠。这件事与向人借钱实在是一样的事。因为买的时候不付现款，所以便很容易随意购买，及至到了当还钱的时候，便感到付款的不易了。无论甚么时候买东西总要付现款，就是相熟的商人自动的愿意赊给你，你也应当拒绝。最好永远不欠任何人的财物。这是要保守自己的信用和人格，所绝对不可忽略的事。</p>
+<p>不但不可轻易向人借贷，也不可轻易借贷与人。如果有人向你借贷，你应当好好查问一下，这个人是否可靠？你和他的关系如何？他借钱究竟作甚么用途？如果你根本不清楚认识他。而且不豫备把这笔款白送给他，你便不要借给他。如果这个人可靠，但他借钱的用途不正当，你应当用爱心劝阻他。如果他向你借钱，是为他结婚的时候设席请客，你应当劝他照自己的力量从俭办事，不可因此负债。他当时也许不了解你，但你却尽了你的本分，也实在是用爱心待了他。</p>
+<p>总不可向人索取财物，那是一件损伤自己的人格而且招人轻看的事。更不要因为希冀从别人得财物，便谄媚人，奉承人。要自己劳力工作，供给自己的需用。要看一切的工作都是神圣崇高的。不要怕作卑微的工作。作一个仆役、车夫、邮差、司机、木匠、铁匠、厨役、更夫、小贩、和作一个教员、医师、经理、院长、官吏、推事，是同样的尊高。凭自己的智能力气挣钱养生，并不是卑贱的事。不肯劳心劳力，却指望别人哀怜，纔是卑贱的事。</p>
+<p>不要忘记把神赐给你的财物取出一部分最好的来奉献给神，用在神的事工上。这种奉献是圣徒的义务，也是圣徒的权利。当在一得着财物的时候，便取出一部分来奉献，不要等到你都支配完毕，使用剩下的时候再来奉献，那是不尊重神的一种行为。奉献给神的财物当放在神所喜悦的地方，和神所喜悦的人手中。不可把奉献给神的财物交给不合神心意的人，或放在神所不喜悦的地方。</p>
+<p>还有一种极大的试探，我也必须警告你们，使你们知道，好加以豫防。也许有一天神因为你们对祂忠诚，殷勤工作，便交给你们重大的责任，多量的金钱。那是你们为祂作大事的良机，也是魔鬼攻击你们最好的时期。这多量的金钱是神赐给你们的，并不是你们舞弊、营私、说谎、行诈得来的，你们若为自己用了，没有人能定你们的罪。但你们却不可忘记，这些金钱虽然不属于别人，却是属于神的，你们不过是神的管家，替神支配使用这些金钱。金钱在管家手中的时候；自然主人一定许可他用其中的一部分，去维持他个人与他一家的人的生活需要，但他决没有权柄把主人全部的财物据为己有。如果他这样作，主人必定从他收回所交付他的一切财物，而且将他斥革。可是有些狡诈的管家却不待主人斥革，竟早早的将主人的财物席卷而逃。神并不会因此受损害，受损害的乃是他们自己。亲爱的青年圣徒，如果有一天神赐给你大量的金钱，请你不要忘记这段警告。</p>
+<p>西国有一句俗语说：「用试金石可以试验金子，用金子可以试验人。」不要让神在用金钱试验你的时候显出你的亏欠来，也不要让人在用金钱试验你的时候显出你的卑鄙来，更不要让魔鬼在用金钱试验你的时候显出你是一个失败在他的脚前的人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

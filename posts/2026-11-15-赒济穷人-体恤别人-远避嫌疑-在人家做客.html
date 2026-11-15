@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>赒济穷人-体恤别人-远避嫌疑-在人家做客 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>赒济穷人-体恤别人-远避嫌疑-在人家做客</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·4人我之间二十五则</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/4人我之间二十五则（信徒处世常识）/3赒济穷人-体恤别人-远避嫌疑-在人家做客.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>基督徒应当用爱心赒济穷人，同时也当有智慧。若不这样，好的动机常常弄出坏的结果来，这真是极可惜的事。</p>
+<p>有几种穷人是不可赒济的：存心诈伪，用虚伪的方法和谎言向人骗取财物的，不可赒济。懒惰成性，有力量作工，也有机会作工，但贪图安逸不肯作工的，不可赒济。狂傲成性，愿意作体面的事工，不肯作卑贱事工的，不可赒济。手中有了钱不知善用，如吸烟、饮酒、赌博、或染别种嗜好的，不可赒济。赒济这几种人无异乎纵容他们欺骗，懒惰、骄傲、放荡。这不但不是爱他们，反是害了他们。最好容他们多吃些苦，等他们悔改了这些罪恶，再帮助他们。但这几种人如果到了绝地，也应当加以援手。若是确实知道他们已经悔改，那时就当尽力帮助他们。</p>
+<p>一个有爱心又有智慧的人决不到处看见乞丐就施给他们钱。他要分别那些乞丐，可赒济的方赒济他；不可赒济的当直爽告诉他不能赒济他的理由，叫他走去，万不可厉声叱喝他。</p>
+<p>施舍钱财给穷人，若是作得到，就当好好递给他，不可把钱往地上一扔。</p>
+<p>屡次帮助一个穷人，送给他一些钱，不如为他寻一点甚么事作，或是资助他一些本钱作个买卖，使他藉着你的帮助学习自助。如果他作一种事或一种买卖所得的仍不足赡养身家，那时你可以再资助他一些日常的用度。无论如何，总当帮助他学习自助，学习殷勤作工，切不可帮助他养成懒情依赖人的性情。</p>
+<p>世途险戏，人心诈伪，装作困苦贫穷欺骗财物的人很多。所以有你不认识的人来向你求帮助时，你当详细查问他。如果发觉他是说谎行骗的人，应当劝他不可这样作，除非有特别情形，最好是不赒济他，免得他因诡计得逞，以后更多行欺骗。如果发现他真是困苦缺乏，需要救济，就当量力赒济他。如果你至终分办不清他是真是假，最好还是赒济他。宁可使欺骗人的得些好处，不要使真实困苦的人得不着救济。</p>
+<p>一个人向人求帮助，先说一套景仰企慕恭维奉承的话，接着又拉出一大群高亲贵友来，再后纔声述自己的苦况和缺乏，紧末了还应许将来必要怎样还报人的厚谊隆情。这种求帮助的人十有八九是说谎行骗的。</p>
+<p>帮助穷人钱财，不可一次给他太多，恐怕他因为手中钱多就浪费，又恐怕他以为你是很富足的人，就更多倚赖你，常希望你给他大宗钱财，及至后来他得不着所希望的，或者竟会反过来恨你，与你为仇。不过人不都是一样，如果你确实认识一个人，知道在他身上决不会有以上所说的危险，而且他也急需特别的救济，就应当尽力帮助他。</p>
+<p>有些穷人手中一得着钱就要滥用，吃好食物，买不急需的东西。赒济这样的人，最好不给他们钱，只给他们一些粮食煤柴或别样的日用品。</p>
+<p>赒济穷人不要送给他们上好的食物，恐怕他们吃了以后再不愿意吃粗食物；也不要送给他们讲究的衣服，恐怕他们穿了以后再不肯穿旧衣服。若是这样，将来不免要发生危险了。</p>
+<p>世上有一等人的心真是坏到极处；你帮助他，赒济他，他非但不知感恩，反倒利用你，陷害你。所以在你帮助人的时候，应当谨慎豫防，不给奸人留甚么下手的机会。</p>
+<p>赒济穷苦的女人，最好让女人去作；赒济穷苦的男人，最好让男人去作。</p>
+<p>不要轻易领不确知根底的人到你家里来。有时有这样的人来到你的地方，你当加意防备他。</p>
+<p>不要容留不确知根底的人在你的地方住宿，宁可给他出一些店钱，把他安置在客店里。</p>
+<p>不确知根底的人向你详细讯问许多关乎你的家庭和事业并亲友等等的事，或是打听你的亲友的姓名住址等等，你不可一一告诉他。他若求你给他写甚么信请别人帮助他，你也不可轻易的允许，恐怕他藉此行骗。</p>
+<p>若有人向你求帮助，拿甚么东西送给你，卖给你，或作为抵押品存在你的地方，你不可收受更不可贪图他的便宜。最好请他将他的东西送到市上去卖，或是送到当押店里当几个钱用。如果你看应当赒济他，就白白赒济他好了。如果你看不应当赒济他，就叫他去好了。你若贪图他的便宜，后来难免受他的害。其实受这种害也是应当的，谁叫你想从穷人身上得利益呢。</p>
+<p>帮助人、赒济人的时候，应当态度谦恭，像送礼给你的亲友一样；万不可态度倨傲，言语轻慢。</p>
+<p>赒济人以后，不要常想念你所行的善事，更不要夸张述说你怎样赒济了甚么人，尤其不可向你所赒济的人常表示你是怎样待他有恩。</p>
+<p>赒济了人不要记念，得了人家的赒济不要忘记。</p>
+<p>要常想赒济人是本分，得人的赒济是恩惠。</p>
+<p>赒济人的时候最要防备求名的心，这是极大的试探，你必须胜过它。</p>
+<p>十八 体恤别人</p>
+<p>你愿意别人怎样待你，你就当怎样待别人。你不愿意别人怎样待你，你就不要怎样待别人。</p>
+<p>与人来往作事，时常要为别人设想，是一样极要紧的知识。</p>
+<p>不要在清晨拜访人，恐怕他们还未曾起床，就是他们已经起床，早晨也必是特别忙碌。不要在人吃饭的时候拜访人，恐怕他们不能安静进餐。不要在很晚的时候拜访人，恐怕他们已经安歇了。拜访人的时候不要坐得过久，恐怕耽误别人的事工。如果必须多谈些时，就当问你所拜访的人是不是忙碌，如果他表示忙碌，就当告辞。如果他告诉你不忙，坚留你多停留些时，就可以多停留些时候。</p>
+<p>无论在私人的地方或是公共的处所，知道有人在那里睡觉，你就当安静，不要大声说话或歌唱，走路脚步要轻，免得使别人不得安静休息。在有病人的地方更当这样。</p>
+<p>有人事务特别繁忙，身体特别疲乏，你当特别体贴他们。不要与他们说许多无谓的闲话，占去他们宝贵的光阴，使他们不得休息。不要因为自己不忙，就想别人也不忙。不要因为自己不疲乏，就不想到别人的疲乏。</p>
+<p>除非有不得已的情形，或是至近的亲友，不要轻易托人带东西。（尤其是大东西，重东西，和值钱的东西。）别人不为你带呢，觉得对不起你，为你带呢，真感受许多的麻烦，偶不经意以致失落，还需要赔偿你。现在各地都有邮局，寄递包裹十分容易。宁可自己多出一点寄费，不要加给别人一些难处。</p>
+<p>别人吃饭的时候，你不要提到甚么使人精神不快的事，也不要提到甚么污秽的东西，免得使人吃饭难以下咽。</p>
+<p>看见别人遭遇甚么困难和苦楚，只要你能为力，就不可袖手旁观；应当尽力去帮助他们。</p>
+<p>乘车的时候看见老年人，妇女，病人，或身体软弱的人没有座位，你当让座位给他们。</p>
+<p>如果遇见瞎子、聋子、哑吧、瘸子、或别样残废的人，需要人的扶助，你当尽力帮助他们。</p>
+<p>在病人面前不要提说甚么悲惨可怕使人易受刺激叫人精神不快的事。</p>
+<p>有人向你讯问甚么事，或是打听道路，只要你知道，就当详细告诉他们。</p>
+<p>要到甚么地方聚会，或要与人说话办事以前，不当吃生葱、生蒜、和别样有强烈臭味食物。</p>
+<p>托人代办甚么事，应当先为那人设想是否有甚么难处，是否使那人感甚么不便；如果有这种情形，最好不要托他，免得因你的事使人受痛苦遭损失。</p>
+<p>别人托你买甚么东西，问你价值，你应当从实告诉他；交付你钱，你当收受。常见有人为别人买东西，别人问他价值，他不肯说，交付他钱，他不收受。请想这样要使别人感受何等的不安呢。而且这又无异告诉他说，你下次再不要托我买东西。你固然没有这个意思，但他下次决不会再托你买了。当知道送礼是一件事，代人买东西另是一件事。送礼是出于你的意思，代人买东西是出于人的请托。若代人买东西就当作礼物送，那托你买东西的人将何以为情呢。</p>
+<p>你托别人代买甚成东西，应当先将钱交给他，免得他因为手中钱不敷余，无力替你垫上，感受困难。如果他有力量替你垫上，他也愿意这样作，等买来的时候再清算，那样，到他将东西买好交付你的时候，就当赶快将钱付给他，不可迟延。一则免得那人因等钱使用不肯向你索要，以致多感困难，二则恐怕你过时忘记，丧失信用。</p>
+<p>有时别人代你买东西，因为客气的缘故，不肯向你要钱；无论如何，你总要付给他。</p>
+<p>托人买东西或办事，你应当担负他的车资路费，他为你出力费心已是多受损失了，怎可再使他为你的事贴钱呢？</p>
+<p>如果你单单为别人办事或买东西而行远路，就可以──不是必须──收受别人所付的车资路费。但如果你自己本来是要到某处去，为别人办事或买东西不过是顺便代办，并不多跑甚么路，这样就不应当收受别人所付的车资路费。</p>
+<p>若不是别人有敷余，你不当向他借他所必须用的东西。（除非只在最短的时候借用）不可向只有一把扇子的人借扇子，不可向只有一把伞的人借伞，不可向只有一件雨衣的人借雨衣，不可向只有一件皮袍的人借皮袍，不可向只有一部圣经的人借圣经。他只有这一件，而且说不定甚么时候就用。若被你借了去，他到用的时候，岂不要大感困难么。</p>
+<p>问人甚么事他不肯回答，必是因为他有甚么难处。不可再三追问，免得使人难堪。</p>
+<p>不可拿人的残疾，就如盲目、跛足、耳聋、口哑、驼背、面麻、缺手、短足等为谈笑材料。恐怕有这些残疾的人听见心中难过。</p>
+<p>有时别人无意损坏了你的东西，虽然按理他应当赔补你，但因他贫穷无力，你就不可令他赔偿。纵使他过意不去，想要赔偿，你也应当阻止他。遇见这一类的事，你当设想如果你是他，你心中觉得怎样，你愿意他怎样待你；这样你便很容易知道当怎样作了。</p>
+<p>你若损坏了别人的东西，总要设法赔偿。如果你真是贫穷无力，而且物主也甘心不令你赔偿这样你就可以领受他的爱心，但不要忘记他向你所施的慈爱。若不是物主甘心怜恤你，不令你赔偿，你就当设法赔偿，并且不可怪责别人待你不好。须知物主不令你赔偿是恩典，令你赔偿也是你所当作的。谁叫你不谨慎损坏了别人的东西呢。</p>
+<p>有时别人对你在礼貌上有些疏忽不恭，你不可怪责他们。当知道有些人素不娴习礼节，也有些人因为事务繁忙，见人众多，一时疏忽，以致不能周到。他们并没有甚么恶意要故意轻慢你，当知道你也常有待人欠周到的地方。退一步说，假使别人真是有意轻慢你。你也不必怪责他们，最好还是省查自己有甚么惹起别人轻慢的地方，这纔是根本的办法。</p>
+<p>十九 远避嫌疑</p>
+<p>「君子防未然，不处嫌疑间；瓜田不纳履，李下不整冠。」走在瓜田中屈身去提你脚上的鞋，在你固然问心无愧，但你不能怪他人说你是要取瓜。行在李树下举手去整你头上的帽，在你固然无负于人，但你不能怪责园主猜疑你要偷李。许多事本是你可以作的，但你不可不顾到他人的疑惑。基督徒受人的毁谤讥议本是不能避免的事，但如果因为你不知道远避嫌疑，以致使软弱的人跌倒，使仇敌得着亵渎神的把柄，你就不能不负责任。</p>
+<p>世上的罪恶由于财色二事所引起的最多，许多人也最容易在这两样事上注意别人，猜疑别人所以你也当在这两样事上特别谨慎。一方面为自己谨慎，免得自己因轻忽以致陷在罪中，一方面也当为别人谨慎，免得别人因猜疑你，以致弄出种种的事端来。</p>
+<p>经手他人或公共的钱财，务要清清楚楚，万不可模模糊糊；因为这样作最容易引起他人的猜疑，而且在被人猜疑的时候自己无法洗清辩明。</p>
+<p>经手公众的款项，最好会同几个人一同负责，查点登帐，使别人没有猜疑你的机会。</p>
+<p>不可独自到他人或公众存储财物的地方去，如果你与别人一同在那里，别人若因事都要离开那里，你必须与他们一同离去，切不可独自留在那里，或在别人都离去以后再慢慢离去。这是最容易启人猜疑的事。</p>
+<p>若是你奉派去查办甚么事或甚么人，切不可受与这事有关系的人所馈送的银钱礼物，也不可赴他们的宴请。因为这很容易使别人猜疑你，说你受了他们的运动和贿赂。</p>
+<p>代公家或别人经手银钱，购买物品，当将银钱收据，物品发票，清清楚楚的交还付托你的人。</p>
+<p>无论到甚么地方，不可不通知主人便进入他的房屋无论在甚么地方，万不可随手开他人的箱箧囊袋等等的东西。别人低声谈话，你不可走近他们的身旁。别人看信、写信、记账、或作日记等，你不可立在他们的背后。这都是容易启人猜疑的事。</p>
+<p>独居的男人切不可招待女友在家中住宿，独居的女人切不可招待男友在家中住宿。虽然你们两方的心迹都是清洁光明的，但你不能使每一个人都谅解你的心迹。</p>
+<p>一个男人不要同一个女友单独到甚么别人不容易到的僻静地方或黑暗的地方去；如果必须到那种地方去，就当约同两三个别的人同去。</p>
+<p>青年的男人不可挑逗别的青年女人手中所抱的小孩，更不可任意从她手里将小孩接过来抱。若是她喜欢使你看看她的小孩是怎样可爱，因此请你抱一抱，你就可以接过来略抱些时，便还给她，以后不可再伸手去抱。除非她因为有事请你代抱些时候。</p>
+<p>男人同女人往来交际，言语要谨慎，举止要端庄，态度总当磊落大方；切不可鬼鬼祟祟，启人疑窦。</p>
+<p>二十 在人家中作客</p>
+<p>除了你所最熟识最接近的亲友以外，不可贸然请求别人接待你到他家中去居住。你知道你是可靠的，但别人不都详细知道你。如果你这样请求他们，他们不接待你呢，怕使你感觉难堪；接待你呢，他们又不放心，不知道你是否可靠，这真是使人作难的事。好在到处都有旅馆客店，虽然有的地方没有十分适宜可住的旅舍，但你自己受点苦总比使别人作难好些。</p>
+<p>不要到居处狭小生活艰难的亲友家中去作客。这样的人家中所感的困难已经够多的了，你不可再增加他们的困难。如果有甚么特别的原因，使你必须到这样的亲友家中去，你不但不当累着他们，并且当济助他们，使他们因着你去得着一些好处。</p>
+<p>与亲友约定要到他们的家中去作客，应当早日告诉他们到那里去的时日，这样他们好豫备接待你，免得你忽然来到，使他们手忙脚乱，多感困难。</p>
+<p>要到亲友家中去作客，当先讯问他们一切的事方便不方便，因为你不知道别人家中有时有甚么特别情形，使他们不能接待客人。</p>
+<p>在人家中作客，应当凡事体恤主人和他家里的人。如果主人事工繁忙，你不可多与他闲谈，耽误他的事工。如果主人家中有病人，你应当特别安静，不可大声谈笑，唱歌作乐。如果主人家中有甚么忧伤的事，你应当与他表同情，尽力安慰他。如果主人有甚么需要人帮助的事，你应当尽力帮助他。主人或他家中的人睡眠的时候，你应当动作安静，更不可高声谈笑，唱歌作乐，使人不得休息。如果主人待遇你有甚么不周到的地方，你应当体谅他，要明白他并不是在招待你以外再不作别的事。他有许多的事要去想要去作。一个人的精神力量是有限的，事务一多，总不免在一些事上不能顾全得十分周到。</p>
+<p>在人家中作客若是主人太忙，同时你却有余暇，就应当帮助他作些事，减轻一些他的劳苦。如果主人家中没有仆人，你更当帮助他作些日常生活中必须作的事，不可只等侯受别人的服事，那是骄傲而且自私的行为。</p>
+<p>在人家中作客凡事要使那家的人得益处受造就，却不要在一件事上使那家里的人受痛苦遭损害。</p>
+<p>在人家中作客要尊敬主人家中的老年人，要爱护主人家中的儿童；与主人的家中妇女往来谈话，要特别谨慎，言行庄重；对主人家中的仆人要宽大和平。</p>
+<p>在人家中作客的时候，若不是得主人的邀请，不要干预人家中的事。</p>
+<p>在人家中作客临走的时候，应当给仆人一些赏钱，赏钱的多少，要看各方面的情形和你停留的久暂规定。这项钱当交给主人代为分给仆人。</p>
+<p>在人家中作客离开以后，应当写信致谢，并报告已经平安到达某处。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

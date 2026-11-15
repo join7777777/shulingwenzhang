@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>不要断定-- · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>不要断定--</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·6生活中的小事</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/6生活中的小事（信徒针毡）/2不要断定--.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>不要因为一个人从前不好就断定他不好。许多坏到极点的人，被神用大能的手改变成为极圣洁极敬虔的人。不要因为一个人从前很好就断定他现在仍是那样好。许多极敬虔热心的圣徒；会堕落到一种地步使人差不多不敢信他就是以前的那个人。那样敬虔明哲的所罗门王，也竟会有一天崇拜起许多外邦的假神来。</p>
+<p>不要因为看见一个人有一件恶行就断定他是恶人。很敬虔的人也不免有时软弱跌倒。他极多的义行都未曾被你看见，他偶然作了一件恶事恰巧被你知道了，你就因着这一件恶事断定他是恶人，请想你作的这件事是何等无知！大卫是神所喜爱的人，是神的先知，他还作了那样可耻可恨的事──奸淫、欺骗、杀人。我们能不能因此断定他是恶人呢？</p>
+<p>不要因为看见一个人有一件善行就断定他是好人。杀人越货的强盗有时候也很慷慨的赒济穷人。不孝顺父母，看弟兄如同寇仇，虐待发妻的人，有时对朋友却很有义气。你能因着他们所作的这几件好事，就断定他们是好人么？</p>
+<p>不要因为看见一个人在众人面前有敬虔的表现就断定他是敬虔的人，无论怎样邪恶的人在众人面前都要勉力假装敬虔。扒手绺贼在车船上行窃的时候，叫人看着也像极体面的旅客一样。法利赛人在众人眼中看来是极敬虔的人，但主耶稣却说他们是「粉饰的坟墓，外面好看，里面却充满了死人的骨头和一切的污秽。」</p>
+<p>不要因为听见一个人口中说好听的话，讲好听的教训，就断定他是好人。坏到极点的人也能说出极光明正大的话语来。那口中说「这香膏为甚么不卖三十两银子赒济穷人」的慈善家，正是那为得三十块钱便出卖恩师的犹大。</p>
+<p>不要因为父母不好就断定他们的子女不好。也不要因为子女好就断定他们的父母好。不错，不好的父母常是造就出不好的子女来。但神有时行奇妙的事，从极败坏的家庭中召选青年人，如同从火里抽出一根柴来，使他们成为圣洁合用的器皿，荣耀他的名，为他所大用。</p>
+<p>不要因为子女不好就断定他们的父母不好，也不要因为父母好就断定他们的子女好。有些敬虔的父母确是尽了心力教导子女走义路，并且也给他们作了很好的榜样，可是他们的子女到成年以后，竟是在人生的路上与他们的父母背道而驰。以利的儿子行恶固然是怪他纵容他们，可是塞缪尔的两个儿子也「不行他的道，贪图财利，收受贿赂，屈枉正直。」</p>
+<p>不要因为听见人说一个人是坏人就断定他是坏人。常有很敬虔的人因为不与众人同流合污的缘故，便受众人的嫉恨，毁谤，辱骂，攻击。就是主耶稣在世上的时候，还是被人看作癫狂，被人称为迷惑众人的，被鬼附着的。你若只听别人的话就断定一个人，岂不是会发生极大的错误么？</p>
+<p>不要因为听见人说一个人是好人就断定他是好人。常有极坏的人会假充好人，瞒哄众人的耳目。群众因为鉴别力太弱竟被他所迷惑，称他为好人。其实他也许是世上最坏的人。押沙龙与以色列民亲嘴的时候，民众都称他为好人，钦佩他、爱戴他，谁知他竟心怀叵恻，意图篡夺父亲的王位呢？</p>
+<p>不要因为一群人中间多数的人不好，就断定其中一定没有一个好人。污秽的淤泥里也产出清莲，荆棘丛中也生百合花，照样，就是在极卑鄙邪恶的人中间也有很虔诚圣洁的信徒。无论在那一界，那一块地方，那一个团体，那一个环境或家庭中，都常有这种倩形。</p>
+<p>不要因为一群人中间多数的人是好的，就断定其中没有一个坏人。连主耶稣自己所拣选所教训的十二个使徒中都会有一个为三十块钱卖师卖主的加略人犹大，何况其它的团体呢。</p>
+<p>世上有许多的事从表面看来是那样，实际上却是这样；现在看是一样，过些日子再回过头来看完全另是一样。乍一看是一种情形，详细一观查实在是整个相反的一种情形。因为有这种的事实，我们对人对事所下的判断十分之六七甚至十分之八九是错误的。要免除这种过失，最好是不要断定。</p>
+<p>「你们不要论断人，免得你们被论断。因为你们怎样论断人，也必怎样被论断。」（太七1、2）。</p>
+<p>「我被你们论断，或被别人论断，我都以为极小的事；连我自己也不论断自己。我虽不觉得自己有错，却也不能因此得以称义。但判断我的乃是主。所以时候未到，甚么都不要论断，只等主来，他要照出暗中的隐情，显明人心的意念，那时各人要从神那里得着称赞。」（林前四3～5）。</p>
+<ol><li>怎样保守我们的信用</li></ol>
+<p>一个人的信用真是一件极重要的东西。一个有信用的基督徒才能荣耀神，才能为神作工，才能为基督作美好的见证，纔能帮助人。要保守我们的信用，我们必须留意日常生活中的一切大事小事。无论人知道或不知道，凡不属自己的财物，就是一文钱一张纸也不苟取。公家的财物和私人的财物要分别得清清楚楚，决不为私人取用一丝一毫公众的财物。为人办事买物不从中得一丝一毫的利益。在自己的职务上殷勤尽忠，将当作的本分作得尽美尽善。上班下班要严守时间，不迟到，不早退。不轻易传说甚么自己不确实知道的事。不轻易应许人甚么事，如果应许了人，必要履行所应许的。不出一句谎言。说话不言过其实。与人约会甚么时候到甚么地方，到那时候准按时到达。别人请求甚么或托付甚么事，先详细酌量能否作得到，如果作不到就不要允诺；如果允诺，就尽先尽力照所允诺的作成。不轻易向人借用财物；如果不得已借用，就应当尽力及早归还。不挪用代别人保管的钱财。不使用代别人保管的对象。不将代人保管的财物另借与别人使用。经手的账目要弄得清楚，一点没有含糊。不轻易为人担保；如果担了保，就从始至终负完全的责任，纵使自己因此受多大损失，也决不推卸。作错了一点不要掩饰遮盖，只要诚实承认。作事不用手腕，与人交接不带假面具。凡事要忠诚、殷勤、谨慎。这些事能行之有恒，不患没有信用了。</p>
+<ol><li>不可叫人小看你年轻</li></ol>
+<p>不可叫人因为你有不诚实的言行，或是说话喜好张大其辞，以致小看你。</p>
+<p>不可叫人因为你看见利益就跑到前面，与人同处总求自己的好处，以致小看你。</p>
+<p>不可叫人因为你喜爱虚荣，好出风头，随时显露自己，夸耀自己，以致小看你。</p>
+<p>不可叫人因为你妒贤嫉能，见别人得好处心中就不乐意，以致小看你。</p>
+<p>不可叫人因为你与异性的人交往鬼鬼祟祟，言行举止不光明正大，以致小看你。</p>
+<p>不可叫人因为你性情暴戾，容易动怒，常常与人争吵，以致小看你。</p>
+<p>不可叫人因为你谄媚富贵，轻看贫穷，以致小看你。</p>
+<p>不可叫人因为你器量褊小，遇事不能让人，不能忘记人的不好，以致小看你。</p>
+<p>不可叫人因为你轻易应许人甚么事，到时候却食言失信，以致小看你。</p>
+<p>不可叫人因为你借贷别人的财物不知道及早偿还，以致小看你。不可叫人因为你注重修饰，服装妖治，衣履带着一种诱惑性，以致小看你。</p>
+<p>不可叫人因为你轻佻浪谑，放荡失检，苟言苟笑，以致小看你。</p>
+<p>不可叫人因为你开口就批评人，论断人，只提人的短处，不说人的长处，以致小看你。</p>
+<p>不可叫人因为你冒失发言，冒失应对，说出一些不适宜的话语来，以致小看你。</p>
+<p>不可叫人因为你得人的爱不知道感谢，却忘恩负义，以致小看你。</p>
+<p>不可叫人因为你不孝敬父母，不友爱弟兄，以致小看你。</p>
+<p>不可叫人因为你怠惰偷懒，作不好你面前的本分，辜负人的付托期望，以致小看你。</p>
+<p>不可叫人因为你只顾自己的自由，不知道体恤别人，以致小看你。</p>
+<p>不可叫人因为你总喜欢从别人得一些利益，以致小看你。</p>
+<p>不可叫人因为你吸烟，饮酒，以赌博为消遣，或是有别样嗜好，以致小看你。</p>
+<p>不可叫人因为你不守法律，违犯规则，以致小看你。</p>
+<p>不可叫人因为你不知道尊敬老人，扶助弱小，以致小看你。</p>
+<p>不可叫人因为你言谈举止讨厌取憎，以致小看你。</p>
+<p>不可叫人因为你过问你所不当过问的事，以致小看你。</p>
+<p>不可叫人因为你囚首丧面，尘垢满身，衣履不洁，以致小看你。</p>
+<p>不可叫人因为你言行粗鲁，没有礼貌，以致小看你。</p>
+<p>「不可叫人小看你年轻；总要在言语，行为，爱心，信心，清洁上，都作信徒的榜样。」（提前四12）。</p>
+<p>这是保罗对他青年的儿子提摩太所说的话，也是神对你说的话。</p>
+<ol><li>几种不可结交的朋友</li></ol>
+<p>不敬畏神的人。不能帮助你使你与基督日近一日，反倒吸引你使你与基督日远一日的人。</p>
+<p>自称为基督徒，却不信基督代死与复活的福言的人。</p>
+<p>不诚实的人。</p>
+<p>不喜爱良善却喜爱不义的人。</p>
+<p>为你设恶谋引诱你作坏事的人。</p>
+<p>见你有恶行不肯规劝你，反倒推波助澜帮助你为恶的人。</p>
+<p>喜爱与不信神的人和作恶的人结交的人。轻看或远避虔诚的信徒的人。</p>
+<p>见你面就恭维你夸赞你的人。</p>
+<p>时刻顺着你的意思说话的人。</p>
+<p>不孝敬父母的人。</p>
+<p>不友爱弟兄的人。</p>
+<p>待自己的妻子或丈夫不忠诚的人。</p>
+<p>卖主卖友不顾信义的人。</p>
+<p>谄媚富贵轻看贫贱的人。</p>
+<p>言行淫秽生活不清洁的人。</p>
+<p>自私自利，眼中只有自己的利益与享受的人。</p>
+<p>惯于浪费挥霍金钱的人。喜爱宴乐沾染嗜好的人。</p>
+<p>在人中间挑拨恶感布散分争的人。</p>
+<p>性情残暴凶狠的人。</p>
+<p>存心狡猾阴险的人。</p>
+<p>翻云覆雨，反复无常的人。</p>
+<p>开口就说论断，批评，毁谤的话的人。</p>
+<p>喜爱出风头，遇事显露自己，钓誉沽名，爱慕虚荣的人。</p>
+<p>不忠心职务，却喜爱睡觉，闲谈，游荡，交际，酬酢的人。</p>
+<p>既不能帮助你，又不能接受你的帮助的人。</p>
+<ol><li>谁是你真时的好朋友？</li></ol>
+<p>把你领到基督耶稣面前，使你因此得着救恩的人。</p>
+<p>肯责备你的过失罪恶，引导你走顺服神的道路的人。</p>
+<p>关心你的信仰和德行，见你犯罪堕落便忧伤难过，常规劝你提醒你的人。</p>
+<p>用十分真实诚挚的心意与光明坦白的态度对待你的人。</p>
+<p>见你富足尊贵不肯谄誉你，见你贫穷卑贱不肯远离你的人。</p>
+<p>见你伤心便来安慰你，见你遇危险便尽力救助你的人。在你懒惰染嗜好浪费钱财的时候不肯借钱给你的人。</p>
+<p>尊敬你的父母，而且劝你孝敬父母的人。</p>
+<p>见你的儿女有过失，肯帮助你责备管教他们的人。</p>
+<p>当你与别人冲突争吵的时候，不但不袒护你，而且劝阻你的人。</p>
+<p>劝阻你不要到酒馆，赌场，电影院，戏园，却催促你去赴灵修会查经班的人。</p>
+<p>警告你不要与不信和作恶的人来往，却为你介绍敬虔的信徒作你的朋友的人。</p>
+<p>你有这样的朋友么？务要多与他亲近，敬爱他，听他的劝导。这样，你便有福了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>寡妇可以再嫁么？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>寡妇可以再嫁么？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·5终身大事八篇</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/5终身大事八篇（基督徒与婚姻）/5寡妇可以再嫁么？-01.mp3">🎧 5寡妇可以再嫁么？-01</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/5终身大事八篇（基督徒与婚姻）/5寡妇可以再嫁么？-02.mp3">🎧 5寡妇可以再嫁么？-02</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/5终身大事八篇（基督徒与婚姻）/5寡妇可以再嫁么？-03.mp3">🎧 5寡妇可以再嫁么？-03</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/5终身大事八篇（基督徒与婚姻）/5寡妇可以再嫁么？-04.mp3">🎧 5寡妇可以再嫁么？-04</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「弟兄们，我现在对明白律法的人说，你们岂不晓得律法管人是在活着的时候么？就如女人有了丈夫，丈夫还活着，就被律法约束；丈夫若死了，就脱离了丈夫的律法。所以丈夫活着，她若归于别人，便叫淫妇；丈夫若死了，她就脱离了丈夫的律法，虽然归于别人，也不是淫妇。」（罗七1～3）。</p>
+<p>「我对着没有嫁娶的和寡妇说，若他们常像我就好。倘若自己禁止不住，就可以嫁娶；与其欲火攻心，倒不如嫁娶为妙。」（林前七8、9）。</p>
+<p>「丈夫活着的时候，妻子是被约束的；丈夫若死了，妻子就可以自由随意再嫁；只是要嫁这在主里的人。然而按我的意见，若常守节更有福气；我也想自己是被神的灵感动了。」（林前七39、40）。</p>
+<p>「寡妇记在册子上，必须年纪到六十岁，从来只作一个丈夫的妻子，又有行善的名声，就如养育儿女，接待远人，洗圣徒的脚，救济遭难的人，竭力行各样善事。至于年轻的寡妇就可以辞她：因为她们的情欲发动，违背基督的时候，就想要嫁人；她们被定罪，是废弃了当初所许的愿。并且她们又习惯懒惰，挨家闲游，不但是懒惰，又说长道短，好管闲事，说些不当说的话。所以我愿意年轻的寡妇嫁人，生养儿女，治理家务，不给敌人辱骂的把柄；因为已经有转去随从撒但的。」（提前五9～15）。</p>
+<p>与基督徒婚姻问题相连的还有寡妇再嫁的问题，也是我们不可忽略的。我国旧日一般人的看法，认为寡妇再嫁是一件可耻的事。法律对这一件事虽然不加禁止，但因为一般人既然这样看，稍知道顾全体面的女子在丧夫以后总是不肯再嫁的。在这些守节的寡妇当中诚然有一些是因为爱夫情笃不肯再嫁别人的，也有一些是因为爱护儿女，甘心为抚育儿女的缘故终身守寡的。还有一些是因为不忍舍弃年老的翁姑，情愿舍弃了自己的幸福，一心事奉翁姑，免得他们乏人供养，困苦颠连。这些寡妇都是为了爱别人的缘故甘心守寡。她们的这种志愿，这种舍己，这种行为，这种爱心，真是伟大高尚，可敬可佩。我们除了恭敬她们帮助她们以外是不能再说甚么话的。然而同时我们却不可不知道那些丧夫以后不再嫁人的寡妇当中还有许许多多本来想要再嫁，也需要再嫁，只因为怕人讥议嗤笑，所以便勉强着守寡，还有的是被别人强迫着守寡。结果怎样呢？有的因为无人照顾蓄养，过着穷苦困难的日子，尝尽了人生的苦味，最后甚至流为乞丐，流为饿殍。有的因为被心理和生理方面的苦痛所打击，弄得疾病缠身，差不多成了废人。也有的因此得了精神重病，还有的因此丧了性命，又有的因此服毒自杀。比这些更不好的结果，就是有的自己持守不住，暗中和别的男人发生奸情，也有的受人诱惑以致失节，还有的是为饥寒所迫以致和人有染。如果那个男人是没有妻室的，以后二人就实行同居，白头偕老，逆取而顺守，这件事起初虽然不大光明，可是结果还不能不算差强人意。如果那个男人根本就是一个败类，诱惑了女子以后，抛弃了不再闻问，或是那个男子虽然钟情于她，但是他因为妻子或环境的阻止，不能与她同居，或是这个寡妇的环境不许她与那个男子长久结合，或是她在失节以后为人所不齿，被人所弃绝，那种结果便不堪设想了。河水，井泉，麻绳，菜刀，安眠药，便是她结束人生的工具。如果她惜命一些，便只好倚门卖笑，沦为娼妓了。娼门中的那些可怜虫里，有不少就是这样落水的，比这些更可怕的结果，就是有的因为奸情被人杀害，还有的因为恋奸情热以致下手杀了人。这些事都是我们时常耳闻目睹的。「赌近盗，奸近杀」。说起来真不能不令人胆战心惊阿！</p>
+<p>演出这种种的丑剧和惨剧的原因是甚么？岂不是那种禁止寡妇再嫁的观念么？上面我们已经说过寡妇甘心守节是可敬佩的，但是寡妇再嫁却不是可耻的事。我们决不应禁止寡妇守节，但我们同样不当禁止寡妇再嫁。守节或再嫁，完全是她们本身有权柄自己定规的事。没有别人可以干涉她们，也没有人有权柄轻看那些定规改嫁的寡妇。一个丧了丈夫的寡妇与一个丧了妻子的鳏夫一样的有权柄可以不再同人结婚，也一样的权柄可以再同人结婚。她们也和那些未婚的人一样有权柄可以结婚，也有权柄可以不结婚。一个女人在丧夫以后，别人虽然可以帮助她计划她的前途，给她一些良好的建议和指导，但是最后还应当让她自己决定她究竟要守节还是再嫁。如果她决定要守节，别人应当特别敬重她，扶助她。但如果她定规要改嫁，别人仍不当有一点轻看她，而且应当尽力帮助她。这样一来，那些自己甘心守节的寡妇可以随她们的心愿守节，那些不能守节的寡妇也可以免去将来遭遇许多痛苦，更免得后来陷在罪恶和祸患中。这个办法不止是合乎人道，也合乎圣经上的教训。</p>
+<p>我们把上面所引的几段经文读两遍，不是可以顶清楚的明白神并不禁止寡妇再嫁么？「丈夫还活着，她若归于别人，便叫淫妇；丈夫若死了，她就脱离了丈夫的律法，虽然归于别人，也不是淫妇。」「丈夫活着的时候，妻子是被约束的；丈夫若死了，妻子就可以自由随意再嫁；只是要嫁这在主里的人。」「我愿意年轻的寡妇嫁人，生养儿女，治理家务，不给敌人辱骂的把柄。」圣经上的这些话都是很清楚的告诉我们说寡妇可以随意再嫁，这样作并不是犯罪，也不是可耻的事。不过信主的寡妇再嫁的时候必须嫁信主的人。纵使她的前夫是不信的，她再嫁的时候也必须嫁信主的人。前夫虽然不信，但因为那是已经结合的夫妻，当然不可分离，再嫁的时候正如未婚的人初次结婚一样，所以只能嫁信主的人。神既在圣经中把这个问题这样清楚指示了我们，我们除了听从之外，还能再说甚么呢？</p>
+<p>不过这并不是说寡妇必须再嫁。「我对着没有嫁娶的和寡妇说，若他们常像我就好。倘若自己禁止不住，就可以嫁娶；与其欲火攻心，倒不如嫁娶为妙。」「然而按我的意见，若常守节更有福气。」圣经中的教训不但不禁止寡妇守节，而且说：「若常守节更有福气」。不过那些不能守节的人却不勉强她们必须这样守，反倒说：「倘若自己禁止不住，就可以嫁娶；与其欲火攻心，倒不如嫁娶为妙。」圣经中的教训真是最公正，最宽大，既合天理，又近人情。如果人人都本着圣经中的教训去行，世界上可以减去多少悲惨的事实阿！</p>
+<p>在提摩太前书第五章里提到被记在册子上的寡妇，「必须年纪到六十岁。从来只作一个丈夫的妻子，又有行善的名声，就如养育儿女，接待远人，洗圣徒的脚，救济遭难的人，竭力行各样善事。」在这里我们可以看出来，教会应当特别尊敬那些长期守节多作善工的寡妇，把她们的名字记在册子上。这些寡妇如果家中没有亲人可以供养她们，教会就应当供养她们，免得她们年老无靠，遭遇困乏。但她们若有亲近的人，这些人就当尽力供养她们，不可累着教会，好使教会能救济那些真正无倚无靠的寡妇。「要尊敬那真为寡妇的。若寡妇有儿女，或有孙子孙女，便叫她们先在家中学着行孝，报答亲恩，因为这在神面前是可悦纳的。」（提前五3～4）「信主的妇女若家中有寡妇，自己就当救济她们，不可累着教会，好使教会能救济那真无倚靠的寡妇。」（提前五16）这些话又是告诉我们那些长期守节的寡妇不但值得我们尊敬，而且她们若没有亲人供养，教会还应当供养她们。这样一来，那些无依无靠的寡妇便不至到年老力衰无力自顾的时候遭遇冻馁。神为那些敬畏他的人打算真是无微不至了。</p>
+<p>这段经文提过那些可敬的老寡妇以后，又提到那些年轻的寡妇说：「至于年轻的寡妇，就可以辞她，因为她们的情欲发动，违背基督的时候，就想要嫁人；她们被定罪，是因废弃了当初所许的愿。并且她们又习惯懒惰，挨家闲游，不但是懒惰，又说长道短，好管闲事，说些不当说的话。所以我愿意年轻的寡妇嫁人；生养儿女，治理家务，不给敌人辱骂的把柄；因为已经有转去随从撒但的。」这里说年轻的寡妇不可被记在册子上，恐怕她们后来持守不住，在情欲发动的时候想要嫁人，废弃了起初所许的愿，招来别人的批评和定罪。此外还有一种危险，就是年轻的寡妇没有事工，再没有儿女，最容易「习惯懒惰，挨家闲游，说长道短，好管闲事，说些不当说的话，」结果酿出许多的事故和祸害来，使人受亏损，使神受羞辱，纵使不至作出不顾廉耻的事来，就是这种害处已经不算小了。年轻的寡妇与其这样游荡惹祸，倒不如「嫁人，生养儿女，治理家务。」</p>
+<p>真是希奇！圣经里把这个问题说得这样清楚，却有许多信徒与不信的人同样的轻看那些再嫁的寡妇，好像寡妇再嫁就是犯了罪一样；差不多没有人反对一个丧妻的鳏夫再娶，但同时却有那么多的人反对丧夫的寡妇再嫁，如果一个丧妻的鳏夫同人提到他要续娶，别人便都答应帮他的忙，如果一个丧夫的寡妇向人表示她要再嫁，别人便异口同声的骂她寡廉鲜耻。同是人类，同有人类的弱点，同有人类的需要，男人丧妻以后便有权利续娶妻子，再享受家庭的乐趣，女人丧夫以后便不可再嫁，必须那样伶仃孤苦过着凄凉可怜的生活。请问这事合理不合理呢？再请问这事合乎爱人的教训不合呢？巴不得那些反对寡妇再嫁的人都有几年作寡妇的经验，看他们是否仍然反对寡妇再嫁这一件事。</p>
+<p>世上有许多的人（连信徒也在内）惯会说风凉话。自己不站在别人所站的地位，未曾遭遇过别人所遭遇的打击，未曾尝过别人所尝的苦味，没有别人所有的需要，只站在一旁批评别人所作的怎样不对，甚至自夸说如果我自己遇见这件事我一定要怎样怎样去作。其实有一天他自己也遇见相同的景况，他所作的也许还远不及他从前所批评的人。一个未曾作寡妇的女子没有权柄告诉一个寡妇说她不可再嫁，更没有权柄责备一个再嫁的寡妇说她再嫁是不对的，因为这个女子既不是寡妇，便无从明白一个寡妇的痛苦、悲伤、缺乏、需要。一个男子更没有权柄禁止一个寡妇再嫁，或是责备一个再嫁的寡妇说她再嫁是不合理的，因为这个男子更不能了解一个寡妇的苦衷。一个寡妇在丧夫以后，只有她自己有权柄去决定要守节不嫁，或是再嫁他人。就是一个寡妇也不能替其它的寡妇决定她们的前途。常有时候两个妇人同时丧夫，甲妇既有子女又有赀财，乙妇却甚么也没有，在这种情形之下，甲妇守寡就容易得多，乙妇就困难万分了。或者甲妇是一个热情的女子，乙妇却是一位冷酷的人；在这种情形之下，乙妇就比甲妇容易守寡了。或者甲妇是一个有能力自立的，乙妇却是一个需要依靠人生活的；这两个人的景况又是完全不同了。不用说一个未曾守寡的女子或一个男子不能替一个寡妇去决定她的前途，就连一个寡妇也不能替其它的寡妇决定守节或再嫁。一个寡妇的父母翁姑弟兄妹妹或其它的家人亲族也都不能替她决定。这些人虽然都可以给她一些指导和劝戒，但最后仍需要地自己决定，这样纔可以免去将来发生种种可怕的结果。自然，如果一个寡妇因为无知选择了一个不适宜的对象，或是她受了一个存心不良的人欺骗，别人可以而且应当加以阻拦，免得她将来受害。但这乃是人的问题，不是守节的问题。如果一个寡妇决定守节，别人应当竭力帮助她，男人们与她来往特别需要谨慎，免得使她受试探以致跌倒。如果一个寡妇决定再嫁，别人也应当帮助她选择一个配偶，如同帮助一个丧妻的男子续娶一样。</p>
+<p>社会中充满了各样不合理的教训和观念，基督徒只当遵从圣经中的教训，本着神爱人的心处理一切的难题。一件事情只要完全合乎圣经中的真理，合乎爱神爱人的教训，便当竭力提倡，不必顾虑世上的人怎样批评，怎样反对，更不当随从世上的陋风恶俗，以致违背神的命令，使人遭遇损害。我们只能领导世人随从我们，却不能被世上的教训夺了去，以致随从了世人。「他们必归向你，你却不可归向他们。」（耶十五19）教会中的领袖更当本着圣经中的真理教训圣徒，使他们在一切事上完全按着神的旨意去行，这样不只神要得着荣耀，人所得的福份也要增加许多了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

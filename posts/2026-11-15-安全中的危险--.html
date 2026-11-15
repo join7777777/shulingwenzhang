@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>安全中的危险-- · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>安全中的危险--</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·6生活中的小事</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/6生活中的小事（信徒针毡）/5安全中的危险--.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>我自从八年前开始骑脚踏车以来，无论甚么时候骑车走在路上总是十分谨慎，常存着初练习骑车的时候所存的戒心。每逢走过不易走的地方，宁可下来，不敢冒险走过。每逢转弯出巷口入巷口的时候，总是特别谨慎，按铃喊叫一声。因为这样谨慎，便省去许多麻烦，避免若干危险。因此我常对骑车的友人们说：「无论骑车有多少年的经验，总当抱着初学骑车的时候所抱的那种谨慎的态度；这样，必能减少许多危险。」</p>
+<p>大约是六年前罢。一天晚间到一位信主的弟兄家里谈话。那天晚间越谈越有兴趣，直谈到将近子夜，才告别出门，骑着脚踏车回家。中途走过一处十字路口。那东西南北交岔的两条路都是很狭小的。日间往来的行人车马总是很多。每逢我骑车走过那地方的时候，都是特别谨慎。离路口还有几丈远，必要先喊叫一声，「往东」，或「往西」。并且骑的特别慢，恐怕与南北来的车马相撞发生危险。那天走到这个地方，已是快到夜半十二点钟。铺店都已经关了门，街上也没有甚么行人。我想这时决不会有甚么危险，所以走近那处十字路口的时候，便未曾按铃，也未喊叫一声，并且又走得很快，一直的从东向西骑去。哎呀！不好了！我的车刚刚走到两路相交的地方，一个人骑着一辆脚踏车自北往南跑来；我们两个人骑着两辆车，再差一点点就碰到一处。我们两个人又都是骑得那么快，如果再差一点，两辆车碰到一处，那天毁了车还算小事，就是人也不知道要受何等重的伤了。两辆车既彼此闪开，那个人骑着车飞快的向南跑去，我却跳下车来站在那里，心中砰砰的跳个不住。我回到家中，回想那时的情形，一面感谢神的护卫，一面想到这事真是非常的有教训。从那日直到今天，我总不能忘记因那件事所得的警教。</p>
+<p>知道甚么地方甚么时候有危险，人很容易战战兢兢的豫防，因此逃避了这种危险。在那些据人想是没有危险的地方，人便不再谨慎豫防，谁知危险竟是发生在那地方呢！</p>
+<p>一个信徒在天路上奔跑，不知道要遇见多少试探，多少灵界的危险。有时环境异常不好，风涛异常险恶，四面布满了试探与仇敌。在这种情形中他必要特别谨慎，战战兢兢，惟恐跌倒。他恳切的祈祷。他心中默想神的言语。他用他全副的心思力量与试探相周旋。他不敢有片刻的疏忽。他竟因此战胜了试诱，逃避了前面极大的危险。过了些时候，这种险恶的风涛过去了，不好的环境改变了，试探与仇敌似乎都远遁无踪了。他看见形势这样改变，他想这时决不会再有甚么危险。于是他放下那种恐惧战兢的心，不再防范危险的发生。他在这时放心大胆信步前行。哎呀！不好了！可怕的危险陡然出现在他的面前；如果他这时存着谨慎豫防的心，那自然可以从容不迫，应付裕如。无奈他因为揣想没有甚么危险，所以他丝毫未曾准备。他这时慌了手脚。他临时设法去应付目前的试诱，逃避目前的危险；但是那里还来得及。没有等到他设好方法，他已经全然落在危险里面了。在危险的环境中未曾遭遇危险，在安全的境遇中倒落在危险里，这是何等可惜的事阿！</p>
+<p>阿！我明白了。若要在马路上骑车，就必须时刻谨防危险；若要在天路上奔跑，更必须时刻谨防试诱。这样去作，好像是极艰难，极辛苦，极疲劳，谁知道正是得安全最好的方法呢！</p>
+<p>「总要儆醒祷告，免得入了迷惑；你们心灵固然愿意，肉体却软弱了。」（太二十六41）。</p>
+<p>「所以自己以为站得稳的，须要谨慎，免得跌倒。」（林前十12）。</p>
+<ol><li>圣徒处世格言</li></ol>
+<p>以敬畏神为立身之基，以爱邻舍为处世之法。待人要绝对诚实，律己务十分严正。贫贱的时候不谄媚，富贵的时候不骄傲。不心存嫉妒，见人得好处便与人同乐；不幸灾乐祸，见人遭患难便代人分忧。与人同处看见利益自己不要向前奔跑，和人共事遇见危害自己不要向后退缩。自己负了别人要认罪赔偿，别人负了自己要宽容赦免。自己待别人有好处当看为本分，别人待自己有好处当认为恩德。经手的财物不分多寡当廉洁不苟，交接的朋友无论男女要正大光明。不轻易对人允诺，允诺后必须努力实践；不随便向人借贷，借贷了必须及早偿还。敬自己的尊长，也敬别人的尊长；爱自己的孩童，也爱别人的孩童。见别人有长处当奉为楷模，见别人有短处当引为鉴戒。约束自己的性情不急躁发怒，谨慎自己的嘴唇不轻易开言。不能证实的话不要传，不敢见人的事不要作。见别人有财物不要妄起贪念，见别人遭困难不可袖手旁观。不要在人面前奉承恭维，不要在人背后批评论断。为人作事要段勤尽忠，与人交接当坦白正直。嫉恶如嫉蛇蝎，慕义如慕珍宝。宁损失金钱不损失信用，宁舍弃性命不舍弃节操。不遮掩自己的过失，不夸耀自己的优点。言谈举止处处有礼貌，身体衣履时时要清洁。惹人憎的事不要作，讨人厌的话不可说。烟酒赌博皆当戒绝，妖冶装饰务须屏弃。事事为别人设想，处处求荣耀主名。</p>
+<ol><li>怎样与人同处</li></ol>
+<p>与人同处经过一个很长的时期，能够不使人受痛苦，不使人被绊倒，不使神的名受羞辱，不在自己与别人中间发生纠纷和冲突，真不是一件容易作的事。本来各人都有自己的个性和缺点，而且大多数的人又都是任性，充满了自私，虚伪，骄傲，贪婪，嫉妒。不用说不信的人，就连基督徒中间又有多少不是属乎肉体的呢。与这些人同处，三日两日，尚可以戴着假面，暂时敷衍，及至时期一长，真面目都显露出来，于是甲使乙受了痛苦，丙被丁所绊倒，戊讥诮甲还不如不信主的人，甲和丁成为一派，乙与丙和戊又联合起来对抗甲和丁。不用说几十几百个人同处会发生事故，就连四五个人同处日久都不免惹起纠纷。虽然这是到处可见的现象，但神却要他的孩子们「竭力与众人和睦」。他要他们不论与甚么人同处都不使人受痛苦，不使人被绊倒，不使他的名受羞辱。他更要他们与别人中间不发生纠纷，不论到甚么地方都能使人与神和好，使人与人和睦。</p>
+<p>一个圣徒如果要这样使神的心满足，使神在他身上的希望能以达到，他不但必须除掉一切的自私、虚伪、骄傲、贪婪、嫉妒、任性，而且需要舍己，学习饶恕、忍耐、体恤、自卑。学习这些事的时候不免多有艰难、困苦、眼泪、伤心，但及至学成以后他便在神和人的面前成为极贵重的珍宝。阅者中间如果有人希望作这样的人，就请注意以下的一些事。不论与家中的人同处，与亲族邻舍同处，与同学同事相处，这些教训都一样的适用。</p>
+<p>不论与甚么人同处，总要定意宁可使人亏负我，我总不亏负人。</p>
+<p>不论与甚么人同处，总要凡事真诚。存真诚的心，说真诚的话，作真诚的事。说谎作伪是人和人中间许多纠纷的起源。越是聪明人越需要注意这件事。</p>
+<p>不论与多少人同处，总要存心公正，一亲同仁，不可特别与一两个人亲近，却与其它的人疏远。尤其不可袒护自己所爱的人，一有这种情形，势必引起别人的嫉妒，许多纠纷就因此发生了。父母对子女，师长对学生，上司对属员，兄弟，姊妹，同学，同事，彼此中间都必须谨防这种情形。</p>
+<p>不要以自己的长处骄人，也不要轻看那些多有短处的人。神给你长处，为的是叫你去帮助那些多有短处的人。</p>
+<p>与人同处，要多顾念别人的事。竭力体恤别人，帮助别人，服事别人，甘心作别人的仆役。</p>
+<p>不可向比你软弱或比你地位低的人轻易发怒，叱喝他们，给他们难堪。这不只使他们受痛苦也使你自己受损害。</p>
+<p>要心宽量大。无论别人怎样亏负你，怎样藐视你，怎样批评你，怎样忌恨你，怎样损害你，总不要介意，不要放在心中。要乐意饶恕他们，容忍他们，正像神饶恕我们容忍我们一样。</p>
+<p>不要轻易听信别人所说批评论断毁谤的话，自己更不可说这样的话。人和人中间许多纠纷事故都是由人的嘴造出来的。</p>
+<p>总不要想站在别人的上面，叫别人尊重你；要甘心站在别人的下面，尊重别人。只有甘心站在别人下面的人才配站在别人的上面，只有肯尊重别人的人才配得人的尊重。</p>
+<p>自己有了甚么错失，应当坦白承认，切不可设词遮掩；有人责备劝导你的时候，要存着谦卑卑感谢的心领受，切不可羞恼拒绝。</p>
+<p>有甚么好处利益，让别人去得；有什么危险患难，要自己来担。</p>
+<p>性情暴躁言语激烈的人应当特别留意改正自己这种缺点。有些人在其它的事上都可爱，就因为有这一样缺点，与人同处，就总使人受痛苦，总与人不能和睦。这真不是一件小事。</p>
+<p>与人同处不可有虚伪的客套，但总要彬彬有礼，举止中节，使人在你的动作举止上没有可挑剔的地方。</p>
+<p>不要以你个人的生活状况作为标准去批评别人。人的体健不一样，习惯不一样，家境不一样。你可以吃得很粗的饭食，但你不能断定人都该吃这种饭食。你可以穿破旧的衣服，但你不能断定人都该穿这种衣服。你可以住草房睡土炕，但你不能断定人都该住这样的房，睡这样的炕。你的身体忍受得了的，别人也许忍受不了。你习惯了这种生活，别人也许一点都不习惯。别人的生活按你看是奢侈的了不得，在他也许已经是极大的牺牲，极大的舍己。同时你的牺牲也许还远不及你所批评的人。用自己的生活状况作标准去批评别人，不只是极无知的行为，也是使你总不能与人和睦的一个原因。</p>
+<p>爱别人，要看作自己当尽的本分。得人的爱，受人的帮助，要看是别人待自己的恩情。自己持别人有好处不要记念，别人待自己有好处不要忘记。</p>
+<p>要爱惜别人的东西比爱自己的东西更甚。好好帮助别人爱护保守。不可粗心损坏，不要轻易借用，更不可向人索取，连贪爱的意念都不可起。许多人与人同处发生纠纷，就是因为在这一点上遭了失败。</p>
+<p>别人如果损坏了你的甚么东西，不要为此难过生气，更不要为此与别人争吵不和。损失了东西是小事，心灵受损害，使别人受痛苦，伤了别人对你的爱心和感情，这种损失是无法补偿的。</p>
+<p>若是你愿意藉着你与别人共营的生活荣耀神，帮助人，你必须准备着舍弃你的尊荣，你的财物，你的安逸，你的爱好，你的个性，你的成见；除了神的旨意和真理以外，你个人的甚么好处都必须准备着牺牲。这种牺牲当时也许是一种极大的损失，但不久你必定会看见这种损失变成了神的荣耀，别人的好处，和你自己的幸福。</p>
+<p>不可轻易信任人，轻易信任人不免受人的欺哄。但也不可轻易猜疑人，许多的祸患纠纷就起源于猜疑。其实本来甚么事情也没有，就被那些自作聪明的人从自己那多疑的心境中造出无穷的祸患来。头脑简单的人容易信任人，头脑明敏的人容易猜疑人。轻易信人的结果不过是自己受些外面的损失。猜疑人的结果却使自己心中充满了苦恼不安，还使别人受到无穷的痛苦连累。比较起来还是头脑简单的人少受些苦少害些人呢。聪明却不轻易猜疑人的人才真是智慧人。</p>
+<p>当爱人，也当接受别人的爱，才能使人更多爱你。比方说，一个人出于爱心留你吃饭，你恐怕亏负人，便不肯吃，或是一个人送你一件礼物，你恐怕亏负人，便立时回送他一件礼物，这都无异于告诉他说：「我不接受你的爱」。这样便伤了那个人的心，使他再不能爱你。你的存心也许是好，但你却作了一件无知的事。希望得人的爱是不好的事，拒绝人的爱也不好。存心想亏负人是不好的事，不肯接受人的爱也不好。</p>
+<p>性情急躁的人无论说甚么话作甚么事，要迟缓一些，恐怕别人赶不上你。性情迟慢的人无论说甚么话，作甚么事，要加快些，免得使人因为等候你以致着急。</p>
+<p>你得了好处的时候肯与别人同享，你遭遇祸患的时候别人才肯与你同当。</p>
+<p>与别人同处总当尊重别人的自由，不然你便永远不能同人和睦。有些愚妄的人与别人同处总愿意干涉别人，叫别人在一切事上都服从他，甚至与他毫无关系的事，他也要去干涉别人，指挥别人。结果弄得人人厌恶，人人远离，真是胡涂到极点的事。</p>
+<p>无论见别人得甚么好处；总不可存嫉妒的心。嫉妒人的人永远不要希望能与人同处得好。</p>
+<p>与人同处如果有一个时期过份的亲热，将来一定有一个时期要特别的疏远，要避免将来的不幸，还是现在不要过分亲热。「人情淡始长」，「友如画梅须求淡」，都是这个道理。</p>
+<p>头脑简单模模糊糊的人多数都能和人同处得来。惟独那些聪明机警的人倒总是同甚么人都处不好。这并不是他们的聪明害了他们，乃是他们的骄傲，狂妄，自私，虚伪，猜疑，嫉妒，害了他们。如果他们肯谦卑，诚实，真挚，慈爱，他们一定能比其它的人与人处得更好，也更多得人的敬爱。</p>
+<p>多爱人才能多得人的爱，多敬人才能多得人的敬，多宽容人才能多得人的宽容，多体恤人才能多得人的体恤。你发出去的是甚么，你得回来的也是甚么。这是与人同处最重要的一个原则。</p>
+<p>一个像主耶稣的圣徒与人同处，当使人爱他，同时又使人怕他。爱他，因为他事事爱人，体恤人，帮助人；怕他，因为他对于人的罪恶没有少许的姑息宽容。</p>
+<p>看自己的时候要多看自己的短处，看别人的时候要多看别人的长处。</p>
+<p>用责备别人的心来责备自己，用宽恕自己的心去宽恕别人。</p>
+<p>「无论何事，你们愿意人怎样待你们，你们也要怎样待人。」（太七12）。</p>
+<ol><li>青年人在尊长面前应当知道的一些事</li></ol>
+<p>圣经教训我们应当尊敬年长的人，我国的古训也是教导作子弟的应当尊敬长上。可惜现代一般青年人大多数都弄得像一群野马，只知道随着自己的性情乱跑。不敬畏神，不尊敬长上。作父母的既不知道按正道教导子女，为人师的又都只顾自己的衣食，不敢对学生加以严格的训诲。青年人在这双重的放任之下，野性便一日比一日发展了。我们除了教导青年人敬畏神以外，也应当教导青年人怎样尊敬事奉自己的尊长，因此把青年人在尊长面前应当知道的事写出一些来。</p>
+<p>家族中的祖父母和与祖父母同辈的人，父母和与父母同辈的人。都是尊长。父母的朋友是尊长。老师是尊长。凡无家族关系年岁与自己的父母差不多的人也当看为尊长。礼记上说：「年长以倍，则父事之，十年以长，则兄事之；五年以长，则肩随之。」（礼记曲礼上）。就是这个意思。</p>
+<p>与尊长会面的时候应当鞠躬致敬，不可只点头示意，像对与自己年岁相差不多的人一样。</p>
+<p>自己坐着的时候，看见尊长进来，应当赶快起立。尊长站着的时候，自己应当恭敬侍立在一旁。尊长坐下以后自己才可以落坐，而且当坐在尊长的下方。</p>
+<p>与尊长一同走路的时候，不要走在前边，一同站立的时候要站在尊长的下方。出入门的时候要为尊长开门。</p>
+<p>与尊长同行的时候，看见他们拿着甚么东西，应当赶快接过来替他们拿着。</p>
+<p>尊长招呼的时候要立时答应。尊长吩咐去作甚么事，如果不是正在作一件绝对放不下的事工，便当立时遵命去作。如果你当时所作的事是绝对不能放手的，便当赶快声明原因，把那件事工一结束以后，便遵命前去。</p>
+<p>看见尊长作甚么劳力的工作，应当立时接过去作。万不可见尊长劳力，自己却在一旁安闲。</p>
+<p>交递甚么东西给尊长的时候，应当恭恭敬敬的双手递上。从尊长的手中接受甚么东西的时候也应当用双手接过来。</p>
+<p>与尊长在一处的时候，看见他们需要甚么，便赶快为他们取来，看见他们要作甚么事，只要是自己的力量所能作到的，便赶快替他们作。尊长为甚么事对自己发怒，应当和平忍受，不可抗拒顶撞。就是有要声辩的话，也应当委婉陈说。</p>
+<p>尊长对自己说话的时候，应当面向着他，专心倾听，切不可游目旁顾，漠不经心。</p>
+<p>对尊长说话的时候，应当先用合宜的称呼招呼一下，以后再说要说的话。</p>
+<p>与尊长谈话的时候不可争着说话；他们的话未说完以前，也不可随意插言。</p>
+<p>尊长问甚么话，应当恭恭敬敬的回答，就是当时不能回答的话，也应当恭敬说明，切不可一言不答。</p>
+<p>与尊长谈话的时候应当谦恭和蔼，万不可疾言厉色，更不可与尊长争吵口角。</p>
+<p>请尊长为自己作甚么事，应当恭恭敬敬的请求，切不可像对与自己年岁相等的人说话一样。</p>
+<p>与尊长同席的时候，尊长未曾举箸之先，自己不可先举箸进食。</p>
+<ol><li>在这些事上都当诚实</li></ol>
+<p>许多信徒在日常生活中的许多大事小事上习惯了说谎。他们不觉得这在神面前是可耻可憎的事。他们在未信主以前曾多次说谎，现在还看见他们周围的人这样说谎，他们便以为这是当然的事。其实这些说谎的事都是犯罪，都是圣徒生活中极大的失败，都是圣徒应当完全革除的事。容我们举出几个例子：</p>
+<p>许多信徒在述说他们的年岁的时候说谎。投考学校或寻觅职业的时候，怕年岁太大就少说几岁，怕年岁太小就多说几岁，在议婚的时候这种情形更多。许多未婚的女子怕人知道他们实在的年岁不容易议婚，就少说几岁，这都是谎言，都是欺骗。而且说了这种谎言以后，常是使你一生继续着说谎。</p>
+<p>许多信徒在有客人来访问的时候没有留客人吃饭的诚意，并且没有豫备客人的饭，口里却说留人吃饭。这明明是说谎，是虚伪，他们还以为这是有礼貌，这是招待周到。基督徒万不可这样作。</p>
+<p>许多信徒到人家中去，因为怕主人留吃饭，本没有吃过饭，却告诉人说已经吃过了饭，这也是虚伪，是说谎。其实他们不愿意在人家中吃饭，本可以声明不在那里吃就是了，又何必说谎犯罪呢。</p>
+<p>许多信徒到人家中去吃饭，因为种种的缘故不肯吃饱，及至人问他是否吃饱了，他便回答说已经吃饱了，这也是说谎，是欺骗。可吃饭的地方就吃饱，不可吃饭的地方根本就不必吃。</p>
+<p>许多信徒买物的时候，嫌价值太高，就信口说以前在某处买过这种物品，或是问过价值，比这个低多少。其实他并没有买过，这也是说谎。嫌价值太高，可以不买，何必说谎，损害自己的德行。</p>
+<p>许多信徒作买卖的时候也效法世人那样说，某种货物少卖了多少钱，某种货物赔本出卖。如果真赔本出售，自然可以这样说。如果并不赔本，为甚么要说谎？作买卖本来应当赚钱，何必说谎得罪神呢。</p>
+<p>许多信徒因为怕别人轻看自己贫穷，就假装富足，告诉人说自己家中有多少财产，每月有多少收入，藉此想博得人的尊敬重看。这也是说谎。其实贫穷并不是可耻的事，说谎欺骗才真是可耻的事。</p>
+<p>许多信徒同别人乍一见面的时候，本来一点都没有听说那个人，却说一些仰慕恭维的话，这也是说谎，也是欺骗。信徒应当完全弃绝这些。</p>
+<p>以上所写不过是几个例子。希望读者举一反三，弃掉生活中的一切谎言，在神面前作诚实无伪的人。</p>
+<ol><li>愚人中最愚的人</li></ol>
+<p>神造了白昼，也造了黑夜。他叫我们在白昼睁开眼睛看光，及至黑夜来到，便闭目休息。照样，神也是叫我们睁眼看那些使人喜乐使人高兴的事，看那些可感恩可记念的事，看他所赐给我们的恩典与福祉，看别人的长处与优点，看人待我们的一切好处。不料世上大多数的人都是愚昧到了极点。他们不肯看光明，却专一的注视黑暗。他们只看那些使人痛苦使人悲哀的事，只看那些可怖可憎嫌的事，只看撒但所施行的毁坏，只看别人的短处和劣点，只看人待他们不好的地方。他们不但只看这些，甚至还自己制造出来许多幻想中的苦难、危险、灾祸、不幸。他们还幻想别人在那里怎样仇视他们，怎样陷害他们，怎样轻看他们，怎样恨恶他们。他们不肯看一点光明，只是专一注目的看黑暗。看来看去，他们心中便充满了痛苦、失望、悲观、苦恼、忧虑、愁闷、怨讟、仇恨、报复、恐惧。至于那些使他们喜乐使他们感恩的事，他们却故意闭目不看，好像怕自己因为看见光明而得着快乐。他们的愚昧使他们的身心都受了无限的损失，还害了许多在他们旁边的人。他们真是愚人中最愚昧的人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>衣履-参观-爱护公物-遵守规则-向人借贷-请人聚餐-西餐规则 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>衣履-参观-爱护公物-遵守规则-向人借贷-请人聚餐-西餐规则</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·4人我之间二十五则</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/4人我之间二十五则（信徒处世常识）/2衣履-参观-爱护公物-遵守规则-向人借贷-请人聚餐-西餐规则.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>谨慎你所穿的衣履，因为常有人要凭你的衣履断定你的人品。</p>
+<p>不要叫人注意你的衣履过于注意你自己。不要使神的名因你的衣履受人的亵渎。不要使别人因你的衣履犯罪或跌倒。不要使你自己因你的衣履在神的圣道上冷淡退后。</p>
+<p>衣履不可华丽奇异，以博人的艳羡；也不可不整齐清洁，致招人的厌恶轻看。</p>
+<p>将你衣服上的钮扣都扣好，将你鞋上的鞋带都勒齐，将你头上的帽子戴正。</p>
+<p>衣服当常浣洗，不要使别人因为看见你所穿污秽的衣服以致轻视你，更不要使你的衣服因污秽发出臭味来使人受苦。水是很容易得的东西，洗衣服是很容易的事。</p>
+<p>许多时髦的妇女喜欢穿极薄的衣服，使她们的肌肤暴露出来，又赤露她们的臂和腿，这是极容易引人犯罪的事，是神所憎恶的。你不可效法她们。</p>
+<p>男女的服装衣履应当有显着的分别。男人不可穿女人的衣服，女人也不可穿男人的衣服，因为这样作非但招人的轻看，而且很容易使人陷在罪中，更是神所憎恶的。</p>
+<p>不要追求怎样穿美丽的衣履以博人的称誉艳羡；最美丽的衣履乃是圣洁高尚的德行。</p>
+<p>不要穿奇异古怪的衣履，惹动别人的注意。</p>
+<p>九 参观</p>
+<p>无论参观甚么地方，除去本为公开的地方以外，应当先讯问那个地方准许人参观不准许？需要经甚么人介绍或不需要？在甚么日期甚么时候可以参观？然后按规则照时间前往。</p>
+<p>到甚么地方参观，除去有熟人带领以外，都当在门上对守门的人说明。如果守门的人索要名片，就当交给他一张；如果守门的人告诉你等一等，以便他去通报，就当等到他来通知你，告诉你可以进去的时候再进去。</p>
+<p>入门的时候如果需要签名，便当签名在册子上。</p>
+<p>你去参观的地方如果有参观规则悬挂或张贴在那里，应当留心阅读一遍，并且完全遵守这些规则，一点不可违犯。</p>
+<p>参观甚么地方如有指定的路线，便当按照指定的路线行走，如有负责的人引领，便当跟着他前进，不可自己任意出入行走。</p>
+<p>无论参观甚么地方，都当听从该处负责人或招待员的指导，不得他们的允许不可随意作甚么，也不可作他们禁止的事。</p>
+<p>写着「谢绝参观」，「私人住宅」，或这一类字样的地方，不可进入，也不可强求人的许可。</p>
+<p>参观的地方若限制时间，你当留意看着时表，以便分配得合宜，免得参观不周到，一到当退出的时候就赶快退出。</p>
+<p>如果你没有相当的身分，又没有熟人的介绍，不要轻易去参观学校、工厂、或其它不是专为人游览参观的地方，恐怕你因此碰钉子。</p>
+<p>公开参观的地方，如果需要购票入门必须照章购票；不可因为有亲友在里面任事，便不购票入门，那是一种不光明不正直的行为。</p>
+<p>参观甚么地方都不可在里面喧哗或大声说话，尤其是学校、医院、图书馆，这一类的地方，就是脚步也当放轻些。</p>
+<p>无论参观甚么地方，都不可随意动甚么东西，至于容易染污容易损坏的东西连摸都不可摸。</p>
+<p>无论参观甚么地方，若不是负责的人给你甚么东西，甚么都不可私拿，连一朵花都不可自己随便采取。</p>
+<p>无论到甚么地方参观，不可随地吐痰，不可随地乱抛碎纸秽物，更不可在厕所外便溺。</p>
+<p>无论参观甚么地方，与那地方负责的人或招待的人说话的时候，应当谦逊有礼。他们向你解说甚么事情的时候，当表示静听的态度。男人参观甚么地方，进屋子的时候当脱下帽子来。</p>
+<p>除去公开参观可以带小孩子的地方以外，最好不携带小孩子同去；如果带着，就当十分留意照管，不可容他们乱跑、喊嚷、或吃零碎的食物，更不可容他们随便动甚么或摸甚么东西。</p>
+<p>你若带领着甚么缺少常识的人去参观，应当负责指导他们，约束他们，免得使那地方的人或招待的人作难。</p>
+<p>参观完毕以后，不可忘记向负责的人和招待的人表示谢意。</p>
+<p>十 爱护公物</p>
+<p>当看公共的对象和别人的对象如同自己家中的对象一样，不但不可损坏，而且应当尽力保全爱护。</p>
+<p>在图书馆阅览图书报章，一点不可损坏撕破，开卷翻篇的时候，都当轻轻下手，不可用手指蘸唾沫去翻书页，这不但污损书籍，也很容易传染疾病。</p>
+<p>不可在公众阅览的书籍报章上写字，更不可剪取里面的甚么材料。</p>
+<p>图书阅览完毕应当放在原处，不可随手乱抛。</p>
+<p>在会堂中用公用的圣经或诗歌的时候要比用自己的书更多加意爱护。不可损坏，不可在上面写字，也不可使儿童玩弄。</p>
+<p>到甚么名胜处所游览，不可在墙壁或柱子上写字或题名。许多公共游览的地方被人这样涂得不堪入目，真是一件可恶的事。你虽然不能禁止别人，但你自己总不可这样作。</p>
+<p>不可折取公共处所的花草树木；就是一根草一朵花也不可动。你或者想那样多的花采取一朵有甚么大碍。假使每一个人都这样想，花岂不要被人采净么？</p>
+<p>游动物园不可投石击打或恐吓园中的动物。</p>
+<p>公共处所的对象，凡容易污损或是禁止动手的，都不可伸手去动或去摸。</p>
+<p>在火车、汽车、轮船、旅馆中，不可污损墙壁用具和陈设品，当看这些地方如同你自己的产业一样。</p>
+<p>十一 遵守规则</p>
+<p>一个好基督徒除了凡事要进行神的命令以外，无论在甚么地方也都当遵守那地方的法律或规则。（但若有甚么法律或规则是违反神的命令的，基督徒自然不当遵守），在国中作守国法的公民；在学校作守校规的学生；在商店作守店规的伙友；在工厂作守厂规的工人。在任何机关或团体里服务，都当遵守那个机关或团体里的规章。除此以外，到甚么地方去游览，应当遵守游览规则；到甚么地方去参观，应当遵守参观规则；小而至于乘车搭船，也当遵守车船中的规则。</p>
+<p>无论到甚么地方去，当留意将那里的规则细阅一遍，以便知道当怎样遵守。若是你因为未曾留意，误犯了甚么规则，以致受别人的干涉，不但不可动怒，而且应当承认自己的过失，立即遵守。</p>
+<p>假使有别人违犯甚么规则，既不受惩罚，也未遭干涉，你也不可因此便效法他们。不要忘记你是基督的门徒。基督徒守法律和规则不是因为怕人的干涉和惩罚，乃是因为要在神的面前作清洁蒙爱的人，在世界上为主作发光的见证。</p>
+<p>当自己遵守规则，也当帮助别人遵守规则。</p>
+<p>不可因为某条规则无关紧要，便轻忽不肯遵守。当记得「人在最小的事上忠心，在大事上也忠心；在最小的事上不义，在大事上也不义。」又当知道凡当作的事无论大小都应当去作；凡不当作的事无论大小都不当去作。</p>
+<p>有些供人游览或参观的地方是必须购票才能进去的，常有人因为有亲友在那里面作事，便藉他们的关照不购票就进去。这不但是违犯那地方的规则，而且还犯了偷窃的罪。基督徒决不可这样作。</p>
+<p>有些人乘火车因为在铁路局或是火车站上有认识的朋友，便借他们的光，不购票就乘车，或购低等票乘高等车，或索取他们不当用的免票去乘车。这不但是违犯铁路上的规则，而且还犯了偷窃的罪。基督徒决不可这样作。</p>
+<p>有些人寄递邮件因为贪图节省一点邮资，就将信件夹在印刷件或新闻纸内照印刷件或新闻纸的邮资寄递，也有人寄递小的包裹为图省些邮费就伪作货样寄递。这不但是违犯邮局的规则，而且还犯了偷窃的罪。基督徒决不可这样作。</p>
+<p>有些公共的地方出入是各走一门的。在这样的地方当从「入门」进去，从「出门」出来，有些地方行走有一定的路线，在这样的地方当循着所指定的路线行走。在路上行走，或骑车，或驾驶车辆，应当靠右边走。（在外国有习惯不同的地方不在此列）</p>
+<p>上下车船或在甚么人多的地方行走，或出门进门，应当按着次序鱼贯而行，不可拥挤争先。</p>
+<p>乘出租车或公共汽车的时候，不可与司机谈话。</p>
+<p>乘车旅行的时候，除非搭客稀少，不可占两人或多人的座位。</p>
+<p>在公众阅览书籍报章的地方不可高声谈话。</p>
+<p>到医院中看望病人，如果不是有特别情形，应当按照医院规定看视病人的时间进去，也当按着时候出来。</p>
+<p>在医院的养病房中不可高声谈话。</p>
+<p>晚间骑车或驾驶车辆应当燃灯。</p>
+<p>凡必须购月台票方可入站的车站，都当购票入站。</p>
+<p>不要因为贪利违犯规则；不要因为懒惰违犯规则；不要因为轻忽违犯规则。</p>
+<p>十二 向人借贷</p>
+<p>非遇万不得已的情形，不可轻易向人借贷。</p>
+<p>借贷的时候应许人甚么日期偿还，到时必须偿还。万不可过期致失信用。如果到期实在不能偿还，应当向借主说明原因，请他原谅，万不可搁置不理，那是极不合理的事。</p>
+<p>借别人的钱或对象，自己应当紧记在心，不可遗忘忽略，越早偿还越好。常见有很正直的人借别人的金钱或对象以后，竟忽略遗忘，久不偿还，他们这样作并非有意亏负人，不过因为他们不在意罢了。但在不了解他们的人，就难免看他们为不诚实，以致藐视他们。其实这也算应当，因为他们虽不是有意亏负人，但实际上确是亏负了人。</p>
+<p>向人借钱或物以后，借主若向你讨要，万不可因此生气，怪罪他。当记念他肯借贷给你就是待你有恩，如今他向你讨要也是理所应当的。常见人向别人借钱或对象，经久不还，一旦借主来讨取，他们竟因此发怒，怪责借主不该这样，这种以怨报德的行为是十分可恨的。</p>
+<p>借别人的对象或书籍应当加意爱护，较比用自己的对象更当多加珍重，一点不可污秽损坏。如果不幸损坏，应当买新的来赔补。当看污损向别人借来的对象是一件极不合理的事。</p>
+<p>向人借来的对象，如果本来是伤残的，你若办得到，应当为原主修整了再归还他。</p>
+<p>向人借贷钱财或对象，如果人不肯借给你，不可罪责人，怨恨人；当记得别人借贷给你乃是恩惠，不是本分。</p>
+<p>向人通信借贷钱财、对象、或书籍，不可忘记担负邮寄汇兑等等费用，不可向人借贷还使借主再受这些亏损。</p>
+<p>许多人在借贷一件事上，因为轻忽无知，以致失了自己的信用，亏负了别人羞辱了神的名。你务要小心，不可蹈他们的覆辙。</p>
+<p>从谁的手中借来的钱或对象，偿还的时候最好仍交与本人，恐怕你托别人转交，别人因为甚么缘故未曾交到，在你想借来的财物已经偿还了，在借主确是未曾收到。如果借主肯询问还好，若是借主再不肯询问你，那样，你虽然偿还仍等于未偿还了。</p>
+<p>向人借贷财物，如果借主出于爱心不要你偿还，你看出他实在是出于诚意，就当接受他的爱心，不必偿还；只是不可忘记他的恩惠。</p>
+<p>十三 借贷与人</p>
+<p>不要怕借贷给别人，但也不要乱借给人；怕借贷给别人是自私，乱借贷给别人是害人。</p>
+<p>不要借钱给懒惰不肯作工的人。</p>
+<p>不要借钱给有嗜好的人。</p>
+<p>不要借钱给说谎欺骗人的人。</p>
+<p>若有人向你借钱是为作投机的事业，不要借钱给他。</p>
+<p>若有人向你借钱是为浪费，就如作华丽的衣服，宴会亲朋，购买奢侈品等等，不要借钱给他。</p>
+<p>人有急难中的需要，向你借贷，只要你有力量就不可推辞。救灾恤邻是基督徒的天职。而且你也难免有急难中的需要。</p>
+<p>困苦可怜无力自助的人向你借贷，你不可推辞，也不可指望他偿还，更不可向他取利。</p>
+<p>别人向你借贷，你如果看是不可借给的，便应当诚实向他说明原因，并且劝戒他，不当设辞推诿，因为那不是爱人的道理。</p>
+<p>有人欠你财物，后来他的境遇渐渐困苦起来，无力偿还，你不可向他追讨，并当酌量情形，向他施行豁免。</p>
+<p>不要将你代别人保管的钱财借贷给人，因为那不是你的，你没有权柄支配使用。如果你将别人的钱借给人，一旦原主来向你支取，你没有法子交付他，那时你必定要大大作难，而且你的信用因此要受极大的损失。</p>
+<p>不要将人托你保管的东西借给别人。</p>
+<p>不可因别人欠你的财物就侮慢他，那是极愚昧的行为。</p>
+<p>十四 请人聚餐</p>
+<p>你若要请人聚餐，当豫先定准日期、时间、地址，早几日就通知你所要请的人，或口头延请，或送请柬，或用通知单通知均可。</p>
+<p>聚餐以前主人当紧记所定的时日、地址、人数，早早安排妥当，以免遗忘或错误。到所定的时候，主人应当早些到场，以便招待来宾。不可使宾客来到的时候，看见主人还未来到。如果所请的客人较多，主人应当豫先请定几个人帮助招待，以免主人到时不及应付，致使来宾多感到不便。</p>
+<p>来宾到场以后，主人不可只对一两个人或少数的人谈话，应当顾到每一位来宾。虽然不能与每人长谈，但总当对每人周旋几句，以免来宾因主人冷淡的态度感觉不快。如果来宾中有老年人，主人更应当特别殷勤招待他们。</p>
+<p>来宾中如有彼此不相识的，主人应当为他们介绍，述说他们的姓名，或略述他们的职业，或他们和主人的关系；但不要过繁，也不要说许多誉扬的话。</p>
+<p>旧日入席让座，拉拉扯扯，推推让让的那种现象实在是无味的。最好由主人指让，来宾便照主人所指让的入座；或是由主人豫先写好每位来宾的姓名，按名放在席上，到时来宾按名入座。</p>
+<p>来宾入席后，主人当发言请某人领众谢恩，或由主人亲自领众谢恩都可以。谢恩后，主人当举箸让客，以后就可随意进食。席未终时，主人切不可离席。如果有甚么特别事故必须离席；应当向客人声明理由，并请客人原谅；事毕后应当急速返席陪客。</p>
+<p>进餐时主人当注意客人的需要；并当趁机与客人谈话，而且应当顾到每位客人，不可只同一两位客人谈话。</p>
+<p>旧日用自己的筷子为别人取菜，是一件很不清洁而使人感觉不安的事。基督徒同处当以诚实相待，最好免除这种陋习。如席间有老人盲人或孩童，必须别人帮助他们；就当另备一双筷子专为他们取菜使用。</p>
+<p>餐后主人应当招待客人饮茶，谈话，或游戏片时。客人向主人致谢的时候，主人应当谢谢他们肯来。</p>
+<p>主人应当尽力帮助客人快乐，不可谈甚么引起人不快活的感觉的话。若是客人中不幸发生甚么言语上的冲突，或别样不快活的事，主人应当急速设法为他们消除，不可坐视不顾。</p>
+<p>酒是与人的心身有害的东西，基督徒请人聚餐切不可用。可以用茶、汽水、葡萄汁、果露等代替。为这事一点不要怕惹别人的不喜欢。</p>
+<p>烟是与人的心身有害的东西。基督徒虽然不能禁止别人吸烟，但总不可再为他们豫备。为这件事也不可怕得罪人。</p>
+<p>若是作得到，最好在进餐后主人领客人作一个简单的聚会：读一段圣经，由主人或豫先请定的一位客人讲几句劝勉众人的话，然后请一位领众人祈祷，这种聚餐可以使来宾心身两受其益，实在是值得我们提倡的。不过这种聚会时候不可太长，大约在十几分钟至三十几分钟之间最为适宜了。</p>
+<p>十五 被请聚餐</p>
+<p>被请聚餐的时候，若是你不能去，就当及早向主人辞谢免得主人豫备你的分。若是应许前去，到时务必按时前往；切不可到时不去，也不可迟迟前往。</p>
+<p>中国人赴宴总要迟到，这是一种卑鄙心理的表现，也是一种损人失信的行为；基督徒应当竭力戒除这种恶习。</p>
+<p>到别人的地方聚餐，不可只想受人的服事，也应当遇机会就服事人，就如帮助主人招待别的来宾等等的事。</p>
+<p>入席的时候，当照主人所指定的席次站在自己的座位后面，等众人都得着座位的时候一同落坐。不可在别人未曾落坐以前便先坐下。</p>
+<p>入席感恩以后，与众一同举箸进食，不可自己先独自下手。</p>
+<p>初举箸的时候不可先取上好的菜肴，应当先取次等的菜肴；不可先取大块的食物，应当先取小块的食物。</p>
+<p>不可用筷子在公共的盘或碗中将菜翻来翻去；不可夹过一块看看不好放下，再去夹取别块；不可只挑选好的取来为自己吃；这都是很自私而且失仪的事。</p>
+<p>聚餐的时候若需要请人为你作甚么，或递甚么东西给你，当将「请」字放在那句话的前面。别人为你作了甚么事，你当说「谢谢」。</p>
+<p>桌子上面有甚么你所喜欢吃的菜肴，不可吃的太多，要想到别人或者也喜欢吃。除非因为某种缘故，你有不能与众人同吃的菜肴，主人特别为你豫备一些别种的菜肴。进餐的时候当找机会谈话；不可一言不发，好像你的心就注意吃饭一样；但也不可自己说话太多，要给别人说话的机会。</p>
+<p>进餐的时候不可说甚么使人不快活的事，也不可提到甚么污秽不洁的东西，免得使别人不能好好吃饭。</p>
+<p>一次不可放太多的食物在口中。口中有食物的时候不可谈话。</p>
+<p>不可张着口嚼食物，也不要使你的口发出吃东西的声音来。</p>
+<p>若是主人在桌子上为每人豫备了两份箸和匙，你就当记住用一份从公共的盘子和碗里取菜取汤，用一份入自己的口。在你自己或觉不很方便，但你当为别人的缘故这样作，并且我们确知这种办法于避免传染疾病上也实在是有益的。</p>
+<p>吃饭的时候两肘不可放在桌上，以免妨碍别人。</p>
+<p>若是有老年人，小孩子，或残废人与你同席，你当尽力帮助他们。</p>
+<p>咳嗽或打嚏的时候，当用手帕掩住口鼻。</p>
+<p>若不是主人特请你带着你的小孩子去聚餐，你就不要带他们去，免得使主人到时多感困难。如果你无法放下你的孩子，起初就可以推辞不去。</p>
+<p>你去赴别人的宴请，如果主人偶有招待不周，或是某种事物不能使你十分满意，你应当加以原谅。因为别人请你聚餐并不是他向你当尽的本分。况且他既请你去，必不是有意侮辱你，苦待你，不过是他未能办理周到。并且你当想到你自己也难免有这种待人不周到的时候。</p>
+<p>你被请聚餐，如果你过时来到，看见众人已经入席，你不但不可怪责主人，而且应当道歉，请他原谅你未能按时来到。</p>
+<p>吃完饭或临走的时候，不可忘记向主人致谢。</p>
+<p>十六 西餐规则</p>
+<p>吃西餐的时候，若是你不熟习一切的规则和刀叉等物的用法，最好留意观看主人和别位客人的举止，慢慢的的效法他们。常见一些人自己既不知道一切的规则，又不留心观看别人，以致弄出许多奇怪失仪的状态来，同时他们自己却毫不在意。这种人真是愚蠢可笑。</p>
+<p>入席的时候当离开桌子站立听候主人指派座次。当主人将你的座位指给你的时候，就走向前去站在你的椅子背后，等每位客人都有了座位以后，大家一同落坐。</p>
+<p>落坐后不可开口谈话，当安静等候主人自己或主人所请的一位客人领众谢恩。谢恩毕就可以取桌子上所放靠近你左手的饭巾，打开放在你的胸前，免得食物或汤水污了衣服。这块饭巾也可用以擦嘴，但切不可用以拭涕或吐痰。进餐毕仍当将饭巾整齐折起放在桌上。有时主人不豫备饭巾却用纸代替，用这种纸的规则也和饭巾相同。</p>
+<p>饮汤当用摆在你面前最大的匙子，取汤缓缓送入口中，饮汤的时候不可使口发出声音，因为西人看这是失仪的事。当汤在盘子里只剩余少许的时候，可用手将靠近你胸前的一边略略撬起，那一边仍放在桌子上，然后将汤用匙取尽。喝汤的大盘切不可用手举起离开桌面，也不可用口近盘去喝，只可用汤匙舀起。但如主人用杯盛汤，就可以举起来近口去喝。</p>
+<p>饮汤后，摆在你面前的大盘是为盛肉菜或饭用的。可以按着食量取肉菜和饭等放在盘中。等到众人都取得以后，一同动手去吃。</p>
+<p>摆在靠近你左手的小碟是专为放面包、奶油、和果酱用的。当面包递到你面前的时候，可用手取一块或两块放在这小碟中。奶油或果酱递到你面前的时候，当用放在奶油盘或果酱盘中的小刀或小匙略取一些，放在你自己的小碟中，然后将那公用的小刀或小匙仍放回原盘。不可将放在奶油盘或果酱盘中的小刀或小匙放在你自己的碟中，也不可用它抹奶油或果酱在面包上。当用摆在你面前归你用的一柄小刀。若是桌上未曾设备这种小刀，就可用切肉的刀抹奶油或果酱在面包上。面包当用手拿起送入口中，不必用叉。</p>
+<p>叉子是为送食物入口用的，它的用途与中国的筷子相同，刀是为切肉用的。若盘中没有可用刀切的食物，将刀放在一旁不用也可以。</p>
+<p>绝对不可用刀送食物到口中，这是极失仪的事。</p>
+<p>欧洲人吃饭的时候，多是右手执刀，左手拿叉子，用刀将肉菜饭等放在叉子上，然后以左手举叉送食物到口中。美国人吃饭的时候，多是右手持刀，左手拿叉，将肉或别种必须切的食物切碎，然后将刀放在盘子边上，再用右手举叉送食物到口中。这两种吃法都是可用的。</p>
+<p>取食物到自己的盘里的时候，当斟酌自己的食量取用。若非有特别的情形，总当将自己盘子里的食物吃尽。吃够了的时候，当将刀与叉子相并放在盘子上，叉子当仰放着。侍者看见这种情形，就知道你已经吃完，因此可将盘子撤去。</p>
+<p>有时桌子上面摆设好几份刀、叉、匙子，有是为喝汤的，有是为吃鱼的，有是为吃肉菜的，有是为吃点心的。若是你不知道当怎样按序使用，最好是留意看主人或别的客人怎样作，你就随着也这样作。</p>
+<p>侍者送菜或别样食物总是在客人的左边。你若看见他从你的右边递进。当知道那是递送给在你右边坐着的客人的，这时你不可伸手去取。等他从你左边递来的时候，纔可以伸手去取。</p>
+<p>同席的人递送甚么食物给你的时候，当赶快伸手去接，并说「谢谢」。如果他所递送的是肉菜、面包、奶油、果酱等物，你当将器皿接过来，用左手拿着，用右手去取一些放在你的盘或碟里。不可容别人拿着器皿，你从其中取出食物来。你取完了食物以后，不要忘记传递给靠近你的客人。</p>
+<p>如果你要取放在桌子上离你较远的地方的食物，可以请别人传递给你。但请人为你作甚么的时候不要忘记说「请」字；他为你作了以后不要忘记说「谢谢」。</p>
+<p>茶匙用完以后，就当立时自杯中取出，放在茶碟内。杯放在桌子上的时候，无论里面有无饮料，都不可将茶匙放在里面。</p>
+<p>吃果子的时候放在你面前的一个盛水的扁碗是为吃完果子以后洗手用的，吃完果子以后可以将手指蘸在里面洗一下，以后用饭巾擦干。切不可用那个碗喝水。高形的玻璃杯里面的水是为喝的。</p>
+<p>吃饭的时候不可使口发出甚么声音。</p>
+<p>进餐的时候，坐位应当靠近桌子一些。两肘不可放在桌上，免得妨碍别人。如有骨头、皮、核等不可下咽的东西，应当放在盘或碟内；不可放在桌布上，也不可抛在地上。吃饭的时候要小心，不可将汤或食物落在桌子上，以致弄污了桌布。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>忠告青年的女子们 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>忠告青年的女子们</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·1五封信</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/1一、窄门/1五封信（写给青年的基督徒）/5忠告青年的女子们.mp3">🎧 收听本节音频</a></p>
+<p><strong>正文</strong></p>
+<p>现代青年的女子们是处在一个最危险的时代中。在以前的时代，女子是被禁闭在家庭中，未出嫁以前，受着父母的管束，不能多与外界接触。既出嫁以后，就在丈夫的家中作着妇女在家庭中必须作的本分。现代的妇女看这种生活是枯燥乏味，毫无自由的，甚至称这种生活为奴隶式的生活。是，这种受管束的生活诚然不像现代一般新时代的女性那样自由活泼，那样无拘无束，但同时我们必须承认，那个时代中的女子所遇见的危险和祸患，也远不及今日的女子这样多。现代的新女性是从家庭中得了解放。她们有机会和男子们受着同样的教育，也有机会和许多人接触往来，有机会享受男子们所享受的交际和娱乐，其中也有些人有机会到社会中去作事，如同男子一样。她们诚然是有了从前所没有的自由，但她们同时也遇到了从前所未曾遇到的危险。</p>
+<p>从来多数的男子对女子总是存着不正当的思想。他们看女子为玩物，为他们纵欲的对象。他们不惜用种种卑鄙恶劣的手段去欺蝙女子、侮辱女子、蹂躏女子。无论在那里有一个青年美丽的女子出现，便有千百个存心不正的男子虎视眈眈的围绕她的四周，设各样的计谋要接近她、玩弄她、玷污她。虽然他们的口中说这是正当的爱情，实际他们所有的只是一种肉欲，他们并不懂得甚么叫爱情。他们要接近这个女子，完全是出于自私自利的动机，一点也没有为这个女子的利害损益计划一下。年纪轻经验少的女子既不明白大多数男子所存的这种邪恶的心理，又不晓得男子们所说的谎言，所设计的诡计，不遇见这种男子就罢了，若是不幸遇见了他们，少有不吃亏受害的。在财物上受些损失还可以弥补，如果一个女子失身于不良的男子，这个损失是一生不能弥补的，而且这种损失常会演出不可挽救惨痛到极点的结局。</p>
+<p>在从前的时代，除了少数的家庭以外，大多数的家庭是不容许青年女子随便出到外面与外人往来的。那些存心不良的男子们虽然野心勃勃的想要接近别人家的女子，但环境不许可他们。因为大多数的女子既不能随便外出，他们又不能闯进别人的家宅去寻找人家的女子，因此只好望洋兴叹。比较好一些的男子只有死心塌地的守着自己的妻子，度自己的岁月。那些放荡不能自制的男子也只能寻花问柳，狎妓宿娼，或是偷偷摸摸诱惑几个下流人家的女子。在那个时代中，女子们固然不像今日的女子们这样自由，但她们却因此逃脱了多少危险和祸患。</p>
+<p>现代的女子们从关闭的家庭中得了解放。她们进到学校里去读书，他们自由到同学们的家中去，在那里她们遇见同学们的伯叔、兄弟、和同学们的亲友中的男子们。有些学校采取男女同校的制度，女学生们足不出校门就可以与许多男生接触往来。在没有功课的时候，和休假的日子，她们到娱乐场去消遣取乐。在那里她们有机会与许多男子接触、认识、交际、往来。青年人在情窦初开的时候，本来就喜欢接近异性，如今既有了这些机会，当然不肯轻轻放过。她们只知道这是时代所赐给她们的好处，却不知道怎样豫防危险，许多存心不良的男子们便藉着这种机会引诱这些毫无知识的青年女子。他们向她们谈情说爱，向她们作各种亲密的表示，吐出各种甜蜜的言语。这些青年女子们一向都是受着父母的爱护鞠养，那里明白人心的险诈虚伪。她们认为凡向她们表示亲爱的人都是像她们父母一样的对她们忠诚真实。她们很轻易的去接受那些男人们所表示的善意。她们认为他们口里所说的话语和他们心中所存的意念是完全一致的。她们很欣幸有这样多的男人爱她们，而且求她们的爱。她们陷入了爱情的网罗。她们接受了男子们的爱（？）。她们不顾一切要达到她们的目的。她们的父母禁止她们不要与那些不可靠的男子们交往，她们不听。他们的师友警告她们谨慎不要受人的欺骗，她们不信。她们甚至从此看她们的父母为仇敌，看她们的师友为破坏她们的幸福的人。她们再不向她们的父母和师友提到她们和那些男人们中间的关系和往来，恐怕他们再加以阻拦破坏。同时那些心怀叵测的男子们也恐怕女子们的父母师友看破他们的诡计，以致他们功败垂成，因此向那些无知的女子们说许多离间的话，离间她们与她们父母师友的感情，使她们怀疑她们的父母师友，恨恶她们的父母师友，却以他们为惟一可靠可爱的人。这些年幼无知的女子也就真信他们的话，甘心认贼作父，自取祸败。及至这些女子受了他们的欺骗蹂躏，被他们虐待或遗弃之后，她们纔悔悟自己是上了当，但是大错已经铸成，再没有法子可以挽救了。我们在大城中目睹耳闻的这种事实真是数不胜数。可是吃了亏受了害的女子在那里伤心、落泪、叹息、哀号，那些未曾吃过亏受过害的女子却仍是奔着这条充满祸害的道路跑去。这也不足为奇，因为那些受了害的女子们为了颜面的关系，谁也不肯把自己以往的丑事向别人宣布出来。她们虽然痛恨那些存心不良的男子们，想要揭破他们的劣迹恶谋，以免别的女子们再受欺上当，但因为她们这样去作，就不免牵连到她们自己的名誉颜面，她们因为投鼠忌器的缘故，便只好缄口不言了。这样一来男子们的胆量便越来越大，受害的女子们也就越来越多了。</p>
+<p>有些头脑简单的父母们看见了这种情形，便不许他们的女儿入学校受教育，并且多方管束她们，监督她们，禁止她们与男子会面往来。他们以为这样一来，他们的女儿便可以不遭危险了。殊不知这种办法正像筑堤防水一样。把堤筑得很高，固然可以使河水不致泛滥到两岸，但是如果果有一日决了口，那种结局便不堪设想了。聪明人治水的时候乃是竭力浚疏河道，使水有正当的出路，根本不用筑堤，河水也不会泛滥到两岸。况且在这个民智大开的时代，作父母的硬要不许女儿入学校受教育，不用说女儿们不肯甘心，纵使她们甘心服从，这些没有受过教育的女子将来可到甚么地方去呢？不用说社会里没有她们立足之地，就连较好的家庭中恐怕也没有她们容身之处。</p>
+<p>这样，怎么好呢？青年的女子们不能不受教育，受教育又有上文所提的危险。那样我们是否应当让我们的女儿入学校受教育呢？我们应当让她们受教育，但我们同时应当使她们知道她们青年时期中的危险和试探。在她们尚未曾与外人接触之前，就将人心的险诈与社会的黑暗告诉于她们。我们不怕多使我们的子女们知道世界上的罪恶。在家庭中作父母的，在教会中作领袖的，在学校中作教员的，都应当多教导青年的女子，使她们明白许多诡诈的男子向她们所抱的野心，所存的恶念，所设的奸谋，并多举出一些青年的女子们受害的事实给她们看。如果有自己因无知而受欺骗的女子，肯勇敢的把自己的经历告诉一般青年的女子们，更是一件极有价值的事。（不过要作这件事以前需要恳切祷告，并在各方面作过精密的考虑，或是向有经验的圣徒请教。）</p>
+<p>有许多很腐败的家庭中的女子走了坠落的道路，这原不足为奇。令我们希奇的就是有些最清洁最良好的家庭中的女子竟会失身于恶人，受了他们的欺骗愚弄，流落到极可怜的地步，这到底是甚么缘故呢？我们回答这个问题说，就是因为她们的家庭太好的缘故。她们的家庭中没有那些欺诈邪恶的事。她们的父母也总不使她们知道社会中的黑暗。她们的弟兄们也用诚实的心爱护着她们。她们因此认为整个的社会都和她们的家庭一样。她们到了外边，遇见了老年人，以为都是她们的父母，遇见了青年的男子，以为都像她们的弟兄那样爱护她们。她们不知道世界上还有谎言、欺诈、骗术、假面。她们不遇见坏人则已，如果遇见，一定要受他们的陷害。同时有些在很坏的环境里生长起来的女子，倒能守身如玉，不被恶人玷污。因为她们从小就明白恶人所存的恶念，所设的计谋，并且亲眼看见许多女子受了恶人的陷害，因此触目惊心，恐惧战兢，怕自己不谨慎也遭同样的结局。许多很好的父母陷入一个错误中，就是他们恐怕他们的儿女学坏了，便总不叫他们晓得世界上的坏事。就像作父母的恐怕他们的儿女被黄蜂和蝎子螫伤，因此昼夜在他们的庭院花园中留心搜索，见着黄蜂和蝎子立时捕杀净尽，不使他们的儿女看见这些能伤人的昆虫。因此他们的儿女从来就不知道昆虫里还有能螫人的东西。不幸有一天他们跑到外面去玩耍，看见了黄蜂以为是蝴蝶，看见了蝎子以为是像蟋蟀一样会叫的昆虫，因此伸手去捕捉，以致被螫得连脸带手都肿痛起来。不使自己的儿女知道世界上有坏人坏事，那种害处也是如此。</p>
+<p>我在这里特别要警教青年的女子们，千万不要听信素日不深知根底的男子们对你们所说的甜言蜜语。许多男子们的口会流出蜂蜜来，他们的心中却藏着毒剑。一个与你没有关系的人如果在你身上没有企图，却应许给你许多利益，许多好处，那是世界上不会有的事。他们所说的甜言蜜语，和他们应许给你的好处，就是他们的钓饵。如果你吃了他们的饵，你一定要上他们的钩。男子在追求女子的时候，甚么好听的话都说得出来，甚么条件都能应允，甚么事他都肯去作。及至把女子得到手中以后，他们会立刻变脸，推翻他们所应许的一切条件，露出他们本来的面目。那可怜的女子到了这个时候，除了悔恨哀哭以外，是一点别的办法也没有。有些比较有才干有手腕的女子到这时也许可以打他们、骂他们，同他们起讼，或用其它强硬的手段对付他们。可是自己已经失身于男子，生米已经煮成熟饭，弄到末后仍是受辱吃亏。女子不受男人的欺骗则已，如果受了男子的欺蝙，是一点挽救的办法也没有。想到这里真是令人不寒而栗阿！</p>
+<p>再进一步说，青年的女子同素日不深认识的男子交往，根本就是一件万分危险的事。世界上本来就是好人少，坏人多，诚实的人少，诡诈的人多，况且一个男子对女子如果有了恶意，他便会说种种的谎言，戴种种的假面，用种种的手段，去欺骗她。一个青年的女子本来就没有经验，富于感情，又加上正在情窦初闭渴慕男子的时候，最容易对男子一见钟情，陷在爱情的网罗里。及至她堕入情网以后，不用说她看不清楚男子的坏处，就是她看得清楚，她也会为他遮盖，为他掩饰。到了这个时候，她便如同闻了蒙药一样，谁也没有方法再拦阻她，使她离开那个男子。如果有人出来警戒她、拦阻她，她要看他们为仇敌。她在这时候能摒弃一切的朋友家人，只要那一个男子。如果她的父母起来阻挡她，不使她爱这个男子，她也能看他们为仇敌，把他们撇下，毫不顾惜。我亲眼看见过多少青年女子走到这种地步。她们简直就像疯狂了一般。及至陷入祸坑，铸成大错，才悔悟当日的愚昧，但是已经无法挽救了。青年的女子如果不愿意作这种愚人，起初就不当与素日不深认识的男子有甚么交往。今日有一些人主张青年的男女应当去结识许多异性的朋友，好在这些朋友中间选择适宜的对象，这完全是一个理想。因为大多数的青年人一和异性人发生感情，便完全失去理智，再提不到甚么选择了。可是这种主张却极受一般青年人的欢迎，因为它给他们一种放纵的机会。结果是甚么呢？一些存心不良的男人满足了他们的欲望，一些诚实清白的女子受了男人的欺骗诱惑，弄得后悔莫及。亲爱的青年人，你们切不要再上这个当了。</p>
+<p>还有一样重要的事，我需要提醒一般青年，（女子和男子都在内），就是你们和异性人如果有甚么交往和友谊，尤其是有婚姻的企图，总当诚实坦白的告诉你们的父母，绝不可背着他们在暗中作甚么事。如果你们的父母是特别无知、特别顽固、或是特别邪恶（世上常有这样一类的父母），你们实在不能告诉他们，那样就当把你们的事告诉家族中其它有德行有见识的尊长，或是可敬可靠的师友。如果你们的教会中的领袖是敬虔有见识的，你们尤不可不坦白的告诉他们，求他们的指导。如果和你们交往的异性人告诉你们千万不要把你们交往的事告诉别人，你们便可以明白他们存心不良，想要诱惑你们，陷害你们了。他们这样叫你们保守秘密，就是怕你们告诉别人以后，别人识破了他们的诡计。他们知道你们年轻，缺少经验和知识，容易受人的欺骗。只要你们保守秘密，没有别人识破他们的诡计，他们便可以把你们玩弄在股掌之上，使你们至死不能醒悟。他们这种存心真是毒辣到极点。你们千万不可陷入他们的网罗。你们不但应当请求可靠的人的指导，而且应当虚心受教。如果你们的父母师友或是教会中的领袖，所给你们的指导是良好的，也当决意听从，这样你们便不至受人的玩弄欺骗。</p>
+<p>阅者中间如果有容貌美丽的青年女子，我更特别的警告你们，你们千万不要因为自己的美貌自豪自幸，倒要特别儆醒谨慎。因为魔鬼和恶人向你们所施的攻击特别剧烈，你们遭遇危险和祸患的机会也比别的女子更多。一个美貌的女子到处得人的爱慕，同时那些存心邪僻的男人看她，也就如同一群饿虎争着要吃一只肥羊一样。如果她能战战兢兢，小心翼翼，仰望神的保守，谨慎自己的言行，不敢轻易和异性交往，不敢随着自己的私意动作，她还可以不落在魔鬼和恶人所设的陷阱里。如果她因着自己的美貌欣幸骄傲，目空一切，一方面藐视践踏别的女子，一方面想要玩弄操纵许多的男人，希望利用自己的美貌尽量的博取，尽量的享受，她所要遭遇的结果一定要惨痛到极点。不用提在神面前她惹了神的震怒，就以世界上的情理说罢，她这种生活的结果一定会弄到受子女的嫉妒，遭男人的怨恨。虽然一时也能受许多人的艳羡、仰望、追求、爱慕，但这全是属肉欲的，实际上并没有一个人真心爱她。及至有一日人老珠黄，她的美貌像秋天的花卉那样凋谢了，从前那些艳羡她、仰望她、追求她、爱慕她的人，都转过来藐视她、唾弃她、厌恶她、咒诅她，到这时候她想要得到一个丑恶的女子所得的结局都得不着。还有一些美貌的女子在青年的时候受异性的追逐，遭同性的嫉妒，稍不谨慎，便会丧命情场，遗恨绵绵。读了历史上的记载，再环顾我们所见所闻的种种事实，到处可以看见这种惨痛的现象。美貌原是神的恩赐，因着人的妄为，竟弄成惹祸杀身的导火线。美貌并不害人，害人的还是人自己的无知与罪恶。我巴不得世间容貌美丽的女子都听听这一番忠告。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
