@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>作基督的新妇须行基督所行的路途 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>作基督的新妇须行基督所行的路途</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/1基督的新妇/2作基督的新妇须行基督所行的路途-05.mp3">🎧 作基督的新妇须行基督所行的路途（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/1基督的新妇/2作基督的新妇须行基督所行的路途-06.mp3">🎧 作基督的新妇须行基督所行的路途（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>两个人若同心在一处作工，必须有同一的知识和经验，然后纔容易互相了解、互相体恤、互相扶助。常常两个人是由于先同心而后同行一路；但经过长久的时间同行一路以后，渐渐的更能心志相同、德行相同、经验相同，知识相同，到了这种地步，再去担负同一的使命，作成同一的事工，真是得心应手，成功极易了。基督的新妇是在将来要与基督一同作大工的。她必须行过她的未婚夫（基督）所已经行过的路途，方能作他将来良好的配偶；他所要于她的，也是这样，所以他召门徒的时候，常是说：「来跟从我。」（太四19，九9）跟从我的意思就是说，走在我的后边、走在我所走的路途上，到底基督所走的路途是怎样的路途呢？看旧约上先知预言基督一生事迹最完备的一段记载，便可以知道了。</p>
+<p>「他在耶和华面前生长如嫩芽，像根出于干地：他无佳形美容；我们看见他的时候，也无美貌使我们羡慕他。他被藐视、被人厌弃；多受痛苦，常经忧患；他被藐视，好像被人掩面不看的一样；我们也不尊重他。</p>
+<p>「他诚然担当我们的忧患，背负我们的痛苦；我们却以为他受责罚，被神击打苦待了。那知他为我们的过犯受害，为我们的罪孽压伤，因他受的刑罚我们得平安；因他受的鞭伤我们得医治。我们都如羊走迷，各人偏行己路；耶和华使我们众人的罪孽，都归在他身上。</p>
+<p>「他被欺压，在受苦的时候却不开口；他像羊羔被牵到宰杀之地，又像羊在剪毛的人手下无声，他也是这样不开口。因受欺压和审判他被夺去；至于他同世的人，谁想他受鞭打，从活人之地被剪除，是因我百姓的罪过呢？他虽然未行强暴，口中也没有诡诈，人还使他与恶人同埋；谁知死的时候与财主同葬。</p>
+<p>「耶和华却定意将他压伤；使他受痛苦；耶和华以他为赎罪祭，他必看见后裔，并且延长年日，耶和华所喜悦的事，必在他手中亨通。他必看见自己劳苦的功效，便心满意足。有许多人因认识我的义仆得称为义；并且他要担当他们的罪孽。所以我要使他与位大的同分，与强盛的均分掳物；因为他将命倾倒，以致于死。他也被列在罪犯之中。他却担当多人的罪，又为罪犯代求。」（赛五十三1～12）</p>
+<p>上文所引的豫言，第一段是述说基督的卑微；第二段是述说基督受苦的原因；第三段是述说基督受苦时的态度和状况；第四段是述说基督受苦的功效，和祂因受苦所得的赏赉。从这一章豫言里，我们可以看出基督所走的路是怎样的路了。他所走的，就是卑微和受苦的路途。</p>
+<p>「他无佳形美容；……他被藐视、被人厌弃；多受痛苦，常经忧患。」他本来不是这样的。他是与父同在，又有荣耀的。他的美容，远超过世上的众人，且是可受世人敬重的。但他现今这样，是因为父的旨意要使他备尝世人的苦痛忧患，然后可以拯救体恤世人。因此他甘心离了天上，降生在卑微的客店马棚中。（一个没有人住的地方）不久他又被凶恶的人所谋害，因而同他的母亲，作了埃及国中的亡命客。他渐渐长大，就作了拿撒勒（一个被人藐视的城邑）城中的木匠，（一宗被人轻看的事业）到了施浸的约翰传道的时候，他虽然没有罪，却仍是就了约翰去，好像一个当悔改的罪人，受了罪人当受的浸。他有取得富足尊荣的可能，但他却是拜主他的神，单要事奉他。（太四10）因他所作的大事，群众来强逼他作王；（约六\cs1615）在别人遇见这事，必以为是千载难逢的良机；但他却是逃避了众人的拥戴，反倒甘心作了众人的仆人。他没有一次用他的权能彰显自己，使自己尊大，只是谦谦卑卑的服事众人。人要述说他的作为，他却嘱咐他们不要给他传名。（太十二16）他甘心隐藏自己，他乐意作卑微的人，到了他行程的末了，他竟卑微到尽头；他非但舍弃了神子的尊荣，他又舍弃了义人的权利。他甘心代世人成为罪犯，受祭司长和官府的审判，忍受他们的凌辱、嬉笑、唾吐、鞭打；至终他竟「被列在罪犯之中」，受尽多人的轻藐。他一生所行的路途，从马槽起，直到十字架止，都是卑微且是卑微到极点。</p>
+<p>基督既是行过了这卑微的路途，他的未婚妻也必须随在他的后边，走他所走过的路。若是我们希望作基督的新妇，就当凡事隐藏自己，甘处卑微的地位。神若将我们放在卑微的境地，不要逃避，不要自己去求升高。别人若轻看我们，不要发怒，也不要争辩；因为这是极好的机会，使我们可以学习如何走基督所走过的那条卑微的路途。若是我们有甚么德行、有甚么成就，以致得人重视夸耀的时候，应当十分谨慎，这是最危险的境遇，因为这些最容易使我们高大自尊，离开基督所走过的那条卑微的路，我们更当十分谨慎，不要为求甚么尊荣名誉，以致走到神的旨意以外去。我们若要十分重看神的旨意和应许，总是要被世人所藐视、所厌弃，因为世人常是看顺服神的旨意为愚昧，盼望神的应许为迷信。许多的信徒忍受不住这个。他们太多顾全颜面，爱慕名誉和尊荣；他们宁可因此不随在基督的后面，他们没有爱基督像基督爱他们一样多。基督为爱他们，因而自卑直到尘埃；他们却不肯为爱他的缘故，与他同走那卑微的道路；他们不配作基督的新妇。愿神使我们的心眼睁开，能以看明基督的爱是何等的浩大奇妙；更使我们为爱他的缘故，就定意一生与他同走那卑微的路途。</p>
+<p>「他被欺压，在受苦的时候却不开口；他像羊羔被牵到宰杀之地，又像羊在剪毛的人手下无声，他也是这样不开口。」他受苦，他忍耐苦楚，他不勉强挣脱患难的绳索，反倒一言不发的忍受。他受苦不是因为自己的罪。按他的行为，他一点不当受苦。「他为我们的过犯受害，为我们的罪孽压伤，」他虽然不当受苦，还是因为顺从神的旨意，就甘心受苦，不与人争辩。人辱骂他，他一言不发；人鞭打他，他毫不反抗。他在神面前的这种顺服，是何等的大！何等的美！</p>
+<p>最大的顺服是在最大的苦难中学成的。惟有在苦难中仍能顺服神旨的，他的顺服方能得大赏赉。因此前面的豫言第四段中有话说：「所以我要使他与位大的同分，与强盛的均分掳物；因为他将命倾倒，以致于死，他也被列在罪犯之中；他却担当多人的罪，又为罪犯代求。」使徒也是这样为基督作见证说：「他虽然为儿子，还是因所受的苦难学了顺从。」（来五8）又说：他「既有人的样子，就自己卑微，存心顺服，以至于死，且死在十字架上。所以神将他升为至高，又赐给他那超乎万名之上的名；叫一切在天上的，地上的，和地底下的，因耶稣的名无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。」（腓二8～11）</p>
+<p>好了，我们现今可以晓得基督的新妇所当行的路途了。「卑微」还要加上「受苦」。必须受苦，方能学习顺服、方能成为完全、方能有基督所有的德行、方能有基督所有的经验和体恤人的心、方能作基督合格的新妇，与他同作大事。因此经上教训我们说：「你们蒙恩，不但得以信服基督，并要为他受苦。」（腓一29）又说：「所以耶稣要用自己的血叫百姓成圣，也就在城门外受苦，这样，我们也当出到营外，就了他去，忍受他所受的凌辱。」（来十三12～13）这是何等不易的事。受苦，且是「忍受他所受的凌辱」。有多少信徒一听见这样的教训，都是掩耳却走。及至我们深知苦难的益处──它可以催逼我们仰望神、亲近神；又可以增加我们的信心；（雅一2～4）又可以熬炼我们，使我们离弃世俗与不义；（彼前四1～2）又可以催促我们向前奔跑，不恋慕这要过去的世界；又可以帮助我们学习最大的顺服；又可以使我们作善于体恤人、安慰人的人；这时，我们的心将要何等的羡慕受苦。朋友们，我们应当知道，若只存基督所存的心（顺服），但是不肯走基督所走的路（受苦），便总不能有基督所有的德行和资格，也就总没有希望作基督的新妇。受苦诚然是一件不好过的事，但是「我们如果和他一同受苦，也必和他一同得荣耀。」（罗八17）因为「我们这至暂至轻的苦楚，要为我们成就极重无比永远的荣耀。」（林后四17）</p>
+<p>或有人要问说：「我们当怎样去受苦呢？」这问题是这样的回答：我们不必去寻求如何受苦，我们只要存基督的心，并且照他的榜样去顺服神旨就是了。我们真要完全顺服神旨的时候，世界必要起来与我们为敌，我们因此就要遭遇许多的损失和危险。这世界是与神为敌的，撒但是在现今的世界上作王，属基督的人总不能得世人的欢迎，我们的主已经对我们说过了。（约十五18～20）因此在一个乐意顺服神旨的人身上，苦难是自然会来到的。可惜许多信徒虽然有乐意顺服神旨的心志，但竟是胆怯、畏惧世界的敌挡和攻击，不惜以神的道当作可耻的，又在一切的事上，与世人同流合污。朋友们，这是断不可的。我们决不可为要逃避苦难和逼迫，便去附和世人。我们当作勇敢的人；为要跟随基督，不怕苦难的临到。在受苦的时候，更要效法基督一言不发，忍受苦难。这样，我们既行过了基督所行过的路途，以后便可蒙他的悦纳，作他的新妇了。来罢，容我们学习受苦。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

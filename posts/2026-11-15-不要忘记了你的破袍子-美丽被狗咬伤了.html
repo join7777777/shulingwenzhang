@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>不要忘记了你的破袍子-美丽被狗咬伤了 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>不要忘记了你的破袍子-美丽被狗咬伤了</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/2不要忘记了你的破袍子-美丽被狗咬伤了.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>相传古时某国国王有一个贤良的宰相，辅助国王把国家治理得非常富强。这位宰相为官十分清廉，事君极为忠诚。虽然身为宰相，自奉却非常俭朴。他得国王的信任，受民众的爱戴。不过有一件事却使认识他的人不能不对他怀疑，就是他每次出门常常携带着一个小皮箱子。这个小箱子他总是严严的锁着，从来没有在人面前打开过。因此众人便对他这个小箱子发生许多的揣测和议论，不过总没有一个人敢问他这个箱子里装的究竟是甚么。渐渐的这件事传到了国王的耳中。国王也对他发生了疑惑。有一天国王忽然来到他的家中，与他说了一些话以后，忽然问到他的小箱子里装的是甚么东西，并且吩咐他立时打开叫王看一看。他听了王的命令只得拿匙开了锁，将这个箱子打开。及至他开了箱子以后。王便看见箱子里除了一件极破的旧袍子以外，并没有别的东西。王看了以后觉得非常惊奇，便问他为甚么常常携带着这件破袍子，而且锁得这样严密总不使人看见。这个宰相回答王说：「王阿，这件破袍子是我二十多年以前所穿的。那时候我的家境贫寒，遭遇坎坷，这件袍子穿破了以后，没有钱再买新的，仍需要再穿，以致破烂到这种地步。过了几年，由于别人的提拔在朝中得了一个地位，谬蒙王的赏识，用我作了宰相。我得了权位以后，深恐怕自己忘了以前的困苦艰难，卑微贫贱，以致骄傲狂妄，擅作威福，贪婪奢侈，淫佚放纵，上对不起王的付托，下对不起百姓的爱戴。因此我便把这件破袍子好好的保存起来，锁在这个小箱子里，每逢没有人在面前的时候，便把箱子打开，把这件破袍子提在手中，叫着自己的名字对自己说，贵不可忘贱，富不可忘贫，你今日虽然身居宰相的要职，总不可忘记你自己从前是一个贫贱的人，曾穿过这件破袍子阿。我每次看见这件破袍子便不敢不自谦自抑，因着王的提拔感激涕零，因着国人的属望黾勉自励。我自从为官以来这些年间也受过多少试探，也起过贪婪骄傲的恶念，但每逢我一看见这件破袍子，这些不正当的思想便立时匿形遁迹。我在王面前任事这些年幸而没有陨越，这件破袍子给我的帮助实在不少阿。」</p>
+<p>基督徒们，我们现在不论比别人好多少，不论德行怎样高，爱心怎样大，信心怎样坚，也不论为主作了多少工，救了多少人，受了多少苦，奉献了多少财物，也不论有多少人爱我们，敬我们，推祟我们，称赞我们，我们总不可忘记我们在未曾信主以前都是坏得不可救药，遍体疮痍身无完肤的罪人。我们自己甚么可夸的地方都没有。若是夸口，只有夸神的救恩临到我们这不配得一点恩典的人。连最属灵最敬虔的圣徒在没有被主耶稣的宝血所洗净以前在神眼中也是极污秽的罪人。没有一个圣徒不是因着神的恩典藉着基督的宝血被称为义得成圣洁。可惜许多圣徒在起初悔改信主的时候看见自己的污秽败坏，在神面前深深的自卑，因着他们自卑神便使他们升高，不但拯救了他们，收纳了他们，也给了他们许多的恩赐。及至他们有了长进得了恩赐作了一些事工以后，他们竟渐渐骄傲自大起来。他们觉得自己比别人强。他们看不起别人。他们自夸自恃。他们归荣耀与自己，却不归荣耀与神。他们藉着神的恩赐去放纵自己的情欲。他们把神交托他们的财物当作自己的私有物。一个人一到了这种地步，不久便要被神废弃，被神击打，遭祸患，受羞辱。如果他受了神的警戒仍不急速悔改，结局便不堪设想了。我们真应当效法这个宰相，常常想到我们自己以前的污秽邪恶，贫穷卑贱，再想想我们得有今日的光景完全是出于神的怜悯和慈爱，并且常常叫着自己的名字警戒自己，提醒自己，这样，我们自然不敢骄傲不敢放荡了。</p>
+<p>打掉了水杯保全了性命</p>
+<p>元太祖在世的时候，有一天同着许多人出到郊野去打猎。天将晚的时候，他们都往回走。他吩咐跟随他的人们先走，他自己却循着一条山谷中的狭路走去。他的腕上架着他心爱的一只猎鹰，这时候他放鹰任意飞起，让牠自己觅路回家。因为天气炎热，他感觉到非常干渴。他记得从前在这里看见过一处清泉。他希望能找到它。但炎热的夏日使溪流中的水都干涸了。最后他发现一点水顺着一个大石头的边上滴下来。他知道不远必有一个水泉。他从马上跳下来，从他的猎囊中取出一个小银杯来，拿着它去接那石头旁边所滴下来的水。用了很长的时间，纔接满了一杯；因为那水是一滴一滴的滴下来的。当他接满了杯将杯举到唇边就要张口去喝的时候，忽然有一个声音发现在空中，他手中的杯立时被打落，杯中的水也都倾撒在地上。太祖举目去看是谁作了这件事。他看见正是他所爱的那只鹰。这只鹰往返飞了几次，便落在山旁的大石上了。太祖拾起杯子来再去接那下滴的水。这次他没有等得很久，当这杯半满的时候他便举起去喝。但杯子还没到嘴边，鹰又忽然飞来，把杯从他的手中打掉。太祖这时冲冲大怒。他第三次接了水，又被鹰把杯子打落。太祖这时忿怒到极点。他第四次将杯子接满了水，举杯去喝以前先把佩刀抽了出来，对鹰喊着说：「再来，我砍死你。」话还没有说完，鹰又落下来把杯从他手中打掉。太祖这时已经准备了，当鹰将要飞起来的时候，他便手起刀落，一下把鹰砍死。这可怜的鹰便浴着血死在牠主人的脚前了。太祖举目寻找他的杯，看见它落在两块大石头中间，那个地方是他构不到的。他心里说，「无论如何，我要到那泉旁去喝些水。」于是他便攀援着陡立的山石上去想要到那水泉旁边。那是一件艰苦的事。他越上得高，越觉干渴。最后他毕竟到了那个地方。那里果然有一个水池。但水中却有一条极大极有毒的死蛇浸在里面，差不多占了那整个水池。太祖看得呆了。他忘了他的干渴。他想到了那卧在下面的死鹰。他喊着说：「鹰救了我的命，我怎样报答了牠呢？牠是我最好的朋友，但我却杀了牠。」他从岩石上下来。他拿起来那只死鹰，把牠放在猎囊里面。他上了马快快的奔回他所住的地方。</p>
+<p>上文所记的一段故事是前些日子我读一本故事书的时候读到的，读过以后便得了宝贵的教训。那条有毒的死蛇浸在水池里面，水里当然满了死蛇的毒，如果元太祖喝了这池子里流出来的水，势必中毒而死。只因为他站在池子下面的石旁，看不见水中的死蛇，所以他不知道水里已经有了毒。但那只鹰却翱翔在高处，牠极清楚的看见了池中的毒蛇。牠知道水中已经有了毒。牠为救护牠主人的性命，便不得不打掉他主人手中的银杯。牠一而再，再而三，三而四的打掉他主人的银杯。可惜他主人始终不明白牠的善意，反倒恨牠怨牠，用刀杀死了牠。牠对得起牠的主人，牠的主人却对不起牠。元太祖何幸而有这只鹰。这只鹰何不幸而遇到元太祖。</p>
+<p>我们不是常常遭遇元太祖所遭遇的么？许多时候我们辛辛苦苦的经营了一些事业，或为自己积蓄了一些财产，博得了一些荣誉，我们想藉着这些消除自己的干渴，满足自己的欲望。不料我们正在举杯欲饮的时候，神竟打掉了我们手中的杯，使我们所经营的事业，所积蓄的财产，所博得的荣誉，都一败涂地，无法收拾。我们不甘心受这种损失。我们再起来去努力经营，费了许多时日和力量，在将要成功的时候，神又打掉了我们手中的杯，使我们再遭一次的损失。我们再去努力经营，我们再遭遇打击，以致我们忍无可忍，便向神发出怨言来，有时我们甚至大大向神发怒，完全背弃了神。我们以为神太残酷，太凶暴，太缺乏爱心，太不体恤我们。那里知道神毁坏了我们所追求所经营所爱慕的那些好东西正是爱我们正是保全了我们呢。</p>
+<p>我们以为我们所经营的事业，所积蓄的财产，所博得的荣誉，是与我们有益的，神却看见了那些东西里面所蕴蓄的剧毒。他知道如果我们把那些喝到口中，我们将要遭遇不能挽救的祸害，所以他便一而再再而三的打掉我们的杯，毁坏我们所经营所获得的。也许我们要说：「神看这些好东西里面有剧毒能害我们，我们怎么一点也看不出来呢？」那就是因为我们站在低处神却坐在高处的缘故。那条毒蛇明明是在那个水池子里，怎么鹰看得见，元太祖却看不见呢？岂不是因为元太祖站在低处鹰却是翱翔在高处么？因为元太祖站在低处，所以他只看见近处山石隙里滴下的几滴清水，却看不见远处水池里的毒蛇。那只鹰因为飞在高处，所以牠不但看见石隙里滴下的清水，牠也看见了池子里的毒蛇。飞得越高，看得越远。站在山谷里的元太祖所看见的那能比得上那只翱翔在空中的鹰呢。我们看不见神所看见的也是这个缘故。因为我们站在像山谷那样低的地方，所以我们所见的都是极近极小。我们以为我们的事业成功是我们的益处，以为我们所积蓄的财产保守得住可以供我们的享受，以为我们得着我们所希冀的荣誉可以使我们心满意足。神却清清楚楚的看见如果我们这些目的都达到了我们便会离弃神，便会陷在许多的罪恶和危险中。他看见了我们所追求所爱慕的那些好东西里面都蕴蓄着致人死命的剧毒。他不忍袖手旁观看着我们受害。他为爱我们的缘故，便当我们正在举杯欲饮的时候，藉着某种事物忽然打掉我们手中的杯，使我们所经营所爱慕的都倾撒在地上，都毁坏到不可收拾的地步。这使我们感到无限的惊奇，无限的失望。我们心里想：「神既是爱我们，为甚么竟待我们这样残酷？」我们忍耐着拾起我们的杯子来再去经营再去努力，眼看着又要成功的时候他又打掉了我们手中的杯子。许多时候我们所遭遇的打击痛苦祸患失望竟是接二连三的临到，这真使我们不能不发怨言，不能不怪责神太残酷。但神却不因我们误会他便随我们的意任我们的性，使我们达到我们的目的。他总是继续着阻挠我们，破坏我们。纵使我们因此误会他，向他发怨言，甚至与他为敌，他都不介意。他决不因为我们不了解他便甘心看着我们受害。他爱我们便爱我们到底。有一天我们看见了他所看见的，我们纔悔恨我们自己的无知，纔悔恨自己当日不该误会神，纔悔恨不该那样以怨报德，纔觉得我们太对不住神。但我们已经因为误会神白受了许多的痛苦，甚至因此犯了许多罪。我们是何等胡涂阿！</p>
+<p>我们能不能早些看见神所看见的呢？能，若是升到高处便能看见我们在低处所看不见的。若是我们能升到神所在的地方，便能完全看见神所看见的了。神原来就是要我们升到高处，升到属天的地方。「他又叫我们与基督耶稣一同复活，一同坐在天上。」（弗二6）。天上这个名词原文是属天的地方。如果我们升到高处，像神所在的地方那样高，我们便能看见神所看见的一切了。我们能看见近处所有的事物，也能看见远处所有的事物。我们不但看见近处的利益，也看见远处的危险。我们不但看见近处的享受，也看见远处的祸害。我们若站在这个高地方，便不会像元太祖喝那有毒的泉水，也不需要神打掉我们手中的杯子了。只因为我们不能站在高处，所以神必须来打掉我们手中的杯子。使我们遭遇损失和痛苦。但他这样待我们正是出于他的大爱，不然我们真不知道要受害到甚么地步了。</p>
+<p>鱼见食而不见</p>
+<p>有一个青年人因为经营商业失败便遭遇了生活上的困苦；家居赋闲了多日，自己想必须谋一条生活的道途。有一天他忽然想起自己所住的地方临近大河，河内产鱼又很多，何不设法捕些鱼来卖？纵不能获大利，但稍有收入也强似坐吃山空。不过结网捕鱼成本既较巨，一人从事又力有不足，不如持竿垂钓，比较起来还算轻而易举。他既决定了要作这钓鱼的事业，于是便到市上买了一根竿，又买了线系在竿上，更买了钓系在线的一端，也豫备几件装鱼的器皿。安排好了这一切以后，便要开始作他的事业。</p>
+<p>一天的清晨，这初学垂钓的青年渔夫携了钓鱼所用的一切什物，欢欢喜喜的走出他所住的村庄，一直奔向河边来。那时一轮红日纔从东方升上来，似乎豫祝他的事业成功；夹岸的杨柳也好像为这新学垂钓的渔夫开了欢迎的盛会。他的心中因为看见这些美丽的景物，又因为想到前途的利达，也不禁欣喜万状。四面看了一回，便找了一块河边的巨石坐下，把他那钓鱼的用具备妥，然后将线高高举起，把线端的子垂到水里去。他只定晴望着那线，因为他知道鱼若吞下子，线必要被牵动，这时便可用力将竿提起，鱼就立时被捉获了。他这样静候了许久，线终是一动也不动。他不耐烦起来，将竿提起，子好好的还在，但那里有甚么鱼？他忍耐着去试验第二次，第三次，到第四次，第五次，第六次；每次将竿提起以后，所得的效果都是相同──除去子以外何尝有一条鱼影。</p>
+<p>几次的试验都归失败以后，他的心中又急躁又惊异。自己想道，这里本来产鱼很多，怎么我垂钓这样长久竟钓不上一尾来呢？腹中饥了，暂且回到家中去进午餐。今日午前或者是事有凑巧，午后若能多钓一些，也未尝不可补还午前的损失。谁想一直等到晚间仍是一无所得。他一连三天去垂钓，从未曾得着一条小鱼。到这时他的心已是冰冷了。自叹时运不佳，命途多舛；经商已然失败，钓鱼又无所得，只好坐待饿毙就是了！可是他不甘心如此，他终是要为生活的缘故而奋斗。</p>
+<p>一日他忽然想起邻村的老渔翁来，那老人本是多年捕鱼的熟手。他想他一定可以从这位有捕鱼经验的老人得着钓鱼的良法。因此急忙前往去访谒这位老人，恭恭敬敬的向他领教。那老人先问他说：「你钓鱼是在甚么地方呢？」他便从实回答了。老人说：「那地方向来是鱼的聚处，按理是不当无鱼的。」以后便继续问他曾用甚么东西钓鱼。他回答说，「用竿、用线、用、还携了装鱼的器皿。」老人再问他还用甚么。他回答说：「钓鱼的器具都齐备了，还用甚么呢？」老渔夫这时便大笑起来，说：「好一个愚笨的青年人！上没有食却要钓鱼，那如何能钓得来？鱼吃食物，那有见肯吞吃的呢？不放食物在上，却希望能钓得鱼，你真是愚不可及了！」那青年人猛然觉悟了。他谢了老渔夫，回去豫备了钓鱼的食物，再到从前去过的河边垂钓，那一日得了许多鱼，他兴高釆烈的奔回家中。从此以后，他每日常是钓得满筐满篓的鱼，他渐渐的富足了起来。</p>
+<p>钓鱼只用不能成功，食物是决少不了的。没有一尾鱼肯去吞子，但是没有一尾鱼不吃食物。渔夫不明用子去钓鱼，却将好吃的食物挂在子上面，使鱼只看见食物却看不见子。那知道当美食方吃到口中的时候，那尖锐的子便立时上牠的鳃，从此牠便成为渔人的筐中物，厨夫的俎上肉呢？</p>
+<p>狡诈的仇敌撒但也是用这种方法败坏属神的人。他所用以败坏信徒的子就是使他们犯罪，但是没有一个属神的人肯去犯罪，因为他们知道罪恶是那样的可怕，罪恶已经使他们受过许多苦难。他们一见罪恶就想拒绝，这样撒但自然不容易逞他的毒手。但他有最好的方法可以将信徒掳去，他将一切好吃的食物──金钱、名誉、宴乐、玩好，放在他的上。信徒虽然恨罪，但不容易不恋慕这些，追求这些，那知堕落和失败的根原就伏在这里呢！</p>
+<p>亲爱的信徒，世界上的好处罗列在你面前的时候，请你千万留意撒但的钓鱼。</p>
+<p>美丽被狗咬伤了</p>
+<p>美丽是张先生独生的女儿。她是一个很聪明灵巧的孩子。她在春天三月将满四个生日。她在一个幼儿园里上学，很得先生和同学的喜爱。</p>
+<p>张先生在一个银行里任事。他住的房子本是租的，因为房主将房子出卖了的缘故，张先生在二月间得了房主的通告，请他在四月里迁移。张先生在三月半就寻着一所适宜的房子，在一条叫作口袋胡同的巷子里。这一条巷是东西的，巷子虽然很长，但是一条死巷；东口通着大街，西面却没有出口，正像一条口袋一样。张先生在三月二十日就迁移到这所新房子里来居住。</p>
+<p>张先生迁移到口袋胡同的第二天，就发现一件他没有想到的事。原来这口袋胡同东口内门牌一号院内住着一家有钱有势的人，家中养着两条大狗，性情非常凶暴，主人既不将这两条狗锁起来，又不把牠们关在家里，却放任牠们跑到门外，因此时常咬伤附近的小孩。以致有小孩的人家都不敢在这条巷子里居住。</p>
+<p>现在我们不免为张先生作难了。美丽每天必须到幼儿园上学。口袋胡同西面走不出去，必须走东口，可是东口里又有这两条恶狗常常出来咬人。四岁的小女孩子怎么能抵挡这两条恶狗的攻击，不被牠们咬伤呢？</p>
+<p>不怕，不怕，张先生早已料到这一层了。他定规每天早晨到银行里去的时候就把美丽带到幼儿园去。因为张先生在银行里办公的时候是九点钟开始，美丽的幼儿园里也是九点钟上班，父女二人正好一同离开家。张先生把美丽送到幼儿园以后，自己再到银行里去。午间呢，美丽是十一点三刻下班，张先生却是十二点下班。张先生就叫美丽在幼儿园里略等十几分钟，以后父女一同回家。</p>
+<p>或者我们要为美丽挂心说：「假使张先生带着美丽走进口袋胡同的时候，两只恶狗恰巧一齐出来咬人，张先生如果顾不过来，那不就发生危险了么？」我们若知道张先生的本领就不会这样过虑了。原来张先生在学校里读书的时候是最擅长运动的。他在足球场上是一员善战的健将。他现在虽然在银行里作事，还是常常参加足球比赛。有一次那两只有眼不认识人的狗看见张先生带着美丽走过，跑过来就咬，吓得美丽大哭起来。张先生一手把美丽抱起，随着施展他那种踢足球的本领，将右脚一举，将那只扑过来的恶狗像踢足球一般踢出一丈多远去，踢得那只狗一瘸一拐连号带叫的跑回家去。那一只距离稍远的狗看见同伴吃了亏，知道张先生不好惹，便也一溜烟似的跑远了。这两只狗受了这一次的教训以后，见了张先生远远的走来便赶快跑回家去。美丽因为有这样一位孔武有力的爸爸带着她上学，带着她回家，便也放心大胆的走路，不再有少许的惧怕了。</p>
+<p>美丽有这样的一位爸爸按理不会再被狗咬伤了罢。谁想到有一天美丽不但被狗咬伤了，而且咬伤得很重，甚至右腿上被咬掉一块肉，在医院里住了三个多星期纔出来。事情的经过是这样──</p>
+<p>一个星期三的午间美丽下了学，同爸爸回家，走在口袋胡同口外还没有进口的时候，美丽看见一个卖糖球的在大街的便道旁边铺了一块污秽的蓝色布，布上摆了一大堆糖球，红的、绿的、白的、黄的，好看是真好看，不过污秽的了不得。汽车跑过去扬起街上的尘土来，落在糖球上不少，还有许多苍蝇聚在上面。张先生曾屡次嘱咐美丽不可随意在街上买不洁净的食物吃。并且告诉她说，如果她愿意吃糖，他可以为她在糖果店里买装瓶子的糖吃。可是美丽也真奇怪，几角钱一瓶的上等糖不喜欢吃，偏爱买那落满了尘土和苍蝇的糖球吃。她知道爸爸不许她买，可是她的嘴馋，总想偷偷摸摸的买一些吃。这天午间她又看见那个卖糖球的在那里吆喝，她实在熬不住了。但她又怕受爸爸的责备。她聪明得很。她慢慢从爸爸的身旁转到爸爸的身后，越走越慢，故意和爸爸相离的远些。张先生已经进了巷口，美丽仍在大街上。她知道爸爸看不见她了，便赶快向卖糖球的买了几个糖球，放在嘴里一个，其余的都放在衣袋中，慢慢的进了巷口。这时爸爸已经快走进家门，心中以为美丽还随在自己后边，却不知道这个嘴馋的孩子已经离开他很远了。</p>
+<p>不好了！那两只恶狗恰巧这时从家中跑了出来。一眼看见美丽自己走着，便奔过来张口就咬。美丽这时可真吓坏了！急忙大声喊叫爸爸。张先生听见美丽在远处喊叫，纔晓得她是落在后边，便急忙跑来救护。可怜的美丽在爸爸还没有跑到以前，她右腿的肉已经被狗咬掉一大块。及至张先生到来的时候，两只狗早已跑远，美丽已经是痛得在地上乱辊了。</p>
+<p>许多基督徒被魔鬼打伤就是这样的一种经过。魔鬼随时随地要伤害神的孩子们。他们没有一点抵抗他的能力，正如同软弱的美丽没有能力抵抗恶狗一样。使我们最得安慰就是神的能力远超过那要害我们的魔鬼。魔鬼不怕我们，但他却怕那保护我们的父神，正如同那两只恶狗怕张先生一样。只要我们不离开神，魔鬼便总不能加害于我们一丝一毫。不幸许多基督徒因为追求世界上的好处，就如金钱、名誉、友朋、情人、宴乐、嗜欲等等的东西，便渐渐远离了神。他们知道神不喜欢他们追求这些。但他们舍不得这些东西。知道神不喜欢他们追求，却仍想要追求，那只有躲开神，离神远些了。不是神远离他们，乃是他们远离神。就在他们远离神的时候，那凶恶如同吼叫的狮子一般的魔鬼便来吞吃他们，打伤他们，如同恶狗咬伤了美丽一样。</p>
+<p>也许有人想神待他的孩子们太残酷了。这个也不许吃，那个也不许买，不信的人所享受的快乐好处，信的人都不可享受，这样作神的孩子不是一件太可怜的事了么？不，神不许他的孩子们追求世上的好处不是要剥夺他们的快乐，正是为要拯救他们脱离许多他们意想不到的危险。张先生不许美丽买糖球吃并不是苦待她，正是为她的好处，怕她吃了那污秽的糖球患传染病。神不许他的孩子们追求世上的好处也是怕他们因此受害。张先生给美丽所买几角钱一瓶的糖远超过美丽所爱吃的糖球，神给他的孩子们所豫备属灵的福气也远超过世上一切罪恶中的好处。不爱吃几角钱一瓶的糖，单爱吃那污秽不堪极易传染疾病一分钱两块的糖球，美丽的无知正可作许多基督徒的写照。</p>
+<p>亲爱的弟兄姊妹们，可以醒悟了罢。无论魔鬼怎样凶恶，只要我们不远离神，他便丝毫不能害我们。只要我们不贪爱世界和世界的好处，我们便总不致也不敢远离神。魔鬼不足怕，所怕的就是我们自己因为爱世界以致远离神。美丽因为买糖球吃腿被恶狗咬破；许多圣徒因为爱恋世界已经被魔鬼打伤；阅者，请你小心你自己罢！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个奇异的民族为神作见证 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个奇异的民族为神作见证</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/2一个奇异的民族为神作见证-01.mp3">🎧 一个奇异的民族为神作见证（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/2一个奇异的民族为神作见证-02.mp3">🎧 一个奇异的民族为神作见证（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/2一个奇异的民族为神作见证-03.mp3">🎧 一个奇异的民族为神作见证（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「凡没有律法犯了罪的，也必不按律法灭亡；凡在律法以下犯了罪的，也必按律法受审判；（原来在神面前，不是听律法的为义，乃是行律法的称义。没有律法的外邦人，若顺着本性行律法上的事，他们虽然没有律法，自己就是自己的律法：这是显出律法的功用刻在他们心里，他们是非之心（良心）同作见证，并且他们的思念互相较量，或以为是，或以为非；）就在神藉耶稣基督审判人隐秘事的日子，照着我的福音所言。」（罗二12～16）。</p>
+<p>这一段经文中的「是非之心」在希腊文是 suneidesis，英文圣经译作 conscience。这个字在新约里一共享了三十二次。在中文圣经译本里除了这里译作「是非之心」，还有希伯来书十章二十二节译作「天良」以外，其它的地方都译作「良心」。我们认为其它各处都译作「良心」，这两处当然也应当同样的译作「良心」，因此我们把中文译本里的「是非之心」改为「良心」。</p>
+<p>在上文我们所引的这一段经文里，保罗讲明有律法的犹太人藉着律法可以知道甚么是「是」，甚么是「非」。那些没有律法的外邦人虽然没有成文的律法，他们却能藉着「良心」分辨甚么是「是」，甚么是「非」。犹太人藉着神颁给他们的诫命知道「不可杀人，不可奸淫，不可偷盗；」没有领受过神的诫命的那些外邦人藉着神赐给他们的良心也知道「不可杀人，不可奸淫，不可偷盗。」我们有没有注意到世界各国、各民族的人虽然言语不同、文字不同、风俗不同、习惯不同，但在道德的规律和观念上大致都相同？是甚么力量使他们都这样有同一的道德标准？那就不能不归功于神所赐给他们的「良心」了。感谢神，在他造人的时候把这一个宝贵的东西放在他们里面，使他们在人生的路途上有一个指南针，免得他们迷了方向。这个良心除了使他们知道甚么是「是」，甚么是「非」以外，还使他们知道有一位创造、管理他们的神。</p>
+<p>我们有没有注意到地上的人类都有宗教信仰？换一句话说就是都有信神的心。全世界上无论那一个国家、那一个民族、大洲上、海岛上、已开化的人、半开化的人，未开化的人，都有信仰神的心。虽然有许多人信仰崇拜的对象不是那创造、管理他们的神，乃是人手所造的假神，和自然界的种种现象和事物，就如偶像、日月、山川、鸟兽、树木等等，但他们有一个对神的信仰却是相同的。没有一个人内心的深处没有信仰神的心。就是那些硬着嘴说「没有神」的人，内心的深处仍是信有神。你若详细观察他们的人生，注意他们口中所说的话，便可以发现他们常会在不知不觉中流露出信神的观念来。前些日子我听见一位青年圣徒说了两句话。他说：「信神是人的本能，是与生俱来的，不信神乃是从别人学来的。」他说得很对。起初有人因着他们的骄傲，或他们的罪恶，或其它的原因，昧着良心说「没有神」。这些人的心越来越硬，他们造出种种理由来，否认神的存在。另外一些人因为不愿意见神，或不敢想到神，便也跟着他们学习说「没有神」。我们所看见的事实，证明许多人不信有神、反对神、亵渎神，确实是跟别人学的，他们所说的那一套话也是辗转传述，同出一辙的。</p>
+<p>还有一件值得注意的事，就是我们常听见说一些素日坚决反对有神的人到了遭遇危险祸患，在生与死中间挣扎的时候，他们竟会呼求他们素日所否认的神，求他怜恤他们、搭救他们。我有几次听见圣徒告诉我说，有他们所认识的人素日是坚决否认神的存在的，但到那些人患病沉重，临近死亡的时候，竟会请求那些信主的人为他们祷告，其中有的人自己也祷告认罪，求神施恩拯救。那不是奇怪的事么？如果他们真是彻底不信有神的人，怎么会到病危的时候竟信神呢？这一点不足希奇。他们的内心一向是信有神的，只因他们的骄傲和他们的罪恶，使他们不愿意信神，也不敢信神，所以他们硬着嘴否认神的存在。及至他们患病沉重、临近死亡的时候，他们面对着那可怕的人生的终局，他们的心充满了恐惧，他们素日所依恃的也都失了效能，他们只好在他们平日不愿意信、也不敢信的神面前低下头来，呼求他的哀怜了。</p>
+<p>我在多年以前听见一件事情：在一个大洋上面有一只轮船驶行着。某一个星期日，有一些信主的旅客聚集在一间船舱里一同礼拜。那只轮船上有一个持无神论的人。他看见那些基督徒聚集礼拜，心中很不满意，便向船上的一部分旅客宣传他的无神思想。过了一些时候，那只轮船忽然触礁失事，船主一面发出求救的信号，一面吩咐水手放下救生船，援救乘客。有许多乘客慌恐万分，有许多乘客准备逃命，有些基督徒跪下祷告，求神拯救他们，或接收他们。所幸的是在那只轮船尚未沉没以前，有其它的轮船得着求救的信号，赶来救援，竟把这只失事的轮船上的乘客都搭救上去，以后这只轮船纔渐渐沉没到海底。事后那些遇救的乘客纷纷向人叙述遇险得救的始末。在他们的谈话中有一件值得使人注意的事，就是那个大讲无神论的人在轮船失事的时候，竟同一些基督徒跪在一处大声祷告，求神拯救他脱离危险。</p>
+<p>像这一类的事实是我们常听见常看见的。许多不信有神的人一遇见危险患难，特别是生死的关头，他们对神的信仰立刻就发生出来。可见他们以前的不信并不是内心真实不信，乃是用人工把那存在他们里面的信仰压制下去。到他们迫切需要神的时候，他们的信仰便重新出现了。不论反对神的人怎样否认，事实告诉我们说，世上一切的人都有对神的信仰，这种信仰就存在我们的良心中。我们的良心使我们知道神的存在，就如同它使我们知道杀人、奸淫、偷盗是罪一样。</p>
+<p>我们的良心在我们里面为神作见证，宇宙万物在我们外面为神作见证。我们藉着这两个的见证，虽然可以知道神的存在和神的智慧与大能，但我们对神的认识需要比这个更多、更清楚，因此神便给我们另外的见证。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>引诱信徒毁伤自己的身体 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>引诱信徒毁伤自己的身体</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/2谨防魔鬼的诡计/2引诱信徒毁伤自己的身体-04.mp3">🎧 引诱信徒毁伤自己的身体（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/2谨防魔鬼的诡计/2引诱信徒毁伤自己的身体-05.mp3">🎧 引诱信徒毁伤自己的身体（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「他们来到海那边，格拉森人的地方。耶稣一下船，就有一个被污鬼附着的人从坟茔里出来迎着他。那人常住在坟茔里，没有人能捆住他，就是用铁链也不能；因为人屡次用脚镣和铁链捆锁他，铁链竟被他挣断了，脚镣也被他弄碎了，总没有人能制伏他。他昼夜常在坟茔里和山中喊叫，又用石头砍自己。」（可五1～5）。</p>
+<p>上面一段经文是记述一个被鬼附着的人的事。我们可以设想那个可怜的人是怎样的凶恶，怎样的可怕。邪鬼支配他的身体，运用他的身体，使他有那种大的力量，以致甚么人都不能制伏他，在这一段记载中有一件极堪注意的事，就是「他昼夜常在坟茔里和山中喊叫，又用石头砍自己」。在这里我们可以看出邪鬼是怎样的可恶。他运用那个可怜的人的身体，使他用石头砍自己，结果受伤的乃是那个可怜的人，邪鬼却不受丝毫的损害。</p>
+<p>自然撒但引诱信徒犯罪与邪鬼附人是两件绝不相同的事，但这两件事的来源却相同。这两件事都是那空中掌权的恶魔运用他的能力所作的。不过邪鬼附人是用强权完全占据了那个人的身体，夺去了那个人的意志，使他丝毫不能自主。魔鬼引诱信徒犯罪却不是这样。魔鬼不能用强权占据信徒的身体，夺去信徒的意志。他没有权柄作这事。神不许他这样作。他只用诡计引诱信徒。如果信徒有坚强的意志，并能看破魔鬼的诡计，绝对的不肯听从他的诱惑，他便一点不能作甚么。但如果信徒看不清他的诡计，或是虽然看得明白，却没有坚强拒绝他的意志和抵抗他的能力，因而顺服了他，这个信徒便陷在罪中，魔鬼的目的便算达到了。</p>
+<p>在上面一段经文中，我们看见邪鬼附人使那人用石头砍自己，毁伤自己的身体。在魔鬼引诱信徒的时候他也常作这事。不过他不能附着信徒，使他们不能自主的伤害自己，像那被鬼附着的人所作的一样。他乃是用诡计引诱他们，使他们自动的去伤害自己。他引诱信徒去吸烟、饮酒、纵欲、发怒、饮食不节、睡眠失时。一个人常用石头砍自己，他的身体固然要大受亏损，但一个人如果染上这些不良的嗜好与恶习，他的身体因此所受的损伤，有时比用石头砍自己还大许多少倍。假使魔鬼引诱一个信徒去用石头砍自己，这个信徒一定会坚决的拒绝不肯去作这愚昧的事，但许多信徒却毫不抵抗的随从魔鬼的引诱，去染这些恶嗜好恶习惯。这就是因为用石头砍自己的害处立时可以看见。但这些事害人却在不知不觉之间。</p>
+<p>为甚么撒但引诱信徒毁伤自己的身体呢？第一，因为身体的强弱与心灵的强弱是互有关系的。许多信徒在身体健强的时候，能常常儆醒祈祷，能每日研读圣经，因此心灵按时得着天上的能力和养育。但在他们的健康受了损失。他们的身体染上疾病的时候，便不能像以前那样儆醒祈祷，也没有精神每日查考圣经。在这种情形中，他们抵抗试探的能力必定大见减少，仇敌在这时乘势进攻，自然容易取胜的。</p>
+<p>信徒毁伤自己的身体，不但是给魔鬼一种进攻的便利，而且毁伤自己身体的这种行为就是罪恶。我们当知道信徒的身体并不是属他们自己的，他们没有权柄毁坏一点。经上论到信徒的身体说甚么话呢？「岂不知你们的身子就是圣灵的殿么？这圣灵是从神而来，住在你们里头的。并且你们不是自己的人；因为你们是重价买来的，所以要在你们的身子上荣耀神。」（林前六19～20）。这段经训明明指示我们说，信徒的身体不是他们自己的，乃是神用重价买来用以作他居住的圣殿的。神要信徒好好照管他们的身体，如同古代在圣殿中供职的利未人照管圣殿一样。请想一个照管圣殿的人若任意毁坏神的殿，他是否算犯罪触犯神呢？一个信徒若任意毁坏自己的身体就是毁坏了神的殿，这种行为岂不就是罪么？可惜许多信徒只知道杀人是罪，说谎是罪，奸淫是罪，偷盗是罪，却未曾想到毁坏身体是罪。正是因为许多信徒未曾想到毁坏自己的身体是罪，所以魔鬼纔得逞他的诡计，引诱信徒毁坏自己的身体，使他们在一件事上犯罪。</p>
+<p>信徒毁坏自己的身体，除去上文所说的两种害处以外，还有一样害处，就是阻碍神的工作。神在每一个信徒身上都有一些委托。他要信他的人去作他的工，去荣耀他的名，去引领人出黑暗入光明，去拯救人脱离撒但的权势归向基督，去在黑暗邪恶的世界中为他发作发光的见证。虽然神的旨意不是要叫所有的信徒都专一作传道的工作，但他在每一个信徒的身上或多或少都有一些委托。我们都十分明白健全的身体与一个人所作的事工有怎样大的关系。他的健康受几分损失，他的工作当然也就受几分损失；及至他的健康完全被毁坏的时候，他的工作当然也必随着完全停顿。许多时候撒但拦阻一个为神使用的信徒，不容他去作拯救人建立人的工作，那个信徒因为热心爱神爱人的缘故，不顾任何损失，不怕任何种艰险，总是勇往直前，尽忠作工。撒但见他的阻挡不生效力，便改变方法，用这种诡计来拦阻这个忠勇的信徒，诱惑他去毁坏自己的身体，或是诱惑他染上甚么戕害身体的嗜好，或是诱惑他在饮食色欲上没有节制，或是诱惑他过度使用身体，不肯进充分的营养物，不肯按时休息睡眠。这几个方法中只要有一个能发生效力，不久这个忠勇的信徒便能因健康受损体力不继的缘故，停止他从前无论受甚么拦阻不肯停止的工作。到那时他明白毁坏自己的身体就是毁坏神的工作。幸而以后加意珍摄，身体能够复原，但所受的损失已经不在少数。不幸身体因为受的摧残过重，以致总不能再复原，总不能再像以前一样去作工，或者甚至完全不能作工，请想这是何等可惜的事呢！</p>
+<p>魔鬼引诱信徒毁坏自己的身体，除去用上文所提的几种方法以外，还有一种最狠毒的方法，就是引诱信徒自杀。许多时候一个信徒遭遇了甚么极重的试炼，他似乎看不见甚么光亮，似乎完全绝了指望，（其实他所受的试炼还是他所能忍受的）。在这时候魔鬼便来为他策画，告诉他说与其活着受这种痛苦还不如赶快死去倒好。如果这个信徒接纳了他的建议，他便立时介绍许多自杀的方法给这个信徒：自缢、自刎、投井、投河、服毒、吞金。只须采取这些方法中的一样，立时便可脱离那一切试炼的痛苦。如果这个信徒受了他的诱惑，当时固然可以脱离了暂时的痛苦，但他在神面前所受的损失要有何等大呢？毁坏自己的健康尚且是罪，何况自杀呢？</p>
+<p>我们既知道魔鬼常用这种诡计诱惑信徒，便应当时时儆醒，常常防备。除去为顺服神为荣耀神的名为拯救人帮助人以外，不要因为任何事务毁坏自己的身体；更永远不可存自杀的思想。好使我们既有健全的心灵，又有健全的身体，去与仇敌交战，去作神所托付的工，去为神的缘故服事那些需要服事的人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

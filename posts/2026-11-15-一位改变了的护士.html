@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一位改变了的护士 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一位改变了的护士</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/3一位改变了的护士-03.mp3">🎧 一位改变了的护士（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/3一位改变了的护士-04.mp3">🎧 一位改变了的护士（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/3一位改变了的护士-05.mp3">🎧 一位改变了的护士（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>刘小姐是一个虔诚的基督徒，且是一个身体最强健的人。她除了不到一岁的时候生过一次病以外，再没有生过第二次的病。她在一个医院附设的护士学校里毕业以后，一直就留在那个医院里作护士。刘小姐因为爱主的缘故，定意将自己完全献给主，为主在医院里作工。她想尽她的力量用爱心服事病人，使病人因着她得着身体和心灵上的帮助。不过有一件最使她难忍受的事，就是她所遇见的病人大多数都是极难对付的。</p>
+<p>一次刘小姐看夜班，一大间病房里别的病人都睡了，只有两个身上生疮的病人不住的呻吟呼叫。刘小姐因为顾全其它病人的缘故，走过去请他们不要作声，免得惊扰别人不得睡觉。谁知道他们安静了两三分钟以后，又呻吟呼叫起来。刘小姐觉得这两个人真可恶，怎么这样没有公德心。她走过去再很和平的告诉他们，应当想到别人都在睡觉，不可任意发声搅扰别人。两个病人又安静下来。但过了不久他们又开始呻吟呼喊了。这次刘小姐实在不能再忍耐下去。她想这两个病人真是太不讲理了。屡次禁止他们出声，他们总是安静几分钟，以后便又呻吟呼叫起来。她怪责他们怎么这样不肯忍痛。她想无论怎样痛苦难过，忍着一些也就渐渐睡着了。她没有患过病，生过疮，她不能明白一个人患病生疮的时候是怎样痛苦。她想得太容易了。因为这个缘故，她不能谅解他们的情形，她以为他们太可恨，她忍不住向他们发起气来。这一夜她同两个病人都弄得十分不快活。</p>
+<p>又有一次刘小姐看护一位患病的妇人。这个妇人体温热到法氏表一百零三度到一百零四度之间。刘小姐知道一个病人发热到这种地步是需要多饮水的。她便取来一大杯冷水，叫那个病人喝下。病人喝了半口，便把杯子放下，不肯再喝。刘小姐一定叫她喝，她一定不肯喝。刘小姐这时可真急了。她想这并不是苦药，为甚么这个妇人这样坚决不肯喝。她想如果她自己发热到这种地步一定干渴得很，就是有这样三杯四杯冷水，也会不待人催便自己喝下去。如今她举着杯子伺候着这个病人喝，病人却这样执意不喝，这个病人真是太不知好歹，她想到这样，不禁大声叱责这个患病的妇人。患病的妇人受了这种待遇，心中难过至极，竟放声大哭起来。刘小姐看见这种景况，心中真是苦痛得无法形容。</p>
+<p>刘小姐本来想尽力帮助那些病人，不料大多数的病人都是这样难服事。刘小姐爱病人，病人却恨恶刘小姐。他们谈起话来总是对刘小姐表示不满意。虽然在事实上其它的护士都远不及刘小姐有爱心，但病人却都觉得刘小姐比任何护士都可恨。</p>
+<p>一年的夏天刘小姐不幸患病了。刘小姐的右耳里面生了一个小疮，痛得她黑夜白日都不能睡觉。疮生得最重的两三天内，她昼夜不住的呻吟呼叫，总需要一个人用热手巾放在她的耳朵上。看护她的人夜间因为疲乏稍去休息一下，她就痛得喊叫起来。这种苦痛的经验继续了好几日之久，直到她耳中的疮流出脓来，纔逐渐减轻下来。她在这次病中尝着了她一生所未曾尝过的疼痛的滋味。</p>
+<p>福无双至，祸不单行。刘小姐的耳病纔痊愈，不料又染了别的病，发起热来。起初不过只有法氏九十九度多，两日后刘小姐的体温逐渐升高。到了第四日，竟发热到一百零三度半。刘小姐的头痛得难忍，口中苦得像含着苦药一般。她一点不思饮食。她虽然很清楚的知道发热的时候必须多喝水，无奈水到口中比药还难下咽。平日她能一气喝下三大杯冷水，现在却连三口水也不能喝了。她在这时候纔明白发热的滋味。她开始觉悟她待病人的错处。她恨她自己不该那样疾言厉色的勉强病人喝水。她明白发热的病人不肯喝水并不是因为故意同她作难，乃是因为喝不下去的缘故。她这时不再觉得那些病人可恨，她只觉得她自己亏负那些病人。</p>
+<p>刘小姐这次患的病真不轻，一直躺卧在病床上一个多月纔好起来。病好了以后刘小姐照常上班服事病人。希奇得很！凡刘小姐看护的病人都觉得刘小姐良善可爱。他们都说刘小姐对待病人真是体贴入微。有几个久住这个病院的病人都觉得刘小姐病后与从前相比几乎完全是两个人。从前她们都怕看见她，现今她们却都愿意见她的面，愿她来照顾她们。她们希奇刘小姐怎样竟会与从前大不相同。刘小姐自己并不觉得与从前有甚么不同。她只觉得别人对她的态度都改变了。此外还有一件事使她希奇，就是自从她病好以后，凡来住院的病人都不像以前的那些病人难对付。就连从前住院到现在还未出院的几个病人也似乎与从前大不相同了。她们不像从前那样不知好歹，不像从前那样可恨。她们不再惹她的气。双方面弄得都不快活的景况现在都没有了。刘小姐不明白为甚么在她患病的这一个多月中一切的病人全改变了性情。</p>
+<p>一日刘小姐同她的一位同事谈话，把她心中不明白的事述说给她的同事听。她问他的同事究竟在她患病的时候医院中发生了甚么事。她急想明白为甚么那几个从前极不容易服事的病人现在这样容易对付。她又愿意知道为甚么近日来住院的病人大多数都是性情温和的。她说出了这些问题，希望从她的同事口中听得一些理由。</p>
+<p>「不是病人改变，是你改变了阿！」她的同事回答她说，「从前你因为身体健强，从来不曾患病，所以你不了解病人的苦痛和需要。你不知道病人患病的时候是怎样的痛苦难过，你照对待好人的方法对待病人，你叫病人像健全的人那样安睡，那样喝水，那样吃饭，他们不能照你所说的去作，你便怪责他们，恼怒他们。他们在病中本来就够难过的了，再加上你这样对待他们，怎能叫他们不同你争吵，不恨恶你呢？我知道你真是用爱心对待病人，不过因为你没有生过病，你不知道人在病中的滋味，所以你虽然有爱心，仍是不能帮助病人。现在你因为患过了两次病，尝过了病中的苦味，了解了人在病中的景况，所以你不再照从前的样子待他们，却是忍耐他们，体恤他们。他们因为你善待他们，体恤他们，自然对你的态度也就改变了。你从前只有爱心，却没有患病的经验，所以动辄得咎。现在你从两次患病的经验中所学习的功课较比在护士学校里几年所学习的课程更有用阿。」</p>
+<p>许多圣徒不也是这样么？他们真是有爱心，真是愿意帮助一切受苦的人。无奈他们因为自己没有受过甚么苦，所以不了解别人在受苦的时候所感的苦痛和他们所有的需要。他们真是竭力去帮助人，结果很少的人得到他们的帮助。有时那些受他们帮助的人因为受了他们那种不合需要的帮助弄得比以前更苦。神看见这些圣徒的爱心。神愿意用他们去帮助受苦的人。神更知道他们必须先有了受苦的经验，然后纔会帮助受苦人，所以他便将他们放在苦难当中，使他们明白受苦的景况，使他们尝着受苦的滋味，同时他又安慰他们，拯救他们，赐恩惠力量给他们，这样，他们便可以在受苦以后了解受苦的人的景况，而且知道怎样帮助一切受苦的人了。刘小姐自己没生过病，无论她怎样有爱心，她总不会服事病人到好处；圣徒自己不受过苦，无论他们怎样有爱心，他们也总不会使受苦的人得着他们极多的帮助与安慰。神使爱他的人经过艰难、试炼、忧患、苦痛，总是有他极好的目的，这就是他那些目的当中的一个。</p>
+<p>「愿颂赞归与我们的主耶稣基督的父神，就是发慈悲的父，赐各样安慰的神。我们在一切患难中，他就安慰我们，叫我们能用神所赐的安慰去安慰那遭各样患难的人。我们既多受基督的苦楚，就靠基督多得安慰。我们受患难呢，是为叫你们得安慰，得拯救；我们得安慰呢，也是为叫你们得安慰，这安慰能叫你们忍受我们所受的那样苦楚。」（林后一3～7）。</p>
+<p>亲爱的圣徒，如果你愿意多帮助受苦的人，多会服事他们，安慰他们，请你不要逃避神所叫你受的那种苦难的教育。在受苦的时候不要发怨言，更不要灰心失望，倒要欢欢喜喜的忍耐顺服，安静等候，接受神在苦难中所赐给你的恩惠和安慰，好使你在经过苦难以后成为一个会帮助人安慰人的人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

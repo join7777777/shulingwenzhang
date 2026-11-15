@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>还等消防警察么？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>还等消防警察么？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/4还等消防警察么？-03.mp3">🎧 还等消防警察么？（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/4还等消防警察么？-04.mp3">🎧 还等消防警察么？（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>八岁的小雅各布布同着父亲走在马路上的时候，听见身后边远远的汽车的喇叭响得很急，还夹杂着撞钟的声音。父亲赶快帮着雅各布布躲在马路的旁边。这时一辆大汽车已经驶近他们的身旁，一眨眼间已经像箭一般的开过去了。这不是一辆普通的汽车，乃是一辆特别大的汽车，周身漆着红色。车的中央有一架梯子，车的前面有一只小的铜钟，驶行的时候当当的撞着。车的两旁站着十几名好像警察样子的人，各人头上都戴着闪闪发光的铜盔，身上披着半截雨衣。其中有的身上带着斧子，也有的背上背着长柄的子。除了这几样事以外，车上还有甚么东西，因为车驶行的太快，雅各布布未能十分看得清楚。不过就是这样已经足以引起雅各布布的注意。车已经驶得看不见了，雅各布布还呆呆的站在那里，因为他看见这样的汽车今天还是第一次呢。</p>
+<p>小雅各布布同着父亲再往前走的时候便发问题了。</p>
+<p>「爸爸，这是甚么车？车上这些戴铜帽子披着雨衣的人都是作甚么的？」雅各布布这样问着父亲。</p>
+<p>「这是警察局消防队的消防车，车上那些人是消防警察，」父亲回答雅各布布说。</p>
+<p>「消防警察是作甚么的？」</p>
+<p>「是救火的。」</p>
+<p>「甚么叫作救火阿？」</p>
+<p>「救火就是有人因为不小心把房子烧着了，大家赶快用水把火泼灭，免得越来烧的房子越多。」</p>
+<p>「消防警察的责任就是专管救火么？」</p>
+<p>「是的。」</p>
+<p>「他们为甚么戴铜帽子呢？」</p>
+<p>「第一是防备有火落在头上，可以烧不着头，第二是防备水从上面流下来便可以顺着帽沿流到地上，不至将头淋湿。」</p>
+<p>「不下雨他们为甚么穿雨衣呢？」</p>
+<p>「那是防备他们用水管向高处射水的时候流到身上，不至于把衣服都弄湿了。」</p>
+<p>「他们身上带着斧子和子是作甚么的呢？」</p>
+<p>「那是为在救火的时候如果泼不灭火，就快些将旁边的房子拆毁，免得火烧着别的房子用的。」</p>
+<p>「车上的梯子是作甚么用的呢？」</p>
+<p>「那是为登高用的。」</p>
+<p>雅各布布与父亲一面走一面谈，不多时已经回到家中，他很欢喜今天又多看见听见一些新的事情。那天夜里作梦的时候雅各布布还看见一次消防队的汽车呢。</p>
+<p>一个秋天的晚间，雅各布布的父亲和母亲一同到朋友家去吃晚饭，临走的时候嘱咐雅各布布好好的豫备明天的功课。雅各布布满口答应下来。父亲母亲走去以后，雅各布布在床边放了一张小桌子，桌子上放了一盏煤油灯，雅各布布坐在床沿上就着灯光读书。</p>
+<p>一课国文还没有念完，家里的小猫跑来同雅各布布玩耍。雅各布布一向很喜欢小猫，一见小猫跑来便把书放下同小猫玩起来。小猫在床上桌上跳来跳去。一下子竟把煤油灯跳翻到床上。煤油流到棉被上，火又燃着煤油，霎时间火焰飞腾，棉被已是烧着了。雅各布布见惹了祸，便三步两步跑到院中，拿起一个盆，舀了一盆水，想去泼到床上。就在这个时候他忽然想起消防警察是专管救火的，便放下水盆三步两步跑到大门外，想去找消防警察。</p>
+<p>难问题发生了。雅各布布只知道城内有消防警察，但消防警察住在那里他却不知道。他只好跑到大街上，迎着一个走路的人便问说：「先生，消防警察在那里住？」那个走路的人连理也没有理他，便走去了。雅各布布又跑了一段路，遇见一个荷枪站岗的警察，便赶快跑过去，向那个警察行了一个举手礼，问他：「请告诉我，消防警察在那里。」那个警察听见这个小孩子打听消防警察，便问他说：「你找消防警察作甚么呢？」雅各布布说：「你不必管，请你告诉我他们在那里就好了。」警察告诉了他，他便照着方向跑去。转了两个湾，又走了一条大街，果然看见路东一个大门，门上挂着一面木牌，上面写着「警察局消防队」。门前站着两名头戴铜盔身穿雨衣的消防警察，正与雅各布布那天同父亲在街上所看见的一样。雅各布布急速跑上前去对他们说：「请你们赶快去罢，我们家中失火了。」门前站岗的消防警察赶快跑进去报告队长。队长听见报告，赶快将雅各布布叫进来问明了地址，便召集队众登上消防汽车，火速开往雅各布布家中。一到那里便指挥众人接上水龙，喷水施救。从床上棉被烧着，到雅各布布把消防警察找到家中，已经有半个多钟头，这三四十分钟的时间房子已经烧着两间。经过消防警察竭力施救，过了一个多钟头火纔完全熄灭，但雅各布布家中所住的四间房子就剩下一间没有损坏，还有半间已经拆得破烂不堪。那两间半只剩下一些烧焦的火炭和一大堆碎砖烂瓦。</p>
+<p>火势熄了，消防警察已经乘着汽车回队，只留下两个人看守火场。这时候雅各布布的父母从朋友家中回来，一看见自己家中的房屋已经烧到这种样子，急忙向雅各布布讯问失火的经过。雅各布布便向他们娓娓述说小猫如何跳翻了煤油灯，床上的棉被如何烧着，他如何去找消防警察来救火。父亲听了这种经过，不禁暴跳着责备雅各布布说：「你这可恶的孩子！留你在家里还能惹出这样大的祸来。真真可气！屋子门外就有水缸，火纔烧着棉被的时候，舀两盆水便可以泼灭了。何至叫它烧到这种地步阿！」</p>
+<p>雅各布布听了十分不服，振振有辞的质问父亲说：「爸爸，那天我们在街上看见消防汽车的时候，你不是告诉我说，消防警察是专管救火的么？今天我们家里失了火，我本想要舀水去泼，忽然想起来你曾告诉我消防警察专管救火，因此我一分钟没有停留，就快去找来消防警察把火扑灭了。你怎么反倒责备我呢？」</p>
+<p>阅者看到这里必定都笑雅各布布的愚蠢。消防警察固然是专管救火的，他们很明白救火的方法，他们救火比别的人救得快，救得好，但自己家中失了火的时候，自己当赶快下手施救，自己救不了的时候再找消防督察，纔合乎理。若是因为有专管救火的消防警察在城里，便自己甚么也不作，只等找着消防警察来救火，这真是愚不可及了。其实这种愚蠢的人岂止一个八岁的小雅各布布呢！比雅各布布的岁数大两倍，三倍，四倍，五倍，六倍，七倍的人像雅各布布一样的岂在少数呢？许多基督徒自己信了主，得了救，但是他们家中的人和他们的亲友还未曾信主。总没有看见他们对这些人传扬福音，领这些人到主面前来，如果有人劝他们去作这事，他们便说：「我们一两天内就去找传道的人对他们讲道，领他们信主。」如果你再劝他们自己去作这工，他们便告诉你说：「那是传道的人当作的工。我们不是传道的人，我们不能作这事。」请问这种行为与雅各布布所作的有多少分别呢？</p>
+<p>不错，真实传道的人有传道的知识和经验。他们作传道的事工比普通的信徒作得更好，如同消防警察比普通人更会救火一般。但未曾听过福音的人那样多，传道的人这样少，如果信徒不个个负起传福音的责任来，只等传道的人去作工，那要等到甚么时候纔能使这么多的人都听见救恩的福音呢？不但如此，你自己家中的人还未曾信主，他们整日在罪恶和黑暗当中生活，那样危险，那样可怜，你看着就能不发一句话劝告他们，不伸一只手帮助他们，你的心真算够残忍的了。这样的人还配称为耶稣的门徒么？我不是说，你不可找传道的人帮助他们。如果你能找得着传道的人去帮助他们，那真是极好无比，但你总不可放弃你的本分。未曾信主的人是那样多，真实传道的人是那样少，纵使把传道的人都累得病卧在床上，他们也顾不到这样许多的人，何况有许多任务是你能作，传道的人却作不来的呢。你的家人亲友的景况和需要是你清楚知道，传道的人却一点不知道的。他们对于传道的人有许多误会和猜疑，但对你却没有。他们轻看或畏惧传道的人，但他们不轻看也不畏惧你。在这种情形中一个传道的人到他们那里去，也许一点作不了甚么，但你却能在他们中间作许多的工。如果你不作工，只想去找传道的人来作，不用说没有那样许多传道的人，就是有那样许多，又焉能希望有多少效果呢。</p>
+<p>自然我们各人所得的恩赐不一样，不是人人都能对人讲道或对人谈道。但那有何妨呢。能作甚么的就作甚么，能讲道的就讲道，能与人谈道的就谈道，不能作这些事工的就为传道的人和听道的人代祷，或是领人到聚会的地方听道，或是将布道的单张和书籍分送给亲友。除去这些事工以外，还有一样极重要的事工是每一个作主门徒的人应当作而且是能作的，就是「回家去，到你的亲属那里，将主为你所作的是何等大的事，是怎样怜悯你，都告诉他们。」（可五19）只要一个人真实得了主的救恩，他就没有理由可以说他不能作这件事，他也没有权柄可以说他不当作这件事。除此以外，他更要藉着悔改的生活与圣洁的品行证明他所作的见证是真实的。我不是说每一个信徒如果都这样作世界的人不久都要归主。在我们的主没有回来以先世界是不会归主的。但如果每一个属主的人都能这样作，我确信神的道一定要大大的被传开，神的名一定要大大的得荣耀，归主的人一定要比现在大大的增加，就是那些不信的人将来到了审判台前也必没有话可以控告我们信主的人了。</p>
+<p>亲爱的圣徒阿，你今日明白你的责任了么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

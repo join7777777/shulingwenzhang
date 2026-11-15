@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>引诱信徒求虚浮的名誉荣耀 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>引诱信徒求虚浮的名誉荣耀</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/2谨防魔鬼的诡计/1引诱信徒求虚浮的名誉荣耀-05.mp3">🎧 引诱信徒求虚浮的名誉荣耀（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/2谨防魔鬼的诡计/1引诱信徒求虚浮的名誉荣耀-06.mp3">🎧 引诱信徒求虚浮的名誉荣耀（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「有一个人名叫亚拿尼亚，同他的妻子撒非喇，卖了田产。把价银私自留下几分，他的妻子也知道，其余的几分拿来放在使徒脚前。彼得说，亚拿尼亚，为甚么撒但充满了你的心，叫你欺哄圣灵，把田地的价银私自留下几分呢？田地还没有卖，不是你自己的么？既卖了，价银不是你作主么？你怎么心里起这意念呢？你不是欺哄人，是欺哄神了。亚拿尼亚听见这话，就仆倒断了气；听见的人都甚惧怕。有些少年人起来，把他包裹，抬出去埋葬了。」（徒五1～6）。</p>
+<p>亚拿尼亚受了这样重的惩罚，不是因为他未曾把卖田产的钱都拿出来，乃是因为他私自留下几分，却告诉使徒说他已经把所卖的价银都拿来了。他这样作不是欺哄人，乃是欺哄神，所以纔受了神的惩罚。我们要问，为甚么他要这样说谎欺哄神呢？这没有别的原因，就是因为他寻求虚浮的名誉尊荣，想叫全教会说他是怎样热心，怎样爱人，肯把卖田产所得的价银都拿出来。我们或者未曾注意他这种寻求名誉尊荣的思想是从那里来的。使徒告诉我们说，这种心意是从魔鬼来的。听彼得对亚拿尼亚所说的话：「亚拿尼亚，为甚么撒但充满了你的心，叫你欺哄圣灵，把田地的价银私自留下几分呢？」起初撒但引诱亚拿尼亚去寻求虚浮的名誉尊荣，亚拿尼亚不抵抗反顺从，以致撒但在他里面掌了大权，充满了他的心，因此他纔作出这种得罪神的事来。</p>
+<p>我们可以思想亚拿尼亚作这一件恶事决不是偶然的。他和他的妻子在未卖田产以前和卖了田产以后，必是考虑了多少时候，商议了多少次。听他们二人在彼得面前说一样的谎话，便可以证明。起初撒但引诱他们的时候，他们本应当立时拒绝，但他们未曾这样作，以致使撒但进一步而占据了他们的心意。在他们考虑这事，商议这事的时候，圣灵也必是多次提醒他们，责备他们，告诉他们说这样作是不合理的。可惜他们不听从圣灵反听从撒但，以致弄到后来撒但竟充满他们的心，使他们大胆作出这样的恶事，招来神的惩罚。</p>
+<p>撒但岂单用这种方法陷害亚拿尼亚与撒非喇呢？从古至今牠在历代的教会中，用这种诡计不知道陷害了多少信徒。只要他能引诱信徒寻求世上的名誉尊荣，便不难引诱他们去说谎、欺骗、嫉妒、杀人。贪财的心怎样使人去犯许多的罪，求名的心也是如此。</p>
+<p>在这里还有一件值得我们注意的事，就是亚拿尼亚受撒但的试探不是在他作坏事的时候，乃是在他作好事的时候。卖了田产把价银拿来放在使徒脚前，这是何等美好的事。在今日的教会中那些富足的人不用说卖了田产，就是将自己积蓄起来的银钱，拿出百分之二三来肯奉献神的能有几个？亚拿尼亚肯自动的卖了田产，把价银拿出几分来放在使徒脚前，我们除去钦佩他的热心以外，还有甚么话可说。谁想到亚拿尼亚受试探犯罪就是在这件事上呢！</p>
+<p>亲爱的信徒阿，在作好事的时候当谨防魔鬼的试探。防备魔鬼在你作好事的时候，引诱你起求名的心，以致你因此犯罪跌倒。在你为主作了美好的见证的时候，在你奉献赀财的时候，在你帮助人的时候，在你施舍的时候，都当特别谨慎，不要容魔鬼把那求名誉尊荣的心，放在你的里面，他用世上虚浮的名誉尊荣作钓饵来钓取你，你破坏他的诡计的方法，就是不吞他的钓饵。不然，你今日怎样为亚拿尼亚哀叹，后来你也要看见别人为你哀叹。</p>
+<p>感谢神，他一方面将这因求名而失败的信徒的事迹写在圣经上作为我们的鉴戒，一方面也给了我们宝贵的训言，足以保守我们使我们不至陷在撒但的网罗中。容我们读他所给我们的训言：</p>
+<p>「你们要小心，不可将善事行在人的面前，故意叫他们看见；若是这样，就不能得你们天父的赏赐了。所以你施舍的时候，不可在你前面吹号，像那假冒为善的人，在会堂里和街道上所行的，故意要得人的荣耀。我实在告诉你们，他们已经得了他们的赏赐。你施舍的时候，不要叫左手知道右手所作的；要叫你施舍的事行在暗中：你父在暗中察看，必然报答你。」（太六1～4）。</p>
+<p>我们真肯勉力遵行这段教训么？若是这样，我们不但因此将要从神得着许多赏赐，而且也因此破坏了魔鬼的诡计。一个人连所行的善事都隐藏不使人知道，他还能作伪说谎去求虚浮的名誉和尊荣么。</p>
+<p>末了容我们再读两句经上的教训：</p>
+<p>「不要贪图虚名，彼此惹气，互相嫉妒。」（加五26）。</p>
+<p>「凡事不可结党，不可贪图虚浮的荣耀；只要存心谦卑，各人看别人比自己强。」（腓二3）。</p>
+<p>一句要紧的话当记牢：「不要贪图虚浮的名誉和荣耀。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

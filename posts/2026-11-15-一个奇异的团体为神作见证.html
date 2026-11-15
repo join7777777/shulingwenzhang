@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个奇异的团体为神作见证 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个奇异的团体为神作见证</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/4一个奇异的团体为神作见证-01.mp3">🎧 一个奇异的团体为神作见证（1/4）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/4一个奇异的团体为神作见证-02.mp3">🎧 一个奇异的团体为神作见证（2/4）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/4一个奇异的团体为神作见证-03.mp3">🎧 一个奇异的团体为神作见证（3/4）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/7证明有神的七个见证/4一个奇异的团体为神作见证-04.mp3">🎧 一个奇异的团体为神作见证（4/4）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「耶稣过去的时候，看见一个人生来是瞎眼的。门徒问耶稣说：『拉比，这人生来是瞎眼的，是谁犯了罪？是这人呢，是他父母呢？』耶稣回答说：『也不是这人犯了罪，也不是他父母犯了罪，是要在他身上显出神的作为来。趁着白日，我们必须作那差我来者的工；黑夜将到，就没有人能作工了。我在世上的时候，是世上的光。』耶稣说了这话，就吐唾沫在地上，用唾沫和泥抹在瞎子的眼睛上，对他说：『你往西罗亚池子里去洗，』（西罗亚翻出来就是奉差遣），他去一洗，回头就看见了。他的邻舍，和那素常见他是讨饭的，就说：『这不是那从前坐着讨饭的人么？』有人说：『是他；』又有人说：『不是，却是像他；』他自己说：『是我。』他们对他说：『你的眼睛是怎么开的呢？』他回答说：『有一个人名叫耶稣，他和泥抹我的眼睛，对我说，你往西罗亚池子去洗，我去一洗，就看见了。』他们说：『那个人在那里？』他说：『我不知道』。」</p>
+<p>「他们把从前瞎眼的人带到法利赛人那里。耶稣和泥开他眼睛的日子是安息日。法利赛人也问他是怎么得看见的。瞎子对他们说：『他把泥抹在我的眼睛上，我去一洗，就看见了。』法利赛人中有的说：『这个人不是从神来的，因为他不守安息日。』又有人说：『一个罪人怎能行这样的神迹呢？』他们就起了分争。他们又对瞎子说：『他既然开了你的眼睛，你说他是怎样的人呢？』他说：『是个先知。』犹太人不信他从前是瞎眼，后来能看见的，等到叫了他的父母来，问他们说：『这是你们的儿子么？你们说他生来是瞎眼的，如今怎么能看见了呢？』他父母回答说：『他是我们的儿子，生来就瞎眼，这是我们知道的。至于他如今怎么能看见，我们却不知道；是谁开了他的眼睛，我们也不知道；他已经成了人，你们问他罢，他自己必能说。』他父母说这话，是怕犹太人，因为犹太人已经商议定了，若有认耶稣是基督的，要把他赶出会堂。因此他父母说：『他已经成了人，你们问他罢。』所以法利赛人第二次叫了那从前瞎眼的人来，对他说：『你该将荣耀归给神；我们知道这个人是个罪人。』他说：『他是个罪人不是，我不知道；有一件事我知道，从前我是瞎眼的，如今能看见了。』他们就问他说：『他向你作甚么？是怎么开了你的眼睛呢？』他回答说：『我方纔告诉你们，你们不听，为甚么又要听呢？莫非你们也要作他的门徒么？』他们就骂他说：『你是他的门徒，我们是摩西的门徒。神对摩西说话，是我们知道的；只是这个人，我们不知道他从那里来。』那人回答说：『他开了我的眼睛，你们竟不知道他从那里来，这真是奇怪！我们知道神不听罪人；惟有敬奉神、遵行他旨意的，神纔听他。从创世以来，未曾听见有人把生来是瞎子的眼睛开了。这人若不是从神来的，甚么也不能作。』他们回答说：『你全然生在罪孽中，还要教训我们么？』于是把他赶出去了。</p>
+<p>「耶稣听说他们把他赶出去，后来遇见他，就说：『你信神的儿子么？』他回答说：『主阿，谁是神的儿子，叫我信他呢？』耶稣说：『你已经看见他，现在和你说话的就是他。』他说：『主阿，我信。』就拜耶稣。」（约九1～38）。</p>
+<p>无论要证明一样甚么真理，或证明一件甚么事，最有力的证据就是事实。你可以作十几个小时的雄辩，你也可以写一百万字的一部书，但如果有人举出一件极简单的事实来，证明你所讲的或所写的并不可靠、并不真实，胜利仍是属于那个人，却不是属于你。有一句成语说：「事实胜于雄辩，」就是这个意思。</p>
+<p>看看上文我们所提的这个瞎子，足可以作一个最有力的例证。这个人生来是瞎眼的，而且是一个讨饭的人。他当然是一个极软弱、极贫穷、极没有知识的人了。但在他与那些有声望、有势力、有学问的法利赛人谈话的时候，他所说的话却比那些人更有能力。那些法利赛人说耶稣「不是从神来的，因为他不守安息日；」又说：「我们知道这人是个罪人。」那些人一定很会讲话。他们既有丰富的知识，又有雄辩的口才，而且他们人数又多，他们同这样一个生来瞎眼的乞丐争辩，那岂不是正像「狮子搏兔」一样容易么？不料他们竟一而再，再而三的败在那个瞎子面前，在无可奈何之下，他们只好藉着骂他几句，又把他赶出去，泄一下他们心中的闷气。「他们就骂他说：『你是他的门徒，我们是摩西的门徒』。」「他们回答说：『你全然生在罪孽中，还要教训我们么？』于是把他赶出去了。」</p>
+<p>这些法利赛人所以败在那个瞎子面前，就是因为他们虽然有学问，也长于雄辩，但那个瞎子却举出一件事实来，是他们无法推翻、无法否认的。「他是个罪人不是，我不知道；有一件事我知道，从前我是眼瞎的，如今能看见了。」他说他只知道一件事，其实这一件事里面还包括了别的事。听他质问法利赛人的话：「他开了我的眼睛，你们竟不知道他从那里来，这真是奇怪！我们知道神不听罪人；惟有敬奉神、遵行他旨意的，神纔听他。从创世以来，未曾听见有人把生来是瞎子的眼睛开了。这人若不是从神来的，甚么也不能作。」这个瞎子说出来一个千古不变的真理：「神不听罪人；惟有敬奉神、遵行他旨意的，神纔听他。」从这个真理里，他推出一个结论来：「耶稣既能行这一件从来没有人能行的奇事，他就一定是从神那里来的，绝不是一个罪人。」</p>
+<p>这个瞎子以前一定没有听过耶稣讲道。看这段经文后面所记载的，便知道他第二次遇见耶稣的时候？耶稣问他说：「你信神的儿子么？」他回答说：「主阿，谁是神的儿子，叫我信他呢？」那时他还不知道耶稣是神的儿子。及至耶稣对他说明：「你已经看见他，现在和你说话的就是他，」他纔说：「主阿，我信。」这个瞎子所知道的很少，但他所知道的那一件事实，就使他承认耶稣是从神来的，不久又使他信了耶稣是神的儿子。</p>
+<p>凡真实信了耶稣的人都有一个奇妙的经验，这经验就是基督改变了他们的人生。他们在未信主以前是那样污秽邪恶，是那样纵欲妄为，是那样诡诈虚伪，是那样自私自利，是那样痛苦失望，是那样忧虑愁烦，是那样悲观厌世。但他们信了基督以后，他们的人生有了一个彻底的改变。他们的思想改变了。他们的志趣改变了。他们的内心改变了。他们的行为改变了。他们有了倚靠、有了平安、有了喜乐、有了盼望。他们明白了人生的意义。他们看见了前面的道路。他们清楚了作人的标准。他们知道了将来的归宿。一个真实得救的基督徒，假若再回到以前不信的景况中去，如果他不每日麻醉自己，他绝没有法子再活下去。一个基督徒在人生中既有了这种改变，当然任何雄辩或理论都不能抹杀他自己所经验过的事实。这件事实使他的信心建立在坚固的根基上，他便不能不坚信他所信的基督是真实的。</p>
+<p>近来我屡次听见信主的弟兄姊妹们作见证，述说他们那些不信主的同人对他们所下的评语，说：「你这个人在许多事上都好；工作作得好，也很肯负责任，和同人也处得不错。最可惜的一点，就是到今日仍然迷信神。如果你把这个宗教包袱丢掉，你便样样都好了。」他们完全弄错了！如果这些弟兄姊妹不是信了基督，他们那里会有这么许多长处呢？他们若有长处，便都是从这个被人称为「宗教包袱」里面取出来的。基督徒的信仰不是他们的「包袱」，乃是他们的「宝库」。他们的圣洁、正直、爱心、忍耐、谦卑、殷勤、忠诚、勇敢，都是从这里面取出来的。如果没有信仰，甚么便都没有了。</p>
+<p>基督徒在没有信主以前，有那一点比别人更好呢？保罗叙述基督徒没有信主以前的情形说：「那时，你们在其中行事为人，随从今世的风俗，顺服空中掌权者的首领，就是现今在悖逆之子心中运行的灵，我们从前也都在他们中间，放纵肉体的情欲，随着肉体和心中所喜好的去行，本为可怒之子，和别人一样。」（弗二2、3）。我们不敢藐视世上那些犯罪的人。我们从前完全和他们一样。若不是神拯救了我们，我们真不敢设想我们今日已经败坏到甚么地步了！</p>
+<p>一个真实信了基督的人，不但因着他自己改变的经验，使他不能疑惑他所信的主，而且他还要因着主奇妙的拯救，时时感恩，常常喜乐，他也要因此心中迫切，巴不得将这个宝贵的福音分给一切和他来往的人。不信的人不能明白这种奇妙的经验，所以看见基督徒有甚么长处、优点，就说他这个人的素质好，或说他受了良好的教育；及至看见他为主发的热心，他们便对他加以种种揣测、猜疑、误解、讽刺、嘲笑、毁谤。世人不了解基督徒，正像他们当日不了解基督一样。如果希望一个不信的人能完全了解基督徒，那只有等到那个人也信了基督；不然，到死他也不会了解。</p>
+<p>我常喜欢见证我自己因信基督而有的改变。我是在十四岁的那一年信主的。在我信主以前，我的人生没有甚么比别人好的地方。我生下来就是一个孤儿。我母亲只有我姊姊和我这两个孩子。母亲只知道一味的溺爱，以致把这两个孩子都惯坏了。我幼年时的环境又是十分恶劣的，终日目耳闻的就没有甚么好事情。别的小孩子说的坏话，我也说过许多；别的小孩子作的坏事，我也作过一些。思想污浊、行为败坏。心境中充满了悲观失望。每逢想到人人最后都要死亡，就觉得万念俱灰。信主以后头一个阶段，是得了新生命，因此在思想生活上有了极大的改变。我开始恨恶罪恶不义，也开始羡慕公义圣洁，满心渴慕作一个完全人。第二个阶段是清楚明白了神的救恩，和主为信他的人所豫备的那存到永久的天国。从那时起，便对人生充满了乐观和希望，不再怕死，不再厌世。如果我到今日尚未信基督，我真不能设想我已经到了甚么景况。如果不是因着犯罪毁灭了自己，早已下到坟墓中去，便是败坏到不堪设想的地步了。我自己有过这样大的改变，不用再提别的证据，只有这一件，就足能使我对所信的基督笃信不疑，忠心至死了。</p>
+<p>从主耶稣开始传福音到今日，这一千九百多年之久，全世界有千千万万的基督徒，因着信基督，人生有了奇妙的变化。基督为他们所成就的，远超过当日那个被医好的瞎子。这些人在经验中都有铁一般的事实。这些人当中虽然也有一部分有知识和口才，但没有知识和口才的人却占大多数。他们不会作高言大智的雄辩，他们也不明白反对基督的人所讲的一切深奥的哲理，但他们却能说出任何理论和雄辩不能推翻的一件事实，那就是他们因着信基督，人生有了奇妙的变化，正像那个被耶稣医好的瞎子所说的，「有一件事我知道，从前我是眼瞎的，如今能看见了。」</p>
+<p>由于基督徒因信基督而有的人生中的奇妙变化，证明基督的福音是有功效的，证明基督所成全的救工是真实的，证明基督确是为罪人舍命流血的羔羊，也是从死人里复活、被接到高天、坐在神宝座右边的救主。这些事既是真实的，那位为基督作见证，也是基督所见证的神，当然也是真实可信的了。请听这些见证：</p>
+<p>「耶稣受了浸，随即从水里上来。天忽然为他开了，他就看见神的灵，彷佛鸽子降下，落在他身上。从天上有声音说：『这是我的爱子，我所喜悦的』。」（太三16、17）。</p>
+<p>「说话之间，忽然有一朵光明的云彩遮盖他们，且有声音从云彩里出来说：『这是我的爱子，我所喜悦的；你们要听他。』」（太十七5）。</p>
+<p>「差我来的父也为我作过见证，你们从来没有听见他的声音，也没有看见他的形像。你们并没有他的道存在心里，因为他所差来的，你们不信。」（约五37、38）。</p>
+<p>「腓力对他说：『求主将父显给我们看，我们就知足了。』耶稣对他说：『腓力，我与你们同在这样长久，你还不认识我么？人看见了我，就是看见了父；你怎么说，将父显给我们看呢？我在父里面，父在我里面，你不信么？我对你们所说的话，不是凭着自己说的，乃是住在我里面的父作他自己的事』。」（约十四8～10）。</p>
+<p>「大哉！敬虔的奥秘，无人不以为然，就是神在肉身显现，被圣灵称义，被天使看见，被传于外邦，被世人信服，被接到荣耀里。」（提前三16）。</p>
+<p>「神既在古时藉着众先知多次多方的晓谕列祖，就在这末世藉着他儿子晓谕我们。又早已立他为承受万有的，也曾藉着他创造诸世界。他是神荣耀所发的光辉，是神本体的真像，常用他权能的命令托住万有；他洗净了人的罪，就坐在高天至大者的右边。」（来一1～3）。</p>
+<p>「谁是说谎话的呢？不是那不认耶稣为基督的么？不认父与子的，这就是敌基督的。凡不认子的就没有父，认子的连父也有了。」（约壹二22、23）。</p>
+<p>七、一个奇异的团体为神作见证</p>
+<p>「我指望快到你那里去，所以先将这些事写给你；倘若我延日久，你也可以知道在神的家中当怎样行，这家就是永生神的教会，真理的柱石和根基。」（提前三14、15）。</p>
+<p>一千九百多年以前，世上有一个奇异的团体出现。她的性质与世上任何团体都不相同。其它的团体都是由人工组织成的。经过了一些人事的变迁，渐渐就冰消瓦解了。但这个团体的成立却丝毫不藉人工，她也不需要人的提倡与护持。她经过了许多人的反对与攻击：帝王、将相、和许多有势力的人和她为敌，想要消灭她、除掉她，但他们都失败了。她的仇敌看见强暴和武力不能消灭她，便改变了办法，利用她、腐化她、使她变质。他们的计划似乎暂时得到了成功，但不久他们便看见其中一些人因着这个团体的变质，不再停留在里面，却从其中出去，另成立了新的团体，这新的团体又恢复了这个团体本来的性质和面貌。这个团体在世界上有一种奇异的发展。她发源于亚洲西部的一个蕞尔小国，但她却日渐发展，遍及于欧洲、亚洲、非洲、北美洲、南美洲、大洋洲、以及地球上的大小岛屿。凡有人类的地方都有这个团体的存在。这个奇异的团体就是神的教会。在上面我们所引的那一段经文里保罗告诉我们说「永生神的教会」是神的家，也是「真理的柱石和根基。」</p>
+<p>神的教会是「神的家」。这个团体和世界上的任何团体都不相同。世上各种团体都是人为的组织。有人抱着某种宗旨，要组织一个团体。他征集一些与他的志趣相同的人，拟定一个名称，规定若干条章程，征求许多会员，向当地政府立了案，开一次成立大会，这个团体便成立了。神的教会却不是这样。她不是人发起的，人也不能组织一个教会，征求一些会员，教会尤其不能开成立大会。只要有传福音的人把福音带到一个地方，那里有人真心悔改信了基督，那个地方便有了教会。我们要清楚明白，教会不是礼拜堂，教会乃是一群真实信主的人。经上的话清楚说明了这个意思：</p>
+<p>「奉神的旨意，作耶稣基督使徒的保罗，同兄弟所提尼，写信给在哥林多神的教会，就是在基督耶稣里成圣、蒙召作圣徒的，以及所有在各处求告我主耶稣基督的名的人；基督是他们的主，也是我们的主；愿恩惠平安从神我们的父并主耶稣基督归与你们。」（林前一1～3）</p>
+<p>在这段经文里极清楚的说明「哥林多神的教会，就是在基督耶稣里成圣，蒙召作圣徒的。」只要有人因信基督耶稣，在他里面成了圣，作了圣徒，那个地方便有了教会。也许这群圣徒没有一所固定聚会的地方，也许他们中间没有显着负责任的人领导他们，没有长老、执事等等的职分。但只要有真实信主的人，那里就有了教会。</p>
+<p>这真是一件希奇的事：两个或两个以上真实信主的人遇到一处，在很短的时间内，他们中间就发生了极密切的关系。他们以前虽然彼此毫不相识，更没有任何血统或家族的关系，也许他们的家乡相隔几千里之遥，也许他们彼此中间言语不通，习惯各异，也许他们属于不同的种族，不同的国籍，但只要都是真实信主的，他们彼此中间就有一种奇妙的联系，这种联系不是藉着血统来的，不是藉着感情来的，不是藉着利益来的，不是藉着组织来的；这种联系是藉着生命来的。因为他们同信一位救主，同被一位父亲所生，这位父亲就是我们所事奉的那位坐在天上的神。</p>
+<p>不信的人不能明白基督徒彼此中间的这种生命上的联系。他们没有这种经验。他们照他们自己的经验来揣度基督徒彼此中间的关系。他们认为这些基督徒一定有某种组织、有某种联系，一定受某一些人所领导；不然，他们不会团结得这样紧，他们也不会在许多事上都有相同的看法和主张。不信的人不可能明白基督徒彼此中间的关系，基督徒也不必希望得不信的人的了解。那些不信的人只有在他们信了基督以后，纔能明了这种关系。如果他们不信基督，没有从神而来的生命，就是到死他们也不会明了的。</p>
+<p>基督徒在灵里有一种奇妙的联系，在一切事上有相同的看法和主张，这是很自然的事。这不需要有人领导他们，也不需要有人把他们组织起来。他们都信一位救主，都被一位父所生，住在他们里面的圣灵也是这一位，神又藉着一部圣经把他的真理向他们显明出来。只要他们不受人的遗传和伪道的影响，他们会很自然的在许多事上有相同的看法，走一样的道路。</p>
+<p>真实信基督的人中间还有一种世人中间所没有的东西，那就是神的爱。凡被神所生的人里面都有从神那里而来的爱，这爱是与神所赐给我们的生命一同进到我们里面的。经上的话很清楚的说明了这个真理：</p>
+<p>「亲爱的阿，我们应当彼此相爱，因为爱是从神来的；凡有爱心的都是由神而生，并且认识神。没有爱心的就不认识神，因为神就是爱。神差他的独生子到世间来，使我们藉着他得生，神爱我们的心在此就显明了。不是我们爱神，乃是神爱我们，差他的儿子为我们的罪作了挽回祭，这就是爱了。亲爱的阿，神既是这样爱我们，我们也当彼此相爱。从来没有人见过神，我们若彼此相爱，神就住在我们里面，爱他的心在我们里面得以完全了。」（约壹四7～12）</p>
+<p>「凡信耶稣是基督的，都是从神而生。凡爱生他的神的，也必爱从神生的。我们若爱神，又遵守他的诫命，从此就知道我们爱神的儿女。」（约壹五1、2）。</p>
+<p>这两段经文反复说明了这个真理。这里约翰先教导圣徒「应当彼此相爱」，其次他说明「爱是从神来的；凡有爱心的都是由神而生，并且认识神。没有爱心的就不认识神，因为神就是爱。」接着他告诉我们说神是怎样的爱我们：「神差他的独生子到世间来，使我们藉着他得生，神爱我们的心在此就显明了。不是我们爱神，乃是神爱我们，差他的儿子为我们的罪作了挽回祭，这就是爱了。」然后他教导圣徒说：「神既是这样爱我们，我们也当彼此相爱。」在第二段经文里他又说明「凡爱生他的神的，也必爱从神生的。」那就是说，我们爱神，就必爱主里的弟兄姊妹。</p>
+<p>这并不是说我们信主得救以后，我们爱弟兄的心就完全了。这乃是说当我们因信基督得着生命的时候，我们里面便有了神的爱。这个爱还需要我们的浇灌培植，好使它越来越发长。反过来说，如果我们对这种爱不加以浇灌培植，反倒加以摧残毁坏，它就会日渐凋零枯萎。但无论如何当我们信主得救的时候，这种爱便开始存在我们里面了。</p>
+<p>除了生命的联系以外，这种爱也把神的孩子们联系在一处，使他们成为一个奇异的团体。在世界上只有属于一个家族中的人能谈得到爱。扩大一点说，只有在一些事上相同的人能谈得到爱。有道德的人容易爱其它有道德的人。有学识的人容易爱其它有学识的人。有财产的人容易爱其它有财产的人。有地位的人容易爱其它有地位的人。志趣相同的人容易彼此相爱。种族相同的人容易彼此相爱。处境相同的人容易彼此相爱。工作相同的人容易彼此相爱。但一到了神的教会中，情形就完全不同了。神的教会中有些人在未信主以前道德比较高尚，也有些人在未信主以前是品行特别卑污的；有些人很有学识，有些人文化的水平非常低下；有些人富有财产，也有人家境极其贫寒；有些人在世界上有地位，有些人在世界上没有一点地位。神的教会中的众圣徒志趣不同，种族不同，处境不同，工作不同。如果他们不信基督，他们实在不可能团结在一处，但他们信了基督以后，就有一个奇妙的力量，把他们中间一切的区别畛域完全化除，使他们在基督里都成为一，正如经上的话：</p>
+<p>「所以你们因信基督耶稣都是神的儿子。你们受浸归入基督的，都是披戴基督了。并不分犹太人、希利尼人、自主的、为奴的、或男、或女，因为你们在基督耶稣里都成为一了。」（加三26～28）。</p>
+<p>当使徒在世的时候，犹太人和希利尼人、自主的和为奴的、男人和女人，中间有着极大的距离：犹太人轻看希利尼人，主人压迫奴仆，男人藐视女人。但这些人信了基督，加入了神的教会，这一切界限便完全消除了。基督提高了希利尼人、奴仆、和女子的地位。犹太人向来是轻看外邦人的，主耶稣却特别为外邦人豫备了一位使徒保罗，差他传福音给那未受割礼的人。（徒廿二21；加二6～8）。保罗称腓利门的奴仆阿尼西母为他「在捆锁中所生的儿子」，并劝告腓利门不再看阿尼西母为奴仆，「乃是高过奴仆，是亲爱的弟兄。」（门8～20）。古代教会历史上也告诉我们说，在罗马帝国中那些富贵的人看奴仆如牛马一样的时候，那些信了基督的人，不分主人奴仆，都彼此如同弟兄一样的相亲相爱。主耶稣是那样尊重妇女，收她们作他的门徒，正如同他收那些男子作他的门徒一样。（路八1～3）。就连那因犯罪而被众人所鄙视弃绝的女子，在诚心表示悔改的时候，也得了他的赦免。（路七36～50）。他复活以后最先向抹大拉的马利亚显现。（约二十1～18）。使徒保罗也屡次推荐他的女同工，并称述她们的劳苦和爱心，又劝教会帮助她们。</p>
+<p>「我对你们举荐我们的姊妹非比，她是坚革哩教会中的女执事；请你们为主接待她，合乎圣徒的体统；她在何事上要你们帮助，你们就帮助她，因她素来帮助了许多人，也帮助了我。」（罗十六12）。</p>
+<p>「我劝友阿爹和循都基要在主里同心；我也求你这真实同负一轭的，帮助这两个女人，因为她们在福音上曾与我一同劳苦；还有革利免，并其余和我一同作工的；他们的名字都在生命册上。」（腓四2、3）。</p>
+<p>世上人类中间许多人力所不能化除的畛域，到了教会中间，都被神的大能和大爱所化除。教会越属灵，这种种的畛域越难寻觅。在合乎神心意的教会中没有轻看、侮辱、压迫、凌虐、仇恨、分争、倾轧、排挤、种种的现象。在这里只有神的爱浇灌在每一个人的里面，使他们学习忍耐、饶恕、体恤、顾念、同情、爱护、扶持、安慰。这一切都不是人力所能作得到的，而且不是人的心所愿意作的，这是神的大能运行在他自己的孩子们里面所成就的一件奇事。</p>
+<p>也许有人要问我说：「我们所见的教会不但不像你所说的，而且是充满了自私自利、仇恨嫉妒、谄媚富贵、轻看贫穷、倚大欺小、恃强凌弱。不信的人中间所有的罪恶，教会里面不但样样都有，而且还加上假冒为善和明知故犯的罪。你怎么解释这种情形呢？」</p>
+<p>这个问题并不难回答。我在教会中所看见的种种罪恶，也许并不比别人更少。我生在所谓的「基督教家庭」中。我从幼时就随着母亲到礼拜堂中去聚会，并且和许多所谓「基督徒」的人多有来往。我八九岁的时候进入一个教会设立的学校，在那里从初小到高小又到中学；从旧制四年的中学毕业以后，又在另一个教会的环境中读了一年旧制大学豫科。十年（或十一年）之久，我所接触的师长和同学，大多数都是所谓「基督徒」的。当我十九岁因受阻碍而中途辍学以后，进到保定一个教会的小学校去作教员，又遇见一些所谓「基督徒」的同事和学生。这些学校既都是教会所设立的，而且每周都有很多的聚会，当然我也就认识了许多传道人和教会中的领袖。我自己在这些年间听见看见教会中的许许多多罪恶不义。从我十四岁信主以后，我有了神所赐的生命，我羡慕圣灵，我恨恶罪恶。我对教会中的种种罪恶深恶痛绝。我因着教会的腐败而痛心，我也曾想对教会作一番改革的工作。及至我在廿一岁的春季蒙了神特别的光照以后，我纔明白原来这些所谓「基督徒」和「传道人」中间，绝大多数都是抱着其它的目的而加入教会的，其中还有一些是盲听盲从、人云亦云的作了基督徒。在这些所谓「基督徒」和「传道人」当中，真实悔改信主得了生命的，十个当中不一定有两三个。</p>
+<p>及至我在二十几岁开始为神作工以后，我接触了更多的所谓「基督徒」和「传道人」，我的眼界更扩大了。我看见了教会中更多、更大、更可耻、更可憎的罪恶。绝大多数的教会完全变了质，不再是神的教会，竟成了惹神震怒的巴比伦大城。如果你以为我们上文所讲的神的家就是这种变了质的教会，那便整个错误了。圣经上所说的神的教会乃是指着世界上那些真实悔改信了主、得了新的生命的人。这些人散住在各处。有些人到礼拜堂中聚会，也有些人不到礼拜堂中去。有些人的名字在某一个世上的教会的名册上，也有些人从来没有加入过世上任何一个有形式的教会，还有些人因着有形式的教会腐化变质，感觉疾首痛心，便从其中退了出来。有些人和少数同心的弟兄姊妹在一处聚集交通，还有些人孤孤单单的住在一个地方，寻不见另外同心事奉主的圣徒。只有少数的教会因着神特别的恩待和保守，持守纯正的信仰，弃绝一切的罪恶，一心一意的愿意讨神的喜悦。这是神在世上为他自己的名所留下的见证。上面所提的这些人就是神的教会。只有在这些人中间，你纔能看见神的大能和作为，也能看见神的救工和慈爱。因此你要看神的教会，不要到礼拜堂中去看，更不要到那些所谓「基督教领袖们」中间去看。你在那里看不见圣经中所说的「神的家」，你所看见的不过是高大的礼拜堂，人工所组织的团体，和一些热闹的场面。在那里你只能看见「人的本领」，却不能看见「神的大能」。只有在那些真实信主、爱主的圣徒的生活中，你纔能看见我们所说的这个奇异的团体，「神的家」，也就是「永生神的教会」。这个教会见证了神的存在、神的大能、神的救法、神的荣耀。</p>
+<p>经上论到神的教会，又称她为「真理的柱石和根基」。这真是一个很有意义的说法。真理是藉着教会纔显明出来。教会见证了真理，也保持了真理。经上为我们解释真理的意义说：</p>
+<p>「求你用真理使他们成圣，你的道就是真理。」（约十七17）。</p>
+<p>「耶稣说：『我就是道路、真理、生命；若不藉着我，没有人能到父那里去』。」（约十四6）。</p>
+<p>神的道就是真理。主耶稣就是神的道具体的表现，所以他也就是真理。教会在世上将神的道见证出来，又将主耶稣表现在人面前。地上若没有教会，世人就无从知道甚么是真理。神的真理能建立在地上，就是藉着他的教会，所以经上称教会为「真理的柱石和根基」。</p>
+<p>撒但不愿意世上的人认识神，更不愿意人明白真理，所以他最大的力量想毁坏神的这个见证、这个「真理的柱石和根基」。一千几百年来教会受逼迫、被利用、腐化、变质，都是出于撒但的计谋。从外面看，似乎神遭了失败，撒但得了胜利。但那真正属神的教会却一直在地上为他作见证。在受逼迫的时候，她藉着「受苦、流血」来见证神的大能；在教会被利用、腐化、变质的时候，她藉着「分别、离开」来见证神的圣洁。撒但的攻击不但未曾消灭了神的见证，反倒使她更加显明、更加有力。</p>
+<p>在全世界上你能不能再找出另外一个团体，不但存留一千九百多年之久，而且经过这样多、这样重的逼迫，却始终未曾消灭？你能不能再找出另外一个团体，多次被利用、被变质，但总有人从那被利用、被变质的教会里出来，分别成为「新团」，保持她本来的性质和面目？展读一下一千几百年的教会历史，再看看全世界各处那些真实的基督徒，你就再不能说你不能证实神的存在了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

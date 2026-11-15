@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>欺骗人的至终欺骗了自己 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>欺骗人的至终欺骗了自己</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/3欺骗人的至终欺骗了自己-06.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>黄爱仁是广州城内有名的几个大财主中间的一位。他的父亲在世的时候曾在南洋经商多年，获了极多的利，在广州城内也开了几家商店。自从他父亲去世以后，一切的财产便都归他承继。他是一个很慷慨大方坦白直爽的青年人。他对人非常热情亲切。他的交游遍于两粤。他对朋友们一向是以赤心对待。无论那一个人有甚么艰难缺乏，他总是立时解囊济助，毫无吝容。在他许多的朋友中有一个名叫林士弼的，是一位建筑师。他们两个人最初相识还是由于十多年前他在东山建筑一座别墅的时候，登报招标，林士弼得了标，包了这别墅的工程。因为建筑的事两个人屡屡接谈，渐渐熟识起来。林士弼是一个久在社会中作事的人，很会迎合人的心理，并且手腕灵敏，谈锋健锐。没有多少时候便与黄爱仁成了很亲密的朋友。黄爱仁对林士弼真是肝胆相照，林士弼对黄爱仁却是奉承迎合。坦白直爽的人多半是以为别人也像他自己一样，不料到别人会欺骗他利用他。黄爱仁对待林士弼就是存了这种心理。十多年来林士弼屡屡在黄爱仁面前献一些小殷勤，以致黄爱仁竟以他为最亲密的朋友，常想要为他作些甚么。</p>
+<p>一个春光明媚的早晨林士弼到黄爱仁的家中来闲谈，黄爱仁告诉他说要造一座西式楼房，请他给画图建筑。过了几天，他将图样画好拿来给黄爱仁看，并且估计了建筑的费用。黄爱仁照他所估的价开了一张支票，交给他全权办理，自己甚么也不过问，只等建筑完毕以后验收工程。林士弼本是一个工于心计自私自利的小人，他见黄爱仁这样忠厚可欺，便想利用这次建筑的机会从中发一笔财，因此他在购买材料的时候不照着他起初所说的去作，却买了一些次等的材料，从其中赚了许多的钱。及至开工建筑的时候，他又偷了许多的工，减了许多的料。好在黄爱仁一次也不来监工，就是买来的料如何，他也毫不过问。这样一来，林士弼便放开胆量弄钱了。一座宏大的楼房造好了以后，从外面看着真是美仑美奂，金碧辉煌，其实工程一点也不坚固。狡诈自私的林士弼因为发了一笔大财，感觉到得意洋洋，黄爱仁却始终如同在鼓里一般，一点也不知道林士弼暗中所作的事。</p>
+<p>一天早晨林士弼请黄爱仁到工地去验收工程，黄爱仁快快乐乐的去了。他对于这座楼房非常的满意。他称赞林士弼作事忠诚。林士弼却心中暗笑他这个朋友过于忠厚，受了欺骗还不明白。就在这个时候他忽然听见黄爱仁问他说：「老弟，你知道我盖这座楼房是为作甚么用么？」他回答说：「不是你自己要住么？」黄爱仁说：「不是。」「是要出租么？」黄爱仁又回答说：「不是。」「莫非你豫备出售么？」黄爱仁摇着头回答说：「你所猜的都不对。我豫备把这座楼房送给我的一位朋友。你能猜得着这个朋友是谁么？」林士弼真未曾料到黄爱仁这样慵慨，肯把费这么多钱建筑的楼房轻轻的当一件礼物送给朋友。他猜了几个与黄爱仁顶靠近的朋友，黄爱仁都摇头说：「不对。」黄爱仁看他总猜不着，便对他说：「老弟，不用再费事去猜了，我简捷告诉你罢，我建筑这座楼房就是为送给你住的。」</p>
+<p>林士弼听见这一句话，心中的滋味真不知道是甜，是咸，是苦，是辣，是酸，还是五味俱全。他惊喜他的朋友送给他这么大的一件礼物，使他喜出望外。他后悔不该偷工减料，以致自己欺骗了自己。他自己心中怨恨自己说：「如果我早知道这座楼房是为我盖的，我怎样也决不偷工减料，盖成这样不坚固的房子阿。」然而后悔已经迟了。他既不能拆了重新建筑，用诡诈的法子所弄的那些钱也不够另盖一座楼房用的。那就只好自己住这一座不坚固的房子罢。</p>
+<p>世上有许多自命为聪明的人都像林士弼那样建筑着他们的工程。他们说谎，作伪，欺骗，偷窃，舞弊，营私，损人，利己，残暴，凶杀，嫉妒，恼恨。他们想他们这样作可以使他们自己得着利益，尊荣，权柄，地位，安逸，宴乐，幸福，财产。当他们得着一点好处的时候，他们欣幸，他们自豪。他们看那些忠厚诚实的人为傻瓜，为笨汉。他们觉得他们自己真是绝顶的聪明。他们却没有料到他们今日所建造的到了后来都要归到他们自己的身上。到那时候他们方知道他们所欺骗的不是别人，乃是他们自己。他们要懊悔自恨，但是已经太迟了。</p>
+<p>阅者，请你记得你现在每日所存的意念，所说的话语，所作的事情，都是在那里运料，在那里建筑。如果你今日所存的心思所说的话语所作的事情都是公义圣洁慈爱诚实谦卑和平的，你将来便会有一座坚固美好的房屋供你居住。如果你今日所存的意念所说的话语所作的事情都是邪僻弯曲自私诡诈骄傲凶暴的，你将来也必承受一座可怕的产业。你今日作许多损害别人欺骗别人苦待别人的事，实际你正是在那里每日损害自己，欺骗自己，苦待自己。你以为自己是聪明，其实是愚昧到极点。你以为你是爱自己，其实是害了自己。不用说存心损害别人，欺骗别人，就连你任性放纵懒惰奢侈的生活也要为你造成将来的痛苦和悔恨。明白了这个真理，我们便应当自今日起谨慎自己一切的思想言语行为生活，像我们自己在建筑房屋的时候用心选择材料加意监督工人工作一般。我们每一个思想便是一块木料，每一句话便是一块矿一块瓦，每一件动作行为便是一根铁筋，一袋洋灰。如果我们所豫备的材料都是上好的，我们自然就会盖成一所好的房屋。但如果我们所豫备的这些材料都是坏的，将来的结果自然也就不堪闻问了。</p>
+<p>林士弼已经欺骗了自己，我们还要蹈他的覆辙么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>连风和海也听从他了-患病的圣徒当留意的一件事 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>连风和海也听从他了-患病的圣徒当留意的一件事</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/5写给受苦的圣徒/3连风和海也听从他了-患病的圣徒当留意的一件事.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「当那天晚上，耶稣对门徒说，我们渡到那边去罢，门徒离开众人，耶稣仍在船上，他们就把他一同带去，也有别的船和他同行，忽然起了暴风，波浪打入船内，甚至船要满了水。耶稣在船尾上枕着枕头睡觉：门徒叫醒了他，说，夫子，我们丧命，你不顾么？耶稣醒了，斥责风，向海说，住了罢，静了罢。风就止住，大大的平静了。耶稣对他们说，为甚么胆怯，你们还没有信心么？他们就大大的惧怕，彼此说，这到底是谁？连风和海也听从他了。」（可四35～41）。</p>
+<p>从古时到今日，几千年来，人们发现了多少隐藏的事物，发明了多少奇异的东西：几尺高的人，能用工具建筑几百尺高的楼房；血肉的躯体，能用火药穿透矗立云表的高山：陆地上的火车和海面上的轮船，能拖着千百个人与千百吨的货物风驰电掣的日行数千里；小小的一具照像机能把人物的影像摄取下来，印在纸上和实物没有丝毫的差别；圆圆的一张留声机片能把人谈话唱歌的声音保存起来，无论甚么时候都可以随意使牠发出；放一个小小的电灯在屋中，只要扭转电门全室中便照耀如同白昼一般；摘下电话机来便可以和远在千百里以外的亲友谈话如同面对面一样；桌上安放一架无线电收音机，便能随意收听全世界各国各城市广播放送的言论与音乐；家中购置一辆汽车，坐在里面只要略动一下手和脚，牠便载着你和你一家的人跑到你愿意去的地方；进到潜水艇里，不是鱼却能在水底游行，坐在飞行机内，不是鸟却能在云中翱翔，人的智慧似乎不可限量，人的能力好像浩大无边，可是直到今日还没有一个人能改变天然界的现象。当风起浪涌的时候，谁也不能说一句话使风浪平静。但在一千九百多年以前却有一位睡在小船上的人被他的门徒唤醒以后，斥责那狂风巨浪说，「住了罢，静了罢，」风浪立时便平静下来，那些在船上的人都惧怕说，「这到底是谁？连风和海也听从他了。」岂但他们这样说呢。连我们今日听见这件事情的人也要和他们发出同样的疑问──「这到底是谁？连风和海也听从他了。」</p>
+<p>如果我们不清楚认识他，我们一定要发出这样的疑问，但及至我们清楚认识了他以后，我们便丝毫不再惊奇。因为那为他作见证的圣经告诉我们说，「万物是藉着他造的，凡被造的没有一样不是藉着他造的。」（约一3）。他是那「在父怀里的独生子。」（约一18）。在未有世界以先他就与神同享荣耀。（约十七5）。他是「那不能看见的神的像，是首生的，在一切被造的以先：因为万有都是靠他造的，无论是天上的，地上的，能看见的，不能看见的，或是有位的，主治的，执政的，掌权的，一概都是藉着他造的，又是为他造的：他在万有之先，万有也靠他而立。」（西一15～17）他虽然那样寒苦，降生在马棚中；那样卑微，作了拿撒勒城的木匠；那样贫穷，连枕头的地方也没有；但他却拥有极大的威权，他向一切被造的万物发出命令，牠们也都必须听从他。当那日夜间，他斥责风和海的时候，也不过是略微行使他的权柄罢了。可惜他的门徒那时还不深认识他，所以他们纔发出这个疑问来，说，「这到底是谁连风和海都听从他了。」但我们现今不再发这疑问了。我们知道他是谁，我们也知道他不但有权柄使风和海都听从他，他也有权柄使万物都听从他，在他没有难成的事。我们更知道他当日在世界上的时候有权柄，他复活升天以后的权柄更大，因为我们听见他在从死人里复活以后，曾向他的门徒宣布说，「天上地上所有的权柄都赐给我了。」（太二十八18）。保罗也为他作见证说：「他自己卑微，存心顺服以至于死，且死在十字架上，所以神将他升为至高，又赐给他那超乎万名之上的名，叫一切在天上的，地上的，和地底下的，因耶稣的名无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。」（腓二8～11）。这一位升为至高得了超乎万名之上的名又得了天上地上所有的权柄的主，是我们的主，是我们所信赖所投靠的，我们是何等安全何等有福阿！</p>
+<p>我们今日生活在世界上不也是常常遇见狂风巨浪，像当日晚间门徒过海的时候所遇见的一样么？有时疾病忽然侵入我们的家中，有时意外的打击忽然临到，有时遭遇严重的经济压迫，有时我们所爱所靠的人猝然离了世界，有时遭逢了战争的危险，有时陷入了穷苦的深渊。这一切的事临到我们都像狂风，都像巨浪；我们所乘的船好似满了水，我们的生命似乎顷刻之间就要断送。在这危急存亡的关头，我们的主似乎还在那里枕着枕头睡觉，似乎完全忘记了我们，以致我们也像当日的门徒那样惊慌失措的去呼叫他说，「夫子，我们丧命，你不顾么？」当他听见我们这种呼声的时候，他立时起来吩咐风浪平静，但他却不能不责备我们说，「为甚么胆怯？你们还没有信心么？」如果当日的门徒应当受这种责备，我们今日所当受的责备，该比这个重多少倍呢？他们那时还不深认识他，还不清楚知道他的能力和威权，更没有看见他复活的大能，没有听见他说，「天上地上所有的权柄都赐给我」了那一句话，我们现在却知道了这一切，见了这一切，听见了这一切，同时我们却像他们那样胆怯、那样惊慌、那样没有信心，你想我们是不是比他们更软弱呢。足以使我们得安慰的就是主虽然因我们的胆怯小信责备我们，但他仍然照他的大爱怜恤我们，用他的大能止息那使我们胆战心惊的狂风巨浪，对牠们说，「住了罢，静了罢。」</p>
+<p>也许我们想如果主今日仍然睡在我们的身旁，我们能亲眼看见他的形像如同当日的门徒一样，纵使他酣睡未醒，我们心中也能觉得大有倚靠，不至因风浪太大便胆怯战兢。可惜他现今不在我们身旁，我们的眼看不见他，我们的手摸不着他，他又焉能责备我们胆怯没有信心呢。</p>
+<p>这决不能作为我们原谅自己的理由。因为我们凭着他的应许确实知道，虽然我们的肉眼看不见他，他确是常与我们同在，不但在我们所乘的船上，而且他不再睡觉。他自己的话告诉我们说，「所以你们要去，使万民作我的门徒，奉父子圣灵的名给他们施浸：凡我所吩咐你们的都教训他们遵守：我就常与你们同在，直到世界的末了。」（太二十八18～20）又说，「人若爱我，就必遵守我的道：我父也必爱他，并且我们要到他那里去，与他同住。」（约十四23）又说，「无论在那里有两三个人奉我的名聚会，那里就有我在他们中间。」（太十八20）我们难道不信他所说的这些话么？如果我们信这样应许，那么我们不是和古时那些门徒同样的安全么？何况他当日因为在肉体中生活所以需要睡觉，但今日却不再睡觉了呢。古时那「保护以色列的也不打盹，也不睡觉。」（诗一二一4）今日那保护我们的也是同样的「不打盹，也不睡觉。」</p>
+<p>基督的门徒阿，不要胆怯，也不要战兢。只要主与我们同在，任凭风怎样的狂，浪怎样的大，都不足以伤害我们的一根头发。虽然他常常容许风浪向我们打来，也有时他似乎在那里睡觉，一点不顾我们，但这都有他的美意。他要藉着这些事试验我们的信心，使我们看见他的权能，使我们学习倚靠他，末了使我们的「信心既被试验，就比那被火试验仍然能坏的金子更显宝贵，可以在耶稣基督显现的时候得着称赞、荣耀、尊贵。」（彼前一7）</p>
+<p>这世界真像一片浩瀚无涯的洋海，我们每日都像乘着一叶的扁舟在海面航行着，风平浪静的时日固然也有，可是风起浪涌的时日也许更多。我们只要记得我们的主是和我们一同在船上，是常在我们的身旁，更记得他是那胜了世界并掌管天上地上所有的权柄的主，这样，无论风怎样狂，浪怎样大，我们便总能平静安稳，毫无恐惧。当他吩咐风浪平静以后，我们便恭恭敬敬的俯伏拜他说，「这到底是主，连风和海也听从他了。」</p>
+<p>仰望主呢？看风浪呢？</p>
+<p>「耶稣随即催门徒上船，先渡到那边去，等他叫众人散开。散了众人以后，他就独自上山去祷告：到了晚上，只有他一人在那里。那时船在海中，因风不顺，被浪摇撼。夜里四更天，耶稣在海面上走，往门徒那里去。门徒看见他在海面上走，就惊慌了，说，是个鬼怪；便害怕喊叫起来。耶稣连忙对他们说，你们放心，是我；不要怕。彼得说，主，如果是你，请叫我从水面上走到你那里去。耶稣说，你来罢：彼得就从船上下去，在水面上走，要到耶稣那里去。只因见风甚大，就害怕，将要沉下去，便喊着说，主阿，救我。耶稣赶紧伸手拉住他，说，你这小信的人哪！为甚么疑惑呢？他们上了船，风就住了。在船上的人都拜他说，你真是神的儿子了。」（太十四22～33）。</p>
+<p>信心所成就的事工真是伟大奇妙！神的儿子耶稣基督能在海面上走本是不足为奇的事。他能使瞎子看见，使聋子听见，使瘸子行走，使哑吧说话，使长大痲疯的洁净，使死了的人复活，又能用少数的几个饼使几千个人吃饱，何况在水面上行走这一件小事呢。最足以使我们注意的就是彼得因为信靠主的话竟也能像他的主那样走在海面上。当彼得说，「主，如果是你，请叫我在水面上走到你那里去，」那一句话的时候，他必是信他的主不但能自己在海面上行走，而且也能使信他的人在海面上行走。及至耶稣招呼他说，「你来罢」，他「就从船上下去，在水面上走，要到耶稣那里去。」读这几句记载我们可以看出他是怎样有信心，信他的主能使他在海面上走，如果他不信，他决不敢在这种风狂浪大的深夜「从船上下去」。他有这种信心，便真能「在水面上走，」能像他的主那样不沉溺在水中。我们的主说，「在信的人凡事都能，」这句话真是确实阿！</p>
+<p>可惜彼得的信心竟不能保持得长久！过了没有多少时候，他的眼睛竟不仰望他的主，却去注意风浪，这样一来，事情立时变坏了。「只因见风甚大，就害怕，将要沉下去。」当彼得的眼睛仰望主的时候，他能像主一样在水面上行走，但当他看风浪的时候他立时和一个平常人一样，要沉在水中。不顾危险一心信算主的时候是那样刚强，注意危险不专一信靠的时候立时变得这样软弱。现在的彼得还是方纔的彼得，现在的海水仍是方纔的海水，可是方纔的彼得能在海面上行走，现在的彼得竟「害怕将要沉下去。」究竟为甚么前后不差多少时候竟有了这样大的分别呢？就是因为方纔他信靠，现在他疑惑，方纔他仰望主，现在他看风浪。就差这样一点，一切的景况就完全改变了。幸而他在这时重新想起他的主来，重新发生出信靠的心，便喊着说，「主阿救我。」他的主便立时伸手拉住他，他立时脱离了危险，可是他却不能不受主的责备──「你这小信的人哪，为甚么疑惑呢？」</p>
+<p>「你这小信的人哪，为甚么疑惑呢？我不是曾招呼你来么？我既招呼你来，虽道还能容你沉到海水中么？方纔你在水面上走不是没有沉下去么？方纔我已经保守了你，难道我不能保守你到底么？风浪虽大，有我在这里还怕甚么呢？方纔你已经看见信心的功效，怎么过了没有多少时候又起了疑惑呢？我纔因你的信心欢喜快乐，谁想到你竟会惧怕起来呢？你仰望我的时候就能在海面上行走，何必再看风浪呢？」我们的主似乎这样责备彼得。</p>
+<p>「你这小信的人哪，为甚么疑惑呢？」主所说的这两句责备彼得的话也深深的责备了我们。当我们专心仰望主的时候，虽然有极大的危险摆在我们面前，我们的人生中遇见了狂风大浪，我们却仍能像在平安稳妥的境遇中一样。虽然一切的事物都是那样使人恐惧战栗，像海水翻腾一般，但我们却毫不在意，这些事物也确实不能伤害我们。我们的心中有主所有的平安。我们度着主自己所度过的胜利的生活。我们能像主那样在海面上行走却不沉落到水中。但甚么时候我们的眼睛不仰望主却注目那可怕的环境，我们便立时惊慌失措，要沉落在那一切可怕的事物中。忧虑、愁苦、惧怕、失望、胆怯、疑惑，一齐都来到我们的心中。我们的生活立时改变了。我们立时觉得我们不再是走在水面上，乃是已经沉在水里面。在这种景况中若不立时呼喊说，「主阿，救我，」我们真不知道会落到何等可怜的景况中。说起来真可怜，彼得在那种景况中还能呼喊说，「主阿，救我，」我们到了这种景况中间有时连呼喊主都不会呼喊了。但我们的主却不等我们呼喊就来到我们旁边，「赶紧伸手拉住」我们，同时他却不能不责备我们说，「小信的人哪，为甚么疑惑呢？」</p>
+<p>我们仔细想了一想自己的小信，该当怎样羞愧呢！明明知道我们的主有大权柄有大能力，能制服一切可怕的事物，而且我们因为信靠他，也看见他能使我们制胜了这一切，可是我们一看环境立时便疑惑惧怕起来，好像我们丝毫没有倚靠一样。有这样可靠而且大有能力的主，我们竟不会信靠他，不敢信靠他甚至忘记了信靠他。这是多么可惜的事阿！</p>
+<p>在这一件事迹中我们学了一样极宝贵的功课──如果要走在海面上不沉下去，就是不看风浪只仰望主，换一句话说，就是如果要胜过一切可怕的事物，就当不看环境只仰望主。惟独这样，我们方能在最危险可怕的环境中享受完全的平安与胜利，正像彼得当风狂浪大的时候行走在海面上一样。</p>
+<p>想到这里我想起不信派（即普通称为新神学派的）对这段经文所下的解释来了。他们说耶稣并没有在海面上行走。他们说那是不可能的事。他们说耶稣只是走在海边的浅滩上，门徒在夜间看不清楚以为有一个人在海面上行走，因此惧怕起来。这样人巧言如簧，真能欺骗一些在真道上没有根基的人。如果我们用心查考圣经，便能看出他们这样讲解完全是因为他们自己不信耶稣的权能，不信圣经的记载，却用造的言语欺骗那些信心不坚固的人。我不用多说甚么话辟解他们的错误。只要我们详读一下这段经文中的几句话，便可以知道这般人是怎样推翻圣经上的记载，凭空造谎言欺骗人了。容我们读这几句经文──</p>
+<p>「彼得说，如果是你，请叫我从水面上走到你那里去，耶稣说，你来罢。彼得就从船上下去，在水面上走，要到耶稣那里去。只因见风甚大就害怕，将要沉下去，便喊着说，主阿，救我。耶稣赶紧伸手拉着他说，你这小信的人哪，为甚么疑惑呢？」</p>
+<p>不但门徒看见耶稣在海面上行走，他们中间的一个人得了主的允许也在海面上走过，后来因为疑惑惧伯，几乎沉在水里，幸而被主伸手拉住，未遭灭顶之祸。有这样清楚的记载在圣经上，不信派却说耶稣不是在海面行走，乃是在浅滩上行走。我说他们推翻圣经所记载的事实，造谎言欺骗人，我对他们所下的判断不会算太过罢。</p>
+<p>不信的人叫他仍旧不信罢。我们确信主不但能在海面上行走，还作了许多比这样更大更奇的事，而且他现在和将来还要作许多的奇事，向信他的人显出他的荣耀来。有这样的一位基督作我们的救主，作我们的良友，作我们的保障，作我们的高台，作我们随时的帮助，我们还有甚么可怕的呢？</p>
+<p>不要看海中的狂风，也不要看脚下的巨浪，只要信靠主，仰望主，你就会看见主在你身上所行的奇妙的大事。总不要使主责备你说，「小信的人哪，为甚么疑惑呢？」</p>
+<p>患病的圣徒当留意的一件事</p>
+<p>「你们中间有受苦的呢，他就该祷告，有喜乐的呢，他就该歌颂。你们中间有病了的呢，他就该请教会的长老来，他们可以奉主的名用油抹他，为他祷告：出于信心的祈祷要救那病人，主必叫他起来；他若犯了罪，也必蒙赦免。所以你们要彼此认罪，互相代求，你们可以得医治，义人祈祷所发的力量是大有功效的。」（雅五13～16）。</p>
+<p>这段经文论到有病的圣徒应当作的事：第一该请教会的长老来为他们祷告，第二要彼此认罪，互相代求。在这两件事中第一件是容易作的，第二件却是比较难得多。「彼此认罪」，在许多圣徒身上是很难作的事，因为这需要自卑到极点，这需要克服骄傲自是的恶心，这需要舍己，需要在人的面前屈身。爱虚荣的人不肯向人认罪，骄傲自大的人不肯向人认罪，自以为是的人不肯向人认罪。他们以为如果向人认罪便是失了身分，便是受了羞辱，便是丢了颜面。许多人作了错事，损害了别人，他们的心中也承认自己犯了罪，但他们的口却决不肯承认是自己的错，便是这种心理作祟。这样一来，世上的纠纷便越弄越多了，甲作错了事，损害了乙，不肯向乙认错；乙受了损害，不肯一言不发的忍受；如果甲立时向乙认罪，乙的心立时因此得了安慰，事情也就完结了，可是甲不肯认罪，乙当然要有些表示，罪责甲不应当这样作；甲到这时仍然刚愎强项，不肯认罪，势必把错推到乙的身上。乙见甲不但不认罪，而且把错还推到自己的身上，当然更要愤怒不平。这样一来，一场冲突一定不能避免了。轻者口角争吵，重者殴打行凶，最后不知道要演出何等可怕的结果来。世上不幸的事当中有许多都是这样酿成的。</p>
+<p>在中国的社会中尤其是如此，富的、贫的、贵的、贱的、有知识的、无知识的，差不多人人认为向人认罪是奇耻大辱。他们以为向人认罪无异掘了自己祖宗的坟墓：因此在家庭中，在社会里，在街市上，无论作了甚么错事，谁也不肯认罪，却把错处推到别人身上。结果小事变成大事，大事更弄得不可收拾。别人受了害，自己也吃了亏，到了最后，还是不承认自己的罪，还是怪罪别人不好。心越变越硬，罪越犯越多，不弄得受了大害总不罢休。</p>
+<p>举一个很小的例子说罢：某甲骑车走在路上因为眼睛向旁边注视，未曾留意前面的行人，以致撞在行路的某乙身上，这时甲如果立时跳下车来，向乙道歉，乙没有受甚么损失，看见甲道了歉，大约也就不会再说甚么了。不过甲因为骄傲不肯认错，势不能不反过来怪罪乙走路不小心。乙因为自己本没有错，无缘无故被甲撞了一下，甲不但不向自己道歉，反把错归到自己身上，当然怒不可遏，厉声向甲理论，这样一来，两个人一定发生冲突。在我国的社会中随时能看见这种现象。作错了事亏负了人肯向人认错的，在我国的社会里一百个人里几乎找不出两三个人来。也就是因为这个缘故，我们每日在家庭中在社会里在街市上看见无数口角争吵斗殴辱骂的事。</p>
+<p>西洋人也有许多的缺点罪恶，这是不容否认的，但在作错了事肯坦白认错这一件事上确是我国人望尘莫及的。他们在家庭里，在社会中，在街市上，作错了事，亏负了人，便谦卑的道歉，求对方的原谅。他们不以认错为可耻，因此就不会发生那样多口角争吵斗殴辱骂的事。我总不能忘记我在中学三四年级的时候，在课室里发生的一件事。我们的英文文法是校长担任。他是一位六十多岁的英国人，他有着硕士的学位，作事非常忠心认真。有一日他给我们上课的时候，他叫我回功课，那一课里有一个很不常用的句子，正赶上我去作。我站起来作了以后，校长摇头说，「不对」。我因为看得极清楚是没有错误的，所以回答校长说，「对」。他再对我说，「不对」我再回答说，「一定对」。同学们弄不清校长和我究竟谁对，看我这样同校长相争，都为我担心。怕我惹怒了校长。我因为自己没有错，所以始终说我作的句子不错。最后核长静默了一些时候，我猜他必是在那里反复思想我作的那个句子。我们都注目看他。忽然间他的脸变红了，他开口对我说，「永盛，你作对了，我看错了。」（永盛是我在校中的名字）那一件事在我心中留下了极深的印象。六十多岁的老校长，在众学生面前为一个十七八岁的学生改正功课的错误，反复争论了好几次，最后肯坦白承认是自己的错，这种精神真伟大极了。有错肯坦白认错是最伟大最光明的事，我国古人也是这样说，「君子之过，如月日之蚀焉：过也，人皆见之；更也，人皆仰之。」人在世上谁能没有错失呢？有错肯认错，正是一个人诚实的表现，也是他可爱可敬的地方。我们不但不可看认错是羞辱，我们应当看认错是荣耀。我们当看不认错是奇耻大辱。我们应当彻底改变我们旧有的那种错误观念。我们应当竭力学习肯认错敢认错。</p>
+<p>人和人同处的时候一长，总免不了有彼此亏负的地方。如果大家都勇于认罪，便可以消弥许多纠纷冲突，便可以保守长久的和平与幸福。但如果都不肯认罪，便不用希望能有平安了。有罪却不肯认罪，这不但足以惹人和人中间的纠纷，而且这在神的面前也是罪上加罪。有罪却不肯认罪，不但是自欺欺人，而且是欺哄神。神不许他的孩子们这样犯罪。他因为爱他们的缘故便管教他们责打他们，这种管教责打有许多不同的方法，使他们患病便是其中的一样。如果一个信徒在患病的时候发觉自己得罪了人未曾向人认罪，他必须立时作这一件事，当神在他身上所要作的事作成了以后，他的病便可以得着医治了。「所以你们要彼此认罪，互相代求，使你们可以得医治。」</p>
+<p>虽然我们不能说所有患病的信徒都是因为犯罪而遭遇神的惩治，但患病的信徒中确实有许多是因为犯罪的缘故受了神的管教。别人不能判断那些患病的人是否因为犯了罪才患病，可是患病的人自己却能知道他们所患的病是不是神的责打，纵使自己不知道，神也必使他们知道。当他们知道自己犯了罪的时候，便需要赶快认罪，得罪了神向神认罪，得罪了人向人认罪。如果他们始终不认罪，他们的病便总不能得痊愈，神所以使他们的身体患病，正是要藉此使他们的心灵得医治。甚么时候他们的心灵因着认罪而得医治，他们的身体连带着便也得了医治。可惜许多信徒在患病的时候到处延请医生，购买药品，希望他们的病早得痊愈，却不走这条最彻底最省事最有效的道路。神因为爱他们，希望他们的心灵得着医治，所以在他们没有认罪以前，使他们总不能得痊愈。不论他们请多少医生，服多少药饵，总是毫无补益。及至他们在神和人面前自卑认罪的时候，他们的病便很奇妙的蒙了医治。</p>
+<p>我们看见一个圣徒患病，决不可断定他是因为犯罪而受了神的惩治，这种断定有时会整个错误，以致伤了别人的心。但我们可以提醒他，劝他在神面前自省，劝他求神的光照，看看他是否因犯罪而遭遇神的管教。如果是，那样他便需要承认自己的罪。如果我们自己患了病，我们首先应当作的也是这件事。如果发现了自己的罪不肯向神或人承认，却用别的方法去求医治，不只是徒劳无益，而且要增加自己的苦痛和损失。</p>
+<p>一个圣徒若聪明一些，不必等到神的刑杖鞭打到自己的身上，不必等到遭遇了痛苦病患，一发觉自己犯了罪便认罪悔改，一发觉自己得罪了人亏负了人，便向人认罪求恕，这样，神就不必再把疾病的刑杖加在他的身上，那岂不比受了责打再认罪好得多么？可惜这种聪明的人很少。比这个更可惜的是许多人受了责打惩治仍然不肯认罪，以致神不得已只好越打越重，有时甚至把他们打死（身体的死）！他们在不当离开世界的时候便离开了世界，有的人虽然没有离开世界，却受尽了极多的痛苦击打，这种人真愚昧到极点。希望阅者中间再没有这种人。</p>
+<p>容我们再注意一件事──「你们要彼此认罪，互相代求。」彼此是两方面都作的意思。不单甲向乙认罪，乙也要向甲认罪，人和人中间所发生的磨擦冲突，大多数是两方面都有错处。也许两方面的错处多少不同，大小不同，先后不同。但错处多的人有错，错处少的人也有错；错处大的人有错，错处少的人也有错，先有错的人有错，后有错的人也有错。既是两方面都有错，所以两方面都需要认错，甲撞倒了乙不但不认错还要怪罪乙，固然是不对，但乙竟因此打了甲一个耳光，也是不对。丙疑惑丁有意侮辱他便向丁表示不满意，固然是不对，但丁竟因此怀恨不肯同丙说话，也是不对。一方面认罪是好，两方面都彼此认罪更好。一方面认罪一方面得福，两方面认罪两方面都得福。一方面认罪可以使纠纷止息，两方面都认罪可以使纠纷消灭得无影无踪。</p>
+<p>在这里又发生了一个问题──「谁当先认罪呢？」按理说先有罪的人应当先认罪，可是在实行的时候却不当这样。正轨是这样，谁先受了圣灵的责备，谁先蒙了神的光照，谁就应当先认罪。分享甚么利益的时候应当让别人先走在前头，认罪的时候却应当自己走在前面。谁先认罪谁先得福，谁先认罪谁伟大，谁先认罪谁胜利。如果我同一位圣徒起了纠纷，明知道起衅的是他，可是我自己也有罪，我一蒙了神的光照，便应当立时向他认罪，这种行为能使他因受感动也认罪。退一步说，即使他不受感动不认罪，我在神面前已经作了我所当作的，我也必从神那里领受他所赐的福。如果我们明白认罪是得福的道路，我们便踊跃争先去认罪了。亲爱的阅者，你愿意试着这样去行么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

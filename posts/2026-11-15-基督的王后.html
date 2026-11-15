@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>基督的王后 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>基督的王后</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/1基督的新妇/3基督的王后.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>读诗篇第四十五篇。</p>
+<p>这是一篇极有兴味的诗，论到基督和他的新妇。这一篇诗是述说基督为王的豫言，（参看来一8～9）所以称他为王，称他的新妇为王后。这一篇诗可分作两段：前半是论到王，后半是论到王后。九节中所说的王后，就是基督的新妇。十节所说的女子，也是指着王后说的。不过十节与十一节的话，是在女子尚未作王后以前对她说的，所以仍然称她为女子，在这两节书中，有四条命令，是对那将要作王后的女子说的。这被召的女子，若是能听从这四条命令，她便可以得王的喜悦，到王在位的时候，作王的后。如若她失败了，不能遵守所发给她的命令，恐怕便失去那上好的王后的地位。一个信徒在基督作王的时候能不能作他的王后，乃是看他现在能不能听从这几条命令。</p>
+<p>一、「女子阿，你要听……要侧耳而听」</p>
+<p>一个乐意听的耳朵，是那女子所必须有的。但是听甚么呢？不是听好的音乐、好的戏剧、好的歌声、好的演说；乃是听王的言语。女子若要作王的后，自然必须作王所喜悦的事，好希望得王的悦纳了；但是她若不听王的言语，怎能知道甚么是王所喜悦的事因而去作呢？一个信徒若是希望作基督的王后，必须爱慕基督的言语，且是欢喜听、殷勤听。越多听、越多知道甚么是基督所憎恶的，因而离开；越多听、越多知甚么是基督所喜悦的，因而持守；越多听、越多知道基督的应许是何等的佳美奇妙，因而欢喜盼望、忍耐等候；越多听、越多知道基督的爱，也越多生发爱基督的心。听岂不是第一件要紧的事么？</p>
+<p>这里的命令不但是说：「要听」，且是「要侧耳而听」，侧耳而听是专注的听；把别的声音和事务丢开，专一听王的声音。一个基督徒丢开一切别的声音和事务，为要专听基督的声音，是何等难的一件事。但那女子因为爱王，并且羡慕王的应许，便很容易这样作，且是非常有趣的。在一个与王无关的人，听了王絮絮的长谈，或者要不耐烦走开了；但那女子听了，却觉得非常的甘美。他以为这声音的好听，远胜过世上一切别的声音和言语。许多信徒的耳朵常被世上好听的声音所牵引，却以读经为苦事，都是因为他们对于基督并没有甚么爱情，又是因为他们没有深深明白基督的应许的缘故。来罢，容我们从今日兴起，将世上的名利逸乐抛开，好侧耳听基督的声音。</p>
+<p>二、「要想」</p>
+<p>为甚么紧随着听的命令就是要想呢？因为听了不想，便得不着许多益处。一个人每日虽然牛乳、鸡蛋、鱼肉等等的食物，吃了许多，但是他的胃肠患了消化不良的病，他的身体便不能得那些食物的滋养，他所吃的食物，必要在胃肠中消化了，然后将其中的养料送到全身，那人方能渐渐发育健全。听如同吃，想乃是像消化的作用。一个信徒必须将所读的圣经存在内心的深处，随时玩索思想，深深领悟了圣道的精华要意，然后方能从里面得着养育心灵的材料，渐渐帮助心灵强健发育，以致成为基督所喜爱的新妇。不过我们当知道，听是难事，想更是难事；因为这事须要用更多的时光，和静默的心灵，方能作到。愿神使我们能常有静默的心灵，能以多想我们所听的那奇妙美好的言语。</p>
+<p>三、「不要纪念你的民和你的父家」</p>
+<p>这是何等难的事，又是何等大的牺牲，但这是必须履行的条件。「一个人不能事奉两个主；不是恶这个、爱那个；就是重这个、轻那个。」热烈浓厚的爱情，只有一个焦点，这个焦点若是在世界上，就不能在基督身上；若是在基督身上，便不能同时在世界上。一个女子，自然是爱她的家庭、她的父母、姊妹、弟兄、她的居所和故乡；但是她若要得着她的丈夫，到底她不能不舍弃这一切，就了她的丈夫去。不过她的爱情，若真是热烈的向着她的丈夫，这样的爱情足能使她甘心舍弃这一切，也不觉得太难。一个羡慕作基督的王后的信徒，总不能一面恋慕这世界，一面希望得基督的喜悦；因为这邪恶的世界，处处是与基督为敌的；其上的事物，又常常为撒但所利用，作为他的陷阱与钓饵，用以去陷害钓取属基督的人，使他们忘记基督的应许，专注目地上的事物，结果就沾染了污秽和不义，成了行淫的女子。</p>
+<p>可惜！可惜！多少的信徒竟是在这里遭遇了失败。听了、想了，基督的命令和应许都知道了，但是对于这世界和其上的幸福逸乐，真是舍不得离弃。多赚些钱财，是何等的有用：多得些大名誉，是何等的尊荣；耳目口腹的宴乐享用，是何等的有趣；社会友朋的酬酢交际，是何等的慰人。不好了！开始是一半爱基督，一半爱世界；渐渐是少半爱基督，多半爱世界；最后是不再爱基督，专一爱世界。一个女子在未与她的丈夫结婚以前，已经爱了别的男人，也去与他同住，到后来仍希望她的未婚夫爱她，且要把一切应许她的都归给她，这岂不是妄想而且可笑的事么？这样，爱世界的基督徒，仍希望作基督的王后，承受他的应许，他们也是欺骗了自己。</p>
+<p>许多的信徒知道罪恶是可憎的、当远避的，却不知世界和其上的事物也是一样的可憎、一样的应当远避。因为撒但从起初的时候试探人，就是利用世界和其上的事物，到现今仍然是这样。信徒不能忘记世界和其上的事物，便不能完全制胜仇敌的权势。保罗深知道这种情形，因此他教诲他所要献给基督的童女说：「所以你们若真与基督一同复活，就当求在上面的事，那里有基督坐在神的右边。你们要思念上面的事，不要思念地上的事。」（西三1～2）他又告诉了我们，为甚么不要思念地上的事：「因为你们已经死了，你们的生命与基督一同藏在神里面。」（3节）我们或者要想，既不思念地上的事，我们到底有甚么更好的福乐和指望呢？他告诉我们说：「基督是我们的生命，他显现的时候，你们也要与他一同显现在荣耀里。」（4节）</p>
+<p>我们要注意保罗是何等的有智慧。他不像许多欺骗自己的传道士，把宝贵的道理告诉别人，自己却被丢在后面。他教训人忘记世界，他自己实在已经先忘记了。听他怎样述说他自己的经验：「我第八天受割礼，我是以色列族便雅悯支派的人，是希伯来人所生的希伯来人；就律法说，我是法利赛人；就热心说，我是逼迫教会的；就律法上的义说，我是无可指摘的。只是我先前以为与我有益的，我现在因基督都当作有损的。不但如此，我也将万事当作有损的，因我以认识我主基督耶稣为至宝。我为他已经丢弃万事，看作粪土，为要得着基督。并且得以在他里面，不是有自己因律法而得的义，乃是有信基督的义，就是因信从神而来的义。使我认识基督，晓得他复活的大能，并且晓得和他一同受苦，效法他的死；或者我也得以从死人里复活。」（腓三5～11）这是何等大的牺牲和损失！不但是不好的事物，就是连最好的事物，也一齐都舍弃了。他把家族、声望、热心、自己的义，以及一切从前当作有益的，现今都当作有损的，甚至把万事都当作有损的；一心愿意和基督一同受苦，效法他的死。这是何等希奇的行为！必有许多信徒看这样作简直是热心太过，以至于发狂，或者要批评保罗是持厌世主义的。他们这样看法，全是因为他们属灵的程度太低的缘故。照上文所说的，我们证明这种态度乃是那些配作基督的新妇的信徒所必须有的。保罗深知道他在世界上一有可爱慕的事物，就必使他爱基督的心因而减少。他要保全他对基督完全的爱情，便不能不忍受这极大的损失。是的，我们仔细思想那渐渐夺去我们爱基督的心的，岂不是我们所最喜爱的事物么？我们岂不是常常因为爱我们所喜悦的荣耀、名誉、富足、宴乐、家庭、朋友，以致使我们对基督的爱情渐渐冷淡么？我们舍弃这一切诚然是损失，但是因此得着基督为我们荣耀的新郎，我们所得的偿还，真不晓得要有多少倍了，又何乐而不为呢？</p>
+<p>我们再注意诗篇四十五篇十与十一节的话：「不要记念你的民和你的父家，王就羡慕你的美貌。」这里我们看出，王羡慕那女子的美貌，是因为她能忘记她的民和她的父家。她诚然很美丽，但她若不能听从王的命令忘记父家，就证明她爱王的心是不专诚热烈的。这样，她的美貌就不足使王羡慕。她有美丽的容貌，她又有爱王的热烈心情，方能得王的爱、为王的后。朋友们哪，我们对于基督的爱究竟怎样呢？</p>
+<p>四、「因为他是你的主你当敬拜他」</p>
+<p>一个人的心是不能空闲的，不思想这事，就必思想那事；不爱这个，必要爱那个。舍弃了一种旧的事物，若没有新的事物来代替，就必定再回到从前的地步去，爱慕那旧的，何况旧的事物又是可爱的呢？因此这里吩咐女子忘记她的民和她的父家以后，随即给她一种新的事物，使她爱慕：「他（王）是你的主，你当敬拜他。」信徒忘记了世界以后，便要立刻以基督为主，为最首先的、为最紧要的；敬拜他、尊重他，凡事求他的喜悦，爱他所爱的，恶他所恶的；听从他的一切命令，作他所吩咐去作的工；用自己所有的心意力量事奉他；看他比一切的人和事物更宝贵，也胜于自己的生命。她既以王为宝贵，王便也以她为宝贵；她敬拜王，王便也尊重她；她在王的面前自卑，王因此使她升高，使她坐在自己的宝座上。（启三21）</p>
+<p>可惜！可惜！有许多的基督徒以金钱为他们的主，去敬拜它；有许多的基督徒以名誉为他们的主，去敬拜它；又有许多的基督徒以自己的肉体为他们的主，去敬拜它；也有许多的基督徒以他们的妻子、或她们的丈夫、或他们的儿女，为他们的主，去敬拜他们。这些人既不能听从王的命令，王的应许便也决不能临到他们的身上。读这书的朋友阿，你怎样呢？</p>
+<p>那被选为王后的女子，听从了这四条命令以后，便有资格可以作王后了；但是我们要注意，下文还有一段宝贵的训诲，在十三、十四节有话说：「王女在宫里极其荣华：（注意这句话里的王，不是指着那女子的丈夫，乃是指着那女子的父亲。本篇第九节有君王的女儿，那个君王也是这样讲解。但是九节中君王和女儿，在英文译本中都是复数，（Kings&#x27; daughters）那是指着许多女子，和她们的父亲们。十三节中的王和女，都是单数，（The king&#x27;s daughter）这是指着那一个被选为王后的女子。这些到王宫里的女子们，都不是出身卑微的，她们都是君王的女儿）。她的衣服是用金线绣的。她要穿锦绣的衣服，被引到王前。」金线绣的彩衣是何等的华美，穿在那女子的身上，越发显出她的艳丽，使王爱慕她。但我们不要忘记，那件锦绣的衣服得以成功，是经过多少时日艰苦的工作，为制成这件锦衣，又不晓得流过多少滴眼泪。绣一件衣服不是一日两日可以完成的，总要忍耐恒心，一针一针的去做；过了几日，看看所成功的仍是没有许多。怎样呢？抛弃不再作么？若是这样，到底不能见王了。她确信忍耐到底终会成功，因此便继续着作下去。同伴的女子来招呼她去游玩、去宴乐，她不是不想去，怎奈衣服绣不成功，便无法见王，只得拒绝了她们的邀请，仍然去绣她的彩衣。别的女子去游玩了、去宴乐了，惟独她寂寞孤独的坐在闺房里绣她的锦衣，经过了许多时日，辛苦完了，大功成了，她多日的辛苦和忍耐，为她造成了今日的荣华。她被引到王的面前，得称为王的后，追想昔日的劳苦，果真不是徒然的。她的苦闷变成了喜乐；她的眼泪变成了笑容；她的叹息变成了歌声；这时她是何等的快乐阿！</p>
+<p>基督的新妇在婚筵中所穿的美服，就是她的义行、她的美德。（启十九7～8）信徒若是希望得作基督的新妇，得在他的荣耀中，必须有义行，不然，他们必要羞愧。但这义行的成功是与那锦绣的衣服一样的艰难。在这样一个邪恶污秽的世界中，希望有上好的义行，是何等的不易；遭遇了多少失败，仍不失望；跌倒了多少次，再要兴起；经过了一些日子，看看没有许多长进，这是何等的使人灰心。就此止步么？又怎能得着基督的荣耀。进步的虽然慢，但是她（组成基督的新妇的小群）的信心和希望，使她不肯中止不前。许多的时候，她遇见了同伴的邀请招呼说：「我们去游园罢、去宴会罢、去跳舞罢、去听音乐看影戏罢。」因为她肉体的软弱，她有时也想去，但是她因为想到她的衣服还没有作成，便毅然决然的拒绝了这一切，在那幽静寂寞的所在，祈祷、读经、默思经训和属灵的事。因为她不肯与世人同流合污的缘故，不晓得多少次被人辱骂、讥议、毁谤、攻击、弃绝、放逐。她好像与世人隔绝了；她好像没有福分享受社交的快乐。她在世人的眼中，是不达时务的、是迷信的、是痛苦的。（但是她知道她的希望）她的一生不知流了多少眼泪，受了多少痛苦。但是她的殷勤和忍耐，成功了她的礼服。不久荣耀的王降临了，她的劳苦，成功了她的盼望，她进入基督的荣耀了。到这时候，那些轻看她、厌弃她的人，纔知道她是最聪明的女子。他们也想这样去作，但是时候太晚了。</p>
+<p>朋友们哪，为甚么不作智慧人呢？为甚么贪爱世上虚浮的名利逸乐，却不注意豫备我们的礼服呢？为甚么不肯用些时光去祈祷读经呢？为甚么不羡慕且尽力追求有基督要我们有的义行和美德，使我们可蒙他的悦纳呢？愿神使我们今后在灵修的工夫和追求成圣上加倍殷勤。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>芳就是这样明白了 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>芳就是这样明白了</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/3芳就是这样明白了-01.mp3">🎧 芳就是这样明白了（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/9明道预言集/3芳就是这样明白了-02.mp3">🎧 芳就是这样明白了（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>一个初夏的早晨，芳为一位去世的同学送殡到教会的公茔。那位同学是患肺结核病去世的。有五六十位信徒都到茔地送葬。茔地的四周满栽了短短的柏树，构成了碧色的围墙。墙内到处点缀着绿草红花。各色各样的墓碑一排一排的并列着。有高的也有矮的，有精细的也有粗糙的，有扁的石碑也有高的圆柱，有十字架也有天使的雕像，这里几株鲜花种植在坟墓的前面，那里两张像片镶嵌在墓碑的上方。最惹人注目的是那一座黑色带花的石碑，琢磨得光可鉴人，一般人都传说那石头是从非洲运来的。另外的一座坟茔虽然只有矮矮的一块小石头上面刻着长眠的人的名字，但是坟头上却爬满了牵牛花的蔓子，而且开了无数美丽的花朵，远看着竟像一座小小的花山。芳看着这一切的景物，心中想着种种的问题。她本来看见甚么事就都愿意观察默想，今日的这种景物更引起了她的注意。</p>
+<p>棺柩已经放在坑中，送葬的众人围着坑都站齐了。主领聚会的人报告了要唱的诗。大众唱完以后，主领的人领着众人祷告，再后他高声念诵哥林多前书十五章三十九至五十七节的话说──</p>
+<p>「凡肉体各有不同：人是一样，兽又是一样，鸟又是一样，鱼又是一样。有天上的形体，也有地上的形体；但天上形体的荣光是一样，地上形体的荣光又是一样。日有日的荣光，月有月的荣光，星有星的荣光；这星和那星的荣光也有分别。死人复活也是这样：所种的是必朽坏的，复活的是不朽坏的；所种的是羞辱的，复活的是荣耀的；所种的是软弱的，复活的是强壮的；所种的是血气的身体，复活的是属灵的身体。若有血气的身体，也必有属灵的身体。经上也是这样记着说，首先的人亚当成了有灵的活人；末后的亚当成了叫人活的灵。但属灵的不在先，属血气的在先，以后纔有属灵的。头一个人是出于地，乃属土；第二个人是出于天。那属土的怎样，凡属土的也就怎样；属天的怎样，凡属天的也就怎样。我们既有属土的形状，将来也必有属天的形状。</p>
+<p>「弟兄们，我告诉你们说，血肉之体不能承受神的国；必朽坏的不能承受不朽坏的。我如今把一件奥秘的事告诉你们。我们不是都要睡，乃是都要改变，就在一霎时，眨眼之间，号筒末次吹响的时候；因号筒要响，死人要复活成为不朽坏的，我们也要改变。这必朽坏的总要变成不朽坏的，这必死的总要变成不死的；这必朽坏的既变成不朽坏的，这必死的既变成不死的，那时经上所记，死被得胜吞灭的话就应验了。死阿，你得胜的权势在那里？死阿，你的毒在那里？死的毒就是罪，罪的权势就是律法。感谢神，藉着我们的主耶稣基督赐给我们胜利。」</p>
+<p>主领的人念诵这段经文的时候，芳很注意的看着自己的圣经。同时那多日不能解决的问题又来到她的心中。她又开始思索那百思而不得一解的问题了。会毕后，坑渐渐填满了土，到会的人陆续走去，芳也骑了她的脚踏车回到家中。可是这个好久得不着答案的问题她却再也放不下了。</p>
+<p>芳是一个很热心信主的女学生。她在校里的言行和功课都足以作同学的模范。她每日早晨起来盥漱完毕以后第一件事总是祈祷查经。在大考的日子她的同学们都废寝忘食夜以继日的豫备功课，她总不肯有一日停止她的祈祷读经。她有着极好的信仰。她笃信主耶稣是罪人的救主，为人的罪被钉在十字架上，以后从死人里复活起来，现今在天上坐在神的右边。她笃信她因着信已经得了永远的生命。但有一样真理最使她不能了解，就是圣经上所记载信徒在主耶稣再来的时候复活被接身体改变的那一件事。她信圣经上一切的话，但她不明白信徒的身体怎么会改变，她更不明白她这个软弱羞辱必死必坏的身体怎么会变成强壮荣耀不死不坏的身体。她屡次向别的信徒请教，他们只是告诉她不要疑惑，只要信。这种回答不能使她满意。她仍然继续着在暗中摸索。这次她为她的同学送葬回来，她的心中更时刻想着这个问题──「身体怎样会改变？必朽坏的怎么能变成不朽坏的？羞辱的怎么能变成荣耀的？软弱的怎么能变成强壮的？血气的怎么能变成属灵的？怎么能改变？怎么样改变？改变以后又是怎么样一种情形？」</p>
+<p>从芳为同学送葬回来以后，转瞬又是两个多月了。校中已经放了暑假，芳的心中不但没有放下这个问题，她反更急切想要明白这件事，但是始终达不到目的。她苦闷极了。</p>
+<p>一个炎热的下午，芳在她家中的小花园里散步，偶然发现一条绿色的虫子，差不多有三寸长，牠的头部上面有一个像角的东西。芳从来就很少看见这样大的虫子。她把这虫子拾了起来，拿回到她的屋里，详细的观察牠的形状和动作。她所以这样作并不是因为她喜爱这个虫子，不过因为满足她的好奇心罢了。她实在不喜欢这个虫子，因为牠是那样蠢笨，那样丑陋，动作又是那样迟缓，牠的全身是那样软软的，身体里面既没有骨，身体外面又没有毛。芳觉得空中飞翔的鸟，地上行走的兽，海里游泳的鱼，那一样也比这个虫子好看。就连各样微小的昆虫中间，也难找出像牠这样丑恶蠢笨的。她厌恶这条虫子，但因为她的心仁慈，不忍得将牠弄死，她有意思把牠丢在园中，又想再多看牠几次。最后她取了一个纸盒，把牠放在里面，上面盖好了盖，盖上还扎了几个小孔，免得把牠闷死。以后便把这个纸盒放在书桌下面。她原想有空闲的时候再取出来细看，不料她竟忘记了。</p>
+<p>十几日以后芳因为到书桌下面去找东西，忽然发现她所放的纸盒。她想起来她十几日以前所捕获的虫子。她慈爱的心跳动起来。她想这个虫子必是已经饿死。她懊悔不该作了这一件残酷的事。她双手颤抖着去开这个盒子。她虽不忍得去看这种凄惨的情形，但却还想去看。盒子打开以后，一种惊人的现象映入了芳的眼帘，使她惊得喊叫起来。盒子里不再有虫子，只有一只美丽好玩的大花蝴蝶，在那里缓缓的爬行。芳看得呆了。她看见过各种蝴蝶，她也知道蝴蝶是由幼虫变成的。但她从来没有自己看见过幼虫变成蝴蝶。她注目看了很久。她觉得真希奇！她坐在那里思想这一件事。她想那样丑恶蠢笨行动迟缓的虫子竟会变成这样美丽可爱敏捷灵巧的蝴蝶，这真是一件奇妙神秘的事。她立时想起了圣经上的话说：「这是耶和华所作的，在我们眼中看为希奇。」（诗一一八23）。她惊叹神的智慧作为和全能。她感觉自己的渺小、卑微、愚昧、软弱。就在这个时候忽然像电光一闪，一个意思进入她的心中。她解决了多日不能解决的一个问题了。她心中想道：「蠢笨丑恶的虫子变成了灵巧美丽的蝴蝶是耶和华所作的，在我们眼中看为希奇，照样，这必坏羞辱软弱血气的身体，将来要变成不坏荣耀强壮属灵的身体岂不也是耶和华所作的，在我们眼中看为希奇么？我不明白虫子怎样变成蝴蝶，但神就是这样使牠变化了。照样，我也不明白我这身体怎样变成属灵的身体。但神将来必要使牠变化，这也是定而不移的事。我又何必怀疑呢。」芳一想到这里，她心中多日的疑团完全消除了。她心中现在所有的只是极单纯的信心，信神的应许，信神的大能，信神奇妙的作为。芳多日得不着答案的问题到这时得着了满意的答案。她心中充满了喜乐与希望，因为她深信当她的主降临的时候必要使她得着荣耀的身体，像她的主复活以后所有的身体一样。</p>
+<p>芳就是这样明白了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

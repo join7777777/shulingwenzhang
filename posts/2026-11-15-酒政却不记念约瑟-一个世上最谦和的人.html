@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>酒政却不记念约瑟-一个世上最谦和的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>酒政却不记念约瑟-一个世上最谦和的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/5写给受苦的圣徒/6酒政却不记念约瑟-一个世上最谦和的人.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「但你得好处的时候，求你记念我，施恩与我，在法老面前提说我，救我出这监牢。」（创四十14）。</p>
+<p>「酒政却不记念约瑟，竟忘了他。」（创四十23）。</p>
+<p>以一个清洁正直不肯作恶致遭诬陷的青年被下在罪犯聚居的监狱里，这是何等令人难堪的事！在这种情形中要寻找机会出离监狱自是十分合理的事。果然天从人愿，机会竟来到了。约瑟为酒政膳长解完他们各人所作的梦以后，他的心中必认为这真是千载一时的良机，万不可轻轻放过。所以他赶快对酒政发出这个诚挚恳切的哀求说，「但你得好处的时候，求你记念我，施恩与我，在法老面前提说我，救我出这监牢。」照情理说，酒政那次作梦和约瑟为他解梦的事在他的心中必是留下极深的印象，在他一生中纵使他将他自己的生辰和年岁都忘了，也断不至于忘了约瑟和约瑟为他解梦的事。在他出离监牢官复原职以后，第一件要办的事必是在法老面前提说约瑟，设法拯救他出离监狱了。谁想到事实竟完全相反，经上告诉我们说：「酒政却不记念约瑟，竟忘了他。」</p>
+<p>最使我们希奇的不是酒政为甚么忘了约瑟，乃是神为甚么容许酒政忘了约瑟。酒政为甚么忘了约瑟，我们不敢武断。或是因为酒政的记忆力特别软弱，官复原职以后事务又非常的忙碌，以致想不起约瑟来。或是因为酒政是一个自私自利的人，只愿意得人的帮助，却一点不想帮助人，只知道自己坐监的痛苦，却不体谅别人坐监的痛苦，因此不把约瑟的请求放在心上。或是因为酒政是一个妒贤嫉能的人，他想如果约瑟这样有才有能的人出了监牢，必为法老所赏识，所器重，因此他这酒政的官职或竟被约瑟夺了去也未可知，因此他故意不记念约瑟，不在法老面前提说他。不过我想大约不是这第三个原因，因为如果酒政真是这样的人，他后来也决不会在法老面前再提说约瑟了。希奇！酒政忘了约瑟，神为甚么不提醒他，使他想起约瑟来？约瑟因为敬畏神不肯犯罪以致坐监，神当时不为他伸，容他受人的枉，身陷囹圄，这事已经足使我们大惑不解了，如今好不容易有了这样好的机会，神为甚么不提醒酒政一下，使他将约瑟从监牢里救出来呢？慈爱的神怎么竟会这样残酷？我们真想找他为约瑟讲一讲理，才觉得心里舒畅。</p>
+<p>我们不用找神为约瑟讲理了。我想不是神不提醒酒政使他想起约瑟来，乃是神使酒政忘了约瑟。神这样作不是待约瑟残酷，正是以慈爱待约瑟；不是使约瑟受损，正是使约瑟得益。酒政不记念约瑟，神却记念约瑟，酒政忘了约瑟，神却未曾忘了约瑟。神不是不要救约瑟出离监牢，只是他的时候还没有到。神的时候一到，他不但能提醒为法老递杯的酒政，他还能将奇异的梦兆指示统治埃及全国的法老；顷刻之间就使一个狱内的囚徒一跃而为朝中的宰相。</p>
+<p>我们应当知道约瑟被众兄卖到埃及为奴，后来又受那淫荡无耻的主妇的诬陷以致下监，都有神的旨意在其中。神若不许，这些事一点也不能临到他。神要用约瑟作大事。必须先深深造就他、训练他，使他有担当大事的资格，然后纔能把大事放在他的肩头上。我们又当知道约瑟后来所作的大事不仅与埃及全国有关系，也与以色列全族有关系。因为若不是神藉着他施行拯救，那七个荒年不但使埃及全国的人都变成饿殍，就是以色列全族也必不能幸存了。神既有这样伟大的使命要放在约瑟的肩头上，自然他需要严格的训练约瑟，使约瑟成为合乎他心意的忠仆。神知道为他作大事的人所需要学习的功课乃是谦卑、诚实、忠心、殷勤、忍耐、吃苦、尽忠小事，任劳任怨，这一类的事。他更知道这些功课决不是在良好顺利的境遇中所能学习的。他知道如果约瑟总是安居在他父亲的家里，他必总没有机会学习这些功课。因此他藉着约瑟众兄的手将约瑟卖到波提乏家中，使约瑟在那里学了许多他从前没有机会能学的功课。神看约瑟在波提乏家中所学的功课还不够用的，因此又藉着恶人的手把他下在监狱中。在人看来，约瑟所遭遇的事一步比一步更苦，但神却藉着这种境遇使约瑟一日比一日更有担当大事的资格。神知道约瑟需要多少时期的训练。他更清楚晓得约瑟的功课已经学到甚么地步。</p>
+<p>可惜约瑟当日不晓得这些事。他在监狱里已经多时。他饱尝了坐监的苦味。他巴不得快些出离这可怕的监牢。无奈总得不着出监的机会，只得仰屋兴叹，徒唤奈何。不料忽然发生了这件奇异的事──酒政膳长各得一梦。约瑟为他们解梦以后，他忽然想到这真是他千载一时的良机，于是他便恳切哀求酒政救援他出这监牢。我们可以设想酒政出监以后，约瑟每日在监里必是望眼欲穿的等候佳音。谁知一日复一日的过去了，一月复一月的也过去了。由春天至夏天，由夏天至秋天，由秋天至冬天，由冬天再回到春天夏天。约瑟的心不知道焦急到了甚么地步。但焦急有甚么用处呢？神的日期不到，他又岂能因着约瑟的焦急改变他自己美好的旨意呢！假使他竟因此改变了他的旨意，不到他所定的时候就容约瑟出了监牢，请问这究竟是不是约瑟的益处呢？神总不会作错事的。神所作的约瑟当时或者一点不能明白，但到他出了监牢作了法老的宰相以后，他再回想以前所经过的一切事，他一定会感谢神，因为神未曾照他所希望的为他成就，却使他在监牢里多住了二年之久。</p>
+<p>约瑟出监的这件事给我们的教训是何等宝贵呢！我们的知识太浅，我们的眼光太近，我们只顾到眼前的安逸快乐，却不想到后来更大的好处。所以我们总是选择平坦易行的道路去走。神因为爱我们的缘故，常不照我们的意思待我们，却把我们放在痛苦艰难的境遇中，一方面要熬炼我们的渣滓，去尽我们的污秽，一方面要叫我们在那里学习许多最宝贵最重要的功课。我们遇见这些境遇，便一点不肯忍受，也不肯等候神。只是一味的设法要从其中逃出来。我们去寻找朋友为我们想个善法；我们去托人来救援我们，凭自己的知识去计划安排；我们去求金钱和势力的援助；我们对他们哀求说，「求你纪念我，放恩与我，救我出这监牢。」我们发出这声呼声以后，满心希望不久我们要从痛苦艰难中得着释放，不久我们要完全脱离这种种拂逆的境遇，得着我们理想中的那种良好的环境。那时我们将要何等的快乐，何等的满足！谁想到一日又一日，一月又一月，一年又一年的过去。我们的希望总未能实现，环绕我们的那些苦痛艰难一点不见得减少。我们仍像约瑟一样度着那种监狱中的生活。我们看看我们哀求了许久，所得着的效果竟是与约瑟所得的相同──「酒政却不记念约瑟，竟忘了他。」我们的心焦急万分，我们的口不住的发出怨言来。我们怪我们的朋友不关心我们的痛苦。怪我们的邻舍不伸手援助我们。我们恨自己的计划不周到，恨自己的财力不充足。有时我们甚至怨渎神，说他不顾念我们，不伸手拯救我们出离这些艰难。我们为此不知道流了多少眼泪，发了多少叹声，吃了多少痛苦。其实若不是为我们的益处。神早已把我们从这些难处中救拔出来了。多少有经验的圣徒能述说当他们在试炼中的时候他们感觉到苦难太重，受苦的日期太长，禁不住要发出怨言。及至事过境迁以后，他们再一回想已往的经验，除去满心喜乐感谢神的恩典以外，便只有哂笑自己从前的短见无知了。</p>
+<p>真的，神从未曾有一次忘记了他的孩子们，他更深深关心他的每一个孩子的休戚。如果不是为我们的益处，他决不容一样艰难苦痛临到我们身上。若是他引领我们经过甚么难堪的境遇忍受甚么我们所不愿意忍受的试炼，像约瑟被卖为奴被诬下监的那种种情形，我们就深信他一定有最好的旨意要成就在我们的身上。他叫我们受苦不是没有尽头。甚么时候我们得着他要我们得的益处，学好他要我们学的功课，不用我们自己设法，他就亲自伸手把我们从苦难里救拔出来了。但在他的时候尚未来到以前，我们自己若设法或是哀求人的解救，除了叫我们多受痛苦多感失望以外，并不会再得着甚么好处。我们在艰难痛苦的境遇中，最好是信靠神，等候神，欢喜快乐忍受这一切。在这种境遇中学习谦卑、忍耐、温柔、善良、殷勤、忠心、饶恕、体恤，以及其它种种在好境遇中学习不着的功课。我们若能忍受试炼和苦难像约瑟一样，我们自然不能不被神所使用，并且不能不从神得福像约瑟一样了。</p>
+<p>不过神在他众孩子身上的安排和旨意不都是相同的。有的圣徒神使他们经过几个月的试炼，就将他们从其中领出来；也有的圣徒几年的工夫在试炼和艰难中，以后就得着释放；更有些圣徒十几年或几十年之久遭遇不幸的事；还有些圣徒一生的境遇总是不佳，总是受苦。有些人的痛苦是在身体上，有些人的苦痛是在家庭中，又有些人的苦痛是在事业上，还有些人遭遇一些少有人遭遇的种种试炼，有些人到离开世界纔脱离了他们的艰难和痛苦。或有人想这些一生总是遭遇艰难痛苦的信徒不是太苦了么？他们直到离世的时候总未曾得着解救。他们在试炼中所学习的种种功课从来未曾得着甚么机会可以实用。这个理怎么讲呢？我们若明白神在信徒身上整个的计划便容易明白这事了。圣经告诉我们说，神在今世在信徒身上所施的训练乃是豫备他们，使他们当基督再来的时候可以有资格担任重大的事工。今世为神所使用为神作了最大的事工的圣徒，他们所作的那些伟大的工作比起将来在主的国里我们所要作的事工还算极微小的呢。</p>
+<p>有些信徒一生总是多受苦难，在他们离开世界以前总未能脱离那些试炼。他们在苦难中实在学习了许多很好的功课。苦难和试炼造就了他们，使他们满有忍耐、温柔、谦卑、和平、殷勤、忠诚、体恤人、顾念人，这种种的美德，然而直到他们离世的时候，他们总没有机会为神作甚么大事，没有机会用他们在苦难中所学习的帮助很多的人。当主来的时候这些人必要像约瑟一样，他们顷刻之间就从极卑微的地方被提到极尊高的地方，从好像监牢一般的受苦的环境中被提到万王之王面前，与他一同掌权，一同为王，像约瑟与法老一同掌权一样。「我们若与基督同死，也必与他同活；我们若能忍耐，也必和他一同作王。」（提后二11、12）「如果我们和他一同受苦，也必和他一同得荣耀。」（罗八17）。到那时候不但他们在今日所受的屈都被伸明，他们在世上所流的眼泪都被擦干，而且他们也要清楚明白为甚么神叫他们在世上饱尝苦难，多受试炼。那时他们方知道神容苦难临到他们，容恶人虐待他们，并不是神忘记了他们，正是神顾念他们；那时他们方明白他们从前所经过的一切患难不过是炼金的火，漂布的碱，使他们因着经过这些更加纯净，更加洁白，更加有用罢了。那时他们要用他们在艰难中所学习的种种功课去作大的事工，与基督一同掌权，一同施行审判，一同治理他所建设的天国。那时主的话在他们身上必要清清楚楚的证实──「我所作的你如今不知道，后来必明白。」（约十三7）。</p>
+<p>我读约瑟出监的这段记载，心中大大受了造就，得了安慰。我清楚明白了神的旨意最完美，神的安排最妥善，我笃信神的话说，「我的意念非同你们的意念，我的道路非同你们的道路。天怎样高过地，照样，我的道路高过你们的道路，我的意念高过你们的意念。」（赛五十五8、9）。若是神将我放在甚么艰难中，我就当存着顺服的心去忍受。若是神不伸手将我从试炼中拉出来，我就不必自己设方法求脱离。我的本分只是信靠神，顺服神，忠心去作那摆在我面前一切大小的本分，尽力作神所喜悦的事。其余的事都容神负责好了。</p>
+<p>一个世上最谦和的人</p>
+<p>「后来摩西长大，他出去到他弟兄那里，看他们的重担：见一个埃及人打希伯来人的一个弟兄。他左右观看，见没有人，就把埃及人打死了，藏在沙土里。」（出二11、12）。</p>
+<p>「摩西为人极其谦和，胜过世上的众人。」（民十二3）。</p>
+<p>希奇！这是怎么一回事？看见不平的事立时动手打人，而且将人打死。看见这一件事就可以晓得摩西的性情是怎样刚直，怎样暴烈。如今圣经上竟记载他「为人极其谦和，胜过世上的众人。」这又怎么讲呢？「极其谦和」的人断不能动手打人而且将人打死。动手打死人的人决不是「极其谦和」的。出埃及记上所载的如果是事实，民数记上的话就不免不真确。民数记上的话如果真确，出埃及记上所记载的就难免靠不住了。究竟那一段记载是，那一段记载非呢？</p>
+<p>我们若将摩西一生的事迹从始至终都详细读过，便可以晓得这两段记载都是真实的。那「为人极其谦和胜过世上的众人」的摩西就是那路见不平将人打死埋在沙土里的摩西。不过在这两段记载中间有一件要紧的事是我们万不可不知道的。因为如果不知道这件事，我们便总不能十分认识摩西。</p>
+<p>圣经中有好几段记载证明摩西本来是一个热诚勇敢，性情刚直，路见不平就不能忍耐，立时要挺身出来干涉的人。方纔我们已经读过他打死埃及人的那一件事。此外还有两段记载我们也需要知道：</p>
+<p>「第二天他出去，见有两个希伯来人争斗：就对那欺负人的说，你为甚么打你同族的人呢？」（出二13）</p>
+<p>「一日，他在井旁坐下。米甸的祭司有七个女儿：她们来打水，打满了槽，要饮父亲的群羊。有牧羊的人来，把她们赶走了；摩西却起来帮助她们，又饮了她们的群羊。」（出二16、17）。</p>
+<p>看过这三件事以后，便可以晓得摩西的天性正是照我上文所说的了。我们知道热诚勇敢性情刚直的人多是性情暴烈，缺少谦和，摩西也必是这样；不然，怎能那样容易把人打死埋在沙土里呢？这种刚直勇敢看见不平的事就要干涉的性情实在是很好的。世界上需要这种人。那些懦弱自私，看见别人受屈含就远远的走开，恐怕自己受连累的人，是最卑鄙无用的。不过这种勇敢热诚并不能成就甚么大的事工，也不帮助许多人。要作利济多人的事工，不只需要勇敢与热诚，还需要忍耐，需要谦和。血气的勇敢帮助一两个人则有余，利济许多人则不足；作小事则有余，作大事则不足。神在摩西身上的旨意，并不是只要用他扶助三两个受恶人欺压的人，乃是要用他拯救一个处在水深火热中的民族，这个民族包含一百多万人。神看见摩西是一个可用的人才，但同时他也看见了摩西所缺少的是甚么。他要用摩西去拯救以色列人。但他知道如果用这样的一个有热诚勇敢却缺少忍耐谦和的摩西，决不是以色列人的好处。如果摩西用他打死那个埃及人的热诚与勇敢去打那些顽梗不驯的以色列民，等不到他们进迦南，就都被摩西在旷野打死了。那还能有后来的以色列国么？但神也不因着摩西的缺点不用他，却豫备了一个极良好的学校去训练摩西，造就摩西，使摩西学习他在法老女儿的家中和埃及的大学校里所没有机会学习的功课，这功课是他要为神作大事所决不能不学习的。不过这学校不是在埃及国内，这学校的教师也不是埃及国的名人哲士。这学校乃是在米甸的旷野，教师就是叶忒罗的那一大群羊。并且这个学校肄业的年限又是特别的长久──四十年。</p>
+<p>容我们闭目思想一下摩西初到米甸的祭司叶忒罗家中为他牧羊的时期那种景况：多年在法老女儿家中娇养惯了的贵族子弟，又受了埃及国的高等教育，（徒七21、22）如今竟孤身流落到异乡，而且作了一个牧羊的人，这是多么凄凉，多么可怜！何况摩西又是一个秉赋不凡志向远大的人。但神要叫他学习的功课就是在这种境遇中方能学会。古人所说，「故天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，增益其所不能，」正是这个意思。作大事工的人所必须学习的功课都是拂逆患难中学来的。神就是这样造就了摩西。</p>
+<p>我们再思想一下摩西头几次领着羊群出去的景况罢。第一次出去的时候，他领着牠们往西走，但牠们因为平日多是往东去，而且同他不熟识的缘故，所以不听从他。因此惹动了摩西的怒气。他想我昨日已经到西边看过那里有丰美的水草，我为你们的好处要领你们到那边去，你们竟这样不知好歹，辜负我的善意，真是应当一个一个的都被打死。不过看在你们主人的面上我不能这样作，但也不能不惩一儆百。于是他便捉住走在前面的三只羊，用牧人的杖猛力的击打牠们。结果打死了一只，那两只比较壮大的虽然未曾被打死，但也足跛血流了。结果羊是死的死，伤的伤，这位从来未曾放过羊的牧人也弄得气喘汗流，心中痛苦的了不得。那天回来的时候，摩西肩上扛了一只死羊交还他的岳父，又把事情的经过都对他岳父述说过了。好在叶忒罗量大心宽，并且他也晓得摩西从来未曾放过羊，所以一点未曾罪责他，不过对他说了一句，「摩西，牧羊不是只靠打的。」摩西往回走的时候，心想打死了岳父的羊总免不了受一顿严厉的责备，没想到岳父对自己竟是这样的和平。这事在他心中留下了一种很深的印象。更不能使他忘记的是他岳父所说的那一句话──「牧羊不是只靠打的。」他心里想「不靠打靠甚么呢？羊这样不听话，不打还怎样呢？」</p>
+<p>第二天摩西又领着羊出去了。这群羊仍然给他一些难处，他因为昨日已经打死了一只羊，所以这日不敢太用力打，只是打得牠们痛苦难当，不敢不服从他罢了。从那日起每逢遇见羊不听话的时候他就打牠们，他的办法果然发生了效力。但他看见别的牧人牧羊的时候，便感觉那些牧人所牧的羊和牠们的牧人中间有一种情形是他的羊和他中间所没有的，就是那些牧人所牧的羊非但都是很乐意的听从牠们的牧人，而且牠们都爱他们的牧人。牠们和牠们的牧人中间似乎有一种感情，一种友谊，是牠和他的羊中间所没有的。他起初还以为是他的羊和他不熟识的缘故。但过了许多日子仍是这样，他便惊奇起来。他羡慕别的牧人那种牧羊的生活。他看他们有许多羊朋友，他们的生活是有兴趣的。反过来再看自己怎样呢？羊在自己面前只是畏惧，只是看见自己手中的杖就战栗，至于感情和友谊却是一点也没有。他感到自己的生活太单调，太枯燥。他竭力的想改正他和羊的关系。他想或者是因为有时候许多羊不听话，但他只打少数的几只，所以牠们心怀不平，因此不敬爱他。他以为他所想的是很有理，所以再发生事故的时候，凡不听话的羊，他一一的去打牠们，连一个也不放过。不久他发现事情越弄越坏了。羊和他的感情不但未曾增加少许，而且他们中间的关系越来越恶劣。他失望了，他灰心了，他想离开他们去作别的事工，但事实却不容许。他苦闷到了极点。</p>
+<p>一天早晨他在山坡上坐着看羊在旷野吃草的时候，他看见羊和羊彼此戏耍，跳跃着，欢呼着，他忽然想起他岳父的那句话来，「牧羊不是只靠打的」。他开始觉悟到一个牧人需要对羊有爱心，需要用忍耐和平的态度来待牠们，才能博得牠们的爱，才能与牠们发生感情和友谊。羊和羊彼此戏耍，有很好的友谊，是因为牠们不彼此用杖相打。自己和羊的关系这样恶劣，是因为打牠们太多，爱牠们太少的缘故。从那日起，他对待羊少用杖多用爱心，他学习宽容牠们，忍耐牠们，体恤牠们，帮助牠们。希奇，他对羊的态度改变了，不久羊对他的态度也改变了。他爱牠们牠们也爱他。牠们不再像从前见了他就战兢畏惧。牠愿意就近他，也甘心乐意的听从他的命令。他的生活到这时，不再感到单调孤寂，因为他有这样多的羊朋友。他觉悟他的岳父真是有经验。「牧羊不是只靠打的。」是的，这话一点都不错。有些时候也需要打，但更需要的乃是爱心、宽容、忍耐、体恤。</p>
+<p>这种牧羊的生活继续了多少日子呢？四十年。这是多么长久的时候！一万四千多日！每日领着羊出去，领着羊回来。羊走失了，就跑许多的路去寻找。羊落在坑中，就把牠们拉上来。羊受了伤，就为牠们缠裹。羊被狼抢去，就将牠们夺回。有时有几个顽梗不驯的羊诸般的捣乱，还有时大多数的羊竟盲目的随从那几个捣乱份子，也有时他的好意竟受了牠们的误会。平安无事的时候，摩西因为有这许多的羊作他的朋友，生活却也得到一些安慰。但一发生以上所说的这些情形，摩西所受的那种痛苦就是一言难尽了。尤其使他难过的就是他所爱护的那些羊随从几个桀傲不驯的劣羊起来与他为难，或是他的善意竟受了牠们的误会。起初他遇见这些情形真是不能忍受，但后来他渐渐在无可奈何之中还是学会了宽容牠们，忍耐牠们。四十年旷野牧羊的生活竟将摩西造就成为一个与从前完全不同的人。这就是那个打死人埋在沙土里的摩西成为「极其谦和，胜过世上的众人」的摩西的经过。</p>
+<p>人的常情都是怕艰难，怕苦楚，逃避劳苦卑贱的事工。属神的人因为还有肉体，当然也不能例外。但神要造就他所要使用的人却是藉着这些人所畏惧，所逃避的事。最宝贵的功课总是最难学的。最高尚的德行总是从最拂逆的境遇最艰难的事工里锻炼出来的。受过摩西所受的苦难，作过摩西所作的事工的人，纔能像摩西那样极其谦和。像摩西那样极其谦和的人才能像摩西那样有用。逃避摩西所受的苦难，厌弃摩西所作那些卑微劳苦的事工的人，总不会像摩西那样谦和，那样被神使用。</p>
+<p>真的，一个人若不经过艰难困苦，许多极宝贵极重要的功课总没有机会学习，就是学习也学不好。就如勤劳、忍耐、谦卑、柔和、信靠神、体恤人，还有其它这一类的功课。这些功课都是神的工人决不可不学习的。不学会这些功课就没有资格作工，不学会这些功课就不知道怎样帮助人，不学会这些功课就不肯谦卑仰望神。因此神要用一个人为他作重要宝贵的工作以前，常是先将他放在一所极不喜悦的境遇中，要熬炼他，如同金匠熬炼金子，琢磨他，如同玉工琢磨玉石一样。一个人从这种艰苦的境遇中经过固然是极不容易的，但经过以后所得的益处却是贵重得无可比拟。</p>
+<p>愿意在神手中有用，为神作工的圣徒们，当神把你从公主的府第中领到米甸的旷野，吩咐你牧放群羊的时候，请你不但不要逃避，不要发怨言，而且应当欢欢喜喜的忍受神要你忍受的苦难，作成神要你作成的事工，学习神要你学习的功课。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>妄解经上的言语迷惑信徒 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>妄解经上的言语迷惑信徒</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·余粮</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/2谨防魔鬼的诡计/2妄解经上的言语迷惑信徒-02.mp3">🎧 妄解经上的言语迷惑信徒（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/4四、余粮/2谨防魔鬼的诡计/2妄解经上的言语迷惑信徒-03.mp3">🎧 妄解经上的言语迷惑信徒（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「魔鬼就带他进了圣城，叫他站在殿顶上，对他说，你若是神的儿子，可以跳下去，因为经上记着说，主要为你吩咐他的使者，用手托着你，免得你的脚碰在石头上。」（太四5、6）。</p>
+<p>主耶稣第一次受试探的时候，不但引证经上的话战胜了仇敌，而且他所引证的经文也足显明他的心是何等重看神的言语。他引证经上的话说，「人活着不是单靠食物，乃是靠神口里所出的一切话。」魔鬼经过这一次失败以后，不但不肯中止他的诱惑，而且这次他竟发明了一个最毒的诡计，豫备向主耶稣作第二次的进攻。他看明白主耶稣是那样重看经上的话，笃信经上的话，持守经上的话，他便也引用经上的话来向主耶稣施行他的诱惑。他引诱主耶稣从殿顶上跳下去，同时他也引证经上的话说，「主要为你吩咐他的使者，用手托着你，免得你的脚碰在石头上。」魔鬼所引用的这段话真是圣经上的么？若是我们打开诗篇第九十一篇，便看见这一段话果真是载在这一篇诗的第十一、十二节里面。但这真是希奇了！圣经上的话本是引人走义路的，本是保守人不至犯罪的。魔鬼怎能用经上的话引诱人犯罪呢？我们只要详细看一看魔鬼是怎样引用了这段圣经，这个难题便立刻解决了。在我们未看魔鬼怎样引用这段经文以前，先详细将诗篇第九十一篇全篇阅读几遍，我们便看出这篇的大意就是述说神怎样应许保护那投靠他敬爱他的人。九至十二节说，「耶和华是我的避难所！你已将至高者当你的居所；祸患必不临到你，灾害也不挨近你的帐棚。因他要为你吩咐他的使者，在你行的一切道路上保护你。他们要用手托着你，免得你的脚碰在石头上。」这一段话明明是说，神要保护那投靠他的人，不使灾祸临到他的身上。在他行路的时候，神要吩咐天使保守他的脚步，不使他遭遇危害。这一段绝对未曾教训人自己投到危险里，然后叫天使保护他。一个人若是明明看出一种危险，却故意投到里面，他就是试探神，就是得罪神。这样的人天使决不保护他，只好容他碰伤自己的脚，或者竟至碰碎自己的身体也未可知。魔鬼怎样引用这一段经文呢？他不提上文的意思，也不顾下文的教训，只突然抽出这十一、十二两节的话来，而且从这两节的中间割去一句要紧的话──「在你行的一切道路上保护你」。如果我们从来不知道诗篇九十一篇的话，只听见魔鬼引用这一段被他所割裂的经文，我们必很容易误会，以为我们不论偶然遇见危险，或是自己投到危险里面，天使都必要保护我们，使我们不受伤害。如果同时魔鬼再给我们一种暗示，叫我们去自蹈危机，我们一定会投到他的罗网里面去。</p>
+<p>在这里我们看出来魔鬼所以能用经上的话迷惑人，就是因为他将经上的话支解割裂。或是将上下文的意思隐藏起来，或是从中间弃掉几句，或是从一段经文中抽出一两句或一两节来，用断章取义的方法去讲解，热诚的信徒必都笃信圣经。他们无论听见甚么话，只要是圣经里的，就都要无条件的接受信从。如今魔鬼所引用的既是圣经中的话，他们自然不再疑惑，也不敢疑惑，便去接受信从，那想到他们竟因此走入了迷途呢！</p>
+<p>我们笃信「圣经都是神所默示的，于教训，督责，使人归正，教导人学义，都是有益的。」但圣经中的言语必须「按着正意分解」。纔能使人得着益处。若断章取义牵强附会的去引用讲解，那种害处真是比甚么都剧烈。最大的害处，就是受这种害的不是冷淡的信徒，与那些不注重圣经，不信从圣经的信徒，他们对于圣经中的言语是漠不关心的。按着正意分解圣经中的道理他们不领受，不按着正意分解却牵强附会的去讲，他们也不关心。惟独那些热心爱主笃信圣经的信徒对于经上的话，真是看作比精金更宝贵，比蜂蜜更甘甜。他们愿意笃信圣经中一切的言语，遵行圣经中一切的教训。这种信徒若是误解了圣经中的话，那种危险真是不堪设想了。他们以错误的解释当作正确的意思，以魔鬼的指导当作神的旨意。他们笃信他们所得着的，他们遵行他们所领受的。他们以为他们自己是在神的旨意中奔跑。却不晓得他们已经深入迷途了。第二种害处就是热心的信徒因为误解经上的话以致走入迷途，是很难转回的。如果他们所走的路违反经上的教训，一旦有人指正他们，他们很容易回转。如果他们所走的路没有甚么经文能证明是对的，一旦有人提醒他们，他们也不难觉悟自己的错失。但如果他们因为误解了经上的话以致走入迷途，别人真不容易帮助他们。若有人劝告他们，指正他们的错误，他们必以为自己所行的是本乎经上的教训，决不会有错误。因此反看那劝告他们的人为不信圣经；不顺从神。甚至看那劝告他们的人为魔鬼的使者，受了魔鬼的指使来诱惑他们。其实乃是他们自己陷入了魔鬼的网罗。请想这是何等可惜的事呢！</p>
+<p>要破坏魔鬼这种诡计，最要紧就是在读圣经、解圣经、用圣经中的言语的时候，务要统观全局，详细查看上下文的意思，并且要明白当日神为甚么说这话，又为甚么藉着他的仆人写这话，切不可将原来的意思丢掉一些，或是在原来的意思以外再加上一些，更不可不顾上下文的意思，只抽出一段一节或一句来，断章取义穿凿附会的去强解。这样去作，很容易被魔鬼陷害，以致走入迷途。如果有自己不了解的经文，应当安静等候神的指导和训诲。在未曾得着神正确的指导以前，不可任意乱跑，妄加解释，更不可妄解圣经教训别人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
