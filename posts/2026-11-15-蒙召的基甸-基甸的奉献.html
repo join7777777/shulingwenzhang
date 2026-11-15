@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>蒙召的基甸-基甸的奉献 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>蒙召的基甸-基甸的奉献</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/1看这些人（上）/1蒙召的基甸-基甸的奉献.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>一介平民崛起田间，奉耶和华的差遣，率领小群军兵，大败猛如豺虎的米甸大军，拯救屈伏于强权以下的以色列民众；耶和华在基甸身上所施的选召何等奇妙！他向他的百姓所显的作为何等伟大！今日教会中可怜的景况，与当日的以色列民正是相同。不知有甚么人能作蒙召的基甸，成就那重大紧要的事工。基甸蒙召的事迹，实在足以作我们的标准和法则使我们知道怎样可以为耶和华所使用，战败强横的仇敌，成就美好的事业。述基甸的蒙召史。</p>
+<p>一 基甸蒙召的缘因</p>
+<p>『以色列人又行耶和华眼中看为恶的事，耶和华就把他们交在米甸人手里七年。米甸人压制以色列人，以色列人因为米甸人，就在山中挖穴，挖洞，建造营寨。以色列人每逢撒种之后，米甸人，亚玛利人，和东方人，都上来攻打他们，对着他们安营，毁坏土产，直到迦萨，没有给以色列人留下食物，牛羊驴也没有留下。因为那些人带着牲畜帐棚来，像蝗虫那样多，人和骆驼无数，都进入国内，毁坏全地。以色列人因米甸人的缘故，极其穷乏，就呼求耶和华。』（士六1～6）。</p>
+<p>神召人就是因为有工作需要人去作。工作越重要，神的选召也就越紧急。当日神所以要召基旬，就是因为以色列人受制于米甸人。他们来攻打以色列人，毁坏土产，掳去财物，以致『以色列人因米甸人的缘故，极其穷乏就呼求耶和华。』但以色列人为甚么受制于米甸人呢？这里告诉我们说，是因为『以色列人又行耶和华眼中看为恶的事。』</p>
+<p>今日神的教会所有的情形也正与昔日的以色列人相同。信徒因为贪爱世界，沾染不义，行耶和华眼中看为恶的事，以致神向他们掩面。他们堕落了，被掳了，受制于仇敌的权下，失去了他们心灵中所有的自由和属灵的福乐。他们的心灵中感到了无限的苦痛。『极其穷乏，』正可以形容信徒心灵中的实况。基甸蒙召，就是因为神垂顾这些受苦的以色列人，要藉他的手去拯救他们。今日的教会既是也有同一的苦况，那么我们深信神也要召选一些人去作基甸所作的事工，这是无可怀疑的了。</p>
+<p>二 基甸蒙召的情形</p>
+<p>『耶和华的使者到了俄弗拉，坐在亚比以谢族人约阿施的橡树下。约阿施的儿子基甸正在酒醡那里打麦子，为要防备米甸人。耶和华的使者向基甸显现，对他说，「大能的勇士阿，耶和华与你同在，」基甸说，「主阿，耶和华若与我们同在，我们何至遭遇这一切事呢？我们的列祖不是向我们说，耶和华领我们从埃及上来么？他这样奇妙的作为在那里呢？现在他却丢弃我们，将我们交在米甸人手里。」耶和华观看基甸说，「你靠着你这能力去从米甸人手里拯救以色列人；不是我差遣你去的么？」基甸说，「主阿，我有何能拯救以色列人呢？我家在玛拿西支派中是至贫穷的；我在我父家是至微小的。」耶和华对他说，「我与你同在，你就必击打米甸人，如击打一人一样。」』（士六11～16）。</p>
+<p>真是希奇！神选召基甸并不是因为他是以色列人的领袖，或是当代的伟人英雄；他不过是一介平民看耶和华的使者去召他的时候，他正在打麦子，便知道他的生活状况了。是的，神所重用的人，多半是卑微的，贫贱的，软弱的，因为这样的人无所依恃，他们很容易学会顺服神，倚靠神，容神在他们身上作工。一个大有学识才能金钱权柄的人，常是容易依靠他所有的这些事物；神没有机会能在他的身上作什么事。就是神用了他，他也要指着自己的长处夸口，夺取神的荣耀归于自己。因此神不能使用他。</p>
+<p>『大能的勇士阿，耶和华与你同在。』天使对基甸所说的这一句话对我们是何等的有教训。基甸本是一个平常的人，只因耶和华与他同在，便成了大能的勇士。耶和华与人同在是何等要紧的事！作神圣工的人没有别的都不足虑，若是没有耶和华的同在，那便甚么也不能作了。</p>
+<p>『主阿，耶和华若与我们同在，我们何至遭遇这一切事呢？我们的列祖不是向我们说，「耶和华领我们从埃及上来」么？他那样奇妙的作为在那里呢？现在他却丢弃我们，将我们交在米甸人手里。』听基甸这话，满露出他的疑惑来。他必是想，今日他们受制于强敌，是因为耶和华没有能力拯救他们，或是因为耶和华的慈爱不是永远长存的。那里想到不多时以后耶和华的大能和慈爱就是藉着他大大的彰显出来呢？我们今日看见教会的败落，神的孩子们所遭遇的苦况，也不免要这样向神发出疑惑。感谢神，他的慈爱总没有一代不曾继续的显在他所召的人身上。这真是可以使我们大得安慰的。</p>
+<p>『耶和华观看基甸说，「你靠着你这能力去从米甸人手里拯救以色列人；不是我差遣你去的么？」』卑微软弱的基甸能成就那样伟大奇异的工作，打败了米甸的军兵，拯救以色列人脱离痛苦，总因就是在这一点上──耶和华差遣他。现代教会中的神学院毕业生是那样多，有能干学识口才声望的工人也不少，怎么这许多的人竟不能成就甚么属灵的工作，战胜凶猛的仇敌，复兴神的教会？我们不能不承认那最大的缘故，就是被人差遣的太多，但被神差遣的却是太少。教会常是劝人传道，勉强人入神学，用许多的条件捆束一个学生，使他应许毕业以后必须在教会中服务若干年。这到底有甚么好处？神的能力要随着那被他自己所差遣的工人，却不能随着那些被人所差遣的工人，更不能随着那些被人所勉强的工人。今日遍地要收的庄稼诚然很多，作工的人真是太少。但主耶稣并未教训我们说，『你们当差遣工人去收割庄稼，』乃是说，『你们当求庄稼的主打发工人出去收他的庄稼。』（太九38）</p>
+<p>基甸本来有甚么长处，我们无法知道。但在这里我们看出他已经有了第一样最要紧的资格──自知。听他说，『我有何能拯救以色列人呢？我家在玛拿西支派中是至贫穷的；我在我父家是至微小的。』神的大能力就是在毫无能力的人身上彰显出来；神的大工作正是要藉着微小的人去作成。世上本来没有刚强有能力的人。可惜！许多人的眼目竟是被自己少许的知识才能蒙蔽起来，以致不能看见自己的软弱，结果便流于自欺与自恃！无怪能被神所使用的人是这样的稀少。愿神启迪我们的眼睛，叫我们能看出自己的软弱贫穷微小来，好使我们能为他所重用，成就那极宝贵的工作。</p>
+<p>『耶和华对他说，「我与你同在，你就必击打米甸人，如击打一人一样。」』这就是耶和华与人同在所有的功效。击打千万人如击打一人。有这种成功的快捷方式，得胜的秘诀，作神圣工的人何必还寻求别的方法？可叹！可叹！许多神的工人，竟追求依靠金钱，势力，学识，声望，计划，手腕！要靠着这些成功得胜，却不求耶和华与他们同在。无怪乎他们常是被仇敌所追赶，所制服，终日的呻吟哀叹了。</p>
+<p>三 基甸的奉献</p>
+<p>『基甸说，「我若在你眼前蒙恩，求你给我一个证据，使我知道与我说话的就是主。求你不要离开这里，等我归回，将礼物带来供在你面前。」主说，「我必等你回来。」基甸去豫备了一只山羊羔，用一伊法细面作了无酵饼将肉放在筐内把汤盛在壶中带到橡树下献在使者面前。神的使者吩咐基甸说，「将肉和无酵饼放在这盘石上，把汤倒出来；」他就这样行了。耶和华的使者伸出手中的杖，杖头挨了肉和无酵饼，就有火从盘石中出来，烧尽了肉和无酵饼；耶和华的使者也就不见了。基甸见他是耶和华的使者，就说，「哀哉！主耶和华阿，我不好了！因为我觌面看见耶和华的使者。」耶和华对他说，「你放心，不要惧怕，你必不至死。」于是基甸在那里为耶和华筑了一座坛，起名叫耶和华沙龙，这坛在亚比以谢族的俄弗拉，直到如今。』（士六17～24）。</p>
+<p>在这里我们看见基甸虽然曾向神求一个证据，但是他已经信神的大能，也乐意接受神的使命。看他求那使者不要离开，赶快去豫备了礼物拿来献上，就可以证明了。他的奉献一拿来，神就施行奇事，使火从盘石中出来，烧尽了他所献的礼物，这又证明他的奉献已经蒙了神的悦纳。</p>
+<p>我不知道在阅者中间有谁觉得神的使命临到了你，要你作今日教会的基甸。如果你实在重看他的选召，接受他的使命，你必定有所表示，就是将你的礼物献在神前。但今日神所要的不是山羊羔和无酵饼，乃是我们的身体。听经上教训我们的话说，『弟兄们，我以神的慈悲劝你们，将身体献上当作活祭，是圣洁的，是神所喜悦的，你们如此事奉，乃是理所当然的。』（罗十二1）神怎样当基甸奉献的时候悦纳了他的礼物，照样，当我们奉献的时候也必悦纳我们的礼物。这是我们可以确信无疑的。</p>
+<p>四 基甸的顺服</p>
+<p>『当那夜耶和华吩咐基甸说，「你取你父亲的牛来，就是那七岁的第二只牛，并拆毁你父亲为巴力所筑的坛，砍下坛旁的木偶。在这盘石上，整整齐齐的为耶和华你的神筑一座坛，将第二只牛献为燔祭，用你所砍下的木偶作柴。」基甸就从他仆人中挑了十个人，照着耶和华吩咐他的行了。他因怕父家和本城的人，不敢在白昼行这事，就在夜间行了。』（士六25～27）。</p>
+<p>以色列人所以受制于米甸人，就是因为他们拜巴力的缘故。他们若不先除掉这拜偶像的罪，耶和华便不能施行拯救。基甸既蒙召去拯救以色列人，自然必须从他自己家中起首，把这惹耶和华忿怒的巴力和牠的坛拆毁。拆毁巴力和牠的坛是第一步，（除掉假神。）还有第二步事工，就是为耶和华建筑一座坛，献上第二只牛。（敬拜真神。）至于那砍下的木偶要作柴烧，一点不可留存。除掉巴力和他的坛，便可以消除神的忿怒；敬拜耶和华，然后方能得到耶和华的拯救。</p>
+<p>教会为甚么堕落？信徒为甚么受制于仇敌？我们不能不承认是由于许多信徒拜偶像的缘故。信徒所拜的偶像不是巴力，乃是金钱，势力，学识，名誉，以及世上的奢华宴乐。就是因为这个缘故，神纔离弃了他的教会，纔有震怒和败坏临到他们。如今神要施行拯救，他也是吩咐他们先除掉这些偶像。但这事必须有人领头去作。蒙神选召的人当首先拆毁自己心中和家里的偶像，然后方能得着神所赐的福分与能力，去作他的大工。不但拆毁，并且要焚烧成灰，丝毫不可留存。以后就要专一敬拜耶和华，以他为你独一的神，单单的事奉他。</p>
+<p>亲爱的阅者，如果你乐意接受神的选召，作成神交托的大工，就必须先省察你自己心中与家里还有甚么偶像。你是贪爱金钱财物，一生寻求牠们，倚靠牠们，看牠们如同神么？你当在今日听从耶和华的吩咐，拆毁牠们。你是重看学识和势力，以牠们为你的神么？今日当遵行耶和华的命令，打碎牠们。你是恋慕世界上的尊荣宴乐，过于神的训诲法度么？当急速把这些除掉。在这一件事上你若不能顺服，就断不能蒙神使用。</p>
+<p>这里记载基甸因为『怕父家和本城的人，不敢在白昼行这事，就在夜间行了。』似乎显出基甸的一些怯懦来。但我们不因此责备他。他所处的环境实在是很艰难的。四围都是拜巴力的人，连他的父亲也是；并且耶和华吩咐他去拆毁的坛，正是他的父亲所筑的。孤身一人，要冒大不韪，触犯众怒，是何等危险的事！他虽然未曾敢在白昼行这事，却在夜间去作，但他到底『照着耶和华吩咐他的行了。』亲爱的阅者阿，你敢不敢离弃你所事奉的偶像，不怕别人的轻看，笑骂，攻击，反对，一心顺服神的命令呢？如果不敢这样作，你就不配作神的工，也不能去作。</p>
+<p>五 阻难的消除</p>
+<p>『城里的人清早起来，见巴力的坛拆毁，坛旁的木偶砍下，第二只牛献在新筑的坛上，就彼此说，「这事是谁作的呢？」他们访查之后，就说，「这是约阿施的儿子基甸作的。」城里的人对约阿施说，「将你儿子交出来，好治死他，因为他拆毁了巴力的坛，砍下坛旁的木偶。」约阿施站着回答攻击他的众人说，「你们是为巴力争论么？你们要救他么？谁为他争论，趁早将谁治死巴力若果是神，有人拆毁他的坛，让他为自己争论罢。」所以当日人称基甸为耶路巴力，意思说，「他拆毁巴力的坛，让巴力与他争论。」』（士六28～32）。</p>
+<p>基甸前面最大的阻难就是他的父亲与他的乡人。他们都是十分尊重巴力的。一旦基甸竟大胆拆毁他们的祭坛，砍下他们的木偶，他们将要怎样兴起与基甸为敌，攻击他，杀害他呢？果然是这样，那些城里的人清早起来，一看见巴力的坛被拆毁，坛旁的木偶砍下，第二只牛献在新筑的坛上，他们便急切的要查问是谁作的这件事。既查出是基甸来，他们便怒不可遏，向基甸的父亲索取基甸，要治死他。看这种情形是何等可怕！我们可以晓得昨夜基甸秘密的作这件事实在是情有可原了。感谢神，他悦纳了基甸的顺服，他除去了基甸的阻难。真没有想到祭坛和木偶的主人──基甸的父亲约阿施──到这时不但未曾因基甸所行的发怒，反倒成了基甸的后援。听他站着回答众人说，『你们是为巴力争论么？你们要救他么？谁为他争论，趁早将谁治死。巴力如果是神，有人拆毁他的坛，让他为自己争论罢。』这样的回答必是出乎基甸的意料之外。到这时众人的口塞住了，他们再无言可答。我们真不能不承认这是神用他的大能消除了基甸的阻难。假使基甸昨日不敢顺服神的命令，他今日在神的面前就成为一个失败者了。</p>
+<p>是的，神不是先除去我们的阻难，然后叫我们顺服；若是这样，我们的顺服就没有多大的价值。他乃是先叫我们顺服。当我们肯不避艰险顺服他的时候，他悦纳我们的顺服，随即除去我们的阻难。亲爱的阅者阿，不要等到神将平坦易行的路为你铺垫好了，再行在其中。当作勇敢顺服的人，纵然有荆棘猛兽在前，只要是神吩咐你走的路，便勇敢前行就是了。必须有这样的顺服，纔能蒙神的悦纳，纔能被神所重用。</p>
+<p>六 同工的兴起</p>
+<p>『那时米甸人，亚玛力人，和东方人，都聚集过河，在耶斯列平原安营。耶和华的灵降在基甸身上，他就吹角；亚比以谢族都聚集跟随他。他打发人走遍玛拿西地，玛拿西人也聚集跟随他；又打发人去见亚设人，西布伦人，拿弗他利人，他们也都出来与他们会合。』（士六33～35）。</p>
+<p>神是全能的，他选召一个人为他作工的时候，若是他看这人还需要人帮助，他便立时再选召一些人，使他们与他同工。一个蒙神选召的人在起初兴起的时候，四望无援，独行踽踽，一想到这样大的事一个人如何能作得来就不免要胆怯灰心。那知道神在这一个人勇敢兴起的时候，随即用他感动这一个人的灵也感动许多人起来作他的帮手呢。这种情形，在古时，在今日，已经屡试而不一爽了，来，容我们勇敢前进。</p>
+<p>七 祈祷蒙应允</p>
+<p>『基甸对神说，「你若果照着所说的话，藉我手拯救以色列人，我把一团羊毛放在禾场上；若但是羊毛上有露水，别的地方都是干的，我就知道你必照着所说的话，藉我手拯救以色列人。」次日早晨，基甸起来，见果然是这样；将羊毛挤一挤，从羊毛中拧出满盆的露水来，基甸又对神说，「求你不要向我发怒，我再说这一次；让我将羊毛再试一次，但愿羊毛是干的，别的地方都有露水。」这夜神也如此行，独羊毛上是干的，别的地方都有露水。』（士六36～40）。</p>
+<p>我们不当责备基甸的小信，在当日这种情形中，要兴兵敌挡米甸人，岂不像以卵击石，自取祸败？这次若不能得胜，后来以色列人所要受的虐待必定比从前增加。基甸这次若不能拯救以色列人，必定大大的害了他们。他不敢轻于一试，也是慎重的意思。神鉴察基甸的心，也谅解他的苦衷，所以两次听他的祈祷，为他显出奇事，坚固他的信心。他两次的祈祷蒙了应允以后，便不当再疑惑，他也实在不疑惑了。</p>
+<p>如今神也不因我们的信心微小便责备我们。只要我们存着愿意顺服的心，用恳挚的心向他呼求，他也必多方坚固我们的信心，垂听我们的祈祷，像垂听基甸一样。神是信实的，慈爱的，他的信实和慈爱且是永远长存，这是最可使我们放心的。起来，我们向前走罢。</p>
+<p>八 出战的准备</p>
+<p>『耶路巴力就是基甸，他和一切跟随的人，早晨起来，在哈律泉旁安营；米甸营在他们北边的平原，靠近摩利冈。』（士七1）。</p>
+<p>『一年之计在于春，一日之计在于晨。』凡作大事的，总贵乎能早早起来，仗着身心的力量都十分充足的时候，筹备一切；然后按步进行，方有成功的希望。基甸和一切跟随他的人，早晨起来安营，实在已经具有成功的资格了。可惜许多信徒虽然愿意为神的道打那美好的仗，但是怠惰的根性总不能除去！晚间，迁延到夜深方能入睡，清晨睡到日上三竿纔能起床；每日的生活都是凌乱无秩；闲玩嬉游，聚谈饮宴，不知占去了一日中多少时光，惟独在亲近神和属灵的工作上，却是迁延了再迁延。『再睡片时，打盹片时，抱着手躺卧片时，』好像是他们日用的规条。这些人纵然有心愿意作神的工，到底必是一无所成。</p>
+<p>九 第一次的淘汰</p>
+<p>『耶和华对基甸说，「跟随你的人过多，我不能将米甸人交在他们手中，免得以色列人向我夸大，说，是我们自己的手救了我们。现在你要向这些人宣告说，凡惧怕胆怯的，可以离开基列山回去；」于是有二万二千人回去，只剩下一万。』（士七2、3）。</p>
+<p>神最不喜悦人在被他使用以后，夸大自尊，将神当得的荣耀归给自己。但这种毛病是人最容易犯的，因此神只好在起初就不给他们留这机会。所以神吩咐基甸淘汰去一些人。直到现今神还是这样作工。他不要大群人去为他的事争战。他恐怕他们因此狂傲自夸。他自己能作各样的事。他不必倚靠我们所倚靠的。亲爱的阅者，神若召你，不必等到得着大群的人与你同工方敢前行，神从来不这样作。</p>
+<p>『凡惧怕胆怯的，可以离开基列山回去。』这是第一次淘汰的标准。战场不是安逸的所在，交战不是舒适的事工。畏首畏尾胆小如鼠的人不能上阵争战。他们不如回去倒好，免得挫损全军的勇气。经上也是这样的教训我们说，『你们不可丢弃勇敢的心，存这样的心必得大赏赐。』（来十35）</p>
+<p>十 第二次的淘汰</p>
+<p>『耶和华对基甸说，「人还是过多；你要带他们下到水旁，我好在那里为你试试他们；我指点谁说，这人可以同你去，他就可以同你去；我指点谁说，这人不可同你去，他就不可同你去。」基甸就带他们下到水旁；耶和华对基甸说，「凡用舌头餂水像狗餂的，要使他单站在一处；凡跪下喝水的，也要使他单站在一处。」于是用手捧着餂水的有三百人，其余的都跪下喝水。耶和华对基甸说，「我要用这餂水的三百人拯救你们，将米甸人交在你手中，其余的人都可以各归各处去。」这三百人就带着食物和角；其余的以色列人，基甸都打发他们各归各的帐棚，只留下这三百人。米甸人在他下边的平原里。』（士七4～8）。</p>
+<p>从这一件小事上，便看出谁有资格可以作耶和华的军兵了。用手捧着餂水，很显明这些人是十分重看他们的使命，好歹喝一点水足以止渴就彀了。大敌当前，无暇求甚么舒适安逸。他们的忠勇是何等的昭著！跪下喝水，自然是舒适许多，并且容易一气喝足；但这是甚么时候？甚么地方？全国的人民久处在水深火热之中，今日要出征攻敌，拯救这些困苦颠连的以色列人，仇敌却是这样的众多强劲。以色列人的祸福真像千钧系于一发！他们如何还能这样从容自若，求些肉体上的安逸舒适？这足可显明他们未曾重看神的使命和民众的祸福。他们是自私自利苟且偷安的。他们不配被神所用，不配担负那拯救多人的责任。他们只能回他们自己的帐棚去。</p>
+<p>神实在未曾禁止他所选召的人享受他们身体所必需的──衣，食，住。若是他禁止他们，他们根本不能生存，更怎么能作神的工呢？但是神要察验他们是注重神的使命和工作，并群众的祸福，或是注重一己的安逸利乐。我们可以享用我们的身体所必须享用的，但是目的不过是要藉以养生，使身体健康，好去为神的事工劳苦。因此我们的衣食住除了为谋求身体的发育健强以外，不当再有别的营求。神的一个工人饮食必求精良，衣履必求华美，居处必求舒适；终日经营计划怎样使自己的肉体安逸快乐，虽然他说愿意为神的道争战，愿意服事神，愿意拯救人，或者他的心中也真是这样想，但他只能听见神说，『叫他回自己的帐棚去罢。』凡为肉体安排注重安逸娱乐的人，只能住在自己的帐棚中，不能为神打那美好的仗。</p>
+<p>十一 必胜的启示</p>
+<p>『当那夜耶和华吩咐基甸说，「起来，下到米甸营里去，因我已将他们交在你手中。倘若你怕下去，就带你的仆人普拉下到那营里去；你必听见他们所说的，然后你就有胆量下去攻营。」于是基甸带着仆人普拉下到营旁。米甸人，亚玛利人，和一切东方人，都布散在平原，如同蝗虫那样多，他们的骆驼无数，多如海边的沙。基甸到了，就听见一人将梦告诉同伴说，「我作了一个梦，梦见一个大麦饼辊入米甸营中，到了帐幕，将帐幕撞倒，帐幕就翻转倾覆了。」那同伴说，「这不是别的，乃是以色列人约阿施的儿子基甸的刀。神已将米甸和全军都交在他的手中。」』（士七9～14）。</p>
+<p>神很能体谅他仆人们的软弱因此多次多方坚固他们的信心。他不但两次听允基甸的祈求，并且又将很确实的豫言藉着敌人的口指示基甸，使他因此可以笃信不疑的放胆去攻打仇敌。</p>
+<p>神在今日岂不也是照样将很清楚的预言指示我们么？经上告诉我们那将要临到的大而可怕的战争，虽然与基督为敌的人权势是那样大，但是『他们与羔羊争战，羔羊必胜过他们，因为羔羊是万主之主，万王之王，同着羔羊的，就是蒙召被选有忠心的，也必得胜。』（启十七14）这是何等足以安慰我们的豫言！世上无论有多少人要攻击基督和他的门徒，撒但的权势在地上无论如何发展，神已经明明的指示我们，最后的胜利乃在基督和他的门徒手中。我们真当欢喜快乐，踊跃前趋了。</p>
+<p>十二 胜敌的利器</p>
+<p>『基甸听见这梦的讲解，就敬拜神，回到以色列营中说，「起来罢，耶和华巳将米甸的军队交在你们手中了。」于是基甸将三百人分作三队，把角和空瓶交在各人手里，瓶内都藏着火把；吩咐他们说，「你们要看我行事；我到了营的旁边怎样行，你们也要怎样行。我和一切跟随我的人吹角的时候，你们也要在营的四围吹角，喊叫说，耶和华和基甸的刀。」』（士七15～18）。</p>
+<p>三百个人只带着角和空瓶与火把，要去攻击那些有坚甲利兵的大群米甸军队，岂不是以性命作为儿戏。那知道神的大能就是在这里显出来呢？世上的军兵要去攻打敌人必须用精良的器械，因为他们自己本不能作甚么，必须靠赖这些纔能取胜。全能的神要使人得胜却不必靠赖这些，就是他一发声，也可以使仇敌惊散。但在这里神要基甸和他的军兵用这三种对象，实在对我们有极宝贵的教训。</p>
+<p>角是为发声用的，可以比作神的话。（参出十九16；赛五十八1。）空瓶是个器皿，可以比作信徒的身体。（参林后四7；提后二20。）空瓶自己没有甚么用处，乃是藏在其中的火把可以吓退敌人；这样，信徒也如同一个空虚的器皿，自己不能作甚么，只要神的灵住在他们里面，便可大有用处，成就大事。（亚四6）由此我们知道信徒的身体，神的道，和他的灵，这三样便是为神争战的军兵所当豫备的攻敌的利器。可惜许多信徒常想要藉着金钱，才能，声望，学识，计划，势力，去为神的道争战，去攻打仇敌，却不肯用神要他们用的这胜敌的利器，这无怪他们屡战屡败了。</p>
+<p>十三 奇异的战法</p>
+<p>『基甸和跟随他的一百人，在三更之初，纔换更的时候，来到营旁，就吹角，打破手中的瓶。三队的人就都吹角，打破瓶子，左手拿着火把，右手拿着角，喊叫说，「耶和华和基甸的刀。」他们在营的四围，各站各的地方；全营的人都乱窜；三百人纳喊，使他们逃跑。三百人就吹角，耶和华使全营的人用刀互相击杀，逃到西利拉的伯哈示他，直逃到靠近他巴的埃布尔米何拉。以色列人就从拿弗他利，亚设，和玛拿西全地聚集，来追赶米甸人。』（士七19～23）。</p>
+<p>基甸和他的军兵没有带刀剑，也没有动手厮杀，只是吹角纳喊，打破了瓶，拿着火把。米甸的全军便都奔逃败走，这是何等奇异的战法！原来争战的并不是基甸和他的军兵，乃是耶和华自己。耶和华要属他的人顺从他，他便为他们争战。他们若能顺从，纵然手无寸铁，也可以大获全胜；若不能顺从，无论他们的兵器如何锐利，终不能免于失败。今日为神的道争战的人。也不必想藉着学识，金钱，才能，势力，去攻敌，去救人。神从来未曾吩咐我们这样去作。这至多不过使我们得着一点外面物质上的果效，但在神面前仍是一无所有。神要我们靠赖他，讲他的道，靠着他的灵去与仇敌交战。凡这样顺服他的命令的人，他要藉着他们大显全能，大败仇敌，正如他在基甸身上所成就的。</p>
+<p>三样对象中，在战场上能用以吓走仇敌的只有角和火把，空瓶在那时不能作甚么。但是没有空瓶，就没有法子贮藏火把，将火把带到战场上来；空瓶虽不能用以攻打仇敌，但是牠也正是不可少的一样对象。神率领我们胜过仇敌，是要用他的道和他的灵，但是同时也要用着我们的身体。没有空瓶，火把就无处贮藏；没有信徒的身体，圣灵也就无处居住。但是瓶必须是空的，纔能贮藏火把；信徒的身心也当空虚清洁，圣灵方能充满他们。可惜好些信徒里面充满了金钱，名誉，权势，宴乐，以及一切的罪恶污秽，好像盛满了泥土的瓶，没有空处再贮藏火把，虽然有瓶，又有多大用处呢？</p>
+<p>在这里还有一件事我们应当注意，就是瓶要被打破，火纔能发出来。当圣灵大显全能作工胜敌的时候，信徒的身体当是不免要受到损失，好使瓶被打破一样。但是不要惧怕，这样的损失无非是成就我们将来因得胜所得的奖赏。『所以我们不丧胆。外面的人虽然毁坏，里面的却一天新似一天。我们这至暂至轻的苦楚，要为我们成就极重无比永远的荣耀；原来我们不是顾念所见的，乃是顾念所不见的；因为所见的是暂时的，所不见的是永远的。』（林后四16～18）</p>
+<p>不过我们还当知道，瓶子被打破是有时候的；在战场上若不打破，火就不能出来，但是如果未到交战的时候就将瓶打破，那也就无法攻敌了。当保全的时候不可打破，当打破的时候不可保全；作错了那一样，都是不能成功的。</p>
+<p>我们的身体为作神的工，也是这样。在平日应当加意保守，不使健康受到甚么损害；谨慎饮食起居，不可消耗精神体力于无用的事务上，远避一切损害健康的习惯，戒除无益的嗜好，珍摄神所宝贵的器皿（身体，）决不可使牠稍受损伤。但到了为神的道争战的时候，却当不避艰险，勇往直前，纵使身体受到甚么危害，以至于死，也不可稍有退缩畏惧。必须这样，圣灵的大能方能藉着我们显出，仇敌也必因此败北逃亡了。我们的元帅是藉着死败坏了那掌死权的，（来二14）我们也必须抱着必死的决心与仇敌战，方能得胜。『弟兄胜过他（魔鬼）是因羔羊的血，和自己所见证的道；他们虽至于死，也不爱惜性命。』（启十二11）</p>
+<p>十四 基甸的奏凯</p>
+<p>『基甸打发人走遍以法莲山地，说，「你们下来攻击米甸人，争先把守约但河的渡口，直到伯巴拉。」于是以法莲的众人聚集，把守约但河的渡口，直到伯巴拉。捉住了米甸人的两个首领。一名俄立，一名西伊伯，将俄立杀在俄立盘石上，将西伊伯杀在西伊伯酒醡那里；又追赶米甸人，将俄立和西伊伯的首级带过约但河，到基甸那里。』（士七24、25）。</p>
+<p>一场剧烈的战事收束了。卑微软弱的基甸率领小群持角执瓶的以色列人，竟击散遍满全地多如蝗虫的米甸军兵，并且击杀了米甸人的两个首领。欺压虐待以色列人的仇敌绝迹于境内，颠沛流离的以色列民恢复了自由，再能吃用地土的出产，得享平康。从此我们更知道战争的胜负不在乎人多马壮，也不在乎兵利甲坚，只在乎是否得着耶和华的同在与赐福。</p>
+<p>今日神的孩子们所有的景况是何等的可怜：撒但肆虐，信徒受制。神现今不但要召人兴起施行拯救，也要率领他所召的人战胜仇敌，像他率领基甸一般。他现今正在各处召人，他的选召且是十分的紧急。谁能自知，谁肯奉献，谁愿意顺服，谁勇敢前行，谁使用神所命使用的兵器，谁便能作今日教会的基甸。</p>
+<p>神爱永存，</p>
+<p>神恩无量！</p>
+<p>强暴的被克服，</p>
+<p>受制的得解放！</p>
+<p>凶猛的仇敌四散奔逃，</p>
+<p>得胜的凯歌高声欢唱！</p>
+<p>无数的信徒中谁愿意步武基甸的脚踪，</p>
+<p>他必要看见神的大能和慈爱古今一样。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

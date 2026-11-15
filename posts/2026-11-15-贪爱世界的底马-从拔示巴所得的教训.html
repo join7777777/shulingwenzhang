@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>贪爱世界的底马-从拔示巴所得的教训 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>贪爱世界的底马-从拔示巴所得的教训</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/1看这些人（上）/4贪爱世界的底马-从拔示巴所得的教训.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『因为底马贪爱现今的世界，就离弃我往帖撒罗尼迦去了。』（提后四10）。</p>
+<p>底马是怎样的一个人，我们不详细知道。我们只知道他是保罗的一个同工。在保罗写给歌罗西教会的书信里，提到底马嘱笔问安。（西四14）在保罗写给腓利门的书信中也是这样提到底马，并且称他为同工的。『与我同工的马可，亚里达古，底马，路加，也都问你安。』（门24节）与保罗同工真不是一件容易的事。需要吃苦，耐劳，经过不少的危险，艰难，攻击，逼迫。底马能作保罗的同工，我们真不能不钦佩他，景仰他。底马能与保罗同工，他一定会得着保罗所要得着的奖赏。我们羡慕保罗和保罗的工作，自然也羡慕保罗这位同工底马和底马的工作。我们巴不得与保罗同工，我们巴不得作与保罗同工的底马。</p>
+<p>但是可惜！『底马贪爱现今的世界，就离弃我往帖撒罗尼迦去了。』我们可以揣想保罗写这句话的时候他心里是甚么滋味。他必是满怀悲痛。他悲痛他失了一个助手，他悲痛神的工场上少了一名工人，他更悲痛这功亏一篑的底马，竟因贪爱现今的世界，失去那极大极美天上的奖赏，蹈了以扫因为要吃一顿红豆羹卖去长子名分的覆辙。同时保罗也必是感叹能彀始终不移跟随耶稣是何等的不易，更是感叹『现今的世界』诱惑人的力量是何等强烈。他不愿意再想到这一件伤心的事，他更不愿意提起笔来写这件事。但他为要叫提摩太赶快到他这里来，并使提摩太知道为甚么他这样急需他来，就不得不含着眼泪写这几句话──『你要赶紧的到我这里来，因为底马贪爱现今的世界，就离弃我往帖撒罗尼迦去了。』</p>
+<p>底马往帖撒罗尼迦去是要作甚么？保罗未曾写出来，我们不敢武断。或者是因为在那里他有朋友在政界上作事，写信叫他去，为他在地方政府里谋得一个薪金优厚的位置，他便起了升官发财的意念，所以离弃保罗往那里去了。或者是因为他有亲戚在那里开了一个商店，请他去作经理，他想到作这种事业可以多弄一些银钱，因此便动了贪心，所以离开保罗往那里去了。或者是因为在那里有别样的好机会，可以得利益，得名誉，享幸福，所以他便不想再作这多受劳苦的传道事业，便离开保罗往那里去了。他往帖撒罗尼迦去究竟是去作甚么？我们虽不敢确说，但我们因着保罗所说的话确知底马是求属世界的好处去了。</p>
+<p>底马在帖撒罗尼迦究竟作了甚么大官？赚了多少钱财？他是怎样飞黄腾达，财运亨通？我们无从查考。底马在帖撒罗尼迦置了多少田产？享了多少幸福？他在晚年是怎样高车驷马，仆从如云，面团团作富家翁？我们也无法知道。或者底马到了帖撒罗尼迦以后，竟是『时运不济，命途多舛。』作官没有作多久，竟被人撤差；发财未曾发成功，反倒弄得破了产；因此日暮途穷，淹没潦倒，流落在帖撒罗尼迦。我们也不晓得。</p>
+<p>我们不愿意为底马往坏处想，让我们为他往好处想罢。我们想底马在帖撒罗尼迦作了大官，发了大财，他也在那里置了好几顷肥田，盖了一大所楼房。他与那里的士绅往来，很得他们的重看。在他的家中真可说，『座上客常满，杯中酒不空。』势力，荣耀，金钱，幸福，样样都如愿以偿。底马是何等满意，何等快乐呢！</p>
+<p>但是底马的势力，荣耀，金钱，幸福，都到那里去了？容我们乘船泛海到帖撒罗尼迦城里去，找一找底马的楼房，问一问那城里有多少人知道底马？我们一定会感到极大的失望。一切都过去了！一切都没有了？底马的肥田现在被别人耕种；底马的楼房现在连遗址也寻不出来！底马的富贵荣华，早已像过眼的云烟，被风吹散，无处可寻！若不是保罗在他的书信里提到底马，恐怕我们走遍全世界也遇不见一个知道底马的人。『凡有血气的尽都如草，他的美容都像野地的花：草必枯干，花必凋残。』（赛四十6、7）这就是『现今的世界』所给我们的好处。可怜的底马！竟因为追求一片过眼的云烟，失去了天上永存的冠冕！</p>
+<p>今日的教会中有多少像底马一样的人呢！起初很热心的跟随耶稣，把万事看作粪土。那时他们爱主的心是那样的热烈，甘心与主同走顺服受苦的路，很忠心的事奉主。但过几个月，或几年，他们忽然改变了心志，因为『贪爱现今的世界』就离开主往别的地方去了。不是有许多热心的信徒因为『贪爱现今的世界，』想要发财，就离开主往别处去了么？不是有许多热诚的信徒因为『贪爱现今的世界，』想要得名，就离开主往别处去了么？不是有许多热诚的信徒因为『贪爱现今的世界，』与不信的人为友，就离开主往别处去了么？不是有许多热诚的信徒因为『贪爱现今的世界，』与不敬虔的异性人恋爱，就离开主往别处去了么？不是有许多热诚的信徒因为『贪爱现今的世界，』喜爱种种属情欲的娱乐，就离开主往别处去了么？这些信徒如果能长久持守他们起初的热诚和爱心，他们一定能在世界上为主作许多善工，帮助许多的人，将来在主的面前一定能得着主为爱慕他显现的人所豫备的永存的荣耀的冠冕。可惜！他们竟是有始无终，半途而废！他们所追求的如果得不着，那自然不用说了，即使都能如愿以偿，这些好处又能享受多长时期呢？为得一点至暂至轻的名利福乐，竟舍弃了极重无比永远的荣耀，这是何等不上算的事呢！</p>
+<p>基督的门徒阿，务要谨慎！不要容爱世界的心存在你的里面。这世界里面没有基督徒立足的地方；基督徒里面也不当有世界立足的地方。一个基督徒总不能一只手拉着基督，一只手拉着世界。不是撒手放开基督，就是撒手放开世界。撒手放开世界去跟随基督，你要得着永久的满足；撒手放开基督去贪爱世界，你将要受到不可名状的大损失。孰轻孰重？何去何从？不可不十二分的慎重阿！</p>
+<p>『因为底马贪爱现今的世界，就离弃我往帖撒罗尼迦去了。』我读保罗所写的这句话，始而为保罗忧，继而为底马惜，终而为一己惧。</p>
+<p>主阿你所爱的人病了</p>
+<p>『有一个患病的人名叫拉撒路，住在伯大尼，就是马利亚和他姐姐马大的村庄。这马利亚就是那用香膏抹主，又用头发擦他脚的，患病的拉撒路是她的兄弟。她姊妹两个就打发人去见耶稣，说，「主阿，你所爱的人病了。」』（约十一1～3）。</p>
+<p>马大和马利亚真是拉撒路的两个好姐姐。她们不像世上许多别的姐姐哥哥们，看见弟弟妹妹们病了，只是站在他们的病前面责骂他们不该生病累着别人，或是将病人丢在家中，自己跑到外面去，逢人就议论他们那生病的弟弟妹妹怎样不加小心以致生了病，生病以后又是怎样讨厌，怎样弄得别人寝食不安，叫别人受他们的累。马大和马利亚是有爱心的姐姐。她们明白这样责骂她们的弟弟，议论她们的弟弟，是只有损害并无益处的，所以她们不这样作。她们明白她们那患病的弟弟这时所需要的不是人的责骂，更不是人的议论，乃是人的帮助。她们更明白她们自己所能作的很有限，她们的力量帮助不了这位患重病的弟弟。她们知道惟有主耶稣能作她们所不能作的。能为她们行大事，医治她们的弟弟，所以她们『就打发人去见耶稣说，「主阿，你所爱的人病了。」』</p>
+<p>一般基督徒的行为与这两位女信徒所作的相差多少呢！看见在主里面的弟兄姊妹软弱跌倒，失败犯罪，不用爱心去帮助他们，更不为他们呼求主，只是站在一旁向他们发怒，责骂他们不该跌倒犯罪，甚至跑到各处，逢人就议论批评说某某信徒怎样跌倒，某某信徒怎样犯罪。请问这种没有爱心的举动是不是主所喜悦的？更请问这种举动除去使听见的人和被批评的人都受损害以外，还有没有少许的益处？</p>
+<p>拉撒路是主所爱的人。主爱健强的拉撒路，主也爱患病的拉撒路。马大和马利亚爱主所爱的拉撒路，这不但显出她们爱弟弟的心情来，更显明她们爱主的心是真诚热烈的。照样我们知道每一个属主的人都是主所爱的，他们在健强的时候为主所爱，他们在软弱的时候也为主所爱。我们看见一个信徒软弱跌倒，便轻看他，厌弃他，批评他，议论他，这不但证明我们在弟兄姊妹们身上缺少爱心，这还证明我们爱主的心太不足。不然，我们必不至这样对待主所爱的人。</p>
+<p>马大和马利亚不但很有爱心，也是很有智慧。她们明白自己没有力量帮助这可怜患病的弟弟。她们不再想藉着自己的能力和方法医治她们所爱的弟弟。她们承认她们自己是十分软弱，毫无能力，她们深信惟有她们的主能作她们所不能的，能拯救她们的弟弟脱离这可怕的疾病。因此『她姊妹两个就打发人去见耶稣说，「主阿，你所爱的人病了。」』</p>
+<p>我们对待那些软弱跌倒的信徒不但需要爱心，也需要彻底明白我们的力量有限，需要彻底明白我们不能叫一个人懊悔回转，也不能医治一个信徒心灵上的重病，使他恢复健康。我们如果真彻底明白这件事，我们必不能不为那些软弱跌倒的信徒迫切祈祷，求主用他大能的手医治他们，挽救他们。</p>
+<p>『她姊妹两个就打发人去见耶稣，「主阿，你所爱的人病了。」』我读这一节经文心中受了极多的责备。我愧悔我从前常对那些软弱跌倒的信徒发出责骂批评的言语，却少用爱心帮助他们。我又愧悔我虽然有时也尽力要帮助这等人，劝勉他们，提醒他们，但忽略了一件最要紧的事──为他们祷告。同时我又不能不感谢神，因为他藉着这姊妹两个教导了我，使我又学习了一样重要的功课。</p>
+<p>愿主帮助我，使我每次看见有主里的弟兄姊妹软弱跌倒的时候，便立时为他祈祷说，『主阿，你所爱的人病了。』</p>
+<p>远避试诱</p>
+<p>『后来她天天和约瑟说，约瑟却不听从她，不与她同寝，也不和她在一处。』（创三十九10）。</p>
+<p>约瑟所遇见的是多么剧烈的试探。在波提乏家中作管家，掌大权，正在青年的时期尚未婚娶，主人的妻子这样引诱他。假使他和她有苟且的行为，又有谁能发觉？有谁敢干预？但这位守身如玉的青年人，竟能这样敬畏神，深明大义，不肯『作这大恶得罪神，』这是何等令人羡慕令人景仰的事！更难能可贵的，就是那淫荡无耻的妇人『天天和约瑟说，』约瑟竟能始终坚持，不为她所迷惑。这种坚固的心志，高尚的操守，真不能不令人起敬。如果约瑟是一个饱经世变，受过各种诱惑，遭过各种打击的中年人，能这样作倒也不甚希奇。但约瑟并不是这样的人，他自幼在家中得老父的钟爱，不幸被哥哥们卖到埃及，在波提乏家中为奴，因为蒙神的眷顾得作波提乏的管家，他并没有走过堕落的路，也未曾受过因犯罪所遭的打击。只是因为敬畏神，便这样拒绝试诱，作了得胜的勇士，约瑟真可作后世青年人的好模范阿。</p>
+<p>我们在这里可以看出来约瑟胜过试诱，最得力的一步就是『不听从她，不与她同寝，也不和她在一处。』约瑟真是一个明智的人。他晓得他若不远离那淫荡的主妇，早晚必要陷在她的诱惑中。所以他不但『不听从她，不与她同寝，』并且『也不和她在一处。』这样就使她没有诱惑他的机会，一方面又可以使自己不致因偶有软弱而跌倒。因为他这样作，他纔能在这种极危险的景况中得了最后的胜利。</p>
+<p>胜过试诱的第一步就是远避试诱。平日养精蓄锐，到仇敌来攻的时候，起来与他们周旋，是比较容易的事。如果连日与仇敌交战，总不得休息，补充实力，任凭你的军力怎样雄厚，也难免有力尽筋疲为敌所乘的那一日。基督徒在这个撒但掌权的罪恶世界上生活，总是不免遇见试诱的。但只要作得到，我们就当尽力远避牠们，好乘机休养准备，有一日到了不免与牠们接触的时候，再尽全力与牠们战。这样是不难得着胜利的。如果能远避试诱却不远避，倚仗自己的刚强与试诱狎玩，总有一日失于谨慎，或是发了软弱，陷在试诱中，遭遇不堪设想的大失败。许多敬虔刚强的圣徒陷在极大的罪恶中，就是因为这个缘故。这是多么可惜的事阿！</p>
+<p>尤其是男人和女人同处，只要有一方面起了恶念，施行诱惑，对方无论怎样有德行，怎样不苟且，怎样刚强，怎样拒绝，如果不赶快远离，早晚必有一天发了软弱，动了情感，失去拒绝试诱的能力，到那时明知是罪恶，是陷阱，竟好像有一种吸力吸着他（或她，）使他（或她）不能不纵身跳下去。结果往轻里说跌得头破血出，往重里说也许跌得粉身碎骨。及至遭了祸败以后，再懊悔以往的愚行，已经是大错铸成，无法挽救了。</p>
+<p>男女往来本是不能避免而且是不必避免的事，但必须光明圣洁，以道相交，以礼往来。不可存邪僻的意念，不可有放荡的言行。男人和女人往来或同处，必须特别谨慎，特别庄重，以免撒但趁你们不小心的时候施行诱惑。一方面若有甚么不谨慎的言行，如果不是出于恶意，不过是一时失于检点，对方就应当加以规劝，或加以暗示，好使那不谨慎的人以后不敢不谨慎。如果一方面真是存了甚么恶意，对方一经证实，便不可再加以敷衍，必须照约瑟对付波提乏的妻子的办法对待她（或他，）不但『不听从她，』而且『不和她在一处。』在这种情形之下，如果你因为怕得罪人，或顾全情面，或不愿意伤害彼此中间的感情，因而当断不断，迟早你必有一日陷在罪恶中，懊悔也来不及。这种事情，我们看见过不晓得多少次了。</p>
+<p>遇见这种情形的时候，如果双方不过是朋友，或是同学，或是邻居，还都比较容易离开些。只要一方面有觉悟，有决心，便可以不再多有来往。最难的就是在一处共事，而且起恶意的又是比自己地位高的人。一个主人对于异性的仆人起了恶意，一个高级职员对于低级的异性职员起了恶意。在这种情形当中，这个仆人或低级的职员就要感到困难了。迎合主人或高级职员的心呢，明知是犯罪，前途有不堪设想的危险。尽力拒绝起恶意的人呢，困难就要发生了。那存恶意的主人或高级职员见这个异性的仆人或低级职员不肯接受他（或她）的善意，（其实是恶意，）必要羞恼成怒，遇事寻隙，痛苦困难就要相继而来了。再进一步也许不知甚么时候饭碗就会被打破。在这种情形之下，许多人因为想避免困难，减少痛苦，或因为顾全地位饭碗，就不得不从权对付。在起初并没有意思失身于歹人，不过为暂时之计，不得不这样敷衍，好减少痛苦和困难，维持自己的地盘。谁想到男女中间本来有一种不可思议的吸引力，起初不过是无心的敷衍，弄到后来竟至作茧自缚，弄假成真，多少人就是这样丧了贞操，陷在罪中，酿成不堪设想的祸患。『一失足成千古恨。』天下还有比这个更痛心的事么？</p>
+<p>既知道这种危险就应当及早豫防，有些事可以从权，可以退让，这种与德行，贞操，名节，和一生的前途极有关系的事，不当有丝毫的从权和退让。受痛苦可以，感困难可以，打破了饭碗也可以。何况一个信徒，只要敬畏神，决没有饿死的道理呢。更何况因为希图避免暂时的痛苦和困难，结果常是弄出千百倍大的痛苦和困难来呢。我们所听见所看见的许多令人痛心的事实，还不足以作我们的借鉴么？</p>
+<p>神决不亏负人。看约瑟因为敬畏神拒绝恶人的诱惑，当时虽然吃了亏，遭了不白之，但神的日子一到，他便在一日之间从监狱里升到法老的朝中，作了宰相和埃及全国人的拯救者。假使约瑟当时因为慑于主母的威胁，以致委曲求全，请问神能不能这样赐福与他并且这样重用他呢？今日若有圣徒能像约瑟那样敬畏神不顾利害损益，勇敢无畏，远离恶人，抵挡罪恶，或者他也要像约瑟那样遭损失受痛苦但迟早必有一日他也要像约瑟那样蒙神拯救，蒙神赐福，蒙神使用。无论今生是不是会有这一日，基督再来的时候一定要有这一日的。</p>
+<p>岂但两性间的试诱应当这样远避呢？无论那一种试诱只要能远避的都当尽力远避。万不可自以为刚强，与试诱狎玩，以致自蹈危机，如果有甚么朋友能吸引你，使你堕落，使你远离神，你不但不要随从他，而且应当『不和他在一处，』如果有甚么娱乐能败坏你的德行，使你陷在罪中，你一次都不可在尝试。如果有甚么书报图画能使你的眼你的心沾染污秽，你一次都不可去阅读，如果有甚么地方能损害你属灵的生命，你一次都不可走到那里去。与试诱接近与试诱狎玩的人迟早必陷在试诱中，到那时懊悔自责也来不及了，那是何等可怕呢！</p>
+<p>亲爱的阅者，一句要紧的话总要记牢──战胜试诱的第一步就是远避试诱。</p>
+<p>从拔示巴所得的教训</p>
+<p>『一日，太阳平西，大卫从上起来，在王宫的平顶上游行，看见一个妇人沐浴，容貌甚美。大卫就差人打听那妇人是谁。有人说，「她是以连的女儿，赫人乌利亚的妻拔示巴。」大卫差人去将妇人接来；那时她的月经纔得洁净，她来了，大卫与她同房，她就回家去了。于是她怀了孕，打发人去告诉大卫说，「我怀了孕。」』（撒下十一2～5）。</p>
+<p>我们每逢读到大卫与拔示巴的事迹，就责备大卫不当这样与有夫之妇行淫，又用诡计杀了她的丈夫。不错，大卫诚然犯了大罪，但在这一件恶事上还有一个人不能不分担一部分责任，这个人就是拔示巴。</p>
+<p>读过上面的一段经文，我们便晓得大卫从前一点不认识拔示巴。这次大卫所以起了恶念，就是因为他看见拔示巴沐浴。一个妇人沐浴应当怎样进到严密的屋子里，不使外人看见，纔合乎理。如今拔示巴怎么竟在大卫能看得见的地方沐浴？有人在房顶上行走，又岂是拔示巴所意料不到的事？我们读圣经中好几段的记载，便晓得以色列人的房顶本是豫备人在上面停留的。律法书上有话说，『你若建造房屋，要在房上的四围安栏杆，免得有人从房上掉下来，流血的罪就归于你家。』（申二十二8）读这段律法就知道以色列人的房顶上都有栏杆，供人在上面停留。经上告诉我们说塞缪尔膏扫罗为王以前曾与他在房顶上说话。（撒上九25）经上又告诉我们以色列人守住棚节的时候也在房顶上搭棚住宿。（尼八16、17）主耶稣警告门徒说，当灾难的日子，『在房上的，不要下来拿家里的东西。』（太二十四17）使徒行传上记载彼得『上房顶去祷告。』（徒十9）大卫既然在房顶上能看见拔示巴沐浴那么拔示巴沐浴若不是在院子里，也必是开着窗敞着门了。拔示巴这样作是不是有甚么恶意，我们虽不敢说，但我们至少可以责备她不应当这样放肆，在外人能看得见的地方沐浴，以致引出这一件可憎的事来，自己丧了贞操，又累得丈夫丧命疆场。</p>
+<p>自然我不是为大卫开脱。大卫诚然犯了罪。如果他真彀好的，纵使看见十个妇人沐浴也可以不跌倒。不过我们不要忘记大卫究竟是人。他有人的身体，人的欲望，人的情感。许多人毫不留情的罪责大卫，其实若将他放在大卫的地位，或者他跌倒得比大卫更重几倍也说不定。站在一旁说现成的话容易，实地去经验一件事，去对付一样试探，牠的难易与说话比较起来，真不可以道里计了。我不是要藉着责备拔示巴而减轻大卫的罪名。我是说公道话。大卫固然应当重重的受责备，但拔示巴也不可轻轻的放过。假使拔示巴是一个很庄重谨饬的妇人，到严密的屋子里去沐浴，不给外人看见的机会，无论如何，也决不会发生这件丑恶悲惨的事实。</p>
+<p>或有人说，拔示巴必定是一个浪漫不贞洁的女子。这不是单单根据她在外人容易看见的地方沐浴的这件事实。看大卫接她到宫中，与她行淫，她并未曾拒绝，而且在怀孕以后，还打发人送信给大卫，说她怀了孕。由这些事可以证明她决不是一个贞洁可敬的女子。我们读历史常看见节烈的女子怎样抵抗强暴人的侮辱甚至于丧命在暴徒的手下，不肯失身于恶人。大卫虽然软弱跌倒，但决不至用强暴压迫一个弱女子。如果拔示巴以大义责备大卫，叫他想到淫乱的罪是耶和华所憎恶的，告诉他说与有夫之妇行淫的当被治死，何况他是一国的王，怎可作这大恶得罪神。大卫未必不深深悔悟，引咎自责。读这段经文足可以看出拔示巴对大卫的诱惑并没有拒绝。也许她还自庆能与王结识，及至怀了孕还送信给大卫。看这前后的情形，拔示巴的品行如何，不是已经昭然若揭了么？</p>
+<p>上面的这种说法我不敢绝对否认，但我们也不能因此断定拔示巴一定是一个浪漫不贞的女子。前面我们说过，大卫究竟是人，他有人的身体，人的欲望，人的情感，所以他遇见试探以致跌倒，并不是希奇的事。大卫是以色列的王，是饱经世变的人，是神所重用的人，尚且这样因为受试探以致跌倒。拔示巴受试探跌倒，还可以深责么？拔示巴或者是一个端正的女子，不过当大卫接她到王宫去的时候，她不能胜过这么大的试诱，以致发生了软弱，随从了大卫。我们可以设想一个平常的女子能得一个国王的青睐，这是何等不容易遇见的事。若不是极有把握有操守的女子，谁能不发软弱以致跌倒呢？况且拔示巴的丈夫从军在外，留这个青年的妻子独守空闺，乌利亚又是一个尽忠国事不恋家庭的勇士。拔示巴处在这种地位，又遇见这样的试诱，我们真不忍得过于责备她。但追本溯源来说，这种试诱还是她自己寻出来的。假使她不在外人看得见的地方沐浴，以致被大卫看见，还能遇见这种试诱么？我不责备拔示巴在遇见试诱的时候不能得胜，我责备拔示巴不当这样不谨慎，在外人看得见的地方沐浴，以致为自己造出这种受试诱跌倒的机会来。</p>
+<p>在这黑暗邪恶的世界中，我们常看见残忍昧良的男人诱惑女子，陷害女子。我们责备这些男人狠心，我们严严的定他们的罪。同时我们却放过了许多引诱男人犯罪的女子。许多女子（尤其是现代时髦的女子）间接或直接的作出许多诱惑男子的事来，及至男子因受她们的诱惑作出不法的行为来以后，众人都向他们施行攻击，那引诱男子犯罪的女子反被人轻轻放过，这岂不是不公平么？</p>
+<p>拔示巴因为在外人看得见的地方沐浴，就作了大卫犯罪的导火线。现在的新式女子虽然未曾在外人看得见的地方沐浴，可是她们诱惑男子犯罪的力量也许还超过拔示巴。近年来最刺我们眼睛的一件事，就是许多青年的新式女子尽量的将她们的身体赤露出来。衣服的袖子始而短到肘部，继而袖子只剩几寸长，还有的将袖子完全去掉，将两只膀臂完全露出来。下面呢，穿着短裤和极短的袜子，将腿赤露出来。有的人这样还嫌不足，爽快将短袜子也脱掉不穿，有的人连鞋也不要穿，只寻几条窄皮子，横着竖着钉在一双鞋底上，好将脚也露出来。请问这种装束到底有甚么意思？是为夏天凉爽么？那么她们前几年没有改这种服装的时候，热病了多少次呢？她们的父亲弟兄丈夫还都穿着长袖的衣服，长腿的裤子，长统的袜子，很厚的皮鞋，她们怎么不竭力劝他们也都赤露着胳臂腿和脚呢？难道只有女子怕热么？况且凉热就在这两只袖子一双袜子上么？凭良心说，赤臂赤腿的女子真是为怕热纔这样装束的究竟有多少呢？</p>
+<p>还有一种妇女的服装瘦得不能再瘦，将身上的肌肉都显露出来。这种装束稍知自重的人看着都觉汗颜。在穿的人既不舒服，又不合卫生的原则。大约穿这种衣服的好处除去可以节省一点作衣服的材料以外，就是可以多引男人注意了。</p>
+<p>自然我们不能说一切赤臂赤腿赤脚或是穿极瘦衣服的女子都是存心诱惑男子。（有不少真是这样存心的。）有些女子并没有这种卑鄙的意念，不过她们看见别的女子这样装束显着入时，显着好看，于是她们也起来仿效就是了。无论她们是不是有这种卑鄙的意念，在事实方面这种服装对男子确是具有极大的诱惑力，这是一件不能隐讳的事实。伤风败德的行为日见增多，淫乱苟且的罪恶迭出不已，与女子的服装问题不是全无关系的阿。</p>
+<p>除去衣履以外，现代的女子还有许多妖冶的装饰也是我们不可忽视的。就如把天然生成的直发用人工烫曲了，将眉毛拔得很细，再描得很长，将嘴唇染红，面部涂上一些白粉，手指甲也染上一些很不自然的颜色，脚下穿着一双二三寸高的高跟皮鞋，把神给人的自然美摧毁得干干净净。费金钱，费时光，费心思，事业，毁伤身体，还因此造出许多罪恶来。</p>
+<p>不信的人的生活真没有法子说了。我也不罪责她们。她们既然没有神，没有指望，抱着享乐的主义度生活，还顾甚么德行不德行，罪恶不罪恶。我所不能不说的，就是许多信主的人为甚么也随从属世界的人那样走放荡纵欲的道路？我不希奇电影院跳舞场里坐着许多这种服饰妖冶的女子。我希奇礼拜堂中怎么也坐着许多这种服饰妖冶的女子？我更希奇怎么讲道的人看见这种情形竟会噤若寒蝉，总不说一句话规劝这些女子一下？我尤其感觉希奇的就是有的礼拜堂中怎么还将这种服饰妖冶的女子摆到讲台上去，叫她们组织唱诗班，歌咏队？教会世俗化到这种地步，真令人欲哭无泪了！</p>
+<p>属基督的姊妹们，你们应当从她们中间出来，与她们分别。不但在一切的言语行为上与世界上的人分别，就是在服饰衣履上也要与她们分别。我们宁可被人讥为落伍，不要被人誉为时髦。为荣耀神，你们应当这样。为免得使别人因你们犯罪，你们也应当这样。为保守你们自己脱离许多危险和陷阱，你们更应当这样。</p>
+<p>前车之覆，后车之鉴。愿神使我们总不忘记从拔示巴所得的教训！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

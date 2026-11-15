@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个明智的女子-听从老年人呢？听从少年人呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个明智的女子-听从老年人呢？听从少年人呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/1看这些人（上）/13一个明智的女子-听从老年人呢？听从少年人呢？.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『以法莲山地的拉玛琐非有一个以法莲人，名叫以利加拿，是苏弗的元孙，托户的曾孙，以利户的孙子，耶罗罕的儿子。他有两个妻，一名哈拿，一名毘尼拿；毘尼拿有儿女，哈拿没有儿女。这人每年从本城上到示罗，敬拜祭祀万军的耶和华。在那里有以利的两个儿子，何弗尼，非尼哈，当耶和华的祭司。以利加拿每逢献祭的日子，将祭肉分给他的妻毘尼拿，和毘尼拿所生的儿女，给哈拿的却是双分，因为他爱哈拿，无奈耶和华不使哈拿生育。毘尼拿见耶和华不使哈拿生育，就作她的对头，大大激动她，要使她生气。每年上到耶和华殿的时候，以利加拿都以双分给哈拿。毘尼拿仍是激动她，以致她哭泣不吃饭。她丈夫以利加拿对她说，「哈拿阿！你为何哭泣不吃饭，心里愁闷呢？有我不比十个儿子还好么？」他们在示罗吃喝完了，哈拿就站起来。祭司以利在耶和华殿的门框旁边，坐在自己的位上。哈拿心里愁苦，就痛痛哭泣，祈祷耶和华，许愿说，「万军的耶和华阿，你若垂顾婢女的苦情，眷念不忘婢女，赐我一个儿子，我必使他终身归与耶和华，不用剃头刀剃他的头。」……次日清早，他们起来，在耶和华面前敬拜，就回拉玛。到了家里，以利加拿和妻哈拿同房；耶和华顾念哈拿，哈拿就怀孕，日期满足，生了一个儿子，给他起名叫塞缪尔，说，「这是我从耶和华那里求来的。」』（撒上一1～20）。</p>
+<p>『哈拿祷告说，「我的心因耶和华快乐；我的角因耶和华高举；我的口向仇敌张开；我因耶和华的救恩欢欣。只有耶和华为圣；除他以外，没有可比的，也没有盘石像我们的神。」』（撒上二1、2）。</p>
+<p>哈拿真作了一件聪明的事。她受了毘尼拿的欺侮，并不起来反抗，也不与毘尼拿争吵。她虽然也不免像一般女子那样，受了委屈便『哭泣不吃饭，』但她不止于这样作。她知道单单哭泣与事实并没有甚么补益，她想起来一个最好的方法──『祈祷耶和华。』这个方法确实灵验。『耶和华顾念哈拿，哈拿就怀孕，日期满足，生了一个儿子，给他起名叫塞缪尔，说，「这是我从耶和华那里求来的。」』在她得了这个儿子以后，她心里十分快乐，以致她能祷告说，『我的心因耶和华快乐；我的角因耶和华高举；我的口向仇敌张开；我因耶和华的救恩欢欣。』他那一篇富有灵感的祷文和赞美的话，可以与主耶稣的母亲马利亚在伊莱沙伯家中所歌咏的那一篇诗先后媲美，她的美名也与马利亚的美名遥相辉映。不但如此，她所生的这个儿子也成了神所重用的一位大先知，为神作了极大的工作。她后半生所得的快乐和幸福，圣经里虽然没有记载，我们总可以揣想到一些。同时她的德行和美名直到今日还为千万敬畏神的人所景仰所企慕。『当将你的事交托耶和华，并倚靠他，他就必成全。他要使你的公义如光发出，使你的公平明如正午。』（诗三十七5、6）读了哈拿的事迹，更证明这段应许是千真万确的了。</p>
+<p>如果哈拿像普通的女子那样，遭遇了别人的欺侮便起来反抗，每日与毘尼拿争吵作对，她必定每日度着痛苦可怜的生活。她辱骂毘尼拿，毘尼拿再反过来辱骂她。始而口角，继而殴，最后打得头破血流。一个气得半死，一个受伤卧。以利加拿也弄得左右为难，事情作也作不成，终日短叹长吁，愁城作困。毘尼拿的儿女自然袒护他们的母亲，起来与哈拿为难。哈拿这时候两拳难敌四手，受了大人的欺侮，再受小孩子的攻击，怨愤难伸，不是变成一个疯狂的妇人，便是厌世自杀。这种结果是多么可怜呢！</p>
+<p>哈拿的事不是给了我们一样最宝贵的教训么？无论在甚么地方，遭遇甚么人的欺凌，侮辱，苦待，攻击，总不要自己反抗，只要安静进到神的面前，像哈拿那样『祈祷耶和华。』在我们受人欺侮的时候也许不免要像哈拿那样『哭泣不吃饭。』神并不因为我们哭泣责备我们。他知道我们的软弱。但仅仅哭泣并没有甚么用处，如果我们到他面前去哭泣，并且把我们的苦衷告诉他，呼求他的救助，他不但要对我们表同情，而且要擦干我们的眼泪，使我们的哭泣变成喜笑。但如果我们受了别人的欺侮，不甘心忍受，起来反抗，我们只能把事情越弄越坏，除了使别人受许多损害，使神的名受许多羞辱以外，自己还要受更多的痛苦。</p>
+<p>我们再思想哈拿的事情，便发现她所以有后来的快乐，正是因为她受了毘尼拿的欺侮。如果她不受毘尼拿的欺侮，她就决不会亲近神，呼求神，更决不会得着以后的这种快乐和福祉。毘尼拿本来的意思是要苦待哈拿，结果哈拿竟因着毘尼拿的欺侮得了无限的福气。毘尼拿后来看见哈拿因祸得福未必不悔恨自己弄巧成拙，想要害人，反倒使人得了福。是的，许多信徒也就是这样因着受人的欺侮窘迫，纔进到神的面前，亲近神，呼吁神，因此得了他们素日所得不着的福分。神也就是这样常常藉着恶人的欺侮，窘迫，攻击，苦待，催逼他的孩子们亲近他，从他那里领受许多的恩惠，是他们平日无从领受而且不想去领受的。神的作为真是奇妙，他待他的孩子们真好。『万事都互相力，叫爱神的人得益处，』这句话是千真万确的。</p>
+<p>如果我们清楚看明白了别人对我们所施的欺侮攻击，正是催逼我们到神面前去多得福分，我们不但不再想去反抗那些苦待我们的人，而且要特别感谢他们，对他们说，约瑟对他的哥哥们所说的话──『从前你们的意思是要害我，但神的意思原是好的。』（创五十20）我们也要与写诗的人一同说，『神阿，你曾试验我们，熬炼我们，如熬炼银子一样。你使我们进入网罗，把重担放在我们的身上。你使人坐车轧我们的车；我们经过水火，你却使我们到丰富之地。我要用燔祭进你的殿，向你还我的愿，就是在急难时我嘴唇所发的，口中所许的。我要把肥牛作燔祭，将公羊的香祭献给你，又把公牛和山羊献上。』（诗六十六10～17）</p>
+<p>听从老年人呢？听从少年人呢？</p>
+<p>『罗波安往示剑去因为以色列人都到了示剑，要立他作王。尼八的儿子耶罗波安先前躲避所罗门王逃往埃及，住在那里，（他听见这事，）以色列人打发人去请他来，他就和以色列会众都来见罗波安，对他说，「你父亲使我们负重轭，作苦工，现在求你使我们作的苦工负的重轭轻松些，我们就事奉你。」罗波安对他们说，「你们暂且去，第三日再来见我。」民就去了。</p>
+<p>『罗波安的父亲所罗门在世的日子，有侍立在他面前的老年人，罗波安和他们商议说，「你们给我出个甚么主意，我好回复这民。」老年人对他说，「现在王若服事这民如仆人，用好话回答他们，他们就永远作王的仆人。」王却不用老年人给他出的主意，就和那些与他一同长大在他面前侍立的少年人商议说，「这民对我说，你父亲使我们负重轭，求你使我们轻松些。你们给我出个甚么主意，我好回复他们。」那同他长大的少年人说，「这民对王说，你父亲使我们负重轭，求你使我们轻松些。王要对他们如此说，我的小拇指头比我父亲的腰还粗。我父亲使你们负重轭，我必使你们负更重的轭；我父亲用鞭子责打你们，我要用蝎子鞭责打你们。」</p>
+<p>『耶罗波安和众百姓遵着罗波安王所说你们第三日再来见我的那话，第三日他们果然来了。王用严厉的话回答百姓，不用老年人给他出的主意，照着少年人所出的主意对民说，「我父亲使你们负重轭，我必使你们负更重的轭；我父亲用鞭子责打你们，我要用蝎子鞭责打你们。」王不肯依从百姓；这事乃出于耶和华，为要应验他藉示罗人亚希雅对尼八的儿子耶罗波安所说的话。</p>
+<p>『以色列众民见王不依从他们，就对王说，「我们与大卫有甚么分儿呢？与耶西的儿子并没有关涉。以色列人哪，各回各家去罢；大卫家阿，自己顾自己罢。」于是以色列人都回自己家里去了。惟独住犹大城邑的以色列人，罗波安仍作他们的王。罗坡安差遣掌管服苦的人的亚多兰往以色列人那里去，以色列人就用石头打死他。罗波安王急忙上车，逃回耶路撒冷去了。这样，以色列人背叛大卫家，直到今日。以色列众人听见耶罗波安回来了，就打发人去，请他到会众面前，立他作以色列众人的王。除了犹大支派以外，没有顺从大卫家的。』（王上十二1～20）。</p>
+<p>罗波安失国的事给了我们一个极好的教训，使我们明白一个人遇见事情不肯听从老年人的指教，却听从少年人所出的主意，结果要遭遇何等大的失败。当罗波安听了民众的请求以后，他明明知道这个重大的问题需要老年人帮助他解决，所以在百姓走了以后，他便同他父亲的老臣商议应该如何办理。那些老年人从他们多年为政的经验里明白了，作王的人要得百姓的爱戴，必须先爱护百姓；王爱百姓，百姓自然爱王，这样他的王位纔可以持久。因此他们回答罗波安说，『现在王若服事这民如仆人，用好话回答他们，他们就永远作王的仆人。』谁料到这位少不更事的罗波安王觉得这样去作会使他大受损失，因此将这些老年人所说的金玉良言当作过耳旁风，不愿采纳，反去讯问那些『与他一同长大在他面前侍立的少年人。』这些少年人一点没有阅历和经验。他们不知道为政的困难，更不知道民众的力量。他们以为罗波安既是王，便有无限的权柄，无论吩咐百姓甚么话，他们只有绝对的顺服。因此他们告诉罗波安不但不要允许百姓的请求，而且还要更加严苛的对待他们。他们劝王对百姓说，『我的小拇指头比我父亲的腰还粗。我父亲使你们负重轭，我必使你们负更重的轭；我父亲用鞭子责打你们，我要用蝎子鞭责打你们。』罗波安本来就不愿意接受百姓的请求，因为如果接受了他们的请求，他的收入要减少，他也不能再建筑更华丽的宫殿。那些老年人所出的主意因为与他的私意不合，所以他不肯接纳。现在他听见这些少年人所说的话，正中他的心怀，便高高兴兴的听从了他们的建议，当百姓第三日再来见他的时候，便用严厉的话回答他们。他决没有料到就因为他这几句话竟失去了十二个支派中的十个支派。这件事的成就固然是因为神要实现他对所罗门所宣布的咒诅，但罗波安听从少年人的话，纔促成了这事的实现。</p>
+<p>从古至今，东方和西方，老年人的见解和少年人的看法总是这样有着极大的分别。青年人头脑里所装的都是一些理想，这些理想一大半都是不切合实际，永远不会成为事实的。他们却以为所有的理想都能毫无阻碍的成为事实。他们不知道人心的变化难测，不知道世途的艰险崎岖，不知道自己的软弱愚昧。他们以为一个人从外面看着怎样，他里面就是那样。他们以为世途都是康庄大道，他们愿意往那里走都不会有阻碍，而且准能达到目的。他们以为自己已经明白了世界上所有的事物，而且能彀作成一切他们愿意作的事。特别是那些富贵人家的子弟，从小的时候就没有受过困苦，没有经过艰难，这种青年人对于世界中的事物简直是一窍不通，同时他们却觉得自己是无人敢惹的天之骄子。以这种狂妄无知的人，要去应付世界上的事，焉能不到处撞得头破血出。如果有人向这种人求问主意，岂不是自取祸败。愚昧的罗波安王就因为采纳这种青年人的建议，纔弄得受辱失国，后悔无及。</p>
+<p>老年人的见解便完全不是这样了。虽然他们在青年的时代也曾存过幻想，也曾作过大梦，但他们多年所遭的失败，所碰的钉子，所受的打击，已经使他们明白了许多他们青年的时代所不明白的事。他们明白了人心的险诈变化，远过于世界上的任何事物。他们明白了经行这艰难的世途实在比攀登高山更难。他们明白了他们所希望所期待的事有许多永远不能实现，而且还有许多到了时候竟是与他们的希望和期待完全相反。他们明白了自己所知道的事简直是沧海中的一粟，自己的能力微小得可怜。他们明白了理想与事实相差得太多。从他们失败的经验里，他们学会了在作事以前要慎重考虑左思右想，在作事的时候要战兢惕惧，小心翼翼。他们现在已经晓得无论作甚么事都有相当的难处，也晓得无论甚么人都不可轻易侮辱。他们知道了在最安全的境遇里常蕴蓄着最大的危险，也知道了他们最看不起的人能成为他们最强的劲敌。因为他们有了这些宝贵的经验和知识，所以他们再不敢像青年的时代那样轻易发言，轻易举足，更不敢像青年的时代那样逞强，那样自信。他们无论遇见甚么事，总是反复斟酌，再三考虑。与人同处的时候常是遇事退让，甚至忍辱受屈。在少年人看来，这般老朽不堪的人物简直是奄奄一息毫无生气；他们没有进取的心志，没有冒险的精神；他们的头脑鲁钝，行动迟缓；他们太胆怯懦弱，畏首畏尾。青年人看这般老年人不但是毫无用处，而且是少年人前进的绊脚石，成功的阻碍物。他们恨不能把这般老年人一起铲除。他们却不晓得这般饱尝世故阅历极深的老年人不但是少年人的导师，而且是世界上成就任何种事工绝对不可缺少的重要人才。如果没有他们在那里监督指导着一般少年人，拦阻提携着一般少年人，却容许那些少年人遇见事情卤莽灭裂，横冲直撞，真说不上要惹多少祸害，出多少是非呢！</p>
+<p>既明白了这种情形，我们遇见难解决的问题，不容易办理的事，就当谦卑虚心，到老年人面前去请教。虽然他们的指导与我们本来的意思不合，也当详细比较一下。如果他们的见解确是超过我们的见解，便应当依从他们的指导。切不可因为老年人的见解与我们的私见不合，便抛弃不顾，再去请求少年人的指导，或者固执己见，一意孤行。『不听老人言，祸患在眼前。』这两句话真是青年人的药石针砭。</p>
+<p>少年人不肯接受老年人的指导还有一个重要的原因，就是老年人看事看得远，少年人看事看得近。有许多事在当时可以得着利益，可是几个月几年以后竟会变成极大的损害。在当时可以使你心满意足，但是过些日子竟会使你懊悔无及。还有许多事当时需要受些损失，但这少许的损失却能帮助你逃避极大的危害。当时需要忍辱受屈，但不久你会晓得这少许的屈辱竟成了你以后无限的利益。少年人的阅历浅，眼光近，只看见面前的一点利害荣辱，完全不问后来的结果如何。老年人却不这样了。他们因为看得远，所以他们事事顾到将来，顾到远处。他们宁可在现今遭遇些损失，忍受些羞辱，决不肯惹出将来无穷的祸害。当罗波安同那些老年人商议的时候，那些老年人因为饱经世故的缘故，明白了『民可近，不可下，』的真理。他们知道如果罗波安不允许百姓的请求，将来他们便难免与他离心离德，以致演出祸变来。那些少年人所看见的就是当时的颜面利益。他们想如果王听从了百姓的请求，未免太显着难堪。况且这样一来，王的府库中便立时减少许多金银，王的宫殿也不能再加扩充。王既然有无限的权柄，为甚么甘心受这些损失呢？那些老年人是为罗波安打算，那些少年人也是为罗波安打算。只因为他们的注意点不同，所以他们为王所出的主意便大相悬殊了。可叹这个昏瞶无知的罗波安虽然明知道老年人的主意最好，因此遇见这件事便先去向他们请教，但因为他们所出的主意与他自己的私见不合。所以他竟抛弃不顾，再去和那些与他心意相投的少年人商议。果然他们的见解与他完全一致，于是他便决心用强硬的手段对付百姓了。知道老年人的指导高明可靠，但至终仍是随着自己的见解去作事，又焉能不遭遇祸败呢？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

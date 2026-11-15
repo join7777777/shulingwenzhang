@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>守信的摩西-竟找不出十个义人来 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>守信的摩西-竟找不出十个义人来</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/9守信的摩西-竟找不出十个义人来.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『约瑟对他的弟兄们说，「我要死了；但神必定看顾你们，领你们从这地上去，到他起誓所应许给亚伯拉罕，艾萨克，雅各布布之地。」约瑟叫以色列的子孙起誓说，「神必定看顾你们，你们要把我的骸骨从这里搬上去。」约瑟死了，正一百一十岁。人用香料将他熏了，把他收殓在棺材里，停在埃及。』（创五十24～26）。</p>
+<p>『磨西把约瑟的骸骨一同带去。因为约瑟曾叫以色列人严严的起誓，对他们说，「神必眷顾你们；你们要把我的骸骨从这里一同带上去。」』（出十三19）。</p>
+<p>当约瑟留遗言嘱咐以色列的子孙，将他的骸骨带回故土去的时候，他和他父亲的全家在埃及国都有权有势，在那种景况中运柩回迦南地并没有任何困难。但到了摩西领以色列人出埃及的时候，一切便完全两样了。以色列人在埃及作苦工已经多年。摩西为领以色列人出埃及的事，与法老和他的百姓又发生了许多纠纷。当埃及人的长子和一切头生的牲畜都遭杀戮的次日，『埃及人催促百姓，打发他们快快出离那地，因为埃及人说，「我们都要死了。」百姓就拿着没有酵的生面，把搏面盆包在衣服中，扛在肩头上。』（出十二33、34）『他们用埃及带出来的生面烤成无酵的饼，这生面原没有发起，因为他们被催逼离开埃及，不能延，也没有为自己豫备甚么食物。』（出十二39）他们出来的时候，是那样急迫，那样仓卒，连豫备食物的时间都没有。在这种情形之下，摩西竟不怕麻烦，『把约瑟的骸骨一同带去。』这使我们看见摩西是怎样守信，是怎样不辜负约瑟的嘱托。更难能可贵的是摩西不但没有见过他这位远祖约瑟，而且相隔已经约二百年之久。若是一个普通的人，大约早已把这件事放在脑后，不再置念。但摩西却紧紧记牢这位远祖的遗命，虽然出埃及的时候统带着百万以上的男妇老幼，情形是那样紧张，时间是那样急迫，他却带着这具停放了二百多年的骸骨，离开埃及，把牠带回他的远祖所住的迦南地去。对死去的人守信不渝是难事。对死去二百多年的人守信不渝是更难的事。在顾活人都不容易顾到的时候，还肯顾到死人，是最难的事。但摩西因为履行他的祖先对约瑟所应许的话，竟在这种时候，这种景况之下，作了这件最难的事。这给我们留了多么宝贵的教训，多么良好的模范。圣经中记载了这件事，不只是为使我们知道这件事实，更要紧的是使我们效法这种良好的模范，使我们学习守信不渝，不只对活人守信，就是对死人也守信，不只对近日的约言严谨履行，就是对多日多年以前的约言也要严谨履行。</p>
+<p>背约失信在世上是极普遍的事。人们不但不以背约失信为卑鄙可耻，而且以背约失信为家常便饭。应许了别人以后到时候竟不履行。接受了别人的托付竟不办好别人所托付的事。借别人的财物允许到某日偿还，到了那日子竟不偿还。与别人定规某日某时会面，到时候竟爽约不来。父母应许了子女，到时候背约失信；子女应许了父母，到时候也背约失信。丈夫对妻子没有信用，妻子对丈夫也没有信用。主人对仆人说了话不算数，仆人对主人说了话也不算数。商人对顾客食言，顾客对商人也食言。兄弟姊妹，亲戚邻舍，上司属员，同学同事，谁对谁也不守信，不践约。不用提对死去的人不守信，就是对活着的人也不守信。不用提远年的誓约不肯履行，就是几日以前的誓约也不履行。人们因为彼此中间都没有信用，恐怕说了话到时候不算数，所以写下字据。『恐口无凭，立字为据。』可是字据仍然没有用处。许多人向亲友借贷，虽然立了字据，到日子却仍是拖延不还。许多人在结婚的时候虽然写了婚书，可是过了几年，还是变了心，另爱上别的异性，遗弃了自己的配偶。许多房主出赁房屋的时候与租户立了合同，写明几年期满，房主有权收回房屋，但满期以后租户竟蛮横无理强住不迁。许多人为亲友担保，具下保结，但到了所保的人发生了事故的时候，担保的人竟不负责任，设词规避。我们每逢提到那些野心的政治家，狡猾的外交家，背信食言，撕毁条约，便眦裂发指，谴责咒骂，却不看看自己的行为与他们又有甚么两样。一个人在小事上这样背约失信，到了大事临头的时候又如何能践约守信。为获得少许的利益，逃避轻微的损失，尚且这样背约失信，一旦遇见极大的利害摆在前面，请想他能不求利益，不避祸害，只求守信践约么？</p>
+<p>不信的人不用提了，许多基督徒不也是一样的背约失信么？为求自己的利益背约失信，为卸脱责任背约失信，为逃避损失背约失信。还有许多人养成了一种恶劣的习惯，随随便便的应许别人，在应许别人的时候，并没有想到这件事可作不可作，能作不能作，自己愿意作不愿意作。及至应许了以后，发觉这件事不可作，或是不能作，或是自己不愿意作，便轻轻的把自己的应许往背后一丢。别人不追问，自己就总不再提起；如果别人追问起来，不是假说忘记了，便是设词搪塞，说谎敷衍。别人受了损害，自己丧了信用，他们却一点不觉得这是甚么要紧的事。在一百个基督徒中若想寻找守信践约，无论受多少劳苦，遭多少损失，决不背约食言的人，恐怕连三五个都找不到。魔鬼本来是说谎的，也是说谎的人的父，属他的人都失信背约，自然不足为奇。神是信实的，神的孩子们中间却极少有守信践约的人，这是多么使神伤心失望的事呢！我们当看失信背约是基督徒极大的羞辱，也是一种极大的罪。因为这种行为不但损害人，而且损害神，不但使自己在人前失去信用，也使神的名在人前受了羞辱。因着我们失信背约使神所受的羞辱，使别人所受的损害，有时一点不在欺骗，偷窃，抢夺，杀人种种的罪以下。我们岂可再看这是小事呢？</p>
+<p>我们知道欺骗，偷窃，抢夺，杀人，是损害人的事，可是我们有没有想过，对人失信背约，使人受到甚么损失呢？应许人甚么事，到时候竟不履行，这与欺骗有甚么分别？接受了人的托付，竟不把人所托付的事办好，这要使人受多重的损害。借了别人的财物，到时候竟不偿还，这与抢夺有甚么不同？因着我们失信背约，使别人在心灵，生活，事业，金钱，家庭，健康，名誉，前途，各方面受了损失，这与杀人又有甚么两样？在你有缺乏需要的时候，别人把财物借给你，这是多大的恩情？到了应当偿还的时候，你应当加多偿还纔是正理。如今你不但不这样作，反倒背约不还，这是多么残酷忘恩的行为？当别人托付你甚么事的时候，如果你不能作，或不愿意作，当时就推却了，那样他可以另求别人，或是另想别的方法把事情办成。因为你接受了他的托付，他便信赖你，等候你。谁想到了时候你竟失信没有为他办好，请问这要使他受多大的损失？你应许同别人在甚么时候会面谈话，他那时放下他自己的事务，或是跑了很远的路途，也许牺牲了相当的收入，来赴和你所定的约。可是到了时候你竟失信不来，请问这种行为如何对得起人？再请问如果一个基督徒常常这样失信背约，使人对于他所事奉的神和他所信靠的主抱甚么态度？下甚么评语？你只要坐下细细想这些问题和牠们的答案，你便知道失信背约的罪一点不比欺骗，偷窃，抢夺，杀人的罪更小。</p>
+<p>失信背约的人自己所遭遇的结果是甚么呢？亲戚，朋友，邻舍，同事，没有人再信他所说的话，没有人再托付他甚么事，没有人再借贷给他，没有人再敢为他作保，没有人再敢和他共财共事。一提到他，别人便说，『哼！那个人说了话不算话。那个人一点不可靠。那个人翻云覆雨。那个人食言而肥。你们有事千万不要托付他去办。如果你们不准备把财物送给他，你们就不要借给他用。你们听他说话，最多只可信四五成。和他定约会。晚到一两个小时都不算迟，因为他向来不守时刻。你们若不愿意受连累，吃官司，就千万不要给他担保。』一个人如果在熟识他的人中间得着这样的一种评语，这个人还有甚么价值？可是失信背约的人都逃不了这种评语。真是希奇！这种可怕可耻的事竟没有几个人恨恶牠，逃避牠！更希奇的就是许多人以为这就是作人的正轨，处世的常道。不但不信的人是这样，连许多基督徒也是如此，这真令人欲哭无泪了！</p>
+<p>为神的荣耀，我们应当守信践约。为别人的利益，我们应当守信践约。为我们自己的好处，我们也应当守信践约。我们守信践约纔是神的好孩子，纔是主耶稣的好门徒，纔能蒙神的夸奖，得神所赐的福祉纔能在世界上为主耶稣作发光的见证。今后我们应当十分谨慎，不要轻易允诺别人的请求，不要轻易应许别人甚么事。要详细考虑然后再应许人。应许了以后，就当尽心竭力履行所应许的。如果我们的应许是不合真理的，就当急速向对方声明，请他宽恕，然后撤回所应许的。如果不是不合真理的，那样，无论遭甚么损失，受多少劳苦，感多大困难，都必须履行自己所应许的。借贷别人的财物到时候必须偿还。（最好是不借贷。）允诺为别人作甚么事，就当早早的为人作好。结了婚以后若不是因为配偶与人行淫，就决不能提到离婚。租别人的房屋，到交房租的日子决不拖延，到合同满期的时候，应当照合同所载的办理。为人作了保，就担负保人应当担负的全责，决不推诿规避。与人共事共财，无论成败盈亏，决不反汗食言，起初同人怎样约定，就怎样办理。与人定规甚么时候会面，到时候必定前往。办公，赴会，聚餐，都应当严守时间。写了字据固然应当完全履行。就是不写字据，只要自己亲口应许，就应当像字据一样有效。对方在世的日子，我们固然要履行我们自己的应许，就是对方去了世，我们仍然应当履行我们的应许。近日的誓约固然应当实践，就是远年的誓约，我们也应当同样的实践。容易办理的事固然应当履约，就是极不容易办理的事，只要有约在前，我们还是应当排除万难，去实践我们所应许的。不但神是这样信实的神，就是那敬畏神的摩西，也给我们留下了这种守信的模范。</p>
+<p>竟找不出十个义人来！</p>
+<p>『二人转身离开那里向所多玛去，但亚伯拉罕仍旧站在耶和华面前。亚伯拉罕近前来，说，「无论善恶，你都要剿灭么？假若那城里有五十个义人，你还剿灭那地方么？不为城里这五十个义人饶恕其中的人么？将义人与恶人同杀，将义人与恶人一样看待，这断不是你所行的。审判全地的主岂不行公义么？」耶和华说，「我若在所多玛城里见有五十个义人，我就为他们的缘故，饶恕那地方的众人。」亚伯拉罕说，「我虽然是灰尘，还敢对主说话。假若这五十个义人短了五个，你就因为短了五个毁灭全城么？」他说，「我在那里若见有四十五个，也不毁灭那城。」亚伯拉罕又对他说，「假若在那里见有四十个，怎么样呢？」他说，「为这四十个的缘故，我也不作这事。」亚伯拉罕说，「求主不要动怒，容我说，假若在那里见有三十个，怎么样呢？」他说，「我在那里若见有三十个，我也不作这事，」亚伯拉罕说，「我还敢对主说话，假若在那里见有二十个，怎么样呢？」他说，「为这二十个的缘故，我也不毁灭那城。」亚伯拉罕说，「求主不要动怒，我再说这一次，假若在那里见有十个呢？」他说，「为这十个的缘故，我也不毁灭那城。」』（创十八22～32）。</p>
+<p>『罗得到了琐珥，日头已经出来了。当时耶和华将硫磺与火，从天上耶和华那里，降与所多玛和蛾摩拉，把那些城，和全平原，并城里所有的居民，连地上生长的，都毁灭了。』（创十九23～25）。</p>
+<p>从亚伯拉罕为所多玛城求情这件事，我们可以看见神的宽容忍耐是何等的广大。『所多玛人在耶和华面前罪大恶极，』神已经决定要降火毁灭他们，但他仍肯俯听亚伯拉罕的呼求，如果城中只有五十个义人，他还肯赦免全城人的罪恶，存留他们的性命。当亚伯拉罕第一次呼求的时候，他一定认为因为五十个义人便赦免全城，是一件太奢的要求。可是他清楚知道城中的义人太少，所以他不敢提出一百的整数，却提出一半来。他那时必认为这是小到极点的数目，他不敢希望神能允诺他的祈求。及至神允许了他的祈求以后，他纔感觉到事实上并没有这么些义人，于是便把方纔所提出来的数目减到九折，向神提出四十五这个数目来。不料四十五个也蒙了神的允诺。可是事实方面并没有四十五个义人。他因为见神这样大量，这样慈爱，便再减低他所提的数目到四十，三十，二十，最后竟减低到十。这已经是第六次的祈求，第五次的减低，直减到无法再减的地步。他不但不敢出这一次口，也实在不好意思再出口，不过他还希望神存留所多玛城人的性命，所以他大着胆子对神说，『求主不要动怒，我再说这一次：若在那里见有十个呢？』可是出乎他的意料之外，他竟听见神回答他说，『为这十个的缘故，我也不毁灭那城。』这真不是任何人敢揣想的。因为五十个义人饶恕全城人的罪恶，已经是极宽大，极慈爱，如今一再减低到十个人，神还是肯宽容赦免，为十个义人的缘故，饶恕那『罪大恶极』的所多玛全城的人民。经上的话说，『耶和华有怜悯，有恩典，不轻易发怒，且有丰盛的慈爱。』（诗一○三8）真是千真万确了。</p>
+<p>可叹的很！那样大的一座所多玛城，犯罪的人处都是，敬畏神的义人却连十个都找不出来。仅有的一个罗得，还是那样恋世从俗，懦弱失败，仅仅的偕同妻女，被天使从覆灭中拉了出来。因此神虽然这样宽大慈爱，所多玛城仍不免于倾覆毁灭，被天火焚烧成了灰烬。神无论如何宽大，人总是悖逆犯罪，连极少数敬畏神的义人都寻不见，仍是难以幸免的。这该是多么可惜的事阿！</p>
+<p>今日的世界与古时的所多玛城相比，不只是无独有偶，形影毕肖，而且恐怕比所多玛更加邪恶。我们试一举目看看今日的社会，大多数的人都是不信神，反对神，轻看神，抗拒神。到处都是说谎，欺诈，贪婪，利己，偷窃，抢夺，舞弊，营私，强暴，侵凌，分争，杀害，奸淫，邪僻，忘恩负义，不孝父母，假公济私，党同伐异。无论走到甚么地方，你都可以看见多人在那里崇拜偶像假神，或已经死去的人；另外一些人狂妄大胆的否认神的存在，他们反对假神，同时不信真神；他们以人为神，以自己为神，因此他们任意妄为，毫无忌惮。无论走到甚么地方，你又可以看见一般人是那样说谎言，弄诡诈。人和人同处都是心角，尔诈我虞，口吐甘言，心怀恶意。不只邻舍，同事，朋友，亲戚，就连骨肉，手足，父母，子女，夫妻中间，也多是彼此说谎，互相利用。对别人谈起话来都是甜蜜可亲，但心中所存的意念却是和他口中所说的话有天壤之别。存的心作的事都是坏到极点，但在人前发表一篇言论的时候，却是光明正大，冠冕堂皇。假面成了最流行的装饰，诚实被人践踏在脚底下。你又可以看见一般人是那样心怀贪念，损人利己。人人都想把别人的财物弄到自己的手中来。作官的营私舞弊，收税的敲诈勒索，经商的囤积暴利，建筑的减料偷工，司法的徇情受贿，领兵的扣饷吃空。男的，女的，老的，少的，人人看见财利就红了眼，黑了心，千方百计要把牠弄到自己的手中来。甚么是天理良心？甚么是节操廉耻？这些东西早被他们丢在九霄云外去了。奖券彩票的畅销，麻将扑克的流行，在在显示着人们贪婪的心理。你又可以看见一般人是那样强暴残忍，欺凌弱小：官吏欺压平民，主人苦待仆役，财主侮辱穷人，资方剥削劳力，婆母叱骂儿媳，长兄殴打弱弟，大姑虐待弟妇，丈夫遗弃发妻。一个人只要略有一点地位权势，便要作威作福，欺压那些在他下面比他软弱的人。圣经记载挪亚的时代『地上满了强暴，』（创六11）正与今日社会中的情形相似。你又可以看见一般人是那样邪僻放荡，纵欲行淫。他们心中所存的是淫念，口中所吐的是秽语，他们把神所给人的尊贵的身体弄得污浊不堪。许多青年人在没有结婚以前便与异性的人发生过肉体的关系，许多人结婚以后对自己的配偶不忠实，另与别的异性人恋爱。那些有钱的人嫖娼宿妓，结交舞女，勾搭坤伶，捧电影明星，设外家，纳姬妾。就连一般不很富裕的人，也想结交一两个情人，或玷污别人的处女，或引诱邻舍的妻室。许多女子也是照样的对丈夫不忠实，背着自己的丈夫另有外遇，捧男伶，追同事，为了爱虚荣贪财物的缘故，与富贵的男子行淫。离婚的事件一日比一日增多。有妇之夫恋爱上别的女子，就藉词与妻子离婚，好与他的情妇长久相聚。有夫之妇恋爱上别的男子，便说受丈夫的虐待，具呈法院请求离异，好与她的恋人双宿双飞。有些女子明知道别的男子已经结了婚，却追逐他，引诱他，叫他离弃发妻，破坏他的家庭，夺取别人的丈夫。有些男子明知道别的女子已经出了嫁，却用钱财诱惑，用威力要挟，教唆她离弃自己的丈夫，好与自己结合。还有些人置身于教育界，不但不在生活上作青年学生的表率，反倒利用职务上的便利，诱惑青年的女学生，与她们发生关系，有的甚至藉词与妻子离婚，再与自己的学生结成夫妇。还有些在机关商店中据高位握大权的人，利用他们的职权地位，利诱威胁他们手下的女职员，与她们发生关系。还有许多文学家，戏剧家，音乐家，艺术家，利用他们的声望，特长，机会，去引诱青年的异性，打破了一切男女的防闲，颠倒了多少青年的男女，一个人会与许多异性人发生过关系。今天结合，明日仳离；拆散了别人的夫妻，不久自己的家庭又被别人所破坏。许多时髦的人物根本就不用结婚，与那个异性的人谈上恋爱，就实行同居，几时发现性情不合，再来一个临时散伙。朝秦暮楚，覆雨翻云。还有甚么三角恋爱，四角恋爱，多角恋爱。夫妻中间的关系已经不再像夫妻，却像房主与租户，店东与店伙，随便结合，任意离散。还有甚么『同性恋爱，』男人与男人，女人与女人，效法夫妻的结交，放纵逆性的情欲。更有那些只知道自己发财，不顾别人的利害生死的商人，印行诲淫的小说画报，出版激动性欲的流行歌曲，拍制青年人爱看的那些污秽猥亵的电影，利用『酥胸』『玉腿』去号召观众。这些书店，报社，影片公司的老板，确是发了不少的财，但社会的风气却因此江河日下。再看看一般社会中的娱乐场所，更是败坏得无以复加；戏剧，评书，大鼓，相声，内容多是污浊得不堪言状。再加以从欧美介绍过来的男女互相拥抱的跳舞，流行在通都大邑间，淫乱的罪恶就藉着这些媒介物很快的发展起来。所多玛城罪大恶极，被神用天火所焚毁，淫乱的罪是他们特别显着的恶行。看那两个天使来到罗得的家里的时候，城中的人连老带少都来围住罗得的房子，向罗得索要那两个天使，要与他们行淫，便可以清楚看出这件事来。今日的社会中所有淫乱的罪足可与所多玛城并驾齐驱。你想牠的结局该当怎样呢？看看所多玛城中的罪恶和牠所遭遇的审判，再想一想今日世界上的罪恶，和这个罪恶的世界将来所要遭遇的结果，真令人不寒而栗了。</p>
+<p>这个充满罪恶的世界能不能逃脱神公义的审判呢？按理说是不能的。不过我们因着亚伯拉罕为所多玛呼求的这件事，可以看出来，如果今日世界上敬畏神的人与全世界上人类的总数所有的比例，能赶上十个义人与所多玛全城的人所有的比例，神一定能因为这些人的缘故，饶恕全世界的人，不把他所要降的灾祸降下来，至少也要迟延一些时候。我们也深信今日的世界败坏到这种地步，神还是宽容忍耐，未曾毁灭整个的人类，固然是因为神有极大的怜悯，但世上有一小部分敬畏神的人散布在各处，也一定是一个原因。在这里我们可以看出来敬畏神的人是何等宝贵，因为全世界的祸福都与他们有关系。多一个敬畏神的人，就能减少神一分震怒，也就是减少世界上一分灾祸。</p>
+<p>亲爱的阅者，请你不要轻看你自己的人生，也不要想自己不能为人类作甚么大事。你只要敬畏神，遵行他的旨意，你在神面前成就的，远超过那些世界上的政治家，法律家，军事家，科学家，教育家，实业家。那些人所成就的，最多也不过是给人类少许物质方面的供献和享受，你却能为人类消弥神的震怒。这件最伟大最重要的工作，只有诚实敬畏神的圣徒能作，世上那些大人物是绝对作不到的。你不要羡慕世上那些大人物是那样叱风云，旋转乾坤，得意洋洋，不可一世。更不要巴结他们，逢迎他们，仰他们的鼻息，求他们的援助。他们的祸福安危正是系在我们的身上。他们不明白这种真理，我们却十分清楚的明白。他们看不见这件伟大的事实，我们对这件事却了如指掌。真实敬畏神的人中间，很少有人在世上掌大权，拥巨赀，但他们所给人类的好处，却远超过那些在世上掌大权拥巨赀的人。想到这里，我们应当怎样自尊自重，应当怎样圣洁公义，应当怎样奋发淬励，应当怎样黾勉前进呢？</p>
+<p>所多玛人在耶和华面前罪大恶极固然可悲，但更可悲的是那样大的一座城市中竟找不出十个义人来，以致亚伯拉罕虽然在耶和华面前为所多玛人哀求了六次，耶和华也六次允准了他所求的，但到底仍然与事无补。次日的早晨，『耶和华将硫磺与火，从天上耶和华那里，降与所多玛和蛾摩拉，把那些城，和全平原，并城里所有的居民，连地上生长的，都毁灭了。』今日的世界充满了各样的罪恶不义，实在也是极可悲的事，但如果多有一些敬畏神的义人，可悲之中仍有无限的希望。若是连少数的义人都找不到，那便真可悲到极点了！阅者，你愿意作这少数义人中的一个么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

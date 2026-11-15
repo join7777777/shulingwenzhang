@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个因懦弱而失败的人-放荡肆言 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个因懦弱而失败的人-放荡肆言</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/1看这些人（上）/2一个因懦弱而失败的人-放荡肆言.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『耶稣的名声传扬出来；希律王听见了，就说，「施浸的约翰从死人里复活了，所以这些异能由他里面发出来。」但别人说，「是伊莱贾。」又有人说，「是先知，正像先知中的一位。」希律听见却说，「是我所斩的约翰，他复活了。」先是希律为他兄弟腓力的妻子希罗底的缘故，差人去拿住约翰，锁在监里：因为希律已经娶了那妇人。约翰曾对希律说，「你娶你兄弟的妻子是不合理的。」于是希罗底怀恨他，想要杀他，只是不能；因为希律知道约翰是义人，是圣人，所以敬畏他，保护他，听他讲论，就多照着行，并且乐意听他。（「多照着行，」有古卷作「游移不定。」）有一天，恰巧是希律的生日，希律摆设筵席，请了大臣，和千夫长，并加利利作首领的；希罗底的女儿进来跳舞，使希律和同席的人都欢喜。王对女子说，「你随意向我求甚么，我必给你。」又对她起誓说，「随你向我求甚么，就是我国的一半，我也必给你。」她就出去，对她母亲说，「我可以求甚么呢？」她母亲说，「施浸的约翰的头。」她就急忙进去见王，求他说，「我愿王立时把施浸的约翰的头放在盘子里给我。」王就甚忧愁；但因他所起的誓，又因同席的人，就不肯推辞。随即差一个护卫兵，吩咐拿约翰的头来：护卫兵就去在监里斩了约翰，把头放在盘子里，拿来给女子：女子就给她母亲。约翰的门徒听见了，就来把他的尸首领去，葬在坟墓里。』（可六14～29）。</p>
+<p>本段经文所述的这一件事实是许多信徒所熟习的。在这件事迹中记载了三个人：一个是义人，一个是恶人，还有一个立于二者之间的；但是义与恶中间是没有余地可以容人站立的；结果这个人也就落到恶里。这三个人是谁呢？义人就是施浸的约翰。他作了主耶稣的先锋。他的勇敢，他的自卑，他的德性，他的见证，都昭昭在人耳目。他能不畏王的威势，放胆斥责希律的恶行，虽然被杀，到底作了一个得胜的神仆。我们仰望他，我们羡慕他。恶人就是腓力的妻子希罗底。这个女人又淫乱，又残暴，嫁了他丈夫的哥哥，是何等可恶的事；受了约翰的责备，非但不知悔悟，不知惭愧，反倒嫉恨那勇敢的先知，想要杀他；一旦得了可趁的良机，便立时唆使她的女儿索要约翰的头，迫使希律杀了神忠心的仆人。她的恶行真可说腥闻于天了。这两个人一个是十分可羡慕的，一个是十分可憎恶的；一个在极高的地方，一个在极低的地方。但站在二者之间的一个人就是希律。他不愿下去作一个恶人，但他也不能立时上去作一个义人；他想站在中间，可以构到两方，结果他只有大大失败，作了一个与希罗底相同的恶人。他的失败史真可以作一切优柔寡断懦弱无勇的信徒的殷鉴。</p>
+<p>读这一段记载，可以看出来希律并不是一个穷凶极恶的王，乃是一个爱慕真道可以为善的人。看这里的记载说，『希罗底怀恨他，想要杀他，只是不能；因为希律知道约翰是义人，是圣人，所以敬畏他，保护他，听他讲论，就多照着行，并且乐意听他。』一个声势赫赫的王，受了先知的责备，非但未曾羞恼成怒，反倒能敬畏约翰，保护他，听他讲论，多照着行，并且乐意听他，这是何等的难能可贵。如果希律能抱着见善不怠去恶务尽的态度，勇往直前，未尝不可作一个极好的圣徒。可惜这样的一个人只因懦弱的缘故，非但未能成为一个圣徒，反倒杀了神的仆人约翰，成了真道的仇敌，神面前的大罪人！</p>
+<p>在希律的失败史中，我们可以看出他失败的五个原因来，现在分述在下面：</p>
+<p>一 掩盖己罪</p>
+<p>希律既然敬畏约翰，又保护他，并且乐意听他，为甚么又把他下在监里呢？推想这缘故，必是希律怕约翰在外面讲道，彰扬出他自己的恶行来；众民若都知道了，那是何等羞耻的事，岂不损伤了他的颜面。他把约翰下在监里决不是想要杀约翰，不过拘禁他，使他不得自由在外面讲道，因此可以将自己的罪掩盖起来，那知道这正是给自己豫备了杀约翰的机会呢。假使希律未曾把约翰下在监里，到后来希罗底怎能那样容易索要约翰的头。就是她索要了，但约翰远在旷野，一时必不容易捉到。筵席未散的时候既捉不到约翰，到了席散以后，非但同席的人都各自散去，使希律可以不必再杀约翰，就是希律自己也可以有工夫考虑，因而觉悟到必不可杀约翰，那时自然住手不杀他了。如今希律把约翰下在监里，他当时虽没有杀约翰的心意，却是时时豫备了杀约翰的机会；可见希律这样掩盖己罪，便早已种下失败的种子了。</p>
+<p>世界上每一个人都是有罪的；每一个信徒因着他肉体的软弱，也常有失败和跌倒。但这都不足使我们作一个被弃绝的人。只有犯了罪不肯承认反想设法掩盖的人是无法可治的。犯了一次罪，便在神面前诚诚实实的承认出来，并且痛心悔改，便立时可得赦免，不再被神算为有罪。（约壹一9）在人面前也决不当粉饰掩盖。人犯了罪若要掩盖隐藏，势必说谎言，行诡诈，或用别样不正当的方法去达到目的，这样，在罪上便又加了罪。不但如此，这样作又是为自己豫备将来犯更大的罪的机会。看希律因为掩盖自己的罪，终至杀了他所敬爱的先知，作了这样大的恶事。这还不足以作我们的鉴戒，使我们大受警教知所谨慎么？</p>
+<p>二 知恶不急远</p>
+<p>败坏希律的就是这恶妇希罗底。希律未曾打算杀约翰，但为了希罗底的催逼，使他至终杀了约翰；约翰与希罗底一善一恶不能并立。希律不远离希罗底，就必须杀约翰；要保全约翰，就必须离弃希罗底。一面要保护听从义人，一面又与恶人亲昵，这事的结果，只有被恶人所战胜，作了她的俘虏。</p>
+<p>我曾亲自见过几个信徒，他们是诚心羡慕圣道的，他们乐意与爱主的人往来，他们喜欢听神的言语也愿意作神所喜悦的一切事。可惜他们有一样短处，就是好与不敬虔的人作朋友。他们无意为恶，但他们到底不能不为恶势力所战胜。他们的结局都是堕落到很可怜的地步。</p>
+<p>交友是如此，婚姻的结合更是如此。许多青年的信徒本是热诚爱主的敬虔人，但是他们陷在爱情的网罗里。他们恋爱不信的或是放荡的异性人。他们想一方面可以爱恋一个不信基督的或是品德不佳的恋人，一方面还可以敬虔热心事奉神。不能，决不能。『善恶不并立，熏莸不同器。』这种青年信徒若不急速远离他们所爱的那属世界的恋人，是决免不了作希律第二的。</p>
+<p>三 见善不速行</p>
+<p>这段经文中有话说，『希律知道约翰是义人，是圣人，所以敬畏他，保护他，听他讲论，就多照着行；并且乐意听他。』『多照着行』这一句话，有古卷作『游移不定，』我看这句话更有意思。『游移不定』这一句话，更是显出希律的懦弱来。一方面乐意听约翰，深知他所讲的都是正道真理；一方面又觉得完全遵照约翰的话去行，不免有不少困难，并且使肉体有许多感到不安适的地方，因此不免多所顾虑，躇踌不前。那知道这种懦弱的根性竟将希律一害到底。假如希律勇于为善，凡约翰所指示他的都尽力去遵行，他是王，他有权柄，有谁能拦阻他作公义正直的事。希罗底虽狡恶，一个女子还能把他怎样？况且希律如果勇于为善，也必听从约翰的教导，离弃那可恶的女人，更何至作了一个杀害先知的恶徒。</p>
+<p>世界的大势是邪恶的。一个人在其间要努力向善，正像逆水行舟一般，奋力的荡桨摇橹，一刻不敢停息，不过只能渐渐的进上前去。略一住手，势不能不立时顺流而下；何况明知是善却不速行，反倒徘徊观望，踌躇不前，那能不成为一个失败者，遭过可怕的结局呢？刚强果决，当机立断；发觉是恶，便即速离弃；知道是义，便立时去行；一个基督徒若没有这种决心，在这样一个邪恶的世界中，不会不遭遇失败的。</p>
+<p>四 放荡肆言</p>
+<p>身为一国的王，地位是何等紧要，责任是何等重大，一言一行，都关系全国的安危，群众的祸福；怎么能因一时耳目的娱乐，便轻易对一个小女子起誓说，『随你向我求甚么，就是我国的一半，我也必给你。』希律的这一番话，使我们很容易看出来他是何等的放荡失检，是何等的不知慎言。假使女子果真向他求国的一半，将怎样呢？不给呢，必蹈食言之咎；给呢，难道国家大事，就可以交一半给一个跳舞的幼女么？昏瞶无知到了甚么地步！如今女子虽没有求国的一半，但所求的实在是大干神怒的恶事──立时把施浸的约翰的头放在盘子里。希律虽未曾要杀约翰，但因掩盖自己的罪把约翰下在监里，他又恋爱那个恶妇希罗底，不肯与她分离，已经是时时豫备了杀约翰的机会。在这种景况中，又不知慎言，只因一时的高兴，就这样毫不思量的发言，应许那恶妇的女儿──随你向我求甚么，就是我国的一半，我也必给你。那险诈的恶妇将嫉恨约翰的意念存在心中，每日伺机要逞她的毒手。希律如今这样放荡肆言，正是给了她最好的机会，使她能达到目的。在多人看，主谋杀害约翰的是希罗底，希律不过是作了她的傀儡。其实杀害约翰的这一件事，前前后后，统是希律一人所酿成。希律虽不是蓄意要杀约翰，但是他的罪并不比蓄意要杀约翰更轻。</p>
+<p>信徒的四周终日也是有仇敌窥伺，时刻谨慎防范，尚且怕中了仇敌的狡计。稍一忽略，那能不使仇敌乘机而入，以致大遭失败呢？特别是在肉体得着快乐的时候，最容易放荡失检，任意发言，恣情动作。所艾萨克但每逢看见信徒走到娱乐的场所中，坐在欢宴的筵席上，他便视为作工最好的机缘。在这种地方，信徒因为得着肉体的愉快安乐，使他们志得意满，忘记了自己的地位和仇敌的窥伺，因此不免任意谈笑动作，略有不慎，便陷在罪网当中，损害了他人，败坏了自己。</p>
+<p>不仅止在欢畅的时候，信徒应当随时随地谨慎言语。经上的教训说，『谨守口的得保生命；大张嘴的必致败亡。』（箴十三3）舌头真不是好东西，不时刻谨慎约束牠，便难免大大受牠的败坏。信徒不但当除掉一切罪恶不义的言语，也当力戒嬉笑戏谑的话与不加思索便出口的言语，因为这都是很容易使人犯罪的。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>敬虔的谎言-两条取祸的道路 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>敬虔的谎言-两条取祸的道路</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/1看这些人（上）/9敬虔的谎言-两条取祸的道路.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『雅各布布到他父亲那里，说，「我父亲；」他说，「我在这里；我儿，你是谁？」雅各布布对他父亲说，「我是你的长子以扫；我已照你所吩咐我的行了。请起来，坐着吃我的野味，好给我祝福。」艾萨克对他儿子说，「我儿，你如何找得这么快呢？」他说，「因为耶和华你的神使我遇见好机会得着的。」艾萨克对雅各布布说，「我儿，你进前来，我摸摸你，知道你真是我的儿子以扫不是。」雅各布布就挨近他父亲艾萨克；艾萨克摸着他说，「声音是雅各布布的声音，手却是以扫的手。」艾萨克就辨不出他来，因为他手上有毛，像他哥哥以扫的手一样，就给他祝福。』（创二十七18～23）。</p>
+<p>作母亲的不但不教导儿子学习诚实，反倒帮助他说谎行骗，而且是教导他去骗自己的父亲。不只教导儿子说谎，而且『用山羊羔皮包在雅各布布的手上和颈项的光滑处，』好使艾萨克摸着的时候以为真是那个全身有毛的以扫。这位青年人雅各布布也就真服从这位溺爱不明的母亲的指导，到父亲面前假装哥哥，去骗取父亲所祝的福。作母亲的不像母亲，作儿子的不像儿子。提起这件事来真令人哭不得笑不得。夫妻父子中间这样说谎行骗，更难怪社会间充满了欺骗的事；圣徒的家庭中这样黑暗，更难怪不认识神的人多行邪僻了。</p>
+<p>在这段事实中最值得我们注意的，就是雅各布布回答他父亲所说的话。当他假冒以扫拿着食物进到他父亲面前来的时候。他父亲惊异以扫打猎怎么会回来得这样快，因而问他说，『我儿，你如何找得这么快呢？』他说，『因为耶和华你的神使我遇见好机会得着的。』明明是冒充，伪造，说谎，欺骗，却告诉父亲说，『耶和华你的神使我遇见好机会得着的。』说谎骗人也会利用神的名。这种作法真有效果，那位老年的父亲竟信了他这句谎言，受了他的欺骗。</p>
+<p>像雅各布布一样的人在今日的教会里有多少呢！明明是冒充，伪造，说谎，欺骗，却告诉人说蒙了神的赐福。存了不正当的意念，为利益尊荣而奔走，却告诉人说是蒙了神的召选和差遣。用了种种卑鄙可耻的方法造出一些虚浮的成绩来，却告诉人说神怎样行了大事。有枝添叶张大其辞的作了几篇欺骗人的报告，却告诉人说神怎样彰显了他的荣耀。放纵肉体演出许多羞辱神败坏人的现象来，却告诉人说圣灵怎样作了奇妙的工。古时有一个雅各布布，在神的朋友亚伯拉罕的儿子艾萨克的家中，利用神的名说谎行骗。今日有许许多多像雅各布布一样的人，在神的家中利用神的名作伪欺人。神的名受许多羞辱，教会受许多损害，这也是一个主要的原因。</p>
+<p>狡诈的雅各布布说谎欺骗父亲诚然有罪，但那位因为贪吃美味不暇分辨真伪的艾萨克也不能没有错处。他听出来雅各布布的声音与以扫不同，已经起了疑心。他对雅各布布说，『我儿，你近前来，我摸摸你，知道你真是我的儿子以扫不是。』及至他摸着雅各布布手上的假毛以后，又说，『声音是雅各布布的声音，手却是以扫的手。』既知道『声音是雅各布布的声音，』为甚么不详细查问一下呢？如果艾萨克留意查问一下，不是可以揭破雅各布布的诡计，使他的罪恶不致越演越重，并且消灭了家庭中许多的纠纷祸患么？可惜这位老人竟是那样急不暇待，贪吃儿子的野味，忙忙的吃了他所喜欢吃的东西，吃过以后就给这个作伪说谎的儿子祝了福。雅各布布诚然不当说谎欺骗父亲，可是艾萨克能分辨，也应当分辨，却不去分辨，以致这个狡诈的儿子得以成就他的恶谋，难道他就没有过失了么？</p>
+<p>或有人要质问我说，『艾萨克年纪已经老迈，眼睛不能看见，雅各布布的颈项和手上又包上了羊羔皮，艾萨克摸着他正和以扫一样，又怎能怪责艾萨克不去分辨呢？而且纵使他想分辨，又有甚么法子分辨呢？』不能分辨么？果真不能分辨么？『声音是雅各布布的声音，手却是以扫的手。』这两句话不是艾萨克亲口说的么？他既知道声音是雅各布布的声音，为甚么不详细查问一下呢？雅各布布虽然狡诈，可是虚伪的行为总有破绽可寻。他能用方法将他的颈项和两只手假装得像他哥哥一样，他却不能改变他的声音，使他的父亲听不出来。如果雅各布布的声音与以扫的声音一样，或是雅各布布摹仿他哥哥的声音，摹仿得像真的一般，以致艾萨克听不出来，那样我们就不能怪艾萨克了。如今雅各布布的声音既与以扫的声音不同，而且艾萨克也清清楚楚的听出来『声音是雅各布布的声音，』却不留意分辨，艾萨克的过失就在这里了。</p>
+<p>或有人再要问我说，『艾萨克有甚么法子分辨呢？』这个太容易了。他只需要对雅各布布说，『去把你兄弟叫了来，』不就可以把雅各布布的诡计完全揭破了么？如果来的真是以扫，一定不难把雅各布布叫了来；如果这个人不敢去叫兄弟，或是叫不了来，岂不就证明他是冒充的了么？『作伪者心劳日拙。』欺骗人的人所作的事很少能没有破绽的。只因被欺的人心目被某种事物蒙蔽起来，以致失去鉴别的能力，艾萨克便是吃了这个亏。因为他贪吃儿子的野味，所以不暇分辨真假，以致受了雅各布布的欺骗。『声音是雅各布布的声音，手却是以扫的手，』这已经是一件极可疑的事。有这个大疑点，艾萨克决不当轻易为雅各布布祝福。他应当吩咐这个假以扫去把兄弟叫了来。这样一作，真假立时可以分辨清楚。无奈艾萨克因为忙着要吃儿子的野味，顾不得这样作，所以他的心里虽然疑惑这个来的人不一定是以扫，却不用心查验，结果就使雅各布布的诡计得逞，许多未来的纠纷也就从此发生了。我们还能说艾萨克没有过失么？</p>
+<p>世界上欺骗人的人实行骗术的时候都是利用别人的弱点。对爱名的人就用尊荣诱惑他，对贪财的人就用金钱诱惑他，对好色的人就用性欲诱惑他，对有特别爱好的人就用他所喜爱的事物诱惑他。被欺骗的人如果没有弱点，没有所爱好的，本来很容易看出来那欺骗人的人所有的破绽。不过因为他的心目被他所爱好的事物蒙蔽起来，以致欺骗人的人所有的破绽虽然摆在他的前面，他也看不出来，于是欺骗人的人所用的诡计就得以成功了。古的时候艾萨克是这样受了雅各布布的欺骗，今日许多信徒也是这样受了那些雅各布布的门徒的欺骗。</p>
+<p>不信的人受人的欺骗多是由于贪财好色。那些欺骗人的人明白一般人的心理，便利用财色作钓饵去欺骗人。真诚信主的人虽然逃脱了这两种危险，却还有其它的弱点，以致被人所乘。这些弱点中有一样就是喜爱虚荣，还有一样是感情太重，又有一样是妄想得着不劳而获的收成，不战而得的胜利。因为喜爱虚荣，所以一听见欺骗者对自己说上一套恭维谄媚的话，便再不想查验他们的真伪，正如艾萨克因为贪吃儿子的野味，不暇分辨长子的真伪一般。真的，有许多人受欺骗实在是自找的。如果他们不存喜爱虚荣的心，他们很容易看破那欺骗者的诡计。只因他们存了喜爱虚荣的心，他们不但不远避那些欺骗者。而且愿意多与那些欺骗者亲近，因为那些欺骗者会恭维他们，会逢迎他们，会称赞他们，会给他们一点虚荣。许多很好的教会领袖，任用了未曾悔改存心狡诈的假信徒，将教会弄得不可收拾，便是吃了这样的亏。这些假信徒所说的谎言，所作的恶事，本来有许多破绽，是明眼人一看就可以看出来的，不过这些喜爱虚荣的领袖们欢喜听那些人所说的恭维谄媚的话。不用说喜爱虚荣的心蒙蔽了他们的眼目，使他们看不出来那些人的诡计，就是他们看得出来，也不舍得远离那些人，免得没有人恭维他们。这些人受欺骗还不是应当的么？不过神的教会却因此受了极大的亏损，这真是令人万分痛心的事！</p>
+<p>感情太重也是许多热心的信徒受欺骗的一个原因。这些信徒因为热心爱神的缘故便很热烈的爱那些为神作工的人。爱神的仆人原是一件极好的事，不过他们不知道有许多欺骗人的人就利用人这种心理，来施展他们欺骗人的手腕。他们假装很敬虔很热心。他们的嘴里说出许多冠冕堂皇的话语来。他们造一些不真实的见证。他们告诉人说神怎样赐福给他们和他们所作的工。如果那些热心爱神的信徒用冷静的头脑详细观察一下他们的言语行为和见证，本可以看出许多破绽来，因为作伪的人无论怎样聪明，总是有破绽可寻。可惜那些热心爱神的信徒因为感情太重的缘故，不肯安静详细查考，就轻易信他们的话，以致被他们利用，受了他们的欺骗。富于感情诚然是一件好事，但只有感情却不用知识调剂一下，总是容易受人欺骗。</p>
+<p>还有许多热心的信徒受欺骗，是由于他们妄想得着不劳而获的收成，不战而得的胜利。属世界的人追求世界上的财富，需要劳力出汗，殷勤作工，偏偏有许多人要想不劳力出汗，不殷勤作工，就得着地上的财富一般。因为许多信徒存着这种侥幸的心理，就给一些欺骗人的人造了好机会。他们告诉人说只要得着某种特殊的经验，一日之间便可以成为被圣灵充满的人，可以完全圣洁，可以有大能力为主作怎样伟大的工作，可以天天过着得胜的人生，可以终日充满了喜乐，再没有一点试炼和痛苦。那些存着侥幸的心理的信徒一听见这种教训，便认为这正是他们求之不得的福气，因此赶快起来接受这种教训，追求这种经验。结果是甚么呢？一种结果是叫许多人变成自欺的人：告诉人说，他们是怎样被圣灵充满，怎样成了圣洁，怎样过着得胜的生活，怎样充满了喜乐平安，其实他们不见得比别人更好一点，他们的见证与他们的人生并不相符合。另外的一种结果是叫许多人走到自弃的地步。他们希望走这一条快捷方式，可以得着他们久已渴望得着的好处。追求了一些时候，并没有得着他们所希望得着的。他们禁食，他们祷告，他们认罪，他们废寝忘食的去追求，但是总没有得着，因而渐渐走到自暴自弃的地步。</p>
+<p>自然我不能说领人走快捷方式的都是欺骗人的人。有一些并不是欺骗人的，乃是真诚热心的人，不过他们在属灵的事上太幼稚，太缺少经验。他们还不十分认识自己肉体中的软弱。他们还未经过属灵的战争，还未曾受过神的试验。他们在初蒙恩以后，心中火热得很。他们弃绝了以前的恶行，他们的心热烈的希望作完全人，他们以为事实就像他们的希望同样的简单。这种人的热诚可敬，但他们所讲的那种没有经验不合真理的教训却是使许多人受了上文所说的损害。也就是因为有这种热心却没有知识的信徒讲了这种道理，纔使那些欺骗人的人得了一种欺骗人的方法，欺骗了许多追求在天路上走快捷方式的信徒。</p>
+<p>还有一些信徒受欺骗是因为他们贪慕得着特别的经验，特别的权柄。他们不知道他们每日所作的一切小本分小事工在神面前都是伟大重要的。他们认为伟大重要的事工是行奇事，显神迹，医病，赶鬼，并作许多别样超凡的事。有些欺骗人的人就利用人们这种心理，造许多假见证，告诉人说他们怎样见过主耶稣，怎样行过许多奇事，怎样按手在人身上使人得了圣灵，怎样医好了多多少少人的疾病。这些见证也许有一部分是真的，但还有许多是有枝添叶，言过其实的。只因这些欺骗人的人会像雅各布布那样将虚假的事说得像真的一样，再加上一些贪慕得着特别的经验和权柄的人因为热烈着要吃这种属灵的野味，便不暇分辨真伪，因而受了欺骗。</p>
+<p>这些欺骗人的人所以能施展他们的骗术，固然是由于多数的信徒有种种的弱点，被他们所发觉，所利用，但另外有一个重要的原因，就是他们会假托神的名和神的权能。他们怕他们所作的假报告假见证不能取信于人，便告诉人说神显了大荣耀，作了大事。『因为耶和华你的神使我遇见好机会得着的。』纔出去不多些时候就得了野味回来，是使艾萨克信不及的事。但雅各布布假托神的权能，便使艾萨克不能不信了。人所不能作的事，神还有不能作的么？艾萨克是敬畏神的人。他信神的权能。他信神能作人所作不到的事。可惜他却未曾料到他那狡诈的儿子会假托神的权能来欺骗他。今日那些敬畏神的人也就是这样受了欺骗。那些欺骗人的人如果用普通的骗术来欺骗信徒，也许会被他们看破，也许不为他们所注意。但一假托神的权能，便能使他们笃信不疑，而且他们因为敬畏神的缘故也就特别留意神的事，特别爱那些被神使用蒙神赐福的人，谁知就在这时候他们已经受了人的欺骗呢。</p>
+<p>不过我们也不能因为有些人假托神的权能，便不信神确实赐福给许多爱他的人，藉着他们行了大事；我们也不能因为有些欺骗人的人作假见证，便不信另外一些爱神的人所作的真见证。要紧的就是求神除去我们的弱点，使那欺骗人的人在我们身上无机可乘。每逢听见人述说神的权能，神的作为，不要轻信，也不要不信，只要用冷静的心思慢慢观察，细细分辨，使那欺骗人的人无从施展他们的骗术，好使神的名少受一些羞辱，使神的孩子们少受一些损害。</p>
+<p>『声音是雅各布布的声音，手却是以扫的手。』凭着这一件事实艾萨克就不应当信雅各布布的话。真以扫不但手上有毛，而且声音也该是以扫的声音。在这里我们不是又可以得着一个宝贵的教训么？认识一个人是真是假，不可单看可信的那一方面，更要看可疑的那一方面。这不是说我们看人只看坏的一方面，不看好的一方面，乃是说我们要分辨一个人的真假，应当在可疑的事上留意。说一个最浅近的比喻罢。我们用钞票的时候，如果只选择丝毫没有污点没有折痕的钞票，能有多少张呢？我们不因为钞票上有了污点，油渍，折痕，或是被人画了字，便弃置不用牠们。但如果我们看见一张真假可疑的钞票，便不可不注意那钞票的可疑之点了。分辨假钞票不是看可信的一方面，乃是看可疑的一方面。假钞票有不少的地方像真钞票，但有很少的几点与真钞票有分别。如果你只看牠与真钞票相同的地方，你会收进许许多多假钞票来。但你若留意那些可疑的地方，你便可以不受人的欺骗了。</p>
+<p>说来也真希奇分辨真假钞票的时候，人都是注意那些可疑的地方。但有许多人说，我们看一个基督徒或一个传道人的真假，应当多看他的长处。这是多么胡涂的事呢！不错，真基督徒和真传道人也有许多短处和弱点，正如真钞票有污点，油渍，折痕一般。我们不能因为真钞票有污点，油渍，折痕，便抛弃不用；照样我们也不能因为真基督徒或真传道人有缺欠和弱点便弃绝他们。不过我们在分别真假基督徒或真假传道人的时候，便需要注意那些可疑的地方，如同我们留意分辨真假钞票一样了。大多数的信徒都不免陷在两种错误中；一种错误是总看人的短处；好像一个人只要有短处就不是真基督徒，不是真传道人。另外的一种错误就是总看人的长处；好像一个称为基督徒的只要有长处便是真基督徒，一个传道人只要有长处便是真传道人。照第一种看法，世上的基督徒和传道人简直就没有几个是真实的。照第二种看法，世上的基督徒和传道人简直就没有假的。这两种看法都有相当的错误。最正当的态度乃是在包容人的缺欠和弱点上要十分宽大，但在分辨真伪上却一点不可放松，一点不要模糊。摸摸手上的毛，再听听口中的声音，二者有一样不对，就不可轻易信他。</p>
+<p>从前我听一个人口中说敬虔的话，就认定他是敬虔的人，听一个人作一段动听的见证，就信他所作的见证是真实的。现在我读了雅各布布欺骗父亲的记载，再证以我在各地多次目耳闻的事实，我便再不敢这样作了。现在我纔知道说敬虔话语的人不都是敬虔的人，因为有许多人口中所说的敬虔的话不过是敬虔的谎言阿。</p>
+<p>两条取祸的道路</p>
+<p>行淫和贪财是两条取祸的道路，走这两条路的早晚必落在祸患中。古时是这样，今日仍是这样；东方是如此，西方也是如此︰创世记第三十四章所记载，示剑和示剑城的居民被杀丧命的事，不过是千万同样的事实中的一件罢了。看这个青年人示剑，在他所住的示剑城中，本是尊贵富足有权有势的人。如果他不行邪路，安分作人，谁能加害于他一丝一毫。可惜他见美色起邪念，放纵自己的情欲，看见雅各布布的女儿底拿，『就拉住她，与她行淫，玷辱她，』因此惹动底拿的弟兄们的忿怒，用计谋杀害了他，并他父家，和他全城的人。行淫的结果不但害了自己，还害了那样多的人。『赌近盗，奸近杀。』想起来真令人不寒而栗了。</p>
+<p>奸淫和杀人好像孪生的弟兄，有第一样就难免有第二样。淫行本是极可耻可憎的事。尤其是女子，一有了淫行，便被人看作奇耻大辱。一个女子一失了身无论是被强奸或是和奸，女子的父兄或丈夫必定痛心忿恨到极点。在这种情形之下，他们会向那与女子行淫的人施展最残酷最严厉的手段，报复他，杀害他。这种忿恨是用任何方法不能消除的。经上论到这事有话说，『与妇人行淫的便是无知，行这事的必丧掉生命。他必受伤损，必受凌辱；他的羞耻不得涂抹。因为人的嫉恨成了烈怒，报仇的时候决不留情。甚么赎价他都不愿；你虽送许多礼物，他也不肯干休。』（箴六32～35）看示剑因为与底拿行淫，激起雅各布布众子的忿怒，演出这幕惨剧来，更证明箴言上的警告是怎样真实怎样可信了。</p>
+<p>奸淫和杀人相连还有一个很显明的原因，就是人有了淫行总想设法隐藏，可是世上的事总没有能长远隐藏得住的。行淫的人恐怕被甚么人发觉，或是知道已经被某某人发觉，这时候必定千方百计使他的隐事不显露出来，在一切的计谋中最稳妥的方法就是杀人灭口。一个人有了淫行，不用说会杀害别人，就连自己最爱的子女也能忍心下毒手。我们不是常听说有的妇人因为行淫，恐怕自己的子女泄漏隐情，因而杀害他们么？人间的爱还有甚么爱比妇人爱子女的爱更真挚，更恳切？如今因为淫行连子女都能杀害，何况对其他的人呢？</p>
+<p>奸淫和杀人相连的第三个原因是，行淫的人偷偷摸摸觉得不满意，总愿意与对方长久相聚。可是事实又常不是那样容易。如果对方是已经结了婚的，对方的配偶一定不容许。如果自己是已经结了婚的人，自己的配偶也一定要反对。纵使两方面都是未曾结婚的，家中的父兄们若知道了这些隐情，也决不能不加以干涉。行淫的人在这种情形之下，为要达到能长久相聚的目的，便不免起恶念，想下毒手除掉那阻挠他们使他们不能相聚的人了。</p>
+<p>奸淫和杀人相连的第四个原因是嫉妒作崇。男女中间的爱情是不容有第三个人参加的。但行淫的人总是朝秦暮楚，用情不专。在被赏识的一方面固然是得意洋洋，在被撇弃的那一方面就不免妒火中烧了。这种妒火在一个人里面越烧越旺，结果便演出杀害的惨剧来了。如果我们详细调查法院里所审讯的杀人的案件，除了为财物所酿成的以外，最多的便是起源于淫乱了。三角恋爱，四角恋爱的结果，不是杀人，便是自杀，我们耳闻目的这种事实，真难数算有多少了！</p>
+<p>神知道我们的弱点，和我们在世上所遭遇的试诱，所以他屡次将古人贪财受害的事迹记载在圣经里，警教我们，同时也屡次将古人行淫取祸的经过写在圣经里，作我们的鉴戒。示剑因行淫以致丧命的事不过是其中的一件阿。</p>
+<p>读了创世记第三十四章所记，因示剑一个人行淫，示剑全城的人都惨遭屠戮的事，一定有不少人要为示剑城中的居民呼。但如果我们把那一件事实从头到尾仔细观察一遍，我们便发现示剑全城的人惨遭屠杀并不是无辜被累，实在是咎由自取。阅者疑惑我的话么？请看以下的一段经文：</p>
+<p>『哈抹和他儿子示剑到本城的门口，对本城的人说，「这些人与我们和睦；不如许他们在这城居住，作买卖；这地也宽，足可容下他们；我们可以娶他们的女儿为妻，也可以把我们的女儿嫁给他们。惟有一件事我们必须作，他们纔肯应允和我们同住，成为一样的人民，就是我们中间所有的男丁都要受割礼，和他们一样。他们的群畜，货财，和一切的牲口，岂不都归我们么？只要依从他们，他们就与我们同住。」凡从城门出入的人，就都听从哈抹和他儿子示剑的话：于是凡从城门出入的男丁都受了割礼。到第三天，众人正在疼痛的时候，雅各布布的两个儿子，就是底拿的哥哥西缅和利未，各拿刀剑，趁着众人想不到的时候，来到城中，把一切男丁都杀了。又用刀杀了哈抹和他儿子示剑，把底拿从示剑家里带出来，就走了。雅各布布的儿子们因为他们的妹子受了玷污，就来到被杀的人那里，掳掠那城。夺了他们的羊群，牛群，和驴，并城里田间所有的，又把他们一切货财，孩子，妇女，并各房中所有的，都掳掠去了。』（创三十四20～29）。</p>
+<p>与底拿行淫的是示剑，他被杀是咎由自取，示剑城中的居民不应当死，但他们却与示剑一同被杀了。他们取祸的原因不是由于行淫，乃是由于贪财。那溺爱儿子的哈抹看见儿子的恶行，不但不知道严加管束，反倒顺着儿子的意思向雅各布布为儿子求婚。雅各布布的儿子就趁机用诡计欺骗他；要求叫示剑全城的男子都受割礼。但成年人受割是一件苦痛的事。示剑为他所恋的女子可以忍受这种痛苦，哈抹为他所爱的儿子也可以忍受这种痛苦。但示剑城中的居民如何肯白白受这种苦呢。这老年的哈抹也料到这一层。他知道如果不给他们一些利益，他们决不肯白白受这种痛苦，因此他对他们说，如果他们肯忍受这几天的痛苦，便可以得着雅各布布家的『群畜，货财，和一切的牲口。』这个方法也真灵验。他一说出口来。他们立时便全体表示赞同。『凡从城门出入的人就都听从哈抹和他儿子示剑的话，于是凡从城门出入的男丁都受了割礼。』没有利益可得，谁也不肯为别人受一点苦。一听说可以得着别人的群畜货财，就是割掉自己身上的皮肉，忍受几天的疼痛，都甘心乐意去作。世界上的人有几个不和示剑城中的居民一样呢？受了这种痛苦以后果真得到利益了么？如果能得到也还上算。谁想不但没有得着所盼望得着的利益，反倒将自己的性命和财物一齐赔上。全城的男人都被雅各布布的儿子杀死以后，他们的『羊群，牛群，和驴，并城里田间所有的，以及他们一切货财，孩子，妇女，并各房中所有的，』都被掳去。示剑被杀是因为行淫，哈抹死亡是因为纵子为恶，城中的居民丧命是因为贪财图利。这一群人没有一个死得屈。</p>
+<p>示剑城中的居民并不是穷得不能生活。他们不需要雅各布布家中的群畜货财。他们本来甚么都有。如果他们不起贪心，不妄想要得雅各布布家中的财物，他们决不会陪着哈抹和示剑父子两个去受这种痛苦，那样西缅和利未也决不敢进城去杀他们。可惜他们怀着贪心，一听见哈抹告诉他们说，如果他们肯受割礼，便可以得获许多意外的牲畜货财，他们便不顾一切向前作去。他们一点不思想这件事的利害。他们的眼睛完全被利益所蒙蔽，再也看不见前面的危险祸害。『人见利而不见害，鱼见食而不见。』示剑城的人就是这样自己跳进了祸患的坑中，直跌得粉身碎骨。</p>
+<p>记住，如果你不想要落在危险祸患中，就总不要贪爱别人的财物。甚么时候你见了别人的财物就起贪心，不但给魔鬼留了地步，也给了恶人陷害你的机会。恶人知道一般人的弱点，因此他们设网罗，布陷阱，总是藉着财色两件事。不贪财不好色的人永远不会落在这两种陷阱中。『那些想要发财的人，就陷在迷惑，落在网罗，和许多无知有害的私欲里，叫人沉在败坏和灭亡中。贪财是万恶的根源。有人贪恋钱财，就被引诱离了真道，用许多愁苦把自己刺透了。』（提前六9、10）读了经上的教训，再看过那些因为贪财受害的人的事迹，真不能不使我们触目惊心哪。</p>
+<p>行淫与贪财是两条取祸的快捷方式。走其中的任何一条都可以弄得身败名裂，后悔莫及。从古至今已经有千千万万的人在这两条路上取了痛苦，遇了祸害，丧了性命。愿意遭遇同样结局的人，只管大胆的走上去。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

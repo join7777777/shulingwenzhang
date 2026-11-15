@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个被人恨恶的先知 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个被人恨恶的先知</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/15一个被人恨恶的先知.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『亚兰国和以色列国三年没有争战。到第三年，犹大王约沙法下去见以色列王。以色列王对臣仆说，「你们不知道基列的拉末是属我们的么？我们岂可静坐不动，不从亚兰王手里夺回来呢？」亚哈问约沙法说，「你肯同我去攻击基列的拉末么？」约沙法对以色列王说，「你我不分彼此，我的民与你的民一样，我的马与你的马一样。」</p>
+<p>『约沙法对以色列王说，「请你先求问耶和华。」于是以色列王招聚先知约有四百人，问他们说，「我上去攻取基列的拉末，可以不可以？」他们说，「可以上去；因为主必将那城交在王的手里。」约沙法说，「这里不是还有耶和华的先知，我们可以求问他么？」以色列王对约沙法说，「还有一个人，是音拉的儿子米该雅，我们可以托他求问耶和华；只是我恨他，因为他指着我所说的豫言，不说吉语，单说凶言。」约沙法说，「王不必这样说。」以色列王就召了一个太监来，说，「你快去将音拉的儿子米该雅召来。」以色列王和犹大王约沙法在撒玛利亚城门前的空场上，各穿朝服，坐在位上，所有的先知都在他们面前说豫言。基拿拿的儿子西底家造了两个铁角，说，「耶和华如此说，你要用这角抵触亚兰人，直到将他们灭尽。」所有的先知也都这样豫言说，「可以上基列的拉末去，必然得胜，因为耶和华必将那城交在王的手中。」</p>
+<p>『那去召米该雅的使者对米该雅说，「众先知一口同音的都向王说吉言，你不如与他们说一样的话，也说吉言。」米该雅说，「我指着永生的耶和华起誓，耶和华对我说甚么，我就说甚么。」米该雅到王面前，王问他说，「米该雅阿，我们上去攻取基列的拉末可以不可以？他回答说，「可以上去，必然得胜，耶和华必将那城交在王的手中。」王对他说，「我当嘱咐你几次，你纔奉耶和华的名向我说实话呢？」米该雅说，「我看见以色列民散在山上，如同没有牧人的羊群一般；耶和华说，这民没有主人，他们可以平平安安的各归各家去。」以色列王对约沙法说，「我岂没有告诉你，这人指着我所说的豫言，不说吉语，单说凶话么？」米该雅说，「你要听耶和华的话：我看见耶和华坐在宝座上，天上的万军侍立在他左右。耶和华说，谁去引诱亚哈上基到的拉末去阵亡呢？这个就这样说，那个就那样说。随后有一个灵出来，站在耶和华面前，说，『我去引诱他。』耶和华问他说，『你用甚么方法呢？』他说，『我去要在他众先知口中作谎言的灵。』耶和华说，『这样你必能引诱他，你去如此行罢。』现在耶和华使谎言的灵入了你这些先知的口，并且耶和华已经命定降祸与你。」</p>
+<p>『基拿拿的儿子西底家前来打米该雅的险，说，「耶和华的灵从那里离开我与你说话呢？」米该雅说，「你进严密的屋子藏躲的那日，就必看见了。」以色列王说，「将米该雅带回，交给邑宰亚们，和王的儿子约阿施，说，王如此说，把这个人下在监里，使他受苦，吃不饱，喝不足，等候我平平安安的回来。」米该雅说，「你若能平平安安的回来，那就是耶和华没有藉我说这话了。」又说，「众民哪，你们都要听。」』（王上二十二1～28）。</p>
+<p>圣经中提到米该雅的事只有列王纪上二十二章与历代志下十八章。这两章所述的完全是一件事，不过两章起始的两三节所记载的略有不同而已。除了这一件事以外，圣经中再没有提起这个先知。我们虽然不知道这位先知的出身，也不知道他的终局，但只从这一件事上，便可以晓得他是一个伟大的先知，因为他是那样忠诚勇敢，不怕亚哈王的威势，也不讨任何人的喜悦，耶和华叫他说甚么，他就说甚么；当谎言的灵进入四百个先知的口中的时候，惟有他能独清独醒，看见了其它的先知所没有看见的事实，说出了其它的先知所不敢说的话语。</p>
+<p>从这一章的记载中我们又可以看见米该雅一定是一个遐迩闻名的先知。他被人所注意远过于那四百个先知。因为亚哈召集了四百个先知到他面前来的时候，约沙法说，『这里不是还有耶和华的先知，我们可以求问他么？』四百个先知都站在亚哈和约沙法面前，约沙法如何能知道还有一个未曾到场的先知呢？显见是约沙法早已注意到这位忠诚勇敢的先知向来不和众先知说一样的话。他不注意那四百个先知，却单单注意到米该雅。他听见四百个先知都说一样的话，便想到米该雅一定没有到场，不然，他必能听见一篇与众不同的议论。因此他问亚哈说，『这里不是还有耶和华的先知，我们可以求问他么？』他果然想对了，因为他听见亚哈回答他说，『还有一个人，是音拉的儿子米该雅，我们可以托他求问耶和华，只是我恨他，因为他指着我所说的豫言，不说吉语，单说凶言。』听了亚哈所说的这几句话，便可以晓得米该雅常对亚哈王说凶言，却从来不说吉言，所以招来亚哈的恨恶，以致这次他招聚众先知的时候竟不召米该雅。亚哈身为一国的君王，手中操着生杀予夺的大权，米该雅怎么竟这样胡涂，不但不说吉言讨他的喜悦，而且还说凶言招他的恨恶？照古人所说『明哲保身』的教训讲来，米该雅真是第一等胡涂的人。不，米该雅不但不是胡涂人，他正是神忠诚的先知，因为他立定心志，不讨人的欢心，只求向神尽忠，听他所说的话，就知道他的伟大了。他说，『我指着永生的耶和华起誓，耶和华对我说甚么，我就说甚么。』米该雅虽然招了亚哈的恨恶，却蒙了耶和华的喜悦。这样的人纔配称为耶和华的先知。他这一个人的价值比那四百个先知合起来的总价值还高得多。我国古人所说，『千人之诺诺，不如一士之谔谔。』这一句话用在那四百个先知和米该雅的身上正合适。</p>
+<p>奉亚哈的差遣去召米该雅的那个使者真是一个好心的人。他不愿意看着米该雅自蹈危机，所以他劝告米该雅说，『众先知一口同音的都向王说吉言，你不如与他们说一样的话，也说吉言。』从这几句话中我们更看出来，米该雅一向说凶言这件事，已经是尽人皆知的。连这个使者也晓得米该雅见了王一定要说凶言。他敬爱这位忠诚的先知，他想设法帮助米该雅不要固执取祸。他的爱心不是出于神的爱，乃是出于肉体的爱。这种爱心几乎害了这一位忠勇的先知。幸而这位先知早已有了准备，早已下了决心。他回答那个使者说，『我指着永生的耶和华起誓，耶和华对我说甚么，我就说甚么。』这里我们又看见，作神的先知需要对神的使命和旨意有清楚的认识，万不可耳软心活，轻易听从别人所进体贴人不体贴神的劝告。看清楚了神的旨意以后，就当不顾一切的向前走去，说神要他说的话，作神要他作的事。不这样，就不能作神的先知，也不配作神的先知。</p>
+<p>在这一段记载中有一件使我们不十分明白的事，就是米该雅进到亚哈面前，亚哈问他可以不可以去攻取基列的拉末，他为甚么竟也与那四百个先知说了同样的话？──『可以上去，必然得胜，耶和华必将那城交在王的手中。』大约是米该雅一时发了软弱，听从了那个使者的话。幸好这种软弱不过是一时的，不久他仍是刚强起来，说了神要他说的话。这种暂时的软弱一点不足以损害他。再读亚哈王的话──『我当吩咐你几次，你纔奉耶和华的名向我说实话呢？』──更看出来米该雅一向总是对亚哈说凶言，因此他这次说出吉言来，使亚哈不能信他的话是真实的，所以这样责问他。米该雅一受亚哈的责问，立时发觉了自己的失败。他毫不犹豫的从他的失败中站立了起来。他恢复了他素来的勇敢和忠诚。他照以往那样又说出凶言来。他说，『我看见以色列民散在山上，如同没有牧人的羊群一般；耶和华说，「这民没有主人，他们可以平平安安的各归各家去。」』这几句话分明是说以色列人的王要死去，因此众民成了没有牧人的羊。接着米该雅又将他所看见的事说出来。他述说他看见耶和华坐在宝座上，讯问天上的万军中有谁能去引诱亚哈到基列的拉末去阵亡。最后有一个灵出来，说他要去到众先知口中作谎言的灵。耶和华允许了他，他便照所说的去作，于是这四百个先知都说了谎言，好去引诱亚哈上基列的拉末去阵亡。</p>
+<p>中文的译本里在这个『灵』字上面加了一个『神』字，说，『随后有一个神灵出来。』这实在是不适宜的。原文这里没有『神』字。这个字在旧约中有二百多处都译作『灵。』这里不当加上这个『神，』只应当像其它的地方一样译作『灵。』那么这个灵究竟是谁呢？注意这个灵所说的话：『我去要在他众先知口中作谎言的灵。』若把主耶稣所说的话与『谎言的灵』这个名词对照一下，便可以明白几分了。我们的主对犹太人说，「你们是出于你们的父魔鬼，你们父的私欲你们偏要行。他从起初是杀人的，不守真理，因他心里没有真理。他说谎是出于自己，因他本来是说谎的，也是说谎的人的父。』（约八44）也许有人问说，『魔鬼怎能进到神面前去与天上的万军一同侍立呢？』我们若记得乔布记上的述，便可以明白了。『有一天，神的众子来侍立在耶和华面前，撒但也来在其中。』（伯一6，二1）这里明明有两处记载，论到魔鬼与众天军一同在神面前侍立。米该雅所看见的必是同样的情形。</p>
+<p>这里又有一个问题发生了。『那四百个人既是先知，魔鬼怎能进入他们的口中去说话呢？』按理说，只有神的灵能藉着先知的口说话，魔鬼的灵不能也不敢进到先知的口中去。俗语说，『邪不侵正。』先知是神的仆人，自然是正人，邪灵怎么能侵犯他们呢？是，先知如果敬畏神，向神尽忠，邪灵决不能侵犯他们。但这四百个先知已经不再敬畏神，不再向神尽忠。他们只知道一味的讨亚哈的喜悦，因此神的灵已经离开他们，他们已经成为被神废弃的先知。他们已经与普通的人一样，甚至还不如普通的人。魔鬼的灵进入他们的口中，又有甚么可希奇的呢。</p>
+<p>也许有人要为这四百个先知辩护说，『你怎么知道他们不再敬畏神，不再向神尽忠，神的灵已经离开他们，他们已经被神废弃了呢？』我有充分的理由证实我所说的话。容我们看看亚哈的为人，再想想米该雅怎样对他说话，便可以认识这四百个先知的为人了。请读经上的记载──</p>
+<p>『暗利的儿子亚哈行耶和华眼中看为恶的事，比他以前的列王更甚。犯了尼八的儿子耶罗波安所犯的罪，他还以为轻，又娶了西顿王谒巴力的女儿耶洗别为妻，去事奉敬拜巴力。在撒玛利亚建造巴力的庙，在庙里为巴力筑坛。亚哈又作亚舍拉，他所行的惹耶和华以色列的神的怒气，比他以前的以色列王更甚。』（王上十六30～33）。</p>
+<p>『耶洗别杀耶和华的众先知的时候，俄巴底将一百个先知藏了，每五十个人在一个洞里，拿饼和水供养他们。』（王上十八4）。</p>
+<p>『耶和华的话临到提斯比人伊莱贾说，「你起来，去见撒玛利亚的以色列王亚哈，他下去要得拿伯的葡萄园，现今正在那园里。你要对他说，耶和华如此说，你杀了人，又得他的产业么？又要对他说，耶和华如此说，狗在何处餂拿伯的血，也必在何处餂你的血。」亚哈对伊莱贾说，「我的仇敌阿，你找到我么？」他回答说，「我找到你了；因为你卖了自己，行耶和华眼中看为恶的事。耶和华说，我必使灾祸临到你，将你除尽，凡属你的男丁，无论困住的，自由的，都从以色列中翦除。我必使你的家像尼八的儿子耶罗波安的家，又像亚希雅的儿子巴沙的家，因为你惹我发怒，又使以色列人陷在罪里。」论到耶洗别，耶和华也说，狗在耶斯列的外郭必吃耶洗别的肉。凡属亚哈的人，死在城中的必被狗吃，死在田野的必被空中的鸟吃。（从来没有像亚哈的，因他自卖，行耶和华眼中看为恶的事，受了王后耶洗别的耸动，就照耶和华在以色列人面前所赶出的亚摩利人，行了最可憎恶的事。信从偶像。）』（王上二十一17～26）。</p>
+<p>亚哈在神面前真是一个穷凶极恶的人。他随从他的妻子去敬拜巴力，为巴力建庙，又在庙里为巴力筑坛，又作亚舍拉。经上说，『他所行的惹耶和华以色列的神的怒气，比他以前的以色列王更甚。』他又纵容他的妻子杀害耶和华的先知。此外他还行了一件极大的恶事，就是因为贪爱拿伯的葡萄园，纵容他的妻子用假见证害死拿伯，夺取了拿伯的葡萄园。这样穷凶极恶的一个王，只要是一个先知，见了他就不当不加以规劝警戒。伊莱贾是神的先知，他见了亚哈就加以责备劝戒，因此亚哈恨他入骨，称他为『我的仇敌。』米该雅是神的先知，他见了亚哈就『不说吉语，单说凶言，』因此招来亚哈的恨恶。那四百个先知怎样呢？看亚哈把他们都招聚了来，惟独不召米该雅，就足可以知道这四百个先知平日一定都是顺着亚哈的心意说话，讨他的喜悦，为他祝福。这些人如果不作先知，他们的罪还可以轻些。如今他们作了神的先知，却不向神尽忠，不为神责备劝戒那个穷凶极恶的亚哈王，反倒在他面前阿谀取容，逢迎献媚，以致亚哈王作恶的胆量越来越大。这些先知不但再不能称为先知，简直可以称为神的仇敌。他们的景况到了这个地步，便已经不再是正人。耶和华的灵当然离弃了他们，他们也已经被耶和华废弃。撒但当然可以任意摆布他们，利用他们，谎言的灵自然也能随意进入他们的口，藉他们引诱亚哈上基列的拉末去阵亡。像伊莱贾和米该雅那样的先知，邪灵决不敢侵犯他们。不用说不敢进入他们的口中，根本就不敢挨近他们的身旁。就是因为这个缘故，米该雅纔能这样独清独醒的看见了那四百个先知所没有看见的事实，并且说出来那四百个先知所说不出来的话语。</p>
+<p>这是多么可叹的一件事！以色列人是神的选民。他们的王领导着他们犯罪的时候，全国四百个先知都堕落到这种地步，不敢忠心为神传话，不敢斥责罪恶，只会在亚哈面前说些善颂善祷的吉言，一方面避免亚哈的逼迫，另一方面还可以从亚哈得些好处，若没有伊莱贾和米该雅这两个忠勇可爱的先知出来这样为神传话，几乎使人疑惑耶和华究竟是不是在以色列人中间了。</p>
+<p>神是可称颂的！他在任何时代中，都有他自己的见证人和他所兴起的先知。他用他的灵膏他们，赐给他们属天的能力和勇敢，使他们作他的口，把他的旨意宣布出来，同时还藉此给人悔改的机会。如果人肯听他们的话语和警告，便可以勒马悬崖，不至跌得粉身碎骨。试想如果亚哈听信了米该雅的警告，想到耶和华已经命定降祸与他，不但不再出兵去攻打基列的拉末，而且谦卑俯伏在耶和华面前，痛哭认罪，离弃他所行的恶道，这一场大祸不是就可以脱免了么？如果他能这样作，他便知道米该雅不但不可恨，而且正是他最大的恩人。可惜！可惜！他不但不听信米该雅的话，而且还苦待他，吩咐人『将米该雅带回，交给邑宰亚们，和王的儿子约阿施，说，「王如此说，把这个人下在监里，使他受苦，吃不饱，喝不足，等候我平平安安的回来。」』刚愎顽梗到这种地步，如何能不落在神的震怒之下呢？</p>
+<p>这里还有一个值得我们注意的人──基拿拿的儿子西底家。这个人是四百个先知里的一个。当米该雅还没有来到以前，他造了两个铁角，拿到亚哈面前，说，「耶和华如此说，你要用这角抵触亚兰人，直到将他们灭尽。』这件事一定使亚哈心中十分喜乐，因为他这次出兵不但可以夺回以前所失的一座城邑，而且还要把亚兰人灭尽，这真是他意料不到的收获。他听了西底家的话，如何能不乐得心花怒放呢。他却不晓得这个说吉言的人正是把他送到死地的人。因为他信了这话，就决不肯罢休，这样，他也就一定要在基列的拉末阵亡了。喜爱一个送他到死地的人，却恨恶一个救他脱离死亡的人。亚哈真愚顽到了极点！</p>
+<p>岂止亚哈一个人呢？从古至今不像亚哈一样的人能有几个呢？世上绝大多数的人都喜欢听顺耳的言语，却厌闻逆耳的言语，喜欢听奉承逢迎的言语，却厌闻警教责备的言语。狡诈的人明白了一般人的心理，便一味迎合人的心意，对人说些歌功咏德善颂善祷的话，使听的人乐得心花怒放，他们便藉此得些利益。听这些话的人不但再看不见自己的短处与危险，而且越发骄傲狂妄，一意孤行，最后陷入极大的祸患中。如果我们聪明一些，我们就应当赶快远离那些顺着我们的心意说话的人，同时也要亲近那些敢在我们面前责备我们，规劝我们，向我们进逆耳忠言的人，因为只有这种人纔真能帮助我们改过迁善，逃脱危险与祸患。可惜这种人从来就十分稀少。不用说在世界中不多有这样的人，就连教会里也没有多少；不用说在一般信徒中难得有这样的人，就连那些在教会中作领袖的人中间也没有几个。在亚哈面前歌功咏德善颂善祷的先知有四百个人，不计自己的利害，不顾别人的毁誉，只知道向神尽忠的先知只有一个人。古时在以色列国中是这样，今日在神的教会中仍然是这样的。</p>
+<p>向神尽忠的先知当时就挨了打。『基拿拿的儿子西底家前来打米该雅的脸，说，「耶和华的灵从那里离开我与你说话呢？」』注意打米该雅的人不是亚哈的侍臣，乃是另一个先知。西底家既然也是先知，为甚么他还打先知米该雅呢？西底家所以打米该雅，主要的原因就是因为他是先知。如果他自己不是先知，他也许就不打米该雅了。容我们想想这个原因是甚么。西底家和那其余的先知都说亚哈这次出战必定得胜，米该雅却说亚哈这次出战要阵亡在战场上。西底家说的话若是对了，米该雅说的话就必定不对。米该雅说的话若是对了，西底家说的话就必定不对。如果西底家不打米该雅，便无异承认米该雅说的话都正确，同时也就等于承认他自己所说的是出于谎言的灵。纵使他不为别的事打米该雅，他因为自卫的缘故，也一定要打米该雅。他这样打了米该雅，便是对众人宣布说，『米该雅信口开河，谗毁众先知，他应当挨打。』这样就证明不是四百个先知错了，乃是米该雅错了。亚哈的侍臣与米该雅没有这种利害的冲突，所以他们中间没有一个人起来打他。西底家与米该雅同是先知，也同说了豫言，但他们所说的豫言却是完全相反的，因此他们中间就发生了冲突，这种冲突使西底家不能不打米该雅。从古至今都是这样。神忠心的先知到处都不免被人恨恶，受人逼迫，但恨恶他们逼迫他们最甚的有两种人：一种是受了他们的责备警戒却不肯悔改的人，另外一种就是那些不忠心为神传话，却一味在人面前歌功咏德善颂善祷的先知们。作神忠心的先知真不是容易的事，他们要受到许多人的反对恨恶。但他们也是最有福的人，因为他们必要在神面前得着大的赏赐。那些惯于在人面前歌功咏德善颂善祷的先知，不但受不着人的恨恶和攻击，而且还能得许多人的称赞欢迎，但他们在神面前却要遭遇祸患，那种损失真是无法弥补的。我们的主清清楚楚的把这两种先知的结局摆在我们的面前，我们只要一读他的话就可以明白了。听他说──</p>
+<p>『人为人子恨恶你们，拒绝你们，弃掉你们的名以为是恶，你们就有福了。当那日你们要欢喜跳跃，因为你们在天上的赏赐是大的，他们的祖宗待先知也是这样。』（路六22、23）。</p>
+<p>『人都说你们好的时候，你们就有祸了！因为他们的祖宗待假先知也是这样。』（路六26）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

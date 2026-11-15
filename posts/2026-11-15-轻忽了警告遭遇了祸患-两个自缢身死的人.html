@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>轻忽了警告遭遇了祸患-两个自缢身死的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>轻忽了警告遭遇了祸患-两个自缢身死的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/12轻忽了警告遭遇了祸患-两个自缢身死的人.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『王差遣人将示每召来，对他说，「你要在耶路撒冷建造房屋居住，不可出来往别处去。你当确实的知道，你何日出来过汲沦溪，何日必死，你的血必归到自己的头上。」示每对王说，「这话甚好。我主我王怎样说，仆人必怎样行。」于是示每多日住在耶路撒冷。</p>
+<p>『过了三年，示每的两个仆人逃到迦特王玛迦的儿子亚吉那里去。有人告诉示每说，「你的仆人在迦特。」示每起来，备上驴，往迦特到亚吉那里去，找他的仆人，就从迦特带他仆人回来。有人告诉所罗门王说，「示每出耶路撒冷往迦特去，回来了。」王就差遣人将示每召来，对他说，「我岂不是叫你指着耶和华起誓，并且警戒你说，你当确实的知道，你那日出来往别处去，那日必死么？你也对我说，这话甚好，我必听从。现在你为何不遵守你指着耶和华起的誓，和我所吩咐你的命令呢？」王又对示每说，「你向我父亲大卫所行的一切恶事，你自己心里也知道，所以耶和华必使你的罪恶归到自己的头上。惟有所罗门王必得福，并且大卫的国位必在耶和华面前坚定直到永远。」于是王吩咐耶何耶大的儿子比拿雅，他就去杀死示每；这样，便坚定了所罗门的国位。』（王上二36～\cs1646）。</p>
+<p>『所罗门建造耶和华的殿，和王宫，并一切所愿意建造的，都完毕了。耶和华就二次向所罗门显现，如先前在基遍向他显现一样。对他说，「你向我祈祷祈求的，我都应允了。我已将你所建的这殿分别为圣，使我的名永远在其中，我的眼我的心也必常在那里。你若效法你父大卫，存诚实正直的心行在我面前，遵行我一切所吩咐你的，谨守我的律例典章，我就必坚固你的国位在以色列中，直到永远。正如我应许你父大卫说，你的子孙必不断人坐以色列的国位。倘若你们和你们的子孙转去不跟从我，不守我指示你们的诫命律例，去事奉敬拜别的神，我就必将以色列人从我赐给他们的地上翦除，并且我为己名所分别为圣的殿也必舍弃不顾；使以色列人在万民中作笑谈，被讥诮。这殿虽然甚高，将来经过的人必惊讶嗤笑，说，耶和华为何向这地和这殿如此行呢？人必回答说，是因此地的人离弃领他们列祖出埃及地的耶和华他们的神，去亲近别神，事奉敬拜他，所以耶和华使这一切灾祸临到他们。」』（王上九1～9）。</p>
+<p>『所罗门王在法老的女儿之外，又宠爱许多外邦女子，就是摩押女子，亚扪女子，以东女子，西顿女子，赫人女子。论到这些国的人，耶和华曾晓谕以色列人说，「你们不可与他们往来相通，因为他们必诱惑你们的心，去随从他们的神。」所罗门却恋爱这些女子。所罗门有妃七百，都是公主，还有嫔三百，这些妃嫔诱惑他的心。所罗门年老的时候他的妃嫔诱惑他的心，去随从别神，不效法他父亲大卫，诚诚实实的顺服耶和华他的神。因为所罗门随从西顿人的女神亚斯他录，和亚扪人可憎的神米勒公。所罗门行耶和华眼中看为恶的事，不效法他父亲大卫专心顺从耶和华。所罗门为摩押可憎的神基抹，和亚扪人可憎的神摩洛，在耶路撒冷对面的山上建筑邱坛。他为那些向自己的神烧香献祭的外邦女子，就是他娶来的妃嫔，也是这样行。</p>
+<p>『耶和华向所罗门发怒，因为他的心偏离向他两次显现的耶和华以色列的神。耶和华曾吩咐他不可随从别神，他却没有遵守耶和华所吩咐的。所以耶和华对他说，「你既行了这事，不遵守我所吩咐你守的约和律例，我必将你的国夺回，赐给你的臣子。然而因你父亲大卫的缘故，我不在你活着的日子行这事，必从你儿子的手中将国夺回。只是我不将全国夺回，要因我仆人大卫和我所选择的耶路撒冷，还留一支派给你的儿子。」』（王上十一1～13）。</p>
+<p>示每因为在大卫躲避押沙龙的时候咒骂大卫，所以当所罗门接续他父亲大卫作王以后，便受了所罗门的警告和拘束，他被限制只能住在耶路撒冷，不能出来往别处去。他也得了所罗门的警告说『你当确实的知道，你何日出来过汲沦溪，何日必死，你的血必归到自己的头上。』他听了这话以后，也亲口回答所罗门说，『这话甚如。我主我王怎样说，仆人必怎样行。』我们可以想象在他听了这个警告以后必是战兢惕惧，不敢离开耶路撒冷一步。他记得他从前咒骂大卫的那一件卑鄙可耻的事实，他也知道所罗门王在那里寻找机会要追讨他的罪。他爱惜他的性命，他不敢违背所罗门的禁令，去自蹈危机，自取死亡。</p>
+<p>希奇！怎么他在三年以后，竟敢离开耶路撒冷，到迦特去寻找他那两个逃走的仆人，以致取了杀身之祸呢？所罗门给他的那个严重的警告，就是过了三十年，他也不至于忘记，怎么只过了三年他就忘记了呢？不，他并没有忘记那个警告，他是轻忽了那个警告。他这三年住在耶路撒冷一直是平安无事。所罗门再没有找他谈话，也没有重申前令。他里面所存的那种惧怕的心情一日比一日减轻。他想这三年的长时期中没有发生任何事故，也没有任何危险临到他，何必再那样战兢恐惧的过日子，自寻许多苦痛呢？他的心情一日比一日轻松，他的生活一日比一日愉快，他对所罗门王所给他的禁令也一日比一日淡漠。他以为危险的时期已经过去了。他认为所罗门王的警告日久天长便失去了效力。就因为他存了这种思想，所以他纔敢不顾所罗门王的警告和禁令，离开耶路撒冷，到迦特去寻找那两个逃走的仆人。结果他竟因此丧了性命。我们可以设想他在被杀的时候是怎样懊悔，怎样自恨不当那样粗心大意，自蹈危机，但懊悔自恨又有甚么用处呢？如果他自始至终总是存着战兢惕惧的心，不但过了三年不敢轻忽所罗门王的警告，就是过了三个三年，也是同样的不敢大意，不敢离开耶路撒冷一步，又何至丧命在所罗门的刀下呢？</p>
+<p>从古至今，许多人都是这样落在祸患中，遭遇了损害。起初知道了一种危险，便战战兢兢，日夜恐惧，不敢有一点轻忽大意，因为他们这样谨慎，便逃脱了危险。及至日子一长，他们感觉到安全稳妥，以为危险再不会发生，于是便轻忽大意，不再防范，不料正在他们以为平安稳妥的时候，祸患便临到了。</p>
+<p>一个人得了很重的病，经过医生的诊治，幸而得了痊愈。医生严严的嘱咐他，有某种事情决不可作，有某种食物决不可吃，不然，这个病如果再犯，就会危及性命。他听了医生的警告以后，真是日夜谨慎，时刻留心，一点不敢违背医生所嘱咐的话，及至一年两年过去了，他的病一次也没有再犯，他便渐渐的疏忽下来，作了医生所禁止他作的事，吃了医生所禁止他吃的食物，他的病果真发作了，这时他后悔不该违背医生的话，但是已经太迟，他的性命就这样断送了。</p>
+<p>一个军官奉了司令的命令，统带着一队军兵，防守着一个阵地。司令诰诫他说，『敌人狡诈多端，不时出袭，千万要昼夜戒备，不得有一刻的疏忽。否则一经失败，就会有全军覆没的危险。』这个军官深知道他的司令是一个久经战阵足智多谋的将军，因此他统带着他手下的士卒，昼夜警惕着防守阵地。一周过去了，两周过去了，三周过去了；一个月过去了，两个月过去了，三个月过去了；敌人从来没有派大兵出袭；偶然有一点接触，也不过是十个二十个兵丁，出来小作骚扰，就很快的退了回去。日子一久，这个军官的心便松懈下来。他以为敌人并没有多大的实力，不需要他这样用心用力去对付。他不再像从前那样时刻警惕，他手下的士卒也不再像从前那样昼夜戒备。不料正在他们疏忽懈怠的时候，敌人大举进袭了。他们既没有豫防，当然在敌人猝然进攻的时候感到手足失措，不到半日的时间便全军覆没了。</p>
+<p>一个人要出门到远方去，需要经过深山旷野。他的朋友告诉他说，那条路上常有猛兽出没，需要与别人结伙同行。他接受了朋友的劝告，每次都觅到一二十个旅伴，纔敢动身。走过十几次以后，并没有遇见过一只猛兽，他的胆子大起来了。他想这样安全的一条路途，何必费许多时日，等候伴侣再起行。他有一次独自动身出发了。刚巧走到山中，遇见一只金钱豹，他因为孤立无援，竟作了这只猛兽的食物。</p>
+<p>历史上有许多人物，在没有成功以前都是战兢恐惧，小心翼翼，因此成了大功。及至成功以后便渐渐骄傲起来，以为天下并没有甚么难事。因此他们再不战兢恐惧，反倒为所欲为，正当他们感觉安全得意的时候，他们忽然遭遇了不可挽救的大失败。他们懊悔，他们自恨，但是毫无补益了。</p>
+<p>宋儒吕祖谦先生说，『天下之事成于惧，而败于忽；惧者福之原也，忽者祸之门也。』这真是金玉药石的话语。无论甚么人，处甚么事，常存恐惧战兢的心，便可以逃脱许多危险祸患；但如果存了轻忽大意的心，纵使没有危险祸患，也可以酿出危险祸患来，如果本来就有，那更不用提了。示每纔得了所罗门的禁令以后，他一定日夜畏惧，恐怕因违命而被杀。但三年以后，他认为再不会有丧命的危险，所以他纔敢离开耶路撒冷，不料就在他认为安全的时候丧了性命。这是多么可以发人深醒的事阿！</p>
+<p>所罗门杀示每的时候，一定会为示每这样轻忽大意而发出叹息。他也许在示每被杀的那一日坐在宫中自言自语的说，『好一个无知的示每！你明知道出了耶路撒冷的日子必要被杀。你自己也曾亲口对我说，「这话甚好，我主我王怎样说，仆人必怎样行。」如今你怎么竟这样大胆，自取杀身之祸呢？』以所罗门那样一个聪明绝顶的人，看见示每被杀，决不会没有感触，决不会不受警戒。但若干年以后他自己竟也走了示每所走的路。当他将圣殿和王宫建造完毕以后，耶和华向他显现，告诉他说，如果他专心事奉神，敬畏神，神要赐福与他，但如果他和他的子孙不遵守神的道，去敬拜别的神，神便要弃绝他们，也使这殿被毁坏。当所罗门听见这些话的时候，一定会战兢惕惧，谨慎自守，惟恐自己因离弃神而遭遇祸患。谁想到多年以后，他竟会那样随从他所宠爱的外邦女子，敬拜那样多的假神，以致招来神极重的咒诅呢？示每是所罗门所杀的，但所罗门自己竟走了示每所走的路。看见别人失败取祸，为别人惋惜哀叹，是一件容易的事；看见别人失败取祸，能自己引为鉴戒，铭心刻骨，终身不忘，因而再不蹈别人的覆辙，却是一件极难的事。就连所罗门这样一个聪明绝顶的人都没有作到，何况其它智能远不及所罗门的人呢。</p>
+<p>今日的圣徒究竟能否不蹈示每和所罗门的覆辙呢？能，而且方法也非常简单：那就是常存战兢恐惧的心，居安不忘危，居荣不忘尊，居贵不忘贱，居富不忘贫。到了甚么地步，也不要以为自己站立得稳，就忽略神的警戒和命令。当知道在世上生存一天，便有一天的试探与危险，在主未曾接我们到他那里去以前，决不可有少许的轻忽大意。在安全中要防备危险，在坦途中要防备坎坷，在饮宴时要防备陷阱，在谈笑时要防备矛戈。世上的人都有休息睡眠停止工作的时候，惟有那如同吼叫的狮子一样的魔鬼，却是日夜到处游行，寻找可吞吃的人。我们时刻儆醒，随处豫防，还恐怕受他的陷害，若再轻忽大意，结果还堪设想么？</p>
+<p>看到示每因轻忽所罗门的警告以致被杀的事，使我们心惊胆战；读了所罗门因为轻忽神的警戒以致犯罪受神咒诅的事，使我们掩卷太息。所罗门杀了示每，自己却作了示每第二。我们若不战兢恐惧的谨慎自己，不久我们就要成为示每第三，使后来看见我们的事迹的人再为我们叹息，像我们今日为示每与所罗门叹息一样，那该是多么悲惨的事阿！</p>
+<p>两个自缢身死的人</p>
+<p>『押沙龙献祭的时候，打发人去将大卫的谋士基罗人亚希多弗从他本城请了来。于是叛逆的势派甚大；因为随从押沙龙的人民日见增多。』（撒下十五12）。</p>
+<p>『押沙龙和以色列众人来到耶路撒冷，亚希多弗也与他同来。』（撒下十六15）。</p>
+<p>『押沙龙对亚希多弗说，「你们出个主意，我们怎样行纔好。」亚希多弗对押沙龙说，「你父所留下看守宫殿的妃殡，你可以与她们亲近。以色列众人听见你父亲憎恶你，凡归顺你的人的手就更坚强。」于是人为押沙龙在宫殿的平顶上支搭帐棚，押沙龙在以色列众人眼前与他父的妃嫔亲近。那时亚希多弗所出的主意好像人问神的话一样；他昔日给大卫今日给押沙龙所出的主意都是这样。』（撒下十六20～23）。</p>
+<p>『亚希多弗又对押沙龙说，「求你准我挑选一万二千人，今夜我就起身追赶大卫。趁他疲乏手软，我忽然追上他，使他惊惶；跟随他的民必都逃跑，我就单杀王一人，使众民都归顺你。你所寻找的人既然死了，众民就如已经归顺你，这样，也都平安无事了。」押沙龙和以色列的长老都以这话为美。</p>
+<p>『押沙龙说，「要召亚基人户筛来，我们也要听他怎样说。」户筛到了押沙龙面前，押沙龙向他说，「亚希多弗是如此如此说的。我们照着他的话行，可以不可以？若不可，你就说罢。」户筛对押沙龙说，「亚希多弗这次所定的计谋不善。」户筛又说，「你知道你父亲和跟随他的人都是勇士，现在他们心里恼怒，如同田野丢崽子的母熊一般。而且你父亲是个战士，必不和民一同住宿。他现今或藏在坑中，或在别处。若有人首先被杀，凡听见的必说，跟随押沙龙的民被杀了。虽有人胆大如狮子，他的心也必消化。因为以色列人都知道你父亲是英雄，跟随他的人也都是勇士。依我之计，不如将以色列众人从但直到别是巴，如同海边的萨那样多，聚集到你这里来，你也亲自率领他们出战。这样，我们在何处遇见他，就下到他那里，如同露水下在地上一般，连他带跟随他的人，一个也不留下。他若进了那一座城，以色列众人必带绳子去，将那城拉到河里，甚至连一块小石头都不剩下。」押沙龙和以色列众人说，「亚基人户筛的计谋比亚希多弗的计谋更好。」这是因耶和华定意破坏亚希多弗的良谋，为要降祸与押沙龙。』（撒下十七1～14）。</p>
+<p>『亚希多弗见不依从他的计谋，就备上驴，归回本城，到了家，留下遗言，便吊死了，葬在他父亲的坟墓里。』（撒下十七23）。</p>
+<p>『当下十二门徒里有一个称为加略人犹大的，去见祭司长，说，「我把他交给你们，你们愿意给我多少钱？」他们就给了他三十块钱。从那时候他就找机会，要把耶稣交给他们。』（太二十六14～16）。</p>
+<p>『说话之间，那十二个门徒里的犹大来了，并有许多人带着刀棒，从祭司长和民间的长老那里与他同来。那卖耶稣的给了他们一个暗号，说，「我与谁亲嘴，谁就是他，你们可以拿住他。」犹大随即到耶稣跟前，说，「请拉比安。」就与他亲嘴。耶稣对他说，「朋友，你来要作的事就作罢。」于是那些人上前，下手拿住耶稣。』（太二十六47～50）。</p>
+<p>『这时候，卖耶稣的犹大看见耶稣已经定了罪，就后悔，把那三十块钱拿回来，给祭司长和长老，说，「我卖了无辜的人的血，是有罪了。」他们说，「那与我们有甚么相干？你自己承当罢。」犹大就把那银钱丢在殿里，出去吊死了。』（太二十七3～5）。</p>
+<p>旧约里有一个自缢身死的亚希多弗，新约里有一个自缢身死的犹大。这两个人的结局相同，这两个人所作的事也一样。他们都是忘恩负义，卖主卖友。亚希多弗背叛他的王，犹大出卖他的主。他们作这种事的动机，都是为求自己的利益，到后来他们不但没有得着利益，反倒遭遇了最凄惨最羞辱的结局。神知道属他的人都会遇见这种试探，也都会犯这种罪，他不愿意他们再蹈这两个人的覆辙，所以他特藉着他的仆人们，把这两个人自取祸败的经过，详详细细的写在旧新二约中。容我们现在分开研究一下他们两个人的事迹。</p>
+<p>亚希多弗本来是大卫的谋士。（见撒下十五12；代上二十七33）他应当对大卫尽忠，在太平的日子辅佐大卫，在危乱的日子保护大卫。他听见押沙龙兴兵作乱，应当竭力劝阻制止，晓以大义，示以利害。如果押沙龙不接受他的勤告，纵使他为避免危害，不敢到大卫那里去，最低的限度他也应当闭门不出，以免助长押沙龙的罪恶。谁想到他竟投到那逆子押沙龙那里去，并且接连着为他擘画献策。更可恶的，就是他竟为押沙龙献了两条最毒辣凶狠的计策：第一个计策他供献给押沙龙，劝他在国人的眼前与父亲的妃嫔亲近，藉此坚固百姓跟随他的决志。大卫是父，押沙龙是子。儿子与父亲的妃嫔同寝是乱伦的大罪，不但可憎，而且可耻。以一个久在王面前作谋士的亚希多弗，竟献出这种卑鄙丑恶的计策，引导押沙龙去作衣冠禽兽，读到这里真不能不使人眦裂发指。</p>
+<p>第二个计策更狠毒了。他献计给押沙龙，劝他趁早杀死大卫，并且自告奋勇，愿意亲自出马，带领一万二千人去连夜追赶大卫，戕害大卫的性命。他背叛自己的王，又劝押沙龙弒父，而且定意自己去杀害他的主人。阴毒险狠，凶残无情，竟能到这种地步。真使我们信不及世界上能有这种人，能有这种事。这样的一个人如果不遭遇凄惨的结局，那真是不可解的事了。</p>
+<p>亚希多弗为甚么要这样作呢？毫无疑义的他是想藉此在押沙龙面前立上一个大功，好博得押沙龙的宠信，以后便在押沙龙的朝廷上居高位，掌大权，领厚俸，享美福。除了这一个目的以外，你不能找出任何理由来。如果大卫是一个无道的昏君，所作的都是祸国殃民的事，我们还可以设想亚希多弗因为要救以色列人脱离水火，不得不下这种毒手，杀死大卫，为国除害。但大卫不只不是一个昏君，而且是一个贤王。大卫一生除了杀害赫人乌利亚那一件事以外，一切所行的在神面前没有一样不是合神心意的。『然而耶和华他的神因大卫的缘故，仍使他在耶路撒冷有灯光，叫他儿子接续他作王，坚立耶路撒冷；因为大卫除了赫人乌利亚那件事，都是行耶和华眼中看为正的事，一生没有违背耶和华一切所吩咐的。』（王上十五4、5）亚希多弗对这样的一个贤王竟存这种恶心，下这种毒手，如果不是为他自己的利益打算，你还能找出别的原因来么？</p>
+<p>是一个人存了利己的心，甚么伤天害理的事都能作得出来。许多人为求自己的利益，说谎欺骗，舞弊营私。许多人为求自己的利益，抢夺盗窃，殴凶杀。许多人为求自己的利益，忤逆父母，仇视弟兄。许多人为求自己的利益，陷害配偶，戕贼密友。世界上种种的罪恶，十有八九是因为人求自己的利益而酿出来的。他们毁坏别人，原是希望藉此使自己得着利益，谁想到公义的神断不容许他们这样。他们害不成人，反害了自己。亚希多弗既背叛了大卫，如今又看见押沙龙不听从他所设的计谋，却采纳户筛的建议，他感觉到自己弄得进退失据。或者他也料到押沙龙不听他的劝告，失去除灭大卫的良机，不久押沙龙会遭遇失败，到那时他不但没有面目再见大卫，而且难免受大卫的审判，不知道要受怎样重的羞辱与惩罚。与其落到那种地步，不如早些自杀，了此残生。于是他便回到本城自缢身死。</p>
+<p>加略人犹大所走的路与亚希多弗也完全相同。他为了自己得利，把那三年之久对他提携训诲恩至义尽的良师卖给恶人，并且伪装得那样周密，用亲嘴作暗号把他的主交给仇敌。请想犹大的心坏到了甚么地步！犹大的罪重到了甚么地步！他存心险狠与亚希多弗相同，他手段毒辣也与亚希多弗一样，当然他的结局也应该与亚希多弗无异。因此在旧约中有一个卖主卖友自缢身死的亚希多弗，在新约中有一个卖主卖友自缢身死的加略人犹大。一前一后，遥遥相对，同样落得身败名裂，遗臭万年，也同样作了后人的鉴戒。</p>
+<p>一部圣经中只记载了两个因卖主卖友而自缢身死的人，今日的世界上和教会中，像亚希多弗和犹大这样卖主卖友的人，数不清有多少。『感恩』与『报德』已经成了陈腐的名词。『忠诚』『情感』与『友谊』已经不值几文小钱。人与人中间多是彼此利用，互相欺骗。用得着别人的时候便是良朋密友，用不着的时候立时一变而为路人。这还算好的，比这个更坏的就是今日良友，明日仇敌，今日股肱，明日痈疽。两个人在一处共事几年，交往几年，从外面看着似乎是很知心的良友，实际却是彼此窥伺，互相愚弄，各人都在那里寻找机会危害对方，如果两个人都是同样的狡诈，同样的邪恶，倒还可以势均力敌，纵使一胜一负，也不能说那一个有些屈。最可怜的就是一个人真诚，一个人虚伪；一个人以对方为腹心，一个人以对方为鱼肉；一个人向对方开诚布公；一个人向对方口蜜心刀；一个人向对方忠心耿耿，一个人向对方磨刀霍霍；结果是那一个真诚的人被对方陷害到不可收拾的地步，那诡诈的人却在暗中鼓掌大笑，自庆狡计得逞。那位公义，正直，信实，忌邪的神看见这种情形，如何能不大发烈怒，追讨这种诡诈阴险的人的罪呢？</p>
+<p>不希奇许多人反对神，攻击神，想要把神推翻，把神除灭。他们所存的心，所作的事，使他们心中恐惧不安。如果他们不除灭神，神就要除灭他们。可惜他们不知道他们的这种行为，正像螳臂当车，以卵击石一样的愚昧。如果他们想逃脱神的审判，惟一的良法，就是赶快承认离弃自己那些罪恶，藉着神为人类所豫备的救主来到神的面前，求他的赦免和拯救。</p>
+<p>世界上有许多诡诈险毒卖主卖友的人，我们不必再多提了。最可痛的就是在教会中也有不少这一类的人。他们外面是基督的门徒，里面的存心却和加略人犹大相同。他们跟随耶稣，完全是为自己求利益。他们为求自己的利益，可以高举耶稣，传扬耶稣。他们为求自己的利益，也可以陷害耶稣，出卖耶稣。他们对待耶稣的态度，完全以他们自己的利害为转移。这种人与教会外面反对基督的人同样的是基督的仇敌，但他们在外面所表现的却与那些人完全不同。他们不但不加害于耶稣，而且表示敬爱他，拥护他。他们像犹大那样对耶稣说，『请拉比安，』而且拉住他与他亲嘴。谁知道正在他们与耶稣亲嘴的时候，就把他交给了仇敌呢？</p>
+<p>犹大出卖他的主，并没有损害了他的主，反倒成就了神拯救世人的工作，主耶稣也因着喝了十字架上的苦杯被升为至高，得了超乎万名之上的名。最凄惨的还是犹大自己，弄得走投无路，后悔莫及，在万分无奈之中，只得走上了自杀的道路，藉着一条绳子结束了自己的一生。上吊死了以后，还从吊着的地方跌落在地上，『肚腹崩裂，肠子都流出来。』（徒一18）害人的，结果竟是害了自己，卖主的，结果竟是卖了自己。</p>
+<p>世人存心阴毒狡诈，忘恩负义，卖主卖友，我们无法制止，也无法劝阻。我们作基督徒的人万不可效法他们。我们必须存心正直行事光明，与人同处总要诚实坦白，宁受多人的欺骗，决不欺骗一个人。不要为求自己的利益伤害任何人。有甚么人待我们有恩情和好处，我们应当铭心刻骨，常常思想怎样感激图报。要孝敬生养抚育我们的父母，要友爱我们同胞的弟兄姊妹，要忠心我们自己的配偶，对我们的主人和朋友要始终如一。当他们遭患难有需要的时候，特别要扶助他们，同情他们，站在他们旁边。如果我们效法世人那样不忠不义，卖主卖友，那便是自蹈危机，自寻祸患，迟早要遭遇亚希多弗和犹大所遭遇的结局，那是多么凄惨呢！</p>
+<p>好一幅悲惨的图画──左边一棵树，上面吊着一个足智多谋，结果中了自己的诡计的亚希多弗，右边一棵树，上面悬着一条断了的绳索，树下卧着一个肚子破裂，肠子流出的叛徒犹大。甚么时候我们想要忘恩负义，出卖恩人和朋友，就赶快看看这两个自缢身死的人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

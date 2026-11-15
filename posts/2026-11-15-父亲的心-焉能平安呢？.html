@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>父亲的心-焉能平安呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>父亲的心-焉能平安呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/6父亲的心-焉能平安呢？.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『有人报告大卫说，「以色列人的心都归向押沙龙了。」大卫就对耶路撒冷跟随他的臣仆说，「我们要起来逃走，不然，都不能躲避押沙龙了。要速速的去，恐怕他忽然来到，加害于我们，用刀杀尽全城的人。」』（撒下十五13、14）。</p>
+<p>『亚希多弗又对押沙龙说，「求你准我挑选一万二千人，今夜我就起身追赶大卫趁他疲乏手软，我忽然追上他，使他惊惶，跟随他的民都必逃跑，我就单杀王一人，使众民都归顺你。你所寻找的人既然死了，众民就如已经归顺你。这样，也都平安无事了。」押沙龙和以色列的长老都以这话为美。」（撒下十七1～4）。</p>
+<p>『王嘱咐约押，亚比筛，以太说，「你们要为我的缘故宽待那少年人押沙龙，」王为押沙龙嘱咐众将的话，兵都听见了。』（撒下十八5）。</p>
+<p>『古示人也来到，说，「有信息报给我主我王。耶和华今日向一切兴起攻击你的人给你报仇了。」王问古示人说，「少年人押沙龙平安不平安？」古示人回答说，「愿我主我王的仇敌，和一切兴起要杀害你的人，都与那少年人一样。」王就心里伤恸，上城门楼去哀哭：一面走，一面说，「我儿押沙龙阿！我儿，我儿押沙龙阿！我恨不得替你死！押沙龙阿，我儿！我儿！」』（撒下十八31～33）。</p>
+<p>好一个狠心的儿子！不但想夺取父亲的国位，而且处心积虑必要把父亲置于死地然后甘心，大卫也早已明白了押沙龙的心，所以嘱咐他的臣仆们急速起来和他一同逃命。这样的儿子真是毒似蛇蝎，狠如豺狼。实在不能再容他存在世界上，贻社会国家以无穷的祸害。无论征求我们中间那一个人的意见，也决不会有一个人赞同再留他在世间。谁想到大卫的臣仆带兵出去与押沙龙作战的时候，大卫竟请求他们为他的缘故宽待押沙龙。更使我们惊奇的，就是当大卫听见押沙龙阵亡的消息的时候竟那样伤恸，上城门楼去哀哭，说，『我儿押沙龙阿！我儿，我儿押沙龙阿！我恨不得替你死！押沙龙阿，我儿！我儿！』这样忘恩负义，丧尽天良，毒似蛇蝎，狠如豺狼的儿子，还值得父亲一哭么？如今大卫不但为他哀哭，而且恨不得替他死。大卫的心也真太令人难明白了。希奇么？一点不足希奇。这就是父亲的心。别的人都希望押沙龙死，都愿意押沙龙死，听见押沙龙阵亡的消息都鼓掌称快，都欣幸万分，惟独父亲的心不是这样。父亲的心就是疼爱儿子。无论儿子是好是坏，父亲总是爱他。无论他是顺服是悖逆，父亲总是爱他。无论他是爱父亲是恨父亲，父亲总是爱他。就是这个儿子举兵谋叛，决心置父亲于死地，父亲仍是爱他。在他未死以前，竭力想保全他的性命，听见他死的消息的时候，伤恸到万分，号咷大哭，恨不得替他死。这就是父亲的心。这就是父亲对儿子的爱。</p>
+<p>我们看见有人犯大罪，作大恶，惹祸害人，就恨不得看见他早早死去，就再不想理他，再不想见他；惟独我们自己的儿子犯了大罪，作了大恶，惹了祸，害了人，我们总希望他们悔改，总不肯弃绝他们，总要尽心竭力帮助他们。别人坏到三分四分，我们便想代替神施行审判，代替神定他们的罪。我们自己的儿子坏到九分十分，我们还是宽容忍耐，希望他们有一日回头。纵使我们的儿子加害于我们自己，盗窃了我们的财物，剥夺了我们的幸福，毁坏了我们的名誉，伤害了我们的身体，我们还是肯饶恕他们，不记念他们的恶，不照他们的恶行报应他们。父亲对儿子的爱真是浩大无边，宽广莫测。一个人若不是自己有儿子，就总不能明白父亲的爱。我们的俗语说，『养儿方知父母恩，』就是这个意思。押沙龙邪恶到那种地步，大卫仍是爱他，仍是宽容他，仍是恨不得替他死，仍是为他那样伤恸。在一个没有儿子的人看来，真不能明白大卫为甚么这样胡涂。但在一个作父亲的人看来，却是一件很平凡的事。父亲的心就是这样，这就是父亲的心。</p>
+<p>读者，你曾想过你的父母对你所有的那种浩大无边宽广莫测的爱么？许多为子女的不知道孝敬父母，就是因为他们不明白父母在他们的身上的爱。他们只觉得父母管教他们是使他们受痛苦，父母约束他们是剥夺他们的自由，父母不照他们所希望的给他们财物是亏负他们。如果父母确实有一些对不住他们的地方，他们更认为那是不可赦免的大罪。就因为他们存这种错误的思想，所以他们不但不想到父母对他们的那种天高地厚的恩情，而且常觉得父母是他们眼中的钉，目中的刺，恨不得早早离开父母，早早脱离他们的辖制和缚束，去自己享受自由与幸福。有的子女虽然不至于这样，可是他们也总觉得父母不如他们的朋友好。因为他们的朋友不加给他们这些不便利，因为他们的朋友和他们说得来。只有在他们遭遇危险祸患的时候，他们纔会明白朋友究竟远不及父母好，因为在那时候朋友恐怕受连累，都远远的躲开，父母却是拼上了一切所有的，和自己的性命，要去保护他们，搭救他们。朋友的爱常会因着种种的关系改变，父母的爱却是始终如一。</p>
+<p>我不否认有许多作父母的对待儿女对待得不适宜。我不否认有许多作父母的因为自己的性情不好加给儿女许多痛苦。我不否认有许多作父母的给儿女许多不良的刺激，使儿女受了许多的损害。但我们应当明白，这些都是他们人生中的失败和错误。他们对儿女的爱总是真诚伟大的。他们爱儿女也许爱得不适宜，爱得使儿女受了伤损。他们的爱也许被他们那暴烈的性情掩盖起来，以致使儿女看不见。他们的爱也许因为他们的无知而结了恶果，以致使儿女认为他们并没有爱。但他们究竟还是爱儿女。如果作儿女的只注意父母的失败错误和无知，他们便会对父母发怨言，起争端，甚至恨恶父母，反抗父母。但如果儿女想到父母对他们那种深切的爱，便要感激父母，爱戴父母了。俗语说，『天下无不是的父母，』这句话是甚么意思呢？那就是说，因为父母对儿女的恩情天高地厚，所以儿女总不可怪罪父母，恨恶父母。不是父母没有错处，乃是儿女那一方面因为感激父母的恩情，便不看父母的错处。作父母的不应当说这一句话。他们应当看见自己的错处，应当承认自己的错处，悔改自己的错处。但作儿女的却应当明白父母对儿女的爱心和恩情超过了他们的不是，遮盖了他们的不是，以致儿女只看见父母的爱心和恩情，却不注意父母的不是。当然这也不是说儿女看见父母的恶硬说是善；看见父母作非理的事硬承认他们有理。神不要我们因为感恩便颠倒是非；淆乱黑白。这乃是说儿女因为想到父母的恩情和爱心，便不注意父母因为人生中的失败错误和无知所加给自己的伤害。真的，在全世界的人中你要寻找一个像你的父母那样真挚恳切爱你的人，不见得会找得着。无论我们或好或坏，或善或恶，或感恩或负义，总是始终如一的爱我们，除了我们的父母以外，在世界上大约很难再找到几个人。大卫不过是许多作父亲的人当中的一个。一个人若不想到父母的爱心和恩情，不孝敬他的父母，真是丧心病狂了。</p>
+<p>谈到父亲的爱，我又想到神对他的孩子们的大爱了。我们信主的人都是神的儿子。『你们因信基督耶稣都是神的儿子。』（加三26）神不只是我们的神，更是我们的父。父亲对儿子的爱是无限无量永远不变的，神对我们的爱也是如此。『父亲怎样怜恤他的儿女，耶和华也怎样怜恤敬畏他的人。』（诗一○三13）押沙龙坏到那种地步，负义忘恩到那种地步，仇视父亲到那种地步，大卫还是爱他。这件事正可以表示神对我们的爱。</p>
+<p>我们常有一种极错误的思想就是我们以为神只爱那些好信徒，却不爱那些不好的信徒，因此当我们热心爱神，殷勤亲近神，忠诚事奉神的时候，我们便觉得神爱我们；当我们不爱神，远离神，犯罪作恶的时候，我们便觉得神不爱我们，甚至觉得神丢弃了我们。有些信徒甚至以为他们好的时候是神的儿子，他们不好的时候便不是神的儿子。这一切错误的观念所以产生，都是由于信徒们不深明白神的爱乃是父亲的爱。他们以为神的爱不过是朋友的爱。当他们作好人，爱朋友，亲近朋友的时候，朋友便爱他们，当他们作坏人，不爱朋友，不亲近朋友的时候，朋友便不爱他们。他们因为他们的朋友这样待他们，他们也这样待他们的朋友，便以为神待他们也必是这样。他们完全忘记了神并不是他们的朋友，乃是他们的父，神的心不是朋友的心，乃是父亲的心，神的爱也不是朋友的爱，乃是父亲的爱。我们对神所存的心思所抱的态度常常改变──有时热，有时冷，有时爱他，有时恨他，有时顺从，有时悖逆，但神对我们的爱却是始终如一，毫无改变，正如大卫对他的儿子押沙龙一样。许多信徒所走的路不是和押沙龙一样么？他们是神的儿子，然而他们杀害弟兄，躲避神的面，存心背叛神，用种种的计谋夺取神的地位权柄和尊荣，使神伤心愁苦。但神待他们却像大卫待押沙龙一样，总是宽容，总是忍耐，总是希望他们有一日回心转意。他们无论怎样对神无情无义，神对他们总是始终如一的爱他们。及至他们因为犯罪遭了祸患的时候，神还是为他们伤心哀痛。大卫对押沙龙所存的心所抱的态度，整个的表明了父亲的心，也完全彰显了神的心。</p>
+<p>必有人问说，『神的爱对我们既是始终不变，怎么当我们热心亲近神顺服神的命令的时候，我们便快乐平安，诸事蒙福，当我们冷淡远离神不顺服神的时候，我们便失去喜乐平安，遭遇神的击打呢？神的心既是始终如一，那样我们无论好不好，无论顺服不顺服，总当常有喜乐平安，凡事蒙福，纔合乎理。为甚么在事实方面却不是这样呢？』这个问题很容易回答。我们远离神犯罪的时候，失去了平安喜乐，遭遇痛苦，并不是神不爱我们，正是神爱我们的表现。如果我们远离神犯罪的时候，他仍然赐给我们平安喜乐，使我们凡事蒙福，我们势必离神越来越远，犯罪越来越多，不陷入最可怜最凄惨的地步不止。神因为爱我们的缘故，不愿意看见我们遭遇这种祸患，所以他一看见我们远离他去犯罪，便夺去我们的喜乐平安，使我们受痛苦，好使我们因此认罪悔改，速速归向他。试问你看见你的儿子说谎偷盗的时候，你便责打他，惩罚他，这是你爱他呢？还是你不爱他呢？如果你的儿子作许多坏事，你还照常好待他，把许多的好东西给他，使他快乐满意，这是不是他的益处呢？明白了这个真理，我们便晓得神在我们远离他去犯罪的时候，夺去我们的喜乐平安，使我们多受痛苦，正是证明他爱我们，正如经上的话说，『我儿，你不可轻看耶和华的管教，也不可厌烦他的责备；因为耶和华所爱的他必责备，正如父亲责备所喜爱的儿子。』（箴三11、12）</p>
+<p>我们远离神去犯罪的时候，心中便痛苦不安，而且遭遇种种的祸患打击，不只是因为神管教责打我们，在我们自己这一方面，也势必演出这种情形来。因为我们一犯了罪，便会惭愧惧怕，痛苦不安，同时我们所犯的罪也必为我们招来极多的祸患打击。譬如说一个小孩子当父母不在家的时候，毁坏了家具，欺侮他的弟弟妹妹，打破他们的头，撕裂他们的衣服，他一想到父母回来必要查问这事，他是不是要惭愧惧怕痛苦不安呢？他一听见父母在门外说话的声音，便赶快躲藏起来。其实他的父母爱他的心并未曾有甚么改变，但他里面却有了改变。他不再坦然无惧，却是战兢畏缩，不再欢喜快乐，却是痛苦烦恼。我们能不能因着他心中这种感觉，便说他的父母不爱他呢？在他自己的心中，也许以为他的父母不爱他了，但他的父母是否因他作了这些错事便不爱他呢？许多信徒不因自己的儿女不好便不爱他们，同时他们却以为他们自己不好，神就不爱他们。总不以父亲的心去揣测神的心，因此他们便陷在错误失望和痛苦中。这样的信徒亟需要用父亲的心去揣想神的心，亟需要明白神对他的孩子们所存的心不是君王的心，不是主人的心，也不是朋友的心，乃是父亲的心。</p>
+<p>信徒在远离神犯罪的时候，遭遇祸患打击，不用提神的责打管教，他们本身所犯的罪就足能招来这一切。你恨别人，别人自然也恨你。你陷害别人，别人一定要向你施行报复。你欺骗人，对人说谎，别人便不再信任你，不再与你交往。你损人利己，别人便唾弃你，远离你。你放纵情欲，你的健康便受损害。你不孝敬父母，你的儿女便不孝敬你。你发出甚么去，不久那些东西便再回到你的身上来。神是你的父亲，他对你的爱总没有改变，但他决不改变这个定律──『人种的是甚么，收的也是甚么。』其实他不改变这条定律还是为我们的益处，不然，我们更不知道要犯多少罪，要堕落到甚么地步了。</p>
+<p>至于有些信徒以为他们好的时候便是神的儿子，他们不好的时候便不是神的儿子，这简直是笑话了。儿子永远是儿子。好的时候是好儿子，坏的时候是坏儿子。好儿子要得福，要受父亲的夸赞，要被父亲和众人信任重用。坏儿子要挨打，要受父亲的斥责，要被人藐视厌弃。但无论如何，儿子永远是儿子。虽然日报上当有人刊登声明说，『悖逆某某某不服教训，在外妄为，自即日起与伊脱离父子关系。今后无论有何不法行为，或在外借贷等情，鄙人概不负责。』但这不过是法律上的手续。作父亲的恐怕儿子犯法妄为，使自己受了连累，所以刊登这种声明。其实他的儿子永远是他的儿子，绝不会因为刊登了一次声明，便不是他的儿子。虽然在法律上可以脱离父子的关系，但在事实上却绝对不能。父子的关系不像东伙的关系，不像主仆的关系，也不像朋友的关系，更不像两个人合股经商的关系。那些人中间根本没有生命上的连系。要合就合，要散就散。合在一处就有了关系，散了以后就脱离了关系。惟独父亲与儿子中间所有的，乃是生命上的关系。一个人不生儿子便罢，生了以后便永远与他脱离不了父子的关系。神和他所生的儿子们中间的关系也是这样。一个人只要真诚悔改，信靠基督，因而被神所生，作了神的儿子，他便永远是神的儿子。无论是人，是天使，是魔鬼，都不能使他再不是神的儿子，连神自己也不能作这件事。</p>
+<p>许多信徒就因为不清楚明白他们和神中间的关系，更不彻底了解神的心，因此便常常感觉恐惧，忧虑，失望，灰心。在他们热心的时候，也不过像服事主人那样服事神，没有自由，没有快乐，没有享受，只是恐惧战兢的生活，惟恐犯了罪，触犯了神，以致被神弃绝。在他们软弱的时候，他们便以为神不再爱他们，以为神丢弃了他们，以为自己不能得救。在这时候魔鬼便乘机欺骗他们，控告他们，使他们灰心绝望，然后他便毫不费力的把他们掳去，使他们跟从他，服事他。要帮助这一类的信徒，只有使他们清楚明白他们和神中间的关系，更帮助他们了解神的心乃是父亲的心。如果一切真实悔改信了耶稣的人都清楚明白了他们是神的儿子，他们永远是神的儿子，神的心是父亲的心，神的爱永远不改变，无论他们如何，神总是爱他们，这要使他们怎样快乐，使他们怎样感激，使他们怎样爱那爱他们的神，使他们怎样因为爱神而爱神所爱的人哪！</p>
+<p>来呀！让我们因神在基督耶稣里所成全的救工感谢他，因神赐给我们的那儿子的名分地位与权利赞美他，因神那永不改变的爱歌颂他。让我们和天上，地上，地底下，沧海里，和天地间一切所有被造之物，一同说，</p>
+<p>『但愿颂赞，尊贵，荣耀，权势，都归给坐宝座的和羔羊，直到永永远远。』</p>
+<p>『焉能平安呢？』</p>
+<p>『约兰吩咐说，「套车。」人就给他套车。以色列王约兰和犹大王亚哈谢，各坐自己的车，出去迎接耶户，在耶斯列人拿伯的田那里遇见他。约兰见耶户，就说，「耶户阿，平安么？」耶户说，「你母亲耶洗别的淫行邪术这样多，焉能平安呢？」约兰就转车逃跑，对亚哈谢说，「亚哈谢阿，反了。」耶户开满了弓。射中约兰的脊背，箭从心窝穿出，约兰就仆倒在车上。』（王下九21～24）。</p>
+<p>人人愿意求平安，得平安，但是实际上享受着平安的人却是寥若晨星。这究竟是甚么缘故呢？耶户对约兰所说的话清清楚楚的回答了这个问题：『你母亲耶洗别的淫行邪术这样多，焉能平安呢？』多有罪恶就决不会有平安。不只约兰的家中是这样，任何人的家中都是这样；不只以色列国中是这样，任何国中都是这样。有罪恶就不能有平安，有平安就不能有罪恶。</p>
+<p>耶洗别自从嫁给亚哈王，作了以色列国的王后以后，种种的恶行实在数不胜数。她引诱亚哈去事奉敬拜巴力，为巴力建庙筑坛，杀害耶和华的众先知，又定意杀戮神的忠仆伊莱贾，还用假见证戕害了无辜的人拿伯，夺取了他的葡萄园。邪恶残暴，无可比伦。约兰有这样的一个母亲。还要问耶户说，『平安么？』无怪耶户那样回答他了。</p>
+<p>许多人都像约兰那样无知：家中有许多罪，自己作许多恶事，在他们的人生中充满了不信神，不怕神，骄傲狂妄，自私自利，诡诈虚伪，贪婪淫乱，嫉妒恼恨，损人利己，舞弊营私，强暴凶杀，不孝不忠。无义无信，他们的心中所存的是恶念，他们的口中所吐的是恶言，他们的双手所作的是恶事，同时他们却希望他们个人享平安，希望他们的家中有平安。他们亟需听耶户所说的话：『你们的家中和你们个人的生活里的罪恶这样多，焉能平安呢？』</p>
+<p>我们当知道平安是从平安的神那里来的，圣经中称神为『赐平安的神。』『愿赐平安的神常和你们众人同在。』（罗十五33）『赐平安的神快要将撒但践踏在你们脚下。』（罗十六20）。『赐平安的神就必与你们同在。』（腓四9）。『愿赐平安的神亲自使你们全然成圣。』（帖前五23）这几节经文在原文里并没有『赐』字。原文只是说，『平安的神。』不过说赐平安的神也没有甚么太不适宜的地方，因为只有『平安的神』能赐给人平安。敬畏神，信靠神，顺从神，亲近神，便有平安。目中无神，与神为敌，与神疏远，就没有平安。当我们犯罪的时候，我们便远离神，我们便与神为敌，所以我们犯罪的时候便不会有平安。罪与神是不能并立的。神叫我们远离罪，罪叫我们远离神。我们若不远离罪，我们就必远离神。当我们远离罪亲近神的时候，我们便有平安；当我们亲近罪远离神的时候，我们便失去平安。我们犯的罪越多，我们也就离平安越远。及至我们深深沉溺在罪中的时候，平安就逃避无踪了。以色列王约兰的父亲亚哈和他的母亲耶洗别犯了那样多的罪，亚哈已经因他的罪受了神的咒诅，耶洗别仍然不知道悔改，约兰还问耶户说，『平安么？』耶户对他说了那一句无情的话语──『你母亲的淫行邪术这样多，焉能平安呢？』无论甚么人，若是不离弃他的罪恶，却希望有平安，都当听耶户所说的这一句话。</p>
+<p>自从世界大战结束以后，人都踊跃欢呼，歌颂升平，他们以为战祸过去了，以为人类因着战争的残酷和因着战争所受的损害，必定再不敢发动战争，必定厌恶战争。这样一来，世界永久的和平必定可以实现。『和平』的呼声响彻了全地，『和平』的标语贴满了通衢。可是我们留意观察世界社会人心的现状，便发现人类的罪恶不但没有因着数载的战祸而减少，反倒因着所受极深的痛苦而加增。不信，背道，强暴，凶杀，贪财，自私，欺骗，说谎，舞弊，营私，残暴，仇恨，淫乱，纵欲，以及其它种种的罪恶，竟像倍级数那样的增加起来。在这样的景况中还希望和平，那真无异于缘木求鱼了。</p>
+<p>世上的人因为不认识神，不明白真理，所以作这种缘木求鱼的愚事，并不足奇，所最令人痛心的，就是一般代神传话的人──传道者──也随声附和着呼叫说，『平安了，平安了。』他们所作的和古代以色列民中的先知相同：『他们从最小的到至大的，都一味的贪婪，从先知到祭司，都行事虚谎。他们轻轻忽忽医治我百姓的损伤，说，「平安了，平安了，」其实没有平安。』（耶六13、14）这些先知如同杀人的庸医，只顾自己得一些利益，完全不顾那些身患罪病的人前途如何。他们因为人们都喜悦听顺耳之言，都喜欢听粉饰太平的歌声，所以也就迎合一般人的心理，高声喊着说，『平安了，平安了。』神把事实告诉我们说，『其实没有平安。』神从来不附和人，不迎合人的心理。神只说实话。他不管人喜欢听或不喜欢听，他总是把真情实话告诉人。古时他看见那些如同庸医的先知们轻轻忽忽医治百姓的损伤，便兴起杰里迈亚来，使他大声疾呼，唤醒那些酣睡的人们，同时也揭破了那些先知所说的谎言。今日神也照样兴起他的先知来，发出与杰里迈亚所发的同样的呼声。</p>
+<p>我们今日如果不希望得平安也就罢了。如果希望得平安，唯一的方法就是自己先承认离弃一切的罪恶，全心归服神，以后再尽我们的力量招呼别人承认离弃他们的罪恶，领他们归向神。多一个人离弃罪恶归向神，便减少世上一分祸患，也就增加世界上一分平安。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>信实的人人以信实待他-一个投机说谎的少年人-看这个为神作工的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>信实的人人以信实待他-一个投机说谎的少年人-看这个为神作工的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/14信实的人人以信实待他-一个投机说谎的少年人-看这个为神作工的人.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『以色列的死期临近了，他就叫了他的儿子约瑟来，说，「我若在你眼前蒙恩，请你把手放在我大腿底下，用慈爱和诚实待我，请你不要将我葬在埃及；我与我祖父同睡的时候，你要将我带出埃及，葬在他们所葬的地方。」约瑟说，「我必遵你的命而行。」雅各布布说，「你要向我起誓。」约瑟就向他起了誓。于是以色列在头上敬拜神。』（创四十七29～31）。</p>
+<p>『这一切是以色列的十二支派：这也是他们的父亲对他们所说的话，为他们所祝的福，都是按着各人的福分为他们祝福。他又嘱咐他们说，「我将要归到我列祖那里，你们要将我葬在赫人以弗仑田间的洞里，与我祖我父在一处，就是在迦南地幔利前麦比拉田间的洞，那洞和田是亚伯拉罕向赫人以弗仑买来为业作坟地的。他们在那里葬了亚伯拉罕和他妻子撒拉，又在那里葬了艾萨克和他妻子利百加，我也在那里葬了利亚。那块田和田间的洞原是向赫人买的。」雅各布布吩咐众子已毕，就把脚收在上，气绝而死，归到他列祖那里去了。』（创四十九28～33）。</p>
+<p>『约瑟伏在他父亲的面上哀哭。约瑟吩咐伺候他的医生用香料熏他父亲，医生就用香料熏了以色列；熏尸的常例是四十天，那四十天满了，埃及人为他哀哭了七十天。为他哀哭的日子过了，约瑟对法老家中的人说，「我若在你们眼前蒙恩，请你们报告法老说，我父亲要死的时候，叫我起誓说，你要将我葬在迦南地，在我为自己所掘的坟墓里。现在求你让我上去葬我父亲，以后我必回来。」法老说，「你可以上去，照着你父亲叫你起的誓将他葬埋。」于是约瑟上去葬他父亲，与他一同上去的有法老的臣仆，和法老家中的长老，并埃及国的长老，还有约瑟的全家，和他的弟兄们，并他父亲的眷属；只有他们的妇人，孩子，和羊群，牛群，都留在歌珊地。又有车辆马兵和他一同上去，那一帮人甚多。他们到了约但河外亚达的禾场，就在那里大大的号咷痛哭。约瑟为他父亲哀哭了七天。迦南的居民见亚达禾场上的哀哭，就说，「这是埃及人一场极大的哀哭；」因此那地方名叫埃布尔麦西，是在约但河东。雅各布布的儿子们就遵着他父亲所吩咐的办了，把他搬到迦南地，葬在幔利前麦比拉田间的洞里，那洞和田是亚伯拉罕向赫人以弗仑买来为业作坟地的。约瑟葬了他父亲以后，就和众弟兄并一切同他上去葬他父亲的人都回埃及去了。』（创五十1～14）。</p>
+<p>『约瑟对他弟兄们说，「我要死了，但神必定看顾你们，领你们从这地上去，到他起誓所应许给亚伯拉罕，艾萨克，雅各布布之地。」约瑟叫以色列的子孙起誓说，「神必定看顾你们，你们要把我的骸骨从这里搬上去。」约瑟死了，正一百一十岁；人用香料将他熏了，把他收殓在棺材里，停在埃及。』（创五十24～26）。</p>
+<p>『法老容百姓去的时候，非利士地的道路虽近，神却不领他们从那里走，因为神说，「恐怕百姓遇见打仗后悔，就回埃及去。」所以神领百姓绕道而行，走红海旷野的路。以色列人出埃及地，都带着兵器上去。摩西把约瑟的骸骨一同带去，因为约瑟曾叫以色列人严严的起誓，对他们说，「神必眷顾你们。你们要把我的骸骨从这里一同带上去。」』（出十三17～19）。</p>
+<p>约瑟在他父亲去世以后，把父亲的遗体送回迦南地，这一件事乍看也许并不觉得有甚么困难，但我们若细细思想一下，便知道这并不是一件简单容易的事。那时候的交通和今日相比真是差得太远了。今日有火车，汽车，飞机，旅行几千里地的长途算不了甚么困难的事。但那时却不是这样。在陆地旅行除了步行以外，交通工具只有车，马，骆驼。从埃及到迦南，一千几百里路的程途，大约总需要十天以上的长久。长途跋涉既是辛苦万状，沿途食宵又有许多的不便。约瑟以埃及全国宰相之尊，已经有二十多年之久，负着全国重大的责任，过着舒适优美的生活。况且约瑟在他父亲死的时候已经是五十六岁的人了。如今要送父亲的遗体到迦南地，真是一件相当艰巨的事工。但他因为受了父亲的嘱托。而且允诺了父亲，因此在父亲逝世后，便不辞辛苦艰难，亲自陪同他的弟兄把父亲的遗体送回迦南地，葬在父亲所指定的麦比拉洞中。这个儿子就是这样实践他的诺言，对已死的父亲忠实守信。</p>
+<p>约瑟埋葬了他的父亲以后，又过了五十多年，他也照样嘱咐他的子孙，叫他们在神眷顾他们领他们出埃及的时候，把他的骸骨带回迦南，正如他父亲嘱咐他一样。他的子孙在他死后怎样待他呢？经上记着说，『以色列人出埃及地都带着兵器上去；摩西把约瑟的骸骨一同带去。』摩西这样作更不是一件容易的事了。经上述以色列人出埃及地的情形说，『埃及人催促百姓，打发他们快快出离那地，因为埃及人说，「我们都要死了。」百姓就拿着没有酵的生面，把搏面盆包在衣服中，扛在肩头上。』（出十二33、34）又说，『他们用埃及带出来的生面烤成无酵饼，这生面原没有发起，因为他们被催逼离开埃及，不能延，也没有为自己豫备甚么食物。』（出十二39）在这种情形中照顾活人都来不及，谁还有心思和时间照顾一个去世二百年的死人。何况摩西生在约瑟死去多年以后，他既没有看见过约瑟的面目，更没有亲自听见过约瑟的声音，不过间接听他的先人辗转传述约瑟的遗命，他就这样守信践约，照着约瑟所留的遗嘱，在这样忙乱紧张的情形之下，仍是把约瑟的骸骨带出了埃及。约瑟对已死的父亲守信，他的子孙也对他守信。他怎样待他的老父，他的子孙也怎样待他，正如经上所写的话说，『人种的是甚么，收的也是甚么。』（加六7）约瑟到迦南地埋葬他父亲的时候，也许还没有想到他自己身后的事，因为那时他不过只是五十多岁的人。但他自己践约守信的行为到底成了他自己的益处。大卫写诗说，『慈爱的人，你以慈爱待他；完全的人，你以完全待他；清洁的人，你以清洁待他；乖僻的人，你以弯曲待他。』（诗十八25、26）不但神这样待我们，就连人待我们如何，也与我们待别人如何有着极大的关系。许多摆在我们面前的事实都告诉我们说，『慈爱的人，人以慈爱待他；残暴的人，人以残暴待他；信实的人，人以信实待他；诡诈的人，人以诡诈待他。』约瑟是一个信实的人，人便也以信实待他。</p>
+<p>你站在一个山谷中大声呼叫说，『我兄阿，我想念你，我爱你；』你便听见远处有人声对你说，『我兄阿，我想念你，我爱你。』你再大声呼叫说，『你这无礼的人，你真讨厌，你该死！』你也听见远处有人声对你说，『你这无礼的人，你真讨厌，你该死！』这回答你的人究竟是谁呢？甚么人也没有，只是你发出的声音的回音而已。你发出去的是甚么声音，回来的也是甚么声音。你发出去的是甚么言语，回来的也是甚么言语。照样，你每日从别人所得到的待遇，也都是你自己言语行为的回声。你用慈爱待人，别人纔用慈爱待你。你用信实待人，别人便用信实待你。虽然用慈爱信实待人的人不一定都能得人的敬爱信任，但得人敬爱信任的人却一定是用慈爱信实待人的人。</p>
+<p>约瑟用信实待他的父亲，他的子孙也用信实待他。这种情形我们在许多人的家庭中都可以看到。如果你孝敬你的父母，虽然你没有用言语教导你的子女怎样孝敬父母，但你每日的生活行为都是在那里给你的子女一种实际的教育。你对你的父母尊敬顺服，你的子女天天看见你的行为，他们自己就很自然的领会了他们应当怎样对待父母。如果你对父母忤逆不孝，却教导你的子女孝敬你，他们不但不肯孝敬你，而且会在背后批评你说，『那有这种合算的事呢？你不孝敬你的父母，却叫我们孝敬你，那是办不到的事。』古人说，『其身正，不令而行；其身不正，虽令不从。』就是这个意思。</p>
+<p>传说某处有一个人素来不孝敬父母，他的母亲已经去世，老父亲却还健在。他爱他的妻子和儿女，却厌恶他的父亲。他听从妻子的话，不让老父亲同他们在一个桌子上吃饭。有一次他的父亲失手打破了一个饭碗，这件事更惹起他们夫妇二人的怒气，从那一天起，不再让他的父亲用碗吃饭。他给他的父亲豫备了一个罐头铁桶，把饭和菜盛在里面给他父亲吃。他和他的妻子儿女却用美丽的饭碗瓷盘吃饭。老父亲虽然十分难过，但因为自己寄居在儿子的荫下，也就敢怒而不敢言。有一天这个人从外面回家，看见他那八岁的小儿子一手拿着一把翦刀，一手拿着一个罐头铁桶，在那里用力翦开。他恐怕他的儿子割破了手，就吩咐他放下。但他的儿子却执意不肯放下。他问他的儿子翦这个罐头铁桶有甚么用途。他那八岁的小儿子回答他说，『爸爸，我知道你的食量比我祖父的食量大，我今日发现这个罐头铁桶比我祖父吃饭用的那一个大得多，所以我赶快把它翦齐，好保存起来，到你老年的时候给你盛饭吃。』这个人听了他儿子所说的这句话，忽然醒悟过来，一面怕他到老年的时候要遭逢这种不幸的待遇，一面悔悟自己的错误过失，立时到老父亲面前去认罪，从此以后殷勤尽孝，曲意承欢。这个人总算幸运，遇见一个聪明可爱的小儿子，使他能以临崖勒马。大多数忤逆不孝的人遇不见这种聪明的儿子，只好到老年的时候和他们的老父亲同样的哀哭伤心了。</p>
+<p>许多人因为他们的子女对他们忤逆不孝，斥责他们的子女，怨恨他们的子女忘恩负义，丧尽天良。实际他们所遭遇的，正是吃他们自己多年以前撒下的种子所结的果实而已。如果他们在二三十年以前在他们自己的父母面前不那样忤逆不孝，忘恩负义，丧尽天良，他们的子女大约也不会像今日这样对待他们。</p>
+<p>在家庭中是如此，在社会中也是如此。一个人向来待人不顾信用，不说实话，祟尚诈术，玩弄手腕，他能希望别人信任他，靠托他，对他推心置腹，相见以诚么？一个人向来自私自利，不顾别人，甚至为自己得利益去损害别人，剥削别人，他能希望别人关心他，爱护他，在他有需要的时候帮助他，在他有危难的时候救援他么？一个人向来看见财物就红了眼，黑了心，习于舞弊营私，侵占攘夺，他能希望别人愿意和他共财共事，把财物责任交托他么？一个人向来举止轻佻，言语不洁，总喜欢拈花惹草，招蜂引蝶，他能希望别人尊敬他，高看他，接待他到他们的家中去么？一个人向来信口开河，说话不负责任，常常传述不确实的事，对人失信食言，他能希望他所说的话在别人心中有权威，有分量，使别人看他的一言重于九鼎么？一个人向来翻云覆雨，反复无常，与别人相交，常是今日良友，明日寇仇，他能希望得着许多知心的朋友，与他同甘苦共患难么？种下荆棘不会收葡萄，种下蒺藜不会收无花果。种下诡诈谎言，损人利己，贪婪偷窃，放荡淫乱，失信食言，卖主卖友，这一类的坏种子，也决不用希望能收得别人的信任，靠托，尊重，敬爱。经上的话是不能改变的『不要自欺，神是轻慢不得的；人种的是甚么，收的也是甚么。』</p>
+<p>我们再注意一件事。──从约瑟践约送他父亲的遗体回迦南，到摩西携带约瑟的骸骨出埃及地，这其间约有二百年的距离。摩西能不忘记他远祖的遗命，在那样忙迫的关头，将约瑟的骸骨带出埃及，真是一件难能可贵的事。但约瑟孝亲践约的事迹一直流传在希伯来人中间，也是与这件事极有关系的。以色列人因为年深日久，或者能忘记先祖所说的话，但他们先祖所作的那一件可歌可泣的事，却极容易一代一代的传述下来。因着这一件事实，就使约瑟的遗命也连带着铭刻在以色列人的心中。古今中外许多事实都告诉我们说，一个人的嘉言必须有懿行随着，纔能传流到久远，纔能使当时的人和后世的人深深的受他的感化。传道的人能把真理讲得清清楚楚固然是好，但他们有高尚圣洁的人生更是要紧，因为这种具体的事实最能帮助人把他们从他所领受的真理牢记在心中。当他们忘记了他的言语的时候，一想起他所作的事，便连带着想到他所讲的话了。</p>
+<p>你看见有人受别人的信任，靠托，尊重，敬爱么？那并不是偶然的事。这种人付过相当大的代价。他们多年以来，战兢恐惧的生活。他们谨言慎行。他们不随便说话，不撒谎，不轻易允诺人甚么事，不信口传述他们不能证实的话。他们不用诈术，不耍手腕，不带假面具，不作伪欺人。他们不存贪心，不取不义的财物，不亏负别人，不作损人利己的事。他们不说污秽的言语，与异性的人往来端庄谨慎，他们对自己的配偶忠诚，不作鬼鬼祟祟不能告人的事。他们作事交友都有恒心，不轻易举步，也不轻易中辍，不朝秦暮楚，也不见异思迁。他们孝敬父母，友爱弟兄，顾念邻舍，体恤朋友。他们殷勤作工，忠于自己的职务，坚守自己的岗位。他们不好高骛远，也不钓誉沽名，凡事都脚踏实地，说真话，作真事。他们因为这样作，曾受过损失。遭过误会，但他们专要讨神的喜悦，常常存敬畏神的心，不顾一切的困难，照着他们所看见的真理作去。神也真不亏负他们，使他们因着向他忠诚顺服，至终不但得了他的喜悦，也得了多人的敬爱信任。这又证明了经上的话是不能改变的：『人种的是甚么，收的也是甚么。』</p>
+<p>一个投机说谎的少年人</p>
+<p>『非利士人与以色列人争战，以色列人在非利士人面前逃跑，在基利波有被杀仆倒的。非利士人紧追扫罗和他儿子们，就杀了扫罗的儿子乔纳单，亚比拿达，麦基舒亚。势派甚大，扫罗被弓箭手追上，射伤甚重。就吩咐拿他兵器的人说，「你拔出刀来，将我刺死，免得那些未受割体的人来刺我，凌辱我。」但拿兵器的人甚惧怕，不肯刺他。扫罗就自己伏在刀上死了。拿兵器的人见扫罗已死，也伏在刀上死了。这样，扫罗和他三个儿子，与拿他兵器的人，以及跟随他的人，都一同死亡。』（撒上三十一1～6）。</p>
+<p>『扫罗死后，大卫击杀亚玛力人回来，在洗革拉住了两天；第三天有一个人从扫罗的营里出来，衣服撕裂，头蒙灰尘，到大卫面前，伏地叩拜。大卫问他说，「你从那里来？」他说，「我从以色列的营里逃来。」大卫又问他说，「事情怎样？请你告诉我。」他回答说，「百姓从阵上逃跑，也有许多人仆倒死亡，扫罗和他儿子乔纳单也死了。」大卫问报信的少年人说，「你怎么知道扫罗和他儿子乔纳单死了呢？」报信的少年人说，「我偶然到基利波山，看见扫罗伏在自己的枪上，有战车马兵紧紧的追他。他回头看见我，就呼叫我。我说，我在这里。他问我说，你是甚么人？我说，我是亚玛力人。他说，请你来将我杀死，因为痛苦抓住我，我的生命尚存。我准知他仆倒必不能活，就去将他杀死，把他头上的冠冕，臂上的镯子，拿到我主这里。」</p>
+<p>『大卫就撕裂衣服，跟随他的人也是如此，而且悲哀，哭号，禁食到晚上，是因扫罗和他儿子乔纳单并耶和华的民以色列家的人倒在刀下。大卫问报信的少年人说，「你是那里的人？」他说，「我是亚玛力客人的儿子。」大卫说，「你伸手杀害耶和华的受膏者，怎么不畏惧呢？」大卫叫了一个少年人来，说，「你去杀他罢。」大卫对他说，「你流人血的罪归到自己的头上，因为你亲口作见证说，我杀了耶和华的受膏者。」少年人就把他杀了。』（撒下一1～16）。</p>
+<p>这个亚玛力的少年人一定是一个聪明人。他经过那片作过战的地方，看见扫罗的尸身，便从扫罗的尸体上将冠冕和臂镯取下来，送到大卫那里去报功。如果他诚诚实实的把事情的经过述说一遍，再把扫罗的冠冕和臂镯交给大卫，大卫一定会因为他保全扫罗的遗物，不致落到非利士人手中，给他赏赐。不幸他的聪明害了他！他造谎言，说他杀死了扫罗，同时他又说，他作这事是出于扫罗的请求。他既知道大卫所在的地方，又这样来报功，他一定不会不知道扫罗与大卫中间的关系，和大卫受扫罗逼迫追赶的事。他所以说这种话，就是想无论如何他只会有功，不会有过。如果大卫喜欢听说扫罗被杀呢，他便是杀死扫罗的功臣。如果大卫不喜欢扫罗被杀呢，他杀扫罗也没有甚么罪，因为是扫罗自己请求他杀的。他虽然不确实知道大卫的心意，但他却在各方面都考虑得十分周到。他认为他的谎言如果成功，便可以得大赏，如果不幸失败，也不会受甚么损失。因为他觉得自己十分有把握，便毅然决然去作这一件投机的事。他万不料到大卫竟罪责他说，『你伸手杀害耶和华的受膏者，怎么不畏惧呢？』到这时候他纔知道他所说的谎言不但没有给他一点利益，反倒使他受了大害。他悔恨自己不该这样投机说谎。但这时候他再也没有办法去挽回他所铸成的大错。他现在想承认他说谎的罪，证明扫罗并不是他杀的，也无法取信于大卫。他只有战栗恐惧着等候大卫的处置。接着他听见大卫叫了一个少年人来说，『你去杀他罢。』随后他又听见大卫对他说，『你流人血的罪归到自己的头上，因为你亲口作见证说，我杀了耶和华的受膏者。』我们可以揣想他这时候心中痛苦悔恨的情形了。</p>
+<p>这个少年人实在是相当的聪明。别的人从扫罗的尸身上取下冠冕和臂镯，也许要隐藏起来，以后寻觅一个机会再卖出去。他却明白王所戴的冠冕是除了王以外没有别人敢买敢戴的。他若隐藏这件东西，不但丝毫没有用途，而且常有被发现遭危险的可能。他明白只有把这个冠冕送到大卫那里，是最安全最有利的办法。如果他只这样作，他一定会得赏赐。可惜他的贪心嗾使他设法去讨更大的赏赉，因此他便用诡诈的方法去欺哄大卫，说出这段谎言来。结果是甚么呢？不但他本来可以得着的赏赐未曾得着，反倒把他自己的性命也赔了出去。『聪明反被聪明误，』这句话用在他身上真是合宜。</p>
+<p>是，世界上只有聪明人会说谎。他们也会把各方面都想得十分周到，认为他们无论如何是不会吃亏的。可惜他们忘记了天上有一位憎恶谎言和诡诈的神。他们更不记念他的警告说，『口吐真言永远坚立，舌说谎话只存片时。』（箴十二19）『说谎言的嘴为耶和华所憎恶，行事诚实的为他所喜悦。』（箴十二22）一个人说的谎言无论如何周到，无论如何能使人看不破，总不能欺哄那位鉴察万事万人的神。他所打算的无论如何周密，只要神略一动手指，便全盘被破碎了。</p>
+<p>许多人看诚实人为愚笨无用，却不知他们因诚实蒙了神的喜悦，实在比任何事都重要。神既喜悦他们，也一定赐福给他们。明明是危险，也会变为安全，明明是损失，也会变为利益。讨任何人的欢心也不如讨神的欢心，求任何人的援助也不如求神的援助。诚实人也许在人面前招厌恶，受损失，但在神面前他们却一定蒙悦纳，得福分。诡诈人也许在人面前受欢迎，得利益，但在神面前他们却一定招咒诅，受亏损。因为经上明明指示我们说，『说谎言的嘴为耶和华所憎恶，行事诚实的为他所喜悦。』</p>
+<p>世上有许多人都像这个亚玛力的少年人一样。他们会利用各种机会求名渔利。他们会投机取巧，会说谎骗人。他们会迎合人的心理，讨人的喜欢。他们顾全得面面俱到。他们以为他们的计谋十分周密，进可以战，退可以守，无论如何，他们总不会吃亏，总不会受害。他们见那一种人就说那一种话，在甚么人面前就作甚么人。他们也许暂时能得一些利益尊荣，因此他们也就越发有恃无恐，得意洋洋，认为他们照这样作下去，可以无往不利。不料有一日神的震怒忽然临到他们，他们的狡计被人识破，他们的谎言被人揭穿，弄得身败名裂，后悔无及。他们自以为聪明超人，实际他们却是愚蠢到极点。</p>
+<p>从古至今，因说谎行诈遭遇失败招惹祸患的人真是数不胜数。这些事实本可以作众人的鉴戒，不料极大多数的人看见了这些事实竟丝毫不受警戒。他们想别人说谎言都会受害，惟独我这样作不但不会受害，而且要得着极多的利益，别人弄诡诈都会遭失败，惟独我这样作不但不会失败，而且一定要成功。他们的罪恶蒙蔽了他们的心，使他们『听是要听见，却不明白，看是要看见，却不晓得。』结果便一个继续一个的都投到祸患的深坑中去，虽然有人向他们大声疾呼，他们也掩耳不听，这是多么悲惨的事阿！</p>
+<p>我们应当急速觉醒。既知道神是恨恶谎言和诡诈的神，便应当弃绝这种罪恶，恨恶这种罪恶，如同神恨恶牠一样。决定心志，从今以后不存一点虚伪的意念，不说一句谎言，不弄一次诡诈。无论在甚么时候，甚么地方，总要存真诚的心，说真诚的话，作真诚的事。宁可因此遭损失，受羞辱，被逼迫，也决不惹神的震怒。</p>
+<p>『说谎言的你必灭绝，好流人血弄诡诈的，都为耶和华所憎恶。』（诗五6）。</p>
+<p>『诡诈的舌头阿，你爱说一切毁灭的话，神也要毁灭你直到永远；他要把你拿去，从你的帐棚中抽出，从活人之地将你拔出。』（诗五十二4、5）。</p>
+<p>『耶和华阿，求你救我脱离说谎的嘴唇和诡诈的舌头。诡诈的舌头阿，要给你甚么呢？要拿甚么加给你呢？就是勇士的利箭，和罗腾木的炭火。』（诗一二○2～4）。</p>
+<p>看这个为神作工的人</p>
+<p>『我们向你们信的人是何等圣洁，公义，无可指摘，有你们作见证，也有神作见证。』（帖前二10）。</p>
+<p>一个为神作工的人没有地上的权柄和势力，却能领导一些人，使他们尊敬他，服从他，爱戴他；信任他，一个原因是神使用他，赐给他一种属灵的权威，同时神也感动众圣徒，使他们从心里敬爱他，听从他，另一个原因是他本身具有一种高尚的品德，使属神的人因着在他的身上看见神的圣洁公义，不能不从心灵的深处对他发出敬爱服从的意念来。这两个原因也实在是相连的。被重用的人一定活出圣洁高尚的人生来。有圣洁高尚的人生的人纔能被神所重用。这两件事是互为因果的。</p>
+<p>保罗是一个被神重用也受圣徒尊敬爱戴的人。加拉太的教会接待他『如同神的使者，如同基督耶稣。』他们『若能行，就是把自己的眼睛剜出来给他，也都情愿。』（加四14、15）他在帖撒罗尼迦的时候。腓立比的教会『一次两次的打发人供给他的需用。』（腓四16）经上述他在米利都与以弗所的长老们话别的时候的情形，有话说，『保罗说完了这话，就跪下，同众人祷告。众人痛哭，抱着保罗的颈项，和他亲嘴。叫他们最伤心的，就是他说以后不能再见我的面那句话。于是送他上船去了。』（徒二十26～38）经上又记载他在该撒利亚的时候所发生的一件事说，『我们在那里多住了几天，有一个先知名叫亚迦布，从犹太下来。到了我们这里，就拿保罗的腰带捆上自己的手脚，说，「圣灵说，犹太人在耶路撒冷要如此捆绑这腰带的主人，把他交在外邦人手里。」我们和那本地的人听见这话，都苦劝保罗不要上耶路撒冷去。保罗说，「你们为甚么这样痛哭使我心碎呢？我为主耶稣的名不但被人捆绑，就是死在耶路撒冷也是愿意的。」保罗既不听劝，我们便住了口，只说，「愿主的旨意成就便了。」』（徒二十一10～14）看见这些记载，便知道那时候认识保罗的圣徒是怎样的敬爱他关心他了。</p>
+<p>保罗这样蒙神重用并受圣徒的敬爱，决不是偶然的。他那种敬虔的人生使神不能不重用他，也使圣徒不能不敬爱他。寥寥的几句话就能充分的表明了他的人品德行。听他对帖撒罗尼迦的圣徒说，『我们向你们信的人是何等圣洁，公义，无可指摘，有你们作见证，也有神作见证。』这极简单的几个字，『圣洁，公义，无可指摘，』里面包含了极多的意义。这几个字证明了保罗在财物上不茍且，不贪污，在男女的关系上没有丝毫不光明不清洁的行为，与人同处没有少许的偏心，也不瞻徇一点情面，说出话来绝对的负责任，守信用，不嫉妒任何强过自己的人，也不仇恨任何亏负自己的人，不轻易开口论断批评别人，也不随便发言炫耀夸张自己，谨守规则，服从法律，尊敬老人，爱护儿童，珍惜别人的财物，关心邻舍的休戚，不轻易发怒，不冒失开言，谦恭和蔼，温柔可亲，憎恶邪恶，喜爱善良，不只在大事上不沾染罪恶，就在最小的事上也不苟且疏忽。只有这种生活纔能符合『圣洁，公义，无可指摘，』这几个字。</p>
+<p>也许有人要问说，『保罗这种自述究竟是否真确呢？一般人都喜欢自己夸耀自己，保罗是否也「未能免俗」呢？』我要回答这个问题说，保罗的自述绝对真确，因为他能提出两个见证来。这两个见证中的第一个是读他这封信的圣徒，『有你们作见证；』第二个是神，『也有神作见证。』这是何等有力的两个见证。保罗敢面对着帖撒罗尼迦的圣徒，请他们出来见证他的『圣洁，公义，无可指摘。』这足可证明他的自述是百分之百的真实，不然，他决没有这种勇气。他确实的知道他们找不出来他的缺点与恶行，他纔有胆量说这话。接着他提出来第二个见证──神。他不但敢请帖撒罗尼迦的圣徒出来为他作见证，他还敢请神出来为他作见证。这证明他的生活不但在人面前是那样『圣洁，公义，无可指摘。』就在他自己燕居独处，没有一个人在旁边的时候，也是同样的『圣洁，公义，无可指摘。』若不是这样，他决不敢请出神来为他作见证。在人面前无可指摘的，在神面前不一定能无可指摘。但在神面前无可指摘的，在人面前必定无可指摘。如今保罗在神和人面前都『圣洁，公义，无可指摘。』他一点都不踌躇的提出这两个见证来。这种为神作工的人焉能没有权柄和能力呢？</p>
+<p>是，为神作工的人需要有恩赐，但比恩赐更重要的乃是德行。没有恩赐的人去为神作工，最不好的结果不过是没有很多的成就而已，他决不会羞辱神，败坏人。如果一个人有恩赐却没有德行，在一个时期内也许能作成许多事工，但日期一久，不但他所作的工要被他自己的恶行劣迹所拆毁，而且要使神受极大的羞辱，使许多人受他的大害。这种明显的事实，我们已经听见看见许许多多了。</p>
+<p>今日一般教会中为神作工的人所追求的都是些甚么呢？没有信仰没有生命的传道人根本不用提了。那些有信仰，有生命，愿意服事神的信徒，所注重的大多数都是入神学院，查考脚经，明白真理，读一些宣道法，教牧学，教会历史，巴勒斯坦地理，宗教比较学，希伯来文，希利尼文，再豫备几百篇讲章。他们以为这样一来，就可以成为神手中尊贵的器皿，神家中有用的忠仆。至于属灵的权威，圣洁的生活，在他们眼中根本就没有多大重量。这种人如何能被神重用，又如何能在教会中有伟大的感化力呢？</p>
+<p>我们没有读过圣经中论到神的工人所说的话么？『作监督的必须无可指责，只作一个妇人的丈夫，有节制，自守，端正，乐意接待远人，善于教导；不因酒滋事，不打人，只要温和，不争竞，不贪财；好好管理自己的家，使儿女凡事端庄顺服。……监督也必须在教外有好名声，恐怕被人毁谤，落在魔鬼的网罗里。作执事的也是如此，必须端庄，不一口两舌，不好喝酒，不贪不义之财；要存清洁的良心，固守真道的奥秘。这等人也要先受试验，若没有可责备的地方，然后叫他们作执事。女执事也是如此，必须端庄，不说谗言，有节制，凡事忠心。执事只作一个妇人的丈夫，好好管理儿女和自己的家。』（提前三2～12）这段经文述教会中的两种职分──监督与执事──和担当这两种职分的人所必须具有的资格。在这里所述的各种资格中，只有一两件是关于恩赐和工作的，其它各项都是关系德行和品格的。教会只有遵从神的命令，注重神要我们注重的，追求神要我们追求的，纔能蒙神赐福，纔能看见神的荣耀。</p>
+<p>看看今日大多数教会中的领袖们的生活，真令人欲哭无泪。说谎，欺骗，舞弊，营私，倾轧，排挤，分争，嫉妒，仇恨，谗毁，谄媚，逢迎，贪财，求名，行淫，纵欲，这种种的罪恶在他们中间已经成为很普遍的现象。在教会中领导人的既是这样，我们还能希望一般信徒比他们更好么？教会既腐化黑暗到这种地步，怎能不使神的名受人亵渎呢？又怎能不使一些幼稚软弱的信徒绊跌仆倒呢？</p>
+<p>这一般人在神面前已经完全无用，只好被神废弃了。神为他自己的大名，一定还要豫备他自己的器皿。他怎样在古时废弃扫罗，兴起大卫，他今日也要照样兴起一般合他心意的人来。这些人也许有丰富的学识，超人的恩赐，也许没有这些。但他们一定有敬虔的人生，高尚的品格。就因为他们有这个最被神所注重的优点，神便能大大的使用他们，在他们身上彰显他的大能和荣耀。就因为他们有这个最被人尊重的德行，人便敬爱他们，信任他们，服从他们。他们因此也就成了世上最尊高伟大具有属灵的威权的人。他们能说保罗所说的话，能请出保罗所请出来的见证人──认识他们的圣徒，和鉴察万人心意的神──为他们作见证。神也要在他们身上行他在保罗身上所行的事。最后他们在基督显现的时候，也能得着保罗所要得着的赏赐。那该是多么荣耀多么快乐呢！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

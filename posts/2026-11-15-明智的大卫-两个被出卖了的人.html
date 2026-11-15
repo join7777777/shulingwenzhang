@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>明智的大卫-两个被出卖了的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>明智的大卫-两个被出卖了的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/17明智的大卫-两个被出卖了的人.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『大卫王到了巴户琳，见有一个人出来，是扫罗族基拉的儿子，名叫示每，他一面走，一面咒骂，又拿石头砍大卫王，和王的臣仆；众民和勇士都在王的左右。示每咒骂说，「你这流人血的坏人哪，去罢，去罢。你流扫罗全家的血，接续他作王，耶和华把这罪归在你身上，将这国交给你儿子押沙龙；现在你自取其祸，因为你是流人血的人。」</p>
+<p>『洗鲁雅的儿子亚比筛对王说，「这死狗岂可咒骂我主我王呢？求你容我过去，割下他的头来。」王说，「洗鲁雅的儿子，我与你们有何关涉呢？他咒骂，是因耶和华吩咐他说，你要咒骂大卫；如此，谁敢说，你为甚么这样行呢？」大卫又对亚比筛和众臣仆说，「我亲生的儿子尚且寻索我的性命，何况这便雅悯人呢？由他咒骂罢，因为这是耶和华吩咐他的。或者耶和华见我遭难，为我今日被这人咒骂，就施恩与我。」于是大卫和跟随他的人往前行走，示每在大卫对面山坡，一面行走，一面咒骂，又拿石头砍他，拿土扬他。王和跟随他的众人疲疲乏乏的到了一个地方，就在那里歇息歇息。」（撒下十六5～14）。</p>
+<p>好可恶的示每！不但乘人之危，作这种下井投石的事，而且诬陷大卫，说大卫流扫罗全家的血，接续他作王。那里有这种事呢？大卫不但没有流扫罗全家的血，而且没有流扫罗家中任何一个人的血。扫罗虽然那样嫉妒大卫，仇视大卫，苦害大卫，寻索大卫的命，使大卫受了多日的苦，但大卫始终不恨扫罗，更不肯加害于扫罗。虽然有两次神把扫罗交在大卫的手中，大卫只要一举手，便可以取去扫罗的性命，但大卫竟不肯这样作。不但这样，在扫罗阵亡以后，大卫听见这个噩耗，还为扫罗和他的儿子哀哭，（撒下一）又厚待那些葬埋扫罗的基列雅比人。（撒下二4～7）当那两个叛徒利甲巴拿杀了扫罗的儿子伊施波设，拿着他的首级投奔大卫的时候，大卫立时向那两个叛徒发怒，砍断他们的手脚，并且将伊施波设的首级葬在他的元帅押尼珥的坟墓中。（撒下四）又过了些日子，大卫想起扫罗的儿子乔纳单和他中间的友谊来，就寻访扫罗家中的人，既知道扫罗的一个孙子米非波设还在，便差人把他召到自己面前，把扫罗的田地都归还他，又叫他常和自己同席吃饭。（撒下九）把这一切事集合在一处，我们便看见大卫待扫罗和他全家真是仁至义尽。如今示每竟这样诬枉大卫，颠倒是非，淆乱黑白，任何人听见也不会不义愤填胸，想走过去把示每大打一顿。亚比筛那样心怀不平，请求大卫容许他走过去，割下示每的头来，正足以证明他是一个忠义的将军。我们同情他，我们更钦佩他。</p>
+<p>大卫怎样回答亚比筛呢？他说，『洗鲁雅的儿子，我与你们有何关涉呢？他咒骂，是因耶和华吩咐他说，你要咒骂大卫，如此，谁敢说，你为甚么这样行呢？』他又说，『我亲生的儿子尚且寻索我的性命，何况这便雅悯人呢？由他咒骂罢，因为这是耶和华吩咐他的。或者耶和华见我遭难，为我今日被这人咒骂，就施恩与我。』受人的诬枉，自己不忿怒报复，有别人代他打不平，他还加以拦阻，并且说这是因为耶和华吩咐他来咒骂自己，这真是令人不解的事。有甚么不解呢？大卫确实说对了。示每来咒骂他，实在是耶和华吩咐他咒骂的。示每说的不错。他说，『你这流人血的坏人哪，去罢，去罢。』大卫是不是流人血的坏人呢？他是。我们清楚知道他是，他自己更清楚知道他是。如果他不是流人血的坏人，他的家中不会发生这一连串的祸患，自然他也不会遭遇今日所遭遇的事。示每说大卫流扫罗全家的血，他所说的不对。但大卫自己却知道他实在流过人的血──不是扫罗家中的任何人，乃是那忠诚的军士乌利亚。亚比筛觉得大卫这样受人咒骂太枉，大卫自己却明白他这样受人咒骂正是他所应得的，一点都不枉。</p>
+<p>示每是否知道大卫谋杀乌利亚的事呢？我敢说他一定不知道，如果他知道，他决不会不把这件事提出来，当着大卫的面羞辱他，不然，他岂能放着真实的事迹不说，却去造未曾有的事去咒骂大卫呢？反过来说，本来没有的事尚且能造出来，实在有的事更不能不提出来了。如今示每丝毫没有提说这件事，我便敢说他一定不知道。亚比筛是否知道这件事，我便不敢断定了。约押知道这件事，因为这事是他帮助大卫作成的。先知拿单也知道这件事，因为他奉了耶和华的命令去为这事责备大卫。此外有没有别人知道这件事，我们就无法确说了。也许亚比筛根本不知道这件事，他听见示每称大卫为『流人血的坏人，』当然他为大卫忿忿不平。也许亚比筛知道这件事，但他听见示每说大卫流了扫罗全家的血，他便只想到这根本是没有的事，便替大卫呼，因此想去杀死那个诬良为恶，血口喷人的示每。但大卫却心中十分明白他自己是一个『流人血的坏人，』他心中只想到他杀害乌利亚的事，因此他未曾注意示每诬骂他，说他流扫罗全家的血。他只想到自己是『流人血的坏人，』便承认他应当受示每的咒骂，也承认示每这样咒骂他是耶和华所吩咐的。</p>
+<p>大卫所说的话实在对了。他说，『我亲生的儿子尚且寻索我的性命，何况这便雅悯人呢？由他咒骂罢，因为这是耶和华吩咐他的。或者耶和华见我遭难，为我今日被这人咒骂，就施恩与我。』示每这样咒骂大卫，实在是令人难以忍受的事。但儿子背叛父亲，不但夺取父亲的王位，而且还要置父亲于死地，岂不更令人难以忍受么？大卫既能忍受押沙龙的叛变，当然更能忍受示每的咒骂了。但大卫所以能忍受这一切，还是因为他深深知道按他所犯的罪他应当忍受这一切。他既不怨神，也不尤人。他觉得他应当受神的惩罚，也应当受人的咒骂。因此他能这样逆来顺受，不但自己不向示每发怒，还禁止亚比筛替他泄忿。至于他所说『或者耶和华见我遭难，为我今日被这人咒骂，就施恩与我，』这几句话虽然是大卫的推测和希望，但这里面确实是有真理的。譬如说，我们的小孩子犯了错，惹了祸，我们责备他们，惩罚他们，他们承认自己应当受责备惩罚，便驯顺安静的忍受，请问我们这作父母的人看见这种情形，是不是要因此立时发出怜悯的心，止息责备和惩罚，而且加以抚慰呢？反过来说，他们受责备惩罚的时候，仍然态度强硬，觉得自己屈不幸，甚至顶撞反抗，毫无疑义的，他们要因此多受一些痛苦和责打。如果大卫听见示每咒骂他，就向示每发怒，向示每施行报复，那就证明他还没有看见自己是应当受咒骂的，那也就是说他没有在神面前深深的自卑，因此不肯温柔驯顺的忍受神的责备和管教，那样，神就只有继续着责备管教他。但他甘心忍受了这一切，就使神不能不收回他的怒气，也不能不减轻他的责罚，这样，大卫便因着受示每的咒骂而蒙福了。</p>
+<p>我们有时也会遇见大卫所遇见的事。有人侮辱我们，打击我们，枉我们，咒骂我们，将我们所没有作过的恶事加在我们身上。这使我们心中忿恨，使我们心中不平。我们认为如果他们所说的是我们确实犯过的罪恶，我们便心悦诚服，闭口无言，因为『我们所受的与我们所作的相称。』但人若把我们所未曾作过的恶事加在我们身上，把我们所不当受的恶名归给我们，诬枉我们，枉我们，我们便不能甘心忍受，必须立时起来为自己分诉，为自己辩白，而且要向那枉我们的人施行报复，纵使不使他们受痛苦，至少也要使他们承认他们是对不起我们，使他们向我们道歉，使他们在众人面前为我们挽回我们的名誉所受的损失。但这件事是否容易作到呢？那屈我们的人既能把我们所未曾作过的恶事加在我们身上，他们便决不会是公义正直的人。要想藉着我们的分诉辩白使他们回心转意，自认错失，向我们道歉，在人面前承认他们是枉了我们，那如何能作得到？这件事既作不到，我们却偏偏希望作到，那样我们便不免不择手段，去作圣徒所不当作的各样恶事了。结果是甚么呢？我们不但没有将别人加在我们身上的恶名除掉，而且还实际犯了罪恶。这时如果我们能勒马悬崖，幡然悔悟，那还算不幸中的大幸，如果我们到了这种地步，仍不在神面前自卑认罪，痛心悔改，我们一定要远离神，背叛神，堕落到不堪设想的地步。</p>
+<p>我们有没有方法逃避这种危险呢？有，那就是存大卫所存的心，常想到自己在神面前的亏欠和罪恶。我们在遭遇别人侮辱咒骂的时候，应当想到他们所说的那些恶事虽然是他们所揣想所造的，但我们在神面前确实是犯过罪作过恶的人，因此也实在是应当受人侮辱和咒骂的。既是这样，我们何必因为别人侮辱咒骂便生气呢？再进一步说，如果我们澈底认识了自己在神面前是何等的败坏邪恶，可憎可耻，我们便会觉得别人无论怎样侮辱我们，咒骂我们，都是我们所当受的。就是有人想要替我们讲理，为我们伸，我们也要对他们说，『由他咒骂罢，因为这是耶和华吩咐他的。或者耶和华见我遭难，为我今日被这人咒骂，就施恩与我。』</p>
+<p>如果我们能像大卫这样存心，这样忍受别人加给我们的侮辱咒骂，我们将要少犯多少罪，少吃多少苦，少惹多少祸。不但这样，我们还要因此一日比一日更圣洁，一日比一日更蒙福，因为神要藉着这一切炼净我们的渣滓，磨去我们的棱角，使我们学会了谦卑，忍耐，信靠，顺服。迟早总有一天我们要清清楚楚的明白圣经上的一些真理──</p>
+<p>『神哪，你曾试验我们，熬炼我们，如熬炼银子一样。你使我们进入网罗，把重担放在我们的身上。你使人坐车轧我们的头；我们经过水火，你却使我们到丰富之地。』（诗六十六10～12）。</p>
+<p>『人的忿怒要成全你的荣美：人的余怒你要禁止。』（诗七十六10）。</p>
+<p>『至于我，我要仰望耶和华，要等候那救我的神，我的神必应允我。我的仇敌阿，不要向我夸耀；我虽跌倒，却要起来；我虽坐在黑暗里，耶和华却作我的光。我要忍受耶和华的恼怒，因我得罪了他，直等他为我辨屈，为我伸。他必领我到光明中，我必得见他的公义。』（弥七7～9）。</p>
+<p>『我们晓得万事都互相力，叫爱神的人得益处，就是按他的旨意被召的人。因为他豫先所知道的人，就豫先定下效法他儿子的模样，使他儿子在许多弟兄中作长子。豫先所定下的人，又召他们来；所召来的人，又称他们为义；所称为义的人，又叫他们得荣耀。』（罗八28～30）。</p>
+<p>两个被人出卖了的人</p>
+<p>『他们坐下吃饭，举目观看，见有一伙米甸的以实玛利人从基列来，用骆驼驮着香料，乳香，没药，要带下埃及去。犹大对众弟兄说，「我们杀我们的兄弟，藏了他的血，有甚么益处呢？我们不如将他卖给以实玛利人，不可下手害他，因为他是我们的兄弟，我们的骨肉。」众弟兄就听从了他。有些米甸的商人从那里经过；哥哥们就把约瑟从坑里拉上来，讲定二十舍客勒银子，把约瑟卖给以实玛利人；他们就把约瑟带到埃及去了。』（创三十七25～28）。</p>
+<p>『法老和他一切臣仆都以这事为妙。法老对臣仆说，「像这样的人，有神的灵在他里头，我们岂能找得着呢？」法老对约瑟说，「神既将这事指示你，可见没有人像你这样有聪明，有智慧；你可以掌管我的家，我的民都必听从你的话，惟独在宝座上我比你大。」法老又对约瑟说，「我派你治理埃及全地。」法老就摘下手上打印的戒指，戴在约瑟的手上，给他穿上细麻衣，把金链戴在他的颈项上，又叫约瑟坐他的副车，喝道的在前呼叫说，「跪下。」这样，法老派他治理埃及全地。』（创四十一37～43）。</p>
+<p>『约瑟的哥哥们见父亲死了，就说，「或者约瑟怀恨我们，照着我们从前待他一切的恶，足足的报复我们。」他们就打发人去见约瑟，说，「你父亲未死以前，吩咐说，你们要对约瑟这样说，从前你哥哥们恶待你，求你饶恕他们的过犯和罪恶，如今求你饶恕你父亲的神的仆人的过犯。」他们对约瑟说这话，约瑟就哭了。他的哥哥们又来俯伏在他面前，说，「我们是你的仆人。」约瑟对他们说，「不要害怕。我岂能代替神呢？从前你们的意思是要害我，但神的意思原是好的，要保全许多人的性命，成就今日的光景。现在你们不要害怕，我必养活你们，和你们的妇人孩子。」于是约瑟用亲爱的话安慰他们。』（创五十15～21）。</p>
+<p>『当下十二个门徒里有一个称为加略人犹大的，去见祭司长说，「我把他交给你们，你们愿意给我多少钱？」他们就给了他三十块钱。从那时候他就找机会，要把耶稣交给他们。』（太二十六14～16）。</p>
+<p>『说话之间，那十二个门徒里的犹大来了，并有许多人，带着刀棒，从祭司长和民间的长老那里与他同来。那卖耶稣的给了他们一个暗号，说，「我与谁亲嘴，谁就是他，你们可以拿住他。」犹大随即到耶稣跟前，说，「请拉比安，」就与他亲嘴。耶稣对他说，「朋友，你来要作的事就作罢。」于是那些人上前，下手拿住耶稣。』（太二十六47～50）。</p>
+<p>『到了早晨，众祭司长和民间的长老大家商议，要治死耶稣，就把他捆绑，解去交给巡抚彼拉多。这时候卖耶稣的犹大看见耶稣已经定了罪，就后悔，把那三十块钱拿回来，给祭司长和长老，说，「我卖了无辜的人的血，是有罪了。」他们说，「那与我们有甚么相干？你自己承当罢。」犹大就把那银钱丢在殿里，出去吊死了。祭司长拾起银钱来，说，「这是血债，不可放在库里。」他们商议，就用那银钱买了户的一块田，为要埋葬外乡人。所以那块田直到今日还叫作血田。』（太二十七1～8）。</p>
+<p>『那时有许多人聚会，约有一百二十名。彼得就在弟兄中间站起来说，「弟兄们，圣灵藉大卫的口，在圣经上豫言领人捉拿耶稣的犹大，这话是必须应验的。他本来列在我们数中，并且在使徒的职任上得了一分。这人用他作恶的工价买了一块田，以后身子仆倒，肚腹崩裂，肠子都流出来。住在耶路撒冷的人都知道这事，所以按着他们那里的话，给那块田起名叫亚革大马，就是血田的意思。」』（徒一15～19）。</p>
+<p>『你们当以基督耶稣的心为心：他本有神的形像，不以自己与神同等为强夺的，反倒虚己，取了奴仆的形像，成为人的样式；既有人的样子，就自己卑微，存心顺服，以致于死，且死在十字架上。所以神将他升为至高，又赐给他那超乎万名之上的名；叫一切在天上的，地上的，和地底下的，因耶稣的名无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。』（腓二5～11）。</p>
+<p>雅各布布的儿子约瑟和主耶稣都是被人出卖了的人，而且都是被至近的人所卖。约瑟是被他的十个哥哥所卖。主耶稣是被他的一个门徒所卖。两个人都因为被人所卖，以致受了许多痛苦；约瑟多年为奴坐监，主耶稣受凌辱，遭鞭打，被钉在木头上丧了命。但两个人的结局却都是因此被升为高，不但自己得了福分和荣耀，还使许多人因着他们得了福。约瑟作了法老朝廷上的宰相，在丰年的时期储存了大批的食粮，及至荒年临到的时候，藉着这些食粮不但保全了埃及全国人的性命，而且保全了他父亲一家人的性命。主耶稣被神立为君王和救主，神藉着他的死和复活成全了拯救人类的大工，神也使他将来在他所设立的永存的天国中作王。不可胜数的人因着他得了永生，将来在天国中享受永远的福分，他自己也因着顺服至死，且死在十字架上，所以被神『升为至高，又赐给他那超乎万名之上的名，叫一切在天上的，地上的，和地底下的，因耶稣的名无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。』这两个人都是被至近的人所卖，都遭遇了患难痛苦，但也都升到了高处，都得了荣耀和权柄，都使许多人得了福。看到他们两个人的终局，我们便晓得那卖他们的人不但未曾害了他们，反倒成全了他们，把他们送到荣耀里。那真正受害的不是他们两个人，乃是那出卖他们的人。</p>
+<p>我们想一想约瑟的十个哥哥在认出约瑟以后的那些日子的心情罢。他们是怎样的懊悔，怎样的自恨，怎样的惭愧，怎样的惧怕。任何人不能想到约瑟会对他们那样宽大。虽然他们听见了约瑟所说的那种宽恕他们的话，他们实在信不及约瑟会一点都不念旧恶。他们想约瑟因为怕老父亲伤心，所以暂时容忍他们，等到老父亲一死，他一定要向他们施行报复。雅各布布到埃及的时候是一百三十岁，他去世的时候是一百四十七岁。（创四十七9、28）这十七年之久，约瑟的十个哥哥一定是过着愁苦惧怕的日子。听他们所说的话，便可以晓得他们那些年间的心境。『约瑟的哥哥们见父亲死了，就说，「或者约瑟怀恨我们，照着我们从前待他一切的恶，足足的报复我们。」』十七年真不是一个短的时期。约瑟从被卖到波提乏的家中为奴，直到他被召到法老面前被立为宰相，其间不过只有十二年。（创三十七2，四十一46）约瑟在这十三年中间所受的，不过是一些外面的苦难，他十个哥哥在这十七年之间所受的，乃是内心的痛苦──惭愧，懊悔，自责，惧怕，这些意念充满他们的胸间，特别是想到老父亲死去以后，他们所要遭遇的报复，真会使他们心胆俱裂。请想约瑟是埃及国的宰相，位在『一人之下，万人之上，』他可以随意生杀予夺，他可以把他们十个人都下在监里，使他们饱尝铁窗的风味；他也可以夺去他们一切的财产，使他们都沦为乞丐；如果再严重一些，他也可以把他们都置于死地。那十七年之久，他们一定心中常常因此恐惧忧虑。虽然约瑟是那样心宽量大，而且深深明白神的心，后来不但不向他们施行报复，反倒恩待他们和他们的妇人孩子，但在那十七年的长时期中，他们心中所受的痛苦，也足彀他们受的了。</p>
+<p>加略人犹大所遭遇的就更凄惨了。他看见耶稣被定了死罪，就后悔起来。他的良心在他里面斥责他。他实在忍受不住，只好把已经到手的三十块钱送回到祭司长和是老那里去，要向他们换回来他的主。他对他们说，『我卖了无辜的人的血，是有罪了。』他希望藉着把钱退回给他们，把主耶稣换回来，可以减轻他的罪戾。不料事情并不照他所想的那样容易。他们对他说，『那与我们有甚么相干？你自己承担罢。』这两句话更加深了他的痛苦。他更清楚的看见他必须承当他自己的罪。他苦痛到了极点，他没有法子再活下去。他只好走了这条最凄惨最可怜最羞辱的道路──『把那银钱丢在殿里，出去吊死了。』</p>
+<p>我们若再读一下主耶稣论到犹大的话，就更使我们心惊了。他说，『人子必要去世，正如经上指着他所写的。但卖人子的人有祸了！那人不生在世上倒好。』（太二十六24）作主耶稣的使徒，跟随主三年之久，本是最有福的人，本可以承受一种最大的荣耀和使命。『耶酥说，「我实在告诉你们，你们这跟从我的人，到复兴的时候，人子坐在他荣耀的宝座上，你们也要坐在十二个宝座上，审判以色列十二个支派。」』（太十九28）犹大本来是列在这十二个大审判者里面的，不幸他竟丢弃了这贵重的位分，走上了那最凄惨最羞辱的道路，这是多么可惜的事阿！</p>
+<p>雅各布布的十个儿子虽然出卖了弟弟，到底他们还存了一分善心，没有把约瑟置于死地。这还是因为他们听了四哥犹大的话──『我们杀我们的兄弟，藏了他的血，有甚么益处呢？我们不如将他卖给以实玛利人，不可下手害他，因为他是我们的兄弟，我们的骨肉。』就是这一点善念，使他们全家都保全了性命。如果他们那一天把约瑟置于死地，到全地遭大饥荒的时候，他们没有地方去买粮食，就只有坐以待毙了。作恶的时候存了一点善念，还有这么大的好处，人何苦让罪恶充满自己的心，不存一点善念呢？</p>
+<p>加略人犹大卖主的时候存心就狠毒万分了。犹太人处心积虑要杀害耶稣，这是十二个门徒都清楚知道的。马太记载这事说，『那时，祭司长和民间的长老，聚集在大祭司称为该亚法的院里，大家商议，要用诡计拿住耶稣杀他。只是说，当节的日子不可，恐怕百姓生乱。』（太二十六3～5）在这种情势之下，犹大一定晓得，如果耶稣落在犹太人的手里，必定被他们害死，他却忍着心去出卖他的主。他的心比约瑟的十个哥哥更狠毒，不希奇他的结局是那样凄惨了。</p>
+<p>那被人出卖了的约瑟和耶稣后来怎样了呢？一个在法老的朝廷里作了宰相，一个被神立为君王和救主，将来在他所立的永存的天国中永远作王。那卖人的人不但没有害成他们所卖的人，反倒把他们所卖的人送到了高处和荣耀，这真是他们始料不及的。卖人的人以为自己聪明绝顶，其实是愚蠢万分；被卖的人在一般人眼中看来是不幸到极点，其实他们是最幸福的人。如果没有人卖他们，那纔真是他们最大的不幸呢。</p>
+<p>圣经上的豫言告诉我们说，『末世必有危险的日子来到：因为那时人要专顾自己，贪爱钱财，自夸，狂傲，毁谤，违背父母，忘恩负义，心不圣洁，无亲情，不解怨，好说谗言，不能自约，性情凶暴，不爱良善，卖主卖友，任意妄为，自高自大，爱宴乐不爱神，有敬虔的外貌，却背了敬虔的实意；这等人你要躲开。』（提后三1～5）主耶稣的十二个门徒中只有一个犹大，一千几百年来的教会中，不断有许多人步着犹大的后尘，末世的教会中不可胜数的犹大。他们为自己的利益，尊荣，地位，前途，名誉，安全，不惜出卖主耶稣和他的门徒。犹大卖了耶稣以后还肯后悔，把那三十块钱拿回去给祭司长，求他们把耶稣还给他。末世那些卖主的人，不但不肯后悔把钱拿回去，而且用这些钱吃喝享用。他们比犹大更狠毒，他们的结局也一定比犹大更凄惨。</p>
+<p>有许多为神作工的人因为怕被人出卖，所以胆怯畏缩，当作的工不敢作，当说的话不敢说，当讲的道不敢讲。他们怕犹大却不怕神。比这个更令人痛心的，就是有些人因为想避免被人出卖，竟自己也去卖主卖友。这些人卖主卖友并不是因为想要求名求利，乃是为了自卫，在我们想他们的罪似乎比那些为求自己的名利而去卖主卖友的人轻些。其实他们既知道卖主卖友是神所憎恶的行为，却仍这样去作，他们的罪决不会在那些为名为利卖主卖友的人以下，因此他们的结局也决不会更好些。如果他们悬崖勒马，急速悔改，因为他们的心不像那些为名为利卖主卖友的人那样狠毒邪恶，还可以得主的赦免宽宥。如果他们不赶快认罪悔改，重新作人，他们的结局就只好像犹大一样了。</p>
+<p>我们应当明白为主的名被人出卖不但不是损失，而且是利益，因为我们能藉着被人出卖，进到主为爱他的人所豫备的荣耀里。为主的名和主的道，并主的工，被人出卖，不是不幸，正是大幸。如果我们因为怕被人出卖，而失去了对神的忠心，别人出卖不了我们，我们却自己出卖了自己，因为这样我们不但失去了主为爱他的人所豫备的荣耀和冠冕，而且要陷在痛苦和祸患里，那纔真是最可怕的事呢！</p>
+<p>我们还要知道一件事，就是被人出卖也必须得到神的许可。如果神不许可，即或有人想要卖你，也卖不了。犹大能卖耶稣，正是因为所定的日期已经来到。比那日再早些，神的时期还没有到。比那日再晚些，神的时期又已经过去。不早不晚，他就在神所安排使耶稣替人死的那日的前一天，把耶稣交给了祭司长和长老们。主耶稣也就在犹太人杀羔羊的那一天，被犹太人钉死在木头上，成就了旧约上所豫言的。从此我们可以看出来，神不许可，人卖不了我们，神的日子未到，人也卖不了我们。如果神许可人卖我们，神的日子也已经临到，那样，我们被卖的那一天，正是我们进入荣耀的开始。我们焉可设法逃避呢？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

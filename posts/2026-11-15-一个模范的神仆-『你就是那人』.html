@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个模范的神仆-『你就是那人』 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个模范的神仆-『你就是那人』</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/1看这些人（上）/8一个模范的神仆-『你就是那人』.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『摩西所吩咐的一切话，乔舒亚在以色列全会众，和妇女孩子，并他们中间寄居的外人面前，没有一句不宣读的。』（书八35）。</p>
+<p>『耶和华怎样吩咐他仆人摩西，摩西就照样吩咐乔舒亚；乔舒亚也照样行；凡耶和华所吩咐摩西的，乔舒亚没有一件懈怠不行的。』（书十一15）。</p>
+<p>这真是神的一位忠心的仆人。在自己的生活中，对于神所吩咐的话『没有一件懈怠不行的』这是完全的顺服，在神所交托的工作上，对于神所吩咐的话『没有一句不宣读的，』这是绝对的忠心。有这样完全顺服和绝对忠心的工人，那能不蒙神喜悦不被神重用呢？</p>
+<p>我们仔细思想这两段经文真是极有意味的。因为乔舒亚将神所吩咐摩西的一切话完全对百姓宣读出来，所以他自己也必须完全遵行神吩咐摩西的一切话。反过来说，因为他自己完全遵行了神吩咐摩西的一切话，所以他也不能不把神吩咐摩西的一切话向众百姓都宣读出来。神要他的仆人将他所吩咐的话完全传给他的百姓，一点不隐藏。神更要他的仆人完全遵行他所吩咐的话，一点不违背。反过来说，神要他的仆人完全遵行他所吩咐的一切话，神也要他的仆人完全传述他吩咐他的仆人去传述的一切话。神这位忠心的仆人乔舒亚就是这样完全作成了这两样事。</p>
+<p>我们今日为神作工的人读了这两段经文觉得不觉得惭愧呢？神交托我们叫我们去传给众人的话，我们完全传述了没有呢？神吩咐我们叫我们去遵行的命令，我们完全遵行了没有呢？我们因为怕得罪人，不敢完全传述神的话；因为怕受毁谤和攻击，不敢完全传述神的话；因为怕自己的利益受损失，不敢完全传述神的话；因为怕遭遇危险，不敢完全传述神的话；因为自己的品行上有许多缺点，自己的生活中有许多可指摘的地方，不敢完全传述神的话。因为我们有这样多的顾忌，所以我们把神叫我们传给众人的话不知道打了多少折扣，以后纔传述给众人。就连我们当中最好的人也不过只把神的话传述了百分之七十或八十，至多也许能到九十。若要寻找像乔舒亚那样，对神所吩咐的一切话『没有一句不宣读的，』能不能找着几个？还真是个疑问呢。</p>
+<p>论到遵行神所吩咐的一切话，提起来也不能不使我们惭愧万分。真实为神作工的人虽然不能说一点都没有遵行神所吩咐的，但各人岂不是都有许多缺欠么？有的人虽然勇敢却缺少爱心，有的人虽然忠心却没有忍耐，有的人诚实却不彀圣洁，有的人殷勤却不彀谦卑。有的人在家庭的生活中有缺点，有的人在个人的性情上有可指责的地方。有时候我们因为自私不肯完全遵行神的命令，有时候我们因为骄傲不肯完全遵行神的命令，有时候我们因为逃避损失不肯完全遵行神的命令，有时候我们因为贪爱世界不肯完全遵行神的命令。我们不是完全不遵行神所吩咐的，乃是不完全遵行。因为我们不完全遵行神所吩咐的，我们便不能得着神所赐完全的福分与能力，同时我们也就不敢对别人完全传述神的话。因为我们自己若没有完全遵行神所吩咐的，我们的良心不容我们完全传述这些，我们也知道我们若这样传述一定要受人的指责，别人要对我们说，『你自己还没有照着去行；怎能教训我们呢？你自己也有这样多的缺点，还有面目责备我们么？』</p>
+<p>完全遵行神所吩咐的一切话，和完全传述神所吩咐的一切话，这两件事是互为因果的。对别人完全传述了神所吩咐的一切话。自己就不能不完全遵行神所吩咐的一切话。反过来说，自己完全遵行了神所吩咐的一切话，就不能不对别人完全传述神所吩咐的一切话。自己越顺服，越有能力教导别人，越教导别人，自己也必须越多顺服。神的家中顺命的孩子就是神的工场上忠心的仆人。神的工场上忠心的仆人也就是神的家中顺命的孩子。这个原理在乔舒亚身上是这样，在古今一切事奉神的人身上也都是这样，没有一个人能在例外。</p>
+<p>今日神的家中需要有顺命的孩子，今日神的工场上更需要有忠心的仆人。谁肯起来效法乔舒亚的榜样？我愿意与他携手同行。</p>
+<p>『忠心办事毫无错误过失』</p>
+<p>『那时总长和总督寻找但以理误国的把柄，为要参他；只是找不着他的错误过失。因他忠心办事，毫无错误过失。那些人便说，「我们要找参这但以理的把柄，除非在他神的律法中就找不着。」』（但六4、5）。</p>
+<p>但以理真是神的一个好仆人，圣徒的一个好模范。那样许多仇恨他嫉妒他的人，尽心竭力寻找他的把柄，却找不着他的错误过失，可见他的德行是怎样高尚，他作事是何等忠心了。果真是这样，因为经上明明告诉我们说，『他忠心办事，毫无错误过失。』一个人在社会中居高位，负重责，身理万几，日无暇时，需要应付多少人，多少事，多少诱惑，求其能不犯大罪，没有大过失，已经是十分不易。如今但以理不但不犯大罪，而且能『毫无错误过失，』这真是难能可贵了。这样的人如何能不蒙神的赐福和重用，如何能不大大的荣耀神呢。</p>
+<p>神在世界上所要使用的就是这样的人。真能为神作有能力的见证，使神的名得荣耀的，也就是这样的人。口中告诉人说他是属神的人，他热心事奉神，又告诉人说他的神怎样圣洁，怎样完全，怎样信实可靠，及至作起事来，却是有多少污点与失败，有多少虚伪和诡诈，有多少自私，怠惰，不忠心，不可靠的地方，这种人在世界上只能使神的名受羞辱，遭亵渎，神不肯使用他们，而且不能使用他们。可叹许多属神的人竟是这样。他们承认他们是属神的，他们聚集敬拜神，他们对人传讲神的道，为神作见证，可是当世人寻找他们的错误过失的时候，竟是找着他们口中常说谎言，不与人相见以诚，为别人作事不忠心，看见利益就跑到前面，遇着危险就躲在后边，经手的钱财有私弊，管理的账目不清楚，见着尊贵富足的人就谄媚逢迎，对待仆役和穷人总是刻薄寡恩，赚钱舞弊，假公济私，损人肥己，夺利争名。请问一个信徒被人找出这样多的劣迹过失来，还如何能荣耀神？如何能引领人归主？</p>
+<p>一个基督徒应当使人在他的生活和工作中找不出错误过失来。在生活中要诚实无伪，圣洁端正，不贪财，不自私，不谄富，不骄贫；在工作上要殷勤忠心，公私分明；受人的委托，得人的俸给，就要把人的事务作得尽美尽善；不是自己当得的财物，就是一分钱一张纸也不苟取；自己应当作的事工，一点不要等别人去作；不懒惰，不粗心，不用别人监督，自己就是自己的监督。这样的基督徒纔能叫人找不出错误过失来。这样的基督徒纔能荣耀神的名。</p>
+<p>如果基督徒真能这样，世人是否便恭敬他们爱护他们呢？不，正是因为他们这样，所以纔招来世人的恨恶嫉妒，而且世人要寻找他们的把柄，好攻击他们，定他们的罪。不过因为他们『忠心办事，毫无错误过失，』使世人找不到他们的把柄，在这种情形中，世人便要在他们事奉神这件事上找他们的过失了。很好。如果一个基督徒只因为信主而受世人的攻击，或是只因为不随从世人行恶犯罪而受世人的逼迫，或是只因为他喜爱祈祷笃信神的话而遭世人的反对，或是只因为他为他的主作见证而招世人的恶感，这不但不羞辱神，而且要大大的荣耀神。『你们若为基督的受辱骂，便是有福的；因为神荣耀的灵常在你们身上。你们中间却不可有人因为杀人，偷窃，作恶，好管闲事，而受苦。若为作基督徒受苦，却不要羞耻，倒要因这名归荣耀给神。』（彼前四14～16）但以理受恶人的控告，不是因为他不忠心于他的职务，也不是因为他吞没了公款，乃是因为他不肯停止一日三次的祷告。虽然他自己因此遭遇了一次极大的危险，结果神却因他得了极大的荣耀，因为我们听见大利乌王说，『现在我降旨，晓谕我所统辖的全国人民，要在但以理的神面前战兢恐惧；因为他是永远长存的活神，他的国永不败坏，他的权柄永存无极。他护庇人，搭救人，在天上地上施行神迹奇事，救了但以理脱离狮子的口。』（但六26、27）如果我们不是因为自己所犯的罪受人的攻击，也不是因为作事不忠心有过失遭人的控告，乃是为作基督徒受苦，虽然我们免不了因此遭遇一些暂时的损失和危险，但后来却要因此得大赏赐，而且使神的名因我们得大荣耀，正如神的仆人但以理一样。</p>
+<p>可惜有许多基督徒受人的反对攻击并不是因为他们忠心事奉神，乃是因为他们作事不忠心，待人不诚实，任性生气，骄傲自大，不顾信用，不守法律，贪财好名，利己损人，有时甚至因为犯别样更大的罪，可是他们竟说他们是为主的名受逼迫。这些基督徒读了这段经文中所说但以理『忠心办事，毫无错误过失，』的一段记载，能不惭愧到无地自容么？</p>
+<p>这里我们再注意到一件极要紧的事，就是但以理身居这样高的地位，肩头负着这样重的责任，还有这么多敌人虎视眈眈的在他的四围寻找他的把柄，怎么竟能这样毫无错误过失？他这种超人的智慧和能力究竟是从那里来的？这个问题在这章书的第十节中就得了一个答案。『但以理知道这禁令盖了玉玺，就到自己家里，（他楼上的窗户开向耶路撒冷，）一日三次，双膝跪在他的神面前，祷告感谢，与素常一样。』一日三次藉着祷告与神交通，从神那里得智能与能力，不希奇但以理有这样高尚的人生和这种美好作事的成绩了。不用说站在那样重要的地位，负着那样伟大的责任，就连我们平日所作很普通很微小的事工，若不从神那里得着智慧与能力，也难盼望能作到尽美尽善的地步。若不藉着常与神交通，蒙神保守，谁也不能被人找不出一点把柄来。不效法但以理那样『一日三次，双膝跪在神面前祷告感谢，』却希望能像但以理那样『忠心办事，毫无错误过失，』那真无异于缘木求鱼了。</p>
+<p>不过也有一些圣徒殷勤祷告足能赶上但以理，可是他们作起事来不但不能像但以理那样『忠心办事，毫无错误过失，』甚至轻忽自己的职务，延误别人的事工，得人的薪俸，却不为人尽心作事，受人的委托，却辜负人的期望。若是你责备他们，他们会回答你说，他们需要多多祷告，常常亲近神，不能把宝贵的光阴都用在世俗的事工上。他们中间有的人甚至用给别人作事的时间去祷告，聚会，布道。还有的人因为常赴长时间的聚会，作长夜的祷告，以致弄得身体疲乏，精神不足，到了给人作事办理公务的时候，头晕目花，困倦思睡。在这种情形中，他们当然不能『忠心办事，毫无错误过失，』于是因此招来别人的批评责难，惹起别人的反对恶感。同时他们还以为他们是热心事奉神。这些圣徒亟需明白这是一种极大的失败，这是属灵生活上的一种畸形的发展。他们亟需明白热心事奉神的人应当忠心作自己日常生活中一切大小的本分。他们亟需明白一个圣徒所作的一切的事工都是神的委托，没有一件不是神圣的。他们亟需明白『忠心办事』与『殷勤祷告』是同样的重要，而且在神面前殷勤祷告正是为要使他们在人中间能『忠心办事。』他们亟需把但以理的这段事迹多读几遍。</p>
+<p>愿神帮助我们，使我们能像但以理那样，无论在甚么景况中不停止与他的交通；更愿神帮助我们，使我们能藉着从他所来的能力和智慧，在人中间『忠心办事，毫无错误过失。』</p>
+<p>『你就是那人』</p>
+<p>当耶和华差遣拿单去见大卫。拿单到了大卫那里，对他说，「在一座城里有两个人：一个是富户，一个是穷人，富户有许多牛群羊群；穷人除了所买来养活的一只小母羊羔之外，别无所有。羊羔在他家里和他儿女一同长大，吃他所吃的，喝他所喝的，睡在他怀中，在他看来如同女儿一样。有一个客人来到这富户家里，富户舍不得从自己的牛群羊群中取一只豫备给客人吃，却取了那穷人的羊羔，豫备给客人吃。」大卫就甚恼怒那人，对拿单说，「我指着永生的耶和华起誓，行这事的人该死；他必偿还羊羔四倍，因为他行这事没有怜悯的心。」拿单对大卫说，「你就是那人。」』（撒下十二1～7）。</p>
+<p>人真是容易看见别人的罪，却不容易看见自己的罪。有许多时候自己所犯的罪比别人所犯的罪大得很多，不但一点不责备自己，反倒毫不留情的定别人的罪。上面一段经文所记载的这一件事就是一个很好的例子。先知拿单所说的那一个富户真是残暴不仁。他舍不得从自己大群的牛羊中取一只款客，却忍着心把那个穷人所仅有的一只羊羔夺去，杀了款待客人。这种行为真是可恨。但比起大卫所作的事还算好得许多。因为那个富户不过夺了那个穷人的小母羊羔，并没有戕害那个穷人的性命。如今大卫不但夺去了乌利亚仅有的一个妻子，还用诡计杀害了乌利亚。大卫所犯的罪比那个富户的罪真是更大更重。可是当大卫听见拿单说了这个故事以后，不但一点不自责自恨，反倒『恼怒那人，』而且对拿单说，『我指着永生的耶和华起誓，行这事的人该死；他必偿还羊羔四倍，因为他行这事没有怜悯的心。』看见别人所犯的小罪就『恼怒，』就咒诅他『该死，』就批评他『没有怜悯的心。』对于自己所犯的大罪却连想也未曾想到。这是何等不公平的事阿！</p>
+<p>其实岂止大卫呢，我们中间有几个人不是这样呢？听见或看见别人犯一点罪，立时就『恼怒那人，』就咒诅他『该死，』就批评他怎样怎样不好。其实自己所犯的罪也许比那个被我们咒诅批评的人还大几倍，可是自己并没有『恼怒』自己，并没有咒诅自己『该死，』并没有批评自己怎样不好。属世界的人差不多每一个都是这样，那简直是不必提的事，就是神的孩子们又何尝不是如此！连最好的圣徒又何尝能逃出这个错误！</p>
+<p>不是有许多事实证明这件事么？我们看见一个贼偷了别人的一点财物，便恼怒他，咒诅他，批评他偷窃，同时我们一点没有想到我们自己里面隐藏着贪心。我们家中的财物有许多是用不正当的方法取来的。我们一点没有想到如果我们十分清廉不苟，我们必定不能像今日这样富足豪华。我们一点没有想到神交给我们许多财物，原是叫我们为他保管，为他使用，我们竟是偷了来供自己的挥霍，享用，积蓄，储存。别人偷了一点财物我们便恼怒他，我们自己偷了别人许多的财物，却没有恼怒自己。别人偷了人的财物我们便咒诅他，我们偷了神的财物却没有咒诅自己。这件事公平不公平呢？</p>
+<p>我们看见一个人将另外的一个人打得头破血出，我们就恼怒那人，咒诅他，说他欺压人。同时我们一点没有想到我们自己里面隐藏着恼恨和嫉妒，我们的口常批评人，议论人，毁谤人，败坏人的名誉，使人伤心受苦。一点没有想到因为我们任性，或求自己的利益，使许多人受亏损，遭祸害，他们受的损害比被人打得头破血出更为严重。别人打了一次人，我们便恼怒他，我们自己常常损害人，却没有恼怒自己。别人加一点微微的损害在人身上，我们就定他的罪，我们自己加许多极重的创伤在人的身上或心中，却一点不定自己的罪。这样作合理不合理呢？</p>
+<p>我们看见一个人犯了奸淫，我们就恼怒那人，毫不留情的定他的罪，弃绝他，同时我们一点没有想到我们自己心中常常怀着污秽的思想，我们的眼睛满了淫色，有时我们在我们自己的妻子或丈夫以外向别的异性人发爱情──这些事在我们的主眼中都看作与奸淫的罪相同。别人犯了外面的淫乱的罪，我们便恼怒他，定他的罪，弃绝他。我们自己犯了里面的淫乱的罪，却没有恼怒自己，定自己的罪，弃绝自己。这样作应当不应当呢？</p>
+<p>这类的事还有很多呢！别人犯了罪我们看得很清楚，我们定他们的罪定得顶重。我们毫不犹豫的批评他们不对，同时我们犯了比他们所犯更大更重的罪，我们却一点没有看见自己的罪，正如大卫恼怒拿单所说的那个富户，说他该死，却不知道他自己的罪比那个富户的罪更大一般。</p>
+<p>感谢神，他不纵容属他的人犯罪。当大卫犯了罪以后，便差遣他的仆人拿单去见大卫，对他说了那个残暴的富户的故事。当大卫发怒定那个富户的罪的时候，拿单便立时用极严厉的话告诉大卫说，『你就是那人。』</p>
+<p>『你就是那人。』何等严厉的一句话！这句话充满了可怕的责备。这句话具有无上的威权。这句话正像晴天时的霹雳。这句话也好似子夜里的钟声。这句话将一个在罪中沉睡的人唤醒。这句话使一个自己犯了罪却定别人的罪的人忽然明白了过来，知道自己就是一个应当被定罪的人。没有听见这句话以前，大卫在那里说，『行这事的人该死。』听了这句话以后，大卫立刻转变了口吻说，『我得罪耶和华了。』没有听见这句话以前，大卫只知道责备别人。听了这句话以后，大卫无暇再想到别人的罪，只看见自己在神面前的败坏和污秽，因而懊悔认罪。『你就是那人，』这句话何等有能力。那些只看见别人的罪却看不见自己的罪的人们是怎样的需要牠阿！</p>
+<p>神藉着拿单把一个残暴的富户所犯的罪摆在大卫面前，叫大卫因着看见那富户的罪，而认识自己就是那样的人。可惜这位聪明一世的大卫在别的事上都看得清楚，惟独看不清自己的罪。因此需要拿单说出这句严厉刺心的话来──『你就是那人。』这句话也真不白说，说出来以后果然发生了神所希望的效果。那只看见别人有罪却没有看见自己有罪的大卫，竟彻底觉悟自己『得罪了耶和华。』</p>
+<p>神今日也把许多人所犯的罪摆在我们眼前──不是藉着先知所说的比喻，乃是藉着我们所看见的事实──叫我们因看见别人的罪而认识自己就是那样的人。可惜我们也像大卫那样看得清楚别人的罪，却看不清楚自己的罪，以致神也需要对我们说出这句严厉责备的话来──『你就是那人。』</p>
+<p>亲爱的读者，当你看见别人贪财求名，因而开口批评他的时候，请你听神的话说，『你就是那人。』当你看见别人离弃了神，恋慕世界，因而藐视他的时候，请你听神的话说，『你就是那人。』当你看见别人作伪，说谎，行欺诈，弄诡计，因而厌弃他的时候，请你听神的话说，『你就是那人。』当你看见别人不顾他人的好处，只知道自私自利，因而笑骂他的时候，请你听神的话说，『你就是那人。』当你看见别人纵欲行淫，因而咒诅他的时候，请你听神的话说，『你就是那人。』当你看见别人骄傲夸张，自取羞辱，因而轻看他的时候，请你听神的话说，『你就是那人。』不论你看见别人犯甚么罪因而定他的罪的时候，你都当听神的话说，『你就是那人。』</p>
+<p>是的，神使我们看见许多人的罪，不是要供给我们恼怒批评咒诅定罪的材料，乃是藉着这些人的事给我们一面镜子，叫我们照一照自己的面目。如果我们不负神的期望，会利用这种镜子照我们自己，我们必要从我们所看见的每一个人的罪状中找出我们自己的罪状，从我们所看见的每一个人的失败里寻见我们自己的失败。到时候我们必定不忍再恼怒别人，批评别人，咒诅别人，定别人的罪，并且也不敢再这样作。我们只有谦谦卑卑羞羞惭惭的在神面前俯伏认罪说，『我得罪耶和华了。』</p>
+<p>如果我们能这样作，我们将要怎样一日比一日离罪远，一日比一日离神近，我们将要有怎样圣洁的生活！我们将要怎样蒙神的赐福和使用！我们将要怎样会体恤人，会饶恕人，会帮助人！</p>
+<p>看见别人犯了罪，就『恼怒那人，』说，『行这事的人该死，』批评他，议论他，定他的罪，不但不会使任何人得着一点益处，而且还要为自己取来许多痛苦烦恼，甚至还有时我们自己因为心怀不平以致犯罪。但如果每次看见别人犯罪，便自己对自己说，『你就是那人，』我们所得的福气便不可限量了。</p>
+<p>神阿！求你使我在每次看见别人犯罪的时候，就听见你的话说，『你就是那人。』</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

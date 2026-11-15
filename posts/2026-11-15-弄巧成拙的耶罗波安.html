@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>弄巧成拙的耶罗波安 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>弄巧成拙的耶罗波安</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·借镜</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/6借镜/2看这些人（下）/16弄巧成拙的耶罗波安.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『所罗门的臣仆，尼八的儿子耶罗波安，也举手攻击王。他是以法莲支派的洗利达人，他母亲是寡妇，名叫洗鲁阿。他举手攻击王的缘故，乃由先前所罗门建造米罗，修补他父亲大卫城的破口。耶罗波安是大有才能的人，所罗门见这少年人殷勤，就派他监管约瑟家的一切工程。一日耶罗波安出了耶路撒冷，示罗人先知亚希雅在路上遇见他；亚希雅身上穿着一件新衣，他们二人在田野，以外并无别人。亚希雅将自己穿的那件新衣撕成十二片，对耶罗波安说，「你可以拿十片。耶和华以色列的神如此说，我必将国从所罗门手里夺回，将十个支派赐给你，（我因我仆人大卫和我在以色列众支派中所选择的耶路撒冷城的缘故，仍给所罗门留一个支派，）因为他离弃我，敬拜西顿人的女神亚斯他录，摩押的神基抹，和亚扪人的神米勒公，没有遵从我的道，行我眼中看为正的事，守我的律例典章，像他父亲大卫一样。但我不从他手里将全国夺回，使他终身为君，是因我所拣选的仆人大卫谨守我的律例诫命；我必从他儿子的手里将全国夺回，以十个支派赐给你。还留一个支派给他的儿子，使我仆人大卫在我所选择立我名的耶路撒冷城里，在我面前长有灯光。我必拣选你，使你照心里一切所愿的，作王治理以色列。你若听从我一切所吩咐你的，遵行我的道，行我眼中看为正的事，谨守我的律例诫命，像我仆人大卫所行的，我就与你同在，为你立坚固的家，像我为大卫所立的一样，将以色列人赐给你。我必因所罗门所行的，使大卫后裔受患难，但不至于永远。」所罗门因此想要杀耶罗波安。耶罗波安却起身逃往埃及，到了埃及王示撒那里，就住在埃及，直到所罗门死了。』（王上十一26～40）。</p>
+<p>『以色列众民见王不依从他们，就对王说，「我们与大卫有甚么分儿呢？与耶西的儿子并没有关涉；以色列人哪，各回各家去罢；大卫家阿，自己顾自己罢。」于是以色列人都回自己家里去了。惟独住犹大城邑的以色列人，耶罗波安仍作他们的王。罗波安差遣掌管服苦的人的亚多兰往以色列人那里去，以色列人就用石头打死他。罗波安急忙上车，逃回耶路撒冷去了。这样，以色列人背叛大卫家，直到今日。以色列众人听见耶罗波安回来了，就打发人去，请他到会众面前，立他作以色列众人的王；除了犹大支派以外，没有顺从大卫家的。』（王上十二16～20）。</p>
+<p>『耶罗波安在以法莲山地建筑示剑，就住在其中；又从示剑出去，建筑毘努伊勒。耶罗波安王心里说，「恐怕这国仍归大卫家。这民若上耶路撒冷去，在耶和华的殿里献祭，他们的心必归向他们的主犹大王罗波安，就把我杀了，仍归犹大王罗波安。」耶罗波安王就筹划定妥，铸造了两个金牛犊，对众民说，「以色列人哪，你们上耶路撒冷去实在是难；这就是领你们出埃及地的神。」他就把金牛犊一只安在伯特利，一只安在但。这事叫百姓陷在罪里，因为他们往但去，拜那牛犊。耶罗波安在邱坛那里建殿，将那不属利未人的凡民立为祭司。耶罗波安定八月十五日为节期，像在犹大的节期一样，自己上坛献祭。他在伯特利也这样向他所铸的牛犊献祭，又将立为邱坛的祭司安置在伯特利。他在八月十五日，就是他私自所定的月日，为以色列人立作节期的日子，在伯特利上坛烧香。』（王上十二25～33）。</p>
+<p>『那时有一个神人奉耶和华的命从犹大来到伯特利，耶罗波安正站在坛旁要烧香。神人奉耶和华的命向坛呼叫说，「坛哪，坛哪，耶和华如此说，大卫家里必生一个儿子，名叫约西亚；他必将邱坛的祭司，就是在你上面烧香的，杀在你上面，人的骨头也必烧在你上面。」当日神人设个豫兆，说，「这坛必破裂，坛上的灰必倾撒，这是耶和华说的豫兆。」耶罗波安王听见神人向伯特利的坛所呼叫的话，就从坛上伸手说，「拿住他罢。」王向神人所伸的手就枯干了，不能弯回。坛也破裂了，坛上的灰倾撒了，正如神人奉耶和华的命所设的豫兆。王对神人说，「请你为我祷告，求耶和华你的神恩典，使我的手复原。」于是神人祈祷耶和华，王的手就复了原，仍如寻常一样。王对神人说，「请你同我回去吃饭，加添心力，我也必给你赏赐。」神人对王说，「你就是把你的宫中一半给我，我也不同你进去，也不在这地方吃饭喝水；因为有耶和华的话嘱咐我说，不可在伯特利吃饭喝水，也不可从你去的原路回来。」于是神人从别的路回去，不从伯特利来的原路回去。』（王上十三1～10）。</p>
+<p>『这事以后，耶罗波安仍不离开他的恶道，将凡民立为邱坛的祭司，凡愿意的，他都分别为圣，立为邱坛的祭司。这事叫耶罗波安的家陷在罪里，甚至他的家从地上除灭了。』（王上十三33、34）。</p>
+<p>『那时耶罗波安的儿子亚比雅病了。耶罗波安对他的妻说，「你可以起来改装，使人不知道你是耶罗波安的妻，往示罗去，在那里有先知亚希雅，他曾告诉我说你必作这民的王。现在你要带十个饼，与几个薄饼，和一瓶蜜，去见他。他必告诉你儿子将要怎样。」耶罗波安的妻就这样行，起身往示罗去，到了亚希雅的家。亚希雅因年纪老迈，眼目发直，不能看见。耶和华晓谕亚希雅说，「耶罗波安的妻要来问你，因她儿子病了，你当如此如此告诉她；她进来的时候，必装作别的妇人。」</p>
+<p>『她刚进门，亚希雅听见她脚步的响声，就说，「耶罗波安的妻，进来罢；你为何装作别的妇人呢？我奉差遣将凶事告诉你。你回去告诉耶罗波安说，耶和华以色列的神如此说，我从民中将你高举，立你作我民以色列的君，将国从大卫家夺回，赐给你；你却不效法我的仆人大卫，遵守我的诫命，一心顺从我，行我眼中看为正的事；你竟行恶，比那在你以前的更甚，为自己立了别神，铸了偶像，惹我发怒，将我丢在背后；因此，我必使灾祸临到耶罗波安的家，将属耶罗波安的男丁，无论困住的，自由的，都从以色列中翦除，必除尽耶罗波安的家，如人除尽粪土一般。凡属耶罗波安的人，死在城中的必被狗吃，死在田野的必被空中的鸟吃，这是耶和华说的。所以你起身回家去罢，你的脚一进城，你儿子就必死。以色列众人必为他哀哭，将他葬埋。凡属耶罗波安的人，惟有他得入坟墓，因为在耶罗波安家中，只有他向耶和华以色列的神显出善行。耶和华必另立一王治理以色列，到了日期，他必翦除耶罗波安的家，那日期已经到了。耶和华必击打以色列人，使他们摇动，像水中的芦苇一般，又将他们从耶和华赐给他们列祖的美地上拔出来，分散在大河那边，因为他们作木偶，惹耶和华发怒。因耶罗波安所犯的罪，又使以色列人陷在罪里，耶和华必将以色列人交给仇敌。」』（王上十四1～16）。</p>
+<p>『巴沙一作王，就杀了耶罗波安的全家；凡有气息的没有留下一个，都灭尽了，正应验耶和华藉他的仆人示罗人亚希雅所说的话。这是因为耶罗波安所犯的罪，使以色列人陷在罪里，惹动耶和华以色列的神的怒气。』（王上十五29、30）。</p>
+<p>耶罗波安作以色列人的王是出于神。在他未曾与先知亚希雅见面以前，他决不会想到自己能作以色列人的王。当他在田野听见先知亚希雅告诉他说耶和华要把十个支派交给他管理的时候，他一定是惊喜交集，同时他也决不会不因耶和华的公义和威严而战栗，因为就连神所特别喜爱的大卫王的儿子所罗门犯了敬拜假神的罪，神也不肯宽容他，却把国位从他的手中夺去赐与别人。当他被以色列人拥戴为王以后，按理他一定要战兢恐惧的敬畏神顺从神了。不料他在作王以后，竟领着百姓拜起金牛犊来，这真是令人大惑不解的事。亲眼看见亲耳听见所罗门王因为离弃耶和华去敬拜假神因此受了神的咒诅，任何人也不敢再蹈所罗门的覆辙，何况耶罗波安是一个『大有才能的人』呢。这样的一个人应当比别人更明智，更有远见，更看得出来是非利害。他不会方纔看见所罗门因为悖逆神崇拜偶像以致失去国位，紧接着自己也走相同的这条道路。但事实就是这样，这又是怎么一回事呢？</p>
+<p>我们详细查看一下他领着百姓拜金牛犊的动机，就知道他所以这样作，正是出于他自己的小聪明。他虽然作了十个支派的王，但罗波安却仍在耶路撒冷作犹大人的王；圣殿既在罗波安的势力范围内，那样，以色列人每年到耶路撒冷去献祭守节，便极容易想起他们的老王大卫和他的儿子所罗门来，纵使罗波安不劝诱他们，他们也极容易再归向他，如果罗波安再用好话劝诱他们，那更不用提了。他想到如果百姓再归向罗波安王，不但他自己的王位要失落，就连他的性命也难保全。在这种情形之下，他必须设法拦阻百姓，不容他们到耶路撒冷去，使百姓看不见所罗门所建的圣殿和罗波安王。他怎么办纔好呢？禁止百姓，不许他们到耶路撒冷去敬拜神，不但是势所不能，而且是理所不当。在以色列境内另建一座圣殿，纵使经济充裕，也不是短时间所能成功的。纵使建筑了圣殿，他也没有神的约柜。自弄聪明的耶罗波安竟想出一个最简易的方法，既不必出示拦阻百姓敬拜神，又不需要费财耗时建造圣殿，只需要豫备少量的金子，铸造两个金牛犊，一切的问题便完全解决了。</p>
+<p>我们要问，『耶罗波安为甚么不制造别的偶像，却铸造金牛犊呢？』毫无可疑的，他记得亚伦在西乃山下为百姓铸造金牛犊的事。拿他对百姓所说的话──『以色列人哪，你们上耶路撒冷去实在是难；这就是领你们出埃及地的神。』──与从前亚伦在西乃山下铸成金牛犊以后所说的话──『以色列阿，这是领你出埃及地的神。』──互相对照一下，便知道他所作的和他所说的话，完全是模仿西乃山下的那一幕。</p>
+<p>这又希奇了！耶罗波安既知道以色列人在西乃山下拜金牛犊的事，难道他不知道神因为以色列人拜金牛犊便向他们发怒，想要把他们灭绝，幸有摩西为他们哀求，神纔收回他的怒气么？难道他不记得那一天以色列人中有三千人被杀么？（事见出三十二章）耶罗波安既知道这些事，为甚么还敢这样大胆领着百姓敬拜金牛犊呢？难道他不惧怕神么？</p>
+<p>谁说耶罗波安不惧怕呢，不过他所惧怕的不是神，乃是罗波安王和以色列众百姓。他怕以色列人再归向罗波安，以致他轻者失去王位，重者丧掉性命，他却不怕惹神的忿怒。当他惧怕人的时候，他完全忘记了神。他不但忘记了神怎样向所罗门发怒，他也忘记了神怎样将十个支派赐给他，立他为以色列人的王，他更忘记了神藉着亚希雅所应许他的话──『你若听从我一切所吩咐你的，遵行我的道，行我眼中看为正的事，谨守我的律例诫命，像我仆人大卫所行的，我就与你同在，为你立坚固的家，像我为大卫所立的一样，将以色列人赐给你。』当他想到摆在前面种种的危险的时候，他把神，和神的大能，神的威严，神的应许，都忘记得干干净净。他觉得他必须想办法，来维持他的王位与他自己身家性命的安全。既想不出正当的办法来，便只有不择手段，去作他所能作的任何事，于是他便铸造金牛犊，而且领着百姓敬拜金牛犊了。</p>
+<p>这个办法是否有效用呢？有，有很大的效用。以色列人本来就喜欢敬拜眼睛所能看得见的，何况金牛犊又是他们的祖宗所敬拜过的。此外拜金牛犊对他们还有一样好处，就是他们可以少走许多路，少费许多钱，在北方的可以到但城去，在南方的可以到伯特利去，就近敬拜两个金牛犊中的任何一个。这比跋涉长途，耗费巨额的旅费，到耶路撒冷去拜神，实在好得许多。因为有这几个原因，百姓果真不到耶路撒冷去了。耶罗波安看见这种情形必是十分满意，认为他的办法虽然在神面前有亏欠，但他到底藉此保住了他的王位和他的身家性命，从此他和他的子孙可以长坐以色列的王位，又可以长享富贵了。他却没有想到他这样作是在神面前犯了大罪，因此要招来大祸。他只想到怕人，他却忘记了怕神。</p>
+<p>耶罗波安犯了这样大的罪，神还是宽容忍耐他，给他留悔改的机会，差遣一个神人从犹大来到伯特利，在耶罗波安面前向坛呼叫说，『坛哪，坛哪，耶和华如此说，大卫家里必生一个儿子，名叫约西亚；他必将邱坛的祭司，就是在你上面烧香的，杀在你上面，人的骨头也必烧在你上面。』神人为要证明这事将来必定成就，还给耶罗波安一个豫兆──『这坛必破裂，坛上的灰必倾撒。』耶罗波安听见神人所宣布的咒诅，实在应当立刻悔改，拆毁邱坛，打碎金牛犊。可惜他不但没有这样作，反倒向神人发怒，从坛上伸手，吩咐他的臣仆说，『拿住他罢。』他这种顽梗刚愎的行为，使神不能不对他实行惩罚，因此使他所伸的手枯干，不能弯回，同时神人所设的豫兆也实现了──『坛也破裂了，坛上的灰倾撒了。』耶罗波安这时候纔开始惧怕，向神人呼求说，『请你为我祷告，求耶和华你神的恩典，使我的手复原。』使人为他祈祷，耶和华也听了神人的祈祷，使他的手复了原，仍如寻常一样。耶罗波安受了神的惩治，也蒙了神的怜悯，看见了神的威严，也晓得了神的慈爱。他应当立刻打碎金牛犊，拆毁为金牛犊所筑的坛，在神面前自卑认罪，从此领着百姓专诚敬拜耶和华。如果他能这样作，神一定会赦免他以往的罪，赐福与他和他的子孙。</p>
+<p>不幸得很！他受了这一次的警戒以后，并没有认罪悔改。因为经上记着说，『这事以后，耶罗波安仍不离开他的恶道，将凡民立为邱坛的祭司，凡愿意的，他都分别为圣，立为邱坛的祭司。这事叫耶罗波安的家陷在罪里，甚至他的家从地上除灭了。』耶罗波安领着百姓拜金牛犊的罪固然很大，但他受了警教以后仍不悔改的罪比以前所犯的罪更大，因此神的怒气便向他发作了。</p>
+<p>耶罗波安果真信那金牛犊是神么？事实告诉我们，他并不这样信。看他在他儿子亚比雅患病的时候对他的妻子所说的话，便证明他的心中仍然知道只有耶和华晓得未来的事。他说，『你可以起来改装，使人不知道你是耶罗波安的妻，往示罗去，在那里有先知亚希雅，他曾告诉我说你必作这民的王。现在你要带十个饼，与几个薄饼，和一瓶蜜，去见他，他必告诉你儿子将要怎样。』耶罗波安的儿子病了，他为甚么不去求问他为金牛犊所立的祭司，却去求问先知亚希雅呢？这岂不足证明他心中明明知道金牛犊根本没有灵验，他所立的祭司也不会知道将来的事么？他记得多年以前先知亚希雅在田野奉耶和华的命对他所说的话，他也看见那些话都一一应验在他的身上，因此他嘱咐他的妻子，为他儿子的病去求问亚希雅，而且他确信亚希雅能将未来的事指示他，因为他对他的妻子说，『他必告诉你儿子将要怎样。』他所以这样信亚希雅的话，还是因为他知道亚希雅是耶和华的先知，耶和华会将一切未来的事指示他。根据这件事实，我们可以晓得耶罗波安并非不信耶和华是神，他也并非真信人手所造出来的那两个金牛犊。这无非是他所用的手段，藉此牢拢百姓，使他们不归向罗波安而已。</p>
+<p>也许有人要问说，『耶罗波安既不是真心信靠那个金牛犊，他的罪不是可以减轻了么？』不，他这样作不但不能减轻他的罪，而且正是加重了他的罪，因为除去拜偶像的罪以外，他还犯了作伪欺骗的罪；往上说，他是欺骗了神，往下说，他是欺骗了全国的人民。如果他像埃及人那样，根本不认识耶和华，从心里就认为金牛犊是有灵验的神，因而敬拜牠，他所敬拜的虽然错了，但他究竟还是存了诚实的心，这样他的罪比较还可以轻些。如今他明明知道耶和华是神，而且遇见了困难的事仍去求问耶和华的先知，同时却上欺骗神，下欺骗人，领着以色列人敬拜金牛犊，他的罪便特别重了。</p>
+<p>话又说回来了，耶罗波安既不信金牛犊有灵，为甚么他还这样领导着以色列人敬拜牠呢？这没有别的缘故，就是因为他怕以色列人背叛他，归向罗波安。这种惧怕的思想使他心慌意乱，头脑昏迷，于是他便采取了这样的一个下策，想藉此保全他的王位和身家的安全。结果是甚么呢？『你竟行恶比那在你以前的更甚：为自己立了别神，铸了偶像，惹我发怒，将我丢在背后。因此我必使灾祸临到耶罗波安的家，将属耶罗波安的男丁，无论困住的，自由的，都从以色列中翦除，必除尽耶罗波安的家，如人除尽粪土一般。凡属耶罗波安的人，死在城中的必被狗吃，死在田野的必被空中的鸟吃。』坏了！坏了！耶罗波安领着百姓敬拜金牛犊，本来是想藉此保全自己脱离危险和祸患，谁想结果竟因此招来了极大的危险和祸患，这种祸患比他原来所料想的大许多倍。弄巧成拙，自贻伊戚！我们想到这里，真不能不为他惋惜长叹了！</p>
+<p>也许有人要问我说，『你只知道责备他弄巧成拙，只知道为他叹息，你能不能为他想出一条更好的道路，使以色列人不背弃他，不加害于他呢？』我想不出来甚么更好的道路，我也不用去想更好的道路。在耶罗波安面前清清楚楚的就摆着一条平坦的道路，这条道路十分容易走，而且十分安全。这条道路就是信靠的道路。耶和华既立耶罗波安作以色列人的王，如果神不废弃他，谁能夺去他的王位呢？如果神不许他死，谁能伤害他的性命呢？只要神叫他作以色列人的王，百姓虽然到耶路撒冷去，他们也不会背叛他，罗波安虽然劝说百姓，他的劝说也不会生效。请想神既能从众民中提拔他，使他作王，难道神就不能保守他，使他不失去王位么？起初所罗门要杀他，却没有达到目的，现今罗波安要杀他，又焉能成功呢？耶罗波安只要一信靠神，他便立时没有一点惧怕忧虑。神既立他为王，当然也必保守他，何况神还应许他说，『你若听从我一切所吩咐你的，遵守我的道，行我眼中看为正的事，谨守我的律例诫命，像我仆人大卫所行的，我就与你同在，为你立坚固的家，像我为大卫所立的一样，将以色列人赐给你，』呢？如果神没有藉着先知亚希雅给他这个宝贵的应许，他惧怕忧虑，或者还可以说有几分理由。但现在他连半分的理由都没有了。他应当信神和神的应许。如果他能这样信，他便用不着自己去想任何方法来保全他的王位和他自己的安全，又何至领着百姓去敬拜金牛犊，使百姓陷在罪中，自己也取来这样大的祸患呢？自己想办法去维持王位和安全，需要绞脑汁，耗心血，实在是一件极不容易的事；信靠神和神的应许，却是一件丝毫不用费心费力的事。耶罗波安放着这一条省心省事安全平坦的路不走，却去走那条费心费事危险取祸的路，在他也许还认为自己聪明灵巧，他那里想到竟是弄巧成拙了呢？</p>
+<p>耶罗波安犯罪取祸，有两个主要的原因，一个是惧怕人，一个是不信靠神；这两件事又是互为因果的。当我们惧怕人的时候，我们就不再会信靠神；当我们不信靠神的时候，我们也就会惧怕人。有时候撒但把一个惧怕人的心放在我们里面，我们就再不会信靠神，因此便去犯许多的罪。又有时候撒但摇动我们信靠神的心，当我们不信靠神的时候，我们便开始惧怕人，因此我们便去想各样的方法，逃避从人来的危害。在这时候，撒但会引诱我们作各样违背神的事。</p>
+<p>明白了这个真理，我们便应当时刻谨慎，不可容撒但把这两个意念中的任何一个放在我们的心中。我们必须看『惧怕人』和『不信靠神』是两样极可怕的大罪。我们必须知道这两样罪加给我们的损害决不在其它的罪恶之下。我们更必须知道如果我们犯了这两样罪中的任何一样，我们便会接连着犯许多别样的大罪，正像耶罗波安因为惧怕人，不信靠神，以致领着以色列人去敬拜金牛犊一样。因此我们一方面应当求神除去我们惧怕人的心，一方面应当求神增加我们信靠他的心，经上说，『惧怕人的陷入网罗；惟有倚靠耶和华的必得安稳。』（箴二十九25）我们不惧怕人，便不至陷入撒但的网罗；我们倚靠耶和华，便可以得享安稳。如果耶罗波安学会了这一样宝贵的功课，何至害了以色列全国的人，又害了自己的全家呢？</p>
+<p>我们所信的神不是全能的么？天，地，海，和其中的万事，万物，不是都受他的管辖么？如果他帮助我们，谁能敌挡我们呢？如果他与我们同在，谁能加害于我们呢？纵使全世界的人都起来与我们为敌，只要神用他『永久的膀臂』护庇我们，我们仍是平安稳妥，不会受着丝毫的伤害。反过来说，如果我们凭自己的聪明智慧，为自己筹划安排得十分周到，使全世界的人都同情我们，都爱护我们，只要神向我们发怒，稍动一下他的小指，我们便要落在可怕的祸患中，在那时候没有一个人能搭救我们。我宁可得罪全世界的人，也不敢得罪神。如果我们都用怕人的心去怕神，用我们讨人喜悦的心去讨神的喜悦，用我们求人保护的心去求神的保护，用我们倚靠自己的聪明的心去倚靠神，我们便不会像耶罗波安那样弄巧成拙陷入祸患了。</p>
+<p>『耶和华是我的亮光，是我的拯救，我还怕谁呢？耶和华是我性命的保障，我还惧谁呢？那作恶的，就是我的仇敌，前来吃我肉的时候，就绊跌仆倒。虽有军兵安营攻击我，我的心也不害怕，虽然兴起刀兵攻击我，我必仍旧安稳。』（诗二十七1～3）。</p>
+<p>『你要专心仰赖耶和华，不可倚靠自己的聪明。在你一切所行的事上，都要认定他，他必指引你的路。不要自以为有智慧；要敬畏耶和华，远离恶事；这便医治你的肚脐，滋润你的百骨。』（箴三5～8）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
