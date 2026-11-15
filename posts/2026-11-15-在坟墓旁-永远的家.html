@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>在坟墓旁-永远的家 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>在坟墓旁-永远的家</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/2在密云黑暗的日子/4在坟墓旁-永远的家.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>当我们最后一次看到我们所爱的去世的人的脸面因而流下眼泪的时候，我们所感到的悲伤几乎是我们一生中不会有多少次能超过的；神并不因为我们所流的这些眼泪罪责我们。它们是天然的减轻痛苦的方法，但它们或者也能作我们到天上去的准备，它们要使我们成圣如同使我们的心得安慰一样；「忧苦中的眼泪是神圣的，因为耶稣也曾哭过。」</p>
+<p>在那伯大尼哭泣的姐妹二人的事迹中我们看见死亡击打一个家庭，这个家庭似乎是全地上最不容易被这样的一个仇敌所侵略的；因为这个家庭这样长久被耶稣选择作他退修的地方，这家庭中的三个人已径这样长久作了他最亲密的朋友，保守这个家庭脱离死亡的荒凉，纵使不谈到主那些亲近的朋友的好处，最少对于主自己的安慰也是必不可少的。然而最深切的愁苦忽然来到了，这姐妹二人看着他们兄弟的尸身洒下苦痛的眼泪来。基督为这事责备她们没有呢？没有，他在她们的眼泪上加上了他自己的眼泪。这副图画中最感动人的就是「耶稣哭了」这一点。大约这是她们第一次看见她们的主流泪；至少是他第一次和他们一同哭泣，而且是为同一的事故，在那幽暗的时期中他似乎更与她们合一是以前未曾有过的。</p>
+<p>他所流的这些眼泪是何等的完全同人一样阿！他知道拉撒路并不是不能活过来，然而他哭了。他知道不多时以后极大的喜乐要充满她们悲哀的心，然而他哭了。他知道她们不久就要穿上赞美的衣服代替愁苦的心灵，然而他哭了。这件事是极合乎人性，极富有同情，极美丽，而且也是极能安慰人的；还有一件很可注意的事，就是约翰福音证明耶稣的神性较比其它各福音书更完全，同时这卷福音书显明耶稣完全的人性也比其它各卷福音书更清楚。这卷福音书告诉我们他是那样有神性足能叫死人复活起来，他也是那样有人性足能和那些为死人悲伤的人一同哀哭；那样有神性足能擦干哀哭的人所流的眼泪，然而又那样有人性自己流出眼泪来。</p>
+<p>因为我们常亲眼看见从街市中走过的出丧的行列，或看见一家又一家的人穿上丧服，我们都很明白死亡所实行的毁灭，但当死亡进入我们自己快乐的家庭，或我们所亲爱的朋友中间的时候，我们更是怎样实觉出来死亡的可怕阿。那在「凡事上与他的弟兄相同」的主自己也是这样，伯大尼村中的那一家大约是头一个地方使他深深感觉到死亡的可怕。他为甚么哭呢？是不是因为他深深明了忧苦所需要的是甚么呢？它需要同情过于一切。虽然他已经豫备了更大的福分要给那些哭泣的人，他却先给了她们同情。这件事使他离我们是何等的近，尤其是那些在死人的屋子里或在坟墓旁边的人。以后在他看为适宜的时候他再将他慈爱的心中所具有的同情显露出来。若非有些打击我们的愁苦临到，我们总不知道他的声音是怎样能安慰我们，正如一个慈母容许她的小孩子在屋子内外奔跑玩耍，在他十分快乐安适的时候不多注意他；但当疾病或是意外的事临到他身上的时候，便立时跑来抱着他，将他放在怀中，用她最亲密的言语安慰他一样。神自己岂不曾说「母亲怎样安慰儿子，我就照样安慰你们」么？</p>
+<p>但如果要使我们所爱的人的坟墓成为使我们得真实福祉的所在，我们所需要的还不止于安慰。站在那里的时候许多严重的思想也许纷起在我们的心中，许多紧要的问题要问自己，许多深切的自省要发生。我们一定要回想死者的一生，其间许多半被遗忘的事迹又重新显在我们面前，同时也要追忆到我们自己的人生同死者所发生的关系。一个人在这种时期回想以前并未说过粗暴狠毒的话，并未曾因着恶言使死者多日痛苦伤心，也未曾因着自己的自私和罪恶使死者早日离世，这个人真是有福了！因为他现在不致因着不能挽回以前的错失使自己倍加伤痛。</p>
+<p>纵使没有这种情形，回想以前的事都感觉满意，站在坟墓旁边仍然是一件严重的事。这件事比别的事更能使我们临近永远的实际。无疑的这种印像不久就要过去。事实常是这样。因着注目死者的面目所发生的那种带着恩惠而且足能使我们成圣的感觉也许不能存在许久。它们常是如此。但一个人在这样的一个时期还不曾发生一种渴望成圣切慕天上福祉的心，这个人的心也就真够刚硬的了。神不但藉着这种悲苦使我们的眼目向天上看，也是要使我们向里面看，好叫我们问问自己，死亡对我们到底是怎么一回事──是永远的利益呢，或是永远的损失？是欢欢喜喜的回家呢，或是永远被摈拒在那个慈爱平安的家门以外？</p>
+<p>必须葬埋我们的死人真是一件很能使我们自卑的事。那个光明美丽的灵多日所居住的身体忽然变成那样腐败，以致我们再不忍得去看，我们因此像亚伯拉罕那样说，「求你们在这里给我一块地，我好埋葬我的死人，使他不在我眼前。」我们想到这事的时候所感到的痛苦真是言语所不能述说的。虽然这样，这个无生气的泥土安息的地方仍是一块圣地，到这地方来一次也许是一件很能使人成圣的事。无论我们怎样说到坟墓会使人悲伤，我们看见我们所爱的人葬埋的地方总能给我们一种悲哀中的满足。葬身在海中的水手的母亲常感觉如果她能将她的儿子葬埋在坟园里，她可以时常到那里摆几朵鲜花，洒几滴热泪，设想他离自己不远，这真是说不出来的安慰。这是一种自然的感觉，神也能用这件事使人得着他的恩惠。</p>
+<p>但无论人是否这样到坟墓旁边去，死亡所造成的离别总是一件严重的事。如果两个人在离别的时候都确知对方的信心，这种离别是何等甘甜！如果两个人都知道离别不过是极短的时候，将来重新聚会乃是永远的，这种别离与普通的别离是何等的不同！如果那些吊唁的亲友们在挥泪离别以前，确知那些逝去的人不过是离世「与基督同在」，他们将要何等的快乐！这种信仰可以使众人得着安慰，因为那些逝世的人在安息以前就证实了他们实在是「因信那位爱他们为他们舍了自己的神的儿子而活。」</p>
+<p>我们常说我们的忧苦乃是神对于我们许多的祈祷所给的奇特的回答，就如我们为求在心灵和生活上更圣洁所发的祈祷，为求更多与世界分别所发的祈祷，为求更深的信仰所发的祈祷。但我们也曾想到那离开我们回到天家的人与我们分离这一件事里面包含着我们的主所发的祈祷所得来的一个回答么？为甚么你所亲爱的那一位竟被夺去离开你的身旁呢？为甚么你愿意尽力留住他却是不能呢？是不是当你很痛苦的祷告说，「父阿，我在那里，求你容你所赐给我的这个亲爱的人也同我在那里」的时候，基督也祷告说，「父阿，我在那里，愿意你所赐给我的这个人也同我在那里」呢？他的祈祷胜过了你的祈祷，这本是合宜的，因为你的祈祷是无知的，他的祈祷是明智的；你的祈祷是出于爱心，但他的祈祷是出于更深的爱心。你能因为他的祈祷蒙了应允便嫉妒他么？</p>
+<p>无指望的人的愁苦</p>
+<p>有些人看见他们所爱的朋友离开世界并没有甚么盼望能进入永远的平安就为他们忧愁，这些忧愁的人比别的人更觉可怜；如果这些去世的朋友在世上的时候生活在一种罪恶的人生中，这种愁苦就更重百倍了。这种愁苦实在是很深重的，我们必须用温和慈爱同情的手去抚慰他们。然而在这种时期中那愁苦的人常会很苦痛的试着把新约中论到没有基督的人的结局所说的话放在一旁，欺骗自己说这些经文并不真是照它们所明说的意思那样讲解。</p>
+<p>那位慈爱的主来到世间所作整个爱心的工作就是要使人不陷入那可怕的结局。他论到那些不悔改的人所要遭遇的悲惨的结局实在是不能再清楚的了；在我们急切要安慰那些伤心的人的时候，我们不敢否认也不敢减轻他所说的这些话的严重性。然而这是那些伤心的人自己常作的事。他们试着要用这些话安慰自己说，「没有甚么证据证明他真心信靠基督，证明他有了心中和生活中的更新，证明他豫备好了承受永远的福，证明他爱神并且顺从他的旨意，然而他有这么许多可羡慕的优点，就如和善、慷慨、正直、无私，因此他一定不能被关在天门之外」，或是说，「神是那样有怜悯，决不能这样弃绝他所造的人，他所给人的这些警告实际的意思必定不会像他所说的这样可怕，」或是说，「在这世界上生活中的痛苦已经可以算作刑罚，而且救赎的工作也足够用的了，」或是说，「在坟墓的那边一定有一种新的试验」，或是说，「基督所说的火不过是一种洁净人的火，以后要成就现在未作的事，使人至终可以得着永远的福祉。」这一类的说法，揣测，与希望，是那些被忧苦打伤的心灵很普通的接济。如果可能，一个人一定要极快乐的响应这些话。但是不行。其中有的说法是我们的良心不能承认的。有的是与那本论到这事惟一有威权的书相抵触的；因为这本书所说关于人生的机会的教训里面，很明显的提到现在是最后的机会。重生和得救是在世上需要经验的，不是以后的事：如果我们在这里是死亡，在那边也必是这样一个人自然要小心不敢冒昧将这个真理告诉一个心中极愁苦的人，但我们不敢将这个真理减轻，这是写得极清楚无法否认的；在安慰我们的弟兄的时候我们不敢对神不忠诚。</p>
+<p>那样就没有解救的方法么？惟一可能的解救就是──对于一个信靠的心是够用的──回到那一句伟大的话，「审判全地的主岂不行公义么？」（创十八25）神是爱，但他也是那位完全公义的，我们确实的知道他一切的作为无论怎样严厉，里面决不会有一点不公义的阴影。他施行审判一定要把各人一切的事情与经过拿来很和善的处理。决不是只拿一部分事来断定。一切能从轻处理的地方都要很慈爱的考虑。不良的教育与邪恶的环境的势力，遗传下来容易犯罪的那种能力，试诱的狡诈性，心中对于捆绑他的罪恶所发的那种无功效的抵抗，这一切都要很公平的被承认。纵使最后由于真实悔改的心中所发出来的极无力的表示，这种表示是只有他能辨别出来的，在他的手中也有完全的价值。他的判决都是要「按着真理」。当这些事显明的时候都是完全公正，使凡听见的人的良心都必定赞同。那时候各人的心所发的回答都要像「群众在天上大声说，哈利路亚！救恩、荣耀、权能，都属乎我们的神，他的判断是真实公义的。」（启十九1、2）。</p>
+<p>在利未记上有一段极感动人的记载，告诉我们一个信靠的心能忍受这样使人痛心的愁苦。当亚伦的两个儿子拿答和亚比户因着在耶和华面前那样大胆献上凡火，犯罪正如醉酒一般的时候，「有火从耶和华面前出来，把他们烧灭，他们就死在耶和华面前。」（利十1、2）亚伦怎样忍受这种忽然临到的审判呢？他抗拒了一个短的时候，及至摩西将神在这审判中所显明的公义指示给他，并告诉他神作这事是为叫别人惧怕不敢再犯这罪，好使神的名得荣耀的时候，「亚伦就默默不言」了。那种默认神的公义的态度是那些像亚伦一样愁苦的人所当有的惟一的态度。也许现在发生的这种打击所生的果效还是和那时一样在活人身上使神得荣耀。如果这种死亡可以惊醒别的人更明白他们的罪，在他们里面激起一种向神活着的愿望；如果它可以使别的人明白他们怎样急需真实信靠基督，纔可以不至失去到天上去的机会，就是这种可怕的死亡也能荣耀神，那些将自己得救和神在世上得尊荣这两件事看为宝贵的人也必以神所作的为是了。</p>
+<p>但最大的安慰还是在一直向神仰望着说，「主阿，我知道你的审判是公义的，」并求神使你驯良着顺服在他圣洁的公义之下，在这种顺服里藏着平安。大卫说，「因我所遭遇的是出于你，我就默然不语。」（诗三十九9）他说这话或者就是在他想到他儿子押沙龙的惨死的时候。那样说不是一件容易的事。说这话需要一种坚强的信心：然而除了这个，信靠的心还能说甚么呢？</p>
+<p>被压伤的人哪，你自己多靠近神罢；还要想到这种苦痛的忧伤至终就是要吸引你离神更近一些容他到最后显明他自己的公义罢，因为他一定要这样作。当你看见每一件事的时候，要信这是他所作的，你要对他一切所作的都说阿们；这样你就要得一些安慰，因为你更多了解你自己得作神的后嗣是何等有福──如果你确实是神的后嗣──并且能说，「我家在神面前并非如此，神却与我立永远的约，这约凡事坚稳。」（撒下二十三5）</p>
+<p>「密云和黑暗环绕着他，但公义和正直是他宝座的根基。」你自己更要多亲近神，忧愁的波浪就必在他至高的宝座脚下渐归平静，变成了极大的平安。</p>
+<p>在帐幕里</p>
+<p>虽然在圣经里未曾照我们所盼望的多提到那些「在主里」死了的人所得的那些确定而且完备的福分，可是在读完上面那篇悲惨的话以后，再想到这件事，确实使我们得着不少的安慰。基督自己并未曾对他的门徒多提到天上的景况。范诺伦监督说得很好，他说，「这位君王太熟悉他宫中的荣耀，用不着时常提那些事。」但他每逢提到天上的事总是用极确定的话，因为那地方本是他的家，他很知道那个地方：可是很使我们惊奇的就是他不多提到这个地方。我们所听见的只有一件事，这件事是他用不同的方式说出来的，就是在天上所以那样快乐就是因为我们与他自己在一处──「同我在乐园里」，「我在那里，叫你们也在那里」，「我要接你们到我那里去」，他所说的差不多就止于这些；但对于那些爱他的人这也就足够了。这里面已经包括了一切别的事。那在远方的居所被浓雾所遮掩，但这一道明亮的光线在它上面照射出来，笃信的心便说道，「我不再需要别的；不单在基督的喜乐里，乃是与基督同在，与我的救赎主有最亲密最深切的交往，一切的疑惑永远不再看见，一切使我与主分离的罪恶永远过去了，我的心与主的心完全彼此合一──这就是我所需要的天上，也就是我所渴望的地方。」这就是每一个被救赎的灵在一离开这必死的身体的那一霎那间所要到的地方。他一「离开身体」便要「与主同在」。这个改变是立时的，也是有知觉的。在去世的信徒死去以后到复活的时候这其间并不是毫无知觉，如同许多人所揣想所讲说的。保罗提到「那些睡了的人」，乃是说到身体的睡，并不是灵的睡。就是在世上我们的身体睡眠的时候，我们所作的梦也足以证明我们的灵是完全醒着，不过是在与这个不同的一种境界罢了；论到死了的人用「睡」这个说法不过是表示平安和休息，并不是毫无知觉的意思。实在说起来，提到信徒的灵在等候基督得国的期间是全然不存在的这种见解不止与圣经不合，而且也是不可思识的。如果「与基督同在」是有真实意义的，那就必是有知觉的，必须知道而且感觉这种相交的意义。</p>
+<p>约翰在拔摩海岛上所听见的从天上来的声音说，「从今以后在主里面死了的人有福了：他们息了自己的劳苦，作工的果效也随着他们，」这几句话与那种睡了的人毫无知觉的理论决不能相合，如果他们毫无知觉，也就决不能看见他们在地上所未曾看见的作工的果效。那句从天上所来的话是圣经中所说的许多极大赐福的话语中的一句，差不多也可以说是用一句简单的话语，说明全部新约讲论被基督救赎的人所有的那种眼不能见的生命。他们是带着知觉享福，而且是永远享福，他们所享的福正如基督自己所享的福一样。他们息了劳苦得享安息正如基督得享安息一样。他们的工作随着他们正如基督的工作随着他一般。他们也像基督期望着一种将来的更高的福祉。他等候着显现作全地的王；他们等候得着复活的身体，这种身体与他那属天的身体一样，这种身体有更高的权柄，使他们能作一种更尊贵的事工，是他们以前那必朽坏的身体所不能作的。他们仍像纯洁的灵，不过「穿上」属灵的身体，在这个身体中他们要永远发光，永远事奉：但他们在以前所得的福以外还要加上这种荣耀，这正是他们现在所期望得的。</p>
+<p>他们现在有完全的平安，而且他们也等候他们将来完全的工作。他们永不再有劳乏，不安，疲倦，痛苦，在他们彼此的交通和他们与基督的交通中间也不再有任何障碍。那里不再有误会，也没有感情上的分离，没有为罪所发生的自责，没有悔改的需要，他们中间那些最好的人在地上的时候都常有这些事。他们在神的宝座前是「没有瑕疵的」，因为他们所穿上的基督的形像是没有瑕疵的；以前生活中的一切罪已经从记忆中完全被除掉，正如同未曾犯过这些罪一样。</p>
+<p>真是奇妙！这些「在光明中的圣徒」所有的圣洁远超过那些从来未曾堕落的天使所有的圣洁；在他们身上有一样事物显明他们从前曾作过罪人，就是他们有基督那种荣耀的形像，他们身上所有那种基督光荣的样式足能证明那荣耀的王曾为他们死过。他们在圣洁上和天使比较并没有一点不完全的地方，正是因为他们的圣洁远超过天使足以证明他们是特别经过神奇妙的恩惠改变而成功的。</p>
+<p>因此他们比天使离基督更近。基督说，「得胜的我要使他在我的宝座上与我同坐；」那个宝座是一个尊贵荣耀的宝座，也是一个审判的宝座。保罗说，「岂不知我们要审判世界么？」「岂不知我们要审判天使么？」如果他们能与他一同坐在审判的宝座上作陪审官，领受使命去作审判的大工作，他们在思想感觉良心和辨别上必是怎样的完全和基督自己一样阿！</p>
+<p>这件事几乎使我们不能信。一位中国信徒帮助翻译圣经的工作，当他写到启示录三章二十一节的时候，放下了他的笔，眼中流下感激的泪来，说道，「实在太过了，太过了，我不如写使他用嘴亲我的脚罢。」我们听见这件事很能与这个信徒表示同情。但这里的话就是说，「我要使他在我的宝座上与我同坐；」这就是基督对在地上得胜的圣徒所说的话。</p>
+<p>这些话就是从他口中说出来我们都看着太过么？我们只要了解「救赎」这两个字的完全的意义，便知道一个被救赎的人那种完全是不会说得太过的，因为他们不但得回那未曾堕落的人类或未曾堕落的天使所有的喜乐和圣洁，而且得着基督自己所有的那种十分完全不能失去的圣洁和喜乐。</p>
+<p>悲伤的人想一想罢──想想那些在主里面死了的人不只是完全的圣徒，乃是在光明中的圣徒，他们是那样纯洁，就是在神荣耀的光辉中都毫不惭愧，「在他的荣耀中毫无瑕疵，而且有极大的喜乐」──他们自己的喜乐，还有基督那极大的喜乐，因为他曾为他们死，买赎了他们并且将他们带来放在他自己的身旁，使他们像他自己一样圣洁，这就是他在十字架上为他们舍命的那种大爱所得来的酬报。</p>
+<p>想想这件事，你还愿意他们再回到地上来么？</p>
+<p>永远的家</p>
+<p>神为他所救赎的人豫备了一个永远而且没有罪的家，这件事是我们经过愁苦的时候最后的安慰。但这个家在那里呢？在那里的生活是怎样的呢？这些问题现在还不能完全的回答出来，因为我们不能藉着眼睛耳朵或心思明了神为爱他的人所豫备的福分；虽然如此，神却也曾指示我们一些事使我们知道我们最后要得着的福分，这些事比我们有时所幻想的更坚确。</p>
+<p>我们不知道在主里死了的人的灵现今在甚么地方，只知道他们是「与基督同在；」但我们清楚知道当他们在主荣耀显现的时候穿上荣耀的身体以后要到甚么地方去。只有在那时候他们纔能完全适于那永远的家，只有在那时候那个家纔为他们豫备妥当；圣经似乎很清楚的指明最后的家仍是我们所住的地面，这地上一切罪的痕迹和表现都因着最后审判的火被铲除，变成了「一个新天和一个新地，有义居在其中。」使徒彼得所画神用洪水洗净古时的世界和他用烈火洗净现在的世界的那个对照表似乎很清楚的显明了这件事。将来的家无论怎样属灵，一定还是一个物质的世界，是一个新地，但仍是一个地，是一个为那些新的居民适宜的地，但仍是一个地，这个地正像它纔从它的创造者手中出来的时候那样清洁；它不但是暂时清洁仍有再被罪侵入的可能，乃是永远清洁再不能变坏──再没有染污的危险正如它上面所住的人再没有坠落的危险一样。神救赎的工作还能有比这个更完全的么？──先有灵的救赎，以后有身体的救赎，再后地的本身也要得着救赎。这真是使人心满意足的一种景况，就是这个久已服在撒但权下的世界将要成为基督永远操权的地方，这个不义得势的世界将要普遍的被公义的光辉所照耀，神的圣徒曾经受苦哭泣的世界改变成为一个新地，在那上面一切愁苦的事物完全绝了迹，在那上面眼泪永远被擦干。</p>
+<p>我们试一揣想，假使今日只有一周的长久，每一个人的心都是圣洁的，每一个人的情感都是顺眼神，爱邻舍，没有为争名夺利而起的战争，没有暴虐，没有嫉妒，没有忿怒，没有任何种恶事这个地将要成为怎样的地。我们再试一揣想这一周延长为一年，这一年延长为一世纪，这一世纪延长为永远；还有甚么比这个更使人喜乐的事呢？以后再加上一件事，就是这地上的居民要得着具有新荣耀新权能的「属灵的身体」正如那位人子所有的荣耀的身体一样，这样地上的幸福便完全了。</p>
+<p>当保罗说「他要将我们这卑贱的身体改变形状和他自己荣耀的身体相似」的时候，他揣度我们必然晓得基督所得的那荣耀的身体是甚么，我们立时想到他从坟墓中复活以后四十天之久在地上活动的那个身体，在这个身体里我们看见一个样本，使我们明白他的圣徒复活以后要得着的身体是怎样的身体。这个身体具有奇异伟大的权能，这个身体不受外面空间和里面软弱的限制，这个身体不受石头墙壁的阻拦，也不受地心吸力的拘禁，这个身体能够采取各种的形状，也能随意使人看得见或使人看不见，这个身体正像古的时候我们的主，虽然仍是那位耶稣，却改变到那种样子，就连许多从前十分认识他的人在他们遇见他的时候也认不出他来，那位多疑的门徒至少还需要看看他手上的钉痕，纔确实的知道实在是他。</p>
+<p>那个身体也是一个特别美丽的身体，一切忧愁和痛苦的痕迹都消灭了。那个身体发出一种不能述说的荣耀，使那些从前与他很熟识的人都敬畏他不敢就近他，不再看他为属地的朋友与他作普通的谈话，却敬拜他以他为主。他在那四十天中似乎是生活在一个奥秘的境界里。他和门徒会面的事经上称为「显现」，足证平常他是眼看不见的，如果他要使人看见需要穿上一种看得见的形像。他来去如同一个灵一样，然而他却不是一个灵，因为他说，「摸我看看；灵无骨无肉，你们看我是有的。」</p>
+<p>因此我们不会弄错，如果我们回答「死人怎样复活，带着甚么身体来呢？」这个问题，我们指着那四十天得了荣耀的基督说，「他显现的时候我们必要像他」，脱离了现在一切的限制和孱弱，得着现在所不能了解的权能，使我们能去作现在所不能作的伟大的事工，能够毫无阻碍的活动在神一切美好的创造之上，探索今日隐藏的奥秘，也许要很熟习其它的世界，或者还要对别的世界传述神的恩惠。</p>
+<p>但无论将来如何，这个新地怎样是一个完全圣洁的地方，也照样是一个完全快乐的地方，在这个地方今日那种圣洁的交谊必要回复，并且还要有一种更广泛的交谊，就是「没有人能数过来」的历代的圣徒都要彼此认识，一同谈论神的恩惠，就是这种恩惠使他们能到了那里。在那里一切的才能，一切的感倩，并一切纯洁的爱，都能发展到极点，在那里认识神的知识要不断的增加，爱神的心一时比一时更深切，在那里人要欢欢喜喜的事奉神，并且互相服事，是我们现在无法想象的。此外千万年之久浴在神的大爱中用一种无罪的生活事奉神的那些天使也要作我们的帮助。这真是一种使人特别喜爱的景况，这个盼望能给人何等浩大的安慰，特别是那些在世上久经忧苦多感失望孤独软弱的人。这是神所给我们的最后最大的安慰，这个安慰是与耶稣基督的「荣耀的显现」相连的。这是「在他来的时候」我们要得着的极大的喜乐，所以这个盼望一定是一个「有福的指望」。最令人注意的就是这件事不断的使受苦和疲倦的心灵得着极大的安慰。耶稣说「你们心里不要忧愁。」为甚么呢？因为你们不久要藉着死跟了我去，死亡要使我们聚在一处么？不是这样。「我必再来接你们到我那里去。」（约十四3）天使说，「加利利人哪，你们为甚么站着望天呢？这离开你们被接升天的耶稣」──怎样呢？不久要藉着死将你们从愁苦中接去么？不是的。「怎样往天上去，还要怎样来。」（徒一11）保罗对当日那些忧愁的门徒说，「主必亲自从天降临，有呼叫的声音，和天使长的声音，又有神的号筒吹响，那在基督里死了的人必先复活，以后我们这活着还存留的人必和他们一同被提到云里，在空中与主相遇，这样我们就要和主永远同在：所以你们当用这些话彼此劝慰。」（帖前五16～18）总是这样的。我们最大的安慰和盼望并不是在死的时候到主那里去，乃是主在荣耀中降临来接我们。圣经称那些古代的基督徒为「爱慕他显现」的人，和「等候神的儿子从天降临」的人。今日大多数的基督徒也能当得起这种称呼么？这种喜乐的盼望这种渴慕主再来的热情在今日的教会中岂不是几乎消灭了么？我们因此受的损失太大了。为激发我们的热诚，为战胜愁苦和失望，我们都需要在心中常怀着这个美好的盼望。如果我们存着喜乐的心听那甘美的话说，「我要再见你们，你们的心就喜乐了，这喜乐也没有人能夺去，」愁苦和叹息就要很快的飞去了。那热烈爱我们的主既然说，「我必快来」，凡爱他的人自然也当从心中说，「阿们，主耶稣阿，我愿你来。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

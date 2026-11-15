@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>破碎了的希望-在河边上 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>破碎了的希望-在河边上</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/2在密云黑暗的日子/3破碎了的希望-在河边上.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>希望到时成为失望是比任何事都难忍受的一件事。怀着热望奔向一个水泉，想得一些水止渴，到了那里发现水苦得不能喝，这比没有水泉更使我们难过。先以为是一个美丽的水湖，末后竟发现它不过是一座海市蜃楼，是焦灼的空间反射到焦灼的沙土上的一种幻象，或是实在发现了水，但这水却是像毒药一般的苦──没有甚么经验比这种经验更使人沮丧了。我们差不多能忍受任何事物，只要我们能早早豫料到它；但失望却是一件完全不同的事，当我们遇见它的时候，它足以将我们的生气都从我们里面压碎了出去。</p>
+<p>以色列人在玛拉苦水池旁所有的经验使我们看见一个极有寓意的图画。（出十五23）当他们在红海中得了奇妙的拯救并在海岸上唱了喜乐的诗歌以后，他们怀抱着最高的希望向前奔他们的路程，期望着一步比一步多得更美的幸福。然而还不到三日，他们就发现他们行在被烈日曝焦的旷野中连一条最小的河流也寻不见，他们差不多就要渴死。最后在远处的一行棕树显示给他们说前面就有水了；但到了那里他们发现那是极苦而且有毒的一个水池，没有人能喝这水，那时候他们的失望和痛苦是何等剧烈阿！</p>
+<p>我们因着那从以色列人的帐棚中所发出来的怨言惊异么？大约我们中间难得有一个人不这样发怨言罢！神似乎也觉得这是很难避免的，因为他未曾用一句责备的言语回答他们的怨言。他用慈爱的心忍耐他们，正如一个人忍耐一个患病呻吟易于急躁的小孩子一般，他指给摩西一棵树，叫他将树丢在水中好除去水中的苦味；次日他便率领他们到一个更好的安息的所在，就是有许多清洁甘甜水泉的以琳。</p>
+<p>那些从来未曾经过苦痛试炼的人很容易责备那些失望的受苦的人，说他们缺少信心。我们喜欢藉着责备他们使自己得着一点满意，却不思想我们在同一的景况中也会像他们一样失败得那样迅速。你对一个这样受苦的人说，「你这样烦躁焦急一点也不能忍耐是有罪的。」你说的也许很对；但你曾否自己试验过在头痛心碎的时候还能照常工作不能呢？当你自己在千万思虑烦扰中间仍能保持一种温柔恬静的性情是否一件容易的事呢？当你因夜间的失眠和痛苦损坏了健康的时候你仍能面带喜容对着你所遇见的每一个人微笑一下么？当你所最爱的一个人忽然患病将要丧命，或你在地上享幸福的一切希望将要完全消灭的时候，你能安静着忍受这一切的损失么？你能存着顺服的心说，「愿你的旨意成就」么？我们真是应当用主自己的那种温柔甘美的爱心判断我们的弟兄们。</p>
+<p>在人生中有许多愁苦的事等着我们所有的人。在这条路上旅行的人没有一个不是在期望快乐的时候遇见玛拉，在希冀甘泉的时候尝到苦水。希望获得富足、名誉、尊荣、安乐、爱情──所希望的都能得着么？当我们走到这些地方的时候果真都是以琳么？我们希望这些事物能解除我们心中的干渴；但其中岂不是有许多到时候都变成玛拉么？</p>
+<p>但当失望来到的时候神就指示我们一棵生命树，可以除去水中的毒质，使苦变为甘甜，使绝望变为喜乐。他指示给摩西的那棵树并不是他那时候行奇事创造的。那棵树早已生长在水池旁边。神也不需要创造一些新的事物来安慰我们忧伤的心，就如一本新的圣经，或是一个新的施恩座，一位新的基督，一种新的救赎，一些新的应许，一样新的恩惠。它们都早已在那里，紧靠近我们身旁，等候我们在有需要的时候去享受。他只需要开我们的眼睛使我们看见这些，赐给我们能力使我们使用这些，这些便要将我们的忧愁变成感恩和赞美。夏甲未曾看见那在别是巴旷野的水井，直到耶和华使她那被眼泪所蒙蔽的眼目明亮了，其实那口井早就在那里，而且一直是离她很近。我们所需要的救济也总是离我们很近，远过于我们所揣想的；可惜！我们都不能总有明亮的眼睛和信靠领受的手！</p>
+<p>但神所作的还不止于医好那苦水。他也领他的百姓来到一些总是甘甜的水泉旁。当玛拉在我们后面的时候，以琳就在面前了。玛拉和以琳相离很近，这件事是很有意思的：这两处只相距六英里。人生中的甘甜和苦痛岂不是相离很近么？玛拉并不是人生中惟一的经验，但许多受苦的人却要我们这样信。人生中也有许多以琳；并且灾祸和喜乐常常不过相离只有一日的路程。雅各布布发现这是真实的。他是心中最愁苦的人中间的一个，他满心是畏惧；但当他往前行走的时候「神的使者遇见他。」（创三十二1）大卫发现这是真实的：「我的神哪，我心在我里面愁烦，我昼夜以眼泪当食物。」──这时候他正在玛拉，一个困苦绝望的人──但不久他便来到以琳：「我的心哪，你为何忧闷，为何在我里面烦躁？应当仰望神；因我还要称赞他；他是我脸上的光荣，是我的神。」（诗四十二11）希西家发现这是真实的：「我因仰观，眼睛困倦。耶和华阿，我受欺压，求你为我承担。」在这里人生全是玛拉。但他再往前走了不远，他便能说，「主阿，人得存活乃在乎此，我灵存活也全在此。看哪，我受大苦本为使我得平安，你因爱我的生命便救我脱离败坏的坑，因为你将我一切的罪扔在你背后。」（赛三十八章）这时候他来到以琳了。保罗在他三次求主除去他的「刺」但他的痛苦并未减轻的时候，那正是他的玛拉：但不久他便来到以琳，在那里他能说，「所以我更喜欢夸自己的软弱，因我甚么时候软弱，甚么时候就刚强了。」（林后十二章）经上的话岂不是为一切在旅途中神的子民所写的么？「困苦穷乏人寻求水却没有，他们因口渴舌头干燥。」──坐在玛拉像死一样的苦──我要「在净光的高处开江河，在谷中开泉源，我要使沙漠变为水池，使干地变为涌泉。」（赛四十一章）这样，他们也可以有他们的以琳了。</p>
+<p>夜间的诗歌</p>
+<p>诗篇上还有一段极宝贵的话，「我要时时称颂耶和华；赞美他的话必常在我口中。」（诗三十四1）这话是谁说的呢？这个人必定是一位未曾遭遇过痛苦祸患的人罢！不是的。这个人的一生经历过奇异的变迁，饱尝了种种的试炼，远超过在他旁边的任何人，他曾述说极大的拯救，极大的尊荣，极大的喜乐；但他也能述说极大的愁苦，极大的祸患，极大的不幸，并因他的罪所受的极大的惩罚。虽然有这一切，他仍能说，「我要时时称颂耶和华」，在幽暗的日子如同在光明的日子一样；在旷野飘流的时候正如在家中安居的时候一般；在严重的责打之下与在完全的喜乐中间相同；而且不只是说，「我要时时承认耶和华」，也不是「我要时时顺服耶和华」。他所说的远过于这些，他说，「我要时时称颂耶和华」，在那些似乎只有使人灰心失望的事物里面，他发现了赞美歌颂的材料。</p>
+<p>读到这些奇异的诗篇──如果能歌唱更好，因为它们不仅供我们心中思维，也足供我们口中歌唱──我们常感觉如同展开鵰的翅膀飞腾到天上的恬静中，然而我们畏缩不肯取来实用，又怕我们没有权利享受这样奇异的快乐。但这位神怎样是大卫的神也照样是我们的神；并且如果我们能像大卫那样仰望，信大卫所信赖的，在大卫倚靠的地方也照样倚靠，我们就能支取大卫所支取的，一点不因我们所有一切的罪受到甚么影响，正如大卫不因他一切的罪受到甚么影响一样。</p>
+<p>我能因我人生中的苦难赞美神么？这是一个具有试验性的问题，也是极深的问题。那并不是说，我能不能在一切试炼中信靠他，也不是说，我能不能因他将这些试炼加在我身上承认他所作的都好，那还不是说，我能不能看到受苦以后在天上所要得的安息。这个问题远超过这些意思，它是说，我能今日就在这里为所受的这些苦难称颂神么？这件事需要极大的恩惠，并且只有圣灵所教导的人纔能作这件事。</p>
+<p>我们现今既是因信生活，为甚么不能总是这样作呢？主要的原因也许就是我们缺少古代圣徒所有的那种像小孩子那样单纯的信心。我们有更高的知识是他们所没有的，我们有更大的应许是他们所没有的，我们比他们更多明白神的爱心，然而在古时那些有信心的人似乎紧靠近神而生活，远超过我们中间大多数的人。也许这就是因为在小孩子的时代总是比成年以后更多信靠，或是因为神看见他们所得的光亮较少，因此吸引他们与他亲近，使他们可以看得清楚一些；但亚伯拉罕、摩西、大卫、以赛亚，这些人确是显着与神特别的亲密。试想一想亚伯拉罕为所多玛所发的祷告：别人可曾有这种胆量么？试想一想摩西与神中间的交通：有甚么交通比他所有的更亲密呢？看看约沙法的信心：还有比这更伟大的信心么？看看大卫那种喜乐的信靠：还有比这更热烈的喜乐么？在他的诗篇中有胜利的爆炸，是我们今日那些最美的诗歌中所不能超过的。</p>
+<p>海斯利得所说那句半讽刺的话，「在雅各布布的日子天和地中间只有一架梯子；但现在天已经离我们极远，只成为属天文学的事物了，」正可以显明这世界孩童的时期过去以后，那种孩童式的信心已经大见消失。我们现今被千万从前所不知道的事弄迷了：不完全的科学与浮浅的哲学使我们与神隔离。我们实在必须离弃以往那些「孩童式的事物」，但我们更多需要「像孩童」；基督所说神将这些事向「婴孩」就显出来的那句话正是暗示我们，叫我们知道我们怎样方能得着古代那种与天上的父相交的甘味，只有这种孩童的精神能指示我们为甚么我们应当「凡事谢恩」。</p>
+<p>神常使苦难成为我们的益处；甚么时候我们明白这件事，我们便容易因着苦难称颂神了；苦难显明并且除去许多心中隐藏的罪，使我们高傲自满的心谦卑下来，打碎了世界在我们里面所有的权柄，使我们的心不集中在世界的财物，却集中在属灵的富足上，使我们完全信靠，在那时候神似乎是说，「我现在试验你，看看你能否信靠我到底，你有信心这样作么？」──苦难磨炼我们整个的人品使它美丽完全，好使我们的人生柔和甘美，更有忍耐，更富于同情，更有完全的爱心，苦难使我们重新领会神的恩惠怎样有能力补满我们的需要──这些都是最高的福分，足以补偿我们所受的苦痛而且有余：正如一位长期受苦的圣徒所写的几句话说，「我一日比一日更多喜爱受苦，不是因为苦难本身的缘故，在那里面并没有甚么可爱的，但以前我从来不知道神是如何良善，他离我是怎样的近，他的安慰是何等甘美。」</p>
+<p>神使我们遭遇的苦难所给我们的好处中有一样就是它催逼我们出离事实的领域。在人生中有些时候异象比平日特别清楚，神也特别接近我们，他又成为我们所最亲爱的这种最美最乐的时期常是在极重的愁苦中临到我们，如果我们要寻找那些离珍珠的门最近而且最多明白神为爱他的人所豫备的福分的人，我们必须到受苦的人中间去寻找，在穷乏而且愁苦的家庭里比在君王的宫殿中更易寻见。</p>
+<p>我们总能了解疾病与健康一样是神的恩赐么？我们常以为只有健康是恩赐，疾病乃是失去了恩赐；但疾病与健康实在同样的是恩赐，而且是慈爱的恩赐。神在他所爱的。一个孩子身上的旨意是叫他多藉着工作事奉他，因此他赐给这个孩子健康作为贵重的恩赐；但他在他另外一个同样亲爱的孩子身上的旨意却是叫他作明显的见证，证明他那种洁净和锻炼的恩惠所有的能力，因此他将苦痛的患难加给他作为贵重的恩赐；赐这两种恩赐的主可以藉着这一个人的忍耐得着荣耀正如他藉着那一个人的工作得着荣耀一样。一张病床常可以为基督作许多讲台所作的工。</p>
+<p>在严重的苦难中与其说，「我受的试炼何等痛苦阿！」不如说，「神给我留下的好处是何等的多阿！」我们总是计算我们的愁苦；为甚么我们不也计算一下我们所得的恩惠呢？当神从家中取去一个亲爱的小孩子的时候，我们与其为所失去的孩子发怨言，为甚么不可以因为他还给我们留下其余的孩子感谢他呢？如果他夺去我们世界上的财物，却为我们留下炉子旁边那些可爱的儿童，我们岂不是应当因为他留给我们的赞美他，却不因所失去的发怨言么？我的心哪，「不可忘记他的一切恩惠」，你也要学习「时时称颂耶和华」；这样那「愁苦的心」必要变为「赞美的衣服。」</p>
+<p>最后的一段长路</p>
+<p>在我们的诗歌中有一首歌咏那位复活的基督所有的荣耀，在那首诗歌中包含着一段微弱的声音，正足以表示许多受苦的圣徒所有的感觉。唱过了</p>
+<p>你已经离地上升，</p>
+<p>到那荣耀的天上；</p>
+<p>环绕你宝座四周，</p>
+<p>赞美的歌声嘹亮。</p>
+<p>接着唱道</p>
+<p>但我们淹留世间，</p>
+<p>被罪恶祸患压伤：</p>
+<p>求你速照你应许，</p>
+<p>接我们回到天乡。</p>
+<p>这正是神千万受打击的孩子们所有的感觉和祈祷。他们想他们卧在痛苦的病床上一点用处也没有同时这忙乱的世界和一个活泼的教会都是充满了繁多的事工；他们却连一点事工也不能作，只是「淹留在这里」：伤心着淹留在这里，「被罪恶祸患压伤」；他们所有的深切的愿望就是快快的回到天家。</p>
+<p>这也许是一种很合法的感觉，但也许是一种不健全的感觉；因为多数人的心对于天家所抱的两种态度都是不好的：一种人极端醉心于地上的福乐，一点不想到天上这个地方，另外的一种人极渴望逃脱人生中的忧苦，带着一种背叛的音调反抗那种似乎不必需的长期的痛苦的训练。</p>
+<p>我们不是认识一些人很会谈讲天上的福分，但如果他们忽然被招呼要到那里去，便因为这事临到得这样迅速大大的失望么？这些人到他们所信为「更美的家乡」去并不是一种很可羡慕的事。他们实在不愿意离开世界。真是希奇，这种不愿意离开世界的心情并不因着年岁的增进而减少。人生越临近末了，愿意活着的心情越坚强。人生总是充满了忧苦，但这件事实仍不能帮助我们甘心舍弃这种人生。</p>
+<p>在许多事上我们可以看见一些证据证明这事。有些人因为有这种感觉就不愿意人知道他们实在的年岁。又有一些人因为有这种感觉就在举止和服装上扮作年轻的样式。还有一些人因为这个缘故不喜欢提到他们身体逐渐变为衰弱，畏惧不敢留遗嘱，看见别人患危险的病症就感觉不安，看见别人逝世更心中忐忑，甚至闭口总不谈到死这一个字。他们口里说他们信天上比地上更好许多倍，然而他们并不真这样信，不然他们必不会因为临近了天家就感觉惊恐。</p>
+<p>另外的一种态度也并不能与事实有多少补益。就是看现在的人生并没有甚么价值，看它不过是充满了烦扰和愁苦，除了注视它里面所有的试炼以外并不再留意别的事，渴望到天上去不过因为可以藉此解脱世上的重担和痛苦──这并不是基督徒当有的态度。想要离开这世界的愿望如果是属灵的，并不怕太坚强；但只是因为厌倦了人生便想离开世界，这种愿望里面并没有属灵的价值。我们的模范基督从来未曾带着烦倦的声调谈到他的试炼和痛苦。如果他渴望离开世界，并不是要藉此得着解脱，只是因为欢喜看见他救赎的工作得以完成，使人类得蒙拯救，使差他来的父得着荣耀。</p>
+<p>具有属天的心志的人所怀的意念和感觉总是向着天上；但只因着人生的试炼感到的烦倦却很容易使人放弃人生中的责任，并怀疑神的大爱，以为神如果爱人就不当容许试炼延长到这样久远。「你们必须忍耐，使你们行完了神的旨意，就可以得着所应许的；」我们所需要的就是忍耐着去生活的那种忍耐。巴克斯德说，「如果人生很长久，我很喜欢我能长久学习顺服，如果人生是短促的，我又焉能因着飞向那无穷尽的日期而感觉愁苦呢？」这正是最尊高的基督徒当有的态度。因着安静顺服神的旨意，看长期的苦难为荣耀神的机会，比希望从苦难中得解脱好得太多了。</p>
+<p>神不使我们快些回到天家去在他那一方面和我们自己这一方面都有充分的理由。他所最爱的孩子们中间有些人有很重的试炼，并与他们那种未曾完全成圣的天性所发生的战争，在他们看最大的福分就是快些从这些苦难和罪恶中得着解放。「主耶稣阿，快些来罢！」我们岂不是常听见许多圣徒带着一种不能忍受的痛苦的声音这样喊叫么？如果这样，神要使他所爱的人完全成为基督的样式最后必须作的一步工作当怎样成全呢？他要藉着那微弱无力的嘴唇为他作的见证当怎样作成呢？他知道在这个受苦的人的手尚未放下，嘴唇尚未紧闭之前，他还要藉着这个受苦的人感动一个人，引领一个人归向他这件事当怎样成就呢？他又为那些留在世上的人设想，使他们知道死亡临到他们所亲爱的人正好解除他们那种不能述说的痛苦因而得着安慰，这件事当怎样成就呢？</p>
+<p>如果我们多听那些寻求神的人述说他们信仰的经验，我们便发现有许多被引领到基督面前来的人就是因着看见他们亲爱的朋友在病患中将要离开世界以前所有的胜利因而归向基督的；他们的亲爱的朋友受苦这么长久纔得解放或者就是其中的一个原因。伯大尼的两个姐妹不能明白为甚么她们所爱的主这样长久迟延不来帮助她们：但他说这是「为神的荣耀，使神的儿子因此得荣耀；」事实证明正是如此，因为「那些来看马利亚的犹太人见了耶稣所作的事就多有信他的。」如果他现在迟延不应允许多受苦的人因渴望所发的祈祷，他决不会延得太久。他知道我们所能担当的痛苦有多重，他决不会使痛苦重到叫我们的信心丧亡的地步。他也知道从那长期的痛苦中要产出甚么良好的结果，正是因为这个缘故，他容许那些疲乏的人继续着生活在世间。</p>
+<p>因此我们不如不称这疲倦的长时间为「淹留在世间」，最好像乔布那样称他为「忍耐等候所安排的日子，直到我们的改变来到。」如果忍耐可以「成全它整个的事工使我们成全完备，毫无缺欠，」我们就必须容神用他自己的方法在他自己的时候作他那解放我们的大工。</p>
+<p>在河边上</p>
+<p>当那疲劳的基督徒走近行程的尽头的时候，所得最美的安慰中有一样就是在那里他可以极清楚的看见前面的天城。本仁约翰称这个地方为「福地，在那里空气特别鲜洁，日光昼夜照耀着，这个地方在死荫的幽谷界限以外，是巨人绝望不能到的，他们在这里也再看不见那可怕的疑寨。在这里他们也遇见一些他们要去的那地方的居民，那些发光的人常在这里行走，因为这地方紧靠近天城的边界。」</p>
+<p>有时候是这样，许多走天路的人在他们行程的末一站有这种经验正像摩西在毘斯迦山顶上望见迦南地全境一样。在有信心的人看来任何地方都有毘斯迦。一座高山的静处，一间祷告的小屋，主晚餐的桌子旁边，他们似乎屡次看见天上的全景。但最高的眺望处正是在死河这边的岸上。那些最多看见天上荣耀的人就是那些将要离开世界的人。有时在一个将要去世的人的脸上反映出一个隐藏的日头来，那将要闭紧的嘴唇所发喃喃的声音好像抓住了天上的诗歌将要去世的圣徒有时从最穷苦的小屋里最破烂的床榻上看见要临到的荣耀远超过诗人所梦想的。</p>
+<p>但事实并不总是这样；这种情形实在是很少的。在离世以前有这样特别的喜乐实在是例外的。虽然这样的人很少也不足使我们怀疑基督徒信仰的真实性。很少的基督徒极快乐的离开世界。每一个真基督徒是一个胜过死亡的人，而且是绝对安全的；但他们不都在临死的时候唱着胜利的诗歌。殉道者吻着那焚烧他们的火焰，他们唱着诗歌进入天上的家乡；也有些圣徒在断气的床榻上充满了极大的快乐。但只有少数的伊莱贾乘坐火焰的车回到天家。神所救赎的人中间最大部分是乘驾云雾的车离去的，他们只知道有一种内心的平安和一个美好的盼望。他们没有极大的快乐，只有一个甘美的期望。因着身体的软弱和心中的疲乏很难说出一句话来，围绕床榻的都是一些眼泪。</p>
+<p>有些人的经验还不及这个。他们在黑影中间离开世界，战战兢兢恐怕不能得救。虽然如此，神所救赎所宝爱的人乘驾云雾的车与乘坐火焰的车是一样的安全。虽然这些人要到河的那边在进入帐内的时候纔高唱胜利的诗歌，胜利却是真实的。一位临死的圣徒说，「我没有特别的大喜乐，但我却有完全的平安。」那就足够了。当天上的琴拿在手中的时候自然就会唱胜利的诗歌，那完美的声音能唱这歌是在地上没有人能唱的。</p>
+<p>甚么使我们有这种完全的平安呢？就是那位赐安慰和确据的救赎主所有的十字架和胜利将这平安给了我们。「因为我活着，你们也要活着。」在古时有一种风俗，为王端酒的人将杯递在王的手中以前，他必须先尝这酒。如果酒中有毒，端酒的人必定会死：尝酒的人喝酒以后仍然活着便证明王也可以很安全的喝这酒。基督就是这样「因着神的恩为人人尝了死味。」他喝了这杯，显明那里面并没有毒能够害他，因为「他活到永永远远；」基督徒阿，这里也不会有毒能够害你。他使你分享他完全的生命。他经过你的最低的经验，是要叫你进入他的最高的经验。</p>
+<p>有许多荣耀的真理是基督徒看为极宝贵的；第一就是基督为赎我们的罪所经过的死足能遮盖我们一切的罪，其次就是他那属天的生命足能遮盖我们一切的畏惧；因为藉着死证明「要领许多儿子进荣耀里去」的那一位已经被举到天上，好使这个应许有效。他自己不会将这两件事实合在一句话里给我们极大的安慰说，「我的羊永不灭亡，我赐给他们永生，没有人从我手里把他们夺去」么？保罗说，「我深知无论是死，是生，是现在的事，是将来的事，……都不能使我们与神在我们的主基督耶稣里的爱隔绝。」这话岂不是正对么？罗马书第八章那一章美丽的经文以「没有定罪」起首，以「没有分离」结束。这岂不足以给我们完全的平安么？在永世的盘石里我们有完全的平安；在烈火的中我们可以有完全的平安；在属地的希望都破碎了的时候我们能有完全的平安；在约但河的波涛中我们也应当有这种完全的平安，这种平安正像在天家内的平安一样完全。</p>
+<p>巴克斯德提到他死的日子来到正如同他「第三个生日」来到一样，他等候这日子如同一个小孩子等候一个生日的筵席一般。那虔诚的海尔若兰曾唱着说，</p>
+<p>当我离开尘世的时候，</p>
+<p>我便飞去与救主相亲，</p>
+<p>因为他曾爱了我──我不知是甚么原因──</p>
+<p>但我确知道一件事实，</p>
+<p>我与他他与我紧紧相连，</p>
+<p>他决不自己在荣耀里，却将我撇在外边</p>
+<p>如果我们的救赎主所说，「我在那里，服事我的人也在那里，」这句话是真实的，那就一定是这样了。</p>
+<p>如果我们不喜欢想到死，必是因为我们与死中间的关系未曾弄好，所以这样也正是因为我们与神中间的关系未曾弄好。但因为我们了解他救赎的大爱和这爱所包含的一切，我们能看死如同一位和善的朋友。有一个小孩子看见一张图画，画着死如同一架枯骨手中拿着一把镰刀，他说道，「我不要这样画，我要画死如同一位天使拿着一把金钥匙。」只是未曾蒙赦免的罪压在人的良心上使人以死为苦事。神所赐的平安和藉着恩惠所生的盼望能使死比生更甘美。罪犯在法官面前战抖，但法官的孩子并不这样。他要跑到他父亲的怀中，仰脸与他的父亲亲嘴，看着他父亲的眼目喜笑。一个「认识父」的人总不以死为可怕的，他的心紧靠着父的爱子救赎世人的十字架。死不过是神聚集承受救恩的人最后派遣的使者罢了。愿我们众人从今以后如果躲避死，只是因为它能使我们所亲爱的人忧愁，如果为我们自己，我们知道渡过这河便要进入那边天上的城邑。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

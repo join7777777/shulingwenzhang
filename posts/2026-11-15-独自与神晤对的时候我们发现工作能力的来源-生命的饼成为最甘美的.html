@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>独自与神晤对的时候我们发现工作能力的来源-生命的饼成为最甘美的 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>独自与神晤对的时候我们发现工作能力的来源-生命的饼成为最甘美的</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/4隐秘处的灵交/3独自与神晤对的时候我们发现工作能力的来源-生命的饼成为最甘美的.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>若是我们因自知无力在世界上作神的见证为神作工以致丧胆，那样最要紧我们必须寻觅我们无力的原因。然而我们常觉得这是很难明白的事。我们很痛苦的感觉到自己的软弱，别人也像我们这样看出这事来；但是它的原因是甚么，或是怎样可以除去这种软弱，我们却说不出来。</p>
+<p>要解决这些问题只有一个合宜的地方，就是神面前的隐密处。我们可以在那里将自己完全显露在神的眼前，并且恳切自卑的等候听神对我们所要说的话；那时我们所得的解决大约是这样，我们怨恨自己太软弱不能多为神作工的时候，他告诉我们说，在实际上乃是我们太强壮，以致他不能用我们；我们实在不清楚知道自己的软弱，不然，我们必定将我们那自恃的心完全丢开，等候神的能力临到我们身上，使我们有资格可以服事他了。在我们生活中一切的动作与言语后面，我们需要一种不是出于自己乃是从神来的能力。我们必须先得着这种能力涌进到我们里面，然后方能再将这种能力从我们里面发出去；只有在我们安静等候神按着神的旨意向他祈求的时候，这种能力纔能临到我们。</p>
+<p>无论我们的心思或舌头本来的能力是怎样的，若不是圣灵的能力来到我们身上，使我们所有的能力都成为圣，我们决不配事奉神。真的，若非神的能力临到我们，我们决没有能力去作任何属灵的工作，就是最卑小的事工也作不成。可惜我们差不多从来未曾彻底明白这事；因此，拦阻我们使我们不能被神所使用的大原因，不是我们软弱，乃是我们自以为刚强。我们若倚靠我们自己的智慧、才能、讲解、辩论、种种的能力，便是不顾一种根本的真理──「我们的能力乃是出于神。」</p>
+<p>当一只轮船在江口沙滩上搁浅的时候，它自己的能力决不能使它移动。若仍一味勉强去移动，它本身机器的能力只能使它受到损伤，那么怎样呢？它必须等候神的能力，就是涨起来的潮水的能力，这种伟大的能力要很容易而且很急速的成就船自己的能力所不能成就的；这不过是一个比喻显明人的软弱只有等候神的能力。</p>
+<p>许多传道的人知道这便是他们惟一可倚赖的。他们屡次有过这种经验，他们想他们的理论与口才已经足彀使他们所讲的有能力了，不料竟是完全无用，并未曾在一个听的人心中发生真实属灵的果效。及至有一个时候他很痛苦的感觉到自己的软弱，乐意作一条运河使神的能力可以在其中涌流，那时他自己虽然觉得他所讲的道是很贫穷，几乎使他惭愧不敢去讲，神却大大的使用了他。我们一切本有的能力都能被神大大使用；但是我们必须看这些不算甚么，奉献自己单单作神能力的运输器，容神照他的旨意使用我们，若是他能得荣耀，就是我们自己受羞辱也是心所情愿的。</p>
+<p>因此我们敢断定，我们在神的工作上没有能力是有三个缘故。第一，我们不彀安静，以致神不能到我们这里来。第二，我们不彀空虚，以致神不能使我们充满。第三，我们不彀圣洁，以致神不能使用我们，叫我们得尊荣。</p>
+<p>在许多圣经的比喻中有两个很有教训的比喻清清楚楚的显明这理。其中一个比喻是将圣灵临到我们比作露水降下。另外一个比喻是将基督徒比作神自己所作成的器皿，神要使这器皿被充满，并要照着他自己的意思使用。</p>
+<p>一、我们必须安静好容神到我们这里来。圣灵恩惠的感力临到我们心中，正像露水在夜间的寂静中临到下垂的植物一般。植物不能制做露水，它只能等候露水，吸取露水，露水总是悬在空气中，紧挨近植物；但是若非有两个适宜的条件，它就不落下来──空气必须静，植物必须冷，我们若要得着圣灵的恩惠从天上降下来复兴我们，也是需要心灵安静；人生的狂热必须低落，因为这从上面来的能力只有在我们的心冷静安稳的时候方能降下。</p>
+<p>二、我们必须空虚好容神使我们充满。保罗在他写给提摩太的书信中用一个很有兴趣的说法，述明神在每一个忠实的基督徒身上所有的旨意。他说，「作贵重的器皿，成为圣洁，合乎主用，豫备行各样的善事。」这比喻是一个很尊高的，但也是一个很卑微的。它指示我们说，我们被召所到的地位是何等高尚──在神的家中作「贵重的器皿」。它指示我们说，我们在神的家中所任的职务是何等高尚──「豫备行各样的善事」。但它又指示我们一个意思，使我们一想到这意思立刻就将自恃与骄傲的心全然除去──我们不过是「器皿」。神照着它的意思造成我们，又照着他的意思使用我们，我们自己本是一无所有，不过是神所用的运输器，将他所给我们的接受了来，以后再运输分散出去罢了。</p>
+<p>我们这一方面的困难，常是不愿意只作器皿，却不作别的。我们总是不彀空虚的，以致这「大户人家」的「主人」，不能照他所愿意的使我们充满，而且使用我们。得在主的手中作器皿，真是一件极尊贵的事。将那本来不过是「可怒的器皿」变成「蒙怜悯的器皿」。又将这怜悯的器皿作成「贵重的器皿」，使它有伟大的用途，充满恩惠去分散与多人，这真是奇妙的恩惠。但是我们毕竟要了解我们不过是器皿──样式不同的器皿，有的是杯，有的是──制造不同的器皿，有的是光面未加雕饰，有的是细工刻花着有色彩──原质不同的器皿，有的是金子和银子，有的是木与瓦──用途不同的器皿，有的用途广，有的用途狭，有的时常使用，有的偶然一用──但拢总都不过是器皿，在神未曾使它们充满以前，都是空虚的器皿，他看着怎样使用好就怎样使用，若是他现在不要使用，就将它们放在架子上。我们都了解而且承认这事么？我们岂不是常常愿意被他使用去作我们自己所喜悦有荣耀的大事，盛贵重的香料，却不愿意他用我们作那卑微而不能荣耀我们自己的事么？</p>
+<p>三、我们必须圣洁好使神叫我们得尊荣。「贵重的器皿」是「分别为圣」的器皿，这器皿的里面已经洗濯得极清洁。这器皿是分别为圣专为神使用的，这是神的器皿最重要的特点。圣洁的主怎能用不洁净的器皿去盛那「清洁的生命水」，使干渴的得滋润，或是盛天国的酒给那些困苦的人喝呢？</p>
+<p>基督徒能力的大小与基督徒圣洁程度的高低有正比例。纵然我们是最好看最精细的器皿，只要有一样未曾灭绝的情欲，不论它是属乎肉体或是属乎心灵的，或是有一样存留在我们心里或生活中的罪恶，就能拦阻我们不得神的使用。</p>
+<p>「除去银子的渣滓，就有银子出来，银匠能以作器皿，」是所罗门所说智慧言语中的一句；里面属灵的教训意思很深。它的意思岂不是说：「除去心灵和生活中一切的污秽，成为一个圣洁的器皿，神就能使用我们么？」神在古时传给以色列民的律法中有话说：「要用洁净的器皿盛供物带到耶和华的殿中。」若是不洁净，它就要成为得不着喜悦的器皿，盛在其中的供物必不能在神的手中蒙收纳，这条律法在基督的律法书中仍然存留。</p>
+<p>神指示我们好几个理由，使我们知道为甚么在他的工作上没有能力。这些话都能大大责备我们，激励我们，但在我们独自与神晤对的时候我们方能听见。正是在大数的扫罗深深自责，并且自觉失望，将他旧日的自恃完全倒空的时候，主耶稣对亚拿尼亚说：「他是我所拣选的器皿，要在外邦人和君王并以色列人面前宣扬我的名。」若是我们能像他那样倒空自己，我们岂不也能像他那样「圣灵充满」么？</p>
+<p>独自与神晤对的时候我们属灵的愿望更加热烈起来</p>
+<p>当我们在隐密处暂时离开人生思虑烦扰的迷雾，上升到山巅安静清洁的空气中的时候，我们发现一件要紧的事，就是我们看出我们平常的生活太低于我们所当有的生活；我们没有照神所要我们作的去支取神丰富的恩惠；我们应当比平常更多有喜乐更多成圣洁。正是在静时的寂静中我们听得最清楚神的呼唤，叫我们去寻求一种更高的生活，在这种生活中有一种更高的经验，更高的目的，更高的喜乐。</p>
+<p>我们应当在经验中升到更高的地步，神恩惠的丰富有多少差不多是我们不知道的！在基督里有多少属于我们的，我们从来未曾看为我们个人自己的！我们说一个基督徒得以完全享受他由于与基督联合所来的福祉是他的特权，这种说法实在是不足。这不仅是他的特权，乃是他的本分。我们不但可以「藉着他的灵，用一切的大能，使里面的人得着坚固，」「大有盼望，」「被保守在完全的平安里，」而且应当这样。但是我们确实寻求这个么？我们果真得着了这个么？若说大多数的基督徒不过是仅有一口生气，这种说法是太残酷么？他们心灵的脉搏是微弱的；他们心灵的进步是迟缓的；他们少有属灵的胜利；他们缺乏属灵的喜乐。他们的信心没有力量，他们所见的都是幽暗。他们从来未曾看见充分的日光，在他们上面常是有云雾掩遮着。</p>
+<p>有这种贫穷瘦弱的经验一定是较比完全没有恩惠的经验强一些；正好像一个病人比一个死人强一些一样。但是基督来在我们身上作拯救的工作的时候，他并不是使我们脱离死亡而进入病痛，乃是使我们脱离死亡而进入一种完全快乐的生活。为甚么我们不享受他所给我们的那可靠的地位呢？基督既然已经复活成为一个得胜者，也要使我们与他一同胜过罪恶死亡与阴府，为甚么我们常常带着一副愁苦的面容与懊丧的目光而生活呢？看见我们忧郁的面容，听见我们所发悲观怀疑的声音，谁能想到我们就是神的儿女，要去承受那为我们死了又活了，并且永远活着的基督所给我们豫备的那荣耀的自由呢？</p>
+<p>耶稣从坟墓中出来的时候，未曾带着坟墓中的衣服，拉撒路却带着这些，许多基督徒也是这样带着。他们确是复活了，不过在他们的衣服上还带着坟墓中的气味。他们有「生命」，但他们没有「自由」。他们有生命的实际，但他们表现不出新生命的喜乐来，为甚么要这样呢？为我们自己的缘故我们需要他所给我们的那完全的平安；为我们要有能力得人的缘故我们也有这样的需要。若是我们仅仅喘息着生活，我们就不能藉着我们的生活对别人作甚么有能力的见证。在我们里面平安的井泉必须先满到沿边，以后方能涌流出来，使四周的人得着益处。若是我们自己立在光滑的石头上，战栗恐怖，难保自己的安全，虽然我们站在比别人略高一些的地方，我们也不能将别人从黑暗的坑中拉出来。</p>
+<p>在神的脚前为罪懊悔固然是好，但是因悔改而蒙怜悯安卧在父的怀中是更好。为罪所流的眼泪是好的，但是因着那拭干我们眼泪的手而发的赞美是更好的。那个税吏所发的哀求：「神阿，开恩怜恤我这个罪人，」是好的，但他回家去被称为义以后在心中所发的歌声是更好的。「坐在末位上」，似乎不配坐高位固然是好，但是听见主人说：「朋友，请上坐，」以后便毫无疑惧「与他一同坐在属天的地方，」是更好的。</p>
+<p>有许多热心的基督徒实在希望到这种地步，但他们有一种不能胜过的困难，就是他们深深觉得自己不配。这就是因为他们与基督相离太远又不一心信靠他的缘故。若是我们十分明白他爱我们的原因，我们就必晓得实在不是因为我们配接受他的爱。我们的罪都被发现以后，或者要使我们惊异，但是不足使他惊异。他从起初就知道我们是怎样的不配，然而他还是爱我们──爱我们只是因为他自己的缘故。既是这样，他起初爱我们就不是因为我们的缘故，乃是因为他自己的缘故，他就能仍然为他自己的缘故继续着爱我们。若是他起初因为我们好的缘故爱我们，后来在我们身上渐渐失望，他的爱或者要变冷甚至全然止息。但是他在我们极坏的时候爱了我们，当我们「死在过犯罪恶之中」的时候爱了我们，他知道我们后来将要如何，还是爱了我们；「恩惠」两个字便解明了这件奇异的事实。我们的盼望不是倚靠我们自己的信心坚固，我们的德行不改变，乃是建立在神永不改变的恩惠上面，这恩惠是始于爱又终于爱的。</p>
+<p>我们又当在盼望中升到更高的地步。「恩上加恩」是神应许我们的，但是神赐恩惠与我们惟独「照着我们的信」；那些拿最大的水瓶到泉源来的人，便得了最多的福祉，我们越少盼望从世界得甚么越好；我们越少盼望从我们自己得甚么越好；但是我们越多盼望从神得，我们就必定越富足、越圣洁、越喜乐。当神对我们说：「你要大大张口，我就给你充满」的时候，我们所盼望的竟是这样希少，他一定要感觉不快活。我们应当盼望他的每一样应许成全在我们身上，无论它是怎样大；为要得着这个，我们需要一种更简单更像小孩子的信心，过于需要一种更坚强的信心。</p>
+<p>最要紧的我们需要在神交通上升到更高的地步。这是「一座高山好像巴珊山一样」，这座山不怕人登得太高。一个升到最高山顶上的人所得着的心灵中的振奋是何等的奇异！他感觉到那里是何等幽静，又是何等远超过下面的事物！我们真哀怜那些从来未曾感觉着山顶上的兴趣的人。无论那一个在圣山的高处与神灵交的人，必定得着与这个相同的感觉。若是这下面世界的思虑扰乱我们，我们只要升到这座山上，便可以立时得着天上的寂静，这种寂静是思虑忧愁所不能侵犯的。若是世界上的试诱胜过我们，就是因为我们的生活太低。我们若是升到高处，那试诱者的声音就不能达到了。</p>
+<p>与神有高处的交通又要使我们发光如同使我们寂静平安一样。天上的光存留在我们的心中必更长久。山谷中已经变为幽暗，较低的山上已经没有日光的时候，在最高的山峰上仍可以看见落日的光辉。再过些时候，日光从最高的山顶上也消失了以后，我们在那比山顶更高的云彩中仍可以望见鲜艳的光耀，好像天使在空中展开他们的衣服一般。再过些时候云中也失去了它的光耀；但我们若能升到彩云的上面，越过地球的黑影，我们必要不间断的得着完全的日光。</p>
+<p>照这样，我们若愿意我们的内心完全得着变化，我们的生活被神面前的日光所超拔，我们只要寻求在神面前的隐密处与他有更高的交通，并且更欢跃着生活在「上面的事」当中，因为在神的面前忧苦不能包围我们，罪恶也是不能存在的。</p>
+<p>独自与神晤对的时候生命的饼成为最甘美的</p>
+<p>在隐密处我们需要作的事不只是与神谈话，更需要听他对我们谈话。在那地方我们可以听见他在圣经中所发的声音，这声音从神那里带来一种消息，是「凡有耳可听的都应当听」的。我们是否照我们所当作的实在重看这本神的书呢？我们是否真实的明白它呢？我们是否照神所要我们作的去应用它呢？我们是否以它为我们心灵每日需用的食物呢？</p>
+<p>这真是一件令人惊愕的事，竟有这么许多自称为基督徒的人不明白这部宝贵的书！在各教会中有许多人除了每周一次在礼拜堂中以外从来未曾打开过他们的圣经，就是在那里也有明显的凭据证明他们一点不熟习圣经的内容。他们以不知道最近的新闻和最新出版的小说为可耻，却不以不知道神的话为可耻。我们与一个人谈到属灵的事的时候，很容易知道他是否热习圣经。有许多在世上有智慧，受过高等教育，精通古今文学，研究过一切深奥学理的人，一谈到灵界的事实，便常常成为极无知的人；这就是因为他们从来未曾读过那本详确讲论灵界事实的书。圣经对于他们不仅是封闭了的，简直是一本死的书。</p>
+<p>今日的教会对于读经的功夫真是比从前大见减少。在许多基督徒的家庭中关于宗教的文字差不多代替了圣经。在家庭中研读圣经注重经训渐渐成为过去的事；因此纔演成今日信仰与德行一齐堕落的现象。</p>
+<p>我们常听人说我们太过于重看圣经，太过于崇拜圣经。他们又说，以圣经当偶像去崇拜和以别的事物为偶像是一样的有害。但是这些崇拜圣经的人在那里呢？我巴不得能找着这些人好同他们住在一处！因为大多数的人并不是过于注重圣经，乃是太少注重圣经。他们念诵的太少，查考的太少，信的太少，行的太少，我愿意走很远的路去找一个真正崇拜圣经的人，因为近处没有多少这样的人！</p>
+<p>有许多人看圣经不过是一个古物陈列所；又有一些人以圣经为争辩利器的府库。有人抱着批评的态度去读它；有人抱着怀疑的态度去读它；又有人读它不过是机械式的，好像作一件工作一样。读圣经像在外乡的儿童接读家中所来的信件的人是何等少呢！若是我们要得着圣经真实的效益，我们必须照着神要我们用圣经的方法去用它，以圣经为我们饥饿时的食粮，干渴时的饮料，患病时的药品，创伤处的膏油，怠惰时的教鞭，幽暗中的光亮，愁苦时的安慰，行程中的响导，步履前的明灯。</p>
+<p>以上这些用途中最重要的就是第一样。我们需要神的话作食物。我们属灵的生命惟独藉着这食物纔能得着养育，纔能发长。许多人身体软弱患病就是由于「营养不足；」一切属灵的力量与生机也都仰赖属灵的滋养物。不论在那里我们看见一个软弱的基督徒，就可确知他必是缺少食物；身体的营养所需要的两件事也是心灵的营养所需要的。</p>
+<p>第一件事就是食物必须自己享用。食物只在我们外面──一样可看可慕，但未曾尝着的东西──与我们没有甚么益处。我们必须将它吃到里面。杰里迈亚有话说：「我得着你的言语，就吃了，你的言语是我心中的欢喜快乐。」我们不能请别人代吃，吃乃是必须我们自己享用的一件事。</p>
+<p>以后还有再进一步的程序──食物与我们身体里的各部分融合，食物变成肉和血再从身体的各部分──晶莹的目光，鲜红的面容，坚的肌肉，强固的骨骼，活泼的神经，敏捷的头脑──显露出来：若是我们真实享受了神的话，它也要与我们的心灵融合，然后再显露出「仁爱、喜乐、和平、忍耐、恩慈、良善、信实、温柔、节制、」以及一个强壮健康的心灵所有的一切别样的特点。</p>
+<p>我们一切的人都需要每日的食料，没有一个人能在例外；老年人与青年人，软弱的与强壮的，君王（因为「君王也受田地的供应」）与乞丐，哲学家与婴孩，都一样的需要。生命藉着食物得着养育这件事在哲学家身上是与在婴孩的身上一样的简单。若是有智慧的人不肯屈就这件简单的事，他必要与一个不肯吃东西的婴孩一样的饿死。照样，无论怎样有学识怎样伟大的人物，若是不肯用那存到永生的食物养育他自己，谁也不能有一日保守得住他心灵的健康。</p>
+<p>但是只在圣经的表面上又急遽又轻忽的读过一遍是不能使我们的心灵得滋养的。一位古代爱慕圣经的人曾说：「我要默想你的训词。」这是比较单单去听更深一层的事。我们需要细细思想，直到我们清楚的知道这是神特别给我们的信息；正像奥古士丁说：「这水要一次喝，两次喝，三次喝。」常是必须到第三次喝，第四次喝，纔觉出它是何等的甘美，何等的滋补。但是这种「默想」需要安静。惟独在寂静中心灵纔能真与那位隐密的神相接近。在圣经中显明他自己的这位神，也将自己隐藏在圣经里，必须藉着那在「至高者的隐密处」所发的光辉先将他显明出来，我们方能看见他。</p>
+<p>在下面的几句话里我们能看见「默想」所成就的：「我何等爱慕你的律法！」「我比我的师傅更通达，因我思想你的法度。你的言语在我上膛何等甘美，在我口中比蜜更甜。」「你口中的训言与我有益，胜于千万的金银。」每一个虚心被圣灵教导爱慕圣经的人必仍要从心中响应这些话。但是爱慕圣经的心是与我们的经验一同长进的。在圣经中有许多真理若不是我们自己生活中的经验使它对于我们成为一本活的书，我们就总不能了解；从神那里来的许多奇妙的消息，必须等到苦难的烈火将它们清清楚楚的向我们信心的眼睛显明，我们纔能明白，正好像一封用隐墨水所写的信必须在火上烘过纔能看出来一样。许多人从来不知道圣经能为他们作甚么，直等到他们家中的光亮完全熄灭，在炉火旁只有一把空椅，他们流着泪拿起圣经去读的时候，纔知道圣经的效用。</p>
+<p>这是我们自己属人的经验；世上曾有甚么人比基督耶稣更多明白圣经更多喜爱圣经呢？在他以前和以后没有人像他那样心中多思想口里多述说经上的话。然而他自己从未有过一本圣经。如今基督徒的家庭中每一个人都可以有一本圣经。我们都有自己所常用的一本，在上面我们画记号、加标点，常常携带着以供参考。基督没有这样的袖珍圣经可以随身携带着。然而没有人像他那样明白圣经。他曾费去许多时光在会堂中读那放在那里的圣经。他也用心去记忆直到他都十分熟习，以致他没有一刻不用它去打败他的仇敌，教导他的门徒，或是安慰他自己。我们在读圣经的时候，看到几段他曾引证过的经文，必定更有兴趣，因为我们确知我们是用当日他曾用过的器皿来饮这生命的水。</p>
+<p>若是有人能不用圣经，他能。但没有一个人比他更多靠着圣经生活。他在圣经中各处都可以寻见他自己的肖像绘在里面──那位圣洁者，那位自卑者，那位被厌弃者，那位被钉后复活者，那位受苦又得荣耀者；并且他自己去成就那一切论到他所写的话。我们也必须在圣经中找着我们自己的肖像，我们在残缺和罪恶中的肖像，神要我们藉着他奇异的恩惠所成就的人生的肖像；我们应当去成就经上所表现的那种最高尚圣洁的生活。当我们照基督的样子去用圣经的时候，我们也必得着他从圣经所得的效益。</p>
+<p>但是为要在圣经中得着这些好处，我们实在需要安静的时间。只有在我们独自与神晤对的时候，这隐藏的吗哪所有完全的甘美方能尝着。在那里一面念一面思想，不论它是教导我们学义，或是在忧苦中安慰我们，我们必发现在甚么地方都没有能与这书相比拟的。除了圣经以外，一切别的书至终都要使人感觉乏味。惟独这本书我们可以携带着进入将死的人的屋子与忧伤的人的家庭。若是这本书一旦从世界中被取去，将要有多少忧伤的人感到极可怖的缺乏！又将要有多少人的脚走入他们从前所未曾走过的更深的罪恶的路途！既知道没有别的事物能代替它，我们的手就应当每日牢牢的握住它，我们的心也应当常常带着新的喜乐去思想它，直等到在天上神的光辉中我们完全看见并且明白它的那日子。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

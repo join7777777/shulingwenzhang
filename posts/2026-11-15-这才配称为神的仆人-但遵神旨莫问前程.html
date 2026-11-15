@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>这才配称为神的仆人-但遵神旨莫问前程 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>这才配称为神的仆人-但遵神旨莫问前程</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/3做主精兵/5这才配称为神的仆人-但遵神旨莫问前程.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「你们也知道，凡与你们有益的，我没有一样避讳不说的；或在众人面前，或在各人家里，我都教导你们。又对犹太人和希利尼人，证明当向神悔改，信靠我主耶稣基督。」（徒二十20、21）。</p>
+<p>「所以我今日向你们证明，我于众人的血是洁净的。因为神的旨意，我并没有一样避讳不传给你们的。」（徒廿26、27）。</p>
+<p>听听神的这一位仆人──保罗──对以弗所教会的众长老所说的话：「凡与你们有益的，我没有一样避讳不说的；」「神的旨意，我并没有一样避讳不传给你们的。」这是神的每一个仆人应当作的。因为把神的旨意传达给众人，是神的仆人们从神领受的使命。放弃了这种使命的，根本就不配再称为神的仆人。神对他的仆人杰里迈亚说：「你不要说我是年幼的；因为我差遣你到谁那里去，你都要去，我吩咐你说甚么话，你都要说。」（耶一7）又说：「所以你当束腰起来，将我所吩咐你的一切话告诉他们；不要因他们惊惶，免得我使你在他们面前惊惶。」（耶一17）。神对他的仆人以西结说：「人子阿，虽有荆棘和蒺藜在你那里，你又住在蝎子中间，总不要怕他们，也不要怕他们的话；他们虽是悖逆之家，还不要怕他们的话，也不要因他们的脸色惊惶。他们或听、或不听，你只管将我的话告诉他们；他们是极其悖逆的。」（结二6、7）主耶稣在将要升天以前吩咐他的门徒说：「所以你们要去，使万民作我的门徒，奉父、子、圣灵的名给他们施浸；凡我所吩咐你们的，都教训他们遵守；我就常与你们同在，直到世界的末了。」（太廿八19、20）注意这些重要的话语──「我吩咐你说甚么话，你都要说。」「起来，将我所吩咐你的一切话告诉他们。」「他们或听、或不听，你只管将我的话告诉他们。」「凡我所吩咐你们的，都教训他们遵守。」不作神的仆人则已，作神的仆人就必须忠心为神传话，毫无折扣的把神的话传给需要听的人。</p>
+<p>神曾对杰里迈亚说，叫他作神的口。「耶和华如此说：『你若归回，我就将你再带来，使你站在我面前。你若将宝贵的和下贱的分别出来，你就可以当作我的口。他们必归向你，你却不可归向他们』。」（耶十五19）多么尊高的一个使命──作神的口。神自己不常发声音对人说话。他把他的话放在他的仆人们的口中，叫他们替他发声，替他们说话。既作神的口，就必须把神要向人说的话都说出来。不可少说，也不可多说。只要是神叫他们说的话，他们必须一句一句的都说出来。有一句不说，他们便辜负神的付托，便对不起神，便不配称为神的仆人。</p>
+<p>但是将神的话都说出来是何等不容易的一件事！自己没有遵行神的话的人，便不敢说；因为他们说的时候他们的良心要责备他们，听见的人也要指斥他们说：「你自己还没有遵行神的话呢，还有甚么脸教训我们，对我们传述神的话呢？」这是许多为神作工的人不敢把神的话都说出来的一个原因。一个人自己有那一样罪恶，他必定不敢斥责那样罪恶。一个人自己有那一样事没有作到，他必定不敢教训别人去作那件事。越多遵行神的旨意的人越有勇气传述着神的话。因为他们替神传话的时候，自己既不受良心的责备，又不怕别人的指斥。因他们所行的蒙神的喜悦，神也就特别赐恩惠与能力给他们，使他们越传越有力量，使他们的话语像雷霆一样惊人，像大锤一样有力。反过来说，如果一个人不遵行神的旨意，反倒沾染许多罪恶，不但他自己的良心责备他，听他的人指斥他，神也不能使用这样的一个人。请问，圣洁的神焉能使用一个污秽的人作他的口呢？</p>
+<p>看看今日各处教会中称为神的仆人们的生活，便知道他们不能作神的口、不能替神传话了。许多传道的人的生活是那样污秽邪恶。他们的意念和生活中充满了诡诈、虚伪、贪婪、淫邪、嫉妒、仇恨、骄傲、狂妄、谎言、秽语、毁谤、恶毒、谄媚富贵、轻看贫穷、营私舞弊、夺利争名、不孝父母、不爱弟兄、卖主卖友、自私自利、失信食言、不顾信义、临财茍得、临难茍免、结党分争、排挤倾轧、纵欲行淫、忘恩负义。社会中的种种罪恶在传道的人中间几乎样样俱备；请问，神如何能使用这些人？这些人又焉敢在人面前替神传话？何况今日那些传道人中间还有许多根本未曾悔改信主、未曾重生得救的人呢！</p>
+<p>就是真实为神作工的人要作一个忠心替神传话的人也不是一件容易的事。因为世上绝大多数的人都是不愿听从神的命令的。不用提拜假神的人和不信的人，就连名义上称为属神的人中间也没有很多的人愿意完全听从神的话。神的仆人向世人发出警告、责备他们的罪、劝他们悔改归向神的时候，要惹起他们的反对。神的仆人斥责教会中的罪恶、招呼他们回转行走正路的时候，也要引起他们的恶感。人的肉体根本就不愿意顺服神。神的仆人如果要忠诚为神传话，就要感到处处都是荆棘。他们若忠心为神传话，就要遭遇人的反对，如果他们不忠心为神传话，他们的心又受责备，感痛苦。这真是一场剧烈的战争。杰里迈亚叙述他这种经验说：「耶和华阿，你曾劝导我，我也听了你的劝导；你比我有力量，且胜了我。我终日成为笑话，人人都戏弄我。我每逢讲论的时候，就发出哀声，我喊叫说：『有强暴和毁灭；因为耶和华的话终日成了我的凌辱、讥刺。』我若说：『我不再提耶和华，也不再奉他的名讲论。』我便心里觉得似乎有烧着的火闭塞在我骨中，我就含忍不住，不能自禁。我听见了许多人的谗谤，四围都是惊吓。就是我知己的朋友也都窥探我，愿我跌倒，说：『告他罢，我们也要告他。或者他被引诱，我们就能胜他，在他身上报仇』。」（耶二十7～10）杰里迈亚遭遇这一切的痛苦和逼迫，就是因为他忠心为神传话的缘故。他一度发了软弱，他想「不再提耶和华，也不再奉他的名讲论。」但是不行，他一这样打算，心里就觉得似乎有烧着的火闭塞在他骨中，他就含忍不住，不能自禁。受人的攻击、凌辱，固然痛苦，但似乎有烧着的火闭塞在他骨中的滋味更不好受，因此他只有继续着为神传话。</p>
+<p>保罗也深深明白为神忠心传话是何等不容易的一件事，因此他教导他亲爱的儿子提摩太说：「我儿阿，你要在基督耶稣的恩典上刚强起来。你在许多见证人面前听见我所教训的，也要交托那忠心能教导别人的人。你要和我同受苦难，好像基督耶稣的精兵。」（提后二1～3）我们都知道当兵是何等艰难危险的事。为神传话就像当兵一样的艰难危险。为名、为利、为谋生活而传道的传道人也许不明白传道是怎样不容易作的一样事工。那些向神尽忠的传道人常常在为神传话的时候真像兵士上阵那样紧张、那样危险。明知道所传的道会触动听者的怒气，会招来听者的反感，会惹起听者的误会，但因为有神的使命和付托，仍是必须去传。这种情形与兵士上阵又有多少差别呢？无怪乎保罗勉励提摩太忠心传道的时候对他说：「你要和我同受苦难，好像基督耶稣的精兵」了。</p>
+<p>在教会中有一种最常见的事，就是许多信徒听道的时候如果讲道的人正讲到他们所犯的某样罪，他们便认为讲道的人是有意侮辱他们、攻击他们，因此对讲道的人表示不满意，甚至起来与他为难。我不否认有一些讲道的人确是这样假公济私，藉着讲道的机会攻击与他有嫌隙的人。这些人根本不配讲道，更不配称为神的仆人。但同时我们也看见许多怙恶不悛的听道的人，受了神藉着讲道的人所给他们的警告责备，不但不自愧自责，反倒迁怒于讲道的人，因而起来与他为敌。有些讲道的人因为要逃避这种反对，便在讲道的时候竭力避免触犯那些听道的人。这样一来，他们自然就有许多真理不敢传说，有许多罪恶不敢责备。他们所顾忌的太多，这个不敢讲，那个不敢说，结果只好选择一些与人的信仰和生活毫无关系的道理去讲说，这样，他们自然再遭不了反对，树不了仇敌，但他们自己在神的面前却完全失去了用途，只好被神废弃了。</p>
+<p>为神作工的人必须决定自己的心志，究竟是要讨神的喜悦，或是要讨人的喜悦？这两方面只能顾全一面，绝不能两面都顾全，保罗不但明白了这个真理，而且也下了最大的决心。他说：「我现在是要得人的心呢？还是要得神的心呢？我岂是讨人的喜欢么？我若仍旧讨人的喜欢，我就不是基督的仆人了。」（加一10）从古至今，神一切忠心的仆人没有不遭人反对、受人逼迫的。我们的主清楚的教导我们说：「人若因我辱骂你们，逼迫你们，造各样坏话毁谤你们，你们就有福了。应当欢喜快乐，因为你们在天上的赏赐是大的；在你们以前的先知，人也是这样逼迫他们。」（太五11、12）同时我们的主又告诉我们说，只有那些假先知能讨得人人的喜悦，使人人都说他们好。他说：「人都说你们好的时候，你们就有祸了！因为他们的祖宗待假先知也是这样。」（路六26）如果我不能作神所喜悦的先知，我就宁可不作先知，我绝不甘心作一个惹神怒气的假先知，先害了许多听我的人，最后还害了我自己。</p>
+<p>忠心替神传话的先知一定要遭遇逼迫、反对、辱骂、毁谤，但他们不必惧怕，因为神在古时怎接应许保守护卫他的仆人，今日也照样应许那些忠心为他传话的人说：</p>
+<p>「你不要惧怕他们，因为我与你同在，要拯救你，这是耶和华说的。」（耶一8）</p>
+<p>「看哪，我今日使你成为坚城、铁柱、铜墙，与全地、和犹大的君王、首领、祭司、并地上的众民反对。他们要攻击你，却不能胜你；因为我与你同在，要拯救你，这是耶和华说的。」（耶一18、19）。</p>
+<p>「不要怕，只管讲，不要闭口。有我与你同在，必没有人下手害你；因为在这城里我有许多的百姓。」（徒十八9、10）</p>
+<p>保罗能对他所牧养的教会说：「凡与你们有益的，我没有一样避讳不说的；」「我今日向你们证明，我于众人的血是洁净的。因为神的旨意我没有一样避讳不传给你们的。」每一个为神作工的人都应当能这样说，也都应当敢这样说。只有能这样说、敢这样说的人纔配称为神的仆人。</p>
+<p>但遵神旨莫问前程</p>
+<p>「耶稣说：『我的食物就是遵行差我来者的旨意，作成他的工』。」（约四34）。</p>
+<p>「因为我从天上降下来，不是要按自己的意思行，乃是要按那差我来者的意思行。」（约六38）。</p>
+<p>「他就稍往前走，俯伏在地，祷告说：『我父阿，倘若可行，求你叫这杯离开我；然而不要照我的意思，只要照你的意思』。」（太廿六39）。</p>
+<p>「第二次又去祷告说：『我父阿，这杯若不能离开我，必要我喝，就愿你的意旨成全』。」（太廿六42）。</p>
+<p>「所以基督到世上来的时候，就说：『神阿，祭物和礼物是你不愿意的，你曾给我豫备了身体；燔祭和赎罪祭是你不喜欢的。那时我说，神阿，我来了，为要照你的旨意行，我的事在经卷上已经记载了』。」（来十5～\cs167）。</p>
+<p>读了以上的几段经文，我们看见我们的主在世上的时候最注重的事就是遵行神的旨意。世上的人都认为吃饭是最要紧的事，我们的主却说他的食物是遵行神的旨意、作成神的工。他又说他从天上降到地上最大的任务就是照神的旨意行。写希伯来书的人也述说基督到世上来的时候曾说：「神阿，我来了，为要照你的旨意行。」当我们的主在客西马尼园中祷告的时候，想到那可怕的苦杯，他实在不愿意喝。他呼求他的父使这个杯离开他。就在这个时候，他仍是愿意遵行神的旨意，因此他接着祷告说：「然而不要照我的意思，只要照你的意思。」我们中间任何一个人若处在这个时候，也要恳切的呼求神把这一杯撤去。纵使我们明知道神的旨意一定要我们喝，我们也要迫切的哀求他撤去，因为这一杯实在太苦了。我们的主却不这样。他自己固然不愿意喝这一杯，他却对他的父说：「我父阿，倘若可行，求你叫这杯离开我。」接着他存着顺服的心说：「然而不要照我的意思，只要照你的意思。」在第二次祷告的时候，他的顺服又进了一步。他说：「这杯若不能离开我，必要我喝，就愿你的意旨成全。」这时候他不再求父将这杯撤去，只求父成全他的意旨。他就是这样一步一步的学习了顺从父的旨意。</p>
+<p>是，我们的主就是这样愿意遵行神的旨意，他不但以遵行神的旨意为本分，他也以遵行神的旨意为享受、为乐事。他不是勉勉强强的去遵行神的旨意，他是欢欢喜喜的去作这件事。他愿意遵行神的旨意像我们愿意吃饭一样，听他说：「我的食物就是遵行差我来者的旨意，作成他的工。」</p>
+<p>毫无可疑的，我们的主应付任何难题、处理任何事物的时候，都本着这一个重要的原则──「是不是神的旨意？」他处理任何难题的时候，都不考虑他个人的利害、得失、荣辱、毁誉、祸福、穷通、安危、生死。也就是因为他不考虑这些，所以他纔能很清楚的看出来甚么是神的旨意，甚么不是神的旨意；看清楚以后，他还能遵着神的旨意去行，他真不愧称为「神的爱子，神所喜悦的」了。</p>
+<p>我觉得一般基督徒最大的难处并不是没有力量遵行神的旨意，（当然这也是一个难处），乃是分辨不清楚甚么是神的旨意，甚么不是神的旨意。这不是说神的旨意不容易明白。藉着圣经中所记载的神自己的言语，并那住在我们里面的圣灵，我们实在很容易明白神的旨意。但甚么时候我们一考虑自己的利害、得失、荣辱、毁誉、祸福、穷通、安危、生死，我们的眼睛立时被这些东西所蒙蔽，再也分辨不清楚甚么是神的旨意，甚么不是神的旨意了。如果我们心里想要寻求利益、尊荣、幸福、安全，我们便会在不知不觉中自己欺骗自己，认为凡足以使我们达到这种目的的事都是神的旨意。如果我们心里想要逃避损害、羞辱、祸患、危险，我们也会在不知不觉中自己欺骗自己，认为凡足以帮助我们避免这些苦难的事都是神的旨意。纵使我们不这样欺骗自己，魔鬼也要来这样欺骗我们。但如果我们把这一切都置之度外，既不想寻求这些好处，也不想逃避这些损害，我们就可以不受这种欺骗了。</p>
+<p>也有的时候我们的眼睛并没有昏迷，我们的心也没有受欺骗，我们清楚知道甚么是神的旨意，甚么不是神的意旨；但我们一考虑自己的利害、得失、荣辱、毁誉、祸福、穷通、安危、生死，我们的里面便起了剧烈的战争。我们愿意遵行神的旨意，但我们又想寻求利益、尊荣、幸福、安全、逃避损失、羞辱、祸患、危险。如果神的旨意和我们的愿望互相符合，那自然没有问题了。但如果神的旨意和我们的愿望互相冲突，我们心里一定要发生一场剧烈的战斗。若是在这种战斗发生以前，我们没有丝毫的准备，而且这种战斗又是必须速战速决的，那么，我们得胜的希望就很少了。</p>
+<p>我们必须在战斗未曾临到以前就早早准备妥当，时刻存着一种心志，只愿意遵行神的旨意，不考虑自己的利害、得失、荣辱、毁誉、祸福、穷通、安危、生死。遵行神的旨意能有光明的前途，我们固然要勇往前进；但如果遵行神的旨意要陷入绝境，我们也毫不犹豫畏缩。无论在甚么时候、甚么地方，可以舍弃自己的一切，就是不可违背神的旨意。说得再简单一点，我们应付一切的难题和事物，应当持守一个原则──「不问利害，只问是非。」合乎神的旨意的都是「是」，不合乎神的旨意的都是「非」。我们的主就是本着这个原则在世上度过了他的一生，我们作他的门徒的人也当如此。</p>
+<p>本着这个原则去生活，要遭遇甚么呢？暂时的损害、羞辱、祸患、危险，是免不了的，但最后的结果仍是利益、荣耀、幸福、安全。我们的主因为遵行神的旨意受了损失，招了羞辱，遭了祸患，丧了性命，但就是因着他这种顺服，神使他从死人里复活，用右手将他高举，使他升为至高，又赐给他那超乎万名之上的名。没有任何人为遵行神的旨意受的损失比他所受的更大，因此也没有任何人从神得的赏赐比他所得的更多。</p>
+<p>自然我们不应当只为求将来的赏赐和荣耀而遵行神的旨意。那种人生并没有多大的价值。我们遵行神的旨意，是因为神爱了我们、救了我们。纵使神将来不给我们赏赐和荣耀，我们也应当遵行他的旨意，也愿意遵行他的旨意。但他既应许赐给我们将来的赏赐和荣耀，我们岂不应当欢欢喜喜的起来接受么？作儿女的不应当因为希望父母给他们作新衣服、买好食物纔听父母的话。他们听父母的话是因为父母疼爱了他们、抚育了他们。但如果父母应许要给他们作新衣服、买好食物，他们却拒绝不受，这是否合理呢？</p>
+<p>因为要遵行神的旨意，不考虑自己的利害、得失、荣辱、毁誉、祸福、穷通、安危、生死，虽然暂时会受一些损害、羞辱、祸患、危险，但最后的结果却是只有利益、荣耀、幸福、安全。那些斤斤于自己的利益、荣耀、幸福、安全的人，因为想保全这些，所以不敢遵行神的旨意，结果不但丧失了这些，而且还陷入损害、羞辱、祸患、危险当中，最后弄得后悔莫及，徒呼负负！到那时候他们纔明白主耶稣的话是真实可信的：「凡要救自己生命的，必丧掉生命；凡为我丧掉生命的，必得着生命。」──但是已经太迟了！</p>
+<p>撒但不喜欢看见神的孩子们遵行神的旨意，他千方百计的拦阻他们、破坏他们。他所用的方法中有两样最有功效的，一个是用「利」诱惑他们，另一个便是用「害」恐吓他们。只要他们贪「利」畏「害」，他们便会看不清楚神的旨意；就是看得清楚，他们也不肯遵行、不敢遵行。如果我们早早决定了一个心志，撒但所用的这两个诡计便要完全失效，这个心志是甚么呢？</p>
+<p>「但遵神旨，莫问前程。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

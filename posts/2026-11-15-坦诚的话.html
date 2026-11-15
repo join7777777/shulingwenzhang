@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>坦诚的话 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>坦诚的话</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/1天召(五十年来">🎧 收听本篇音频</a>/1坦诚的话.mp3)</p>
+<p><strong>正文</strong></p>
+<p>写自述最要紧的事就是真实和全备。好事与坏事、长处与短处、优点与缺点、成功与失败、都必须毫无隐讳。按人的常情说，人都喜欢述说自己的长处、优点、胜利、与成功，却不愿意提出自己的短处、缺点、罪恶、与失败。如果存这种心理去写自述，不过使自己得一点像过眼的云烟一样的虚浮的荣耀。神的大能和作为却不能在他的身上彰显出来，人也不能因此得着极多的益处。这种自述并没有多大的价值。</p>
+<p>常见世上的人为别人写传记，总是述说那个人的人格如何完美，品德如何高尚，从幼到老总没有作过不好的事，他时时想为社会谋幸福，处处可作人类的楷模。人都是喜欢自夸，也喜欢别人夸奖他，所以他们这样作并不是希奇的事。令人感觉希奇的，乃是基督徒也这样作。常见一个基督徒为另一个基督徒写传记或行述，述说那个人作孩童的时候就孝敬父母，友爱弟兄，读书的时候循规蹈矩，敬师好学，为人作事永远是忠心耿耿，任劳任怨，对待亲友始终是宽大慈爱，体恤同情；他一生没有作过羞辱神、损害人的事，也没有一件事不可作别人的模范。我们读了这样的一篇叙述，会想这个人是世界上最高尚圣洁的人。可惜写这篇文章的人忘了述说一下这么完全的一个人怎么还需要信耶稣？有一位圣徒说，「信耶稣的没有一个好人；好人根本用不着信耶稣。」她说对了。世上就没有一个好人。可惜人被这世界的神弄瞎了心眼，不认识自己的真面目，虽然遍体疮痍，身无完肤，却仍自认为好人。如果一个基督徒为别人作见证，说他是一个完全人，我便知道说这话的人不只不认识他所夸赞的人，他也不认识人类的真面目，他根本也不明白圣经中的真理和神奇妙的救工。不然，他绝不会把一个人形容得那样完全；再不然，就是他不愿意说实话，或是不敢说实话。</p>
+<p>有人认为提到别人的罪恶与缺点便是侮辱人。这实在是一种属世界的看法。我们展读圣经，便看见神藉着他的仆人记载别人的事迹，都是连长处带短处，连成功与失败，和盘托出。全部圣经的著者除了路加以外都是以色列人。他们写他们列祖的事迹，写他们本国伟人和民族英雄的事迹，都是秉笔直书，毫无隐讳。亚伯拉罕、艾萨克、雅各布布，是他们最早的三代祖宗，写圣经的人把亚伯拉罕因惧怕称妻为妹的事，和他听妻子的话纳妾、以致妻妾相争的事，都源源本本的记载在圣经中。写圣经的人也叙述了雅各布布说谎欺骗父兄的事，并他的妻妾相争，和他的长子流便与父亲的妾乱伦行淫，并他的十个儿子谋害幼弟的事。写圣经的人也叙述了他们国中第一个王扫罗，因为屡次犯罪，不肯悔改，以致惨死战场，又被敌人把他的首级割下，把他的尸身钉在伯珊城墙上的事。大卫是以色列人的贤君，也是他们民族的英雄，神的名因他得了荣耀，以色列人因他蒙了大福，但他所犯的两样可耻可憎的大罪──奸淫与杀人──都被记载在圣经中，以后他家中因他犯罪所招来的一大串羞辱痛心的事也都被叙述出来。写圣经的人并未因尊重他们本国的祖先、贤王、和民族英雄，便隐藏这些事迹。</p>
+<p>若是我们再读一下先知书，便看见他们是怎样宣布了以色列全国人的罪恶。他们大胆斥责本国君王和官长的罪恶、祭司和先知的罪恶、贵族和平民的罪恶。说出了没有人敢说的话：「首领为贿赂行审判，先知为银钱行占卜，祭司为雇价施训诲。」「城里的富户满行强暴，其中的居民也说谎言，口中的舌头是诡诈的。」「他们双手作恶。君王徇情面，审判官要贿赂，位分大的吐出恶意都彼此结联行恶。他们最好的不过是蒺藜，最正直的不过是荆棘篱笆。」「你们的手被血沾染，你们的指头被罪孽玷污；你们的嘴唇说谎言，你们的舌头出恶语。无一人按公义告状，无一人凭诚实辨白，都倚靠虚妄，说谎言；所怀的是毒害；所生的是罪孽。他们抱毒蛇蛋，结蜘蛛网，人吃这蛋必死，这蛋被踏必出蝮蛇，所结的网不能成为衣服，所作的也不能遮盖自己。他们的行为都是罪孽，手所作的都是强暴。他们的脚奔跑行恶，他们急速流无辜人的血；意念都是罪孽；所经过的路都荒凉毁灭，平安的路他们不知道，所行的事没有公平，他们为自己修弯曲的路，凡行这路的都不知道平安。」除了圣经以外我们能否再找着别的书籍里面有这样坦白严厉斥责本国的官吏与人民的话语呢？</p>
+<p>我们再来读新约，便发现主耶稣的使徒是那样坦白诚实的叙述他们自己和他们的朋友、同学的罪恶和失败。十二个使徒中的犹大为得三十块银钱出卖他的恩师，最后自缢身死身子仆倒，肚腹崩裂，肠子都流出来。这件事真是使徒们的羞辱，但他们一点都不隐讳的把这件事记在圣经中。彼得是使徒中的优秀分子，他一连三次不认主的失败经过，不仅被记载在一本福音书中，马大、马可、路加、约翰四个人都详细叙述了这件事。保罗在他所写的书信中宣布了他自己的罪状说，「我从前是亵渎神的、逼迫人的、侮慢人的。」他再进一步说，「在罪人中我是个罪魁。」这些话都是人不肯说、不愿意说的，使徒们却很坦白勇敢的说了出来。他们不顾自己的颜面，也不怕别人的讥诮笑骂。除了基督的门徒以外，在世上还找得出来这样真诚坦白的人么？</p>
+<p>我们要问，「为甚么写旧约的先知们能这样一反常情，说人所不肯说，道人所不敢道，把自己的祖先和全国人所爱戴尊祟的君王、伟人、英雄、并本国人民所犯的罪，都毫不隐讳的宣布出来呢？又为甚么写新约的使徒们能这样不顾自己的颜面，叙述自己与同学的劣迹和失败呢？」惟一的答案就是，他们写书不是出于私意，更不是为要彰显自己的长处，也不是要藉此荣耀甚么人。乃是因为他们从神得了一种使命，把神要他们写的都写出来，使读圣经的人都能藉此得提醒、受警戒。他们写了古人和他们本身的长处，为要使人效法；他们也写了古人和他们自己的罪恶与失败，好使人受警戒。只要能使读的人得益处，需要写好事就写好事，需要写坏事就写坏事。先知弥迦责备当时那些先知说，「论到使我民走差路的先知，他们牙齿有所嚼的，他们就呼喊说，『平安了，』凡不供给他们吃的，他们就预备攻击他。」接着他又说，「至于我，我藉耶和华的灵满有力量、公平、才能，可以向雅各布布说明他的过犯，向以色列指出他的罪恶。」使徒保罗也毫不畏惧的教训圣徒说，「不拘是犹太人，是希利尼人，是神的教会、你们都不要使他跌倒。就好像我凡事都叫众人喜欢，不求自己的益处，只求众人的益处，叫他们得救。你们该效法我，像我效法基督一样。」他又对帖撒罗尼迦的圣徒说，「我们的劝勉不是出于错误，不是出于污秽，也不是用诡诈；但神既然验中了我们，把福音托付我们，我们就照样讲；不是要讨人喜欢，乃是要讨那察验我们心的神喜欢。因为我们从来没有用过谄媚的话，这是你们知道的；也没有藏着贪心，这是神可以作见证的。我们作基督的使徒，虽然可以叫人尊重，却没有向你们或向别人求荣耀。只在你们中间存心温柔，如同母亲乳养自己的孩子。我们既是这样爱你们，不但愿意将神的福音给你们，连自己的性命也愿意给你们，因你们是我们所疼爱的。弟兄们，你们记念我们的辛苦劳碌，昼夜作工，传神的福音给你们，免得叫你们一人受累。我们向你们信主的人是何等圣洁、公义，无可指摘，有你们作见证，也有神作见证。你们也晓得我们怎样劝勉你们，安慰你们，嘱咐你们各人，好像父母待自己的儿女一样，要叫你们行事对得起那召你们进他的国、得他荣耀的神。」保罗把他自己一切的事都诚实坦白的陈述出来，好的就说好，坏的就说坏。他不因为怕人轻看，便不敢说他已往的罪恶；他也不因为怕人说他骄傲，便不敢说他所有的美德。他的心中已经完全没有自己。</p>
+<p>只有公正无私的人敢说自己和别人的短处，也敢说自己和别人的长处；也只有公正无私的人配说自己和别人的短处，也配说自己和别人的长处。他们说别人的短处不是出于仇恨和嫉妒，他们说别人的长处也不是出于奉承和谄媚；他们说自己的短处不是出于虚情和假意，他们说自己的长处也不是出于骄傲和自夸。也正是因为他们公正无私，所以他们的话纔有权柄和能力。正因这缘故，神使用了这些先知和使徒作他手中合用的器皿，并用他的灵感动他们，启示他们，使他们写成了这一部宝贵的圣经。</p>
+<p>我在信心、爱心、敬虔、顺服、各方面，都远不及古代的先知和使徒。除了神和我的主以外，没有人知道我的缺点和失败，像我自己知道得那样清楚。但我有一个心志，愿意作一个像古代的先知和使徒那样的人。所以当我拿起笔来写这篇自述的时候，我呼求神保守我的心和我的手，不要写出一句不合神心意的话来；同时我也呼求神赐给我能力和勇气，把他要我写的完全写出来，不要有任何顾忌，不要因为怕受人的轻视，便不敢写自己的罪恶和失败，也不要因为怕受人的误会，便不敢述说神在我的身上所显的荣耀。</p>
+<p>当我执笔写这篇自述，提到我在家中所经过的试炼的时候，我的心中经过一度的交战。北京有一句俗语说，「家丑不可外扬」家庭中这些误会、猜忌、争吵、不安，并不是光荣的事，尤其是这些事牵涉到疼爱我、抚育我的慈母，并我同胞的姊姊。按人情说，这些事不但自己不当述说，纵使有人提起来，自己也应当竭力遮掩。但我既是神的仆人，就不当再顾到人情，却应当像先知那样接受神的使命：「我差遣你到谁那里去，你都要去，我吩咐你说甚么话，你都要说。」又当是神面前作忠心的管家，按时分食物给家中的人。绝大多数的读者既都有家庭，当然也就都有家庭中的试炼和痛苦。这些人需要有人给他们一些指导和安慰。但很少的人肯说，敢说自己在家庭中受痛苦的经验。神曾特别藉着家庭中的试炼修理我、造就我、琢磨我、雕刻我，使我从苦难中得了益处，这种宝贵的经验绝不可不写出来，好使许多在家庭中受试炼的圣徒得着劝勉和安慰。至于别人要怎样批评我、论断我，我就完全不在意了。</p>
+<p>我写这篇自述的时候，已往所写的日记给了我很多的帮助。从我十四岁春季信主的时候起我接受我的朋友的劝告，开始每天写日记，连今年一共写了三十七册。有些事在我的记忆中已经模糊不清，还有些事差不多已经遗忘，但在我展开日记的时候；便都清清楚楚的重新显在眼前。</p>
+<p>在我这五十年的生活中，经过了极多的艰乐、困苦、打击、试炼：我生下来就是一个孤儿，年幼的时候过着极艰苦的日子，身体软弱多病，常受同学的欺凌，十九岁的时候因为反抗不合真理的事，中途辍学；教读的时候为信仰被学校当局驱逐出校以后，在家庭中过了三四年苦痛的日子，受许多人的讥诮笑骂；二十五岁开始工作的时候，又曾一度受热心事奉神的人的误会反对；结婚以后，在家庭中遭遇了许多试炼苦痛；一九四二年日本人在华北操纵各教会、组织「华北中华基督教团」的时期，又遇到严重的恐吓威胁。每次遭遇艰难打击的时候，都是感到痛苦难过；但及至事过境迁，回头一看，纔知道患难中不但充满了神的恩典，而且每经一次患难，便有一步长进。神藉着种种的艰难、打击，先催逼我进到他的面前，得着了他的救恩，接受了他的选召，以后又除掉了我的渣滓，磨去了我的棱角，增加了我的信心，而且帮助我学习了顺服和许多宝贵的功课，更使我能明了别人所受的痛苦患难，知道怎样能帮助他们。我以前若不经过这许多患难，绝不会到今日这种地步，也不会得这么许多恩典。到今日我更明白为甚么神所使用的人必须先经过长时期的磨难和试炼了。神的话真是可信的。经上说，「神所惩治的人是有福的，所以你不可轻看全能者的管教。」又说，「耶和华阿，你所管教、用法律所教训的人是有福的。」</p>
+<p>自一九○○年七月二十五日到今天，整整是五十年。回忆这五十年来，真是完全生活在神的恩典中。在我的身上没有一件事不是显明神的慈爱、信实、大能、和智慧。神对我不是渺茫无凭的，乃是千真万确的。我惊奇像我这样败坏不堪的一个孩子，怎么竟蒙了神的拯救？更使我惊奇的，就是他怎么竟在基督里选召了我，又把这种伟大崇高的使命和责任放在我的肩头上？这真是一件奇事！我怎配得这样大的恩典呢！</p>
+<p>想到神的恩惠和选召，真不能不欢欣雀跃，从心中涌出赞美和感谢来；再想到自己的失败和缺点：爱心不足、意念不洁、言行不谨、事神不忠、辜负神的恩典的地方太多，真不能不深深自卑，求他的怜悯和复兴。如果我们的主暂时仍不回来，愿神使我在五十岁以后的时光中，不但能继续为他作工，而且能活出更合他心意的生活来。在我结束这篇序言以前，我愿意和天上、地上、地底下、沧海里、和天地间一切所有被造之物同声欢呼说：</p>
+<p>「愿颂赞、尊贵、荣耀、权势、都归给坐宝座的和羔羊，直到永永远远。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

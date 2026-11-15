@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>日常生活中的琐事-改变的脸面 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>日常生活中的琐事-改变的脸面</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/2在密云黑暗的日子/2日常生活中的琐事-改变的脸面.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>当我们要安慰受痛苦的人的时候，有一大类人的重担是我们不能忽略的。这些人不是因为身体受甚么剧烈的痛苦而失望，乃是因为每日都作一样无味的事工，家庭中的琐事占去了一切的时间和精力，再没有机会追求更高的事物，作完了这一切事以后又不能看见甚么大的效果。许多这样的人每日在他们所受的限制中烦闷苦痛，渴望脱去这种重负，不仅是为自己可以脱离这些琐事的烦扰，更是希望他们可以多作一些人生中更高的事工，他们喜欢多作些荣耀神而且使人得着帮助的事，但他们竟被日常的事工所捆绑，似乎使他们没有一点机会可以服事人，以致他们的人生显为卑鄙、无用、可怜。</p>
+<p>很少的人确实的信他们是站在最适宜的地位上。我们每一个人岂不都常梦想得着一种更快乐更优美的命运么？我们岂不是有时设想我们应当得着更高更好的地位么？有时我们用一种无声却是深刻的内心的痛苦击打我们监狱的铁栅；又有时我们因为我们所受的限制心意沮丧，几乎到了绝望的地步，因此我们的人生便充满了灰心和痛苦。</p>
+<p>但神在我们所处的地位上果真没有用我们的地方么？他将我们放在我们所处的地位上难道是待我们不慈爱不公平么？最少有一件事是准确的，就是如果我们不在我们现在所处的地位上服事我们的主，我们无论在其它的甚么地方也不能服事他服事得更好一些。如果确是他将我们放在这个狭小卑陋的地方，他就必知道这为我们是最适宜的地方，他愿意我们在那里藉着耐性的顺服荣耀他。他在古时对以色列人所说论到他们四十年在旷野漂流的话，当我们因着我们所遭遇痛苦灰心的经验而发怨言的时候，他也是对我们这样说：「我训练你，使你受苦，为要在以后尊荣你，使你掌权，训练你，使你遭遇幽暗仍能知足，为要在将来使你发光，训练你，使你在这些小事上忠心，好使你渐渐可以作大事。」如果有一样事比别的事更是我们作基督徒的人需要学习的，那就是将人生中最艰难的琐事装饰得好，使他们成圣供献给神，这不只是更难作而且是更可贵的事，只在最好的时机中纔发出光辉来的那种敬虔是远不及这个的。灰心丧志的人向上看罢！我们人生的主不会作错事的。他给我们每一个人最适宜的地位去站，最适宜的事工去作，最适宜的负担去担，在我们担负的时候给我们最适宜的帮助，到末后还要将最适宜的赏赐赐给一切无论在甚么幽暗的境遇中总是忠心事奉他的那些人。</p>
+<p>这些可怜乏味的事工，这些无足轻重的境遇，这些每日中的舍己，都是神为你选择的。它们是神教育你所用的器具，是神施恩惠的河流，是他所摆设的筵席。你被拘禁的地方，那座污浊的城市，那间狭小的房屋，那所晦暗的商店，那间困人的办公室，那条可怕的街道，那群不投机的同人──这些都是神按着他自己的美旨给你豫备的学校，使你可以在里边受训练，也是他给你豫备的祭坛，使你可以在上面献上你的祭物。你这样信，而且这样领受，当你再看它们的时候，天父慈爱的明证必要显出来，将你的灰心都变成平安。</p>
+<p>在人生中还有别样的失望也是如此。失望的人很多，他们的失望不只限于外面的事物。也有爱情上的失望。多少人的心中渴望得着爱情的伴侣，但竟被命定度着孤独的生活！多少人得不着他们的心所羡慕的最深最清洁的伴侣并不是由于他们自己的过失！常有时候两个人在那里很快乐的结婚，同时却有别的男人失去了他所梦想要得的妻子，或是别的女子失去了她心中所渴望要得的丈夫！然而那些必须走孤独道路的人并不一定是不可爱或不得人爱的。在事实上他们常是正与这个相反，他们得着许多人无限的爱，因为他们帮助这些人得了多少的快乐。他们的爱少集中在一个人身上，扩大去帮助许多人，若不这样，这些人便总不知道爱心是怎样能牺牲自己，又是怎样宝贵。</p>
+<p>当我写这一章的时候我想到我所认识最诚朴最真实最可爱的基督徒当中的一位，她常因为家中事务的限制使她不能有更大的用处而感觉灰心。她读到在本地和远方许多敬虔妇女为基督所作的宝贵的事工，便叹息着说，「我甚么也没有作。」她并未曾发怨言，不过想到这事就有一点愁苦罢了。然而她总不知道她使多少人得了大福，她自己美丽的人生使多少在她旁边的人得了光照。她是她丈夫每日的力量和喜乐。她使她的家成为世上最快乐最光明的家庭中的一个。她训练她的子女喜爱一切最清洁最高尚的事物。她教导他们公义、怜悯、舍己、诚实，直到他们每一个人起来称她为有福的。她所作的远超过这个。虽然她不深知道多少愁苦的人怎样因她得了快乐，多少可怜的人感谢神因为有她作他们在地上最好的朋友，她整个的人生是怎样的可爱，怎样的不自私，她所发的光辉怎样引领许多人寻求她的救主作他们自己的救主。她却救助了许多在她家庭以外的人。那就是她每日的工作，寂静无声，世人的眼睛看不见多少，但从始至终是一种使人得福的工作。</p>
+<p>我又想到许多其它有同样心意的圣徒，除了离他们最近的人以外，很少有人认识他们，他们在僻静的地方忍受病痛，他们从年初到年底遭遇许多的困难，他们的人生充满了心灵上的烦闷，他们一点享受不着世人所说的安慰和成功；但他们欢喜耐心忍受他们所遭遇的，那看不见的主给了他们卑下微小的事工，他们就以藉着这些事工讨他的喜悦为知足，并且每日在这种最令人灰心的景况中显出那真实奉献的心所有的美丽，发出那真实奉献的心所发的香气来。</p>
+<p>我想到这些人和许多这样的人，因为一定有许多这样的人是我们不知道的。我想到将来天使怎样迎接他们进入那没有忧愁的乐土，他们在那里要发光如星，我便又想到主所说的话，「有许多在后的将要在前，在前的将要在后。」</p>
+<p>你所隐藏的人</p>
+<p>这是全部圣经中最美丽的词句中的一个，只在诗篇第八十三篇里提到的。这个意思在那里都有，但没有一处比这里说的更简明更美丽。它一方面提到安全，另一方面提到隐藏；隐藏常是为安全的缘故。</p>
+<p>全部教会历史都是表显这个真理。挪亚是神隐藏的圣徒中间的一位，当方舟的门关闭以后，神将他藏在里面。那良善的俄巴底隐藏在洞里躲避亚哈的那一百个先知，每日在洞里受俄巴底的供养，他们真是神所隐藏的人：还有那些苏格兰盟约派的圣徒，当他们在山野间被骑兵所追逐的时候，常有浓雾忽然降下，将他们隐藏起来，他们就这样得了拯救；他们因着被保守不被仇敌看见，就脱离了仇敌的毒手。</p>
+<p>现今在世界上还有许多这样被神隐藏的人，因着贫穷或疾病被隐藏起来不为人所注意，因着他们的软弱和忧患被禁闭起来，不得参与一切世上的事工，除了主自己以外没有任何人知道他们，然而就是因为这样被隐藏便逃避了许多的危险，这些危险是没有别的方法可以逃避的：我们差不多可以说，照这种见解说来，神在地上的最多数的圣徒都是他所隐藏的人。有许多热诚的基督徒在人生忙碌的大道上，也有许多在人生尊贵的高位上。他们不是隐藏的。他们是被众人看见的。他们的光从高大的灯台上照耀出来，照射得很广很远，因着他们所占的地位是那样明显，便使世界注意他们，知道他们是主的门徒。但大多数基督的门徒在社会中的等级上不只是低微，而且是极其低微。「没有许多尊贵的人蒙召，但神拣选了世上的贫穷人，叫他们在信上富足：」然而他们的富足是何等的不多为人所见呢！无论他们对基督是怎样虔诚，他们很少有机会能将这种虔诚表显出来。他们有时渴望得着别人所浪费的那些财物，去用它们事奉他们亲爱的主：但大多数地上的财物都是在属世界的人手中，那些有意愿为基督用财物的人却没有财物可用。神的千万个孩子们就是这样在幽暗中被遮掩起来──他所隐藏的人。</p>
+<p>然而这些人常是在最好的圣徒中间。他们使我们想起来那些在僻静的地方开放的花卉，这些花是只有神和天使看得见的；或是那些旷野的瓜，虽然多年没有一个人的脚走到这地方来，它们仍是在沙地上放出芬芳的香味来；或是那些鄙陋的小房中陈旧的时钟，外面已经破旧污损，仍年复一年的悬在那不明的墙角上发出既慢且重千篇一律滴达滴达的声音来，安静忠诚的尽它的本分。多少光明的基督徒被隐藏在草屋里面，在地上没有人知道，但在天上却极有声望，得不着人的称赞，却大大的被神所嘉纳！</p>
+<p>当那使黑暗中的事物显露出来的神，也要使那些多日被隐藏在暗中的卑微的圣徒显露出来的时候，必要有何等奇异可惊的景况！我们对于基督显现的日子所存的一切光明的盼望中，没有比这个更光明的，这个盼望就是「神的众子显明出来」的日子。他所拣选的人得赎么？是的。他所埋葬的人复活么？是的。他所分散的人聚集么？是的。他那些战争的人得冠冕么？是的。他那些忧苦的人得喜乐么？是的。但还有一件事，就是他所隐藏的人被显明出来。</p>
+<p>我们现今不用因着幽暗发怨言。黑影常常是保障。在隐密处开放的花卉若移到明显的地方便要被严霜所毁坏，被烈日所晒干。幽暗的黑影甚或长期受苦的黑影也许正是为保护神的花园里一些最好最香的花卉，避免意想不到的危险；及至他们再不需要黑影的时候，他们在黑影中所得的美丽就要显露出来。不要因你所遭遇的黑暗发怨言：要欢欢喜喜的想到神也许是因他的慈爱藉着这个保守你脱离在光明中所要遭遇的危险。</p>
+<p>你仍想你那卑微幽暗的境遇是难忍受的么？看看你的主基督他在拿撒勒一个卑微的家庭中二十八年之久，度着幽闭的生活，没有一点机会可以对众人讲道。这个可以照耀全地的大光为甚么被隐藏这么长久呢？他不是「因着所受的苦难学了顺从」，学了等候，学了在幽暗的境遇中知足，学了顺服父的旨意，也学了体恤那些虽然心中火热想望为神作大事却不得不安静等候的人么？想到我们因为被放在狭小的地方不得施展我们的才能便发怨言，这是何等惭愧的事，再想到我们因为看见才能不及我们的人在世界上或教会中占的地位高过我们，便生出嫉妒的心，更当怎样惭愧。想到从天降世的主三十三年中却有二十八年之久隐藏、埋没，不为人所注意，甘心被人忽略，只注视神的手怎样引领，欢欢喜喜的顺从，正像那些事奉神的天使在天上那样顺从一样，我们更当怎样惭愧呢！</p>
+<p>从那卑微的村落里孤单的生活中产出完全的顺从，顺从至死，在各各他山上救赎了全世界：这样，我们能在我们的拿撒勒城学习，无论神对我们所定的旨意是怎样，我们总是完全满意，那里也能成为我们最好的学校，使我们能进到我们的耶路撒冷。基督的一生是从极卑微的地方起始的，他从始至终在那种卑微的境地中忍耐喜乐着生活。如果他还选择那种卑微的人生，这种人生里必是有属灵的好处。在那条路上有天的门。只作「隐藏的人」也许不是甚么快乐的事；但作「神所隐藏的人」，被他所隐藏，为他的缘故隐藏，和他一同隐藏──还有比这个更大的喜乐么？</p>
+<p>黑暗中的危险</p>
+<p>在黑暗中有许多痛苦，但也有许多危险。「你造黑暗为夜，林中的百兽就都爬出来。」（诗一○四20）在自然界里这是真实的；在心灵的经验中也是同样的真实。当愁苦烦恼的黑暗临到生活中的时候，它也临到心里，在这时候心中一切潜伏的邪恶便都开始活动了──抱怨神，向那些惹起祸患或我们以为是惹起祸患的人发怒，灵中容易被激动，怀疑一切的事，不信，失望。</p>
+<p>危险不只从里面进攻。魔鬼也引诱我们使我们兴起各样的恶念。你也许要说，「黑暗中常是充满了幻想，这都是神经中的作用；」不，实在不止于这个。这是奥秘的，但确实是新约中一部分无可疑惑的教训，告诉我们说在我们四围有一些眼不能见的黑暗的权柄，等候机会要摇动我们信靠神的心，正如他们的王从前竭力要摇动神的儿子的信心一样。「我们并不是与属血气的争战，乃是与那些执政的，掌权的，管辖这幽暗世界的争战。」（弗六12）因此恶念怎样从里面发生，也照样从外面来到。「人的绝处乃是神作工的机会」，是的，但人的绝处也是魔鬼作工的机会。当我们十分软弱无力战斗的时候，他便用他狡诈的试探向我们进攻，正如他在试探基督以前静候不动，直等到他发现基督独自处在旷野禁食四十昼夜身体极其软弱的时候他纔进攻一样，他攻击我们正如亚玛力人攻击以色列人，不敢攻击那些强壮的，只「击杀尽后边软弱的人」。他那邪恶的军兵正像树林中的野兽，白日不敢显露出来，只在夜间爬出来，各处潜行，寻找没有关严的门窗，想钻进去偷些食物。有时他们真进到里边去！</p>
+<p>本仁约翰十分明白邪恶者怎样在屈辱谷向那位行客进攻。「那是一个危险的地方，因为基督徒在那里遇见亚玻伦，这个怪物有翅膀像龙，有脚像熊，有嘴像狮子：」在这位过客以前和以后，有许多过客走到这个愁苦的山谷中的时候，也是遇见了相同的经验。</p>
+<p>我们怎样纔能抵挡这些狡诈的仇敌呢？只有一件事──用神恩惠真理与平安的光辉照射他们！他们是黑暗中的活物，当不起神的光照。你曾否注意在以色列人旷野飘流的记载中我们从来未曾读到他们遭遇旷野猛兽的损害呢？怎能这样呢？岂不正是因为那围绕全营的「夜间的火柱」作了以色列人可靠的保障么？野兽是在他们的四围，但它们不敢侵害那被光辉所保护的群众中的一个人。以色列人无论白日或是黑夜都是一样的生活在神的光中。神怎样作以色列人营中的荣耀，也照样作围绕全营的「火墙」，因此他们得了安全。</p>
+<p>今日的探险家常告诉我们说，当他们在晚间燃着了他们的火炬以后，他们看见就在他们火光的围外有许多闪烁的野兽的眼睛不住的向着他们窥伺，但不敢越过雷池一步，同时他们帐棚中的灯烛足能使那些侵害者不能进来。愁苦不安的人们哪，这就是你逃避「夜间危害」的避所：生活在神的光中。他慈爱的光辉总是照着你──这是不容疑惑的：只要使你自己信心的光辉在你里面燃着，你就不用惧怕任何事物。信靠天父那永不改变的恩惠，看那些扰乱你的黑暗的思想为从那恶者所来的攻击；它们便总不能摇动你心中的那种完全的平安，这种平安是「在他里面的」。</p>
+<p>在以西结书中有一段美丽动人的话，在那里说到他怎样爱护那些「在密云黑暗的日子分散到四方」的羊群。他说，「我必与他们立平安的约使恶兽从境内断绝：他们就必安居在旷野，躺卧在林中。」（结三十四25）若是我们从字面上读这些话，觉得这里面并没有多少意思；但我们若按着属灵的意思来读，便觉得里面满有属天的安慰。人生有时正像可怕的旷野，没有荫庇，没有安慰，没有掩遮。有时人生又像深密纷乱的树林，充满了烦扰和困难，黑暗不见光明，各方面都隐藏着看不见的危险，使人心中充满了奇异的疑虑和畏惧。</p>
+<p>在这两种情形中我们的主都为我们有了完全的设备。因为他是平安的主，所以他为一切信靠他的人豫备了「平安的约」。他未曾应许使旷野成为我们的家，因为我们不过是经过这旷野走到远方家乡去的过客；因此他未曾说叫我们在这旷野很舒适的居住，但他确实说过叫我们在这里「安然」居住：无论在黑暗中或光明中，在我们旅途中的每一步，能深信并且确实知道我们都是绝对的安全，安全到能躺卧在树林中的地步，虽然我们力尽筋疲，再不能前行一步，在黑暗中看不见一线光明，却仍能心中安稳，躺卧休息，这是多么有福的一件事阿。</p>
+<p>所罗门王多费心机想保护自己的安全：「他的轿四围有六十个勇士，都是以色列中的勇士，手都持刀，善于争战，腰间佩刀，防备夜间有惊慌。」（歌三7、8）然而他毕竟一点不比他的父亲大卫更安全稳妥。他的父亲虽然被强敌追逐躺卧在露天中，但是他的神看顾他，他能歌唱说，「我必安然躺下睡觉，因为独有你耶和华使我安然居住。」我们明白这是甚么意思么？这岂不正像一个小孩子躺在抱持他的慈爱的膀臂中毫无畏惧么？</p>
+<p>一个婴孩安息在他母亲的膀臂中，无论在甚么地方都是一样的。旷野树林在他看来都是最安稳的家屋。在狂风暴雨的黑夜中他能像在最平静的日间一样安睡。他的环境是不能影响他的。他所要的就是觉得慈母的膀臂在保抱着他，只是这样觉得，他就十分满足了。当神说「永生的神是你的居所，他永久的膀臂在你以下，」这句话的时候，他岂不是藉着这个显明我们可以享受的平安么？</p>
+<p>改变的脸面</p>
+<p>我们最喜爱的诗中有一首说，「我以信心仰望」，这真是我们的心所当有的最安全的态度。我们最大的试探是从向四周看而来，我们最大的危险是从向下看而来，这样，我们最大的祸患也是从向前看得太远而来。我们需要学习不断向上面看这种可贵的艺术。这是治疗一切疾病的妙药也是得平安稳妥的秘诀。</p>
+<p>在诗篇三十四篇中我们听见一位学了这个秘诀的受苦者叙述他感恩的经验说，「我曾寻求耶和华，他就应允我，救我脱离了一切的恐惧。它们向他仰望便蒙光照，它们的脸必不蒙羞愧。」那些仰望的是谁呢？不是他的「恐惧」么？它们像一大群鬼怪带着懊丧的脸围着他，以致他的忧郁更见增加；但他吩咐它们仰望救他的神，立时有一种改变人的光从上面照到它们身上，使它们的脸发出光来。</p>
+<p>许多受苦的人不是很明白当畏惧和忧虑四面压迫他将他围困起来的时候是何等幽暗可怕么？我们怎样应付那些畏惧的鬼怪呢？只有一件事是有功效的──叫它们往上看！当那从天上所来具有改变力的光辉临到它们身上的时候，你就再不能认出它们来了。</p>
+<p>没有别的方法能应付任何种祸患像这个方法那样有功效。与祸患抗争是没有用处的。只承认它是不能避免的命运因而毫不动心的去忍受并不能使心中得着平安。那些没有受过多少痛苦的朋友所发善意的同情很少的时候能治疗这种创痛。他们所说的那些同情的絮语──「你所受的痛苦远不及在你旁边许多人所受的」，「背负惯了你的重担，便不觉得这样重了」，「最长的巷子总有转湾，最黑的深夜总有天明」，还有其它这一类的话──我们是怎样熟悉这些话！这些话是怎样的无用！它们没有甚么用处：只有一件事可以帮助我们，（这件事必须神自己教训我们），就是仰望并且信靠将里面对祸患惧怕的态度改变成为信靠，这样，祸患虽然不能立时消灭，但从这时候它再不能苦害我们了。</p>
+<p>当我们外面有祸患里面有叛逆的时候，我们的地位正像一个船主在船员谋叛的时候又遇见飓风。他所遇见的最大的危险还是在他自己的船中。然而在我们各人里面这种叛逆的心意是何等的多呢。这不但是一种极大的愚行，而且是一种极大的罪恶；因为这足以证明我们完全不记念天父的应许，完全不倚赖天父的引导，完全不信靠天父的慈爱。</p>
+<p>不是有许多的时候我们因为不信靠以致惧怕，但往前走了不远就知道我们所惧怕的都是虚幻的么？那位心中愁苦的希伯来妇人，给她的小儿子起了一个可悲的名字叫「雅比斯」（充满愁苦的），后来看见他长大起来比她的众子更好，「比他众弟兄更尊贵，」（代上四9）她承认他乃是她从神的手中所领受的最美好的恩赐。人生中的祸患环绕我们的四周，我们称它们为「可怕的事」；我们只要向上看并且安静等候，不久我们便要称它们为「福祉」了。愁苦的人常是特别会发现最幽暗的据点，从那里去看到他们的试炼，他们将最不好的名称加在神为他们所豫备的事物上；然而多少人看见他们起初称为「雅比斯」的不多些时竟变为满有恩惠的事，比他们看为光明的事物更加美好！</p>
+<p>当试炼仍是剧烈的时候，只有一个很简单依靠的信心能信事情或者会这样。但那些离神很近像孩童一般的心总是发现这是真实的。这正像一串电报的符号，当神所豫备的一切事物临到的时候，神的灵就藉着这些符号在人心中通知他们，使他们知道这些事物都是朋友，因而欢迎它们；同时一个不信的心却只是畏惧它们，抱着一种防卫的态度抗拒它们，因着拿它们当作仇敌看待以致使它们真变成了仇敌。谁的眼肯安静向上仰望，神便赐给他一个安静的心。</p>
+<p>甚么时候我们向上看，无论形势怎样可虑，总承认神的手引导我们，觉得神是教训我们完全信靠他，一切人生中的祸患便再不能扰累我们了。当两个人携手同行甲要走乙所不肯走的道路的时候，他们若不是互相拖拉，便是分道扬镳，但神不肯容许他的孩子们与他分离；因此如果他们抗拒不服从他的引导，他只有拖拉他们。顺服他容他引导，祸患便止息了。</p>
+<p>一位受大苦难的圣徒有一次很有兴趣的述说这个意思，显明神一切苦难的打击不过是出于他的慈爱，要使他与我们亲近，又叫我们与他亲近。当她说到她接连着丧失了父亲、母亲、丈夫、和孩子的时候，她带着温柔的顺服和喜乐说道，「我知道神要我的全心，我愿意全献给他。」这就是他向我们众人所要的，如果他那连续不断的慈爱不能收这种效果，他的惩治和打击常会收效果的。起初我们惧怕这些，但我们向上仰望的时候，惧怕就变成平安了。</p>
+<p>这篇诗告诉我们这种仰望必须是一种信靠的仰望，但也是一种祈祷的仰望；我们常是在深刻的愁苦中纔领会祈祷的价值，因为祈祷能领我们安安静静的进到神的面前，在那里只有平安掌权。许多受苦的人从他们自己的经验中领会了这件事，当他被困苦压倒的时候，他起初试着要用许多方法得着解放，但都是徒劳无功；到末了他将他的重担带来，都放在他天父慈爱的心中，最先也许是求神把他的重担卸去，但不久便不再求别的，只求天父慈爱的旨意可以成就；这时他纔在他的心中得着了一种奇异的新平安：当他想到他从前为求卸去他的重担所发的祈祷，他发现他差不多忘记了他以前所求的是甚么了！他升到一种很高的地步，他的感觉与神的感觉完全和谐，以致他再不顾到是否得着解放──因为他得了比解放更美好的事物。</p>
+<p>祈祷真是那些担重担的人的接济！而且总是可以得到的接济。我们或者是像那些在湖上黑夜遭遇风浪的门徒，但我们也可以发现在黑暗中所发的一个呼声立时使我们的主来拯救我们。也许因为太黑暗以致不能看见；太黑暗不能驾驶；太黑暗不能摇橹；但总不会因为太黑暗以致不能祈祷。在黑暗中祈祷也许像在黑暗中写字那样有一点不清楚；但看黑暗和光明都是一样的那位却很容易看出它的意思来，渐渐的我们要很快乐的发现总不会因为太黑暗以致不能歌唱。不但在船上的时候我们要敬拜那使风浪平息的主，当我们到了彼岸，一切风浪都平息了的时候，更要快快乐乐的敬拜他，因为在那里「海就不再有了」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

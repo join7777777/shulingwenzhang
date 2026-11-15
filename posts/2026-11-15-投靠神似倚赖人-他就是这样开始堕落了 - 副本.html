@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>投靠神似倚赖人-他就是这样开始堕落了 - 副本 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>投靠神似倚赖人-他就是这样开始堕落了 - 副本</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/3做主精兵/4投靠神似倚赖人-他就是这样开始堕落了 - 副本.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「希西家王十四年，亚述王西拿基立上来，攻击犹大的一切坚固城，将城攻取。犹大王希西家差人往拉吉去，见亚述王，说：『我有罪了；求你离开我。凡你罚我的，我必承当。』于是亚述王罚犹大王希西家银子三百他连得，金子三十他连得。希西家就把耶和华殿里和王宫府库里所有的银子都给了他。那时犹大王希西家将耶和华殿门上的金子，和他自己包在柱上的金子，都刮下来，给了亚述王。亚述王从拉吉差遣他珥探、拉伯撒利、和拉伯沙基，率领大军往耶路撒冷，到希西家王那里去。他们上到耶路撒冷，就站在上池的水沟旁，在漂布地的大路上。他们呼叫王的时候，就有希勒家的儿子家宰伊莱贾敬、并书记舍伯那、和亚萨的儿子史官约亚，出来见他们。</p>
+<p>「拉伯沙基说：『你们去告诉希西家说，亚述大王如此说，你所倚靠的有甚么可仗赖的呢？你说有打仗的计谋和能力，我看不过是虚话。你到底倚靠谁，纔背叛我呢？看哪，你所倚靠的埃及是那压伤的苇杖，人若靠这杖，就必刺透他的手；埃及王法老向一切倚靠他的人也是这样。你们若对我说，我们倚靠耶和华我们的神；希西家岂不是将神的邱坛和祭坛废去，且对犹大和耶路撒冷的人说，你们当在耶路撒冷这坛前敬拜么？现在你把当头给我主亚述王，我给你二千匹马，看你这一面骑马的人够不够。若不然，怎能打败我主臣仆中最小的军长呢？你竟倚靠埃及的战车马兵么？现在我上来攻击毁灭这地，岂没有耶和华的意思么？耶和华吩咐我说，你上去攻击毁灭这地罢』。」（王下十八13～25）。</p>
+<p>「于是拉伯沙基站着，用犹大言语大声喊着说：『你们当听亚述大王的话。王如此说，你们不要被希西家欺哄了，因他不能救你们脱离我的手；也不要听希西家使你们倚靠耶和华说，耶和华必要拯救我们，这城必不交在亚述王的手中。……列国的神有那一个救他本国脱离亚述王的手呢？哈马、亚珥拔的神在那里呢？西法瓦音、希拿、以瓦的神在那里呢？他们曾救撒玛利亚脱离我的手么？这些国的神有谁曾救自己的国脱离我的手呢？难道耶和华能救耶路撒冷脱离我的手么？』」</p>
+<p>「百姓静默不言，并不回答一句；因为王曾吩咐说：『不要回答他。』当下希勒家的儿子家宰伊莱贾敬、和书记舍伯那、并亚萨的儿子史官约亚，都撕裂衣服，来到希西家那里，将拉伯沙基的话告诉了他。」（王下十八28～37）。</p>
+<p>「希西家王听见，就撕裂衣服，披上麻布，进了耶和华的殿。使家宰伊莱贾敬、和书记舍伯那、并祭司中的长老，都披上麻布，去见亚摩斯的儿子先知以赛亚，对他说：『今日是急难、责罚、凌辱的日子，就如妇人将要生产婴孩，却没有力量生产。或者耶和华你的神听见拉伯沙基的一切话，就是他主人亚述王打发他来辱骂永生神的话；耶和华你的神听见这话就发斥责；故此求你为余剩的民扬声祷告。』希西家王的臣仆就去见以赛亚。以赛亚对他们说：『要这样对你们的主人说，耶和华如此说，你听见亚述王的仆人亵渎我的话不要惧怕。我必惊动他的心，他要听见风声，就归回本地；我必使他在那里倒在刀下』。」（王下十九1～7）</p>
+<p>「于是亚述王又打发使者去见希西家，吩咐他们说：『你们对犹大王希西家如此说，不要听你所倚靠的神欺哄你说，耶路撒冷必不交在亚述王的手中。你总听说亚述诸王向列国所行的乃是尽行灭绝；难道你还能得救么？我列祖所毁灭的，就是歌散、哈兰、利色、和属提拉撒的伊甸人，这些国的神何曾拯救这些国呢？哈马的王、亚珥拔的王、西法瓦音城的王、希拿和以瓦的王，都在那里呢？」</p>
+<p>「希西家从使者手里接过书信来，看完了，就上耶和华的殿，将书信在耶和华面前展开。希西家向耶和华祷告说：『坐在二基路伯上的耶和华以色列的神阿，你是天下万国的神，你曾创造天地。耶和华阿，求你侧耳而听；耶和华阿，求你睁眼而看；要听西拿基立打发使者来辱骂永生神的话。耶和华阿，亚述诸王果然使列国和列国之地变为荒凉，将列国的神像都扔在火里；因为它本不是神，乃是人手所造的，是木头、石头的，所以灭绝它。耶和华我们的神阿，现在求你救我们脱离亚述王的手，使天下万国都知道惟独你耶和华是神。」</p>
+<p>「亚摩斯的儿子以赛亚就打发人去见希西家说：『耶和华以色列的神如此说，你既然求我攻击亚述王西拿基立，我已听见了。……所以耶和华论亚述王如此说，他必不得来到这城，也不在这里射箭，不得拿盾牌到城前，也不筑垒攻城。他从那条路来，必从那条路回去，必不得来到这城，这是耶和华说的。因我为自己的缘故，又为我仆人大卫的缘故，必保护拯救这城。」</p>
+<p>「当夜耶和华的使者出去，在亚述营中杀了十八万五千人。清早有人起来一看，都是死尸了。亚述王西拿基立就拔营回去，住在尼尼微。一日在他的神尼斯洛庙里叩拜，他儿子亚得米勒和沙利色用刀杀了他；就逃到亚拉腊地。他儿子艾萨克哈顿接续他作王。」（王下十九9～37）。</p>
+<p>可怜的希西家！听见亚述王西拿基立攻取了犹大的一切坚固城，吓得手足失措，在万分无奈中竟打发人去见亚述王说：「我有罪了；求你离开我。凡你罚我的，我必承当。」听听这几句话是何等可怜！何等凄凉！以一个属神的人竟因为惧怕强敌的势力向敌人卑词乞怜，哀求敌人退去，甚至应许无论受甚么惩罚都甘心承当。这种情形真是羞辱、可怜到了万分！</p>
+<p>这种卑词乞怜的行为发生了豫期的效果没有呢？没有。不但没有发生希西家所豫期的效果，而且使希西家和犹大国受了双重的损失。亚述王罚希西家「银子三百他连得，金子三十他连得，」以致希西家「把耶和华殿里和王宫府库里所有的银子都给了他。」银子已经付足了，但金子在那里呢？「那时犹大王希西家将耶和华殿门上的金子和他自己包在柱上的金子，都刮下来，给了亚述王。」看看希西家的金子这种窘境。没有积蓄的可以拿出来去付罚款，只得将圣殿门上的金子包在柱上的金子刮下来，拿去交给亚述王。这不仅是希西家王和犹大人的羞辱，而且是神的羞辱；不是神自己所取的羞辱，乃是希西家给神招来的羞辱。</p>
+<p>犹大国仅存的金银都交付了敌人，犹大国的光荣也因此扫地以尽。希西家满心希望亚述王的欲望得着满足，便可撤兵回国。不料金银白白交给了亚述王，自己也白白受了一场羞辱，亚述王不但没有撤兵，而且还差遣了「他珥探、拉伯撒利、和拉伯沙基，率领大军往耶路撒冷，到希西家王那里去。」三百他连得银子和三十他连得金子不但未曾退了亚述的军队，反倒把亚述的军队招到耶路撒冷的城外，这真是希西家王所绝未料到的事。</p>
+<p>亚述王的将军拉伯沙基在耶路撒冷城外把希西家和犹大人所事奉的神大骂了一阵。希西家一看，情形已经到了完全绝望的地步，再没有道路可走，他这纔「撕破衣服，披上麻布，进了耶和华的殿，」又差人去见先知以赛亚，请他「为余剩的民扬声祷告。」及至他收到了亚述王挑战的信以后，他又「上耶和华的殿，将书信在耶和华面前展开，」又「向耶和华祷告」，求耶和华「拯救他们脱离亚述王的手。」这时候希西家知道向亚述王卑词乞怜毫无效果，只好转回来向耶和华自卑求恩。前次向亚述王卑词乞怜所得着的是损失和羞辱，这次向耶和华自卑求恩所得着的乃是拯救和光荣。耶和华不但照着希西家所求的保护拯救了耶路撒冷，而且使亚述王受了那样大的损失，一夜之间丧失了十八万五千人，羞羞惭惭的「拔营回去」。过了不久，连他自己也和他那十八万五千名军兵遭了同样的结局。</p>
+<p>希西家在得了神的拯救以后，一定十分后悔不该作那一件愚昧的事──向亚述王卑词乞怜，应许他甘心受罚。他心里一定自己责备自己说：「早知道耶和华这样有慈爱和权能，这样肯听人的祈祷，我何必自取那样大的羞辱和损失呢？三百他连得银子和三十他连得金子白白的送给亚述王，并没有换回来一点好处。耶和华只动一下手指，一切的危险患难便完全消除了。我怎么那样愚昧无知，不在事变刚一发生的时候就呼求耶和华呢！」但后悔已经无济于事了。金银已经归了亚述王，自己所受的羞辱也无法洗刷干净。希西家一生的年日中每逢想起这一次失败的经验，一定是心中充满了惭愧与懊悔。</p>
+<p>从古至今有许多信徒走着希西家所走的这条愚昧无知、自取损失与羞辱的道路。他们遇见不信的人逼迫恐吓他们的时候，本来应当急速到神面前仰望他、呼求他。如果他们这样作，神一定听他们的呼声，为他们行大事，向他们施行拯救。不料他们不但不这样作，反倒跑到不信的人面前，低首下心，向他们卑词乞怜，甚至甘心愿意领受他们的惩罚。这些信徒不惜放弃他们的信仰和主张，去随从不信的人，去向他们献媚求恩。只求不信的人不逼迫他们，要他们作甚么事都可以。他们说不信的人所喜欢听的话。他们作不信的人愿意他们作的事。他们在不信的人面前胁肩谄笑，奴颜婢膝。他们把不信的人所反对的真理都隐藏起来。他们不敢承认他们的信仰和他们所事奉的神。他们说：「我们不要注重别人所不信的事，我们应当在与别人相同的事上用工夫。」他们在他们的主张上、态度上，竭力去讨世人的喜悦。他们像希西家那样，把「耶和华殿门上的金子都刮下来」，去送给不信的人。他们想这样一来，不信的人便可以不再难为他们，也许还可以给他们一点恩惠。那知道结果他们不但没有得着他们所豫期的好处，而且在受了羞辱以后还要受不信的人更多的窘迫。他们不信靠神，神便使他们受苦难；他们不尊重神，神便使他们受羞辱。如果他们最后肯投到神的面前来求拯救和怜悯，神还要向他们大施慈爱。但如果他们始终不回转归向神，他们的结局便不堪设想了。</p>
+<p>有一小群圣徒存敬畏神的心，不怕任何人的逼迫攻击，坚守他们自己的信仰，绝不在任何人面前屈服。他们决志「宁为玉碎，不为瓦全。」他们像哈拿尼雅、米沙利、亚撒利雅那样，宁可被投在烈火的中，被火烧死，绝不拜尼布甲尼撒所造的金像；又像但以理那样，宁可被投在狮子坑里，被狮子撕裂，绝不改变他们自己那敬虔的生活。他们宁可受人的逼迫，也绝不丧失他们自己的节操。胆怯的人为他们担心，没有志气的人看他们为愚腐，但他们在神的眼中却是最宝贵、最可爱的人。就连他们的仇敌中间那些有思想的人也钦佩他们的志气、操守、和人格。他们倚靠神，神便向他们施行拯救；他们尊重神，神便尊重他们；他们使神得荣耀，神也使他们得荣耀。当神向他们施行拯救的时候，不用他们费一点力气，敌人便抱愧蒙羞了。</p>
+<p>可惜这种敬畏神、信靠神的人数目少得可怜，以致那位大有能力和荣耀的神不但不能彰显他的大能和荣耀，而且他的名还因着那些胆怯的信徒受了许多羞辱。看看今日许多信徒和教会的领袖们那种作风，真令人欲哭无泪。不用提信仰与节操，有些人就连廉耻也不顾。今日甲得势便谄媚甲，明日乙上台又逢迎乙，后日丙当了道再向丙乞怜。没有信仰、没有主张、没有操守、没有气节。谁能给他们一点利益，便为谁奔走；谁能荫庇他们，便为谁效忠。这些人自称是基督徒，真是教会的耻辱，真是基督的不幸。这些投机分子根本不能算是基督徒。我不愿意再提他们了。</p>
+<p>我劝告真实信主的人们要以希西家向亚述王卑词乞怜的失败史作我们的鉴戒。无论遇见甚么逼迫患难，绝不向不信的人求哀怜。只把自己的苦痛和需要带到神的面前，呼求他的拯救和看顾。那信实慈爱的神一定要照他的应许向我们施行奇妙的拯救，正如希西家求告他的时候向希西家所施行的拯救一样。那时我们要与写诗的人一同唱歌说──</p>
+<p>「我在急难中求告耶和华，他就应允我，把我安置在宽阔之地。</p>
+<p>「有耶和华帮助我，我必不惧怕；人能把我怎么样呢？</p>
+<p>「在那帮助我的人中有耶和华帮助我，所以我要看见那恨我的人遭报。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

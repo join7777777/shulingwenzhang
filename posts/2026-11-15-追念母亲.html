@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>追念母亲 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>追念母亲</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·天召</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/5五、天召/1天召(五十年来">🎧 收听本篇音频</a>/17追念母亲.mp3)</p>
+<p><strong>正文</strong></p>
+<p>（这一篇中有几段记载因为在前几篇中已经提过，所以删了去，免得重复；此外又增加了一些前次写的时候所遗漏的事情。）</p>
+<p>一九四七年十月十八日，夏令时间下午十一时五十分，母亲在北京甘雨胡同二十九号寓所平安去世。自前一年九月一日姐姐因肠胃病去世以后，母亲心中就非常难过。老年人丧子女本来就是最悲苦的事，若不是从神得着安慰，实在是极难担当，何况母女五十多年在一处就没有离开过呢？加以姐姐病逝以前，母亲也同时患痢疾，姐姐一病不起，母亲渐渐痊愈，可是体健从那时一直就不能恢复，后来双腿都肿起来。今年春夏比较还算好些，入秋以后，面部与双手也都浮肿起来。请医生看过，说是年纪太高，身体虚弱，并没有甚么特别的病。到入十月以后，身体更软弱，食量也减退。十三日以后，情形一日不如一日。十五日情形更不佳。十六日晚还能好好的吃一些食物，安静的睡眠一夜。十七日便不再想吃东西。晚间饮食都不能下咽。夜间有一位弟兄陪我坐在床前看守一夜。昏睡中屡屡发呓语。十八日除去进了几口饮料以外，已经不能吃东西。到了晚间，气力逐渐减消，脉博也渐起变化，十一时五十分在毫无痛苦中安然去世。按旧历计，八十二个生日过了两天；按阳历计，差四天不足八十二个生日。</p>
+<p>母亲悟性不高，记忆力却相当的强，直到八十多岁，还能背诵幼年所念的四书、千家诗、和一些别的古书里面的话。母亲的性情憨直暴烈，领悟事理非常迟钝。一件事情她认为怎样，便没有人能再为她更改过来，就是别人举出多少证据来证明她所看的不对，也难改变她的成见。母亲在老年的时候性情已经改变得很多。在中年的时候非常暴烈，同人一交涉事情，几句话还没有说完，就要生气。我作小孩子的时候常常违逆母亲，母亲舍不得责打我，便自己生气摔毁东西，或是打自己。同院邻不交涉事情别已，一交涉事情，十次中会有八九次要生气。母亲同人交涉事情，不会慢慢的讲话，只会发急生气。自己也知道这种性情，所以许多事总是忍受，不同人办交涉。及至实在不得已去和人交涉的时候，很难得不把自己气得吃不下饭，睡不着觉。姐姐和我在这一点上很像母亲。若不是神改变了我，我现在也不晓得到甚么地步了。</p>
+<p>母亲实在受过许多的苦。当我作小孩子的时候，家中的生活非常艰难。每日吃很苦的饭食。一到冬天，屋子既不够暖和，身上穿的衣服又单薄，母亲和我手脚总是冻得裂成许多破口，疼痛得很。我幼年的时候常惹母亲生气，使母亲难过。不过却知道帮助母亲过日子。没有力量作别的事，每天清早起来，便拿一个筐子，到本巷内几家大公馆门外倾倒秽士炉灰的地方拾些碎煤，拿回家里来生炉子，这样就减少家中一笔买煤的开支。到我入校以后，仍是每天早晨拾过煤，再夹着书包去上学。一直到我十二岁住校，这件工作纔算放下。在我读书的时期中，走读的时候每月只交二三十个铜币的学费，还不算太难。到十二岁住校的时候，连学费和膳费，每月要交二百几十枚铜元，（合银币两元几角），就感到困难了。不过那时学校中有一种奖金，就是每学期大考的时候，每班考取第一二两名的学生，下一学期可以完全免交学膳费。我在高小二年半之久，每学期总是因得奖金而省下了学膳费。那几年虽然不能再拾碎煤帮助家庭，但家中减少一个人的饭食，比拾碎煤节省了许多，母亲的日子过得稍宽裕些了。到了我十四岁的秋季，从高小毕业，升入中学。（我从初小到中学毕业，都在伦敦会所设立的萃文学校读书。）那时学校改变了办法，增加学生的学膳费，招收外面的学生。（以前是只收教友家的子弟）。每月每个学生要交两圆钱学费，四圆钱膳费。但教会的学生可以由教会领到两圆钱的资助，每月自己付四圆钱。奖金的办法也略有更改，就是每学期大考的时候，每班考取第一名的，第二学期免收膳费，考取第二名的，免收学费。教会里学生的学费本是由教会担负，所以若考取第一名，免交膳费，那也就是不出钱读书、不出钱吃饭了。到了我入中学二年级（我不太清楚记得是二年级或是三年级了）的时候，校中因为经费不足，把奖金缩减，改为高小一年至三年张贴总榜，中学四年也张贴总榜。全高小、全中学各取两名，这四名学生可以得奖金。这样七个班次一共取四名，校中可以省下十名学生的奖金。我在高小和中学读书的时候，就靠着得奖金读书，母亲不过为我作衣服，给我一些买书和零用的钱。到了我在中学四年级的时候，奖金完全取消，只发一点奖品。我最后所得的奖品是一本皮面金字的新约，和一本布面带谱的颂主诗歌。我在高小和中学的几年，既没有交过多少学膳费，家中的房租又渐渐增多，母亲受的苦当然也逐渐减少，这时比起十年前来，已经可算出幽谷而迁乔木了。</p>
+<p>我作学生的时候，身体不好，常常生病。母亲为这个也受了不少的苦。每当我生病的时候，母亲总是提心吊胆，只恐怕我的病不能好，有时深夜跪在炕前为我祷告，有时整夜不睡，看守着我。我有几次耳内生疮，痛得我日夜喊叫。母亲为我用极热的毛巾放在耳朵上，昼夜服侍我，到我好起来为止。母亲的爱多么浩大，多么真挚！我爱母亲远不及母亲爱我。写到这里我流泪，我哭泣，我巴不得再有几年的机会服侍母亲，但是母亲不在眼前了。我希奇，世上会有许多子女把母亲看作讨厌物，看作分利者，看作累赘，看作仇敌。人没有良心竟能到这种地步，怎能不招来神的震怒呢！</p>
+<p>我作小孩子的时候，因为不明白母亲的爱，常常和母亲争吵冲突，使母亲痛苦，但母亲的爱总不因此减少。当我在初小上学的时候，每日上下午从家中往学校去，母亲恐怕我在路上遇见甚么危险，每次总要从家中把我送到学校。我不愿意使同学看我那样懦弱无能，所以拦阻母亲，请她不要送我。母亲却坚持一定要送我。我为这事屡次同母亲吵闹。母亲一方面恐怕不依从我使我不高与，一方面仍是不放心让我自己走，所以便不再和我一同走，却在后面远远的跟着我。有时被我发现，便同母亲吵闹，有一次我甚至自己咒诅自己。</p>
+<p>我年幼的时候，母亲带着我们姐弟二人只住一间房子。我读了几年书，知道新鲜空气与人的健康大有关系，便提议夜间睡觉的时候多开窗子。母亲却信一种旧说法，说夜间睡觉的时候应当把窗子关严，以免受夜寒、患重病。为这件事我也屡次同母亲争吵。母亲既怕儿子受夜寒，又怕儿子心中不快活，便在我睡觉以前开着窗子，等我入睡以后，轻轻的再把窗子关严。到次日早晨我发现窗子是关着的，便同母亲争吵。以后母亲便等我入睡以后把窗关严，早晨趁我未醒之前再把窗子打开。有时清早我先醒了，发觉母亲又关了窗子，便又和母亲吵闹。那时只知道母亲作得不对，却一点不了解母亲的爱，所以常常和母亲冲突。如果在我尚未觉悟以前，母亲便离开世界，以后想起这些事来，却再没有机会对母亲尽一点孝道，那要悔恨到甚么地步阿！</p>
+<p>从我十四岁信主以后，我开始知道体恤母亲了。当我十七岁的春季，我们的学校从东城迁移到西城新校舍。家和新校舍的距离与家和旧校址的距离是十六比一。从前是每星期六可以回家一次，迁移以后还是照旧，但心理上感觉着离母亲远了很多。在校中的时候常常挂念母亲。先是挂念母亲的健康，后来渐渐转变，时常怕母亲死去。我们的新校舍是一座四层的楼房，从楼上的窗子可以看见附近许多住户，也可以听见附近的各种声音。那一带又多是贫民聚处，所以住户特别众多。每逢有人家死了人，便在门外挂一束白纸，找几个吹手，吹小喇叭，打大鼓。我每次听见这种声音，便疑心母亲死了，心中苦痛得不能形容，恨不能立时回家去看一下。盼到星期六中午，一下课就赶快回家。进了甘雨胡同西口，便胆战心惊，惟恐再看不见母亲。及至进了家门，看见母亲健康如常，这纔放下了心。每星期六回家一次，星期二三还要寄一封信回家，讯问母亲体健好不好。从那时候起到母亲去世，母亲一直是我心中最挂念的人。</p>
+<p>一九二一年的春季，我从保定被逐出校，回到家中，使母亲受了一次极重的打击。（事见「第一章 天召」之「经过水火到丰富之地」第三十九段，印刷本第五十八面）。有一天晚间我在我自己的小屋里听见母亲在对面的屋子里哭泣喊叫。她说，「我要疯！我要疯！我再不能忍受了！」（北京人称患精神病为疯）。我听见这几句话心中像刀刺一般。我怕母亲真要患精神病。因为母亲有一次同邻舍争吵，神经失常，走到街上竟不知道自己是在甚么地方，经过一段时间，自己纔清醒过来。我爱母亲。我不忍看见她那样受苦，更不忍看见她患精神病。我心中交战得十分猛烈。我决定顺从母亲。我决定放弃神交托我的使命，好保全我的母亲，好救我的母亲脱离危险。正当我这样想的时候，我的主把一节圣经上的话放在我的心中──</p>
+<p>「爱父母过于爱我的，不配作我的门徒；爱儿女过于爱我的，不配作我的门徒；不背着他的十字架跟从我的，也不配作我的门徒。」（太十37、38）。</p>
+<p>这几句话在我的心中作了有能力的工作。我认为我应当爱我的母亲，但我更应当爱我的主。我万不可因为体贴母亲便放弃了我的使命。不能，绝对不能！我只有把母亲交在神的手中。纵使她因此患了精神病，我也不能背叛我的主。感谢神，他真是信实的。那天他试验我像古时试验亚伯拉罕一般。亚伯拉罕为顺服神，舍了他的独生子，神却保全了艾萨克，使他没有受到一点伤害。那在我为顺服神，舍弃了我所爱的母亲，神也保全了她。那天母亲哭喊了一回，也就平安无事的过去了。她并没有因我的缘故患精神病。</p>
+<p>当我在家中受神磨炼的那几年，我帮助母亲作家中一切劳苦的工作。到一九二五年神交给我许多的工作的时候，他照他的应许藉着属他的人供给我一切的需用，并使我能供养母亲，又为母亲雇了一个女仆，替我作家中的琐事，母亲的生活比从前好得多了。</p>
+<p>一九二五年的冬季，我在浙江省几处工作。那时因为战事，大江南北的铁路交通隔断了很长的时期。从上海到北京的信件需要五六天之久。我每隔几天就写一封信回家，但我很少收到家中的信。母亲写字非常困难，姐姐又极不喜爱写信。有一次多日没有收到家中的信，我挂念母亲的健康。恰巧有一次我梦见回到家中，看见屋内放着一具棺材，听说是母亲死了。我难过到极点。醒来纔知道是一个梦。接连着好几次都在梦中看见不好的景象。同时又多日得不着家中的信。我拍电报到家中，也得不着回电。我更认为母亲一定是去了世姐姐不肯告诉我。那些日子我几乎患了精神病，饭吃不下，觉睡不好。又拍一封电报给潘老太太。过了几天方得着姐姐的回电，报告家中平安，母亲健好这纔放下了心。</p>
+<p>母亲极疼爱我。一直到我四十多岁的时候，仍然常嘱咐我，像嘱咐小孩子一样。每次我离京外出以前，必定嘱咐我不要到山巅水旁和其它危险的地方去，嘱咐我上下车船要小心，嘱咐我不要受寒，不要受热。我为免去母亲挂心，出外的时候最少每一周寄一封信回家。如果作长途旅行，在途中随走随往家中寄明信片，报告旅途平安。如果出太远的门怕信件在途的日子太长，使母亲放心不下便在到达目的地的时候赶快拍电报回家。</p>
+<p>最不幸的事就是从我结婚以后带了妻回家的那一天起家庭中便发生了猜疑不安。母亲和姐姐因为多年受苦的经验，使她们不能信任任何人，不能爱任何人。母亲吃过姨母的苦，吃过邻舍的苦。从一九二五年家中雇了女仆以后，又吃女仆的苦。我们所用过的女仆大多数都偷东西，就连浸在水中的大米，用水和成的粉，她们都有方法偷出去。二十几年的经验，使母亲认为除了她的一个女儿和一个儿子以外，没有一个人不是在那里要加害于她。姐姐也认为除了母亲和弟弟以外没有一个可爱的人。这种心理越来越深，家中的痛苦也就越来越重。</p>
+<p>一九三七年基督徒会堂自建的新堂落成，第二年后院的小楼也落成。有人问我要不要搬到会堂院里住。我回答说，「我自己有几间房子，家庭也离不开我，不能搬来。」不料一九三九年的春季妻患了病，而且越来越重。会堂中一位女同工接她到会堂的院中来暂住疗养。那年秋季我到上海工作，就陪她一同南下，到她母亲那里住些时候。十二月内我自己回到北京。那年冬季竟得了一种腰痛的病，而且越来越重，最重的时候动一动就痛。有几位圣徒认为我需要换换环境休养，便勉强我迁到会堂院中来住。我起初虽然不想来，但因为大家是那样关心，那样着急，实在不能过拂大家的美意，便迁来暂住。第二年春季妻从南方回来，我们仍暂时住在会堂院内。我每日回家去看母亲和姐姐，并办理家中的事。过了些日子，我发现我和妻不住在家中，母亲和姐姐竟少受许多痛苦，她们在许多事上不必再防备妻，姐姐也不再常生气，家庭倒比以前平静得多。我们也不必再那样天天过着担心的日子。于是便决定暂时仍住在会堂院中。再过一些日子，我们发现这样不但家中可以减少许多风波，而且我们在会堂院中住与教会也有好处，因为我们便于照应教会的工作，并且能负责任接待圣徒，我们实在不容易再离开会堂院中了。</p>
+<p>从那时起，我们便不再住在家中，但我在北京的时候每日都到家中去，妻也时常回去看看母亲和姐姐，大家倒比以前在一处的时候融洽得多。母亲和姐姐见我们虽不住在家中，却待母亲和姐姐仍和以前一样，因此也放心了，不再有甚么顾虑。母亲和姐姐自始至终都十分爱我，也爱我的儿子，就是对妻始终是有误会，而且这种误会任何人不能加以解释。无论甚么人若是一去解释，便对那个人也误会起来。因此我在母亲和姐姐面前总是极少提到妻的。好在母亲和姐姐只要看见我和我的儿子便心满意足。因此我们父子每日都到家中去。我回想小的时候对母亲不孝，常要挟母亲，和母亲争吵，使母亲生气，便想今后应当好好使母亲得一些快乐，免得将来有一日叹息着说，「树欲静而风不息，子欲养而亲不在！」可惜！工作总是十分忙迫，竟不能多服侍母亲一些时候。</p>
+<p>去年三月赴西南工作，本想去两个月就回来。不料到了那里因为工作繁多，一再延期，后来又因为车票、船票、与飞机票都极难买到，不容易离开西南，结果竟在外面五个月之久。八月十八日取道上海，乘飞机回北京。姐姐恰巧在十七日夜间开始患病。我外出那样久，回来的时候事务猬集，又正赶上开大学布道会，竟不能好好服侍姐姐一些日子。姐姐病了一二日，母亲也随着病倒，姐姐患的是肠胃症，母亲患的是痢疾，幸好有一位作护士的姐妹自告奋勇，替我帮忙不少。我恐怕母亲年高，病不易好，谁料到母亲竟好了起来，姐姐却在九月一日早晨去世了呢！姐姐去世以前，对妻已经转变了态度。她在去世的前一天下午曾说，「我拉着神的手了。」</p>
+<p>姐姐去世以后，我想母亲也许会对妻转变态度了。谁知道母亲不但仍是照常的误会，而且还更加恐惧起来。她想现在已经没有女儿在面前帮助她，如果妻和妻家中的人要加害于她，她如何能抵挡呢？妻每一次去看母亲，母亲就恐惧疑虑。我和妻看见了这种情形，就想妻还是少回家更好。妻既不能回去服侍母亲，只好我一个人负责了。姐姐纔去世以后，母亲苦痛得很。我每夜放一个小床睡在她的旁边，夜间母亲不能睡觉，只是叹息哀痛，想念女儿，也常大声祷告，承认自己的罪，求神怜悯。夜间母亲也常常自言自语的说话。我有时能睡，也有时不能睡，就静卧着听她说。那时我更明白母亲对妻充满了误会，她的心中完全充满了几十年来所见所闻的那些可怕的事。她所仅能明白的一点，就是她的儿子爱她，此外她对任何人都怀疑，都畏惧。有时候有信徒来看望她，她对其中大多数的人也都抱着猜疑和不满。母亲年老耳聋，服侍她的女仆说话声音小，她听不见；说话声音大呢，又说是在那里叱喝她。在这种情形之下，只有我一个人能得她的信任。但我因为教会的工作，灵食社的工作，还有许多事务，每日都是忙得顾此失彼，又不能总在母亲身旁服侍她；只可尽所能的，每日稍得空闲，便来到母亲面前，想望能给她一点安慰。因此从姐姐去世以后，一年多的时间，对外省的约会都不能答应。除了两次到天津，两次到山西工作，每次不过几天的长久，此外所有远方的邀请一概推却了，好在家中陪侍母亲。但到今日我总因为不能放下一切事工，昼夜好好服侍母亲一些日子引为憾事。不过也真没有法子，神交托我那样多重要的工作，又怎能放下不去作呢？</p>
+<p>母亲真是一位有福的人，因为她的儿子蒙了神的选召，为神作着那最宝贵的工作。母亲却未曾看见这个真理。她在我身上的希望是作阔事、多赚钱、置产业，享幸福。母亲看见我幼年的同学有作阔事或置房产的，便常常羡慕，叹息自己的儿子总是这样辛苦劳碌，一年常是有几个月在外面，在家中的时候也是夜以继日的劳苦作工。她只觉得她的儿子太辛苦，少享受。这是她心中痛苦的事。她却不知道她的儿子比她所羡慕的那些人快乐得多，幸福得多。有时有圣徒去看她，对她说，「王老太太，你多么有福阿！你的儿子所作的工，作总统的人都赶不上。」她总是回答说，「太劳累，太辛苦。」她如果能看见她的儿子所蒙的选召是多么佳美，所作的工作是多么重要她将成为多么快乐的人哪！可惜她是有福的人，但不知道她所有的福，也不会享她所有的福。这真是她一生极大的损失，也是我心中引为痛苦的事。</p>
+<p>从母亲病重到去世安葬，众圣徒在各方面都尽力帮助我。母亲去世的那夜，有四位圣徒陪我一同照顾她，更好的是其中有二位是护士。她们会照料病人，会为去世的人擦身体、换衣服。那天他们四个人给了我极大的力量和安慰。我亲眼看着抚养我、爱护我四十七年之久的慈母断气这是一件我极难担当的事。但因着这几位圣徒在我旁边，加增了我许多的勇气。当母亲断气的时候我伏在我儿子的肩头上，在神面前献上了我的祷告。从母亲去世到安葬，一切的事差不多都是众圣徒帮助我办理。我家中的人只有妻和儿子，连我一共就三个人。可是在这个属灵的大家庭中，爱我的人却数不过来所以我未曾费甚么力气，一切的事就都办好了。天津的圣徒得着了消息，有九位长途跋涉前来送殡。他们说就是因为时间太匆促不然还有更多的人会来。香山的几位弟兄姐妹也放下工作到城内来参加送殡。</p>
+<p>八月二十一日上午九时三十分举行丧事聚会，有二百几十位圣徒参加。其中有些人在公事房和学校请了假前来。家中极小的两个院子坐满了人还站满了人。我请老友王克尘先生主领这次的聚会，我也略说了一些话。会毕以后，就移送母亲的遗体到东直门外教会义地安葬。四十七年前母亲抱着我进到这所房子里来，我那日送母亲的遗体离开这所房子。因神的救恩和应许，我不应当悲哀但人是有感情的，我不能抑制我的感情，我不能不下泪了。</p>
+<p>从母亲逝世到发丧，前后一共占着四天。我是有意这样安排的。因为按着一般的习俗办理丧事从人去世到出殡，总需要占单数的日子。最少三天，或是五天，七天，九天再多也必须是单数。他们的见解是说，如果双日发丧，家中会死两个人的。许多基督徒也受着这种习俗的影响，发丧必须规定单日。甚至明明的四天出殡在事实上最适宜，他们也要多延一日。他们口说不信这些不合真理的事，但他们不敢冒这个险，惟恐真会再死一个人。我必须领头破除这种迷信，所以我这样作了。</p>
+<p>母亲去世的时候，我们是等到她完全断了气，纔开始为她擦身体、换衣服的。我国人有一种最残忍的迷信观念，就是在人快要死还未断气以前，赶快给他换上寿衣，这是因为一般人认为一个人在断气的时候穿着甚么衣服，他的灵魂在阴间便总是穿着那一身衣服。请想一个人在将要离世的那一点时间，还不容他安安静静的度过，却大家七手八脚的拉他扯他，使他身体痛苦、心中难过，这该是多么残忍的行为呢？可叹许多基督徒也随从这种残酷迷信的习俗！我们为母亲换好了衣服以后，也不照着习俗那样把死人停在门板上，却把母亲的遗体停放在一架平日使用的铁床上面，直到次日入敛的时侯。</p>
+<p>在母亲出殡的那天，我们在进门的墙上，和棺柩旁边的柱子上，都贴了大字的通知，写着：「对遗体行敬礼与真理不合，敬请亲友勿在柩前鞠躬。」因为我在会堂中讲过馈送花圈是古代欧洲敬拜假神的遗俗，基督徒不当随从这种风俗，所以圣徒中没有人赠送花圈、有两位相识的人因为不知道的缘故送来花圈，我们只好收下，却没有陈列，并且对赠送花圈的人说明原因，请他们原谅，也向他们致谢。母亲去世以后，我和妻并我们的儿子都穿了全身黑色的衣服。我戴了黑色的帽子，妻头上蒙了黑纱。母亲的柩是用一辆西式的柩车拉着。当举行丧事聚会的时候，我们是站在柩前一旁，柩前我们摆列了几盆鲜花。讣闻是我自己拟的，与前几年我为几家治丧的信徒所拟的大致相同。文为──</p>
+<p>「先母李太夫人于主后一千九百四十七年十月十八日下午十一时五十分在寓离世安息距生于主后一千八百六十五年十月二十二日（阴历乙丑年九月初三日）在世寄居八十三载兹定于十月二十一日上午九时三十分在甘雨胡同二十九号本寓举行丧事聚会会毕移送遗体至东直门外教会公茔安葬静候基督再临时复活见主谨此讣</p>
+<p>闻</p>
+<p>子 明道</p>
+<p>王 敬告</p>
+<p>媳 刘景文</p>
+<p>孙天铎敬告」</p>
+<p>我写这些是供给各处信徒一些参考的数据，并不是说办理丧事必须照这里所说的办法。向棺柩和遗像致敬并赠送花圈是绝对不合真理的，这两点信徒绝不可从俗。至于丧家穿黑色的衣服或白色的衣服，棺柩用车拉或用人抬，发丧在第几日，这都是可以斟酌情形和需要办理的。我这样作容易得很，因为我家中除了妻和子以外并没有别人。如果还有尊长在上面，我就不能这样完全不顾他们的意见了。至于讣闻也不一定拘于我所拟的这种格式。不过「不孝某某罪孽深重，不自殒灭，祸延显妣。」「孤哀子某某泣血稽颡」等等不合真理、言不由衷的谎言，基督徒绝不可以采用。基督徒也不可向着棺柩作甚么事，就如上香、献花、读祭文、致敬等等的行动，因为那都是与祭祀敬拜死人有关系的事。</p>
+<p>我们为母亲所立的墓碑，上面所刻的字是照下面的样式──</p>
+<p>「主后一八六五年十月二十二日生</p>
+<p>「主后一九四七年十月十八日安息</p>
+<p>先母李太夫人文义暂息之所</p>
+<p>子 明道</p>
+<p>王</p>
+<p>媳 刘景文</p>
+<p>孙 天铎立石」</p>
+<p>母亲去了。回忆从我生下来以后，母亲带着姐姐和我度了二十八年岁月。妻来了以后，是四个人，我的儿子天铎生了以后，增加到五个人。今日又剩下三个人了。从人事说，我家中的人最少，景况最凄凉。但感谢神，我现在有一个很大的家庭，好几百位圣徒都与我一同生活在这个大家庭里。我们在基督里相亲相爱，共同生活。不；我的这个家庭里不只有几百位，因为在离北京遥远的地方也有许多圣徒那样关心我，爱护我，为我祷告，这些人都是我家中的人。我的主在世上的时候曾用手指着他的门徒说，「看哪，我的母亲，我的弟兄。凡遵行我天父旨意的人，就是我的弟兄姐妹和母亲了。」（太十二49、50）我的母亲去了，但我仍有许多母亲。我的姐姐去了，但我仍有许多姐妹。我从来就没有弟兄，我现在却有许多弟兄。我不但一点不孤单凄凉，而且我最有福，最快乐。我还盼望当我在主的面前再见着我的母亲和姐姐的时候，她们都不再像以前那样心中充满怀疑，忧惧、误会、痛苦，乃是大有快乐，大有平安，与我一同歌颂神的慈爱和拯救。那将要成为多么有福的日子阿！母亲和姐姐都去世以后，我每逢走进她们所住的屋子，每逢看见她们遗下的用品，便心中悲痛，然泪下。我知道神不怪罪我，连我的主也曾陪同他的两位女徒在她们的兄弟拉撒路的坟墓前哭泣。但当我见主的那日，我便永远不再流泪，因为经上明明记着那时候的情形说：</p>
+<p>「神要擦去他们一切的眼泪；不再有死亡，也不再有悲哀、哭号、疼痛，因为以前的事都过去了。」（启二十一4）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
