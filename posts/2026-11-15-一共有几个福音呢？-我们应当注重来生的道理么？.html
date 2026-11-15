@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一共有几个福音呢？-我们应当注重来生的道理么？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一共有几个福音呢？-我们应当注重来生的道理么？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/1真伪福音辩/1一共有几个福音呢？-我们应当注重来生的道理么？.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『我希奇你们这样快离开那藉着基督的恩召你们的，去从别的福音。那并不是福音，不过有些人搅扰你们，要把基督的福音更改了。但无论是我们，是天上来的使者，若传福音给你们，与我们所传给你们的不同，他就应当被咒诅。我们已经说了，现在又说，若有人传福音给你们，与你们所领受的不同，他就应当被咒诅。』（加一6～9）。</p>
+<p>凡读过加拉太书的信徒，都知道使徒为甚么写这一篇话。就是因为在那时候，有些人在加拉太教会中传一种『受割礼方能得救』的道理。他们告诉人说，外邦人要得救，只信耶稣是不彀的，他们需要效法犹太人那样受过割礼，然后纔能蒙神的悦纳。这种道理，明显与主耶稣并他的使徒所讲的那因信得救的道理互相冲突，很容易将许多不坚固的信徒领入迷途。因此，使徒纔写了这一封书信，谆谆的劝戒他们，使他们清楚明白，人得救是因着信，不是因行律法，因受割礼。但是那些讲靠律法得救的人，也自称为传福音的。他们说，他们所讲的道理也是福音。因此，使徒亟需辟解他们的错误，使教会知道『那并不是福音，不过有些人搅扰你们，要把基督的福音更改了。』同时，使徒为要使教会知道福音只有一个，除了这一个福音以外，若再有甚么别的福音，就都是冒充的，都是迷惑人的；因此说，『无论是我们，是天上来的使者，若传福音给你们，与我们所传给你们的不同，他就应当被咒诅。我们已经说了，现在又说，若有人传福音给你们，与你们所领受的不同，他就应当被咒诅。』</p>
+<p>那些在加拉太教会中讲别的福音的人所犯的错误，究竟在甚么地方呢？不过是教训人说，要得救需要守律法，受割礼。那些人信旧约上神的话；信耶稣为罪人死，并且从死人中复活；信来生的事。他们的错误就仅在要『藉着守律法得救』这一点上。这一点错误就足以把基督的福音更改了，就足以使信徒走入迷途，就足以叫使徒大大的忧急，因而急速写这一封充满警教与责备的书信。若有一种别的福音比这种道理的错误更大，我们对它应当抱甚么态度呢？</p>
+<p>阅者都知道在现在的教会中有一种『别的福音』么？这一种『别的福音』并不是圣经中所记载的，神的儿子、我们的主耶稣基督所传给我们的福音，不是使徒藉着启示从主所领受的福音，也不是加拉太教会中有一些人所讲那靠律法得救的福音。这一种『别的福音』比加拉太教会中一些人所讲靠律法得救的福音错误更大。这一种『别的福音』并不是福音，不过是一些人搅扰教会，要把基督的福音更改了。但传这种错误道理的人，却为他们所传的这种错误的道理，起了一个好听的名称，叫作『社会福音。』</p>
+<p>讲社会福音的人是怎样讲呢？他们说，『基督的福音不是单救个人，乃是要救整个的社会。只注重个人悔改、重生、得救、进天国，这是一种自私的、狭义的道理。我们信基督不是要求自己的利益，只顾自己得救，乃是要用基督的道理去改良社会，服务社会，使社会全体得救。』我们乍一听这种说法真是冠冕堂皇！不愿自己得救的事，只求整个的社会得救。讲这种道理的人是何等能牺牲，是何等有爱心！其实我们试一详细思想这些讲解，便看出这种道理并不是福音，乃是教会中一些不信救恩的领袖们所编造的一种离经背道的讲论。这种道理比加拉太教会中一些人所讲靠律法得救的道理更错谬，更危险。靠律法得救的道理诚然是错谬的，但那些人还信得救的事。这种讲『社会福音』的人，根本就不信救恩。他们所讲社会得救的道理，是说使社会中的每一分子都悔改认罪，接受耶稣为救主，得蒙圣灵的重生，因而得着救恩么？不。这正是他们所讥议，所看为自私的、狭义的道理。他们所讲的社会得救，乃是改良社会：除去一切的恶风陋俗、盗贼娼妓、烟酒赌博，革除社会中一切不良的制度。这种道理，与圣经中所讲的福音，本是风马牛不相及的。讲这种道理的人，硬要把『福音』两个字扯来，作他们的招牌。同时他们自己也知道，这不是主耶稣的福音，于是便在『他们的福音』上面，冠以『社会』一个名词，而成为『社会福音。』</p>
+<p>我不反对人讲改良社会的道理，我也不反对人作革除社会中不良的制度的工作。我认为这些工作虽然难期望有大成效，但与社会也不无少许的补益，至少也能使一些人得着相当的好处。但我坚决的反对自命为福音使者的传道人，不讲基督救恩的福音，反将这种与福音毫无关系的、属世界的道理拿来，硬挂上一块福音的招牌，当作福音去传讲。这种『挂羊头卖狗肉』的办法，非但不能引领人得着基督的救恩，而且会把许多人领入迷途，使他们误以为福音不过就是这些改良社会的道理，因此总不能听见那真实的救恩福音，总不能得着福音的好处。</p>
+<p>设个比喻说罢：某地时疫盛行，染疫身死的人每日都有几百。幸有一位良医发明了一种医治这种时疫最有效的药水，施舍济众。因着服用这种药水，保全了生命的人，多得不可胜数。那地方有一个开药房的奸商，看见这种药水的销路很广，以为有利可图，因此取了几种廉价的原料，也制造了一种药水，并取了一个与某医生所制的药水相彷的名称，在他的药房里廉价出售。他所卖的药水里面并没有甚么能彀伤人的毒质，不过因为不是真品，所以没有治病的功能。因此，服用这种药水的人，终不免于因疫丧命。他所制的药不能杀人，但染疫的人因为误信他的伪药，不再寻求那能治病的真药，以致到了不能救治的地步！我们不能因为这个奸商所卖的假药里没有杀人的毒质，便轻恕他杀人的罪。传所谓『社会福音』的人，害人就在这个地方。世上的人类染了极重的瘟疫──罪。他们现在虽然悠游宴乐，苟延残喘，但他们将来的危险却是不堪设想！幸有主耶稣舍命流血，为我们成就了救赎的工作，将这救恩的福音，传给远处和近处的人；使这染疫绝望的人类，因着服用这救命良药，可以保全生命。可恨那狡诈的魔鬼，竟制作出与福音相似的伪药──社会福音，利用一些未曾真信福音的传道人，为他廉价出售。多少被罪所害，奄奄一息的人，在那里渴望得听救恩的福音，不幸竟遇见卖假药的传道人，不将生命的道讲给他们听，反拿『社会福音』来哄骗这些可怜的罪人。这些无知的人，那里会分辨甚么是真福音，甚么是假福音。一口吞下去以后，不用说再不想去寻找那真正的福音，纵使有人将真正的福音讲给他们听，他们因为先入为主的缘故，或者反将真的屏弃了。这些人得不着医治，因而死在罪恶中，传『社会福音』的传道人能彀推卸杀人的责任么？</p>
+<p>『若有人传福音给你们，与你们所领受的不同，他就应当被咒诅。』这话是何等的严重呢！或有人想，保罗的心未免太狭窄。他这样排斥与自己不同调的人，真不是宽宏大量的人所当有的态度。起初我也曾这样想过，及至我明白了上文所说的危险以后，我不但不这样批评保罗，反承认这种态度是极正当、极合理的。我更认为凡是基督耶稣的忠诚的仆人，凡是真实的福音使者，都当抱保罗所抱的态度，发保罗所发的宣告说，『若有人传福音给你们，与你们所领受的不同，他就应当被咒诅。』</p>
+<p>讲社会福音的人，只讲一些社会问题，丝毫不提到基督的福音么？若是这样，他们的罪还轻些。但如今他们不只讲社会的问题，而且说，『注重个人悔改、重生、得救、进天国，是一种狭义的、自私的道理。』如果他们所说的合理，我们就应当起来打倒圣经中所讲的救恩的福音。我们不要一种狭义的道理，我们更反对自私的道理。况且这种道理既是狭义的、自私的，当然不是从慈爱的神那里来的，当然是一种错误的道理。</p>
+<p>可怜！这群狂妄无知的人自以为看得比甚么人都清楚，其实都是一些终日在暗中摸索的瞎子。请问，要拯救世界上困苦有罪的人类，还有什么道理比基督救恩的福音更彻底，更有效力？社会为甚么这样腐败？世界为甚么这样充满罪恶？岂不是因为组成社会的每个分子──个人──都深深的沉溺在罪恶当中么？不去一个一个的拯救人脱离罪恶，却希望社会的全体能以改善，这是何等狂妄无知的事！我们再看看讲社会福音的人所说拯救社会的方法，就更可笑了：「革除社会中的一切恶风、陋俗、盗贼、娼妓、烟酒、赌博、以及种种不良的制度。』作这些事就能拯救社会了么？社会的病原就在这个地方么？充满污秽罪恶的人心，若不经过一番彻底的变化，我不知道这种扬汤止沸的方法能有甚么效果？基督的福音不是要去改革社会中的一切恶风陋俗，以及种种不良的制度。它的功用乃是使人因信得蒙重生，成为新造的人。这新造的人是恨罪的，是羡慕圣洁良善的，是像神的。一个人的里面有了这种彻底的变化以后，那一切外面的罪恶与坏事，都连带着得了根本的解决。社会中多一个真得了重生的基督徒，便是多一个真正的优秀分子。福音不是为改良社会，但社会却因着有人信从福音便得了利益。我们回过头来再看那些讲社会福音的人，他们天天满口讲说改良社会，服务社会，其实自己还是活在亚当的旧生命中，里面充满了不信、自私、贪财、求名、诡诈、嫉妒、恼恨、污秽，连自己还没有先改好，（人若不因信福音得蒙重生，本是无法可以将自己改好的，）请问，若叫这般人去将社会改好，要等到甚么时期方能成功呢？</p>
+<p>福音的功能就止于使人得着一种里面的变化，因而作社会中的优秀分子么？不。它还有更大的功能：这更大的功能，就是使死在过犯罪恶中的绝望的人类，因信基督耶稣在神面前被称为义，从神得着永远的生命。一个人因信福音得救，不只是被救脱离罪恶，也是被救脱离罪恶的工价──死亡。因此，主耶稣解释福音的要义说，『神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不至灭亡，反得永生。』（约三16）他又对这绝望必死的人类，发出那极伟大极宝贵的宣告说，『复活在我，生命也在我；信我的人虽然死了，也必复活；凡活着信我的人，必永远不死。』（约十一25、26）</p>
+<p>是的，这正是世人极大的需要。除去白痴和患精神病的人以外，世上的人类没有不感觉到生命的短促，因而希望得着永生的。所希望的得不着，人类便因此感到悲哀烦闷：有的人因此放浪形骸，恣意宴乐，想藉此忘记人生的悲哀；有的人不甘心与草木同腐，便想轰轰烈烈作一番事业，以期流芳百世，或是遗臭万年；也有的人想，与其度这种绝望的生活，饱尝伤心与苦痛，至终仍不免于一死，倒不如早些撒手尘寰，一了百了，因而走上自杀的道路。世界上有甚么道理能安慰、解救这些困苦绝望的人类？这些人亟需解决的，不是甚么道德问题、社会问题、生计问题、家庭问题，他们所亟需解决的乃是生命问题。社会福音能将他们所亟需的给他们么？不能，绝对不能！惟独基督救恩的福音能满足他们的需要，能解除他们的悲哀，能使他们得着他们所渴慕所寻求的生命。因此，惟独圣经中所讲的基督救恩的福音配称为福音，称为福音，此外再没有福音。若有别的福音，便是赝鼎，便是假药，便是冒牌的劣货。</p>
+<p>所谓『社会福音，』是这样的不合圣经，是这样的错误，我们已经晓得了。容我们现今再看一看这些传社会福音的传道人，到底是怎样的一些人。自然，我们要去问他们信不信耶稣为罪人死、使信他的人得永生等等的要道，他们中间大多数的人必要回答说他们都信。但这样的回答是不足信的。我从前也曾很轻易信这些人的话，后来纔渐渐发现，他们中间有许多人都是说谎的。从他们所讲的道理上，就可以看出来他们信不信这些要道。他们说，『只注重个人悔改、重生、得救、进天国，这是一种自私的、狭义的道理。』他们既然认定个人悔改、重生、得救、进天国，是狭义的、自私的道理，可见他们必是鄙视厌弃这种道理了。一个人怎能信一些要道，同时还鄙视厌弃这些要道呢？鄙视就不当信，信就不能鄙视。讲社会福音的人一面回答人说，他们信悔改得救的道理，一面又告诉人说，个人悔改得救的道理是自私的、狭义的。这一种欺人自欺的言语，除了脑筋特别简单的人以外，请问还有甚么人能信？</p>
+<p>讲社会福音的人当中，也有些较为聪明的。他们不说这一类的话，免得使人抓着他们的把柄。但他们的信仰究竟不能隐藏。我们听他们所讲的道，便可以知道他们信不信救恩的要道。在一个笃信救恩要道的人心中，看为最重要、最宝贵的，莫过于基督的救恩。这样的人在讲道的时候，一定要注重这些道理。如今一个自称为传福音的人，终日所讲论的都是一些社会、家庭、教育、卫生、国家、世界的事，这个人是否信救恩的要道，我们不用再问，已经足能知道了。他们纵然自己为自己掩饰，究竟有甚么用处呢？</p>
+<p>社会福音根本的错误，与传社会福音的人所有的信仰，我们既然都已经看明白了，并且我们又清楚知道了这种道理的害处，我们今后对于这种离经背道的『别的福音』还可以姑息优容，任其蔓延么？不可，断乎不可！为神所交付我们的使命，为教会的前途，为世界人类的利益，我们都当起来，</p>
+<p>奋力传扬基督救恩的福音，反对一切别的福音。</p>
+<p>末了，容我们与使徒同声说，</p>
+<p>『若有人传福音给你们，与你们所领受的不同，他就应当被咒诅。』</p>
+<p>我们应当注重来生的道理么？</p>
+<p>『我们若靠基督只在今生有指望，就算比众人更可怜。』（林前十五19）。</p>
+<p>人类最大的痛苦，就是怕死而至终不免于死；想种种的方法要逃避死亡，但没有一个方法能收实效。因为人类所度的生活是绝望的生活，他们向前看，看不见丝毫的光亮；他们知道自己的生命最长不过几十年，所以无论得着甚么，都不能使他们满足，不能使他们快乐。虽然许多人采取一种最愚昧的方法，用各种虚浮的快乐，麻醉自己的心，求一点暂时的安慰，但他们终不能除掉他们心灵深处所存的那种因怕死而来的悲痛苦楚。这些困苦可怜的人类所急需的是甚么呢？自然他们有许多需要，但那最大的需要乃是生命的道。他们需要人告诉他们，怎样脱离死亡的宰割，怎样得着永远的生命。</p>
+<p>感谢神，他为世人所豫备的，正是他们所急需的。他为他们豫备了救主，成全了救工，又藉着他所拣选的仆人们，传扬生命的道给他们听，告诉他们说，悔改信主耶稣便可得赦罪、被称义、脱死亡、得永生。这真是人类所急需的福音，这真是关乎万民的大喜的信息。没有一个真实得了救恩的人不因着这个福音赞美感谢神；也没有一个真实得了救恩的人不急切要将这美好的信息，传达给那些坐在死荫中尚未曾听见这福音的人，好叫他们也能同得这福音的好处。只要是真实得了救恩的人，不论他们是作甚么事业，都是急切要传扬这福音，领人得救，何况是专一担负着传福音的使命的传道人呢？</p>
+<p>但最可怪的，是许多教会的领袖，许多传道人，终日讲些提高人格、普及教育、改造社会、服务人群等等的论调，却将生命的道完全抛弃不谈；有别人注重生命的道，传扬救恩的福音，还要遭遇他们的讥议轻看，被他们看作愚腐迷信。若有人去质问他们为甚么这样作，他们还会振振有辞的说，现在社会不良到这种地步，许多人终日在水深火热当中，度着那种苦痛的生活，我们怎可只讲来世的好处，不帮助他们脱离今生的苦楚呢？他们又说，耶稣在世上也曾医治病人，为饥饿的人豫备饼吃，我们岂可不效法耶稣，为人群服务，减轻他们身体方面的痛苦，供给他们物质的需要呢？</p>
+<p>这种论调，乍听似乎很有理由，但我们一仔细思想，便知道这正是一种鱼目混珠的道理。不错，主耶稣在世的时候，诚然顾念那些困苦的人身体方面的痛苦，并且作了一些事去济助他们。但他看这些不过是附带的工作；他所看为最重要的工作，乃是领人悔改，信福音，得着永生。马可福音第一章记载，耶稣在迦百农的时候；有人带着一切害病的，和被鬼附的，来到他那里，他治好了他们。次日早晨，耶稣到旷野去祷告，他的门徒找了他去，对他说，『众人都找你。』耶稣对他们说，『我们可以往别处去，到邻近的乡村，我也好在那里传道，因为我是为这事出来的。』</p>
+<p>主耶稣确曾多次减除许多人身体方面的痛苦，但他所看为更重要的，乃是救人脱离罪和死亡，使他们得着永远的好处。他并没有抛弃传福音的工作，终日去讲改造社会、服务人群的道理。他的智慧远超过今日教会中的这些领袖和传道人。他知道甚么是最重要的，甚么是根本的问题。基督徒只传扬福音，看见有人身受痛苦却不闻不问，这诚然是不应当的；但基督徒不传扬福音，不领人得生命，只注重服务社会，减轻人身体方面的痛苦，这更是错误到极点的行为。如果一个传道人这样作，他根本不配称为传福音的人。让我们称他为服务社会的人好了。</p>
+<p>没有指望、自知必死的人，谁肯去为社会服务呢？我不希奇世上的人终日争名夺利，竭力抢钱，为自己求宴乐。他们知道他们的寿命不过几十年，他们早晚不免于一死。他们再往远处看，也看不见丝毫的光明：他们度着一种绝望的人生。在这种情形中。他们若不赶快趁着这片刻的光阴，享受一些物质方面的好处，岂不是愚昧到极点了么？被送到刑场去执行死刑的盗犯，沿路大声叫骂，遇见卖食物的就强索食用，我们并不感觉希奇；因为他们自知顷刻就要丧命，横竖是死，索性畅快片时好了。有时他们向小贩索取食品，他们一点不为小贩设想：他们不想那个老年的小贩亏了本钱，岂不是要大受痛苦，一家的生计都无法维持了么？他们不为那个老年的小贩设想，我们一点不觉希奇。他们少时就要死去，还那里顾得到别人的苦痛损失。没有指望的人类，因为要满足自己暂时的欲望，不惜作许多损人利己的事，也正与上文所提的盗犯一样。</p>
+<p>那么，有方法帮助这些像死囚一般的世人么？诚然有的。这方法就是传生命的道给他们听，领他们悔改，信靠耶稣，得着永生。你们真实得着救恩以后，因为有了极大的盼望，自然能抛弃世上的荣华富贵，看轻暂时的享受宴乐。不用说他们为主的缘故肯为人服务，就是叫他们为主的缘故舍命流血，也不是一件困难的事。我们展读古代教会的历史，便可以看见那时有千万的圣徒，为他们的信仰，为不肯崇拜偶像，为不肯犯罪，为不肯背叛基督，甘心被杀，被钉十字架，被放在火中焚死，被掷在野兽格场中为野兽所吞噬；但他们并不稍有退却，都是慷慨就义，视死如归。再看今日那些只说崇拜耶稣的人格，天天高唱服务社会，却不信救恩，不信来生的应许的那些基督徒（？）和传道人（？）怎样呢？不用说为耶稣、为别人舍命流血，他们作不到，就是叫他们因此丧失一点名誉，金钱，少为自己谋求一些宴乐，他们都不肯作。其实那有甚么希奇呢？他们自己还没有丝毫的盼望，还度着极痛苦的人生，又如何能为别人牺牲呢？</p>
+<p>真是希奇！许多称为基督徒、称为传道人的人，竟说讲来生的道理是教人自私，是教人起贪心。若是这样，他们就应当先起来打倒基督，因为他就是最先教导人自私，教导人起贪心的。我们展开四卷福音书来念一遍，便看出主耶稣是何等重看来生的事。他将许多来生的应许赐给信他的人。他教训人应当把今生的事看作极小极轻，把来生的事看作极大极重；因为今生的事是暂时的，来生的事是永远的。这般不信来生的人，一方面推崇耶稣无所不至，他们说他们怎样景仰耶稣那种伟大的人格，钦佩耶稣所讲极好的教训，并且承认他们自己是基督徒，是传福音的人；一方面却不信耶稣所讲来生的道理，看信这种道理的人为迷信，为有贪心。请问这是何等矛盾的事！</p>
+<p>我现在看明白了，这并不是甚么希奇的事。这些不信来生的道理的基督徒（？）和传道人（？），实在并未曾真实彻底的信耶稣。如果他们真信了耶稣，断不能不信耶稣所讲的那最重要的道理。他们加入教会，如果不是出于希冀得着物质方面的好处，便是盲听盲从。他们根本就谈不到甚么信仰。不过他们不甘心自己承认不信，于是造出这种论调来，说信来生的道理的人是自私，是有贪心。他们说他们不自私，不生贪心，他们信耶稣不是为自己得救，自己有永生，乃是为服务人群，利济社会。这样一来，不但他们的不信都被掩遮起来，还可以显出他们是这样清高，这样不自私，这样有爱心。其实，他们看见金钱、名誉、权位、宴乐的时候，他们那种自私，那种贪心，一点不比别人更小！这原不足希奇。他们既不信来生，没有指望，他们明知他们所有的光阴不过只有几十年，又何怪他们对于世人的好处这样自私，这样生贪心呢！</p>
+<p>我们用不着再多谈论这般人了。随他们怎样说罢。无论如何，人类最大的痛苦就是，怕死仍不免于死。惟有基督的福音能解除人类的这种痛苦。所以惟有它能称为福音。如果基督的福音不过只能帮助人类提高道德，改良社会，却不能使人得着生命，那样，我们就『吃吃喝喝罢，因为明天就死了。』提高道德有甚么用处？改良社会又能给他们多少好处？趁着还有这一口气息，赶快追求一些躯体的幸福，目前的快乐，尚不失为识时务的俊杰，否则白白为作好人吃许多亏，为服务社会受许多苦，弄到末了，好人与坏人，服务人的与受人服事的，仍不免一齐下到幽暗的坟墓里去，大家同归于尽。这究竟有甚么意义呢？</p>
+<p>无论多少人不信来生的道理，也无论多少人轻看讲这种道理的人，我总要大声疾呼，传扬救我出死入生的主耶稣基督的福音说：</p>
+<p>『神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不至灭亡，反得永生。』（约三16）。</p>
+<p>『我是从天上降下来的生命的饼；人若吃这饼，就必永远活着。我所要赐的饼就是我的肉，为世人的生命所赐的。』（约六51）。</p>
+<p>『我实实在在的告诉你们，人若遵守我的道，就永远不见死。』（约八51）。</p>
+<p>『复活在我，生命也在我；信我的人虽然死了，也必复活；凡活着信我的人，必永远不死。』（约十一25、26）。</p>
+<p>『你们心里不要忧愁。你们信神，也当信我；在我父的家里有许多住处，若是没有，我就早已告诉你们了；我去原是为你们豫备地方去。我若去为你们豫备了地方，就必再来接你们到我那里去；我在那里，叫你们也在那里。』（约十四1～3）。</p>
+<p>『有永生，』『永远活着，』『永远不见死，』『复活，』『永远不死，』『再来接你们到我那里去。』这都是主耶稣亲口所说的话，是他自己给信他的人的应许。信这些话，重看这些话，接受这些应许的信徒，就是耶稣的门徒；信这些话，重看这些话，传扬这些要道的传道人，就是福音的使者。反过来说，不信这些话，不重看这些话，不接受这些应许的信徒，就是假信徒；不信这些话，不重看这些话，不传扬这些要道的传道人，就是假师傅、假先知。信与不信，接受与拒绝，重看与轻视，二者中间都毫无中立的余地。谁是真基督徒？谁是假基督徒？谁是真传道人？谁是假传道人？我们今日应当分辨得清清楚楚，再不可模模糊糊了！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>惧怕人的陷入网罗 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>惧怕人的陷入网罗</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/10在火窑与狮穴中/2惧怕人的陷入网罗.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『惧怕人的陷入网罗：惟有倚靠耶和华的必得安稳。』（箴二十九25）。</p>
+<p>魔鬼陷害信徒所用的种种方法中，最通用而且最收效的有两种：一种是引诱，另一种是恐吓。当我们遇见这两种试探的时候，一起贪心，便受了他的引诱，陷在他的第一种网罗中，一发生惧怕的心，便胜不过他的恐吓，陷在他的第二种网罗中。有许多很好的圣徒，因为热心事奉主跟从主的缘故，甘心为他舍弃了地上的名利宴乐，除了主以外再没有所恋慕的。因此当魔鬼用各样地上的好处引诱他们的时候，他们毅然决然的推却了他摆在他们面前的这些好处，可是当他藉着甚么人或甚么事恐吓他们的时候，他们竟惊惶失措，无力抵御，一转瞬间便陷在他的网罗中。在新约中有一个最好的例子，就是使徒彼得的事。他曾别离了父亲，丢下打鱼的船，撇了捕鱼的网，去跟从耶稣。当许多人都离了耶稣的时候，耶稣问那十二个使徒说，『你们也要去么？』他立时回答说，『主阿，你有永生之道，我们还归从谁呢？我们已经信了，又知道你是神的圣者。』（约六66～69）。他没有恋慕任何事物，舍不得为耶稣撇下。但他在大祭司的院子里因为惧怕人的缘故，竟犯了极大的罪，三次不承认他所跟从的主。魔鬼不能用引诱的方法陷害这个为主撇弃了一切事物的彼得，但他只略施恐吓，便把彼得陷在网罗中。『惧怕人的陷入网罗』，经上的话真是确实的阿。</p>
+<p>岂止于彼得是这样呢。无论那一个圣徒，一存惧怕人的心，早晚不免为魔鬼所陷害，落在他的网罗中。许多信徒明明知道甚么事是当作的，甚么事是不当作的，明明知道那条路是他们应当走的，那条路是他们不当走的，明明知道甚么是神所喜悦的，甚么是神所憎恶的。是非善恶在他们的眼中都看得清清楚楚。他们也决定了心志，要遵行神的旨意。及至魔鬼一用危险，祸患，逼迫，羞辱，痛苦，死亡，等等可怕的事来恐吓他们的时候，竟如同拉枯摧朽一般，一点都不用费力便把他们陷在罪中。新约中记载了一个因为惧怕人便陷入网罗的彼得，现代的教会中有千百个因为惧怕人便陷入网罗的信徒。我们读到彼得因为怕人以致不认主的事，便毫不留情的罪责他，批评他胆小如鼠，我们却忘记了自己并不比他略好一些。</p>
+<p>不是有许多基督徒明明知道神憎恶诡诈，喜爱诚实，却因为惧怕人，便随从不信的人去说谎言弄诡诈么？不是有许多基督徒明明知道神恨恶偷窃欺骗，却因为惧怕人，便同别人舞弊营私，取用不义的财物么？不是有许多基督徒明明知道神是忌邪的神，断不容属他的人敬拜事奉别的神，但因为惧怕人便不敢不向别的神屈身么？不是有许多基督徒明明知道那些不良的嗜好和罪恶中的宴乐是基督徒决不可以沾染的，但因为惧怕人，便不敢弃绝这一切么？不是有许多基督徒明知道应当在人面前放胆为那替他们舍命的主作见证，但因为惧怕人，竟不敢承认他们是耶稣的门徒么？不是有许多属神的人知道应当反对罪恶，攻击一切悖逆神的事，但因为惧怕人，便噤若寒蝉，视若无么？不是有许多属神的人知道应当把自己从不信的人中间分别出来，不可随从这世界，但因为惧怕人，便伈伈俔俔，与世浮沉，和不信的人同流合污么？不是有许多为神作工的人知道应当忠心传述神的言语，按着神的旨意牧养教会，但因为惧怕人，竟不敢责备群众的罪恶，不敢在教会中事事按着真理去作么？许多不当作的事竟因为惧怕人便去作，许多当作的事竟因为惧怕人便不敢作。一存了惧怕人的心，甚么罪也能犯，甚么悖逆神的事也能作。魔鬼用金钱，名誉，宴乐所引诱不动的基督徒，现今只用恐吓的方法轻轻一击，便毫无抵抗的被他打得落花流水，望风披靡。惧怕人的一定不免陷入网罗。</p>
+<p>惧怕人的危险和祸患我们已经看明白了，那么有方法胜过这种试探没有呢？有，而且很容易。这个方法就在那一节经文的后半──『惧怕人的陷入网罗；惟有倚靠耶和华的必得安稳。』『倚靠耶和华』便不惧怕人。耶和华比世上任何人权柄都大。世上所有的人都在他的掌握之中，都为他所管辖。倚靠他便用不着惧怕任何人。倚靠他自然也就不惧怕任何人。不惧怕人自然也就不至陷入魔鬼的网罗，不陷入魔鬼的网罗自然也就安稳了。</p>
+<p>按理说起来，一个基督徒有全能的神作他的慈父，作他的岩石，作他的山寨，作他的盾牌，作他的高台，还有甚么可怕的呢？纵使全世界的人都连合起来攻击他，窘迫他，谋害他，若没有神的许可，他们仍是一点不能作甚么，何况还不会有这么多的人同时与他为敌呢。当一个基督徒想到这件真理一心倚靠神的时候，他就不惧怕任何人。但如果他忘记倚靠神，却向四围看那种恶劣的环境，和那些面目狰狞的仇敌，他便立时觉得软弱无力，勇气全消。在这种景况中，他为逃避危险和祸患的缘故，能作出来许多他平日绝对不肯作的事，能犯多少他从前起誓不敢再犯的罪。无论多么刚强敬虔的圣徒，一发生惧怕的心，立时就会懦弱到极点，就会犯极大的罪。我们看见别的圣徒因为惧怕人以致软弱胆怯，堕落犯罪，因而站在一旁批评论断他们，是一件很容易的事，但及至有一日我们自己也遇见相同的景况，我们便明白人在惧怕的时候所怀的心情，所有的状况了。『惧怕人』是一种人力不能治疗的重病，而且一染上这类病，紧接着就要发生许多其它可怕的病症。『倚靠耶和华』便是治疗这种重病的惟一良药，而且是百发百中的。平日常服用这种良药，就总不会染上『惧怕人』的病。如果不幸染上这种重病，赶快服用这种良药，立时便药到病除，霍然痊愈。当今日这『惧怕人』的重病在教会中间流行的时候，我们应当急速奋起，大声疾呼，把这种可怕的病和它酿成的恶果宣布出来，更把治疗这种重病的良药介绍给众圣徒──</p>
+<p>『惧怕人的陷入网罗；惟有倚靠耶和华的必得安稳。』</p>
+<p>这纔是主耶稣的门徒</p>
+<p>主耶稣教训我们说，『你们的话，是，就说是；不是，就说不是；若再多说，就是出于那恶者。』（太五37）。他不许我们心口不一，态度暧昧。作他门徒的人绝对不能因为要得利益，或因为要逃避危险的缘故，认黑作白，以非为是。他的教训中从没有『模棱』，『圆滑』，『敷衍』，『妥协』，这一类的名词。他认为『是』与『非』，『正』与『邪』，『光』与『暗』，中间没有一尺一寸中立的余地，不在这边，就在那边。要作他的门徒就必须态度磊落，旗帜鲜明；心里认为是的，口里就说是，心里认为非的，口里就说非；合乎真理的事就尽心竭力去作，违反真理的事就毫不留情的反对；在正义和真理上不作尺寸的让步，没有毫发的妥协。为这个缘故无论遭遇甚么损失，受甚么误会，遇甚么危险，都毫不顾惜。作耶稣的门徒与人交接往来，同工共事，总不能戴假面具，用假手腕，因为这样作就必须弄诡诈，说谎言。『择目的不择方法』，这一句话是魔鬼给人的格言。耶稣的门徒无论作甚么事不但应当有好目的，也应当有好方法。那位信实的主决不许他的门徒用诡诈鄙卑的方法去达成一个良好的目的。合乎主旨意的事，从始至终都是诚实正直，光明磊落的。</p>
+<p>两个有信心的英雄</p>
+<p>『耶和华晓谕摩西说，「你打发人去，窥探我所赐给以色列人的迦南地，他们每支派中要打发一个人，都要作首领的。」摩西就照耶和华的吩咐，从巴兰的旷野打发他们去，他们都是以色列人的族长。』（民十三1～3）。</p>
+<p>『摩西打发他们去窥探迦南地，说，「你们从南地上山地去，看那地如何；其中所住的民是强是弱，是多是少；所住之地是好是歹，所住之处是营盘是坚城；又看那地土是肥美是瘠薄；其中有树林没有。你们要放开胆量，把那地的果子带些来。」那时正是葡萄初熟的时候。』（民十三17～20）。</p>
+<p>『过了四十天，他们窥探那地纔回来，到了巴兰旷野的加低斯，见摩西亚伦，并以色列的全会众，回报摩西亚伦并全会众，又把那地的果子给他们看。又告诉摩西说，「我们到了你所打发我们去的那地，果然是流奶与蜜的地方，这就是那地的果子。然而住那地的民强壮，城邑也坚固宽大。并且我们在那里看见了亚衲族的人，亚玛力人住在南地，赫人，耶布斯人，亚摩利人住在山地，迦南人住在海边并约但河旁。」迦勒在摩西面前安抚百姓说，「我们立刻上去得那地罢，我们足能得胜。」但那些和他同去的人说，「我们不能上去攻击那民，因为他们比我们强壮。」探子中有人论到所窥探的地方，向以色列人报恶信说，「我们所窥探经过的地方是吞吃居民的地方；我们在那里所见的人都身量高大。我们在那里看见亚衲族人，就是伟人，他们是伟人的后裔；据我们看自己就如蚱蜢一样，据他们看我们也是如此。」』（民十三25～33）。</p>
+<p>『当下全会众大声喧嚷，那夜百姓都哭号。以色列众人向摩西亚伦发怨言。全会众对他们说，「巴不得我们早死在埃及地，或是死在这旷野！耶和华为甚么把我们领到那地，使我们倒在刀下呢？我们的妻子和孩子必被掳掠：我们回埃及去岂不好么？」众人彼此说，「我们不如立一个首领回埃及去罢。」摩西亚伦就俯伏在以色列全会众面前。窥探地的人中，嫩的儿子乔舒亚，和耶孚尼的儿子迦勒，撕裂衣服，对以色列全会众说，「我们所窥探经过的地方是极美的地方。耶和华若喜悦我们，就必将我们领进那地，把地赐给我们，那地原是流奶与蜜的地方。但你们不可背叛耶和华，也不可怕那地的居民，因为他们是我们的食物，并且荫庇他们的已经离开他们。有耶和华与我们同在，不要怕他们。」但全会众说，「拿石头打死他们二人。」忽然耶和华的荣光在会幕中向以色列众人显现。耶和华对摩西说，「这百姓藐视我要到几时呢？我在他们中间行了这一切神迹，他们还不信我要到几时呢？我要用瘟疫击杀他们，使他们不得承受那地，叫你的后裔成为大国，比他们强盛。」』（民十四1～12）。</p>
+<p>『耶和华对摩西亚伦说，「这恶会众向我发怨言，我忍耐他们要到几时呢？以色列人向我所发的怨言我都听见了。你们告诉他们，耶和华说，我指着我的永生起誓，我必照你们达到我耳中的话待你们。你们的尸首必倒在这旷野，并且你们中间凡被数点从二十岁以外向我发怨言的，必不得进我起誓应许叫你们住的那地，惟有耶孚尼的儿子迦勒和嫩的儿子乔舒亚纔能进去。」』（民十四26～30）。</p>
+<p>『摩西所打发窥探那地的人回来，报那地的恶信，叫全会众向摩西发怨言，这些报恶信的人都遭瘟疫死在耶和华面前。其中惟有嫩的儿子乔舒亚和耶孚尼的儿子迦勒仍然存活。』（民十四36～38）。</p>
+<p>神要把极大的福分赐给属他的人以前，常是先看看他们配不配得这些福分。这并不是说他们需要有甚么功劳，有甚么好处，纔配得这些福分。我们在神面前没有一点功劳，没有一点好处。他看我们是否配得他所赐的福，就是看我们是否信靠他，是否尊敬他。他曾说，『尊重我的，我必重看他；藐视我的，他必被轻视。』（撒上二30）。我们多信靠他，便证明我们多尊重他，他就重看我们，把他所豫备的大福丰丰富富的赐给我们。如果我们不信靠他，便证明我们是藐视他。藐视神的人当然不配承受神所赐的福了。</p>
+<p>神把以色列人领到约旦河东的时候，不久就要领他们进入那流奶与蜜的迦南。他要把这极大的福分赐给他的百姓以前，先要看看他们是否信靠他，是否尊重他。因此他吩咐摩西打发以色列民中的十二个首领过到迦南地去窥探那地的情形。叫他们看见那地的物产是何等佳美，也叫他们看见那地的人民是何等强壮。如果他们信靠神，尊重神，他们必定满心羡慕神的应许，一点不惧怕迦南人，欢欢喜喜的随从摩西，过约但河，去得神应许他们的美地。不料他们中间作首领的人和以色列民众都是一样的轻看神，不信靠神。他们怕迦南地的人。他们以为神的能力还赶不上迦南人。先是那些窥探地的首领对民众说，『我们不能上去攻击那民，因为他们比我们强壮。』又说，『我们所窥探经过的地方是吞吃居民的地方；我们在那里所看见的人都身量高大。我们在那里看见亚衲族人，就是伟人，他们是伟人的后裔；据我们看见自己就如蚱蜢一样，据他们看我们也是如此。』接着百姓就大声喧嚷，哭号，发怨言说，『巴不得我们早死在埃及地，或是死在这旷野。耶和华为甚么把我们领到那地，使我们倒在刀下呢？我们的妻子和孩子必被掳掠；我们回埃及去岂不好么？』听他们所说的这些话，就可以看出来他们是怎样的不信靠神，怎样的藐视神。他们正如同那些一点不认识神的人一样，只看迦南地的人是多么可怕，一点不想到还有神作他们的后盾。无怪乎神对摩西说，『这百姓藐视我要到几时呢？我在他们中间行了这一切神迹，他们还不信我要到几时呢？我要用瘟疫击杀他们，使他们不得承受那地』了。是，不信靠神不尊重神的人决不配承受神所应许的大福。神使这些人死在旷野，不得进入迦南美地，正是他们所当得的分。一点不能说神太严厉。</p>
+<p>『疾风知劲草，乱世显英雄。』就在这最严重最可怕的情形当中，出现了两个有信心的英雄。这两个人一个名叫迦勒，一个名叫乔舒亚。他们两个人信靠神，尊重神。他们认为神的能力高过世上一切的人。他们信只要有神与他们同在，他们甚么都不必惧怕。他们对百姓说，『我们所经过的地方是极美的地方。耶和华若喜悦我们，就必将我们领进那地，把地赐给我们；那地原是流奶与蜜的地方。但你们不可背叛耶和华，也不可怕那地的居民，因为他们是我们的食物，并且荫庇他们的已经离开他们。有耶和华与我们同在，不要怕他们。』拿他们两个人所说的话和那十个首领所说的话互相比较一下，便看出他们的心与那十个人的心有多大的分别了。那十个人说了一大篇话，口口声声只是说，『住那地的民强壮，城邑也坚固宽大。并且我们在那里看见了亚衲族的人，亚玛力人住在南地，赫人，耶布斯人，亚摩利人住在山地，迦南人住在海边并约但河旁。』『我们在那里所看见的人都身量高大，我们在那里看见亚衲族人，就是伟人，他们是伟人的后裔。』他们一句没有说到神。他们完全忘记了神。他们眼中所看见和心中所想的只是那些强壮可怕的迦南人。他们越想那些人，就越惧怕，在那种情形之下，当然他们要说，『我们不能上去攻击那民，因为他们比我们强壮』了。</p>
+<p>那两个有信心的英雄说甚么呢？『耶和华若喜悦我们，就必将我们领进那地，把地赐给我们。……你们不可背叛耶和华，也不可怕那地的居民，因为他们是我们的食物。……有耶和华与我们同在，不要怕他们。』他们一点不提迦南人，却口口声声的说到耶和华。听他们口中所说的话，便知道他们的心是怎样仰望神，信靠神，尊重神了。他们把神看得极大，看得极有能力，极有权柄。他们这样信靠神，尊重神，当然不再惧怕任何人了。他们两个人和那十个人的分别就在这一点──他们信靠神，因此不看人的强大，只看神的权能；那十个人不信靠神，因此不看神是怎样可靠，却只看人是怎样可怕。就是因为这一点的区别，他们两个人和那十个人的结局竟有了天壤之别。他们两个人进入了迦南美地，那十个人却遭瘟疫死在耶和华的面前。</p>
+<p>不信靠神不尊重神的人岂止于那十个首领呢？除了乔舒亚和迦勒以外，几十万以色列人当中竟再找不出一个信靠神尊重神的人来。这几十万以色列人都在埃及地，在红海边，在旷野，看见过神的大慈爱和大权能。可是到了约但河东，一听见那十个探子的报告，他们竟像从来不认识神的人那样惧怕。如果他们在这种胆怯畏惧的景况中，赶快呼求神的怜悯，求告神赐给他们信心和胆量，求告神拯救他们，神也必能怜恤他们，赦免他们不信的罪，加给他们信心和力量，率领他们进入迦南。可惜他们不但不这样作，反倒向神发出怨言来，怪罪神害了他们，并且商议要立一个首领，率领他们回到埃及去。他们不只不信靠神，而且忘恩负义到了极点。就在这个时候，神还藉着乔舒亚和迦勒安抚他们，鼓励他们，劝戒他们，他们如果稍有良心，就应当立时承认自己不信和胆怯的罪，听从乔舒亚和迦勒的话，赶快随从摩西的引导，豫备过约但河，纔合乎理。谁想到他们的心刚愎不信到了极点，不但不听那两个人的话，反倒要拿石头打死他们二人。他们这种行为是存心侮辱神，与神为敌。不能怪神向他们大发烈怒，要将他们立时灭绝。</p>
+<p>几十万以色列人当中只有两个有信心的人，这件事使我们感觉希奇么？有甚么可希奇的。那个时代中不是这样呢？今日千万个基督徒何尝不是在读经的时候看到以色列人的不信便严厉的责备他们，及至一旦他们自己遇见一些可怕的事，便也像以色列民那样惊惶失措，胆怯战兢呢。他们只注意他们的环境是何等险恶，他们的仇敌是何等可怕，却完全忘记了神和神的大能。古时几十万以色列人当中遇见极可怕的事知道信靠神的人只有两个。今日遇见极可怕的事还能信靠神的信徒又比那时候多几个呢？</p>
+<p>乔舒亚和迦勒与那十个首领并以色列全族的人中间所有的差别实在是非常的大，他们所遭遇的结局更是天地悬隔，可是起初的差别不过是小小的一点──乔舒亚和迦勒注目仰望神，其它的人却一味的看环境和那些可怕的人。是，那些勇敢得胜的基督徒和那些怯懦失败的基督徒所有的区别就是在这一点上。如果我们昂首仰望神，我们的信心，勇气，能力，便都像晓日那样腾云而起，但如果我们向四周看那些险恶的环境，和那些可怕的仇敌，我们便立时胆战心惊，软弱无力。一头和一低头之间，一切的事便发生那么大的差别。失败的基督徒一头便转为得胜，得胜的基督徒一低头便遭遇失败。想到这里，使我们得着多么大的安慰，又使我们受到多么大的警戒阿。</p>
+<p>几十万人当中纔有两个有信心的英雄，可见作一个有信心的英雄实在不是一件容易的事。但作一个有信心的英雄也实在不是一件难事。无论遇见多么险恶的环境，多么可怕的仇敌，多么困难的事物，也无论听见多么惊人的消息，多么严重的恐吓，只要昂首仰望神，注目神的大能，神的信实，神的慈爱，神的应许，一个最微小最软弱的圣徒也能作一个有信心的英雄。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

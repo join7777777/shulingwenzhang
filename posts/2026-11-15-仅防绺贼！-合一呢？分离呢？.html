@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>仅防绺贼！-合一呢？分离呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>仅防绺贼！-合一呢？分离呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/1真伪福音辩/3仅防绺贼！-合一呢？分离呢？.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『合而为一，』是主耶稣为他的门徒向神所恳求的，（约十七）也是保罗在他的书信中谆谆劝勉教会的。（弗四）凡作基督徒的，都当体会主耶稣的心意，『竭力保守圣灵所赐合而为一的心，』并且在凡事上都实践这种要训；这是毫无疑义的事，不待我们再多谈了。</p>
+<p>不过有一件事我们务要分辨清楚：『合而为一，』不是叫信的与不信的来『合一，』也不是叫教会与世界来合一。我们安静将约翰福音第十七章主耶稣的祈祷、仔细念诵几遍，便明白主耶稣求父『叫他们合而为一』那句话中的『他们，』是指着甚么人。注意主耶稣所说的，『你从世上赐给我的人。』『他们也遵守了你的道。』『你所赐给我的道，我已经赐给他们，他们也领受了；又确实知道我是从你出来的，并且信你差了我来。』『世界又恨他们，因为他们不属世界，正如我不属世界一样。』很清楚，主耶稣在这里是为他的门徒代祷，主耶稣求父使他的门徒合而为一，他的门徒乃是『父从世上赐给他的人，』『遵守了神的道的人。』『领受了神的道的人，』『信父差了子来的人，』『不属世界、而为世界所恨的人。』主耶稣在这里所奉献的祈祷，就是为这等人；只有这等人能合而为一，也只有这等人当合而为一。</p>
+<p>我们再来到以弗所书中，看保罗对教会所发的劝言。我们当十分认清，保罗所说『竭力保守圣灵所赐合而为一的心』的这句劝言，是对甚么人发的。以弗所书不是写给不信基督的人的，也不是写给拜偶像的人的，更不是写给举着基督的旗帜，为魔鬼服务的人的。以弗所书是写给『在以弗所的圣徒，就是在基督耶稣里有忠心的人』的。（弗一1）这些人是『信从主耶稣，亲爱众圣徒』的。（弗一15）这些人是『在基督耶稣里，靠着他的血，已经得亲近神』的。（弗二13）这些人是『蒙召，同有一个指望，一主、一信、一浸、一神』的。（弗四4～6）保罗所劝勉的就是这等人；只有这等人能合而为一，也只有这等人当合而为一。</p>
+<p>『合而为一』的呼声，是我们今日在教会中常常听见的。这呼声诚然是出于圣经，每个信徒都当听从。不过，撒但也会利用这种呼声，来败坏真理知识浅薄的信徒。我们现在要用神的光辉，来烛照他的诡计，不容他再逞他的奸谋。</p>
+<p>撒但从古以来，就千方百计抵挡属神的人，从各方面向他们大肆攻击。历来教会遭遇种种的迫害，莫不有撒但在背后推动。那知，外界的逼迫越剧烈，圣徒越热心，越坚固，他们的信心也越增加。撒但见计不得逞，便又唆使属他的人，混进教会里面，用狡诈诡谲的方法，来败坏属神的人。撒但知道属神的人藉着信心能以得胜，所以他就利用属他的人，在这最要紧的地方下手，先破坏信徒的信心；教训信徒说，圣经不全可信：神的应许与豫言不可信，神的震怒与审判不可信，神的救法与大能不可信；凡神要属他的人笃信的要道，撒但的使者都用那似是而非犹疑两可的话来解说。因此，许多软弱的信徒，都大大受了不信派的败坏。</p>
+<p>神不忘记他的教会。他看见撒但这样藉着不信派的『酵，』败坏了他的教会，便兴起属他的人，出来抵拒不信派的教训，于是为真道而起的战争，便在教会中发生了。忠心事奉神的人，在这种紧要的关头，应当怎样投袂奋起，为道作战，应当怎样纠正不信派的错误；若是不信派一味不信，不肯悔改，属神的人便应当与他们分离，纔是正理。不料一些不信派领着，许多无知的信徒随着，竟高高唱起『合而为一』的论调来。他们说，『基督徒切莫因着种种小的问题分门别户。（其实，信仰是最大的问题。）基督曾教训他的门徒当合而为一。我们作基督徒的当，本着基督的教训联合起来纔对。』于是，『合一，』『合一，』的呼声越唱越高：会名要合一，管理要合一，布道事业要合一，社会事业要合一；再进一步，信圣经和救恩的与不信派要合一，教会与社会要合一，基督与撒但要合一，光明与黑暗要合一，『合一，』『合一，』这种合一的结果，不过造出一座大巴比伦城罢了！</p>
+<p>每一个有常识的人，都知道两种或几种物质，必须性质相同方能合一，否则决无合一之可能；纵使勉强将二者合一，结果必至发生一种恶劣的现象。基督求父使他的门徒合一，使徒教训教会合一，因为这些人性质是相同的。叫信徒与不信派这两种性质截然不同的人合一，是一件极不合理的事。前一种是领受了神的道，信基督是父所差来，遵守了神的道，不属世界，而为世界所恨的人；后一种是疑惑神的道，以基督为杰出的人，不遵守神的道，属乎世界，而且大得世界欢迎的人。前一种是在基督耶稣里靠着他的血已经得亲近神，在基督耶稣里有忠心，信靠主耶稣，亲爱众圣徒的人；后一种是不信宝血的功能，因而与神隔绝，为名与利将耶稣卖给仇敌，不信主耶稣，讥笑众圣徒的人。主耶稣未曾求父使这两种人合而为一，保罗也未曾教训教会说这两种人当合而为一。冰与火怎样不能合一，这两种人也是照样不能合一；并且他们也决不当合一。合而为一的教训，竟是这样被人所谬解、所利用，真是可叹到极点了！</p>
+<p>再进一步说，圣经中非但未曾教训信徒与不信的人合一，而且教训信徒要与不信的人、假信徒、并背道的人分离。容我们举出几段这样的经训来：</p>
+<p>『后来有些人心里刚硬不信，在众人面前毁谤这道，保罗就离开他们，也叫门徒与他们分离。』（徒十九9）。</p>
+<p>『弟兄们，那些离间你们，叫你们跌倒，背乎所学的道的人，我劝你们要留意躲避他们。因为这样的人，不服事我们的主基督，只服事自己的肚腹；用花言巧语，诱惑那些老实人的心。』（罗十六17、18）。</p>
+<p>『若有称为弟兄的，是行淫乱的，或贪婪的，或拜偶像的，或辱骂的，或醉酒的，或勒索的；这样的人，不可与他相交，就是与他同吃都不可。』（林前五11）。</p>
+<p>『你们和不信的原不相配，不要同负一轭。义和不义有甚么相交呢？光明和黑暗有甚么相通呢？基督和彼列有甚么相和呢？信的和不信的有甚么相干呢？神的殿和偶像有甚么相同呢？因为我们是永生神的殿。……你们务要从他们中间出来，与他们分别，不要沾不洁净的物，我就收纳你们。』（林后六14～17）。</p>
+<p>『我们奉主耶稣基督的名吩咐你们，凡有弟兄不按规矩而行，不遵守从我们所受的教训，就当远离他。』（帖后三6）。</p>
+<p>『你该知道，末世必有危险的日子来到。因为那时人要专顾自己，贪爱钱财，自夸，狂傲，谤读，违背父母，忘恩负义，心不圣洁，无亲情，不解怨，好说谗言，不能自约，性情凶暴，不爱良善，卖主卖友，任意妄为，自高自大，爱宴乐不爱神，有敬虔的外貌，却背了敬虔的实意；这等人你要躲开。』（提后三1～5）。</p>
+<p>『分门结党的人，警戒过一两次，就要弃绝他；因为知道这等人已经背道，犯了罪，自己明知不是，还是去作。』（多三10、11）。</p>
+<p>『世上有许多迷惑人的出来，他们不认耶稣基督是成了肉身来的。这就是那迷惑人，敌基督的。你们要小心，不要失去你们所作的工，乃要得着满足的赏赐。凡越过基督的教训不常守着的，就没有神，常守这教训的，就有父又有子。若有人到你们那里，不是传这教训，不要接他到家里，也不要问他的安；因为问他安的，就在他的恶行上有分。』（约二7～11）。</p>
+<p>圣经中的教训谆谆的劝勉教会当合而为一；但同时又提醒信徒，要远离抗拒真道的假弟兄，与沾染污秽的人。可见得『合一』的意思，决不是叫信徒与不信派并纵欲的假信徒合一。属主的人应当与这些人分离；惟有属主的人要在爱里合一，因为他们的信仰同，心志同，希望同，标准同，所以他们合而为一，不仅是应当的，而且是能以作到的。</p>
+<p>论到合一的教训，今日教会中有一种极可惜的状况。许多热心爱主、真有信仰的基督徒，在这合一的教训上，不是太狭，就是太宽：太狭的，抱定『惟我独是』的见地，对于其它信徒，不论他们是怎样热诚，怎样爱主，只要在圣道上的见解与我略有不同，便视为毒蛇魔鬼，攻击排斥不遗余力，见了面好似有不共戴天之仇，提起来便不住的指斥批评，将圣经中合而为一的教训完全舍弃不顾；太宽的呢，不仅容纳与我见解不同的信徒，连不信派与假信徒也一并容纳起来。他们常说，同是信耶稣的，何必斤斤于细节，何必分甚么新旧，让我们照着主的教训合而为一罢。不错，合而为一是主的教训，但合而为一绝不是这样解释的。这种泾渭不分的合一，非但无益，反会使撒但在教会中大得作工的机会，最后必至发生极悲惨的结果。</p>
+<p>近年来，教会的黑暗腐败在在可见，加以不信派在教会中又进行了不少败坏信徒信心的工作；许多信徒非但不知听从主命与恶势力分离，反倒盲从别人，盛倡甚么联合运动。我们明知这种泾渭不分的合一，是只能有害，绝不会有益的。可惜，许多信徒却是还在迷梦里！著者写这一篇，正是希望这种真理上还不够清楚的信徒，能及早醒悟过来，与真诚有信仰热诚爱主的人合一，同时要与不信派并恶势力分离。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

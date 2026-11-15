@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>顺从人呢？顺从神呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>顺从人呢？顺从神呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/7我们是为了信仰/6顺从人呢？顺从神呢？.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『第二天，官府、长老、和文士，在耶路撒冷聚会，又有大祭司亚那和该亚法、约翰、亚力山大、并大祭司的亲族，都在那里。叫使徒站在他们当中，就向他们说，「你们用甚么能力，奉谁的名，作这事呢？」那时彼得被圣灵充满，对他们说，「治民的官府和长老阿，倘若今日因为在残疾人身上所行的善事，查问我们他是怎样得了痊愈；你们众人和以色列众人都当知道，站在你们面前的这人得痊愈，是因你们所钉十字架、神叫他从死人里复活的拿撒勒人耶稣的名。他是你们匠人所弃的石头，已成了房角的头块石头。除他以外，别无拯救；因为在天下人间，没有赐下别的名，我们可以靠着得救。」</p>
+<p>『他们见彼得约翰的胆量，又看出他们原是没有学问的小民，就希奇，认明他们是跟过耶稣的。又看见那治好了的人，就无话可驳。于是吩咐他们从公会出去，就彼此商议说，「我们当怎样办这两个人呢？因为他们诚然行了一件明显的神迹，凡住耶路撒冷的人都知道，我们也不能说没有。惟恐这事越发传扬在民间，我们必须恐吓他们，叫他们不再奉这名讲论。」于是叫了他们来，禁止他们，总不可奉耶稣的名讲论教训人。彼得约翰说，「听从你们，不听从神，这在神面前合理不合理？你们自己酌量罢。我们所看见所听见的，不能不说。」』（徒四5～20）。</p>
+<p>『带到了，便叫使徒站在公会前。大祭司问他们说，「我们不是严严禁止你们，不可奉这名教训人么？你们倒把你们的道理充满了耶路撒冷，想要叫这人的血归到我们身上。」彼得和众使徒回答说，「顺从神，不顺从人，是应当的。你们挂在木头上杀害的耶稣，我们祖宗的神已经叫他复活。神且用右手将他高举，叫他作君王，作救主，将悔改的心和赦罪的恩赐给以色列人。我们为这事作见证，神赐给顺从他的人的圣灵也为这事作见证。」</p>
+<p>『公会的人听见，就极其恼怒，想要杀他们。但有一个法利赛人，名叫迦玛列，是众百姓所敬重的教法师，在公会中站起来，吩咐人把使徒暂且带到外面去。就对众人说，「以色列人哪，论到这些人，你们应当小心怎样办理。从前丢大起来，自夸为大，附从他的约有四百；他被杀后，附从他的全都散了，归于无有，以后报名上册的时候，又有加利利的犹大起来，引诱些百姓跟从他，他也灭亡，附从他的也都四散了。现在我劝你们不要管这些人，任凭他们罢。他们所谋的、所行的、若是出于人，必要败坏；若是出于神，你们就不能败坏他们，恐怕你们倒是攻击神了。」公会的人听从了他，便叫使徒来，把他们打了，又吩咐他们不可奉耶稣的名讲道，就把他们释放了。他们离开公会，心里欢喜，因被算是配为这名受辱。他们就每日在殿里、在家里、不住的教训人，传耶稣是基督。』（徒五27～42）。</p>
+<p>『在上有权柄的，人人当顺服他；因为没有权柄不是出于神的。凡掌权的都是神所命的。所以抗拒掌权的，就是抗拒神的命，抗拒的必自取刑罚。作官的原不是叫行善的惧怕，乃是叫作恶的惧怕。你愿意不惧怕掌权的么？你只要行善，就可得他的称赞；因为他是神的用人，是与你有益的。你若作恶，却当惧怕，因为他不是空空的佩剑；他是神的用人，是伸的，刑罚那作恶的。所以你们必须顺服，不但是因为刑罚，也是因为良心。你们纳粮，也为这个缘故；因他们是神的差役，常常特管这事。凡人所当得的，就给他：当得粮的，给他纳粮；当得税的，给他上税；当惧怕的，惧怕他；当恭敬的，恭敬他。』（罗十三1～7）。</p>
+<p>『你要提醒众人，叫他们顺服作官的、掌权的，遵他的命，豫备行各样的善事。』（多三1）。</p>
+<p>『你们为主的缘故，要顺服人的一切制度，或是在上的君王，或是君王所派罚恶赏善的臣宰。因为神的旨意原是要你们行善，可以堵住那胡涂无知的人的口。你们虽是自由的，却不可藉着自由遮盖恶毒，总要作神的仆人。务要尊敬众人，亲爱教中的弟兄，（教中的弟兄，希腊文是 &quot;adelphotes&quot; 杨氏经文汇编译作 brotherly relation，意思是「弟兄的关系。」英文圣经译作 &quot;brotherhood&quot; 这个字根本没有「教中」的意思）敬畏神，尊敬君王。』（彼前二13～17）。</p>
+<p>读了上面所引的几段经文，我们也许要发出一个问题说，『基督徒究竟是否应当服从世上的权柄，和那些有权柄的人？』若说『应当，』那么使徒为甚么不服从当日的大祭司和犹太人的官吏并长老？这些人屡次禁止使徒们传讲耶稣，禁止使徒们奉耶稣的名讲论教训人，但使徒们没有一次听从他们。使徒们第一次被禁止传福音的时候，回答那些人说，『听从你们，不听从神，这在神面前合理不合理？你们自己酌量罢。我们所看见所听见的，不能不说。』第二次被禁止的时候，他们回答那些人说，『顺从神，不顺从人，是应当的。你们挂在木头上杀害的耶稣，我们祖宗的神已经叫他复活。神且用右手将他高举，叫他作君王，作救主，将悔改的心和赦罪的恩赐给以色列人。我们为这事作见证，神赐给顺从的人的圣灵也为这事作见证。』他们挨了打以后，被释放了。他们还传讲耶稣么？传，而且传得更殷勤。『他们就每日在殿里、在家里、不住的教训人，传耶稣是基督。』</p>
+<p>若说基督徒不应当服从世上的权柄和那些有权柄的人，那么使徒为甚么教训教会说，『在上有权柄的，人人当顺服他』呢？为甚么又说，『你要提醒众人叫他们顺服作官的、掌权的、遵他的命，豫备行各样的善事』呢？为甚么又说，『你们为主的缘故，要顺服人的一切制度，或是在上的君王，或是君王所派罚恶赏善的臣宰』呢？</p>
+<p>如果服从权柄和有权柄的人是合理的，使徒们就不该违抗大祭司、和犹太的官吏、并长老们的命令，也不应当说，『顺从神，不顺从人，是应当的，』更不应在被禁止传耶稣以后，继续着去奉耶稣的名讲道教训人。如果服从世上的权柄和有权柄的人是不合理的，使徒就不应当写这几段话来教训圣徒。这个问题到底应当怎样解答呢？</p>
+<p>我们对这个问题是这样回答：第一，我们应当顺服神，第二，我们在不违背神的命令的范围内，也应当顺服人的一切制度和权柄。但如果人的制度和权柄与神的命令相抵触，那样，我们便只有不顺从人，只顺从神了。基督徒所以要顺服人，并不是因为怕受人的惩罚，乃是因为敬畏神，因为神吩咐我们服从有权柄的人。既是这样，如果人的制度和命令与神的命令相背，自然我们就不能服从了。</p>
+<p>使徒们当日在耶路撒冷不服从大祭司、和犹太的官吏、并长老，正是这种情形。传讲耶稣的福音，是神的命令和托付，大祭司、和犹太人的官府、并长老，禁止使徒，不许他们再传，当然他们不能服从，也不可服从。就是在这种情形之下，他们说出了『顺从神，不顺从人，是应当的，』这一句话。</p>
+<p>有些基督徒误解了使徒所说的这一句话。他们认为既要顺从神，便不能再顺从任何人。因此他们在家庭中不顺从父母长辈，在学校中不顺从师长，也不遵守校规，在工作的地方不顺从领导人的指导，到游览或参观的地方去，不遵守游览和参观规则。如果有人起来干涉他们，他们便说他们是基督徒，他们只能服从神，却不能服从人。他们这种行为不但给别人招来许多的困难和损害，还给神招来许多的羞辱。他们亟需要改正这种错误的观念。他们亟需要读经上的这一段教训──『你们为主的缘故，要顺服人的一切制度。』</p>
+<p>一个基督徒无论在甚么地方，都应当作一个最守法律和规则的人。他不应当等到有人指责他，纠正他，纔不得不遵守法律和规则。如果有这种情形，便是他的耻辱。他应当自己当留心一切应当遵守的法律和规则，一一的谨慎遵守。如果因为不知道，或是一时疏忽，以致违犯了某条法律或规则，一经别人指示，便当立时承认自己的错误，欢欢喜喜的接受别人的纠正，急速改正过来。万不可庇护自己的错处，不肯承认，尤其不可羞恼成怒，对人说无理的话语，或有甚么粗暴无礼的态度。</p>
+<p>举几个例子说罢：一个基督徒在学校里读书，无论在礼堂、在课室、在宿舍、在饭厅、在操场、在图书馆，都当严谨的遵守校规。上课不可迟到。别人安静读书的时候，不可大声说话。晚间应当熄灯的时候，不可无故开灯。夜间大家睡觉的时候，不可出声说话，也不可大声动作。吃饭的时候不可争先恐后，不守秩序。不可污损任何校中的建筑或用品。对师长要有礼貌。对功课要用心学习。一个基督徒作教员，应当认真备课，专心教导，看学校像自己的家庭，尽心爱护，看学生像自己的子女，善诱循循。一个基督徒在公事房里办公，若不是有特殊的事故，总要按时上班。办公的时候不可偷闲，也不可作自己的私事。自己应当作的事，不要推给别人去作。今天能作完的事，不要拖到明天。没有极重要的事，不可轻易请假。上级交代的工作，只要是自己的能力作得到的，绝不推诿。一个基督徒在工厂里作工，要遵守时间，爱护物资，服从领导，殷勤工作。不但有人看着的时候殷勤作工，就是没有人看着，没有人查问，也要同样的殷勤。一个基督徒作医师，要看病人像自己家中的人一样。只要时间许可，为病人诊病总要详细周到，不可轻忽大意，草草了事。一个基督徒作护士，要尽心看护病人。值班的时候不可看书，不可作活计，免得忽略了病人的需要。值夜班的时候，白日应当睡足了觉，免得夜间精神不足，以致打盹。为病人送药或打针的时候，应当细心，免得发生错误或危险。对病人要言语和蔼，态度温柔。一个基督徒作商人，不可用次货冒充好货，以陈货冒充新货。不可讨虚价，不可欺哄乡间人、外乡人、或外国人。不可使用不公平的尺秤或量器。不可偷税、抗税。一个基督徒到游玩或参观的地方去，应当留意那里所张贴的规则。从入口进去，从出口出来。不可摸的东西不要摸，不许去的地方不可去。不可践踏草地。不可折取花卉，不可摘食树上的果子。不可随意乱画乱写。不可损伤任何建筑或什物。不可随地吐痰或抛掷果皮烂纸。不可在厕所以外便溺。不可攀登禁攀登的山石。应当出来的时候，不可再流连不走。一个基督徒驾驶车辆的时候，要遵守交通规则，服从交通警的指挥，不但有岗警的地方应当大迂迥，就是没有岗警的地方也当如此。晚间必须燃灯。经过街道交叉的地方和拐弯的地方当开慢车。如果不慎撞倒了人，要立时下车扶助被撞的人，万不可开车逃走。一个基督徒到医院去看视病人，要按着规定的时间进去，按着规定的时间出来。在病房内外行走的时候，脚步要轻，说话的时候，声音要低。要轻轻开门关门。给病人送食品，要得院方的许可。一个基督徒作国家的公民，应当遵守国家一切的法律，不可作一件不能在法庭上侃侃直陈的事。要尊敬在上有权柄的人。要爱护一切公共的建筑、财产、什物，不但自己不加损伤，而且要阻止别人损伤。不可作一件与国家或与国中的任何人有损害的事。</p>
+<p>但在另外的一种情形之下，我们却绝不可服从人：那就是人的制度或人的命令与神的旨意互相抵触的时候，我们便只能服从神，却不能服从人了。儿女应当听从父母，但如果父母吩咐儿女去说谎，儿女便不能听从父母了。学生应当听从师长，但如果师长领导学生到死人的遗体或遗像前面去行礼致敬，学生便不能听从师长了。信徒在工作岗位上应当服从领导人，但如果领导人禁止他们祷告、读经、参加圣徒的聚会、为主耶稣作见证，他们便不能服从领导人了。只要人的制度或命令不违背神的旨意，基督徒是应当服从的；但如果人的制度或命令违反了神的命令和圣经上的真理，那样，我们便绝对不能服从。在这时我们应当说使徒所说的话──『顺从神，不顺从人，是应当的。』</p>
+<p>基督徒应当顺服人的一切制度、和一切在上有权柄的人。但基督徒在遵行神的旨意、与圣徒交通、在教会中与众圣徒一同事奉神、保守教会的圣洁、为主耶稣作见证、传扬救恩的福音、这些事上，却绝不能受任何人的干涉。我们为这些事不怕任何拦阻，不惜付任何代价，也不惜作任何牺牲。我们为这些事必须效法使徒的勇敢刚强。当主耶稣升天以后，犹太人的政治与宗教两方面的领袖用了雷霆万钧的力量，想消灭基督的福音与教会，就是因为使徒那样勇敢刚强，福音纔得传开，教会纔被建立，众信徒纔能随着他们也勇敢刚强起来，将福音传遍世界，我们纔得听见了福音，领受了救恩，作了神的儿子，得了永远的生命。有人问我今日的教会该走怎样的道路？我回答说：『走使徒的道路。』那就是说，跟着使徒的脚踪走，效法他们那样勇敢刚强、那样不怕恐吓、那样不顾性命、那样至死忠心、那样不讨人的欢心，那样在任何阻力之下仍然传扬福音，那样只本着神的话教训人。谁能这样作，谁便能蒙神赐福，被神重用。他们要遭遇使徒所遭遇的，他们也要成就使徒所成就的，神的荣耀和大能要藉着他们彰显出来，如同当日藉着使徒彰显出来一样。</p>
+<p>可叹许多传道的人竟利用『顺服人的制度，』和『服从有权柄的人』这两句话来掩饰自己的胆怯与失败，来欺骗许多不十分明白圣经真理的信徒，以致教会的信仰、事工，都被放在『人的制度』和『人的权柄』之下。结果是甚么呢？真理被蒙蔽，圣经被歪曲，教会变了质，羊群分散流离，基督的教会和福音就这样在『顺服人的制度』和『服从权柄』的教训下，被『神的仆人』们轻轻断送了！这些传道人能逃脱神的震怒么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

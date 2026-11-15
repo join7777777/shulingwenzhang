@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>若不先杀保罗就不吃不喝 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>若不先杀保罗就不吃不喝</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/10在火窑与狮穴中/4若不先杀保罗就不吃不喝.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『到了天亮，犹太人同谋起誓说，若不先杀保罗，就不吃不喝。这样同心起誓的有四十多人。他们来见祭司长和长老说，「我们已经起了一个大誓，若不先杀保罗就不吃甚么。现在你们和公会要知会千夫长，叫他带下保罗到你们这里来，假作要详细察考他的事。我们已经豫备好了，不等他来到跟前就杀他。」保罗的外甥听见他们设下埋伏，就来到营楼里，告诉保罗。保罗请一个百夫长来，说，「你领这少年人去见千夫长，他有事告诉他。」于是把他领去见千夫长，说，「被囚的保罗请我到他那里，求我领这少年人来见我，他有事告诉你。」千夫长就拉着他的手走到一旁，私下问他说，「你有甚么事告诉我呢？」他说，「犹太人已经约定，要求你明天带下保罗到公会里去，假作要详细查问他的事，你切不要随从他们。因为他们有四十多人埋伏，已经起誓说，若不先杀保罗，就不吃不喝，现在豫备好了，只等你应允。」于是千夫长打发少年人走，嘱咐他说，「不要告诉人你将这事报给我了。」千夫长便叫了两个百夫长来，说，「豫备步兵两百，马兵七十，长枪手二百，今夜亥初往该撒利亚去，也要豫备牲口，叫保罗骑上，护送到巡抚腓力斯那里去。」……于是兵丁照所吩咐他们的，将保罗夜里带到安提帕底。第二天让马兵护送，他们就回营楼去。』（徒二十三12～32）。</p>
+<p>好严重的局面！好危险的景况！四十多个犹太人下了这种决心，一定要把保罗置于死地然后甘心。『若不先杀保罗，就不吃不喝。』纵使只有三五个人下了这种决心，保罗的处境就已经足彀危险了，何况这样起誓的有四十多人呢。保罗的性命在这个时候正如千钧系于一发。在人眼中看来，简直不会有幸免的希望。看他们所下的这种决心，再看他们所设的这种密谋，令我们真不能不替保罗担心到万分。谁想到神要拯救他的仆人脱离危险，一点不费力量便破坏了这些恶人的计谋呢。</p>
+<p>保罗的外甥叫甚么名字？我们不晓得。他是作甚么事业的？我们也不知道。圣经里除了这一个地方以外，再没有提到这个人。神就藉着这样无声无臭的一个少年人，成就了他拯救他的忠仆的大工。这个少年人听见了那四十多人所设的恶谋，便来报信给保罗。保罗就请了一个百夫长来，领这少年人去见千夫长，把这件事又告诉千夫长。就这样一来，保罗便脱离危险了。『千夫长便叫了两个百夫长来，说，「豫备步兵二百，马兵七十，长枪手二百，今夜亥初往该撒利亚去，也要豫备牲口，叫保罗骑上，护送到巡抚腓力斯那里去」。』四十多个犹太人起誓要杀保罗，神却为保罗豫备了四百七十名武装卫队，保护他脱离危险。我们可以揣想一下保罗离开耶路撒冷的时候那种情形：四百七十名卫队，有步兵，有马兵，还有手持长枪的长枪手，保罗骑着牲口走在中央，那些武装的卫兵在前面和后面拥护着，浩浩荡荡的向着该撒利亚进发。以一个手无寸柄的保罗，如今竟能这样安安全全的从许多仇敌中间走出去，没有受到丝毫的伤害，这不能不承认是神所施行的拯救了。</p>
+<p>看见了么？属神的人只要敬畏神，遵行神的旨意，忠心作神的工，就不必惧怕任何危险，任何祸患，也不必惧怕任何人加害。若不经过神的许可，任何人不能伤害他的一根头发。纵使要害他的人像要害保罗的人那样多，他们所下的决心像四十多人的决心那样坚强，他们的计谋像那四十多人的计谋那样周密，只要神略动一下手指头，便能把他们的决心和计谋破坏无遗。人的决心无论如何坚强，人的计谋无论如何周到，总不能和神作半分钟的抗争。恶人的势力看着是强大无比，其实是脆弱不堪一击。敬畏神的人所处的境遇看着是危险万分，其实是稳固如同金汤。我们不必惧怕恶人加害于我们，我们只当惧怕我们不能好好的敬畏神，不能忠心作神的工。我们不必惧怕仇敌的数目众多，我们只当惧怕我们不能时常与神同行。我们不必惧怕四十多人起誓要杀我们，我们只当惧怕我们不能像保罗那样勇敢忠心事奉神。</p>
+<p>神拯救爱他的人所用的方法真是奇妙。有时他用极特殊的方法施行拯救，有时他用极平凡的方法施行拯救。有时他藉着有权柄有势力的人施行拯救，有时他藉着极卑微极软弱的人施行拯救。在保罗得救的这件事上，我们看见他用了一个没有名声没有地位的犹太少年，又用了一个声势赫赫手握兵符的千夫长。天上的使者，地上的人类，都在神的掌握之中，他愿意用谁，就可以用谁。他用这一切去成全他的旨意。他用这一切去拯救爱他的人。爱神的人所处的地位是多么安全，爱神的人所得的福分是何等浩大阿！</p>
+<p>读完了这一段记载，我很愿意知道那同谋起誓要杀保罗的四十多个人到底吃了喝了没有。如果他们到底还是吃了喝了，他们便背弃了自己的誓言。如果他们持守他们的誓言，他们便只有饿死渴死，因为保罗已经被千夫长送到该撒利亚，他们再没有方法去杀他了。那些人同谋起誓的时候，何尝不是觉得自己极有把握，能把保罗置于死地。如果他们对这件事有几分怀疑，恐怕事情不能成功，他们也决不敢起这样严重的誓，以致自己弄得骑虎难下。他们既然下了这样坚强的决心，又有这样精密的计划，事情决没有失败的可能。他们却没有想到天上的神是那样大有权能，大有智慧，一点不用费力，便破坏了他们全盘的计划。他们没有害死保罗，却自己取了极大的羞辱，背誓食言，贻笑众人。</p>
+<p>与神为敌的人有几个不是这样愚昧可怜呢？他们定意要抗拒神，要加害于神的仆人的时候，自己以为必操胜算，因此洋洋得意的夸下大口。他们认为『人定胜天』，认为『有志者事竟成』。他们却不料到抗拒神的人永远没有一个人能彀成功。弄来弄去，他们竟把自己抛到自己所设的网罗中，轻者受羞辱，重者大祸临身。所有与神为敌的人都是与自己为敌，所有要杀害神的仆人的人最后都杀害了自己。我为那些与神为敌的人叹息，我为那些与神为敌的人惧怕。</p>
+<p>『若不先杀保罗，就不吃不喝。』说这话的人存心是错误的，然而他们这种决心却是可效法的。如果把这种决心用在正路上，将要发生多么伟大的成效。如果圣徒们能说，『若不先祷告读经，就不吃不喝，』他们属灵的生命将要有何等大的长进。如果圣徒们能说，『若不先承认离弃罪恶，就不吃不喝，』他们的生活要成为怎样圣洁完全。如果圣徒能说，『若不先与弟兄和好，就不吃不喝，』他们和别人中间那能再有嫌隙不和。如果圣徒们能说，『若不先扶助软弱的人，赒济缺乏的人，就不吃不喝，』他们要作成多少爱心的工作。如果圣徒们能说，『若不先传扬福音，就不吃不喝，』将要有多少人得听福音，得蒙救恩。如果圣徒们能说，『若不先规劝弟兄离开他们的罪恶过失，就不吃不喝，』将要有多少犯罪的信徒因受责备悔改过来。不作成一件当作的事就不吃不喝，这实在是一种伟大的精神，也是成功的人必备的一种德行。有了这种决心，纔能克服一切的困难，纔能成就常人所不能成的事工。我们不当抱这种决心去抗拒神，但我们却当抱这种决心去顺从神。我们不当抱这种决心去害人，但我们却当抱这种决心去救人。若是悖逆神的人能下这种决心去害神的仆人，我们应当下比这大几倍的决心去事奉神，去爱邻舍呢。</p>
+<p>『若不先杀保罗，就不吃不喝。』我读了这句话蒙了无限的安慰，受了极深的警戒，也得了很多的勉励。蒙安慰，因为我知道若没有神的许可，恶人无论如何，不能伤害我们一丝一毫。受警戒，因为我明白与神为敌便是自取羞辱和败坏。得勉励，因为我看见我们向神若有这种决心，便没有不能成就的事。</p>
+<p>等候神</p>
+<p>『要等候耶和华，当壮胆，坚固你的心；我再说，要等候耶和华。』（诗二十七14）。</p>
+<p>『你当默然倚靠耶和华，耐性等候他。不要因那道路通达的，和那恶谋成就的，心怀不平。当止住怒气，离弃忿怒；不要心怀不平，以致作恶。因为作恶的必被剪除，惟有等候耶和华的必承受地土。』（诗三十七7～9）。</p>
+<p>『我的心默默无声，专等候神，我的救恩是从他而来。惟独他是我的盘石，我的拯救；他是我的高台，我必不很动摇。……我的心哪，你当默默无声，专等候神，因为我的盼望是从他而来。惟独他是我的盘石，我的拯救；他是我的高台，我必不动摇。』（诗六十二1～6）。</p>
+<p>『我等候耶和华，我的心等候，我也仰望他的话。』（诗一三五5）。</p>
+<p>『你不要说，我要以恶报恶；要等候耶和华，他必拯救你。』（箴二十22）。</p>
+<p>『耶和华必然等候，要施恩给你们，必然兴起，好怜悯你们；因为耶和华是公平的神，凡等候他的都是有福的。』（赛三十18）。</p>
+<p>『你岂不曾知道么？你岂不曾听见么？永在的神耶和华，创造地极的主，并不疲乏，也不困倦，他的智慧无法测度。疲乏的，他赐能力；软弱的，他加力量；就是少年人也要疲乏困倦，强壮的也必全然跌倒。但那等候耶和华的必从新得力，他们必如鵰展翅上腾，他们奔跑，却不困倦，行走，却不疲乏。』（赛四十28～31）。（本段经文中的『鵰』字中文译本作『鹰』，误。）</p>
+<p>『等候我的必不至羞愧。』（赛四十九23）。</p>
+<p>『凡等候耶和华，心里寻求他的，耶和华必然施恩给他。人仰望耶和华，静默等候他的救恩，这原是好的。』（哀三25、26）。</p>
+<p>『至于我，我要仰望耶和华，要等候那救我的神，我的神必应允我。』（弥七7）。</p>
+<p>『等候神』是圣徒必须学习的一样极重要的功课，但牠也是最难学习的一门功课。就因为我们学习不好这门功课，我们受了极大的害，吃了极多的亏。许多很好的信徒不会等候。许多很热心的信徒不会等侯。许多很忠心服事神的信徒不会等候。这些人知道罪恶害他们，他们却不知道『不等候神』这件事同样的害他们。他们不知道因为不等候神他们便会犯许多的罪。他们更不知道魔鬼会在他们忙忙乱乱的时候，把他们引到许多的罪恶和祸患中。人在慌忙之中最容易失去鉴别力，以致受人的欺骗。魔鬼就是在信徒遇事慌忙的时候引诱他们走入歧途，引诱他们去作许多在他们心思安静头脑清楚的时候绝对不肯去作的事。有三种境遇最能使我们因为不等候神以致犯罪。第一种境遇就是在我们遭遇危险患难的时候，第二种境遇就是在我们受人欺侮苦待，或是看见一些不公平的事摆在我们面前的时候，第三种境遇就是我们渴望得一样甚么好处，却是总得不着的时候。圣经里有几段顶清楚的记载证明这个真理，容我们引证这几段在下面。</p>
+<p>『扫罗照着塞缪尔所定的日期等了七日，塞缪尔还没有来到吉甲，百姓也离开扫罗散去了。扫罗说，「把燔祭和平安祭带到这里来。」扫罗就献上燔祭。刚献完燔祭，塞缪尔就到了。扫罗出去迎接他，要问他好。塞缪尔说，「你作的是甚么事呢？」扫罗说，「因为我见百姓离开我散去，你也不照所定的日期来到，而且非利士人聚集在密抹，所以我心里说，恐怕我没有祷告耶和华，非利士人下到吉甲攻击我，我就勉强献上燔祭。」塞缪尔对扫罗说，「你作了胡涂事了，没有遵守耶和华你的神所吩咐你的命令，若遵守，耶和华必在以色列中坚立你的王位，直到永远。现在你的王位必不长久。耶和华已经寻着一个合他心意的人，立他作百姓的君，因为你没有遵守耶和华所吩咐你的」。』（撒上十三8～14）。</p>
+<p>『后来摩西长大，他出去到他弟兄那里，看他们的重担，见一个埃及人打希伯来人的一个弟兄。他左右观看，见没有人，就把埃及人打死了，藏在沙土里。第二天他出去，见有两个希伯来人争斗，就对那欺负人的说，「你为甚么打你同族的人呢？」那人说，「谁立你作我们的首领和审判官呢？难道你要杀我，像杀那埃及人么？」摩西便惧怕，说，「这事必是被人知道了。」法老听见这事，就想杀摩西。但摩西躲避法老，逃往米甸地居住。』（出二11～15）。</p>
+<p>『埃布尔兰的妻子撒莱不给他生儿女。撒莱有一个使女，名叫夏甲，是埃及人。撒莱对埃布尔兰说，「耶和华使我不能生育，求你和我的使女同房，或者我可以因他得孩子。」埃布尔兰听从了撒莱的话。于是埃布尔兰的妻子撒莱将使女埃及人夏甲给了丈夫为妾，那时埃布尔兰在迦南已经住了十年。埃布尔兰与夏甲同房，夏甲就怀了孕。他见自己有孕，就小看她的主母。撒莱对埃布尔兰说，「我因你受屈。我将我的使女放在你怀中，她见自己有了孕就小看我。愿耶和华在你我中间判断。」埃布尔兰对撒莱说，「使女在你手下，你可以随意待她。」撒莱苦待她，她就从撒莱面前逃走了。』（创十六1～6）。</p>
+<p>扫罗王从一种极好的地步堕落到极深的地方，再不能起来，真是一件极令人惋惜的事。但他第一步的堕落并不是犯了甚么其它的大罪，只是因为不会等候神，便没有遵从塞缪尔的话，自己去给神献祭。扫罗明明知道他不应当献祭，但他因为惧怕非利士的军兵，便作了这件愚昧的事，被神所废弃。其实他再等不多时候，塞缪尔便来到了。我们岂不也是常作这种愚昧的事么？一遇见甚么危险祸患，便吓得心惊胆战，手足失措。在这时候魔鬼最容易欺骗我们，引诱我们去作神所不喜悦的事。当我们遭遇危险，惊慌失措，手忙脚乱的时候，最容易失去平日所有的鉴别力，纵使不失去鉴别力，我们也会因为逃避危险的缘故，去作我们明知道不当作的事。要想逃避这种危险，只有学习等候神。无论遇见甚么可怕的事，一点不要惊惶忙乱，只要安安静静的进到神面前，仰望他，求告他，等候他。他决不会忘记我们，更决不会遗弃我们。从来没有一个圣徒因为等候神吃了亏，受了害。可是有许许多多属神的人因为不等候神，便受了极大的损害，吃了极多的苦头。不用说危险在前的时候我们去作神不喜悦的事是得罪神，就是我们遇见危险不投靠神，却去投靠人，向人求援助，这已经是藐视神，不信靠神，得罪神了。古时犹太人遭遇巴比伦人的攻击，他们不呼求神的拯救，却到埃及去求救兵，神为这事深深的责备他们说，『祸哉这悖逆的儿女！他们同谋，却不由于我，结盟，却由于我的灵，以致罪上加罪，起身下埃及去，并没有求问我；要靠法老的力量，加添自己的力量，并投在埃及的荫下，所以法老的力量必作你们的羞辱，投在埃及的荫下要为你们的惭愧。他们的首领已在琐安，他们的使臣到了哈内斯。他们必因那不利于他们的民蒙羞，那民并非帮助，也非利益，只作羞耻凌辱。』（赛三十1～5）。又说，『主耶和华以色列的圣者曾如此说，「你们得救在乎归回安息，你们得力在乎平静安稳，你们竟自不肯。」你们却说，「不然，我们要骑马奔走」；所以你们必然奔走。又说，「我们要骑飞快的牲口」；所以追赶你们的也必飞快。一人叱喝，必令千人逃跑，五人叱喝，你们都必逃跑，以致剩下的，好像山顶的旗杆，冈上的大旗。』（赛三十15～17）。按我们看，犹大人因为受巴比伦人的迫害，派人到埃及去求救兵，这并不是甚么不合理的事，这里面更没有甚么罪。神为甚么这样严严的责备他们，重重的咒诅他们呢？但我们详细玩味这些话，便看出来他们这样作是轻看神，侮辱神，不信靠神，看神还不如埃及人可靠，看神的能力还不如埃及人的能力大。并且神曾告诉他们说，『你们得救在乎归回安息，你们得力在乎平静安稳，』这明明是告诉他们说，只要安静等候神，便可得着拯救。但这些悖逆的百姓却说，『不然，我们要骑马奔走，我们要骑飞快的牲口。』从这两句话中可以看出来他们是怎样轻看神，侮慢神，悖逆神了。全能的神应许要拯救他们，他们不肯等候他，却到不认识神的外邦人那里去求援助，请想这是不是罪？是不是极大的罪？他们为这事遭遇神的打击，是不是应当的呢？可是神的慈爱异常浩大，在他们因为不倚靠神而倚靠人遭遇打击以后，仍然向他们施恩典，对他们说，『耶和华必然等候，要施恩给你们，必然兴起，好怜悯你们，因为耶和华是公平的神，凡等候他的都是有福的。』（赛三十18）。神在他的百姓因为不等候他以致遭遇失败以后，再教训他们应当如何等候，并且清楚应许他们说，『耶和华是公平的神，凡等候他的都有福的。』</p>
+<p>可叹！可叹！今日许多信徒就是像犹太人一样，遭遇了危险困难，不知道仰望神，等候神，只是一味忙乱奔跑，到他们看为可靠的人那里去求援助，求拯救。如果他们去投靠属神的人，还可加以原谅，最可叹的，就是他们竟到不信的人那里去求拯救，他们所得的结果也是与那些犹太人相同，不但没有得着拯救，反倒蒙了羞辱，遭了祸害。这种情形我们听见看见的已经不知道有多少了。</p>
+<p>摩西也曾因为不等候神惹出来一场祸患，险些丧了性命。神实在早已定规要藉着他拯救以色列人，但是他性情急躁，不等候神的日期临到，一看见他本族的人受埃及人的虐待，便怒不可遏，凭着自己血气的勇敢，把那个埃及人打死，埋在沙土里。他一点不想希伯来全族的人都伏在法老和埃及全国人的手下，打死一个埃及人能有甚么用处。他更不想想因着打死这一个埃及人会酿出甚么祸患。果然，希伯来人还一点没有得着解救，他自己倒几乎死在法老的手下。我们岂不也是常作这一类愚昧的事么？一受了人的欺侮苦待，便忿忿不平，想要以恶报恶。或是看见别人的恶谋成就，就心怀不平，以致自己也想去作恶。还有时候我们看见别人受恶人的欺压，便凭着血气之勇起来去攻击恶人，结果总是和摩西所遭遇的相同，还没有救了别人，自己倒先陷在祸患中。如果我们能忍耐些时候，等到神的日期临到，他一点不费事，就把一切不平的事都翻转过来，正如同他击打法老，将以色列全族的人都从埃及领出来一样。他目见我们的软弱和愚昧，所以他教训我们说，『你当默然倚靠耶和华，耐性等候他。不要因那道路通达的，和那恶谋成就的，心怀不平。当止住怒气，离弃忿怒；不要心怀不平，以致作恶。因为作恶的必被翦除，惟有等候耶和华的必承受地土。』又说，『你不要说，我要以恶报恶。要等候耶和华，他必拯救你。』</p>
+<p>亚伯拉罕的事便是我们上文所提的第三种情形了。他渴望得一个儿子，好承受神的应许。但他的妻子已经绝了生育的盼望。他无法再等候下去。他听了他妻子的话，纳了夏甲为妾。结果是甚么呢？神的应许到底还不是藉着他的方法成就。艾萨克仍是从撒拉生出来。纳夏甲为妾的结果，不过是使一个快乐平安的家庭变成了战场，夏甲与撒拉不和，艾萨克与以实玛利相争。直到今日，几千年来以实玛利的后裔──亚拉伯人──总是与艾萨克的后裔──犹太人──互相残杀，没有宁息的日子。我们也常常作这种愚昧的事。盼望得着一样甚么好处，但总得不着，我们不能等候神，我们用自己的方法去得。我们也明明知道这些方法不是神所喜悦的，但我们为达到我们的目的，便不能不这样作。结果是甚么呢？我们所希望的好处也许可以得着，但不久便有许多的痛苦和祸患临到我们身上。许多信徒为求财产，走了神不喜悦的道路。许多信徒为求尊荣，取了神不喜悦的步骤。许多信徒为求子嗣，用了神不喜悦的方法。许多信徒为求成功，择了神不喜悦的手段。他们这样作，也许暂时得着一些功效，可是后来却因此招来无穷的祸患痛苦与损失。他们将要因此懊悔，因此自恨，因此哀哭号泣，想挽救已往的失败，但是大错已经铸成，再没有方法挽回了。</p>
+<p>如果我们不愿意蹈上文所说的这些人的覆辙，就需要在每日生活中的大事小事上学习等候神。这并不是说我们应当一味的懒惰不去作甚么，也不是说我们要放弃自己的本分。不，我们应当随时随地善用机会，去作一切摆在我们面前的本分和工作。但我们决不可跑到神的旨意之外去作一件事。在遭遇危险祸患的时候，一点不要惊惶忙乱。不要作神不许可的事。不要投靠不属神的人。在看见恶人行强暴的时候，不要心怀不平，以致作恶。不要以恶报恶。不要用神所不喜悦的方法，去求甚么尊荣，利益，成功，也不要用自己属肉体的方法，去帮助神作甚么事。等候神和懒惰是完全不同的两件事。懒惰是不肯去作摆在前面的本分和工作，等候神是不作一件出乎神的旨意以外的事，同时却在神的轨道中殷殷勤勤的去作每日每时应当作的事工。许多殷勤的信徒需要学习等候神。许多热心的信徒需要学习等候神。有些最热心的信徒是最不会等候神的人。他们忙着要去作工，要去办事，要去服事神，要去帮助人。可是他们凭着血气，用人的方法，去作这些事。结果不但未曾成功，倒遭了失败，不但未曾使神得着荣耀，使人得着益处，倒使神受了羞辱，使人受了亏损。不按着神的旨意去奔跑劳苦，还不如不奔跑劳苦更好。</p>
+<p>有一件事与等候神是紧紧相连不能分开的，这件事就是信靠神。惟独会信靠神的人纔会等候神。我们所以敢等候神，就是因为我们信靠他。我们信他决不失信，所以我们敢等候他。我们信他决不事，所以我们敢等候他。我们信他能作一切我们自己不能作的，所以我们敢等候他。我们信他比世上的任何人都可靠，所以我们敢等候他。我们信他决不忘记我们，所以我们敢等候他。我们信他所作的都好，所以我们敢等候他。我们信他的眼睛看顾一切仰望他的人，所以我们敢等候他。我们信他听我们的呼求，所以我们敢等候他。我们越能信靠神，我们也就越敢等候他。但信靠神多少与认识神多少有正比例。我们多认识神，纔能多信靠他。无怪乎先知何西阿教导以色列人追求认识神了。他对他们说，『我们务要认识耶和华，竭力追求认识他。他出现确如晨光。他必临到我们像甘雨，像滋润田地的春雨。』（何六3）。</p>
+<p>会等候神的人真是有福的。别人想他们要误许多的事，其实他们所成就的比任何人更多。别人看他们走的太慢，其实他们跑的比任何人更快。别人看他们软弱无能，其实他们比任何人更有力量。他们必『从新得力』，他们『如鵰展翅上腾』，他们『奔跑却不困倦，行走却不疲乏』。他们不轻易作甚么事，可是作起来就必成功。他们不轻易举足前行，可是举足以后就必走到目的地。他们不轻易应许人，可是应许了就必实践。他们不鸣则已，可是一鸣就必惊人。他们不飞则已，可是一飞就必冲天。他们不像其它的人说了极多的话，却办了极少的事，开了很多的头，却收了很少的尾，轻易开始，轻易中辍，轻易举足，轻易止步。他们有一种从天上来的智慧和能力，能成别人所不能成的功。能作别人所不能作的事。他们所处的境遇看着是很危险，其实是很安全。他们所走的路途看着是很崎岖，其实是很平坦。没有别的人比等候神的人更刚强，更稳妥。没有别的人比等候神的人更快乐，更有福。等候神是最难学最艰深的功课，可是学好了这门功课，比学好了任何其它的功课更有用。</p>
+<p>『要等候耶和华。当壮胆，坚固你的心；我再说，要等候耶和华。』</p>
+<p>王明道先生著作及分题年代表</p>
+<p>第一册：窄门</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

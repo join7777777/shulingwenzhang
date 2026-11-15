@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>谨防假师傅！-给今日教会的一个严重的警告 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>谨防假师傅！-给今日教会的一个严重的警告</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/1真伪福音辩/4谨防假师傅！-给今日教会的一个严重的警告.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『从前在百姓中有假先知起来，将来在你们中间也必有假师傅，私自引进陷害人的异端，连买他们的主他们也不承认，自取速速的灭亡。将有许多人随从他们邪淫的行为，便叫真道因他们的缘故被毁谤。他们因有贪心，耍用造的言语在你们身上取利；他们的刑罚自古以来并不迟延，他们的灭亡也不打盹。』（彼后二1～3）。</p>
+<p>从前我未曾清楚明白神救恩的要道的时候，每逢读到圣经上所说『假先知，』『假师傅，』这些名词，更以为这种人必是很特别很奇怪的人，他们所讲的道理必是我们从来未曾听见过的；我又以为这种人必是很不多见，假若偶然有一两个出现，我们必定很容易认出他们来，我们就会谨慎，不去随从他们，免得被他们所迷惑。及至我彻底悔改信了主，清楚明白了神的福音以后，我纔知道我以前所见的不对，我纔知道在今日的教会中这些『假先知、』『假师傅』竟是数不胜数。大多数的教会中都有这种『假师傅，』还有些教会里面的领袖和传道人，十分之六七，甚或十分之八九，都是这种『假师傅。』阅者以我的话为希奇么？容我们仔细思想一下这段经上的豫言。</p>
+<p>『从前在百姓中有假先知起来，将来在你们中间也必有假师傅，私自引进陷害人的异端，连买他们的主他们也不承认，自取速速的灭亡。』注意，这段豫言告诉我们说，假师傅要『引进陷害人的异端，连买他们的主他们也不承认。』主耶稣用他自己的血作赎价，买了我们，使我们脱离罪的咒诅，得着永生。这是圣经中最宝贵的真理，也是我们所信、所传的福音。『人子来，不是要受人的服事，乃是要服事人；并且要舍命，作多人的赎价。』（太二十28）『你曾被杀，用自己的血从各族、各方、各民、各国中买了人来，叫他们归于神。』（启五9）『他被挂在木头上，亲身担当了我们的罪，使我们既然在罪上死，就得以在义上活；因他受的鞭伤，你们便得了医治。』（彼前二24）『他为我们的过犯受害，为我们的罪孽压伤；因他受的刑罚我们得平安，因他受的鞭伤我们得医治。我们都如羊走迷，各人偏行己路；耶和华使我们众人的罪孽都归在他身上。』（赛五十三5、6）若是没有基督在各各他山所成救赎的工作，便没有救法，没有赦罪的道，没有盼望，没有生命的应许，只有可怕的审判和震怒，等候我们这一切犯了罪的人类。感谢神，他因为爱我们的缘故，就差他的儿子到世上来，替我们成为罪，替我们受了刑罚，使我们因信他得成为义，得有永生，正如经上的话说，『神使那不知罪的替我们成为罪，好叫我们在他里面成为神的义。』（林后五21）『摩西在旷野怎样举蛇，人子也必照样被举起来；叫一切信他的都得永生。』（约三14、15）</p>
+<p>圣经中重要的真理诚然有许多，但基督替我们死、流他的宝血买赎我们的这件真理，乃是一切要道的中心。一个真悔改信主的圣徒，必定注重这步要道：一个真蒙召宣传福音的工人，必定传扬这步要道。但今日教会中有一件令人痛心的事，就是许多传道的人，竟不承认基督用他的血买赎我们的这步要道。这些人中间，有些公然表示他们不信基督代死赎罪的道理，这种人我们还容易分辨，还容易防备；最危险的，就是他们中间有些人，在众人面前并不表示他们不信基督赎罪的要道，但实际他们确是不信这种要道。他们既不信救赎的道理，自然没有福音可传，于是他们便用鱼目混珠的方法，拿许多地上的事来代替基督救人的福音。大讲特讲甚么提高人格、服务社会、改良家庭、普及教育，等等的题目，又将传福音的地方，变作服务社会的场所，于是办厂、设学校、办服务团、教育班；比这个更离奇的，竟开设起俱乐部、打球房、旅、食堂、沐浴室、理发所、运动场、电影院来。如果他们真能藉着这些事工引领人归向基督，领受救恩，那自然也很好；但那有这么一回事？他们因为不信救恩的要道，所以纔办这些世界上的事，又怎能盼望他们藉着这些事领人归主呢？你若不信我的话，你可以自己去到这些地方调查一下，看看他们究竟传不传福音？然后再调查一下，到底有多少人是藉着这些事真实悔改信了基督？自然作这些事工的传道人（？）也说他们是要领人信主，但事实胜于雄辩，一个人只要有眼睛，就会看见是不是那么一回事。</p>
+<p>事情越演超奇了！竟会有甚么『社会福音』出现。讲这种所谓『社会福音』的，竟是一些传道人。他们说，『讲个人得救的道理，是教导人自私，教导人只为自己打算，这是一种狭义的福音。我们不要教导人自私，不要劝人为自己求永生，我们要帮助整个的社会得救。我们要改造社会，使它进到完善的地步，使社会中没有分争，没有战，没有罪恶，没有痛苦，使人类一同享受和平的幸福。』</p>
+<p>我们若仔细想一想这种话，便可以晓得说这种话的人信不信基督，信不信福音了。劝人悔改信主接受永生，是教导人自私么？如果劝人求永生是叫人自私，那么也不当帮助人求生存了。叫一个人受教育，得职业，谋生存，也是教导他自私；叫一个人作工得工价，为自己豫备衣、食、住，也是教导他自私；改造社会，使人类一同享受和平的幸福，也是教导人自私。这样，我们应当传一种道理，叫人脱去衣服将自己冻僵，完全不要吃饭把自己饿死，这样就免得说是教导人自私了。我们还要请那些传『社会福音』的人先作一个不自私的榜样给众人看，好叫众人也跟着他们学习这种不自私的美德。</p>
+<p>谁知那些传『社会福音』的人批评传救恩的福音为教导人自私，同时他们却也为自己谋生存，作完了工要工价，也为自己豫备衣、食、住各方面所需用的。他们又说，要帮助别人为自己谋生存，帮助别人改善他们的生活，帮助别人增进人生的幸福。那么，帮助人求永远的生命、永远的福乐是教导人自私；帮助人保全暂时的生命、增进暂时的福乐，却不是教导人自私。我不知道这些传『社会福音』的人是否觉得自己所说的话是这样互相矛盾？容我爽快为他们说破了罢。他们这种说法，不过是掩饰他们的不信罢了。他们本不信救恩的道理，不过他们既自称是传道人，自然不能说他们不信，于是便造出这样一种说法，说劝人接受救恩是教导人自私。这样一来，不但他们的不信可以遮掩起来，还显出他们是清高，他们不自私。他们真是聪明！不过明眼人却认得出来他们的虚伪。</p>
+<p>为自己谋生存，是人类应当尽的天职，这不能叫作自私。不过我们在为自己谋生存的时候，也当为那些无力为自己谋生存的人谋生存，那就是爱人的道理。为自己豫备饭吃，并不是自私。我们必须为自己豫备饭吃。不过在我们自己有了饭吃的时候，也当为那些无力为自己豫备饭吃的人豫备一些饭吃，这便是爱人的道理了。为自己求永生，并不是自私。我们必须为自己求永生。不过在我们自己得了永生的时候，也当引领那些没有得着永生的人来得永生，这便是爱人的道理了。神并未曾禁止我们爱自己，他教训我们说，『要爱你的邻舍如同你自己。』爱自己并不是一件不好的事，不过我们爱自己的时候，不要忘记爱那在我们旁边的人──邻舍──就是了。只爱自己不爱邻舍，纔是自私。如果我们教导人信主得永生的时候告诉他们说，『你们信主得了永生以后，千万不要告诉别人，免得他们也信主得永生。』这纔真是教导人自私了。但谁曾听见一个传福音的人这样教导人呢？如果一个人存这种自私的心，他就不去传福音了。每一个热心传福音的人，传福音的时候，总是劝人悔改信主得永生，同时又勉励人，当竭力引领别人来信主得永生；每一个真悔改信主得了救恩的人，也都是渴望别人与他一同得救。这还能叫作自私么？不，这正是『爱邻舍如同自己』的道理。</p>
+<p>传『社会福音』的人说，『我们不要劝人求永生，我们要尽力为社会服务，为人群谋幸福。』这话是多么可笑阿！为社会服务、为人群谋幸福的事业中，还有甚么比劝人悔改、信主、得永生的工作更大的呢？为社会服务、为人群谋幸福的事工中，当然没有比救人性命更要紧的了。但是使将要死亡的人多活一天，不如使他们多活十天；使他们多活十天，不如使他们多活一月；使他们多活一月，不如使他们多活一年；使他们多活一年，不如使他们多活几十年；使他们多活几十年，不如使他们得着永生。这样说来，为社会服务、为人群谋幸福的事业中，最重要、最紧急的，莫过于传救恩的福音，引人悔改、信主、得永生了。是的，在每一个真信基督的人心中，都以传福音、领人得救为最重要的事，更不用说专一负着宣传福音的责任的传道人了。传道人不注重福音，却终日汲汲去作各种社会的事工，甚至还批评领人悔改、信主、得永生为教导人自私，教导人起贪心，这种传道人信不信基督？信不信福音？我想有眼睛的人大约总都可以看出来了罢！</p>
+<p>容我们再注意彼得后书二章三节的话，『他们因有贪心，要用造的言语，在你们身上取利？』现在教会中，是不是有许多传道人常讲『造的言语』呢？圣经上清清楚楚的告诉我们说，耶稣死是担当我们的罪，替我们受了刑罚；他们却造说，『耶稣死是为反抗当时黑暗的势力，改革不良的社会，给我们留下杀身成仁、舍生取义、为人舍己的好榜样。』圣经上明明说，耶稣的身体从坟墓里复活，屡次显给门徒看，以后升到天上，坐在神的右边；他们却造甚么『精神不死、人格永存』的说法，将耶稣复活的事实轻轻抹杀。圣经上明明告诉我们说，复活升天的基督，将来必有一日要从天上降临，迎接圣徒，审判世界，建设天国在地上；他们却造甚么『世界归主就是基督降临，只要我们努力，便可以建设天国在地上。基督降临并不是身体要来，乃是灵性再来，』等等的话。他们又造许多毫无根据的话，来解释圣经上所记载的一切奇事：就如他们解释神在荆棘里火焰中向摩西显现的事说，『在旷野有一种黄花，看着像火一样。』又说，『也许有一种植物，会发出电来，以致摩西误以为是火。』他们解释神在旷野为以色列人从天降下吗哪的奇事说，『吗哪并不是从天上降下来的，乃是旷野有一种树，会结微小的子粒；以色列人所取的吗哪不过是这种树上所落下来的子粒罢了。』他们解释耶稣赶鬼的事说，『世界上那里会有鬼。古时人的知识未开，遇见有患精神病的，便以为是被鬼附着了。耶稣赶鬼，不过是用他的智慧和爱心，医好患精神病的人罢了。』他们解释主耶稣在加利利海边用五饼二鱼使五千人吃饱的事说，『犹太人行远路都带饼在身旁，那天听道的几千人中多半都带着饼，不过他们不肯拿出来吃，恐怕那些没有带饼的人分他们的饼吃。耶稣知道这种情形，很为他们难过，便用一个小孩子天真的爱心，激动了他们众人，以致他们都感觉惭愧，于是将他们的饼都拿出来交给耶稣，分给大家吃。』他们不止这样解释这几件事，他们也同样荒谬的解释圣经中许多的道理。他们既不信圣经上这些要道和奇事，就当明明述说他们不信，这还不失为诚实的人。如今他们明明不信，还要掩饰他们的不信，于是便造许多毫无根据的话语，去欺骗那些信心不坚固、真理的知识不充足的人，这是多么令人痛心的事阿！</p>
+<p>这些人为甚么要讲这些造的言语呢？经上告诉我们说，『他们因有贪心，要用造的言语，在你们身上取利。』他们造这些毫无根据的话，无非为取利罢了。取利，不单是指着发财说的。许多假师傅并不能藉着造的言语发财，然而他们却是藉着这个有了地盘，有了饭碗。假使他们公然表示他们不信圣经上一切的要道，信主的人当然不能容许他们在教会里作工，他们又找不着别的事作，生活的问题岂不是没有方法解决了么？如今他们用这些造的话，遮掩他们的不信，欺骗那些不十分明白真理的信徒，便可以保全自己的地盘，这还不是『用造的话，在你们身上取利』么？一个信徒若有坚固的信仰，真理的知识，一听这些造的话，就立时能分辨出来，知道它是违背真理的。不过大多数的信徒竟不能分辨真假，将鱼目当作珍珠，于是这般假师傅便用这种『造的言语，』将许多人领入迷途。</p>
+<p>这段经文又告诉我们说，『将有许多人随从他们邪淫的行为，便叫真道因他们的缘故被毁谤。』这些假师傅既然不承认买他们的主，又用造的言语，在人的身上取利，他们的行为自然不能高尚清洁了。我知道一些这类的人，他们的行为真是不堪言状：作伪说谎，争名夺利，损人利己，嫉妒仇恨，放纵情欲，崇拜玛门，看见利益就跑到前面，遇见危险就躲在后头，种种恶行，简直述不胜述。教会的领袖既然这样，那些随从他们的人自然不会比他们更好了。神的真道便因这些人的缘故被毁谤。不明白福音真道的人，看见他们这种恶行，便以为基督的道理是虚伪不足信的，因而攻击真道，毁谤真道。这种现象我们看见的大约有不少了罢。</p>
+<p>感谢神，他在古时就藉着使徒将这些危险都告诉了我们，叫我们可以豫防躲避。这样，虽然教会里有假师傅，只要我们谨慎豫防，就可以不受他们的害。假师傅并不足怕，所怕的就是信徒们不知道防备躲避他们，那样，就不免要受他们的害了。假师傅的真相，我们已经认清楚了，容我现在提出几个防备他们、躲避他们的办法来：</p>
+<p>一 聘请传道人的时候，应当十分谨慎，切不可请信仰模糊的人。一个教会聘请传道人的时候，应当抱定宁缺勿滥的宗旨。万不可请假师傅在教会中作工。</p>
+<p>二 在你的教会里若有假师傅作工，你当联络其它爱主的人，叫他们去职。但切不可用卑鄙的手段，或其它不正当、不诚实的方法，总要用光明磊落的方法进行。如果这一步办不到，你便当勇敢在你的教会中为真理作见证，反对他们所讲的伪道。如果这一步也作不到，这时你便当毅然决然脱离这个教会，去与其它爱主的人连合。</p>
+<p>三 不可坐在假师傅的脚前听他演讲，也要劝戒别人不去。</p>
+<p>四 不可与有假师傅掌权的教会、或有假师傅在其中作领袖的教会团体连合。</p>
+<p>五 不可捐钱与有假师傅掌权的教会或其它团体。</p>
+<p>六 不可到有假师傅教授的神学院去读书，也不可送你的儿女去，或介绍你的朋友去。</p>
+<p>七 当尽力辟解假师傅所讲的谬道，免得别人因为不会分辨，以致受害。</p>
+<p>八 我们为真理争战务要勇敢，切不可顾全情面，怕得罪人，也不要怕为义受逼迫，遭毁谤。</p>
+<p>九 当我们作这些事的时候，务要谨慎，不可逞血气行事：不可辱骂人、咒诅人、仇恨人，也不可有一切违反爱心的言语举动。</p>
+<p>十 当竭力殷勤用圣经上的真道栽培人，教导人，使人明白圣经上的真道。信徒在信仰和真道上有了清楚坚固的根基，假师傅便不容易迷惑他们了。</p>
+<p>给今日教会的一个严重的警告</p>
+<p>在已往的几年中，著者曾屡次着论辟解不信派（即新神学派）的谬妄，并劝戒信徒谨防这些诱惑人的假师傅，和他们所讲的伪道。最近几年来，许多信徒已经渐渐的会分辨甚么是圣经中的真理，甚么是人所造的假道理；并且在许多地方，笃信圣经的信徒已经与那些迷惑人的假师傅和他们掌权的教会或团体分离，这真是一种极可欣喜的现象。</p>
+<p>但是同时我们又看见一件极令人悲痛的事，就是还有一些笃信圣经的信徒，明白了真道和伪道的分别，却是仍与那些讲伪道的假师傅和他们掌权的团体联合。如果这些信徒并未曾明白伪道的错误，他们这样作，我一点都不责备他们；但如今他们清楚明白了假师傅所传的伪道，是怎样错误，是怎样危险，却仍然与这些假师傅和他们掌权的团体联合，这真是不可宽恕的事了。</p>
+<p>岂止于许多信徒这样作呢？许多为神作工的人，和许多自命为信仰纯正的教会的领袖，不也常这样作么？我们不是常看见许多自命为信仰纯正的传道人、和教会的领袖，去参加不信派所召集的这个大会、那个大会么？不是有许多笃信救恩要道的传道人，与那些传所谓『社会福音』的领袖，联合提倡种种事业，携手兴办种种工作么？不是有许多注重保守圣经真理的教会，竟常邀请不信派的领袖去演讲、去指导么？我们不是常看见那些不信派的领袖一发起甚么运动，便有许多素日自认笃信福音的信徒和传道人，也随着摇旗吶喊么？我们不是又常看见自命为信仰纯正的教会，遣送学生到不信派的教员执教的神学院里，去受那种『新神学』的教育么？这种种的行为，在神面前是不忠心。因为不信派所讲的伪道，是混乱圣道，与神为敌；与不信派联合就无异于背叛神。对于人的一方面，又是极有害的。与不信派联合，既足以增加他们的声势，又能使许多信仰不坚固、知识不充足的信徒直接间接受到许多的坏影响。一个教会的领袖虽然有纯正的信仰，也很敬虔爱神，若是他们不与不信派完全隔绝，这个教会就总不会到一种十分热诚属灵的地步。『一点面酵能使全团都发起来。』一个好的教会的领袖去参加不信派召集的大会，或是与不信派联合倡办种种事业，或是请不信派演讲，或是将不信派所提倡的种种运动、种种方法介绍到教会中来，都无异于拿新面团去与恶酵互相搀杂，结果是绝不会好的。将热诚爱主有志为神作工的青年，送到不信派掌权的神学院里去读书，那是魔鬼最欢迎无比的事。许多热诚爱主有志为神作工的青年男女圣徒，就是这样被不信派的神学教授毁坏到不堪言状的地步。著者几年前在一个大城里讲几天道，末后一天见证会里，亲耳听见一位神学院的学生作见证，说他在未入神学院以前，笃信圣经中一切的要道，那时他的心火热得很；后来进这个神学院读书，不到两年的工夫，对于以前所信的要道，差不多都加上了问号都怀疑起来，同时热心也完全变冷。他又说，他感谢神，现在又领他出离黑暗、进入光明。我所举的不过是许多相同的事件中的一件，这一类的事还有许许多多，这是何等令人痛心的事阿！</p>
+<p>神不许我们这样作。他要我们彻底决定一下，究竟我们是否愿意站在他这一边？如果是，我们就当完全与那一切抵挡真理的不信派的教会团体和领袖分离；若是不能这样作，就不要再告诉别人说我笃信圣经，我们的教会信仰纯正。神不要身子骑在墙头上、两只手拉着两方面的那种人。他要我们清清楚楚的表明态度。他藉他的仆人伊莱贾对那些心持两意的以色列民所说的话，今日还要对这般心持两意的信徒和他们的领袖说。他说，『你们心持两意要到几时呢？若耶和华是神，就当顺从耶和华；若巴力是神，就当顺从巴力。』敬拜了耶和华，又去到巴力坛前焚香的人，是神所憎恶的。神的仆人不能与巴力的先知妥协，更不能与他们携手。忠诚事奉神的信徒，和为神作工的人，也照样不能与不信派妥协，更不能与他们携手合作。就是因为自命为信仰纯正、笃信圣经的领袖们与不信派携手合作，许多信徒纔因此大受不信派的迷惑和损害。这些拜耶和华又拜巴力的教会领袖们，该担多么大的罪呢！</p>
+<p>必有人说，『如果照你所说的这样彻底作去，岂不要得罪许多人，遭遇许多困难么？』一点不错。我们若真要彻底与不信派分离，一定要遭遇许多人的讪笑、轻视、攻击、窘迫，我们因此要被人讥为迷信、迂腐、开倒车，被人看为心肠狭窄，度量褊小，甚至被人骂作存心不良，蓄意捣乱。但这有甚么关系呢？只要神喜悦我们就够了。如果得着全世界的欢迎，但被神所厌弃，那有甚么益处呢？神的仆人为怕得罪人，不忠心于神的事工，不顺服神的命令，是应当的么？怕得罪人，就不免得罪神；怕得罪神，就不要怕得罪人。使徒保罗在这件事上，给我们留了一个极好的模范。听他说，『我现在是要得人的心呢，还是要得神的心呢？我岂是讨人的喜欢么？我若仍旧讨人的喜欢，我就不是基督的仆人了。』（加一10）</p>
+<p>圣经中有一段极严重的教训，告诉我们应当怎样远离那些背弃真理、传错误道理的人，说，『凡越过基督的教训，不常守着的，就没有神；常守这教训的，就有父，又有子。若有人到你们那里，不是传这教训，不要接他到家里，也不要问他的安。因为问他安的就在他的恶行上有分。』（约贰9～11）向那迷惑人的假师傅问安，就在他的恶行上有分，何况与他们联合呢？读过这一段经训，我们便晓得属神的人与传伪道的不信派联合，或参与他们的聚会，或请他们讲道，或送学生到他们的面前受教，在神面前真是大恶了。</p>
+<p>罪恶的势力日见发展，撒但的工作日见紧张，神向他的教会所发出的呼声日见显明。属神的人哪！赶快起来，遵行神的命令，为『一次交付圣徒的真道，』奋勇打那美好的仗。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>发烈怒的摩西 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>发烈怒的摩西</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·卫道</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/7卫道/1真伪福音辩/10发烈怒的摩西.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>『百姓见摩西迟延不下山，就大家聚集到亚伦那里，对他说，「起来，为我们作神，可以在我们面前引路，因为领我们出埃及地的那个摩西，我们不知道他遭了甚么事。」亚伦对他们说，「你们去摘下你们妻子、儿女耳上的金环，拿来给我。」百姓就都摘下他们耳上的金环，拿来给亚伦。亚伦从他们手里接过来，铸了一只牛犊，用雕刻的器具作成。他们就说，「以色列阿，这是领你出埃及地的神。」亚伦看见，就在牛犊面前筑坛，且宣告说，「明日要向耶和华守节。」次日清早，百姓起来，献燔祭和平安祭，就坐下吃喝，起来玩耍。</p>
+<p>『耶和华吩咐摩西说，「下去罢，因为你的百姓，就是你从埃及地领出来的，已经败坏了。他们快快偏离了我所吩咐的道，为自己铸了一只牛犊，向它下拜献祭说，以色列阿，这就是领你出埃及地的神。」耶和华对摩西说，「我看这百姓真是硬着颈项的百姓。你且由着我，我要向他们发烈怒，将他们灭绝，使你的后裔成为大国。」摩西便恳求耶和华他的神说，「耶和华阿，你为甚么向你的百姓发烈怒呢？这百姓是你用大力和大能的手从埃及地领出来的。为甚么使埃及人议论说，他领他们出去，是要降祸与他们，把他们杀在山中，将他们从地上除灭？求你转意，不发你的烈怒，后悔，不降祸与你的百姓。求你记念你的仆人亚伯拉罕、艾萨克、以色列。你曾指着自己起誓说，我必使你们的后裔像天上的星那样多，并且我所应许的这全地，必给你们的后裔，他们要永远承受为业。」于是耶和华后悔，不把所说的祸降与他的百姓。</p>
+<p>『摩西转身下山，手里拿着两块法版，这版是两面写的，这面那面都有字，是神的工作，字是神写的，刻在版上。乔舒亚一听见百姓呼喊的声音，就对摩西说，「在营里有争战的声音。」摩西说，「这不是人打胜仗的声音，也不是人打败仗的声音。我所听见的，乃是人歌唱的声音。」摩西挨近营前，就看见牛犊，又看见人跳舞，便发烈怒，把两块版扔在山下摔碎了。又将他们所铸的牛犊用火焚烧，磨得粉碎，撒在水面上，叫以色列人喝。』（出三十二1～20）。</p>
+<p>看摩西是怎样的爱他所率领的这些以色列人。耶和华因为以色列人拜金牛犊，要发烈怒将他们灭绝，摩西便为他们哀求，求神止息他的怒气，不降祸与他们，也不将他们灭绝。他的呼求果真蒙了神的垂听。『于是耶和华后悔，不把所说的祸降与他的百姓。』我们读这一段话的时候，便会想象到摩西那种慈祥和善的面容，和他那种充满怜悯恩惠的心肠。他的心思和他的态度，并他所说的话，真像一个慈爱的母亲。不料当他下山走到以色列人营前的时候，竟『发烈怒，把两块版扔在山下摔碎了。』这时候他的心情和态度，与方纔为以色列人呼求的时候竟是像两个完全不同的人。前一个时候充满了慈爱，后一个时候竟大发烈怒。这种慈爱与这种怨气，是不是互相冲突呢？摩西这样发怒的时候，是不是心中已经没有了慈爱呢？摩西这样发怒，是不是神所喜悦的呢？摩西这样发怒，是不是可以作后人的榜样呢？我们对前两个问题的答案是『不是，』对后两个问题的答案是『是。』正因为摩西爱以色列人，所以他一看见他们拜金牛犊，便那样大发烈怒。这种因看见罪恶而发的烈怒，正是神所喜悦的，所以这样发怒正可以作后世圣徒的榜样。神看见人犯罪就发怒。我们若与神同心，也一定因着看见人犯罪就发怒。这样发怒正可以证明我们是恨恶神所恨恶的。</p>
+<p>当摩西大发烈怒的时候，竟把他手中所拿的那两块石版扔在山下摔碎了。这并不是一件小事。那两块石版『是两面写的，这面那面都有字，是神的工作，是神写的，刻在版上。』这两块石版上所写的是甚么字呢？申命记里清楚告诉我们说，神把他赐给以色列人的十条诫命亲手写在这两块石版上。（申五1～22，九8～17）摩西摔碎了这两块石版，不但是摔碎了神亲手所写的字，而且所摔碎的正是神颁布给以色列人的十条诫命，这真是一件对神大不敬的事。按我们想，神必要因此向摩西发怒，罪责他不应当摔碎这两块石版。但事实却告诉我们，神不但未曾向摩西发怒，反倒应允了摩西为那些悖逆的以色列人所发的祈祷，并且对他说，『你这所求的我也要行，因为你在我眼前蒙了恩，并且我按你的名认识你。』（出三十三17）经上述，当摩西摔碎两块石版以后在会幕中与神说话的情形说，『耶和华与摩西面对面说话，好像人与朋友说话一般。』（出三十三11）摩西这样发怒，神并没有看他为大不敬，也没有责备他不当摔碎那两块石版，只对他说，『你要凿出两块石版，和先前你摔碎的那版一样，其上的字我要写在这版上。』（出三十四1）读了这些话，我们可以看出来神对摩西摔碎石版的事并没有丝毫的不乐意。为甚么这样呢？那就是因为摩西这样发怒，是以神的忌邪为心。这种忌邪的心，正是神所重视、而且看为宝贵的。后来亚伦的孙子非尼哈也是因为以神的忌邪为心，用枪刺死了那与米甸女子行淫的心利，蒙了神的嘉许。神对摩西说，『祭司亚伦的孙子、伊莱贾撒的儿子非尼哈，使我向以色列人所发的怒消了，因他在他们中间，以我的忌邪为心，使我不在忌邪中把他们除灭。因此你要说，我将我平安的约赐给他。这约要给他和他的后裔，作为永远当祭司职任的约，因他为神有忌邪的心，为以色列人赎罪。』（民二十五10～13）</p>
+<p>是的，神就是要一切属他的人都以他的忌邪为心。一个人若以神的忌邪为心，不但他自己从神得福，神还要藉着他使许多人蒙福。这种忌邪的心能止息神的忿怒，最低也能减少神的忿怒。看见神所憎恶的事便发怒，就是这种忌邪的心的表现。这种怒气不但不损害人，而且还能拯救人。因此这种怒气与爱心不但不相背，而且正相合。我们越爱人，便越应当恨罪，因为罪就是害人的东西。看见不义的事便发怒，是恨罪的表现，也是爱人的表现。</p>
+<p>也许有人问说，『圣经中的教训不是禁止我们发怒么？你怎么赞成人发怒呢？』圣经中并没有不许我们发怒的教训。圣经中的教训是──</p>
+<p>『不轻易发怒的大有聪明；性情暴躁的大显愚妄。』（箴十四29）。</p>
+<p>『不轻易发怒的胜过勇士；治服己心的强如取城。』（箴十六32）。</p>
+<p>『人有见识，就不轻易发怒！宽恕人的过失，便是自己的荣耀。』（箴十九11）。</p>
+<p>『生气却不要犯罪，不可含怒到日落，也不可给魔鬼留地步。』（弗四26、27）。</p>
+<p>『我亲爱的弟兄们，这是你们所知道的，但你们各人要快快的听，慢慢的说，慢慢的动怒，因为人的怒气并不成就神的义。』（雅一19、20）。</p>
+<p>圣经中的话并没有说发怒是不好的事，只说『轻易发怒』是不好的事。我们不是不可发怒，乃是不可轻易发怒。圣经中并没有禁止我们发怒的话，只是警戒我们说，『生气却不要犯罪。』雅各布布书中的教训说，『你们各人要快快的听，慢慢的说，慢慢的动怒。』这几句话说得更加清楚了。神不禁止我们动怒，如同不禁止我们说话一样。但神藉着他的仆人教训我们『慢慢的说，慢慢的动怒。』我们应当说话，但如果说得太快，就容易因着说话犯罪。我们应当动怒，但如果动得太快，就容易因着动怒犯罪。下面接着又说，『因为人的怒气并不成就神的义』。如果我们动怒太快，这种怒气便是『人的怒气。』人的怒气是不能成就『神的义』的。但如果我们到了应当动怒的时候纔动怒，那种怒便是义怒了。摩西看见以色列人拜金牛犊，『便发烈怒，』这种怒气并不是『人的怒气，』乃是『神的怒气。』因为当摩西尚未下山之前，神曾对他说，『下去罢，因为你的百姓，就是你从埃及领出来的，已经败坏了。他们快快偏离了我所吩咐的道，为自己铸了一只牛犊，向它下拜献祭说，「以色列阿，这就是领你出埃及的神。」』神又曾对摩西说，『我看这百姓真是硬着颈项的百姓，你且由着我，我要向他们发烈怒，将他们灭绝，使你的后裔成为大国。』摩西听见这话的时候，曾为百姓向神哀求说，『耶和华阿，你为甚么向你的百姓发烈怒呢？……求你转意，不发你的烈怒；后悔，不降祸与你的百姓。』</p>
+<p>当摩西在山上和神说这些话的时候，神已经看见了以色列人拜金牛犊的情形，摩西尚未看见，因此神发烈怒，摩西为百姓哀求。及至摩西挨近营前，看见以色列人拜金牛犊的情形，他便也像神一样的大发烈怒。他发怒的原因和情形与神完全相同，因此他的怒气也可以称为『神的怒气。』这种怒气是神所喜悦的。</p>
+<p>我们平常所发的怒气，绝大多数是人的怒气：我们因为和别人中间发生了利害的冲突便发怒；我们因为受了别人的亏负或羞辱便发怒；我们因为别人不能满足我们的心意或欲望便发怒；我们因为自己心中不愉快便发怒。这些怒气都是『人的怒气，』都是『轻易发的怒气，』如果我们慎重考虑一番，安静呼求神的指导，这种怒气便会完全消失。发这种『人的怒气，』结果总是受亏损，遗后悔，还要使别人遭损失，受痛苦，使神的名受羞辱，有时甚至惹出无穷的祸患。这种怒气我们万不可发。我们应当定它的罪，拒绝它，弃掉它。</p>
+<p>『神的怒气』便不是这样了。它是因为恨恶不义的事而发的，是为敌挡罪恶而发的。它是大公无私的怒气。它不但不是出于自私，而且是出于慈爱。与神同心的人纔能发这样的怒气，也一定要发这样的怒气。发这样的怒气决不会受亏损，也不会遗后日的悔恨。发这样的怒气不但不会使别人遭损失，受痛苦，而且要使别人因此知道甚么是义、甚么是罪、甚么是正、甚么是邪。发这种怒可以帮助寻求真理的人看明白当走的道路，也可以使悖逆犯罪的人因他们自己的罪惭愧战兢。发这种怒不但不使神的名受羞辱，而且还能彰显神的公义、圣洁、和威严。</p>
+<p>轻易发怒的基督徒不是好基督徒，总不发怒的基督徒也不是好基督徒，因为神不轻易发怒，但神在应当发怒的时候也发怒。请听经上的话──</p>
+<p>『耶和华在他面前宣告说，「耶和华，耶和华，是有怜悯、有恩典的神，不轻易发怒，并有丰盛的慈爱和诚实；为千万人存留慈爱，赦免罪孽、过犯、和罪恶；万不以有罪的为无罪，必追讨他的罪，自父及子，直到三四代。』（出三十四6、7）。</p>
+<p>『现在求主大显能力，照你所说过的话说，「耶和华不轻易发怒，并有丰盛的慈爱，赦免罪孽和过犯，万不以有罪的为无罪，必追讨他的罪，自父及子，直到三四代。」』（民十四17、18）。</p>
+<p>『主阿，你是有怜悯、有恩典的神，不轻易发怒，并有丰盛的慈爱和诚实。』（诗八十六15）。</p>
+<p>『但你是乐意饶恕人、有恩典、有怜悯、不轻易发怒、有丰盛慈爱的神。』（尼九17）。</p>
+<p>『耶和华有怜悯、有恩典，不轻易发怒，且有丰盛的慈爱。』（诗一○三8）。</p>
+<p>『耶和华有恩典、有怜悯，不轻易发怒，大有慈爱。』（诗一四五8）。</p>
+<p>『你们要撕裂心肠，不撕裂衣服，归向耶和华你们的神，因为他有恩典、有怜悯，不轻易发怒，有丰盛的慈爱，并且后悔不降所说的灾。』（珥二13）。</p>
+<p>『这事乔纳大大不悦，且甚发怒，就祷告耶和华说，「耶和华阿，我在本国的时候岂不是这样说么？我知道你是有恩典、有怜悯的神，不轻易发怒，有丰盛的慈爱，并且后悔不降所说的灾；所以我急速逃往他施去。」』（拿四1、2）。</p>
+<p>『耶和华不轻易发怒，大有能力，万不以有罪的为无罪。』（鸿一3）。</p>
+<p>看见了么？这些话都是说神『不轻易发怒，』并不是说神不发怒。在圣经中记载神发怒的话多极了。但那都不是轻易发的，那是在应当发怒的时候，而且必须发怒的情形之下所发的。神就是这样『不轻易发怒，』但在应当发怒的时候也发怒，与神同心的人也就应当这样。今日我们在教会中所看见的情形却是与这个真理相反：许多基督徒在不应当发怒的时候，为与别人争名夺利，便轻易发怒；为不肯忍受少许的损失和羞辱，便轻易发怒；为别人不能满足自己的心意或欲望，便轻易发怒。及至看见罪恶不义，应当发怒的时候，因为这些事与他们自己的利害荣辱毫无关系，竟漠不关心，一点怒气也没有了。这实在是一种极可痛心的事！</p>
+<p>许多基督徒知道『轻易发怒』是一件不好的事，却不知道『在看见罪恶不义的时候不发怒』也是一件不好的事。为自己的利益和尊荣发怒的基督徒太多，是今日教会中一种可悲的现象；为神的真理和公义发怒的基督徒太少，也是今日教会中一种可悲的现象。而且这后一种情形比前一种更严重。正是因为教会中没有像摩西那样看见百姓悖逆神便『大发烈怒』的人，所以教会中背道的事日见增多，背道的人日见猖獗，背道的情形日见严重，神的怒气便临到教会了。</p>
+<p>看看以色列人在西乃山下的情形罢。亚伦是百姓的领袖，他应当率领着百姓专心事奉耶和华。但他竟听从百姓的话，领着他们铸造金牛犊，敬拜金牛犊。如果亚伦听见百姓的请求，就斥责他们的谬妄，教训他们专一敬拜神，以色列人虽然不好，也不至作出这样大的恶事来。当日幸有那位与神同心的摩西大发烈怒，一面严厉斥责亚伦和众百姓，一面在神面前为他们哀求，纔挽回了神的怒气，保全了以色列人。</p>
+<p>今日教会的情形岂不也是这样么？就是因为教会的领袖率领着信徒不信神的言语，不听从神的命令，不尊神为大，反倒随从世界，走世人所走的道路，所以整个的教会都背了道，惹了神的怒气，像当日的以色列人一样。所不同的是以色列人的两个领袖当中，有一个领着百姓拜金牛犊，使百姓陷在罪里，另一个却为这件事大发烈怒，使神的怒气止息；今日的教会中只有许多像亚伦那样悖逆神的领袖，却没有几个像摩西那样为教会中的罪恶大发烈怒的人。在这种情形之下，教会的前途是多么危险呢！</p>
+<p>为神的真理和正义，为反对不义和背道的事，我们应当发怒，这一点我们已经讲得很清楚了。但我们必须十分谨慎，不要容我们的肉体藉着『发义怒』的名义来发『人的怒气。』每次要发怒之前，应当安静祷告。如果你的怒气是『人的怒气，』越祷告你的怒气必定越消失；但如果你的怒气是『神的怒气，』越祷告你的怒气必定越强烈，因为『人的怒气』是不能在神的光辉中长久存在的。远离神的时候，容易发『人的怒气；』亲近神的时候，纔会发『神的怒气。』当你不爱神的时候，你能容忍罪，却不能容忍人；但当你爱神的时候，你能容忍人，却不能容忍罪。能容忍罪、不能容忍人的时候，你便很容易发『人的怒气；』但当你能容忍人、却不能容忍罪的时候，你便会发『神的怒气』了。</p>
+<p>一九二四年八月中旬，我应邀赴山东德县，在一个为教会领袖所开的夏令会中讲道。那次会中，我一连三天听见一个不信基督的传道人演讲。他在第一次的演讲中把圣经的价值降低到一个地步，几乎与其它宗教的经典没有多大的区别。他在第二次演讲中抛开圣经所讲罪恶的意义，自己制造出一个解释来。他在第三次演讲中根本否认了基督救赎的工作。我不但每听一次心中便发生一次怒气，而且心中的忿怒一次比一次更强烈。及至我听完他第三次所讲的以后，我里面的怒气像烈火一样燃烧起来。他讲完以后再过一个多小时是我讲道。这一个多小时我自己退到一个安静的地方祷告，越祷告我的怒气越增加。祷告完毕我的怒气也燃烧到了极点。这时已经到了我讲道的时候。我对大家声明这次我不接续讲我的题目，却把那个人所讲的一切错误都指正出来。我又用圣经上的言语驳斥他所讲的荒谬的说法。我所讲的话激昂到了极点，当时会场中的空气也非常紧张。那次讲话的结果，是惹动了许多人的怒气和攻击，但也使一些人得了帮助和警戒。这二十九年之久，我不但从来没有因为那次发怒后悔，而且我对那些背道的理论越来越深恶痛绝，神所赐给我的恩典和能力也越来越增加。</p>
+<p>从我十四岁悔改信主到今年，整整四十年之久。这其间我有许多的软弱和失败。就是到如今，我的人生还是离神给我的标准很远。我为此惭愧，也为此自责。但感谢神，他在这些年间一直使我有一颗恨罪的心，因此我不能容忍一件神所恨恶的事。我每一次看见教会中背道的事，每一次听见教会中有人讲背道的言论，便怒气填胸，严厉斥责。我知道因为我这样作，树立了许多仇敌；我也知道因为我这样作，使许多信徒得了帮助；我更知道因为我这样作，我自己得了许多的恩惠，有了不少的长进。这种恨恶不义的心情，和这种看见罪恶就发怒的行为，与我从神那里领受属灵的能力是很有关系的。也就是因着恨恶罪恶，看见不义的事便发怒，使我多次在属灵的战争中得了胜利。我的经验清楚告诉了我，如果希望在属灵的战场上作一名得胜的勇士，缺乏看见罪恶就发烈怒的心情，是不能成功的。我看见许多很好的圣徒陷入悲惨的失败，就是因为他们看见罪恶不义，却没有强烈愤恨的心情。他们知道许多事是神所恨恶的，但他们看见这些事却不发怒，因此他们便宽容这些事，对这些事让步，至终自己也陷在里面。他们不向罪恶发怒，最后竟惹动神向他们发怒。这真是极悲惨的事！</p>
+<p>教会背道的情形一日比一日严重。像亚伦那样的领袖，到处都可以看见。神的怒气已经发作，可怕的结局已经临近这背道的教会。焉得多有几个像摩西那样与神同心的人出来，大发烈怒，严厉斥责这些像亚伦一样的领袖，并那些像以色列人一样的信徒，因而挽回神的震怒呢？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
