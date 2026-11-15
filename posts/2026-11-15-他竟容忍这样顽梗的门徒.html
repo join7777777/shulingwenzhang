@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>他竟容忍这样顽梗的门徒 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>他竟容忍这样顽梗的门徒</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/6他竟容忍这样顽梗的门徒-03.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「时候到了，耶稣坐席，使徒也和他同坐。耶稣对他们说，『我很愿意在受害以先，和你们吃这逾越节的筵席。』……耶稣接过杯来，祝谢了，说，『你们拿这个，大家分着喝。我告诉你们，从今以后，我不再喝这葡萄汁，直等神的国来到。』又拿起饼来，祝谢了，就擘开，递给他们，说，『这是我的身体，为你们舍的。你们也应当如此行，为的是记念我。』饭后也照样拿起杯来，说『这杯是用我的血所立的新约，是为你们流出来的。』……门徒起了争论，他们中间那一个可算为大。」（路二十二14～24）。</p>
+<p>好顽梗自私的一群门徒！跟随他们的主三年多的时间，所受的训诲陶镕该是怎样多，怎样美。他们应当怎样像他们的主，那样谦卑，那样慈爱，那样舍己。谁想到他们不但不能这样，反倒在他们的主就要为人舍命的前一个晚间，在那里争论谁为大。他们的主与他们一同吃了末后一次的晚餐，在席上他也告诉他们说，他要为他们舍命流血。他们只要稍有人心，应当怎样感激涕零，应当怎样体会他的心，彼此亲爱，互相谦让，使他们的主因他们得着少许的安慰。万没有料到他们竟是那样自私，作出那样使主伤心的事来。我们读了这段记载，使我们万分激愤，使我们痛恨这般门徒怎么那样冥顽不灵，那样心如铁石。纵使他们不因着三年多所受的熏陶而改变，至少他们也应当因着那天晚间的情形而受感动。他们在别的地方，别的时候争论谁为大，或者还可以原谅，惟独在这个地方，在这个时候，还争论谁为大，真是使人再无法原谅的事。</p>
+<p>我们为他们激愤么？我们痛恨他们么？我们果真比他们好么？我们果真比他们稍好一点么？他们争论谁为大的时候，他们的主还住在他们中间，还没有被人杀害，他们还未曾看见他们的主被人挂在木头上，受尽人间的羞辱，痛苦、伤心，他们也未曾十分明白他们的主降世所要成就的一切事。他们那时所看见的所明白的，远不及我们所看见的所明白的这样多。按理说，我们的程度应当比他们高得多才合理。可是我们仔细反省自己的人生，便发现我们所作的正和他们一样。我们中间有几个人不是常在那里争论谁为大呢？有几个人不是专顾自己的事，不顾别人的事呢？有几个人不是看见别人比自己好，便生出嫉妒的心呢？有几个人不是看自己的事比主的事更重要呢？有几个人不是一点不肯宽容别人呢？有几个人不是愿意多显露自己呢？有几个人不是坐在主的桌子旁，心中还怀着私意呢？有几个人不是出了会堂便去偏行己路呢？我们所看见的所明白的比他们那时所看见的所明白的多，我们所领受的恩典和训诲也一点不比他们更少，但我们所行的却和他们一样，我们还有资格因为他们所作的忿怒么？我们还有颜面批评他们么？我们的良心还许可我们痛恨他们么？我们除去自愧自责以外，还有时间顾到别的事么？</p>
+<p>主怎样对待那一群顽梗自私的门徒呢？他不但不罪责他们，弃绝他们，反倒用极慈爱极谦和的态度劝戒他们，告诉他们说他在他们中间如同服事人的。他使他们知道为大的方法就是自卑，就是屈身服事人，就是作别人的仆人。他不但以言语教训他们，他也以行为教训他们；仍「离席站起来，脱了衣服，拿一条手巾束腰，随后把水倒在盆里，就洗门徒的脚，并用自己所束的手巾擦干。」他使他们看见连他们的主他们的夫子都肯屈身作奴仆的工作，为他们洗脚，他们更应当「彼此洗脚」。他要用自己的榜样使他们明白为大的真意，使他们了解人和人同处的正轨，使他们认识他们自己的愚昧无知，使他们看见他们自己的败坏卑鄙。</p>
+<p>我们听见他所讲的话并看见他所作的事，心中有什么感觉呢？我们有没有觉悟到自己的愚昧无知？我们有没有看见自己的败坏卑鄙？我们有没有明白为大的真意？我们有没有了解人和人同处的正轨？我们有没有因为我们的自私骄傲而惭愧？我们有没有因为我们不像主而懊悔？如果我们听见他的教训，看见他的榜样，仍不自惭自责，仍然自私骄傲，我们真可算心如铁石，我们真称得起冥顽不灵，我们真不配称为主的门徒。想到这里，我们恨我们自己，我们怪我们自己。我们再没有脸面，也没有余暇，去批评罪责当日那一群门徒。我们只有求那位慈爱的主赦免我们的罪恶，宽容我们的无知，不记念我们的顽梗，涂抹我们的过犯，并且为我们造一个新心，赐给我们从上面来的爱和能力，使我们能重新作人，重新起来跟随他的脚踪，效法他的样式。</p>
+<p>想到那日晚间的事，使我们又看见了主对门徒的那种大量，那种宽容，那种慈爱，那种怜悯；同时又想到了我们自己的那种狭窄的心肠，那种严厉的态度，想到了我们待别的圣徒那样残酷，一点不肯宽容他们的过失，见他们有短处使我们不满意，立时便怒不可遏的定他们的罪，厌弃他们，我们便知道我们真不像我们的主。我们说我们爱主，但我们一点不爱主所爱的人；我们承认我们是主的门徒，但我们的态度和行为与他的态度和行为是完全背道而驰的。我们自己虽然有许多过失，但我们待自己却是很宽大，同时我们看见别的圣徒有过失却丝毫不能容忍宽恕。我们盼望主赦免我们，但我们却不肯赦免其它的圣徒。我们的主那样圣洁完全，他仍宽容忍耐那些一点不像他的门徒，我们自己比别的圣徒并不好多少，有时还不如他们，可是我们一发现别的圣徒有缺点，便批评他们，厌弃他们，定他们的罪。看看我们的主，再想想我们自己，我们应当惭愧到什么地步阿！</p>
+<p>一个像主的基督徒应当恨恶罪恶如同恨恶蛇蝎，但同时他也应当爱那些有罪的人，如同主爱他们一样。不恨罪的人不像主，不爱人的人也不像主。能兼有两种美德的人实在不多。许多圣徒恨罪有余，但爱人不足，还有许多圣徒爱人有余，恨罪却不足。主向我们要的，乃是对罪有极强烈的恨恶，对人有极伟大的爱心。我们不应当宽容罪，但我们却应当宽容人。有生命的基督徒固然应当完全，但因为他们还活在身体中，还有肉体的软弱，所以在许多事上还有极多的失败。对这样的人我们必须有我们的主所有的那种宽大容忍的心肠。纵使我们自己像那样完全，丝毫没有他们所有的失败，我们尚且不应当定他们的罪，尚且应当像主那样宽容忍耐他们，何况我们自己也有许多失败呢。也许我们的失败和他们的失败不相同，也许我们的弱点与他们的弱点不一样。也许他们时常起贪心，我们却有时怀淫念；也许他们的缺点是自私，我们的缺点是骄傲；也许他们爱虚荣，我们却图小利；也许他们的性情不好，我们却是心肠狭窄。失败虽然不同，却同是失败，缺点虽然不同，却同是缺点。谁有权柄去弃绝别人，去定别人的罪呢。</p>
+<p>我们轻易弃绝别的圣徒，并定他们的罪，除了我们不明白主的心以外，还有一个原因，就是我们不认识自己。我们越多认识自己，越多知道自己的失败和软弱，我们才越能宽容人忍耐人，我们才越不敢轻易弃绝人，定别人的罪。只有不认识自己的人才常常轻易定别人的罪。如果一个人清楚知道自己有许多罪过，愆尤，缺欠，失败，他决不敢轻易定别人的罪，弃绝别人。他看见别人的失败缺点，只有为他们叹息，对他们发出哀怜的心。如果他知道了自己的失败和缺点，又知道主在他身上所施的大恩，所显的大能，并主对他所存的忍耐和慈爱，他不但哀怜那些有失败和缺点的人，他还要尽心竭力去帮助他们，救拔他们。什么时候我们能这样作，我们更像我们的主，我们也就可以被称为主所爱的门徒了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

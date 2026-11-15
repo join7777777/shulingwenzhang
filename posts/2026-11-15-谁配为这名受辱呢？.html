@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>谁配为这名受辱呢？ · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>谁配为这名受辱呢？</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/3谁配为这名受辱呢？-01.mp3">🎧 谁配为这名受辱呢？（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/3谁配为这名受辱呢？-02.mp3">🎧 谁配为这名受辱呢？（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/3谁配为这名受辱呢？-03.mp3">🎧 谁配为这名受辱呢？（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「公会的人听见，就极其恼怒，想要杀他们。但有一个法利赛人，名叫迦玛列，是众百姓所敬重的教法师，在公会中站起来，吩咐人把使徒暂且带到外面去；就对众人说，『以色列人哪，论到这些人，你们应当小心怎样办理。从前丢大起来，自夸为大，附从他的约有四百；他被杀后，附从他的全都散了，归于无有。此后报名上册的时候，又有加利利的犹大起来，引诱些百姓跟从他；他也灭亡，附从他的人也都四散了。现在我劝你们，不要管这些人，任凭他们罢！他们所谋的、所行的，若是出于人，必要败坏；若是出于神，你们就不能败坏他们，恐怕你们倒是攻击神了。』公会的人听从了他，便叫使徒来，把他们打了，又吩咐他们不可奉耶稣的名讲道，就把他们释放了。他们离开公会，心里欢喜，因被算是配为这名受辱。他们就每日在殿里，在家里，不住的教训人，传耶稣是基督。」（徒五33～42）。</p>
+<p>这些使徒真是一群奇怪的人！因为坚持要传扬基督的复活，被犹太人的首领捉拿了去，在公会中受审问，仍是坚持要传他们所信的福音，因此激恼了那些反对他们的人，以致那些人要杀他们。幸有迦玛列起来，阻止了那些人。他们虽然逃脱了那些人的毒手，但仍不免挨了一顿打，并且再被禁止，不许他们奉耶稣的名讲道，以后才被释放。这些使徒并不是一群小孩子，这样在公会中挨了打，该是多么羞辱的事！他们离开公会以后，该是多么懊丧！多么惭愧！多么难过！不料这些使徒们非但没有这种感觉，反倒「心里欢喜，因被算是配为这名受辱。他们就每日在殿里，在家里，不住的教训人，传耶稣是基督。」</p>
+<p>任何成年的人，如果不是神经失常，在众人面前挨了打，受了羞辱以后，一定要心中痛苦，满面羞愧；如今这群使徒在挨打受辱以后竟能「心里欢喜」，这真是令人难明白的事。难明白么？一点不难明白。我们只要往下多读一句话，便明白为什么他们能这样作了。下面那一句话是什么呢？「因被算是配为这名受辱」。「这名」是那个名呢？就是他们所传的拿撒勒人耶稣的名。容我们看看这个名是怎样的一个名──</p>
+<p>「耶稣对他们说：『这就是我从前与你们同在的时候，所告诉你们的话，说：摩西的律法，先知的书，和诗篇上所记的，凡指着我的话，都必须应验。』于是耶稣开他们的心窍，使他们能明白圣经。又对他们说，『照经上所写的，基督必受害，第三日从死人里复活，并且人要奉他的名传悔改赦罪的道，从耶路撒冷起，直传到万邦』。」（路二十四44～47）。</p>
+<p>「神怎样以圣灵和能力膏拿撒勒人耶稣，这都是你们知道的。他周流四方行善事，医好凡被魔鬼压制的人，因为神与他同在。他在犹太人的地方，并耶路撒冷所行的一切事，有我们作见证。他们竟把他挂在木头上杀了，第三日神叫他复活，显现出来；不是显现给众人看，乃是显现给神豫先所拣选为他作见证的人看，就是我们这些在他从死人里复活以后，和他同吃同喝的人。他吩咐我们传道给众人，证明他是神所立定的，要作审判活人死人的主。众先知也为他作见证说，凡信他的人，必因他的名得蒙赦罪。」（徒十38～43）。</p>
+<p>「小子们哪，我写信给你们，因为你们的罪藉着主的名得了赦免。」（约壹二12）。</p>
+<p>「你们岂不知不义的人不能承受神的国么？不要自欺，无论是淫乱的、拜偶像的、奸淫的、作娈童的、亲男色的、偷窃的、贪婪的、醉酒的、辱骂的、勒索的，都不能承受神的国。你们中间也有人从前是这样，但如今你们奉主耶稣基督的名，并藉着我们神的灵，已经洗净，成圣称义了。」（林前六9～11）。</p>
+<p>「耶稣在门徒面前另外行了许多神迹，没有记在这书上。但记这些事，要叫你们信耶稣是基督，是神的儿子；并且叫你们信了他，就可以因他的名得生命。」（约二十30、31）。</p>
+<p>「申初祷告的时候，彼得、约翰上圣殿去。有一个人生来是瘸腿的，天天被人抬来，放在殿的一个门口，那门名叫美门，要求进殿的人赒济。他看见彼得、约翰将要进殿，就求他们赒济。彼得、约翰定睛看他。彼得说，『你看我们』。那人就留意看他们，指望得着什么。彼得说，『金银我都没有，只把我所有的给你。我奉拿撒勒人耶稣基督的名，叫你起来行走。』于是拉着他的右手，扶他起来，他的脚和踝子骨立刻健壮了，就跳起来，站着，又行走，同他们进了殿；走着，跳着，赞美神。」（徒三1～8）。</p>
+<p>「第二天，官府、长老、和文士，在耶路撒冷聚会，又有大祭司亚那、和该亚法、约翰、亚力山大、并大祭司的亲族，都在那里。叫使徒站在当中，问他们说，『你们用什么能力，奉谁的名，作这事呢？』那时彼得被圣灵充满，对他们说，『治民的官府和长老阿，倘若今日因为在残疾人身上所行的善事，查问我们他是怎么得了痊愈，你们众人和以色列百姓都当知道，站在你们面前的这人得痊愈，是因你们所钉十字架，神叫他从死人里复活的，拿撒勒人耶稣基督的名。他是你们匠人所弃的石头，已成了房角的头块石头。除他以外，别无拯救，因为在天下人间没有赐下别的名，我们可以靠着得救」。」（徒四5～12）。</p>
+<p>耶稣基督的名是何等宝贵，何等重要的一个名呢！「悔改赦罪的道」是奉他的名传开的。信他的人是「因他的名得蒙赦罪」的。我们在未信主以前，是沾染了许多罪恶的，但如今却「奉主耶稣基督的名，并藉着我们神的灵，已经洗净，成圣称义了。」死在罪恶过犯中的人，「信了他，就可以因他的名得生命」。彼得、约翰两位使徒曾奉耶稣基督的名，叫那个生来瘸腿的人起来行走。当使徒被捕受审的时候，彼得被圣灵充满，在官府和长老面前，侃侃作见证说，「站在你们面前的这人得痊愈，是因你们所钉十字架，神叫他从死人里复活的，拿撒勒人耶稣基督的名。他是你们匠人所弃的石头，已成了房角的头块石头。除他以外，别无拯救，因为在天下人间没有赐下别的名，我们可以靠着得救。」天上、地上有没有别的名像这个名呢？有没有别的名像这个名这样有功效和能力呢？有没有别的名能和这个相比呢？没有，绝对没有。这个名不但超过世人，而且超过天上的天使。经上有话说，「他所承受的名既比天使的名更尊贵，就远超过天使。」（来一4）。这个名是一个「超乎万名之上的名」。请听经上的话──</p>
+<p>「你们当以基督耶稣的心为心。他本有神的形像，不以自己与神同等为强夺的，反倒虚己，取了奴仆的形像，成为人的样式；既有人的样子，就自己卑微，存心顺服，以至于死，且死在十字架上；所以神将他升为至高，又赐给他那超乎万名之上的名，叫一切在天上的，地上的、和地底下的，因耶稣的名，无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。」（腓二5～11）。</p>
+<p>如果我们清楚知道了耶稣基督的名是怎样的一个名，我们便可以看见为这名受辱是一件多么光荣的事。耶稣基督的名是那样一个有能力的名，是那样一个有效的名，是那样一个尊贵的名，是那样一个崇高的名。一个人能为这个名受辱，不是不幸，正是人生最大的幸事，使徒如何能不因此欢喜呢？</p>
+<p>使徒为主耶稣的名挨了打以后，所以那样心里欢喜，不但是因为主的名受辱，更是因为他们「被算是配为这名受辱」。注意这句话了么？「被算是配为这名受辱。」他们本来不配为这名受辱，但现今「被算是配」，这是多么光荣的机会呢？</p>
+<p>也许有人问说，「为耶稣基督的名受辱，怎么还有配不配呢？」有，当然有。耶稣基督的名既是那样有能力，有功效，又是那样尊贵、崇高，当然我们必须看看谁配为这名受辱。使徒配为这名受辱么？我们配为这名受辱么？世上有人配为这名受辱么？我们读一读圣经上的话，便可以回答这些问题了。</p>
+<p>「耶和华从天上垂看世人，要看有明白的没有，有寻求神的没有。他们都偏离正路，一同变为污秽，并没有行善的人，连一个也没有。」（诗十四2、3）。</p>
+<p>「人心比万物都诡诈，坏到极处，谁能识透呢？我耶和华是鉴察人心，试验人肺腑的，要照各人所行的，和他作事的结果报应他。」（耶十七9、10）。</p>
+<p>「从人里面出来的，那才能污秽人，因为从里面，就是从人心里，发出恶念、苟合、偷盗、凶杀、奸淫、贪婪、邪恶、诡诈、淫荡、嫉妒、毁谤、骄傲、狂妄；这一切的恶都是从里面出来，且能污秽人。」（可七20～23）。</p>
+<p>「这却怎么样呢？我们比他们强么？绝不是的。因我们已经证明，犹太人和希利尼人都在罪恶之下；就如经上所记，『没有义人，连一个也没有，没有明白的，没有寻求神的。都是偏离正路，一同变为无用，没有行善的，连一个也没有。他们的喉咙是敞开的坟墓；他们用舌头弄诡诈，嘴唇里有虺蛇的毒气，满口是咒骂苦毒；杀人流血，他们的脚飞跑；所经过的路，便行残害暴虐的事。平安的路他们却未曾知道；他们的眼中不怕神』。」（罗三9～18）。</p>
+<p>看见了么？世上一切的人「都偏离正路，一同变为污秽；并没有行善的，连一个也没有。」神不但说明世上的人都是罪人，而且还列举出人类所犯一切的罪。他又使我们知道「人心比万物都诡诈，坏到极处」。他藉着他的儿子我们的主耶稣基督举出事实来，证明这个真理说，「从里面，就是从人心里，发出恶念、苟合、偷盗、凶杀、奸淫、贪婪、邪恶、诡诈、淫荡、嫉妒、毁谤、骄傲、犯妄；这一切的恶都是从里面出来，且能污秽人。」</p>
+<p>这就是人类的真面目，我们在其中，使徒也在其中。这样的人配为这个极尊贵，极崇高，极有功效和能力的名──耶稣基督──受辱么？不配，一点都不配。这些不配为这名受辱的人，竟「被算是配为这名受辱」，他们如何能不「心里欢喜」呢？不配的人「被算是配」，这是特别的恩宠，也是特别的光荣，蒙这种特别恩宠光荣的人「心里欢喜」，还有什么可惊奇的呢？</p>
+<p>感谢神，他不但将这种特别的恩宠光荣赐给了当日的使徒，他在今日也将这种特别的恩宠光荣赐给我们，我们今日虽然没有为这名挨打，像当日的使徒一样，我们却也为这名受了许多人的讥诮、讽刺、侮辱、笑骂。今日虽然也有少数的基督徒尚未遭到这种待遇，但大多数承认主，跟随主的人都能告诉我们说，他们在同学中，在同事中，为耶稣基督的名受了多少冷嘲热讽。被人称为「迷信」，「落后」，已经是最客气的评语。此外还有许多使人难以忍受的话语和表示。有些圣徒因此愤愤不平，也有些圣徒因此伤心难过，又有些圣徒因此畏惧退缩，不敢再承认主的名。这些圣徒亟需要明白他们所遭遇的不是不幸，正是大幸；不是羞辱，正是荣耀。因为神使我们这不配为耶稣基督的名受辱的人，也能像当日的使徒们那样，「被算是配为这名受辱」。如果我们能知道这种遭遇是特别的恩宠与光荣，我们非但不愤愤不平，不伤心难过，不畏惧退缩，反倒因此欢喜快乐，像当日的使徒在为主的名挨了打以后，那样「心里欢喜」一样。</p>
+<p>我们这不配为耶稣基督的名受辱的人，竟「被算是配为这名受辱」，已经足够喜乐了，但我们的主还赐给我们更美的应许说──</p>
+<p>「人若因我辱骂你们，逼迫你们，造各样坏话毁谤你们，你们就有福了。应当欢喜快乐，因为你们在天上的赏赐是大的；在你们以前的先知，人也是这样逼迫他们。」（太五11～12）。</p>
+<p>「圣灵与我们的灵同证我们是神的孩子，既是孩子，便是后嗣，就是神的后嗣，和基督同作后嗣。如果我们和他一同受苦，也必和他一同得荣耀。我想现在的苦楚，若比起将来要显于我们的荣耀，就不足介意了。」（罗八16～18）。</p>
+<p>「所以我们不丧胆，外面的人虽然毁坏，里面的人却一天新似一天。我们这至暂至轻的苦楚要为我们成就极重无比，永远的荣耀。原来我们不是顾念所见的，乃是顾念所未见的，因为所见的是暂时的，所未见的是永远的。」（林后四16～18）。</p>
+<p>「有可信的话说，『我们若与基督同死，也必与他同活；我们若能忍耐，也必和他一同作王；我们若不认他，他也必不认我们；我们纵然失信，他仍是可信的』，因为他不能背乎自己。」（提后二11～13）。</p>
+<p>「亲爱的阿，有火炼的试验临到你们，不要以为奇怪（似乎是遭遇非常的事），倒要欢喜，因为你们是与基督一同受苦，使你们在他荣耀显现的时候，也可以欢喜快乐。你们若为基督的名受辱骂，便是有福的；因为神荣耀的灵常住在你们身上。你们中间却不可有人因为杀人、偷窃、好管闲事而受苦；若为作基督徒受苦，却不要羞耻，倒要因为这名归荣耀给神。」（彼前四12～16）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

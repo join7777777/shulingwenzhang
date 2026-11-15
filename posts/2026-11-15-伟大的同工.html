@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>伟大的同工 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>伟大的同工</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/6伟大的同工-01.mp3">🎧 伟大的同工（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/6伟大的同工-02.mp3">🎧 伟大的同工（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/6伟大的同工-03.mp3">🎧 伟大的同工（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「这事以后，保罗离了雅典，来到哥林多，遇见一个犹太人，名叫亚居拉。他生在本都，因为革老丢命犹太人都离开罗马，新近带着妻百基拉从意大利来，保罗就投奔了他们。他们本是制造帐棚为业，保罗因与他们同业，就和他们同住作工。每逢安息日，保罗在会堂里辩论，劝化犹太人和希利尼人。」（徒十八1～4）。</p>
+<p>「保罗又住了多日，就辞别了弟兄，坐船往叙利亚去，百基拉、亚居拉和他同去。……到了以弗所，保罗就把他们留在那里，自己进了会堂，和犹太人辩论。」（徒十八18、19）。</p>
+<p>「有一个犹太人，名叫亚波罗，来到以弗所。他生在亚力山太，是有学问的，最能讲解圣经。这人已经在主的道上受了教训，心里火热，将耶稣的事详细讲论教训人，只是他单晓得约翰的洗礼。他在会堂里放胆讲道。百基拉、亚居拉听见，就接他来，将神的道给他讲解更详细。」（徒十八24～26）。</p>
+<p>「问百基拉和亚居拉安，他们在基督耶稣里与我同工，也为我的命将自己的颈项置之度外。不但我感谢他们，就是外邦的众教会也感谢他们。」（罗十六3、4）。</p>
+<p>「亚西亚的众教会问你们安。亚居拉和百基拉，并在他们家里的教会，因主多多的问你们安。」（林前十六19）。</p>
+<p>「问百基拉、亚居拉、和阿尼色弗一家的人安。」（提后四19）。</p>
+<p>亚居拉与百基拉这夫妻二人是不很被历代教会重视的人。他们没有被列在使徒中间，圣经中也没有他们所写的书信。至于他们的事迹，记在圣经中的也没有多少。只在使徒行传第十八章中，叙述他们夫妻二人是制造帐棚的，他们从罗马来到哥林多，保罗因为与他们同业，就和他们同住作工；又叙述当保罗离开哥林多的时候，他们夫妻二人也和保罗同去，到了以弗所，他们二人就留在那里；后来他们听见亚波罗的事，就把他接来，将神的道给他讲解更加详细。除了这一章的记载以外，只有保罗所写的三封书信里提到了他们夫妻二人，两封是问他们的安，一封是他们问教会的安。因为他们没有什么特别的建树，所以没有很多的人注意他们。但在这短短的几段经文中，我们看见了几句话，显明他们夫妻二人的伟大，那就是保罗提到他们说，「他们在基督耶稣里与我同工，也为我的命将自己的颈项置之度外。」与保罗同工不是什么希罕的事，为保罗的命「将自己的颈项置之度外」，却是难能可贵的事了。</p>
+<p>亚居拉和百基拉究竟为保罗作了什么事？圣经中没有详细记载，我们当然无从知道。但从这几句话里我们看出来，他们二人一定是在某种危险的情形中，准备为保罗的缘故甘心舍弃自己的颈项，但因为神的保守，他们并未曾丧掉性命。</p>
+<p>为别人舍弃自己的财物，是一件不容易的事；为别人舍弃自己的安逸和享受，是一件更难的事；为别人舍弃自己的性命，更是极其罕见的事。保罗有许多同工。在这些人中间有和他周流多处，传扬福音的巴拿巴（徒十三、十四章），有和他一同在腓立比坐过监、挨过打的西拉（徒十六章），有和他从希腊回亚西亚去的所巴特，亚里达古、西公都、该犹、提摩太、推基古、和特罗非摩（徒二十1～6），还有多年和他在一处，陪着他从该撒利亚被解到罗马去的路加。在他写的几卷书信中还提到一些与他同工的人（罗十六章；林前十六章；腓四章；西四章；提后四章；腓利门书）。这些人都与保罗发生过很深的关系，或在许多事上帮助过他，或和他一同共过患难；但在这一切人中，他只提到亚居拉和百基拉夫妇二人，为他的命「将自己的颈项置之度外」。从这几句话里我们能看出保罗是怎样重视他们二人，和他们这种极伟大的行为。</p>
+<p>是，这真是一种极可尊敬、极伟大的行为。在平安无事的时候，与同工表示亲爱，是一件很平常的事。当自己的同工遭遇患难的时候设法去帮助他，这已经是比较少见的事。当自己的同工面临危险的时候，仍然站在他的旁边，这更难能可贵了。至于为同工的性命把自己的颈项置之度外，若不是有最高的属灵的生命，是绝不会作到的。</p>
+<p>许多基督徒都羡慕为主舍命，他们觉得那是光荣无比的事。但他们一看见别的弟兄或姊妹遭遇危险，不用说不能为他们舍命，甚至远远躲开，惟恐自己受了连累，遭遇祸患。你若告诉他们说，不应当这样作，也许他们要说，他们所以这样逃避危险，正是为要保住他们自己的身体，好在将来有需要的时候为主舍命。他们的这种说法完全是掩饰自己的怯懦和自私。他们绝没有为主舍命的决志和勇气。主今日不需要我们来帮助他，救援他，他比世上所有的人都强壮有力。他不需要我们在他遭遇危险的时候站在他的旁边，也不需要我们为他的命将我们自己的颈项置之度外。他向我们所要的，就是当别的弟兄姊妹遭遇危险的时候站在他们旁边，他也要我们为他们的命把自己的颈项置之度外。他要我们这样待一切属他的人，他更要我们这样待那些被他差遣、为他作工的人。他自己的话证实了这个真理。</p>
+<p>「人接待你们，就是接待我，接待我，就是接待那差我来的。人因为先知的名接待先知，必得先知所得的赏赐；人因为义人的名接待义人，必得义人所得的赏赐。无论何人，因为门徒的名，只把一杯凉水给这小子里的一个喝，我实在告诉你们，这人不能不得赏赐。」（太十四40～42）。</p>
+<p>我们的主说这话，是在他差遣十二个使徒出去传道的时候。他所说的「你们」，就是被他差遣出去为他作工的那些使徒。他清楚说明接待他的工人，就是接待他；接待他，就是接待差他来的父。根据这些话我们足可以明白，如果我们当他的工人遭遇危险的时候站在他们旁边，就是站在他的旁边，为他工人的命把自己的颈项置之度外，就是为他的命把自己的颈项置之度外。反过来说，如果我们不接待主的工人，便是不接待主，如果我们当主的工人遭遇危险的时候不站在他们旁边，便是不站在主的旁边，如果我们不为主的工人的命把自己的颈项置之度外，便是不为主的命把自己的颈项置之度外。</p>
+<p>我们都十分景仰那个为传福音被人用石头打死的司提反，也羡慕他那种为主舍命的精神，我们却没有注意亚居拉和百基拉夫妇二人与司提反同样的可景仰，他们二人的精神也与司提反同样的可羡慕，所不同的只是司提反被犹太人用石头打死了，亚居拉和百基拉虽然把自己的颈项置之度外，神却没有容许他们死在敌人的手中。他们三个人将来站在主的面前一定会同样的蒙主的夸奖，也会同样的得着主为向他尽忠的人所预备的生命的冠冕。</p>
+<p>亚居拉和百基拉在从主所得的恩赐上固然赶不上保罗，他们在福音的工作上所成就的也不能与保罗相比，但在主耶稣得国得荣的时候，他们从主所领受的大约不会比保罗更少。保罗论到他们二人为他的命将自己的颈项置之度外的这一件事说，「不但我感谢他们，就是外邦的众教会也感谢他们。」这样值得保罗和外邦的众教会感谢的人，能不从主得着极大的赏赐么？</p>
+<p>保罗能有这样的同工，与他那样向他的主尽忠也是很有关系的。看他那样为传福音曾在路司得城被那些反对他的人用石头打得半死，仍然继续传扬福音（徒十四19～28）。再听他对以弗所教会所说的话──「现在我往耶路撒冷去，灵被捆绑，不知道在那里遇见什么事。但知道圣灵在各城里向我指证，说，有捆锁与患难等待我。我却不以性命为念，也不看为宝贵，只要行完我的路程，成就我从主耶稣所领受的职事，证明神恩惠的福音。」（徒二十22～24）。后来保罗在该撒利亚的时候，先知亚迦布从犹太下来，豫言犹太人在耶路撒冷要捆绑保罗，把他交在外邦人手里。那时保罗的同工和当地的圣徒听见这话，都苦劝保罗不要上耶路撒冷去。保罗说，「你们为什么这样痛哭，使我心碎呢？我为主耶稣的名，不但被人捆绑，就是死在耶路撒冷，也是愿意的。」（徒廿一13）。因为保罗能为他的主把自己的颈项置之度外，所以感化了他的同工，也为他的命把他们自己的颈项置之度外。保罗是神所特别拣选的器皿，他必须在一切的事上都作众圣徒的模范。如果这位蒙神特别拣选的使徒尚且不能为他的主将自己的颈项置之度外，如何能希望其它的圣徒这样作呢？</p>
+<p>这里我们更看出来一个在教会中负着领导的责任的人所有的生活是何等重要。他自己先效法基督，然后才能希望其它的圣徒也效法基督。他自己先有圣洁的生活，然后才能希望其它的圣徒也有圣洁的生活。他自己先为主将自己的颈项置之度外，然后才能希望其它的圣徒也为主将自己的颈项置之度外。当圣徒能为主将自己的颈项置之度外的时候，便也能为主的仆人将自己的颈项置之度外了。没有保罗所有的人生，却希望有像保罗的同工那样的同工，那如何能办得到呢？</p>
+<p>看看今日教会中的情形罢。许多为神作工的人不但不像亚居拉和百基拉那样为同工将自己的颈项置之度外，反倒为自己的利益打击同工，为自己的安全毁坏同工。只顾设法保守自己脱离危险和祸患，不惜出卖同工，陷害同工。不但那些为吃饭而传道的人这样作，就连那些素日真实为主作工的人中间，也有不少人同样作出这种令人痛心的事来。在今日的教会中要寻找像亚居拉和百基拉那样的圣徒，大约比晨星还要稀少。其实这也不足希奇，教会中那些多年为神作工，素日受众教会所景仰，所尊重的传道人，一经过考验，立即胆怯畏缩，不敢再说实话，不敢为真理站稳，不敢为他们所事奉的主准备牺牲，不敢抵挡一切背道的事，却终日伈伈俔俔，低首下心，说许多自己的良心不认可的话，作许多在神眼中看为可憎的事，为求自己前途，身家的安全，不惜出卖他们多年所事奉的主，推翻他们多年为真理所作的见证。这些在教会中被众人所景仰、所尊重的领袖们尚且这样懦弱失败，我们还能希望他们所领导的信徒比他们更好么？</p>
+<p>我们的主是得胜的主。在每一个时代中，他都有他自己的见证人。倒下去的，他容他们倒下去。但他要为他自己的名，兴起像保罗一样的工人来，又为他自己的名，为他的工人兴起像亚居拉，百基拉一样的同工来。阅者，如果他的选召临到了你，你肯接受他的呼召么？</p>
+<p>一个重要的真理</p>
+<p>「人在最小的事上忠心，在大事上也忠心；在最小的事上不义，在大事上也不义。」（路十六10）。</p>
+<p>我们的主所说的这几句话里，包含了极实贵的真理。它告诉我们为什么同是神所拯救的人，同是基督的门徒，却有些人度着圣洁高尚的人生，又有些人生活污秽卑鄙到一种地步，几乎令人不能信他们是基督徒；它又告诉我们为什么有些人在属灵的战场上，斩将搴旗，越战越勇，为什么有些人与撒但接仗的时候，弃甲曳兵，节节败退。许多人以为基督徒中有这么大的不同，是因为在许多大事上有了区别；其实不是在大事上，乃是在最小的事上。一个圣徒必须弃绝一切极微小的罪恶，他才能有圣洁高尚的人生。一个圣徒必须在极小的事上不向撒但让步，他才能得着极大的胜利。反过来说，如果一个圣徒忽略微小的罪恶，他将来必定要陷在极大的罪恶中；如果一个圣徒在小事上向撒但让步，不久他一遭遇不可挽救的大失败。当他犯小罪的时候，他也许并没有想要去犯大罪，但在实际上他已经作了犯大罪的准备；当他向撒但作尺寸的让步的时候，他也许并没有想要完全向撒但投降，但在实际上他已经为自己铺好了投降的道路。</p>
+<p>神未曾在圣经上教导我们不要向魔鬼投降，他只教导我们「不可给魔鬼留地步。」（弗四27）。魔鬼不怕我们不向他投降，他只怕我们不给他留地步。只要我们给他留地步，我们迟早会向他投降。没有一个基督徒甘心向魔鬼投降，但极多的基督徒给魔鬼留了地步，结果他们虽然起初没有向魔鬼投降的心，但最后还是降服在他的权下，神知道这种危险，所以才藉着使徒教训我们「不可给魔鬼留地步」。</p>
+<p>神不但教训我们「不可给魔鬼留地步」，他进一步教训我们说，「务要抵挡魔鬼，魔鬼就必离开你们逃跑了。」（雅四7）。我们对付魔鬼，只能拒绝他，抵挡他，与他战，如果我们不听从神的话，却采取其它的办法，我们一定要败在魔鬼的面前。</p>
+<p>魔鬼最喜欢我们注重大事，轻忽小事。他常告诉我们说，「你们不要犯大罪，但犯几样小罪并没有什么大关系。」如果我们听了他的话，不久他便领我们再去犯比上次更大的罪。我们因为已经犯了一次罪，便很容易再犯较大的罪。结果我们所犯的罪不但越来越大，而且越来越多，我们对罪恶的敏感也越来越迟钝，至终陷在大罪中，招来了大祸。魔鬼陷害我们的计策奏了效，我们却遭遇了败坏。</p>
+<p>我们都知道河堤决口的事。每逢盛夏阴雨连绵，山洪暴发的时候，河中的水常会涨得比两岸更高，因此便泛滥到两岸，以致淹没田地、房屋、人畜、财物。沿河居住的人为防御这种水患，便在河的两岸，用土筑成堤防，阻遏河水，不容水流到地上面来。这种堤防万不可有破口。如果一有破口，虽然起初只有少量的河水从这个小口流到岸上，但不久水的力量便把决口冲大，不过几个小时，河堤便会被水冲开几丈，几十寸，结果河中高出平地的水完全流到地上来，以致演成极大的灾害。</p>
+<p>在我们的人生中，罪恶就像夏天的水患那样可怕。我们必须筑堤防备它，不容它流到我们的生活中来。犯一次小罪，就如同河堤决了一个小口一样。若不赶快将它堵塞，没有多少时候，便会成为不可挽救的大患。防水的人绝不轻忽堤防上很小的决口。可叹！许多基督徒一点不注意他们人生中很小的罪恶的决口。也就是因为他们轻忽那些像小的决口一样的小的罪恶，他们整个的人生才被罪恶所毁灭。</p>
+<p>属灵的胜利也是从小事上得来的。一个很小的试探来到，如果你能得胜，你的信心、勇气、和能力，将要因此增加，在你遇见较大的试探的时候，便容易继续着得胜。反过来说，你在遇见小试探的时候遭了失败，你的信心、勇气、和能力，一定都受挫折，你要软弱下去，以后遇见较大的试探，是注定要失败的。有些人抱着一种极错误的看法。他们说，因着一件小事牺牲，是不值得的，到了遇见大事值得牺牲的时候，我们再牺牲，那便有价值了。这完全是撒但欺骗我们的话。这正好像说一队军兵和敌人作战的时候，突然遭到几十名敌兵的攻击，司令官说，「敌人来的军兵这样少，我们不值得牺牲我们的人力物力，同他们抗争。我们暂时放弃这块阵地，退到后方安全的地带去，等到敌人发动千百名兵力来进攻的时候，我们再奋起抗战，那便有价值了。」任何人听见这个司令官所说的话也不会表示同意。这个司令官如果不是胆怯无知，便是受了敌人的贿买，准备将这阵地让给敌人。如果他是胆怯无知，他应当被撤职；如果他准备将阵地让给敌人，他应当被处以通敌的罪名。任何人也会明白，如果敌人以少数的兵力来进攻的时候尚且不敢抵抗，不能抵抗，到了敌人以大量兵力来攻击的时候，若不是转背逃跑，便是集体投降了。</p>
+<p>假若在我们面前放着一张白纸，有许多人说它是黑色的。这时如果我坚持说它是白的，势必惹恼那些人，招来他们的恶感。有人对我说，「你就随着众人也说这张既是黑的，又有什么关系呢？你这样作，便不使任何人受损失，你自己却可以不惹人的反对，并且因此与人和睦相处，有广大的机会为人服务，为主作见证，那是多么好呢？如果你坚持说它是白的，你不但要招来许多人的恶感，而且要失去与别人中间的和睦，因此也就要失去帮助别人的机会，别人也要因为你这样与人异趣，而轻看你所事奉的神，岂不是在那方面都受损失么？」这种说法乍听似乎很有道理，但如果你仔细分析一下，便知道它完全是一种似是而非的理论，这种理论极容易迷惑人，使人不知不觉就陷入了极大的罪恶。说一张白纸是黑的，按人看来，似乎没有什么大关系。但按圣经上的教训说来，这实在是一件万分严重的事。因为这样行完全与主耶稣所给我们的教训相背。我们的主曾教训我们什么话呢？</p>
+<p>「你们的话，是，就说『是』；不是，就说『不是』。若再多说就是出于那恶者。」（太五37）。</p>
+<p>请问，明明是一张白纸，却说它是黑色的，是不是违背这个原则，是不是违背主的命令呢？作主的门徒，却违背主的命令，是不是一件无关紧要的事呢？何况我们的主在这个命令之后还加上两句要紧的话说，「若再多说，就是出于那恶者」。看见了么？「是，就说『是」；不是，就说『不是』。若再多说，就是出于那恶者。」说一个「黑」字，或说一个「白」字，并不是什么要紧的事。但说一张白纸是黑的，这件事便万分严重了。因为这样说就是撒谎，就是违背主的命令，就是出于那恶者，当然也就是陷在大罪中了，一个基督徒陷在大罪中，却说是一件无关紧要的事，我真不知道世上还有什么事是紧要的了！</p>
+<p>也许有人说，「如果我说一张白纸是黑的，最多不过是我自己说一句谎，但这件事并不使任何人受到损害，也不至使神的名受到羞辱。相反的，也许因为我这样作，能够消除别人对我的反感，因而使我能与别人和睦同处，我也能有机会多帮助人，又能使神因着我与人无忤的缘故得着荣耀。这岂不是一件很好的事么？我总不能明白为什么你这样坚持说，这样作是一件万分严重的事？」</p>
+<p>我告诉你，我们不犯罪便罢，如果我们犯罪，就绝不会不使别人受损失，也绝不会不使神受羞辱。分别只是在早晚之间而已。我且问你，明明是一张白纸，你为什么要说它是黑的？假使没有别人说它是黑的，你是不是无缘无故说它是黑的；因为有许多人说它是黑的，你便说它是黑的，这就说明你怕得罪人，不肯说一张白纸是黑的，并不是什么了不得的事，你尚这样不敢得罪人，将来有一样极大的试探临到你，你还能有勇气得胜么？今日你因为怕得罪人，便说一张白纸是黑的，将来有一天许多人说一个无辜的人是恶人，你能不能有勇气说一个无辜的人是无辜的。今天你因为怕得罪人，因而说白纸是黑的，将来你也一定会因为怕得罪人，因而说那个无辜的人是恶人，以致陷害了他。你不但会这样待人，你也会因为怕得罪人的缘故否认你的主，出卖你的主。那时候你也许要惊奇你怎么会失败到这种地步，竟能陷害一个无辜的人，竟能否认并且出卖你的恩主；我却一点都不感到惊奇，因为当你说那张白纸是黑色的那个时候，我就料到你迟早有一天要失败到不可收拾的地步了。</p>
+<p>我看见这张纸是白的，我绝不说它是黑的。如果不需要我说话，我可以缄口不言。但如果要我随着别人说它是黑的，那是绝对办不到的事。我不怕为这件事得罪任何人，我也不怕为这件事受任何损失，冒任何的危险。纵使我必须为争一个「白」与「黑」，因而舍弃性命，我也觉得十分光荣，十分有价值。如果我因为不肯说一张白纸是黑的，以致舍弃性命，我深信我的死与司提反的死，雅各布布的死，彼得的死，保罗的死，同样伟大，同样光荣，同样有价值，也同样得主的赏赐。我也深知道，我必须在这件最小的事上得胜，我才能在极大的事上得胜，今天我不能说白纸是黑的，将来我才能不陷害无辜的人，不出卖我的主。今天我能坚持说这张白纸是白的，将来我才能坚持我的信仰。</p>
+<p>属灵的战争也像属世的战争一样，得胜一次，勇气增加一次，下次更容易得胜。反过来说，如果遭了一次失败，勇气受了挫折，以后的战争便更难支持，势必节节败退，不至全军覆没或完全被俘不止。我们在基督的麾下当兵的人，在这属灵的战场上，只能进，不能退，只能坚守阵地绝不能作一丈、一尺、一寸、一分的让步。是主所吩咐我们说的话，作的事，无论多么微小，我们一定要说、要作；是主不喜欢我们说的话、作的事，无论多么微小，我们绝不说一句，绝不作一件。我们必须看小事和大事同样重要，必须看小罪和大罪同样可怕。我们万不可受魔鬼欺骗，以为小事没有什么价值，小罪没有什么关系。我们的主所说的话已经清清楚楚的说明了这个重要的真理。他说：</p>
+<p>「人在最小的事上忠心，在大事上也忠心；在最小的事上不义，在大事上也不义。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

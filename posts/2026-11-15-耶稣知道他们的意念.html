@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>耶稣知道他们的意念 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>耶稣知道他们的意念</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/3耶稣知道他们的意念-05.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「耶稣上了船，渡过海，来到自己的城里。有人用床抬着一个瘫子，到耶稣跟前来。耶稣见他们的信心，就对瘫子说，『小子，放心罢，你的罪赦了。』有几个文士心里说，『这个人说僭妄的话了』。耶稣知道他们的心意，就说，『你们为什么心里怀着恶念呢？』」（太九1～4）。</p>
+<p>「当下有人将一个被鬼附着，又瞎又哑的人带到耶稣那里，耶稣就医治他，甚至那哑吧又能说话，又能看见。众人都惊奇说，『这不是大卫的子孙么？』但法利赛人听见就说，『这个人赶鬼无非是靠着鬼王别西卜阿』。耶稣知道他们的意念，就对他们说，『凡一国自相分争，就成为荒场；一城一家自相分争，必站立不住』。」（太十二22～25）。</p>
+<p>「又有一个安息日，耶稣进了会堂教训人，在那里有一个人右手枯干了。文士和法利实人窥探耶稣，在安息日治病不治病，要得把柄去告他。耶稣却知道他们的意念，就对那枯干一只手的人说，『起来，站在当中』。那人就起来站着。」（路六6～8）。</p>
+<p>文士和法利赛人因为耶稣揭破他们的假面具，责备他们的罪恶，便羞恼成怒，处处与耶稣为敌，这原不足为奇。最令我们注意的，就是每次他们向耶稣怀着恶念的时候，耶稣总是知道他们的意念。在上文所引这三件不同的事迹中我们看见一件相同的事──「耶稣知道他们的意念」。</p>
+<p>是，「耶稣知道他们的意念」。他们心中无论存什么恶念，耶稣都知道。不用等到他们表示出来，也不用别人报告给耶稣，耶稣早就知道了。耶稣不但知道他们的心意，而且当着众人将他们心中的恶意揭露出来，严严的责问他们，使他们惭愧到无地自容。</p>
+<p>这位知道人意念的耶稣早已升到天上，但他仍在鉴察万人的意念。他在肉身中在地上寄居的时候尚且知道人的意念，何况今日他已经坐在神的右边呢？他知道人的一切意念。在他面前没有一个人能把自己的心意隐藏起来不被他看见。除非一个人心中不怀恶念，只要他怀了恶念，那位鉴察人心的耶稣便清清楚楚完完全全的知道，正如他当日在世上知道那些法利赛人和文士所存的恶念一样。</p>
+<p>这是何等令人惊心的一件事实！我们心中一切隐藏的意念有许多是不愿意叫人知道，而且是不敢叫人知道的。如果人知道了这些，我们会永远不敢再见人，我们将要被人唾骂厌弃，被人指斥责备，我们在世界上将要再无容身之处。但这些隐藏的意念在那「知道人意念的主」眼中，却是看得清清楚楚，连半点也藏不起来。如果我们彻底知道了这件事实，我们将要怎样惭愧，怎样悔恨，怎样惧怕，怎样战兢呢！</p>
+<p>有多少不正当的意念，我们知道是不当存在心中的，我们也明知道这些意念如果被人知道，我们要惭愧到无地自容，但我们却仍容留牠们在心中，就是因为我们以为只要我们自己不泄露，断没有人能知道我们心中所存的。因为我们这样想，所以我们便容留许多恶念，就如怨恨、嫉妒、诡诈、骄傲、贪婪、淫邪，以及其它种种可憎可耻的思想存在我们心中。这些恶念就成了我们生命中的毒瘤恶疮，牠们损害我们属灵的健康，夺去我们内心的喜乐和平安，使我们丧失属灵的能力与智慧，使我们的生命枯萎，使我们在神面前的效用消失。许多很有能力的圣徒渐渐变成软弱无力，许多生命很丰盛的圣徒渐渐生命枯萎干瘪，在旁人看他们并未曾犯什么罪，不知道他们为什么弄到这种可怜的地步，甚至有时他们自己也不知道。但经验却告诉我们，这是因为在他们里面有了「恶念」。恶念的害处是何等大阿！</p>
+<p>现在我们得了一个豫防和治疗的方法，就是每逢恶念在我们里面发生的时候，便思想这一句宝贵而且有能力的话──「耶稣知道他们的意念」。我们当对自己说，「耶稣既知道他们的意念，也必知道我的意念。如果我存这种意念不敢使人知道，自然更不敢使他知道了。我能隐藏我心中的意念不使人知道，但我却无法使他不知道。我既不敢使他知道我存这种恶念，就不可容这种恶念存在我心中。」如果我们常这样想，一定可以胜过许多试探，远离许多不义，除掉许多罪恶。</p>
+<p>「耶稣知道他们的意念」这一句话更是那些假冒为善的人所应当留心听的。那些人在人面前会装作很敬虔。他们会说好话，会唱高调。如果你不深认识他们，只听他们口中所说的话，和他们在人面前所表示的，你也许会想他们像天使那样圣洁，像耶稣那样完全。谁知道他们里面竟是污秽、邪恶、诡诈、败坏到了极点。他们的人生完全像死人的坟墓，「外面好看，里面却充满了死人的骨头。」他们外面的一些表现完全是假装的，他们口中所说的好话整个是欺骗人的谎言。但因为他们装假装得逼真，说谎说得灵巧，许多人竟受了他们的欺骗；他们因为诡计得逞，便私自庆幸。他们以为自己聪明到极点。他们想他们里面的事总不会被人发觉。这种人亟需读这一句话──「耶稣知道他们的意念」。他们亟需知道他们里面的一切事物在那位「知道人意念的主」眼中都是洞若观火，没有一样东西不是被他看得清清楚楚。他们亟需知道他们无论如何诡诈，总欺骗不了那位知道人心的主。如果他们彻底了解这件重要的事实，他们一定会懊悔自己的愚昧无知，一定会战兢恐惧来到他的面前求怜悯，求恩惠，并且不敢那样作伪欺人了。</p>
+<p>「耶稣知道他们的意念」，这一句话如同子夜的钟声，可以惊破那些自欺欺人的人的迷梦，又如同根治重病的良药，可以消除许多圣徒心中隐藏的罪恶和不义。我巴不得常常述说这一句话，我更巴不得人人思想这一句话。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

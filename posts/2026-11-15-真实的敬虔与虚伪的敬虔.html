@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>真实的敬虔与虚伪的敬虔 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>真实的敬虔与虚伪的敬虔</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/5真实的敬虔与虚伪的敬虔-01.mp3">🎧 真实的敬虔与虚伪的敬虔（1/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/5真实的敬虔与虚伪的敬虔-02.mp3">🎧 真实的敬虔与虚伪的敬虔（2/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/5真实的敬虔与虚伪的敬虔-03.mp3">🎧 真实的敬虔与虚伪的敬虔（3/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/5真实的敬虔与虚伪的敬虔-04.mp3">🎧 真实的敬虔与虚伪的敬虔（4/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/5真实的敬虔与虚伪的敬虔-05.mp3">🎧 真实的敬虔与虚伪的敬虔（5/5）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>读以赛亚书五十八章一至十二节。</p>
+<p>这一段经文是耶和华藉他的仆人先知以赛亚对他的百姓以色列人所发的呼声。在这一段书中有三层要紧的意思：第一、神指出以色列民的假冒与不义；第二、神把他的旨意显示与以色列民；第三、神将他所要赐与顺从的人的诸般福祉放在以色列民前面，要他们去寻求。现代的教会在许多事上都蹈了以色列民的覆辙；那么，这篇劝告也正是现今大多数信徒的当头棒喝了。</p>
+<p>这一段经文可以分为六小段；容我们分开思想每一段的要训：</p>
+<p>一、先知的使命</p>
+<p>「你要大声喊叫，不可止息，扬起声来好像吹角，向我百姓说明他们的过犯，向雅各布布家说明他们的罪恶。」（1节）。这就是古时先知所领受的使命，这也就是现今神的仆人所当尽的本分。神兴起先知，选立牧人，不是要他们去夸奖赞誉群众。若是这样作，只能加增他们的骄傲，蒙蔽他们的眼目，使他们不认识自己的短处，结果不过越发堕落。神爱属他的人，不像一些无知的村妪，对于她们的儿女只是溺爱，不加管教；他乃是要他们进于完全，有上好的美德和顺服。但是他们因为有肉体的软弱，不知不觉的便渐渐离弃了神，随着自己私心所喜爱的去行。神爱他们，所以为他们时常兴起先知和牧人，将一宗重要的使命加在他们身上。「你要大声喊叫，不可止息，扬起声来好像吹角，向我百姓说明他们的过犯，向雅各布布家说明他们的罪恶。」从来神所悦纳忠诚的仆人，都是不惮劳瘁，不畏强御。将神要他们说的言语传讲出来，招呼群众离弃他们的罪恶，行走义路，惟有那些假先知「行奸淫、作事虚妄、又坚固恶人的手，甚至无人回头离开他的恶。……他们常对藐视神的人说，耶和华说，你们必享平安，又对一切按自己顽梗的心行事的人说，必没有灾祸临到你们。」（耶二十三14～17）。「他们牙齿有所嚼的，他们就呼喊说，平安了：凡不供给他们吃的，他们就预备攻击他。」（弥三5）。</p>
+<p>现今我们到处可以看见一种可哭的景况，就是多少信徒深深的沉溺在诸般罪恶中，然而讲台上却是听见各样悦耳的讲论；讲道的人讲述了不少题目，然而从不曾指出群众的罪恶来，以致群众日复一日的深入迷途，流连忘返。教会的堕落，大半是由于作领袖的不能尽他们的本分，放弃了神交付他们的使命。这是何等令人痛心的事！作神圣工的人，不指出群众的罪恶，只一味的迎合人心，现今或者可以博得众人的赞誉，增加自己的利益；但是切不可忘记，将来总有一日，神的工人必须在他面前交账。到那时，尽忠的工人必得大赏赐，惟有那些为顾全一己的名誉、利益、安乐，以致欺人欺己的工人，决不能逃避神的惩治和责罚。神的工人岂可不因此受警教呢？</p>
+<p>二、以色列民自己眼中的敬虔</p>
+<p>「他们天天寻求我，乐意明白我的道；好像行义的国民，不离弃他们神的典章，向我求问公义的判语，喜悦亲近神。他们说，我们禁食，你为何不看见呢？我们刻苦己心，你为何不理会呢？」（二节，三节前半）。看哪，这些以色列民是何等的热心，何等的敬虔。但是他们的敬虔，竟没有什么证据可以证明。他们自己虽然自称敬虔，然而神没有承认。他们的敬虔，未曾与他们的生活和行为发生关系，在神面前终是毫无所有。在许多的信徒身上，岂不是也有这种情形么？他们几日有一次聚会，他们常常祈祷，他们会背诵圣经，讲解福音，他们早晚唱诗赞美神，又把一些捐款拿来奉献。他们十分的得意，以为他们已是很热心的圣徒，可以得着神的喜悦和他所赐的福。但是神并未曾有悦纳他们的表示。这是什么缘故呢？就是因为他们的敬虔在自己的眼中虽是美好，但在神看来乃是外表的、虚伪的。他们可以欺骗自己，但神却不能为他们所欺骗。神深知道他们的心思行为，与他们的敬虔是相反的，所以不能悦纳他们。</p>
+<p>三、神眼中所见以色列民的敬虔</p>
+<p>「看哪，你们禁食的日子，仍求利益，勒逼人为你们作苦工。你们禁食，却互相争竞，以凶恶的拳头打人：你们今日禁食，不得使你们的声音听闻于上。这样禁食，岂是我所拣选使人刻苦己心的日子么？岂是叫人垂头像苇子，用麻布和炉灰铺在他以下么？你这可称为禁食，为耶和华所悦纳的日子么？」（三节后半至五节）。以色列民的敬虔不能得神的喜悦，就是因为他们的嘴唇自称敬虔，他们的行为却悖逆神命。他们说爱天上的神，对于他们四周的人，却没有丝毫的爱心。他们的口多显爱情，心却追随财利。看他们是怎样的利己，「你们禁食的日子，仍求利益，勒逼人为你们作苦工。」希望得神的怜悯，却不肯怜悯别人的人，决不能得神的赐福。神的心就是爱，自私自利的人，是与神反对的；自私自利的行为，在神面前是可憎的。一个与神反对的人作神所憎恶的事，怎样能希望得神的悦纳蒙神赐福呢？一个信徒眼中只有自己；钱财、名誉、幸福、利乐，都尽力的取来归给自己；绝不顾念别人的困苦与缺乏；无论他有怎样敬虔的言语和外表，神总不能承认他是真敬虔的人。</p>
+<p>再看他们是怎样的损人。「你们禁食，却互相争竞，以凶恶的拳头打人。」只知利己已经是神所憎恶的了，现今他们又加上一件更恶的事──损害别人，用凶恶的拳头打人。殴打神所造的人，却说爱神，这不是明明的说谎么？以色列民不但不是敬虔的，而且加上假冒为善的罪，这在神前更是何等的可憎！许多信徒必定以为自己比以色列民好得许多，因为他们未曾用拳头打人。但我们也曾思想到打人的意思么？用凶恶的拳头打人，果然是使人痛苦难过，但是多少神的儿女，虽然未曾用拳头打人，却是心中充满了恼恨、嫉妒、分争、报仇，种种的恶意念；口中发出毁谤、苦毒、咒诅、辱骂，种种的恶言语；他们的行为又是遍染了欺诈、凶杀、残害、狠，种种的罪恶。请想这些可憎的思念、言行，使别人所受的苦痛；比较用凶恶的拳头打人，究竟要重得几倍呢？以色列民用凶恶的拳头打人，已经受神的斥责，神的儿女沾染以上所说的罪恶，口头上却说热心敬虔，岂独能蒙蔽神的眼目么？神对以色列人说，「你们今日禁食，不得使你们的声音听闻于上。」这就是因为他们的禁食，不是神所要的禁食，乃是损人利己，假冒为善的禁食。许多信徒的祈祷，不能蒙神的垂听，容我们仔细思想是因为什么缘故罢。</p>
+<p>四、神所喜爱的敬虔</p>
+<p>「我所拣选的禁食，不是要松开凶恶的绳，解下轭上的索，使被欺压的得自由，折断一切的轭么？不是要把你的饼，分给饥饿的人，将飘流的穷人，接到你家中，见赤身的，给他衣服遮体，顾恤自己的骨肉，却不掩藏么？」（6、7节）。在这里我们很清楚的看出，神所要于人的有两步：第一、要除去损害人的意念言行──「松开凶恶的绳，解下轭上的索，使被欺压的得自由，折断一切的轭。」神的儿女当严严的省察自己，还有什么加在别人身上的凶恶的绳，轭上的索；就是那些嫉妒、怀怨、恼恨、报仇的思想。毁谤、讥议、咒诅、辱骂的言语、分争、结党、凶杀、狠、损人、利己、欺压、诡诈的行为。这些罪恶都比绳索重轭压制人苦害人更加剧烈。这些都是神所最恨恶的。神的儿女必须痛心悔改。离弃这些、憎恶这些，然后才能得着神的悦纳与他所赐的福祉。</p>
+<p>神所要于他的儿女的第二步，是要怜爱别人──「把你的饼，分给饥饿的人，将飘流的穷人，接到你家中，见赤身的，给他衣服遮体，顾恤自己的骨肉而不掩藏」。神曾藉先知何西阿明明的告诉他的百姓说，「我喜爱怜恤，不喜爱祭祀。」（何六6）。一个信徒对于在他四围的困苦人，能加以怜恤顾念，才证明他爱神的心是真实的。你且去看，在你旁边有多少心灵或肉体感到痛苦与缺乏的人，需要他人帮助和怜恤，是何等的急切。你当尽你所能的，用智慧的方法，救济他们、扶助他们。诫命中最大的就是「尽心、尽性、尽意、爱主你们的神」，其次就是「要爱你的邻舍，如同自己。」（太二十一37～40）。能遵行神的命令，自然可以得着神的喜悦与他所赐的福了。许多人看敬虔乃是指着祈祷、礼拜、歌诗、奉献、读经、讲道说的。殊不知真实的敬虔与信徒每日的人生是不能分开的。神喜欢我们作上述的这些事，但他更要我们藉着这些学会离弃他所憎的事──损人、自私，勉行他所喜悦的事──爱邻如己。</p>
+<p>五、遵行神旨的人所得的福祉\cs16</p>
+<p>「这样，你的光就必发现如早晨的光；你所得的医治，要速速发明；你的公义，必在你前面行；耶和华的荣光，必作你的后盾。那时你求告，耶和华必应允；你呼求，他必说，我在这里。」（八节、九节前半）。这是何等宝实的应许！早晨的光，是一时比一时更加明亮的。经上说，「义人的路，好像黎明的光，越照超明，直到日午。」（箴四18）。人若顺从神的命令，有他所喜悦的敬虔，神必使他所蒙的恩，日渐增加，使他所走的路，日渐明亮，至终如正午的日头，光辉普照。</p>
+<p>「你所得的医治，要速速发明」。我们在心灵中和肉体上，不是常有许多软弱和病痛么？这些都可以从神得医治。神在古时曾对他的百姓以色列人说，「你若留心听耶和华你神的话，又行我眼中看为正的事留心听我的诫命，守我一切的律例，我就不将所加与埃及人的疾病，加在你身上：因为我耶和华是医治你的。」（出十五26）。我们只要听从神的命令，行他所喜悦的事，他必速速医治我们身心上一切的疾病、软弱，使我们健强活泼，满有力量。</p>
+<p>「你的公义，必在你前面行；耶和华的荣光，必作你的后盾。」我们所走的路，确是崎岖难行；仇敌的攻击和残害，确是令人恐怖：但我们若有神所喜爱的敬虔，他便为我们预备前面的引导者，后边的护卫者，使我们经过大而可怕的旷野，毫无畏惧，处在仇敌的重围中，不受少许的伤害。敬畏神的人所处的地步，是何等的稳妥平安呢！</p>
+<p>「那时你求告，耶和华必应允；你呼求，祂必说，我在这里。」这就是祈祷得效验的秘诀。你要听从神，神便听允你。我们当知道圣经中的每一种应许，都是伴同一条命令而发出的。我们若轻忽了我们当尽的本分，便不能怨神不成全他的应许。许多人对于经上的话差不多不能相信了。经上应许我们说，「你们祈求，就给你们；寻找，就寻见：叩门，就给你们开门。」但是他们祈求了多日，什么也未曾得着；常常寻找，至终未曾寻见一点；屡次叩门，门好像上了闩，加了锁。因此他们便发生了疑惑。是神不听人呢？还是经上所记的话是空虚不确呢？原来都不是的。总因就是他们不肯听从神的命令，一味的随从自己的私意行作诸事。经上告诉我们，那最足以阻碍我们的祈祷，使它不能达到神前的，就是我们的悖逆。听先知对以色列民所说的话，「耶和华的膀臂，并非缩短不能拯救；耳朵，并非发沉不能听见：但你们的罪孽使你们与神隔绝，你们的罪恶使他掩面不听你们。因你们的手被血沾染，你们的指头被罪孽玷污；你们的嘴唇说谎言，你们的舌头出恶语。」（赛五十九1～3）。现在容我们仔细省察自己的心思、言语、行为、生活，看还有什么神所憎恶的事──虚伪、谎言、自私、损人、嫉妒、怀怨、报仇、恼恨、毁谤、咒诅、结党、分争。若有，便当急速将这些高大的墙垣拆去，然后我们的祈祷必定会达到神前。此外还有一样事，足以阻碍我们的祈祷不能达到神前，就是我们专顾自己，不肯向困苦的人发怜悯。「塞耳不听穷人哀求的，他将来呼吁也不蒙应允。」（二十一13）。</p>
+<p>一个富足的信徒，走出往礼拜堂去的时候，遇见他所素识邻居的一个缺乏人照管和奉养的老病穷乏的妇人。她看见了他，便发出凄惨的声音，呼求几角钱的赒济。那富足的信徒想道，我手中银钱是不少的；不过我的钱怎好这样容易给她：但为免得她麻烦我，就给她两枚铜币罢。他这样作过，便离开她往会堂去了。到了堂中，他跪在神前，奉献他的谢恩与祈求说，「神阿，我感谢你，因为你使我一切所需用的都十分充足，又保护我得享平安。我今求你把更多的恩典加给我；使我的身心都得福充盈。凡你所有的恩惠，求你样样都赐给我。」请想他的祈祷是否能得神的应允。恐怕神要责备他说，「你这自私自利的人，你既知道我把丰盈的恩典都已经赐给你，你不应当怜恤那在你面前困苦无告的邻舍，像我怜恤你么？你既向她不肯发出哀怜，因此我也要这样向你收回我所赐的福。」</p>
+<p>今日的教会中，岂不是有极多这样的信徒么？现今他们可以知道，为什么他们的祈祷不蒙听允了。许多的信徒总想，怜恤人是使自己受损失，却不知怜悯人的人，不但使人得福，自己所得的福也因此加增。听经上的应许说，「好施舍的，必得丰裕；滋润人的，必得滋润。」（箴十一25）。「怜悯贫穷的，就是借给耶和华；他的善行，耶和华必偿还。」（箴十九17）。「怜恤人的人有福了。因为他们必蒙怜恤。」（太五7）。</p>
+<p>六、神的几条命令和几样应许</p>
+<p>「你若从你中间除掉重轭，和指摘人的指头，并发恶言的事；你心若向饥饿的人发怜悯，使困苦的人得满足：你的光就必在黑暗中发现，你的幽暗必变如正午；耶和华也必时常引导你，在干旱之地，使你心满意足，骨头强壮；你必像浇灌的园子，又像水流不绝的泉源。那些出于你的人，必修造久已荒废之处；你要建立累代的根基；你必称为补破口的，和重修路径与人居住的。」（十九节后半至十二节）。在这里又可以看出神的两种命令，一种是要我们除去的，一种是叫我们遵行的。他要我们除去的有三样：第一、「从你中间除掉重轭」。重轭的意思，前面我们已经说过了，就是那一切压制人、败坏人，使人受苦的思念言行。第二、除掉「指摘人的指头」。信徒的手指，真不是好的东西；常在人的背后指摘人的短处，与被指摘的人，丝毫没有帮助，不过生发许多人恨恶他的心。我们指摘别人的短处也是神所许的，但当在那人的面前指摘，好使他可以醒悟，可以悔改，（见太十八15；加六1、2），这才是爱人的道理。许多的信徒真是自私，想当面指摘人有伤颜面，恐怕惹人的憎恶和怨恨，故此缄默不言；及至那人走后，却对许多的人述说他的错处，使他受败坏。这在神前是极可憎的事。第三、除掉「发恶言的事」。信徒在言语上也最容易沾染许多罪恶、毁谤、辱骂、咒诅、谎言，淫邪的谈话，发怒的言语，挑拨是非、离间亲情、讥诮有短处有缺乏的人。这些言语，都如同射人的箭，杀人的刀；它的害处，有时同顶凶恶的行为是一样大。但是信徒最容易忽略言语上的罪恶，以为是小的，是不要紧的一点过失。神知道它的害处，它的可憎，所以特别吩咐我们要把它除去，然后可以得着神悦纳和他所赐的福。</p>
+<p>说完了我们当除去的几样罪恶，往下神又指示我们所当作的。「向饥饿的人发怜悯，使困苦的人得满足」。神很注重这怜悯人的命令，他不惜说了再说，因为他自己是大有怜悯的。除非我们有怜悯的心，就不配称为神的儿女：除非我们常使困苦的人得满足，就不能满得神的恩惠和赐福。神述说完了他的命令以后，便接连着说出一些宝贵的应许。凡能遵行以上的教训的人，便可得到下列的诸般福祉，听他说：</p>
+<p>「你的光就必在黑暗中发现，你的幽暗必变如正午。」人处在黑暗中间，是何等的苦闷难过呢！这时若忽然得见亮光，要得着何等大的安慰和喜乐！信徒不是常有许多的失望、悲观、烦恼、忧虑、苦痛、疾病、眼泪、伤心么？遇见这些的时候。真好像走在黑暗中间的人，不知道前面的路当怎样行，心中得不着安慰和喜乐。若我们能听从耶和华以上的命令，便可以在这时得着他的引导安慰与恩惠，正如光在黑暗中发现一般。不但这样，而且幽暗要变如正午，光在黑暗中发现，是限于一部份的，是暂时的，但幽暗变如正午，便全然光明了。信徒若行神所喜悦的事，神也要使他们的灾祸完全变为幸福，使他们的眼泪完全变为笑容，及使他们的苦难完全转为欢乐，好像幽暗变为正午一样。</p>
+<p>又说，「耶和华也必时常引导你，在干旱之地，使你心满意足，骨头强壮，你必像浇灌的园子，又像水流不绝的泉源。」时常蒙耶和华的引导，是何等有福的一件事。大卫王论到他蒙耶和华引导所得的福祉说，「耶和华是我的牧者，我必不至缺乏。他使我躺卧在青草地上，领我在可安歇的水边。他使我的灵魂苏醒：为自己的名，引导我走义路。我虽然行过死荫的幽谷，也不怕遭害，因为你与我同在。你的杖、你的竿，都安慰我。」（诗二十三1～4）。时常蒙耶和华引导的人，满得丰盛的福祉，毫无缺乏，他们不因任何灾祸、患难、逼迫、痛苦，而畏惧忧虑。就是在最困苦的境地，在别的人必是失望苦闷，或且因无路可走，无安慰可得，以致自戕，然而他们却是心满意足，健强喜乐。</p>
+<p>下面又有两个满有兴趣的比喻，「浇灌的园子」，与「水流不绝的泉源」。浇灌的园子里面的植物，都是枝叶繁茂、青翠可爱，花卉艳丽，红紫争妍。遵行耶和华的命令的人，在他们所行的一切事上，也是这样的得福；又使凡接近他们的人，因着他们都得着无限的安慰与快乐。论到流水的泉源，我想起一件故事来：</p>
+<p>几年以前的一个夏天，我到某地一个朋友的地方去，在那里停留了几天。一日早晨，我到乡间林内去游玩，遇到一处水泉。那里的泉孔是很多的，但每个泉孔都是很小；清洁明澈的水，连续不断的自其中涌出，聚成一道小河，向远方流去。离泉最近的地方，有一座小小的庙宇，名叫奇泉寺：不问就可以知道，庙是因泉而建的了。进到庙里看其中的碑记，知道这泉在几百年前，便已经被人发现。我看过了，便不禁叹羡这小小的泉源，竟能继续的涌流数百年之久。在一个别的城内，有许多的池沼。那年夏季异常的干旱，因为几个月没有落雨，这些池沼便都干涸露底了。忽然一日间，黑云密布，大雨滂沱；不过只有几小时，每个很大的池沼，都充满了雨水。林内的泉源，昼夜长流，并没有积存多少水在牠的旁边；城中池沼，只经过几小时的大雨，便充盈满溢，真可谓有幸有不幸了，但再经过一个月干旱的天气以后，往两处去看，怎样呢？小小的泉孔里，依旧有水涌流出来；牠所涌出的水流的很远，灌溉了许多田地，滋润了许多树木与田禾；那些雨水盈溢的池沼，已然又干旱露底了。</p>
+<p>我看了这些景物，我得了宝贵的教训：一个不认识神的人（或且是作恶的），凭着一己敏捷的心思，灵活的手腕，攫得很多的金钱，极大的权势；展翅高飞，凌霄直上，不久居了极高的地位，得了最大的名誉，享了很多的幸福，这是何等的有福又可羡慕！（在一个世上的人看来）再去看一个敬畏耶和华的人，处的地位不高，得的金钱无几，终岁碌碌，从未曾得着特别上进的机缘。他的际遇，与前边所说的那一个人比较起来，真有天渊之别了。在一个世上的人看来，他是何等的不幸而且可怜！但没有多少日子，时过境迁了，再去看那名利权势三样都有的人；不料，他所有的都离了他，所余下的，只有满面的泪痕与愁容，并短叹长吁的声音。但那敬畏神的人，却仍然安居在全能者的翼下，常得着从上面来的福祉与安慰。而且神的恩惠，藉着他的言语行为与工作，不住的涌流出来，临到许多人的身上，使他们都得了福祉与安慰。世上不认识神的人所得的抉乐，与敬畏神的人所享的福祉，分别就是在这里阿。</p>
+<p>「那些出于你的人，必修造久已荒废之处；你要建立累代的根基；（汉文译本建立下有拆毁二字当去掉）你必称为补破口的。和重修路径与人居住的。」神不但要赐福与那些敬畏他的人，更是要藉着他们使多人得福。神的房屋，（林前三9、16、17）久已荒废败落了；神圣殿的根基，（林前三11；弗二19～22）多次被人拆毁了；神儿女中间的破口，无人防堵；（结二十二30）公义的大路，满了荆棘和乱草。神为他的儿女和世人的缘故，真是不忍眼看这些工程日渐破坏倾颓，无人修整。他多日在各处寻找能担负这样使命，作成这样要工的人。他找到许多有学识的人，都目中无神；许多有权柄的人，都倚势欺人；许多有钱财的人，都自私自利；许多作圣工的人，都与世浮沉。这些人在世上都算是有才能的、居要位的，被人所尊重的；但在神的眼中，却是没有一个配为他所使用，作那修理建造的工作。他所要的，就是那些弃绝一切不义的事，敬畏神，爱邻舍如同自己的人。在这样的人身上，神要彰显他的大能和荣耀，也要将他的灵赐与他们，使他们有能力可以担负这极重大极紧要的使命──证明他的圣道，复兴他的儿女；堵住破口，使神的忿怒转消；修整公义的道路，使多人可以行在其间，直走到神荣耀的应许里。</p>
+<p>神的众儿女阿，谁乐意接受这丰盛的福祉，和这样宝贵的使命？请你兴起行他所喜悦的事。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

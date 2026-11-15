@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>失败的罗得 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>失败的罗得</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/6失败的罗得-01.mp3">🎧 失败的罗得（1/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/6失败的罗得-02.mp3">🎧 失败的罗得（2/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/6失败的罗得-03.mp3">🎧 失败的罗得（3/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/6失败的罗得-04.mp3">🎧 失败的罗得（4/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/6失败的罗得-05.mp3">🎧 失败的罗得（5/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/6失败的罗得-06.mp3">🎧 失败的罗得（6/6）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>本为属神的人，只因处富足安逸的境遇，不知道谨守儆醒，以致渐渐的与世浮沉；虽然受过神的警教与责备，仍不能及时悔悟回转，至终遭遇极大的损失，仅仅的以身免于神的震怒：每逢读到罗得的失败史，真不能不令人扼腕叹息了！今日世界上堕落败坏的景况，比昔日的所多玛真可说有过之而无不及；一般信徒所遇的试诱，也正与罗得相同，研究罗得失败的原由，和他所遭遇的苦痛结局，正可作今日信徒的当头棒喝，使他们知所警惕，谨防堕落，免蹈罗得的覆辙，这实在是一件很要紧的事。今述罗得的失败史：</p>
+<p>一、罗得的堕落</p>
+<p>「埃布尔兰带着他的妻子与罗得，并一切所有的，都从埃及上南地去。埃布尔兰的金、银、牲畜极多。他从南地渐渐往伯特利去，到了伯特利和艾的中间，就是从前支搭帐棚的地方，也是他起先筑坛的地方：他又在那里求告耶和华的名。与埃布尔兰同行的罗得，也有牛群、羊群、帐棚。那地容不下他们。因为他们的财物甚多，使他们不能同居。当时迦南人，与比利洗人，在那地居住：埃布尔兰的牧人和罗得的牧人相争，埃布尔兰就对罗得说，你我不可相争，你的牧人和我的牧人也不可相争，因为我们是骨肉。遍地不都在你眼前吗？请你离开我、你向左，我就向右，你向右，我就向左。罗得举目看见约但河的全平原，直到琐珥，都是滋润的，那地在耶和华未灭所多玛蛾摩拉以先，如同耶和华的园子，也像埃及地，于是罗得选择约但河的全平原，往东迁移：他们就彼此分离了。埃布尔兰住在迦南地，罗得住在平原的城邑。渐渐挪移帐棚，直到所多玛。所多玛人在耶和华面前罪大恶极。」（创十三1～13）。</p>
+<p>我们不十分知道罗得以前详细的历史；但推想他多日随从他的伯父埃布尔兰，一定也学习了敬畏耶和华的要训。在使徒彼得的书信中，称他为义人罗得，（彼后二7、8）他当然是一个很好的人了。这样的一个人，怎么竟会遭遇那样可痛的结局呢？我们详细研读以上一段经文的时候，便可以发现他堕落的原因。第五、六两节说，「与埃布尔兰同行的罗得，也有牛群、羊群、帐棚。那地容不下他们，因为他们财物甚多，使他们不能同居。」第十一、十二两节说，「于是罗得选择约但河的全平原，往东迁移：他们就彼此分离了。埃布尔兰住在迦南地，罗得住在平原的城邑，渐渐挪移帐棚，直到所多玛。」富有财物，又得了肥美的地土，罗得的幸福当然是日渐的加增。但这就是罗得失败的种子潜伏的所在。</p>
+<p>每一个属神的人，内心自然都是羡慕良善和神的法度。但是他的肉体，却是时刻的牵引他，使他堕落，当他在穷乏困苦的时候，既被苦厄所迫，因而多亲近神，又少有放纵肉体情欲的机会：所以尚得保守他所在敬虔的地步，不至远离，但一到富足安逸的境遇，他便想去寻求一些肉体的快乐，在不知不觉中，他从前爱神的心，已经都充满了世上的事物；他从前用以亲近神的时光，已经都用于寻求世上的娱乐，与神既一天比一天疏远，便渐渐忘记神的法度和训诲，于是极大的失败剧便从此开幕了。看这里所记罗得先有许多的财物，后又得了许多肥美的田地，渐渐迁移帐棚，直到所多玛，便是明证。平原中的生活，是何等羡慕！芳草满野，嘉谷遍地；群兽走圹，众鸟鸣林：耳所闻，目所见，无一不帮助人想到神的大能力，大作为，和他的美德。在这种环境中，耳目既可不为物欲所蒙蔽，心灵又能时常与神相交通，身心得享平安，德行易于进步，是何等快乐！何等有福！但是罗得必要挪移帐棚直到所多玛，这就是因为他不能儆醒谨守，又不能得胜肉体的试诱，处富足安逸的境遇，不能领略在神恩典中的快乐，反要得一些耳目口腹的幸福，所以就近所多玛城，十三节所说，「所多玛人在耶和华面前罪大恶极」，即足为罗得堕落的铁证。罗得是什么人？所多玛是怎样的地方？义和不义本不能相交，光明和黑暗本不能相通，属神的人罗得竟挪移到罪大恶极的所多玛城里去，这是何等愚昧可痛的事！</p>
+<p>可惜！可惜！今日竟有许多像罗得一样的信徒：在神的恩典中，本来可以得到世人不能得的福乐，但他们竟贪恋属于肉体的幸福，因而渐渐趋近世界中的繁华娱乐──社交、饮宴、歌舞、嬉戏、衣饰、居处。既要得世界的快乐，便不能不与世人为友，又随从世界的风俗习惯，日子既久，便渐渐与世人同化，走在罗得所走的路上。我希望这样的信徒急速悔悟，并要记念经上的话说，「你们和不信的原不相配，不要同负一轭：义和不义有什么相交呢？光明和黑暗有什么相通呢？基督和彼列有什么相和呢，信的和不信的有什么相干呢？神的殿和偶像有什么相同呢？因为我们是永生神的殿；就如神曾说，我要在他们中间居住，在他们中间来往；我要作他们的神，他们要作我们的子民，又说你们务要从他们中间出来，与他们分别，不要沾不洁净的物；我就收纳你们，我要作你们的父，你们要作我的儿女，这是全能的主说的。」（林后六14～18）。</p>
+<p>罗得这样堕落，还有一个很大的原因，就是他远离他的伯父埃布尔兰，注意第十一节的话说，「于是罗得选择约但河的全平原，往东迁移，他们就彼此分离了。」与他伯父埃布尔兰分离，大概是罗得心里多日所期望的，我们知道大多数的青年人都是喜欢自由，厌恶别人的拘束管教；何况埃布尔兰又是一个敬虔的老年人，而且是罗得的伯父。平日也不晓得有多少事，罗得因他伯父的缘故常常感受苦痛不安。有时离家到所多玛或蛾摩拉城内去游玩几天，回来就要受伯父的责问。偶然有几个酒肉的朋友到家中来走走，也不免招伯父的不悦。罗得心里必定常想，这头脑陈腐的伯父，总是用一些剥夺人自由的教训来反复的讲说，这是何等讨厌的事。几时方能脱离这犹如困人的樊笼一般的家庭，去享那自由的幸福呢？</p>
+<p>好了，多日想望脱离伯父拘束的罗得，今日忽听见伯父提议分居，这真是千载一时的良机，岂可放它过去。当下便「选择约但河的全平原，往东迁移，他们就彼此分离了。」埃布尔兰提议分居，本是为避免争端。如果罗得是一个聪明人，他就应当尽力消除牧人中间的恶感，自己仍在伯父的膝下，朝夕领受伯父的提撕训诲。罗得若是能这样作，埃布尔兰断没有不赞成的理。看罗得被掳的时候，埃布尔兰一得着信息，就立时带人去冒险将他拯救回来，就足证明埃布尔兰对罗得没有丝毫的恶意。那晓得这愚昧无知的青年人正在那里寻找机会要离开他的伯父呢！</p>
+<p>经上说，「与智慧人同行的，必得智慧；和愚昧人作伴的，必受亏损。」（箴十三20）这真是千古不移的定理。与敬虔爱神的人同处，起初固然觉得有些不便：说话行事似乎都不免受着一些拘束。但是时期久了，便看出这正是最得益助的地方。可惜大多数的人（特别是青年人）最厌烦亲近敬虔老成的圣徒。他们不愿意容这种顽固陈旧的人缚束他们。他们喜欢被解放，得自由。他们欣羡到罪恶的世界里去，结交一些轻佻放荡的友朋，大家可以在一处消遣取乐，一个人处在这种境遇中，有过失没有人来规正，走错路没有人去指责；终日所听见的，只有谄媚逢迎的言语，越走越下，不堕落到极可怜极败坏的地步不止。罗得就是这样失败了。今日的信徒还不快些醒悟么？</p>
+<p>二、罗得的受惩</p>
+<p>「当时拉非作示拿王，亚略作以拉撒王，基大老玛作以拦王，提达作戈印王的时候，他们都攻打所多玛王比拉，蛾摩拉王比沙，押玛王示纳，洗扁王善以别，和比拉王，比拉就是琐珥。这五王都在西订谷会合，西订谷就是盐海：他们已经事奉基大老玛十二年，到十三年就背叛了。十四年基大老玛和同盟的王，都来到亚特律加宁，杀败了利乏音人，在哈麦杀败了苏西人，在沙微基列亭杀败了以米人，在何利人的西珥山杀败了，何利人，一直杀到近旷野的伊勒巴兰。他们回到安密巴，就是加低斯，杀败了亚玛力全地的人，以及住在哈洗逊他玛的亚摩利人。于是所多玛王，蛾摩拉王，押玛王，洗扁王，和比拉王，（比拉就是琐珥）都出来，在西订谷摆阵，与他们交战；就是与以拦王基大老玛，戈印王提达，示拿王暗拉非，以拉撒王亚略交战；乃是四王与五王交战。西订谷有许多石漆坑；所多玛王和蛾摩拉王逃跑，有掉在坑里的，其余的人都往山上逃跑。四王就把所多玛和蛾摩拉所有的财物，并一切的粮食，都掳掠去了。又把埃布尔兰的侄儿罗得，和罗得的财物掳掠去了：当时罗得正住在所多玛。」（创十四1～12）。</p>
+<p>这段经文记载四王率兵攻打五王的事：他们两方面的实力怎样，我们不知道，但是以劳师远征的四王，竟能打败以逸代劳的五王，谁能说到这里面不是有神的旨意，要藉此惩治所多玛等城的人民与罗得呢？每一个读圣经的人，都知道神用火焚毁所多玛等城，但有些人没有注意到神在未曾毁灭他们以前，实在早已用较轻的方法警告惩治他们了，所多玛等城的人民，因作恶而受惩，本是他们所当受的，并没有什么希奇。罗得以属神的人，也与他们一同被掳，这便是他就近罪恶的结果了。许多信徒也是因为与世人同流合污，便也和世人一同感受许多无价值的痛苦，遭遇许多因罪恶招来的灾祸，这是何等的可痛呢！</p>
+<p>三、罗得的获救</p>
+<p>「有一个逃出来的人，告诉希伯来人埃布尔兰，埃布尔兰正住在亚摩利人幔利的橡树那里；幔利和以实各并亚乃都是弟兄，曾与埃布尔兰联盟。埃布尔兰听见他侄儿被掳去，就率领他家里生养的精练壮丁三百一十八人直追到但。便在夜间，自己同仆人分队杀败敌人，又追到大马色左边的何把。将被掳掠的一切财物夺回来，连他侄儿罗得，和他的财物，以及妇女人民，也都夺回来。」（创十四13～16）。</p>
+<p>神爱属他的人，虽然使他们受苦，但并不是弃绝了他们，乃是要藉此使他们得益处：所以在他们暂时受苦以后，还要拯救他们，护卫他们。罗得因为与恶人同住而被掳，神也要藉此使他觉悟他住在所多玛城的过失，因而可以急速回转到从前的地步，所以在他正尝苦味的时候，为他预备一位拯救者去拯救他：这位便是他的伯父埃布尔兰。</p>
+<p>在这里我们注意到一件事，就是从前罗得与埃布尔兰都是处在同一平安的境地，但现在一个被人掳去，一个起来拯救了被掳的人。为什么现在他们的境遇这样大相悬殊呢？惟一的答案就是：一个住在所多玛城内，一个住在所多玛城外。假使埃布尔兰也住在所多玛城里，恐怕他和他家中的人，也已经同为俘虏了，更如何能拯救别人呢？在今日也有极多的信徒，因恋爱世界，落在各样试诱和祸患里。神也要兴起一些人来，使他们去拯救这些可怜的人。世上属他的人虽多，但是他所能用的，乃是那些不与世界同流合污，住在所多玛城外的人。在这些人身上，祂要彰显他的大能，使他们以少胜多，将那些被仇敌掳去的拯救回来，使那些被捆绑的得着自由，像在古时藉他的仆人埃布尔兰的手所作的一样。所以我们属神的人，为保守自己的缘故，当从这像所多玛的世界里出来；为拯救别人的缘故，也当从这邪恶的世界里出来。</p>
+<p>罗得被拯救了。这次所遭遇的灾祸，真可算是他的当头棒喝，他理当悔悟进所多玛城的错误，赶快迁出去了。可惜他没有这样的智慧和决心，受了惩创以后，仍然舍不得所多玛城，以致末后丧失了一切所有的，再没有盼望能得回来。这真是「人屡次受责罚，仍然硬着颈项，他必顷刻败坏，无法可治」了。（箴二十九1）说也可叹！现代的信徒中，像罗得一样的人。正不知道有多少呢！</p>
+<p>四、罗得的善行</p>
+<p>「那两个天使晚上到了所多玛，罗得正坐在所多玛城门口：看见他们，就起来迎接，脸伏于地下拜；说，我主阿，请你们到仆人家里洗洗脚，住一夜，清早起来再走，他们说，不，我们要在街上过夜，罗得切切的请他们，他们这才进去到他屋里；罗得为他们预备筵席，烤无酵饼，他们就吃了。」（创十九1～3）。</p>
+<p>罗得虽然是堕落恋世，但他到底仍是有敬畏神和怜爱客旅的意念；一看见这二位客人，便很谦卑很恳挚的接待他们到他的家中，为他们预备食物，使他们吃了。罗得起初大约未曾知道二位客人的使命，和将要临到这城里的危险，也未曾料到他们来是与他和他的全家有什么关系。他不过觉得接待这二位客人是他当作的事罢了。那想到他这次竟因接待客旅保全了一家的生命呢？</p>
+<p>我们真不可忽略小的善行。应当常向神存敬畏的心，向人发怜爱的意念。当记念经上话说：「你们务要常存弟兄相爱的心。不可忘记用爱心接待客旅：因为曾有接待客旅的，不知不觉就接待了天使。」（来十二1、2）。主耶稣也曾教训我们说，「人因为先知的名接待先知，必得先知所得的赏赐；人因为义人的名接待义人，必得义人所得的赏赐。无论何人，因为门徒的名，只把一杯凉水给这小子里的一个喝，我实在告诉你们，这人不能不得赏赐。」（太十41、42）。极小的善行也有赏赐；可知爱人不但使人得益，就是自己也得益多多了，我们又何乐而不为呢？</p>
+<p>五、罗得的懦弱</p>
+<p>「他们还没有躺下，所多玛城里各处的人连老带少，都来围住那房子；呼叫罗得说，今日晚上到你这里来的人在那里呢？把他们带出来，任我们所为。罗得出来，把门关上，到众人那里，说，众弟兄请你们不要作这恶事，我有两个女儿，还是处女，容我领出来任凭你们的心愿而行；只是这个人既然到我舍下，不要向他们作什么。众人说，退去罢：又说，这个人来寄居，还想要作官哪：现在我们要害你比害他们更甚。众人就向前拥挤罗得，要攻破房门。只是那二人伸出手来，将罗得拉进屋去，把门关上：并且使门外的人，无论老少，眼都昏迷：他们摸来摸去，总寻不着房门。」（创十九4～11）。</p>
+<p>所多玛人的罪恶，真可说是腥闻于天了。受过前次的惩戒，丝毫不知悔改。有两个远方的客人来到，（自然天使必是十分美貌的）这些罪大恶极的人民，竟想要强奸他们，这是何等丑恶的行为！更可惊异的，就是他们这种请求竟敢放在罗得的面前。罗得在所多玛城中，若是有作见证的可能，便当证见他们的罪恶，指示他们神的震怒必临到作恶的人。这样，那些受警教的必能悔改，与罗得同行；不受警教的，也当惭愧，不敢以他们的丑行显在罗得面前，或是起来逼迫他，驱逐他。若在所多玛城中绝没有作见证的机会，他便当早早的远离这邪恶的地方。现在罗得住在所多玛城中，既不能感化导引那些恶人悔改归向神，又没有勇敢嫉恶的德行，使那些恶人在他面前因罪自觉惭愧，反倒使他们胆敢向他发出这样邪恶可憎的请求，罗得平日的懦弱从俗，也就可想而知了。往下我们更看出罗得的懦弱：一个属神的人，听见这样无礼可憎的请求，应当如何怒发冲冠，指斥责备群众的恶行。现在罗得非但不敢这样作，反倒卑辞乞怜，请求把自己未出嫁的女儿交给他们，以代替来的那两位客人。罗得这种不惜舍了自己的女儿，为要保全两位客人的好意诚然是不错。但是他的懦弱，真不能不令人长叹，平日不能有善德以感人，到了试诱当前的时候，又没有勇敢斥拒罪恶；反倒卑辞乞怜，不惜犯罪从俗迎合众意，以冀减消群众的反对和攻击，罗得的失败，真可作现在许多信徒的写照了。</p>
+<p>六、罗得的恋世</p>
+<p>「二人对罗得说，你这里还有什么人吗？无论是女婿，是儿女，和这城中一切属你的人，你都要将他们从这地方带出去。我们要毁灭这地方，因为城内罪恶的声音，在耶和华面前甚大，耶和华差我们来，要毁灭这地方。罗得就出去，告诉将要娶他女儿的女婿们，说，你们起来离开这地方，因为耶和华要毁灭这城：他的女婿们却以为他说的是戏言。天明了，天使催逼罗得说，起来，带着你的妻子，和你在这里的两个女儿出去，免得你因这城里的罪恶，同被剿灭。但罗得迟延不走，二人因耶和华怜恤罗得，就拉着他的手，和他妻子的手，并他两个女儿的手，把他们领出来，安置在城外。领他们出来以后就说逃命罢；不可回头看，也不可在平原站住；要往山上逃跑，免得你被剿灭。罗得对他们说，我主阿，不要如此：你仆人已经在你眼前蒙恩，你又向我显出莫大的慈爱，救我的性命；我不能逃到山上去，恐怕这灾祸临到我，我便死了：看哪，这座城又小又近，容易逃到，这不是一个小的么？求你容我逃到那里，我的性命就得存活。天使对他说，这事我也应允你，我不倾覆你所说的这城。你要速速的逃到那城；因为你还没有到那里我不能作什么。因此那城名叫琐珥。」（创十九12～22）。</p>
+<p>天使豫先告诉罗得说，他们要毁灭这城，也告诉他要将一切属他的人都带出去，罗得便去告诉他的女婿们。这明显罗得对天使的话是十分相信的。但是他到天明，又为什么迟延不走呢？这显见是因为他恋慕他所有的房屋、财产。（或者他也有一些所多玛城中的朋友）大祸临前，仍然贪恋财物，不肯丢弃，世上为这个缘故丧失生命的，正不知有多少。「人为财死，鸟为食亡。」这是何等可叹的事！幸而神不丢弃属他的人，使天使拉他们的手，领他们出城，救他们脱离了那可怕的灾祸。感谢神，他现在也是常常这样作工。就是藉着病痛、苦难、伤心、祸患，催逼属他的人，逃避将来的忿怒，将他们拉出来，安置在城外。若不是神这样存忍耐，发怜悯，亲自施行拯救，恐怕没有什么人能逃脱他的烈怒呢。</p>
+<p>我们再注意天使的警教说，「逃命罢；不可回头看，也不可在平原站住，要往山上逃跑，免得你被剿灭。」不但要离开所多玛城，并且不要再回头看它。这是何等的有教训。属神的人不单要远离这罪恶的世界，和其上的快乐幸福，并且不要再思慕爱恋这些。「也不可在平原站住，要往山上逃跑。」前次堕落，就是因为住在平原；若在平原站住，仍要寻求平原的事。但一到山上，便可望见更远更美的景物，这是非常与罗得有益的。信徒也当这样弃掉地上的事，思念在天上的事，（西三1～4）方可免再受世物的牵累。</p>
+<p>七、罗得所受的损失</p>
+<p>「罗得到了琐珥，日头已经出来了。当时耶和华将硫磺与火，从天上耶和华那里，降与所多玛和蛾摩拉，把那些城，和全平原，并城里所有的居民，连地上生长的，都毁灭了。罗得的妻子在后边回头一看，就变成了一根盐柱。亚伯拉罕清早起来，到了他从前站在耶和华面前的地方，向所多玛和蛾摩拉与平原的全地观看：不料那地方烟气上腾，如同烧一般。当神毁灭平原诸城的时候，他记念亚伯拉罕，正在倾覆罗得所住的城的时候，就打发罗得从倾覆之中出来。」（创十九23～29）。</p>
+<p>所多玛城和其中所有的，都被毁灭了，罗得的产业财物，当然也都在其中。贪图所多玛的快乐，以致连从前所有的财物，也都完全丧失；尚且有更伤心的事，所爱的妻子，也因不听警教而死在途中，罗得的心到此是何等的痛苦！何等的懊丧！他在这时方悔悟前日的失策，但是已经太迟！离开了施恩的神，进入恶浊的世界，想要得一些肉体的娱乐和安慰，结果只有悔恨与失败罢了。这时再看那安居在郊野帐棚中的亚伯拉罕，是何等安稳！何等快乐！所多玛和它的邻城，虽然完全被毁灭，但是亚伯拉罕和他一切所有的，却未曾受着丝毫的损失。在神的恩典中生活，是何等有福的事！</p>
+<p>二十九节的话说，「当神毁灭平原诸城的时候，他记念亚伯拉罕，正在倾覆罗得所住的城的时候，就打发罗得从倾覆之中出来。」更是显明罗得并没有什么义，可以蒙神的嘉纳。他在神的面前不过是一个失败的人。他得蒙拯救，乃是因为神记念亚伯拉罕的缘故。亚伯拉罕不与恶世为伍，却与神同行，不但自己得蒙保守，享受平安，还能使别人因他得蒙拯救。这对于我们更是何等的有教训。贪恋肉体的娱乐，与世人同流合污的信徒，纵然蒙神的怜爱，被神将他们从将亡城中催逼出来，也不过仅仅的保全了生命；惟有远离不义的世界与神同行的圣徒，自己既可以得着今世的平安，将来的基业，又可以使别人藉着他们也得蒙神恩。我们怎可不以罗得为前车之鉴，而效法亚伯拉罕的良范呢？</p>
+<p>八、罗得近恶的影响</p>
+<p>「罗得因为怕住在琐珥，就同他两个女儿从琐珥上去住在山里：他和两个女儿住在一个洞里。大女儿对小女儿说，我们的父亲老了，地上又无人按着世上的常规，进到我们这里来，我们可以叫父亲喝酒，与他同寝；这样，我们好从他存留后裔。于是那夜她们叫父亲喝酒，大女儿就进去和她父亲同寝；她几时躺下，几时起来，父亲都不知道。第二天，大女儿对小女儿说，我昨夜与父亲同寝：今夜我们再叫他喝酒，你可以进去与他同寝，这样，我们好从父亲存留后裔。于是那夜她们又叫父亲喝酒：小女儿起来与她父亲同寝，她几时躺下，几时起来，父亲都不知道。这样罗得的两个女儿，都从她们的父亲怀了孕。大女儿生了儿子，给他起名叫摩押，就是现今摩押人的始祖。小女儿也生了儿子，给他起名叫便亚米，就是现今亚扪人的始祖。」（创十九30～38）。</p>
+<p>这是何等丑恶的一段事迹！但这就是罗得居住所多玛的收获。两个女儿敢于行作这等丑恶的事，就是因为她们从前同她们的父亲住在所多玛的时候，耳所闻、目所见，都是淫乱邪恶的事。日子既久，便习以为常，不再觉得淫邪的行为是何等的可憎可耻；以致到了山居的时候，便敢互相商议，与父亲行起淫来。可叹！可叹！一个人与罪恶的世界为友，不但自己当时要受极大的亏损，还给儿女种下后日堕落的种子，以致流毒于无穷。许多信徒常常亲近不良的友朋，流连在世界的娱乐场里，一己的品德不修，家庭的教育废弛；使他们的儿女，因着受这一种恶化，渐渐也变成一种堕落的青年，后来的结局弄得异常可怜。今日教会中受害像罗得的，正不知有多少人呢！我巴不得能大声疾呼，对每一个走在罗得后边的信徒说，「朋友阿，为保守你自己的平安和幸福，你当急速出离这罪恶的世界；为豫防你儿女们的危险和堕落，你也当急速出离这罪恶的世界。」</p>
+<p>「我的民哪，你们要从那城出来，免得与她一同有罪，受她所受的灾殃。」（启十八4）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

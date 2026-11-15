@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>少年人我吩咐你起来 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>少年人我吩咐你起来</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/6少年人我吩咐你起来-04.mp3">🎧 少年人我吩咐你起来（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/6少年人我吩咐你起来-05.mp3">🎧 少年人我吩咐你起来（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/6少年人我吩咐你起来-06.mp3">🎧 少年人我吩咐你起来（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「过了不多时，耶稣往一座城去，这城名叫拿因，他的门徒和极多的人与他同行。将近城门，有一个死人被抬出来，这人是他母亲独生的儿子，他母亲又是寡妇。有城里的许多人同着寡妇送殡。主看见那寡妇就怜悯她，对她说，『不要哭』。于是进前按着杠，抬的人站住了。耶稣说，『少年人，我吩咐你起来』。那死人就坐起，并且说话。耶稣便把他交给他的母亲。众人都惊奇，归荣耀与神说，『有大先知在我们中间兴起来了』；又说，『神眷顾了他的百姓』。他这事的风声就传遍了犹太和周围地方。」（路七11～17）。</p>
+<p>这是何等凄惨的一件事！这个寡妇只有一个儿子，这个儿子竟死了。这个寡妇再没有别的倚靠，别的安慰，别的指望。在她送她的儿子到坟墓地去的时候，她必是苦痛伤心到了极点。没有人能安慰她。没有人能擦干她的眼泪。那些送殡的人同情她的苦况，也都想尽力帮助她，但他们都感到有心无力，徒唤奈何。他们想他们同她去送殡，或者可以略减她的哀思。但她看见这么多的人来送殡，她的儿子却是闭目卧在尸架上，更使她难过悲伤。及至走近城门的时候，她想到她的儿子这一次出了城门再也不能回来，她必是更加悲痛。不料正在这时候主耶稣迎面走来。他恰好看见这件悲惨的事。他没有一次看见人受苦不发怜悯的心。这个寡妇既然这样悲伤，他当然更不会掩面不顾。他对这个寡妇说，「不要哭」。他不只说了这句话，他也在在有权柄能止住她的哭声，能擦干她的眼泪。他「进前按着杠，抬的人就站住了。」他对那个死人说，「少年人，我吩咐你起来。」这句话是世上任何人不能说的。大科学家不能说，大哲学家不能说，大教育家不能说，大发明家不能说，大政治家不能说，叱风云的大英雄不能说，万人景仰的大圣贤不能说，贵为天子富有四海的帝王不能说。他们说了没有用，也不会发生效力。因为他们中间的任何人也不能叫一个死了的人复活。但这位在世上没有尊荣，没有地位，没有权柄，没有势力，只是带着一群门徒东西奔走传扬福音的拿撒勒人耶稣，竟说出了这句没有人能说没有人敢说的话。他不但说了这句话，而且他所说的话，立时发生了效力。「那死人就坐起，并且说话。」为什么他敢说这句没有人敢说的话？为什么他说的话这样有能力，有功效？为什么他能使死了的人复活？为什么他能作大科学家、大哲学家、大教育家、大发明家、大政治家、大英雄、大圣贤，以及列国的帝王所不能作的事？他到底是谁？他从那里得着这样的权柄？当时看见这事的人说，「有大先知在我们中间兴起来了」。有人说他是施浸的约翰，有人说他是伊莱贾，有人说他是杰里迈亚，但有一个使徒所说的蒙了他的嘉许。西门彼得说，「你是基督，是永生神的儿子。」耶稣当时对他说，「西门巴乔纳，你是有福的，因为这不是属血肉的指示你的，乃是我在天上的父指示的。」（太十六15～17）。是的，就因为他是神的儿子，所以他能作世上任何大人物所不能作的事；就因为他是神的儿子，所以他能使死人复活；就因为他是神的儿子，所以他的话语有这种奇特的权能。他对那个死了的少年人说，「少年人，我吩咐你起来」，那死人就起来了。</p>
+<p>今日在全世界上有多少外面活着里面却是死了的少年人。死人有眼却不能看，有耳却不能听，有口却不能言，有手却不能作事，有脚却不能走路。死人对于社会人群非但没有丝毫的贡献，而且还累着别人，增加别人的苦痛与不快。世上有多少青年的男女有眼睛却看不见神，看不见神的大能，神的慈爱，看不见神的作为，神的救恩；有耳朵却听不见神的声音，神的言语，听不见神的福音，神的警告，听不见神的命令，神的应许。他们有口却不会说好话，不会说诚实清洁的话，不会说荣耀神造就人的话。他们有手却不会作正经事，不会作与社会人群有益的事。他们有脚却不会走光明正直的大路，不会走神所喜悦的道途。他们眼睛所看的乃是金钱、虚荣、享受、宴乐、淫乱、污秽。他们的耳朵所听的，舌头所说的，是谎言、诡诈、淫词、妄语、挑拨、毁谤、咒诅、辱骂。他们的手所作的，脚所行的，是虚伪，欺骗、残害、暴虐、嫉妒、凶杀、盗窃、攘夺、淫邪、纵欲、狂妄、骄傲、利己、损人。他们的人生中所显露出来的是死人的丑态，所发散出来的是死人的臭气。他们虽然活着，实际却是死人。称他们为「行尸走肉」，实在恰当无比。</p>
+<p>上文我们所说的这种种现象不只限于青年人，中年人老年人又何尝不是这样呢？除了这些少年人中年人老年人共有的现象以外，我们在青年人身上特别看见一些事，证明他们是活着的死人，就是许多青年人终日度着醉生梦死的生活。他们的人生没有目标，没有轨道。他们一点不知道人生在世上还有责任，还有本分，他们更不知道人生的希望和归宿。他们不殷勤读书，也不努力学习什么技能。只是每日过着放荡流浪的生活。他们整日结交一些狐朋狗友。「群居终日，言不及义」，挥霍金钱，追逐异性，看电影，听戏剧，打麻将牌，跳交际舞。在家中不孝顺父母，在学校中不守规则。放荡像一群野马，凶暴似一群虎狼。对自己的骨肉手足毫无情义，对人群的利害痛痒漠不关心。一言不合就打群架、闹学潮、轻藐师长、凌虐工人。入学的时候托人情，报虚岁，造假证书。考试的时候带小抄、看书本、通同作弊。每学年的成绩除去看了几十部香艳影片，写了一二百封情书，花去了几千万圆父母的血汗所换来的金钱，结交了几位漂亮年轻擅于交际的异性朋友以外，其它简直毫无成就。勉强毕了业以后，手中拿着一张大学的毕业证书，却是什么事也不会作。肩不能担担，手不能提篮，文不会，武不能，高不成，低不就。享乐的习性已成，勤劳的精神没有。只会藉着亲友的援引，到政治舞台上去活跃，去作贪官污吏，或是承父兄的余荫到商界里去，作那左右望而罔市利的大腹商贾。如果时运不济，命途多舛，官运既不亨通，商业又因为某种原因而赔累不堪，到这时候既不会耕耘，又不会工作，想要作一名农夫一名劳工亦不可得，只好流浪街头，乞讨度日了。我国的教育事业虽然也造就了一些有用的人才，可是数目少得可怜。大多数的学生就像我们上文说的这种样式。这种青年人简直是行尸，是走肉，他们不是死人是什么呢？</p>
+<p>其实也不只他们，一切未曾认识神未曾得着新生命的人又有那个不是死人呢？连基督的门徒在未信主以前也是「死在过犯罪恶之中」的人。世上的人类都死在过犯罪恶之中，在神眼中都是死人，躺着的人是死人，立着的人也是死人，不会说话的人是死人，会说话的人也是死人。死人的种类多极了，有老年的、有少年的、有贫穷的、有富足的、有卑贱的、有尊贵的、有学识高深的、有目不识丁的。但死人却总是死人。</p>
+<p>死在罪恶中的少年人哪，请听耶稣的呼声，「少年人，我吩咐你起来」。他现今正招呼你。他吩咐你起来，他要给你生命，给你新的生命，使你不再作死人，却作一个有生命的人，有活泼的生命，有丰盛的生命。他要使你的眼睛看见神的大能，神的荣耀，神的圣洁，神的完全，使你看见基督的救恩，基督的大爱，使你看见人生的意义和价值，人生的责任和使命，使你看见你今日当走的道路，和你将来的归宿，使你的耳朵听见神的声音，神的付托，神的命令，神的应许，使你的手会作荣耀神使人得福的事，使你的脚会走光明正直的大路，会跑去帮助一切需要帮助的人。因着你的改变，会使许多人得着幸福与安慰，正如那个少年人复活以后使他的母亲得了快乐一样。你家庭中的人要因你的改变而得福，你的朋友和邻舍要因你的改变而快乐。你得了生命，还能领别人到主这里来得生命，你成了有用的人，还能使别人因信主也成为有用的人。你有了生命以后，你的主要藉着你使许多在黑暗中的人看见大光，使许多受苦的人享幸福，使许多伤心的人得安慰。因着你一个人的改变，不晓得要使多少人得大福，蒙大恩。你还不听从主的招呼急速起来么？</p>
+<p>主耶稣的能力就止于使那些死在过犯罪恶之中的人活过来得着新生命作有用的人么？不，他的能力不止于这个，将来有一日他还要用他的呼声使一切死了的人从坟墓里出来。「我实实在在的告诉你们，时候将到，现在就是了，死人要听见神儿子的声音，听见的人就要活了。因为父怎样在自己有生命，就赐给他儿子也照样在自己有生命；并且因为他是人子，就赐给他行审判的权柄。你们不要把这事看作希奇。时候要到，凡在坟墓里的都要听见他的声音，就出来；行善的复活得生，作恶的复活定罪。」（约五20～29）。「时候将到，现在就是了，死人要听见神儿子的声音，听见的人就要活了。」这几句话是说，死在过犯罪恶之中的人听见主耶稣的声音就要得着生命。这是现在的事。「凡在坟墓里的都要听见他的声音，就出来；行善的复活得生，作恶的复活定罪。」这是说主耶稣有一日要使所有的人身体复活从坟墓里出来。这是将来的事。他将来不但要使一切死了的人复活，他还要「按着那能叫万有归服自己的大能，将我们这卑贱的身体改变形状，和他自己荣耀的身体相似。」（腓三21）。他在世上行走的时候曾使这个拿因城的少年人复活，曾使管会堂的睚鲁的女儿复活，曾使伯大尼的拉撒路复活。这几个人以后还是死了。但他有一日从天上来接他的门徒，使一切属他的人复活的时候，他要使他们那必死的身体变为不死的，使他们那必朽坏的身体变为不朽坏的，那时他们要有一个不死的，不朽坏的、荣耀的、属灵的身体，像主耶稣自己复活以后的身体一样。那个日子该是何等荣耀何等可爱的一个日子阿！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

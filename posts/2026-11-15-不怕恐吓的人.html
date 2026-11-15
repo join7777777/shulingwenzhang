@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>不怕恐吓的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>不怕恐吓的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/1不怕恐吓的人-01.mp3">🎧 不怕恐吓的人（1/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/1不怕恐吓的人-02.mp3">🎧 不怕恐吓的人（2/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/1不怕恐吓的人-03.mp3">🎧 不怕恐吓的人（3/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/1不怕恐吓的人-04.mp3">🎧 不怕恐吓的人（4/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/1不怕恐吓的人-05.mp3">🎧 不怕恐吓的人（5/5）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「使徒对百姓说话的时候，祭司们和守殿官，并撒都该人，忽然来了。因他们教训百姓，本着耶稣，传说死人复活，就很烦恼。于是下手拿住他们，因为天已经晚了，就把他们押到第二天。但听道的人有许多信的，男丁数目约到五千。</p>
+<p>「第二天，官府、长老、和文士，在耶路撒冷聚会，又有大祭司亚那、和该亚法、约翰、亚力山大，并大祭司的亲族，都在那里。叫使徒站在当中，就问他们说，「你们用什么能力，奉谁的名，作这事呢？」那时彼得被圣灵充满，对他们说：「治民的官府和长老阿，倘若今日因为在残疾人身上所行的善事，查问我们他是怎么得了痊愈；你们众人和以色列百姓都当知道，站在你们面前的这人得痊愈，是因你们所钉十字架，神叫他从死人里复活的，拿撒勒人耶稣基督的名。他是你们匠人所弃的石头，已成了房角的头块石头。除他以外，别无拯救，因为在天下人间没有赐下别的名，我们可以靠着得救。」</p>
+<p>「他们见彼得、约翰的胆量，又看出他们原是没有学问的小民，就希奇，认明他们是跟过耶稣的。又看见那被治好了的人和他们一同站着，就无话可驳。于是吩咐他们从公会出去，就彼此商议说，『我们当怎样办这两个人呢？因为他们诚然行了一件明显的神迹，凡住耶路撒冷的人都知道，我们也不能说没有。惟恐这事越发传扬在民间，我们必须恐吓他们，叫他们不再奉这名对人讲论。』于是叫了他们来，禁止他们，总不可奉耶稣的名讲论教训人。彼得、约翰说，『听从你们，不听从神，这在神面前合理不合理？你们自己酌量罢。我们所看见、所听见的，不能不说。』官长为百姓的缘故，想不出法子刑罚他们，又恐吓一番，把他们释放了。这是因众人为所行的奇事，都归荣耀与神。原来藉着神迹医好的那人，有四十多岁了。</p>
+<p>「二人既被释放，就到他们自己的人（中文圣经译作『会友』不正确）那里去，把祭司长和长老所说的话，都告诉他们。他们听见了，就同心合意的高声向神说，『主阿，你是造天、地、海、和其中万物的。你曾藉着圣灵，托你仆人我们祖宗大卫的口说：外邦为什么争闹？万民为什么谋算虚妄的事？世上的君王一齐起来，臣宰也聚集，要敌挡主，并主的受膏者。希律和本丢彼拉多，外邦人和以色列民，果然在这城里聚集，要攻打你所膏的圣仆耶稣，成就你手和你意旨所豫定必成的事。他们恐吓我们，现在求主鉴察；一面叫你仆人大放胆量，讲你的道，一面伸出你的手来医治疾病，并且使神迹奇事因着你圣仆耶稣的名行出来。』祷告完了，聚会的地方震动，他们就都被圣灵充满，放胆讲论神的道。」（徒四1～31）。</p>
+<p>主耶稣升天以后，他的门徒因为亲眼看见那位复活的主，而且他们又都被圣灵充满，大有能力和权柄，所以在耶路撒冷放胆为基督作见证。五旬节那一天，就约有三千人悔改信主，受浸加入了门徒的行列。不久以后，彼得、约翰又奉耶稣的名行了一件奇事，使一个生来瘸腿的人得了痊愈，起来行走。这件奇事惊动了许多的人，他们都跑来观看。彼得就趁着这个机会，对众人见证耶稣的复活。这件事传到了犹太人的领袖的耳中，引起了他们极大的恐慌。因为他们在耶稣复活以后，曾用钱贿买看守耶稣坟墓的兵丁，叫他们宣传说，在他们睡觉的时候，耶稣的门徒来把他的尸首偷了去。（太二十八11～15）。不料使徒们从五旬节那天起，大有能力传扬耶稣复活；到了这一天，又行了一件奇事，使这个生来瘸腿的人起来行走，并且他们又作见证说，他们行这件奇事是奉那位复活了的耶稣的名。这样，他们不但用言语宣传耶稣复活，而且用事实证明耶稣复活。这种宣传势必使更多的人信从耶稣，这实在是那些犹太人的领袖们所不能忍受的。因此便发生了这件不幸的事──「使徒对百姓说话的时候，祭司们和守殿官，并撒都该人，忽然来了。因为他们教训百姓，本着耶稣，传说死人复活，就很烦恼。于是下手拿住他们，因为天已经晚了，就把他们押到第二天。」</p>
+<p>彼得、约翰是已经被捕下监了，但第二天怎样发落他们，却是一个难解决的问题了。经上记着说，「第二天，官府、长老、和文士，在耶路撒冷聚会。又有大祭司亚那、和该亚法、约翰、亚力山大，并大祭司的亲族，都在那里。叫使徒站在当中，就问他们说，『你们用什么能力，奉谁的名，作这事呢？』那时彼得被圣灵充满，对他们说，「治民的官府和长老阿，倘若今日因为在残疾人身上所行的善事，查问我们他是怎样得了痊愈；你们众人和以色列百姓都当知道，站在你们面前的这人得痊愈，是因你们所钉十字架、神叫他从死人里复活的，拿撒勒人耶稣基督的名。他是你们匠人所弃的石头，已成了房角的头块石头。除他以外，别无拯救，因为在天下人间没有赐下别的名，我们可以靠着得救』。」</p>
+<p>好严重的一个局面！「官府、长老、和文士，在耶路撒冷聚会。又有大祭司亚那、和该亚法、约翰、亚力山大，并大祭司的亲族，都在那里。」这么多的要人都聚在一处，无非要审问那两个手无寸柄的使徒，这种情形真像狮子搏兔一般。这两个渔夫出身的使徒那里见过这种场面？按常情说，他们两个人一定吓得面无人色，全身战抖，连一句话也说不出口来；只有俯伏在地，向那些有权有势的大人物讨饶求恩，应许他们再也不传耶稣复活的事；只求他们不要定罪判刑，二人便已经心满意足了。</p>
+<p>当日的情形是这样么？不是，完全不是。「那时彼得被圣灵充满」，在那些声势赫赫的犹太人面前见证那个残疾人得了痊愈，是因着那被犹太人钉死，神却使他复活了的，拿撒勒人耶稣基督的名。彼得在这里还特别说明，「是因『你们』所钉十字架，神叫他从死人里复活的，拿撒勒人耶稣基督的名。」这句话无异乎定那些人的罪，说他们抗拒神、抵挡神，因为他们把耶稣钉死了，神却叫他从死人里复活。接着他又说，这位耶稣「是你们匠人所弃的石头，已成了房角的头瑰石头。」这句话不但是定了那些人的罪，而且是大大的羞辱了他们。最后他说出了那极伟大宝贵的真理──「除他以外，别无拯救，因为在天下人间没有赐下别的名，我们可以靠着得救。」这几句话说明了犹太人所定罪、所钉死的耶稣，竟是神为世人所预备的独一的救主。这一段话是高举了神所高举的基督，也是斥责了神所斥责的那些刚愎硬心的犹太人。按我们想，那些有权有势的「官府、长老、文士、大祭司亚那、和该亚法、约翰、亚力山大，并大祭司的亲族」，一定会羞恼成怒，把彼得、约翰推到城外，用石头把他们二人打死。不料他们竟没有这样作。他们怎样作了呢？容我们接着读经上的记载──</p>
+<p>「他们见彼得、约翰的胆量，又看出他们原是没有学问的小民，就希奇，认明他们是跟过耶稣的。又看见那被治好了的人和他们一同站着，就无话可驳。于是吩咐他们从公会出去，就彼此商议说，『我们当怎样办这两个人呢？因为他们诚然行了一件明显的神迹，凡住耶路撒冷的人都知道，我们也不能说没有。惟恐这事越发传扬在民间，我们必须恐吓他们，叫他们不再奉这名对人讲论。』于是叫了他们来，禁止他们，总不可奉耶稣的名讲论教训人。」</p>
+<p>希奇么？真希奇！这些声势赫赫，大权在握的犹太国的要人，受了这两个渔夫出身的使徒一顿斥责，不但没有羞恼成怒，反倒因着他们二人有这样的胆量觉得希奇，并且「认明他们是跟过耶稣的。又看见那被治好了的人和他们一同站着，就无话可驳。」这些犹太人的领袖们看见了两件奇事：一件是「一个生来瘸腿的人站起来行走」；另一件是「两个无学问的小民大有能力和胆量，在他们面前侃侃见证耶稣的复活。」这两件事都不能不使他们惊奇，并使他们对这两个人无计可施。看他们昨天把这两个使徒逮捕了来，押在监里，就可以知道他们今天一定预备要严办这两个人，谁料到他们这时竟束手无策，一筹莫展呢！</p>
+<p>事情已经演到这种地步，彼得和约翰已经被他们逮捕了来，而且现在也已经被带到他们面前。没有办法也必须想办法，这时他们便举行秘密会议了。他们吩咐彼得和约翰从公会出去，只留下他们自己的人，商议怎样处置这件事。他们说，「我们当怎样办这两个人呢？因为他们诚然行了一件明显的神迹，凡住耶路撒冷的人都知道，我们也不能说没有。惟恐这事越发传扬在民间，我们必须恐吓他们，叫他们不再奉这名对人讲论。」</p>
+<p>好可怜的办法！好空洞的办法！「我们必须恐吓他们，叫他们不再奉这名讲论。」他们不能否认那个瘸子行走的事实，因为「凡住耶路撒冷的人都知道」。他们也不能把彼得、约翰下在监里，更不能用石头打死他们二人，因为他们二人并没有违犯任何一条法律。他们可以加在两个使徒身上的惟一的罪名，就是说他们造谣惑众，传扬耶稣复活。但现今这个生来瘸腿的人正是因着耶稣的名得了痊愈，起来行走，这件奇事足可以证明耶稣确实是复活了。在这种情形之下，他们便找不出任何罪名可以加在使徒身上，当然也就不能定他们二人的罪，刑罚他们，处置他们了。本来没有办法，却仍必须想办法，那就只有这个空洞可怜的办法──恐吓──了。</p>
+<p>他们执行他们的决策了。「于是叫了他们来，禁止他们，总不可奉耶稣的名讲论教训人。彼得、约翰说，『听从你们，不听从神，这在神面前合理不合理？你们自己酌量罢。我们所看见、所听见的，不能不说。』官长为百姓的缘故，想不出法子刑罚他们，又恐吓一番，把他们释放了。这是因众人为所行的奇事归荣耀与神。原来藉着神迹医好的那人，有四十多岁了。」</p>
+<p>他们所能想出来的惟一的办法就是「恐吓」。「我们必须恐吓他们，叫他们不再奉这名对人讲论。」他们心想以他们的地位声势说来，足可以恐吓住这两个渔夫出身的使徒，使这两个人听命唯谨。不料他们的揣想与他们所看见的事实完全不相符合。他们把二人叫了来，「禁止他们，总不可奉耶稣的名讲论教训人。」他们所得到的回答是什么呢？「彼得、约翰说，『听从你们，不听从神，这在神面前合理不合理？你们自己酌量罢。我们所看见、所听见的，不能不说』。」</p>
+<p>「恐吓」虽然是空洞可怜的办法，但它在那些怕恐吓的人身上却是十分有功效。如果遇见不怕恐吓的人，便丝毫不发生效力了。彼得、约翰就是两个不怕恐吓的人。这些有权有势的人恐吓他们，禁止他们，总不可奉耶稣的名讲论教训人。他们怎么回答呢？「我们所看见、所听见的，不能不说。」在这两个不怕恐吓的勇士面前，「恐吓」这个办法完全不发生功效。但这些犹太人的领袖却不能不赶快下台，于是他们继续用这个毫无功效的办法，为自己找下台的道路，「又恐吓一番，把他们释放了。」他们所决议的对策是「恐吓」，他们所执行的也是「恐吓」。看看他们这种「恐吓」的办法到底成功了什么？</p>
+<p>「二人既被释放，就到他们自己的人那里去，把祭司长和长老所说的话都告诉他们。他们听见了，就同心合意的高声向神说，『主阿，你是造天、地、海，和其中万物的。你曾藉着圣灵，托你仆人我们祖宗大卫的口说，外邦为什么争闹？万民为什么谋算虚妄的事？世上的君王一齐起来，臣宰也聚集，要敌挡主，并主的受膏者。希律和本丢彼拉多、外邦人和以色列民，果然在这城里聚集，要攻打你所膏的圣仆耶稣，成就你手和你意旨所豫定必有的事。他们恐吓我们，现在求主鉴察；一面叫你仆人大放誊量，讲你的道，一面伸出你的手来医治疾病，并且使神迹奇事，因看你圣仆耶稣的名行出来。』祷告完了，聚会的地方震动，他们就都被圣灵充满，放胆讲论神的道。」</p>
+<p>彼得、约翰被圣灵充满，大有胆量，不怕犹太人的恐吓，但其余的圣徒却不见得都能这样，因此他们听见了这两个人的报告，便同心合意的呼求神。在他们的祷告中也提到了犹太人的恐吓。「他们恐吓我们，现在求主鉴察；一面叫你仆人大放胆量，讲你的道，一面伸出你的手来医治疾病，并且使神迹奇事因着你圣仆耶稣的名行出来。」读了这些话以后，我们便晓得当时的教会中确实有些人因着犹太人的恐吓感觉惧伯，所以他们一面告诉神说，他们现在正遭遇犹太人的恐吓，一面呼求神使他们大放胆量，讲神的道。当他们祷告完毕，神立时垂听了他们的祷告。「聚会的地方震动，他们就都被圣灵充满，放胆讲论神的道。」那天早晨只有两个被圣灵充满，不怕恐吓的人，到了晚间便有了许多被圣灵充满、不怕恐吓的人。福音就在这种情形之下被传开，教会就在这种情形之下发展起来。福音能传遍世界，我们能接受神的救恩，都是因为那时候有这些不怕恐吓的人。如果使徒和他们的同人在那时候因为怕犹太人的恐吓，便不敢再奉耶稣的名讲道教训人，还能有今日的教会么？</p>
+<p>让我们注意一下犹太人的领袖们恐吓使徒的目的是什么？「我们必须恐吓他们，叫他们不再奉这名对人讲论。」犹太人知道这些使徒和他们的同人信仰耶稣的心是根深蒂固、不能摇动的。他们对这些人放弃信仰的事已经是绝了望。但他们想如果这些人不再传扬耶稣，自然不会再有新的信徒加入教会。已经信了耶稣的人中间有些人可能渐渐的软弱下去，或是分散在各地，或是离开世界。十年、二十年以后，基督的门徒自然而然的就绝迹于犹太国内了。他们不能禁止已经信了耶稣的人信他，但他们想他们可以藉着恐吓的方法禁止他们传扬他。不料当日的门徒竟不怕恐吓，仍是大放胆量、不顾一切的传扬，以致犹太人所采取的方法遭了失败，基督的福音却得了胜利。</p>
+<p>是，从古时到今日，基督的福音无论传到那里，都是遭遇人的反对，但同时也总有人不顾一切的信福音，作基督徒。反对基督的人最大的希望是那些信基督的人都背叛基督，不再信他。但如果这件事不能实现，他们便退一步，希望已经信了的人不再传扬基督，免得再有人起来作基督徒。基督徒既不再增加，基督的福音自然而然的便渐渐归于消灭。他们所用阻止基督徒传扬基督的方法虽然有许多，但最安全、最省事的方法就是「恐吓」。如果用强硬的方法，可能使事情弄到不可收拾的地步，又容易引起别人的反感。还有一样最可顾虑的，就是一般真实笃信的基督徒越受逼迫信心越坚强。用强硬的方法对待这些人，无异乎鼓励他们在信仰上进步。有这种种的顾虑，那些眼光较为远大、思想较为缜密的人，便不肯采用强暴的方法来反对福音，却采用恐吓的方法；因为这种方法如果收效，固然最好，纵使没有什么效果，自己也不至于下不了台。</p>
+<p>这种恐吓的方法是否收效了呢？在使徒的时代未曾收效，在后世的教会中却常收大效。一个原因是后世的教会失去了使徒时代那种坚固纯粹的信仰，信基督不够彻底，不笃信基督复活的大能，不热烈盼望基督降临，以致一般信徒恋慕世界，苟且偷安。另一个原因是教会中勇敢、刚强、忠心事奉主的领袖太少。每逢遭遇外界的恐吓，教会中的领袖都因为惧怕，先跌倒失败，一般信徒更站立不住了。还有一个原因，就是教会中的分子太复杂。极多没有信仰、没有生命的人都加入了教会，其中有些人还作了教会的领袖，这般人加入教会不是别有希图，便是盲听盲从。这种人一遇见恐吓，不但立时投降世界，而且会向着教会倒戈反攻，出卖救主，陷害弟兄。在这种情形之下，恐吓的办法便极有效力了。</p>
+<p>怕恐吓不敢传福言，已经足够令人痛心了。比这个更令人痛心的，就是有些信徒因为怕恐吓，连主都不敢承认，连神的命令都不敢遵从，连真实的话都不敢出口，惟恐因此遭遇别人的打击与逼迫。其实那些恐吓他们的人根本就没有准备打击逼迫他们，只是虚声恫吓，想藉着这种轻而易举的办法叫他们投降。这些可怜的信徒也就因着别人虚声恫吓降服下来，这是多么悲惨的事阿，其实如果他们不怕恐吓，刚强立稳，根本就没有任何危险临到他们。被人打倒了固然是可耻的事，但被人吓倒了比被人打倒了更可耻千百倍。</p>
+<p>在这里还有一件需要注意的事，就是使徒和他们的同人刚强勇敢为他们的主作见证的时候，都是被圣灵充满。「那时彼得被圣灵充满，对他们说，……」「祷告完了，聚会的地方震动，他们就都被圣灵充满，放胆讲论神的道。」是，只有被圣灵充满的人才有这种超人的勇敢和能力不怕任何恐吓，不避任何危险，放胆为主作见证。反过来说，有这种勇敢和能力，便是圣灵充满的表现。一个信徒自称被圣灵充满，但他的表现却是胆怯畏惧，毫无能力，他不仅是欺骗别人，而且是自己欺骗自己。一个信徒是否有过圣灵充满的经验，不需要他自己的口为他作见证，需要事实为他作见证。圣经中没有一处记载那一个门徒自己述说他如何被圣灵充满，圣经中叙述门徒被圣灵充满的话，都是别人因着所看见的事实，为那被圣灵充满的人作见证。除了使徒行传第四章中这两处记载以外，我们还看见几处相似的记载──</p>
+<p>「五旬节到了，门徒都聚集在一处，忽然从天上有响声下来，好像一阵大风吹过，充满了他们所坐的屋子，又有舌头如火焰显现出来，分开落在他们各人头上。他们就都被圣灵充满，按着圣灵所赐的口才，说起别国的话来。」（徒二1～4）。</p>
+<p>「众人听见这话，就极其恼怒，向司提反咬牙切齿。但司提反被圣灵充满，定睛望天，看见神的荣耀，又看见耶稣站在神的右边，就说，『我看见天开了，人子站在神的右边』。」（徒七54～56）。</p>
+<p>「士求保罗是个通达人。他请了巴拿巴和扫罗来。要听神的道。只是那行法术的以吕马（这名翻出来就是行法术的意思），敌挡使徒，要叫方伯不信真道。扫罗又名保罗，被圣灵充满，定睛看他，说，『你这充满各样诡诈好恶、魔鬼的儿子、众善的仇敌。你混乱主的正道还不止住么？现在主的手加在你身上，你要瞎眼，暂且不见日光。』他的眼睛立刻昏蒙黑暗，四下里求人拉着手领他。方伯看见所作的事，很希奇主的道，就信了。」（徒十三7～12）。</p>
+<p>这几段经文都使我们看见一个真理，就是只要我们有一种合乎神心意的人生，到有特别的需要或特别的工作的时候，圣灵就会充满我们，使我们有能力、权柄、勇敢、智慧，应付那一种需要或工作；我们自己也许还不觉得，别的圣徒却能看出来我们是被圣灵充满了。有使徒那种敬虔的人生，才能像使徒那样被圣灵充满。像使徒那样被圣灵充满，才能像使徒那样不怕恐吓，不避危害，为那位复活的主作复活的见证。</p>
+<p>主耶稣升天以后，在耶路撒冷有那些不怕恐吓的门徒，就在各样的艰难逼迫中将福言传开了。现代的教会中如果能多有一些不怕恐吓的门徒，谁能阻挡福音的广传呢？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

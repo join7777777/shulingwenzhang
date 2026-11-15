@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一个满得恩惠能力的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一个满得恩惠能力的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/4一个满得恩惠能力的人-01.mp3">🎧 一个满得恩惠能力的人（1/4）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/4一个满得恩惠能力的人-02.mp3">🎧 一个满得恩惠能力的人（2/4）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/4一个满得恩惠能力的人-03.mp3">🎧 一个满得恩惠能力的人（3/4）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/4一个满得恩惠能力的人-04.mp3">🎧 一个满得恩惠能力的人（4/4）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「那时门徒增多，有说希利尼话的犹太人向希伯来人发怨言，因为在天天的供给上忽略了他们的寡妇。十二个使徒叫众门徒来，对他们说，『我们撇下神的道去管理饭食，原是不合宜的。所以弟兄们，当从你们中间选出七个有好名声、被圣灵充满、智慧充足的人，我们就派他们管理这事。但我们要专心以祈祷、传道为事。』大众都喜悦这话，就拣选了司提反，乃是大有信心，圣灵充满的人，又拣选腓利、伯罗哥罗、尼迦挪、提门、巴米拿、并进犹太教的安提阿人尼哥拉，叫他们站在使徒面前，使徒祷告了，就按手在他们头上。……司提反满得恩惠能力，在民间行了大奇事和神迹。当时有称为利百地拿会堂的几个人，并有古利奈、亚力山太、基利家、亚西亚各处会堂的几个人，都起来和司提反辩论。司提反是以智慧和圣灵说话，众人敌挡不住，就买出人来说，『我们听见他说毁谤摩西和神的话』。他们又耸动了百姓、长老、并文士，就忽然来捉拿他，把他带到公会去，设下假见证说，『这个人说话，不住的蹧践圣所和律法。我们曾听见他说，这拿撒勒人耶稣要毁坏此地，也要改变摩西所交给我们的规条。』在公会里坐着的人都定睛看他，见他的面貌好像天使的面貌。」（徒六1～15）。</p>
+<p>「大祭司就说，『这些事果然有么？』司提反说，『诸位父兄请听……你们这硬着颈项、心与耳未受割礼的人，常时抗拒圣灵，你们的祖宗怎样，你们也怎样。那一个先知不是你们祖宗逼迫的呢？他们也把豫先传说那义者要来的人杀了。如今你们又把那义者卖了，杀了。你们受了天使所传的律法，竟不遵守。』</p>
+<p>「众人听见这话，就极其恼怒，向司提反咬牙切齿。但司提反被圣灵充满，定睛望天，看见神的荣耀，又看见耶稣站在神的右边，就说『我看见天开了，人子站在神的右边』。众人大声喊叫，摀着耳朵，齐心拥上前去，把他推到城外，用石头打他。作见证的人把衣裳放在一个少年人名叫扫罗的脚前。他们正用石头打的时候，司提反呼吁说，『求主耶稣接收我的灵魂』。又跪下大声喊着说，『主阿，不要将这罪归于他们』。说了这话，就睡了。扫罗也喜悦他被害。」（徒七1～60）。</p>
+<p>看这个「满得恩惠能力」的人。「在民间行了大奇事和神迹」。「以智慧和圣灵说话，众人敌挡不住」。「他的面貌好像天使的面貌」。再听他对犹太人所说的话──「你们这硬着颈项，心与耳未受割礼的人，常时抗拒圣灵，你们的祖宗怎样，你们也怎样。那一个先知不是你们祖宗逼迫的呢？他们把豫先传说那义者要来的人杀了。如今你们又把那义者卖了，杀了。你们受了天使所传的津法，竟不遵守。」「我看见天开了，人子站在神的右边。」</p>
+<p>为什么这个人这样「满得恩惠能力」？为什么这个人能「在民间行了大奇事和神迹」？为什么这个人能「以智慧和圣灵说话，众人敌挡不住」？为什么这个人的「面貌好像天使的面貌」？为什么这个人能这样勇敢，大声斥责犹太人的罪恶？为什么这个人能「看见天开了，人子站在神的右边」？为什么？究竟为什么？我们详细读一下上面所引的第一段经文中的几句话，便能看出这些问题的答案。</p>
+<p>「所以弟兄们，当从你们中间选出七个有好名声，被圣灵充满，智慧充足的人，我们就派他们管理这事。」「大众都喜悦这话，就拣选了司提反，乃是大有信心，圣灵充满的人。」注意使徒们所提的这几种资格──「有好名声，被圣灵充满，智慧充足。」再注意经上论司提反的话──「是大有信心，圣灵充满的人。」</p>
+<p>司提反是从什么时候开始信耶稣的？我们无从知道。但看教会拣选那七个人的时候把他列在第一，便可知道他不是一个才信主不久的人。他一定是当主耶稣在世上传道的时候就跟随主的。他也必是一个在门徒中间素日「有好名声」的，换一句话说，就是「德行高尚，为众人所钦佩」的人。容我们注意这四件事──「有好名声，被圣灵充满，智慧充足，大有信心」。平常我们提到司提反的事，多注重到他「被圣灵充满，大有能力」。我们谈到使徒们所提那几个被拣选管理饭食的人的资格，多注重到「被圣灵充满，智慧充足」。我们最少注意到的就是「有好名声」这一样资格。却不知道这件事与其它的三件事是同等的重要。被圣灵充满的结果就是有好名声。有好名声就是被圣灵充满的表现。一个人肯完全顺服圣灵，他便被圣灵充满。完全顺服圣灵的人一定在生活上圣洁、诚实、公义、正直、慈爱、谦卑、清廉、忠信。这样的人自然会有好名声。我们的眼睛看不见圣灵，也看不见圣灵怎样充满一个人，但我们的眼睛却看得见一个被圣灵充满的人所活出来的那种高尚优美的人生。如果一个人的生活充满了骄傲、狂妄、谎言、诡诈、贪婪、自私、嫉妒、仇恨、淫乱、污秽，无论什么人说这个人是被圣灵充满的，我也无法信他所说的。一个被圣灵充满的人一定有高尚的人生，有了高尚的人生才能有好名声。因此使徒提议拣选七个人管理饭食的时候，提出这几样资格来──「有好名声，被圣灵充满，智慧充足。」</p>
+<p>司提反那样刚强勇敢和犹太人辩论，与他「有好名声」这一件事也是极有关系的。如果他没有好名声，他必定怕犹太人揭发他的劣迹恶行，他一定不敢那样勇敢和他们辩论，他要竭力躲避他们，甚至曲意奉承他们，讨他们的欢心。但他不是这种人，他有好品德，有好名声。他没有任何劣迹恶行。他「仰不愧于天，俯不怍于人」，因此他大有胆量，一点不怕那些反对他的犹太人，侃侃的和他们辩论。</p>
+<p>再听他们控告他的话，更看出他真是一个德行高尚的人。他们控告他什么罪状呢？「我们听见他说毁谤摩西和神的话」。「这个人说话，不住的糟践圣所和律法。我们曾听见他说，这拿撒勒人耶稣要毁坏此地，也要改变摩西所交给我们的规条。」任何人都知道行为方面的罪比言语上的罪严重得多。要想控告一个人，最有力的控词，就是指出他行为上的罪恶。在行为上找不出来把柄，只寻找出他言语上的过失，这种控告已经很脆弱无力了，何况他们所说的话还不是真的呢。听他们控告司提反的话──「我们听见他说毁谤摩西和神的话」。「这个人说话，不住的蹧践圣所和律法」。我们的主曾说，「不要想我来要废掉律法和先知。我来不是要废掉，乃是要成全。我实在告诉你们，就是到天地都废去了，律法的一点一画也不能废去，都要成全。所以无论何人，废掉这诫命中最小的一条，又教训人这样作，他在天国要称为最小的；但无论何人遵行这诫命，又教训人遵行，他在天国要称为大的。」（太五17～19）。司提反怎么能讲出一种道理与他所事奉的主所讲的相反呢？至于他们控告他「说毁谤摩西和神的话」，更荒诞万分。主耶稣和门徒都是敬畏神的人，怎么能说毁谤神的话呢？在主耶稣登山变像的时候，摩西曾与伊莱贾「同耶稣说话，他们在荣光里显现，谈论耶稣去世的事，就是他在耶路撒冷将要成的事。」（路九30、31）。主耶稣在复活以后对门徒讲话的时候，也曾对他们说，「这就是我从前与你们同在的时候，所告诉你们的话说，『摩西的律法、先知的书、和诗篇上所记的，凡指着我的话，都必须应验』。」（路二十四44）。摩西是在主耶稣未降世以前为他作见证的，主耶稣的门徒如何能毁谤他呢？我们再读使徒行传和使徒的书信，便知道使徒都是尊重摩西的。写希伯来书的那个门徒甚至以摩西和耶稣基督相比，说，「你们应当思想，我们所认为使者，为大祭司的耶稣，他为那设立他的尽忠，如同摩西在神的全家尽忠一样。」（来三1、2）。犹太人竟控告司提反「说毁谤摩西和神的话」，这不是作假见证又是什么呢？</p>
+<p>要控告一个没有罪的人，既找不出真凭实据来，便只有作假见证了。在这件事上我们看见那些犹太人的奸恶，也看见司提反的伟大。这样被人查不出罪来的一个人，一定会有能力、有胆量。他那种圣洁公义的人生使他刚强勇敢，使他在人面前能够挺身昂首，使他不畏惧任何人，使他能把神要他说的话都说出来，使他能在大祭司和全公会的人面前大声责备那些人说，「你们这硬着颈项，心与耳未受割礼的人，常时抗拒圣灵，你们的祖宗怎样，你们也怎样。那一个先知不是你们祖宗逼迫的呢？他们也把豫先传说那义者要来的人杀了。如今你们又把那义者卖了、杀了。你们受了天使所传的律法，竟不遵守。」听这一段话，那里像一个被捉拿审问的人所说的呢？这些话像那位高踞上座的大祭司所说的。是，只有圣洁公义、德行高尚、有好名声的人，有这种胆量，也有这种权柄。他们没有怕人的事，所以他们才敢说别人所不敢说的话。</p>
+<p>神所要使用、能使用的，也是有高尚的德行和好名声的人。神是圣洁公义的神，他所要使用的人也是圣洁公义的人。我们在神手中用途的大小，与我们人生圣洁的程度的高低，是有正比例的。经上很清楚的说明了这个真理。「然而神坚固的根基立住了，上面有这印记说，『主认识谁是他的人』；又说，『凡称呼主名的人，总要离开不义』。在大户人家，不但有金器、银器、也有木器、瓦器，有作为贵重的，有作为卑贱的。人若自洁，脱离卑贱的事，就必作贵重的器皿，成为圣洁，合乎主用，预备行各样的善事。」（提后二19～21）。从古至今，凡在神的手中大有用处，在人面前大有权柄的圣徒，都是有高尚的品德的人。</p>
+<p>我们读使徒行传中关于保罗的一切记载，再读保罗所写的那些书信。便知道他是一个被神重用的人，也是一个在人面前有权柄和能力的人。但这件事和他那高尚的德行也是分不开的。他把基督徒当有的德行的最高标准摆在众教会面前，他个人的生活也与他定的标准相符，因此他敢对帖撒罗尼迦的圣徒们说出那一段动人的话来──</p>
+<p>「我们从前在腓立比被害受辱，这是你们知道的。然而还是靠我们的神，放开胆量，在大争战中把神的福音传给你们。我们的劝勉不是出于错误，不是出于污秽，也不是用诡诈。但神既然验中了我们，把福音托付我们，我们就照样讲，不是要讨人喜欢，乃是要讨那察验我们心的神喜欢。因为我们从来没有用过谄媚的话，这是你们知道的；也没有藏着贪心，这是神可以作见证的。我们作基督的使徒，虽然可以叫人尊重，却没有向你们或向别人求荣耀；只在你们中间存心温柔，如同母亲乳养自己的孩子。我们既是这样爱你们，不但愿意将神的福音给你们，连自己的性命也愿意给你们，因你们是我们所疼爱的。弟兄们，你们记念我们的辛苦劳碌，昼夜作工，传神的福音给你们，免得叫你们一人受累。我们向你们信的人是何等圣洁、公义、无可指摘，有你们作见证，也有神作见证。你们也晓得我们怎样劝勉你们，安慰你们，嘱咐你们各人，好像父亲待自己的儿女一样，要叫你们行事对得起那召你们进他的国，得他的荣耀的神。」（帖前二2～12）。</p>
+<p>一个人有这种伟大的人生，崇高的德行，如何能不被神所重用？如何能没有属天的权柄和能力？一个「圣洁、公义、无可指摘」的人还怕什么人？保罗说这些话并不是大言欺人，他敢找出两个见证来──「有你们作见证，也有神作见证」。好有力量的两个见证！保罗敢请那些认识他的圣徒来见证他是怎样「圣洁、公义、无可指摘」。他也敢请神为这事作见证。如果他说的话是大言欺人，他断不敢提出这两个见证来。保罗那样被神重用，那样有权柄和能力，岂是偶然的事呢？</p>
+<p>我们再回到司提反身上来谈谈罢。当他被带到公会，又被人控告的时候，「在公会里坐着的人都定睛看他，见他的面貌好像天使的面貌」。一个敬虔，忠心事奉神的人不但说话有权柄和能力，他的面貌也和一般人不同，尤其是在他勇敢壮胆为神传话的时候，那时候神的灵充满他，他的口不再是他自己的口，他的面貌也不再是他自己的面貌。他虽然被人陷害控告，但神的荣光却从他的面上反映出来。不但司提反是这样，一切敬畏神，向神尽忠的圣徒都是这样。</p>
+<p>那些犹太人不但未曾证实司提反的罪，反倒被他重重的斥责了一顿，他们如何能忍受。他们「极其恼怒，向司提反咬牙切齿」，本是必然的事。这种场面是多么严重！多么可怕！就在这时，一件奇异的事出现了──「司提反被圣灵充满，定睛望天，看见神的荣耀，又看见耶稣站在神的右边，就说，『我看见天开了，人子站在神的右边』。」那么多的犹太人向他咬牙切齿，但那位坐在神的右边的基督却从坐着的地方站起来，向他表示欢迎。够了！够了！只要能受基督的欢迎，纵使全世界的人都向他咬牙切齿，也不足怕，也不足惜！「必死的人」，「要变如草的世人」咬牙切齿；「活到永永远远的主」却站起来表示欢迎。请问，这种局面是危险呢，还是安全呢？是羞辱呢，还是光荣呢？这局面太佳美了！太可爱了！一个基督徒如果能在去世以前遇到一次这种局面，真是神特别的恩赐，特别的赏赉。</p>
+<p>「众人大声喊叫，摀着耳朵，齐心拥上前去，把他推到城外，用石头打他。」复活的主为什么不能保护他这个忠心的门徙，却看着他们这样「把他推到城外，用石头打他」呢？不是不能保护，乃是容许他们这样作，好成就他的美旨，使这个忠勇的门徒走他自己所走过的道路──「顺服至死」，将来也使他得着他自己所得的荣耀和奖赏。</p>
+<p>「他们正用石头打的时候，司提反呼吁主说，『求主耶稣接收我的灵魂』。又跪下大声喊着说，『主阿，不要将这罪归于他们』。说了这话，就睡了。」死有什么可怕呢？身体死了，灵魂却被主接去，「离世与基督同在」，这真是「好得无比的！」（腓一23）。就连这必死的身体也不能死。「说了这话，就睡了。」是，真信主的人不能死，因为他们已经得了永生。圣经中称他们的死为「睡」。（见林前十一30，十五6、18、20、51；帖前四13、14、15）。因为当主耶稣再来的时候，他们听见天使长的声音和号筒的声音，都要复活，出离坟墓，得着荣耀、属灵、不能死、不能朽坏的身体，和他们的主复活以后的身体相似，而且要永远与主同在。</p>
+<p>「主必亲自从天降临，有呼叫的声音，和天使长的声音，又有神的号吹响，那在基督里死了的人必先复活。以后我们这活着还存留的人，必和他们一同被提到云里，在空中与主相遇，这样，我们就要和主永远同在。」（帖前四16、17）。</p>
+<p>「我如今把一件奥秘的事告诉你们，我们不是都要睡，乃是都要改变，就在一霎时，眨眼之间，号筒末次吹响的时候。因号筒要响，死人要复活成为不朽坏的，我们也要改变。这必朽坏的总要变成不朽坏的，这必死的总要变成不死的。」（林前十五51～53）。</p>
+<p>「我们却是天上的国民，并且等候救主，就是主耶稣基督，从天上降临。他要按着那能叫万有归服自己的大能，将我们这卑贱的身体改变形状，和他自己荣耀的身体相似。」（腓三20、21）。</p>
+<p>司提反的死，在人眼中看来似乎是撒但的胜利，实际上却是撒但的失败；因为不但司提反个人在这次战争中因着顺服至死，得了大胜，而且福音因此传到远方。我们读到经上的记载说，「从这日起，耶路撒冷的教会大遭逼迫，除了使徒以外，门徒都分散在犹太和撒玛利亚各处。……那些分散的人往各处去传道。」（徒八1～4）。撒但与神为敌，千方百计要破坏神的工作。他时刻寻觅机会，兴风作浪，但他每次所作的都成就了神的美旨。他以为藉着犹太人的手用石头打死了司提反，便可以吓倒那些基督徒，使基督的福音从此消灭，谁料到福音反倒因此广传到各地呢！</p>
+<p>看看司提反的刚强勇敢，再看看今日一般教会中为神作工的人那种胆怯懦弱，真令人不敢信他们是基督的门徒。根本没有信仰，没有生命的传道人不用提了，就连那些有信仰，有生命的传道人，又有几个能像司提反呢？这也不足为奇。大多数的传道人品行卑污、德行破产、信用扫地、劣迹昭彰。纵使没有人攻击他们、控告他们，他们都时常担惊害怕，如果有人起来攻击他们，自然像拉枯摧朽那样容易了。不用人作假见证控告他们；他们犯罪的真凭实据多得不可胜数。他们说谎行诈、作伪欺人、倾轧排挤、嫉妒分争、舞弊营私、贪污盗窃、纵欲行淫、放荡妄为。有些比较好一些的传道人，虽然不至于恶行累累，但在生活中也不免有许多不敢摆在光天化日之下的事。纵使只有一样罪恶隐藏在他们的生活中，就足能使他们在人面前战兢畏惧，不敢昂首，不敢开口。他们明知如果惹起别人的反对，别人便会揭发他们的恶行，他们立时便出丑丢人，无地自容。在这种情形之下，他们如何能刚强勇敢，为神的道争战？在没有特别的试验，没有特别的工作、没有特别的战争的时候，一个为神作工的人的人生如何，德行如何，在他自己心中也许不以为有什么很大的关系。但一遇见特别的试验、重要的工作、剧烈的战争，他便知道他平日的生活德行如何，是有多么大的关系了！没有司提反的德行和好名声，却希望能像司提反那样满得恩惠能力，又焉能办到呢？</p>
+<p>以司提反这样有好名声、被圣灵充满、智慧充足，大有信心的人，不但不能获得耶路撒冷城中的人民和他们的领袖的尊敬爱护，反被他们恨恶、仇视、控告、杀害，不希奇神的震怒临到这背道的大城了！</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

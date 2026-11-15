@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>不争竞不喧嚷的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>不争竞不喧嚷的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/8不争竞不喧嚷的人-03.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「耶稣知道了，就离开那里，有许多人跟着他，他把其中有病的人都治好了，又嘱咐他们不要给他传名；这是要应验先知以赛亚的话说，『看哪，我的仆人，我所拣选，所亲爱，心里所喜悦的；我要将我的灵赐给他，他必将公理传给外邦。他不争竞，不喧嚷，街上也没有人听见他的声音』。」（太十二15～19）。</p>
+<p>作医生的每逢给病人治好了病，总希望他们给他传名。有些医生公然嘱咐病人给他们传名。他们总希望他们的名传得越远越好。希奇！这位治好了许多病人的耶稣怎么竟嘱咐他们不要给他传名呢？为什么他这样与人异趣？为什么他这样特立独行？我们要明白他所以这样作的原因，必须先明白为什么一般医生给人治好了病都愿意人给他们传名。这个问题最容易明白。人都愿意得大量的金钱，丰富的享受，也都愿意得众人的称赞。有人给传名便是得金钱享受与尊荣最好的方法。名一传出去，便可以得多人的称赞。名一传出去，便不愁医务不发达，生意不茂盛，因此也不愁得不着大量的收入，得不着舒适的生活。有人给传名既是得名又得利的方法，当然医生都愿意他所治好了的病人给他传名了。</p>
+<p>主耶稣到世上来是为顺服神的旨意，甘心舍弃了神面前的享受和天上的荣耀，来到这充满罪和痛苦的世界，要作成父所差他去作的救人的大工。他不是为求享受而来到世上。更不是为求人的称赞而在地上作工。如果他求这两样，他根本就不到世上来了。虽然他因为有肉体的缘故，也曾受过魔鬼的试探，但他已经藉着神的话胜过了仇敌。他传道医病的时候完全没有求享受求称赞的意念。他不但不求人的荣耀，他也不受人的荣耀。他自己明明的说，「我不受从人来的荣耀。」（约五41）。既不求利，又不求名，自然不需要别人为他传名了。</p>
+<p>马太叙述主耶稣这种行径的时候，他引用先知以赛亚指着主耶稣所说的话，说，「他不争竞，不喧嚷，街上也没有人听见他的声音。」一个人有所希冀，有所营求，方才争竞。一个人不甘埋没无闻，方才喧嚷。主耶稣在地上无所希冀，也无所营求，所以他不争竞。他不想求人称赞他，夸耀他，所以他不喧嚷。他只脚踏实地的作工。只要能使人得好处，使神得荣耀，他的目的就算达到了。这就是我们所信的主，也就是我们的师尊，我们所应当效法跟随的。</p>
+<p>基督的门徒中有几个人真像他们的夫子呢？有几个人不孜孜求利，汲汲求名呢？有几个人「不争竞，不喧嚷」，只是安安静静脚踏实地的遵行神的旨意作成神的工呢？有几个人不但不求人的荣耀，而且「不受人的荣耀」呢？未曾真实悔改信主的那些挂名的基督徒根本不用提了。就是那些真实悔改信了主的基督徒当中，又有几个不为自己求荣耀，只求荣耀神的名呢？又有几个不求从人来的荣耀，只求从神来的荣耀呢？一般基督徒暂且不用说，就是为神作工的人当中又有几个不求名，矜夸，不为自己吹号筒，不求别人给传名的呢？</p>
+<p>许多传道的人看来是很热心服事神，好像一点不再为自己打算，好像一切都已经为神舍弃了，好像只是为主活着。其实他们中间不争竞，不喧嚷，像主耶稣一样安安静静脚踏实地服事神的人，真是寥若晨星。热心为神作工的人舍弃金钱和享受比较还容易些，只有舍弃尊荣名誉真是一件极难的事。许多热心的信徒为主作一些工作，总愿意别人知道。多有人知道，多受别人几句夸赞，便更热心去作工。若没有人知道，没有人夸赞，便不想再作了。许多热心的传道人也是喜欢事工作得大，使许多人知道，使许多人羡慕。他们愿意开大布道会，愿意看见大群的人来听道，愿意有几百几千人悔改信主。如果他们的心真是为别人打算，真是渴望许多人信主，那自然是极好，但事实决不是这样简单。虽然他们里面也有几分这样的思想，但还有几分是愿意藉此能得别人的恭敬夸赞，使人知道他们是神的忠仆，为神作了大的工作。这种传道人比较还算好的。另有一些传道的人，心中根本就没有想到如何为神作工，如何去引领人，帮助人。他们作工的目的就是为自己打算，为自己求名，为自己求利。没有大本领的传道人，只能藉着传道得一些收入来养生。资质比较高机会比较好的传道人，便利用他们超人的天资，特殊的环境，大吹大擂的干起来，博得许多人的称赞夸扬，被人誉为现代的彼得保罗。从我这二十几年为神作工的经验里，我看出来有些在人面前最得大称赞的传道人，他们的心思和行为在神面前最不象样子。他们为求虚荣，不惜去说谎言，行欺诈，嫉妒人，谗毁人，用卑鄙的手段，制造虚伪的成绩，抓住许多人的弱点，来利用他们，利用他们的金钱，利用他们的权势，利用他们的劳苦，利用他们的帮忙。结果他们成了大功，得了大名，教会却受了亏损。</p>
+<p>也许有人要问说，「这些传道人的心思作风不好，他们自己在神面前一定要受亏损，可是因他们所作的工到底帮助了一些人，拯救了一些人，你怎么说教会因他们受了亏损呢？」说这话的人一定没有看出来他们那种作风所给信徒的影响是什么。我们要知道一般信徒最容易摹仿传道人的动作行为，尤其是那些与人里面的坏东西相合的，更容易被人吸收。如今这些传道的人这样追求虚荣，崇尚诈伪，妒贤嫉能，谗毁良善，呼朋引类，好大喜功，请问一般信徒是不是也要走到他们所走的道路上去？社会中满了这一类的事。教会应当是污浊世界里的一片干净土，如今也弄得这般乌烟瘴气，请问还成个什么事体？</p>
+<p>事实告诉我们，有些传道人的圣洁敬虔，信徒极不容易学习，他们的态度动作，却很容易引起信徒的效法。有些传道人的诚实正直，信徒极难步武追随，另外一些传道人的虚伪欺诈，却极容易传染到信徒的身上去。有些传道人的谦卑安静，信徒很不容易效法，另外一些传道人的狂妄夸张，却很容易引起信徒的摹仿。那些敬虔的传道人终日耳提面命，谆谆教诲，信徒们并没有很大的长进，但那些言行虚伪爱名贪利的传道人只要热闹一大阵，信徒们便会如癫如狂亦步亦趋的跟随他们往前走。因为信徒有肉体存在，他们最乐意求外面的热闹和成功，求外面的伟大与效果，求别人的羡慕和尊敬，却不容易安安静静的伏在神的面前，作些不为人注意的真工作。有了务名不务实的传道人，自然就会有许多务名不务实的信徒。更可怕的，就是一个信徒走上这条路以后，便不容易在神面前谦卑安静下来，好好的追求属灵的进步。</p>
+<p>我们试一举目看看今日各处的教会，真是令人欲哭无泪！许多传道的人奄奄一息，没有福音可传，没有生命和能力。另外一些传道的人受魔鬼的役使，去传社会福音，去批评圣经，败坏信徒。一班热心传真正福音的人，大多数又是务名不务实，好大喜功，追求虚荣。大多数的信徒也是如此。有些人虽然在教会里，根本就未曾真实信主，还有一些虽然有生命，却比死人强不了多少。那些热心的信徒又多是注重外面的过于注重里面的，追求人面前的成功过于追求神面前的成功，爱慕人的夸赞过于爱慕神的夸赞，喧扬吵嚷得多，作的真事却少，雷声来得极大，雨点却小得可怜。只有极少数的信徒眼目专一的仰望神，一心只想讨神的喜悦，不吹号筒，不作自我宣传，孜孜勉勉，愿意作成神所交托他们的事工。他们善用他们每一天的光阴，善用主所赐给他们的每一样恩赐。神实在因他们得了荣耀。人实在藉他们得了帮助。他们的人生实在为基督作了美好的见证。他们的品德也实在为众人作了美好的榜样。他们不争竞，不喧嚷，街上也没有人听见他们的声音。他们是神眼中的珍宝，是世界与教会所不可缺少的人，也是在基督显现的时候要得着主的奖赏的人。阅者，你愿意作其中的一个么？</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

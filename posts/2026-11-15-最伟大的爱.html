@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>最伟大的爱 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>最伟大的爱</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/10最伟大的爱-01.mp3">🎧 最伟大的爱（1/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/10最伟大的爱-02.mp3">🎧 最伟大的爱（2/3）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/10最伟大的爱-03.mp3">🎧 最伟大的爱（3/3）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「大祭司和他的一切同人，就是撒都该一派的人，都起来，满心忌恨。就下手拿住使徒，收在外监。但主的使者夜间开了监门，领他们出来，说，『你们去站在殿里，把这生命的道都讲给百姓听。』使徒听了这话，天将亮的时候，就进殿里去教训人。」（徒五17～21）。</p>
+<p>「公会的人听从了他，便叫使徒来，把他们打了。又吩咐他们不可奉耶稣的名讲道，就把他们释放了。他们离开公会，心里欢喜，因被算是配为这名受辱。他们就每日在殿里，在家里，不住的教训人，传耶稣是基督。」（徒五40～42）。</p>
+<p>「从这日起，耶路撒冷的教会大遭逼迫。除了使徒以外，门徒都分散在犹太和撒玛利亚各处。有虔诚的人把司提反埋葬了，为他捶胸大哭。扫罗却残害教会，进各人的家，拉着男女，下在监里。那些分散的人往各处去传道。」（徒八1～4）。</p>
+<p>「那些因司提反的事遭患难四散的门徒，直走到腓尼基、和居比路、并安提阿；他们不向别人讲道，只向犹太人讲。但内中有居比路和古利奈人，他们到了安提阿，也向希利尼人传讲耶稣。主与他们同在，信而归主的人就很多了。」（徒十一19～21）。</p>
+<p>「二人在以哥念同进犹太人的会堂，在那里讲的，叫犹太人和希利尼人信的很多。……那时外邦人和犹太人，并他们的官长，一齐拥上来，要凌辱使徒，用石头打他们。使徒知道了，就逃往吕高尼的路司得、特庇，两个城，和周围地方去，在那里传福音。……但有些犹太人，从安提阿和以哥念来，挑唆众人，就用石头打保罗，以为他是死了，便拖到城外。门徒正围着他，他就起来，走进城去；第二天同巴拿巴往特庇去，对那城里的人传了福音，使好些人作门徒；就回路司得、以哥念、安提阿去，坚固门徒的心，劝他们恒守所信的道；又说，『我们进入神的国，必须经历许多艰难』。」（徒十四1～22）。</p>
+<p>「现在我往耶路撒冷去，灵被捆绑，不知道在那里要遇见什么事；但知道圣灵在各城里向我指证，说，有捆锁与患难等待我。我却不以性命为念，也不看为宝贵，只要行完我的路程，成就我从主耶稣所领受的职事，证明神恩惠的福音。」（徒二十22～24）。</p>
+<p>「我们在那里多住了几天，有一个先知，名叫亚迦布，从犹太下来。到了我们这里，就拿保罗的腰带，捆上自己的手脚，说，『圣灵说，犹太人在耶路撒冷，要如此捆绑这腰带的主人，把他交在外邦人手里。』我们和那本地的人听见这话，都劝保罗不要上耶路撒冷去。保罗说，『你们为什么这样痛哭，使我心碎呢？我为主耶稣的名，不但被捆绑，就是死在耶路撒冷，也是愿意的。』保罗既不听劝，我们便住了口，只说，『愿主的旨意成就便了』。」（徒二十一10～14）。</p>
+<p>读了上面所引的几段经文，我们看见使徒和那时代的信徒是那样不辞辛苦、不避艰险的传扬福音。犹太人中间那些有权势的人阻止他们，不许他们传，甚至用强权压迫他们，把他们逮捕起来。夜间天使把他们从监里领出来，吩咐他们到殿里去讲福音。他们听了这话，「天将亮的时候，就进殿里去教训人」。犹太人又把他们带了去，「把他们打了」，「吩咐他们不可奉耶稣的名讲道。」但他们被释放以后，仍然「每日在殿里，在家里，不住的教训人，传耶稣是基督。」</p>
+<p>这些人是患精神病的么？怎么他们这样不怕被逮捕、不怕坐监、不怕挨打、不怕恐吓、始终百折不挠的去传讲耶稣呢？他们为什么这样作？我们能否得着一个答案？</p>
+<p>不但使徒这样，当时那些基督徒都是这样。当司提反被犹太人用石头打死以后，「耶路撒冷的教会大遭逼迫」，「扫罗残害教会，进入各人的家，拉着男女，下在监里」。门徒遵照主的命令──「有人在这城里逼迫你们，就逃到那城去。」──都分散在犹太和撒玛利亚各处。使徒因着有主所交托他们的使命，仍是冒着性命的危险，坚守他们的阵地，住在耶路撒冷。按我们的理想，那些分散的门徒经过这样剧烈的迫害，看见司提反的惨死，一定吓得如同「惊弓之鸟」，不但再不敢传扬耶稣，而且要销声匿迹，不敢承认自己是信耶稣的。事实却完全不是这样。经上告诉我们说，「那些分散的人往各处去传道」；又说「那些因司提反的事遭患难四散的门徒，直走到腓尼基、和居比路、并安提阿，他们不向别人讲道，只向犹太人讲。」用石头打死司提反的是犹太人，逼迫教会的是犹太人，进各人的家拉着男女下在监里的也是犹太人。这些分散到各处的门徒，却仍然到处向犹太人传道，这岂不是自取祸患、自讨苦吃？他们的作风竟和使徒们一样，这又是怎么一回事呢？</p>
+<p>再看保罗和他的同伴在以哥念讲道，招来外邦人和犹太人、并他们的官长的逼迫，他们一齐拥上来，要凌辱使徒，用石头打他们。他们知道了，「就逃到吕高尼的路司得、特庇，两个城，和周围地方去，在这里传福音。」遭遇这样严重的逼迫和恐吓，怎么还传福音呢？可怕的事果真临到了。「有些犹太人从安提阿和以哥念来，挑唆众人，就用石头打保罗，以为他是死了，便拖到城外。门徒正围着他，他就起来，走进城去；第二天，同巴拿巴往特庇去，对那城里的人传了福音，使好些人作门徒；就回路司得、以哥念、安提阿去，坚固门徒的心，劝他们恒守所信的道。」被人用石头打得半死，几乎丧掉了性命，起来仍继续着去传福音，而且从特庇再回到从前遭过危害的城邑，去坚固门徒。他们怎么竟这样拿自己的性命当儿戏呢？</p>
+<p>再听保罗自己所说的话，就知道他早已经把性命置之度外。他时刻准备为他所事奉的主和他所传的福音舍命。他说，「我不以性命为念，也不看为宝贵」；又说，「我为主耶稣的名，不但被人捆绑，就是死在耶路撒冷，也是愿意的。」</p>
+<p>这些人为什么都这样不畏艰险、不惧怕害、抱了必死的决心，始终不懈的去传福音呢？彼得、约翰是这样，保罗、巴拿巴是这样，众门徒也是这样。是什么力量使他们这样作呢？他们这样作是存了什么心呢？使徒自己的话便回答了这个问题──</p>
+<p>「我们没有一个人为自己活，也没有一个人为自己死。我们若活着，是为主而活；若死了，是为主而死。所以我们或死或活，总是主的人。」（罗十四7、8）。</p>
+<p>「原来基督的爱激励我们，因我们想一人既替众人死，众人就都死了；并且他替众人死，是叫那些活着的人不再为自己活，乃为替他们死而复活的主活。」（林后五14、15）。</p>
+<p>「我已经与基督同钉十字架，现在活着的不再是我，乃是基督在我里面活着；并且我如今在肉身活着，是因信神的儿子而活。他是爱我，为我舍己。」（加二20）。</p>
+<p>「所以你们该效法神，好像蒙慈爱的儿女一样；也要凭爱心行事，正如基督爱我们，为我们舍了自己，当作馨香的供物，献与神。」（弗五1、2）。</p>
+<p>「我们既是这样爱你们，不但愿意将神的福音给你们，连自己的性命也愿意给你们，因你们是我们所疼爱的。」（帖前二8）。</p>
+<p>「亲爱的阿，我们应当彼此相爱，因为爱是从神来的；凡有爱心的，都是由神而生，并且认识神。没有爱心的就不认识神，因为神就是爱。神差他的独生子到世间来，使我们藉着他得生，神爱我们的心在此就显明了。不是我们爱神，乃是神爱我们，差他的儿子为我们的罪作了挽回祭，这就是爱了。亲爱的阿，神既是这样爱我们，我们也当彼此相爱。从来没有人见过神；我们若彼此相爱，神就住在我们里面，爱他的心在我们里面得以完全了。」（约壹四7～12）。</p>
+<p>读了这几段经文，我们便明白为什么使徒和那时的门徒那样不辞辛劳，不避危险，到处传扬耶稣和他的福音了。他们所以这样作，完全是因为被基督的大爱所激励。他们因着基督为他们舍命，拯救了他们，他们不能不爱他们的主，不能不爱那些在他们旁边的人。他们自己得了主的救恩，领受了生命的道，巴不得立时将这种好处分给一切尚未得着的人，所以他们不顾一切去传福音。这种从主那里所来的大爱在他们里面燃烧，使他们不怕羞辱，不怕逼迫，不怕舍弃性命。使徒行传中所记载的那些激昂慷慨、可歌可泣的事迹就是这样发生的。</p>
+<p>从使徒的时代直到今日，每一个真诚悔改、信了基督、得了救恩的人，都是愿意把自己所得的福音传给别人，都希望在他们旁边的人也能得着他们所得着的生命的道。基督徒越热心爱主，就越热心传福音，那就是因为他们越爱主也就越爱人，在爱人的事工中最伟大最重要的，莫过于领人得生命了。所以他们不惜作任何牺牲，只希望能藉此使别人得着他们所得着的救恩。</p>
+<p>这是多么伟大真挚的爱呢？为领别人信靠基督、得着生命，自己不惜冒任何危险，作任何牺牲，甚至连自己的性命也置之度外。若不是先得了主的爱，又被他的爱所激励，凭着人自己的爱心和能力，真不可能作出这样的事来。基督的爱是多么有能力、有功效阿！</p>
+<p>希奇！竟会有些人批评基督徒，说他们不去为人民服务，只注重自己得救、自己进天国，这是自私的人生观。许多基督徒听了这样的批评，竟会摇动起来，觉得别人所批评的话是正确的，因此自觉惭愧，不愿意再承认自己的信仰。如果再软弱下去，将来就可能放弃信仰。让我把这事说破了罢。这种说法不过是反对神的人毁坏基督徒的信仰所用的许多方法当中的一个。这种说法乍听似乎很有道理，但仔细一分析，便知道它完全是一种似是而非的理论。容我来证明它的荒谬。</p>
+<p>我要问说这话的人，他们参加工作每月是否领取薪金？每天是否吃饭？是否穿衣？如果他们每月领取薪金，每日吃饭穿衣，这不也是自私么？既说为人民服务，就当尽心尽力为人民服务就是了，为什么还要按月领取薪金、每日吃饭穿衣呢？他们一定要回答我说，「如果我们不领取薪金，不吃饭穿衣，我们必定饿死冻死，那还怎么能为人民服务呢？」他们说对了。吃饭穿衣是人类生活在世上不可少的。必须自己吃得饱、穿得暖，才能生存，才能为人民服务。这不叫自私。如果只顾自己吃得饱，穿得暖，却不顾那些吃不饱、穿不暖的人，不设法帮助他们也有食有衣，那才是自私的呢。</p>
+<p>根据这个原则，我们来分析一下，基督徒信了基督，得了永生以后，是否愿意别人也信基督，也得永生？如果他们得了永生以后，不向别人传福音，不领别人信基督得永生，那样，他们就真是自私。事实告诉我们，没有一个基督徒在自己得着永生以后不想领别人也得永生。不但这样，他们甚至受劳苦，冒艰险，把自己的性命都置之度外，去尽力传扬福音，领别人信主，这正是最有爱心的人生，怎么可以说是自私呢？</p>
+<p>反对我的人也许要问我说，「你们既说爱人，愿意领人信基督得永生，就去这样帮助别人好了，为什么自己先要得永生呢？」这个问题太容易回答了。请问，我们要帮助无衣无食的人使他们有衣有食，是不是我们自己必须先吃得饱、穿得暖呢？如果我们自己不先吃得饱，穿得暖，我们已经饿死冻死了，还怎样能帮助别人呢？信基督得永生的事岂不也是一样么？我们自己若不先信基督得永生，怎能去帮助未信的人，领他们也得着这种好处呢？</p>
+<p>撒但藉着不信的人要败坏基督徒，真是用尽了方法：用利益引诱，用痛苦恐吓，用势力威胁，用种种似是而非的理论模糊基督徒的思想，摇动他们的信心。这一切方法中，只要有一样能发生功效，他就算大功告成。在热心的基督徒身上，这最后的一个方法比前面的几个方法更为灵验。因为热心的基督徒愿意为主舍弃一切的利益，也甘心为主忍受一切的痛苦。他们为主的缘故不惜丧失性命，当然他们也不惧怕威胁了。那种种似是而非的理论却最容易生效。热心的基督徒都愿意爱人，却不愿意自私。如今不信的人说他们信基督得永生是自私，他们如果不会分辨这种似是而非的说法，便会受迷惑，因而心中起了战争。他们既不愿意在人面前被人看为自私，他们也不甘心在神面前作自私的人。他们的意议略一模糊，他们的思想便开始陷入错误。在这时候若没有人加以指导矫正，就会越陷越深，结果便不堪设想了。</p>
+<p>基督的门徒阿，我们当持守我们所信的道，我们更要竭力传扬我们所信的福音。当我们热心信主、爱主、不顾一切为主作见证的时候，我们不但不是自私的人，我们正是世上最有爱心的人。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

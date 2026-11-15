@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>看看我们的主 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>看看我们的主</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/2看看我们的主-04--.mp3">🎧 看看我们的主（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/2看看我们的主-05--.mp3">🎧 看看我们的主（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「耶稣进了神的殿，赶出殿里一切作买卖的人，推倒兑换银钱的人的桌子，和卖鸽子的人的凳子；对他们说，『经上记着说，我的殿必称为祷告的殿，你们倒使他成为贼窝了』？」（太二十一12、13）。</p>
+<p>我们读了这一段记载或者要感觉希奇。那位「柔和谦卑」，「被骂不还口，受害不说威吓的话」的主，这次怎么竟这样大发烈怒，同这些作买卖的人为起难来？这些作买卖的人将本图利，辛苦勤劳，赚几个钱养生，也不是容易的事。就是他们不应当到殿里来作买卖，耶稣斥责他们，叫他们出去也就够了，何必这样严厉对待他们，「推倒兑换银钱的人的桌子，和卖鸽子的人的凳子」呢？比这个更奇怪的就是他说，「经上记着说，我的殿必称为祷告的殿；你们倒使牠成为贼窝了。」说作买卖的人在圣殿中作买卖是使圣殿成为贼窝，那无异于说作买卖的人是贼，这种说法更令人大惑不解了。作买卖不是一种正当的职业么？敬虔的人难道就不可以作买卖么？将货物贩运了来，卖给那些需要的人，赚几个钱养生，难道这也是犯罪么？</p>
+<p>我们若不仔细思想，也许要有些问题发出来。但我们如果细想一下，他们便知道事实不是这样的简单。圣殿中没有守殿官么？若不得他们的允许，这些作买卖的人能够进到殿里去作买卖么？守殿官若不是受了这些商人的贿赂，能不能允许他们到圣殿里去作买卖呢？耶稣说他们使神的殿成为贼窝，不是只因为他们在殿中作买卖，乃是因为这些作买卖的人与守殿官共同营私舞弊。营私舞弊不是窃贼的行为么？在圣殿里营私舞弊不是使圣殿成为贼窝了么？这种可憎到了极点的恶行还可以容忍么？我们的主将这些作买卖的人的桌子凳子推倒，把他们从殿里赶出去，还算太严厉么？</p>
+<p>不错，我们的主是「柔和谦卑」的。他「被骂不还口，受害不说威吓的话」。无论什么时候人逼迫他、苦待他，他总是和和平平的忍受。他自己什么亏也可以吃，什么苦也甘心受；但神的殿被恶人践踏，却是他所不能忍受的事。他赶出这些作买卖的人，不是为他自己的好处。他赶出他们去与他也无益，他不赶出他们去与他也无损。为他自己的利益打算，还是不赶他们更好一些，因为他自己既减少一些麻烦，还可以少遭一些人的反对，少树一些仇敌。但他不肯这样作。他以他父的事为念。他爱他的父所爱的，他恨他的父所恨的。他的父是忌邪的神。他的父不能容纳邪恶不义的事存在圣殿中。他因为忠心于他的父，所以不顾恶人的恨恶和自己的安全，「赶出殿里一切作买卖的人，推倒兑换银钱的人的桌子，和卖鸽子的人的凳子」。在这里我们可以明白他这次所作的不但不与他平日的德行相反，而且正是与他平日的德行相合。由这件事上我们更可以看出他在神面前的顺服和忠心，更可以看出他那种圣洁高尚的人生是何等的可羡慕，何等的可效法了。</p>
+<p>我们称他为主，称他为夫子，我们的人生果然像他么？说起来真是可怜又可耻。我们的生活不但不像他，而且正是与他相反。当我们自己的利益名誉受到别人一点损害的时候，我们便怒发冲冠，挺身起，比我们的主在殿里赶出那些作买卖的人更勇敢多少倍。但到了我们看见神的殿被恶人践踏，神的道被恶人混乱，神的名被恶人亵渎的时候，我们却噤若寒蝉，不用说不敢起来反对，甚至连一句抗议的话都不敢出口。这种现象充分的表现出来我们的自私、怯懦、不与神同心，在神的工作上不忠诚。看看我们的主那种忠诚勇敢，不顾自己的利害荣辱，只知道顺从父命，尽忠父工的那种模范，真使我们惭愧到无地自容。</p>
+<p>今日教会中可憎到极点的事岂只一样呢？教会的领袖站在讲台上批评圣经，否认圣经中所载的要道，公然与基督为敌，破坏圣徒的信心，这不是极可憎的事么？未曾悔改，没有信仰，人格卑鄙，行为不端的人，在教会中踞高位，掌大权，以致教会中充满了罪恶污秽，这不是极可憎的事么？无神派，拜假神的，富而不仁的财主，千夫所指的贪官，都被请到教会中的特别大会讲台上演讲致训词，这不是极可憎的事么？一手举着基督的旗帜，一手拿着「缘簿式」的募捐册，到处低首下心，胁肩谄笑，向人伸手讨钱，嘴里还说是为作圣工，为荣耀神，这不是极可憎的么？举止轻佻，装饰妖冶，品行卑鄙，没有信仰的青年男女，一群一群的走到礼拜堂的讲台上去奏乐唱歌，在有特别庆祝聚会的时候，甚至在讲台上舞蹈演剧，这不是极可憎的事么？我在这里不过略举几个例子，若要详细的数算，教会中可憎的事真不知道有多少。各处都有真实信主的人，但能像主那样勇敢无畏，仗义执言，将自己的利害、损益、得失、荣辱，一概置之度外，不畏逼迫，不顾毁谤，一直向着这些可憎的事进攻的，究竟有几个人呢？有些信徒看见这一切的事也感觉痛心，也十分难过，同人谈话时也表示些不满意，但到了真用得着他们说话作事反对这些罪恶的时候，他们因为怕得罪人，怕自己的利益名誉受损失，又闭口不发一言了。也有的信徒因为与别人意见不合，或是与教会的领袖有什么嫌隙，或是为自己争地盘，谋利益，便藉题发挥，反对教会中的某种罪恶，好达到他们报仇利己的目的。因为他们自己存心不正，他们的行为也不比他们所攻击的人更好多少，他们的言论动作自然不能使恶人畏惧顾忌。因为有这种种的情形，恶人的胆量便越来越大，他们的势力也越来越厚，教会中的情形也就越来越腐败了。软弱的信徒便因此跌倒退后，有心寻求真理的人们便因此裹足不前，不信主的人看见教会这种腐败的情形，便轻看我们所信的主，和我们所传的道，自然更不容易信主了。</p>
+<p>我不是说有人起来反对教会中这些罪恶，就可以把恶人的势力完全铲除，就可以把教会中的弊病完全去掉。这是办不到的。我们的主把那些作买卖的人从殿里赶出去以后，犹太人宗教方面的情形并未曾因此有什么进步，但至少可以使犹太人知道神的公义和圣洁，知道神是忌邪的神，知道神恨恶罪恶，知道怙恶不悛的人总不免受神的震怒。照样，我们今日起来秉公义反对教会中的罪恶，向着那些可憎的事进攻，虽然不能将教会中恶人的势力铲除净尽，不能将教会中的弊病完全去掉，但至少还可以使人知道神是公义圣洁恨恶罪恶的，使作恶的人多少有些顾忌，不敢像平日那样肆无忌惮。同时也可以使软弱的人得着鼓舞，使寻求真理的人看见一些亮光，使不信的人知道教会中不都是假冒为善，为名为利，欺世欺人的份子。</p>
+<p>不过我们若真要效法我们的主那样不顾一切，反对罪恶，我们就必须准备遭遇我们的主所遭遇的逼迫、反对、攻击、毁谤。但我们若笃信主的应许，我们不但不怕这一切，而且十分乐意为神的道为主的名遭遇这一切，因为主曾应许我们（请看太五11、12）。</p>
+<p>不计算自己的利害，只以父的事为念，奋不顾身，反对罪恶，我们的主已经给我们作了极好的榜样。主的门徒阿，可以兴起了。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

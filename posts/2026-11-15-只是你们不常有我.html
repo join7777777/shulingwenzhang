@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>只是你们不常有我 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>只是你们不常有我</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/5只是你们不常有我-01.mp3">🎧 只是你们不常有我（1/2）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/5只是你们不常有我-02.mp3">🎧 只是你们不常有我（2/2）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>（一位青年女信徒曾有一度远离了主，跌倒了许多日子不能起来。一天早晨心中忽然想到一句话，「只是你们不常有我」。她并不记得圣经中什么地方记着这一句话。但这一句话深深的感动了她。她心中忧伤难过，她重新回到主面前。在一个聚会中她述说这段见证。她哭了，许多人也流下眼泪来，我当时也深受感动，因此写了这一篇。）</p>
+<p>「常有穷人和你们同在，只是你们不常有我。」（太二十六11）。</p>
+<p>我的门徒，我所拣选所亲爱的，我爱你们，为你们舍了天上的荣耀，为你们在世上受尽了千辛万苦，为你们舍了性命，拯救你们脱离了死亡，把你们领到神的面前，承受了父家中一切的福乐。我原想你们会把我放在心上，会爱我胜过一切。却不料你们的心中有许多人，有许多物，有许多事，「只是你们不常有我」。</p>
+<p>「你们常有家中的人和你们同在」。你们与你们的丈夫或妻子炉边共话，月下谈心。你们与你们的儿女嬉戏游玩，追逐取乐。你们与你们全家的人坐在肉锅旁，吃得饱，喝得足。你们为他们计划他们的前途，为他们谋求幸福，为他们积蓄金钱，为他们购置田地房产。你们常有他们和你们同在，「只是你们不常有我」。</p>
+<p>「你们常有你们的朋友和你们同在」。你们和他们游山玩水，考古评今。你们和他们对月品茗，临风高歌。你们与他们通财利，共甘苦。他们病卧在床，你们肯昼夜服侍，衣不解带。他们遭遇祸患，你们肯冒险相陪，跬步不离。你们为你们的朋友肯披星戴月，你们为你们的朋友能废寝忘食。你们常有他们和你们同在，「只是你们不常有我」。</p>
+<p>「你们常有你们的尊荣名誉和你们同在」。你们在同人和朋友中间得到不少的称赞和好评。许多人因为你们德高望重，饱学多艺，称扬你们。许多人因为你们慷慨乐善，博施济众，赞美你们。许多人因为你们敬虔热心，勤劳服务，敬爱你们。许多人因为你们手腕敏捷，言词流利，景仰你们。你们听见看见这一切，禁不住心中愉快，得意洋洋。你们因此越发奋勉前进，孜孜不息。你们的心中昼夜想念这一切，「只是你们不常有我」。</p>
+<p>「你们常有你们的事业和你们同在」。你们成就了不少事业。这些事业使你们得了很大的满足，使你们得了名誉、尊荣、金钱、安乐。你们喜爱你们的事业，许多人也艳羡你们的成功。这更使你们专心致志在这些事业上，「只是你们不常有我」。</p>
+<p>「你们常有你们的恩赐和你们同在」。我特别恩待了你们，给了你们一些超人的恩赐，因此你们中间一切的恩赐都全备。你们用这些恩赐荣耀了神，造就了人。你们欣赏你们的恩赐。你们宝爱你们的恩赐。你们重看你们的恩赐。别人因为你们有许多恩赐，便称你们为属灵，你们自己也以为自己是属灵的人。可惜你们得了恩赐，却忘记了给你们恩赐的主；你们重看恩赐，却忽略了那拯救你们一直到底的主。你们常有恩赐和你们同在，「只是你们不常有我」。</p>
+<p>「你们常有你们的钱财和你们同在」。你们从父母手中承受了许多钱财。你们勤劳作工得了许多钱财。你们绞脑汁，费心血，赚来许多钱财。你们存在钱柜中，在银行里，在你们的心里。你们中间有些人手中虽然没有多少钱，但心里所有的钱却比任何人都不少。你们从早到晚都在那里思慕追求钱财，说话行事都以得钱为前提。你们常有钱财和你们同在，「只是你们不常有我」。</p>
+<p>「你们常有你们的产业和你们同在」。你们承受了祖先所遗留的一些产业，或是自己勤劳置买了一些产业。有的人在乡间有田地，有的人在城内有房屋，也有的人在都市有几处商店，有许多生意。你们孜孜勉勉夜以继日的经营这些产业。这些产业也给了你们许多幸福，许多享受。你们也想牠们将来可以作你们儿女和后裔的靠山和保障。你们每晨睁眼所看的是你们的产业。你们每晚闭目所想的还是你们的产业。你们常有产业和你们同在，「只是你们不常有我」。</p>
+<p>「你们常有你们所喜爱的一些东西和你们同在」。你们中间有的人有一些特别欣赏的字画图书，有的人有一些特别宝爱的古玩玉器，有的人有一些特别珍贵的器皿家具，有的人有一些特别爱惜的饰物衣履。你们爱这些过于一切。你们肯费许多钱财去购置这些东西，费许多时间去欣赏这些东西，费许多力气去搜求这些东西，费许多心血去收藏这些东西。你们常有这些东西和你们同在，「只是你们不常有我」。</p>
+<p>因为你们不常有我，所以你们受了许多无谓的痛苦和打击。因为你们不常有我，所以你们的心境随着外物而转移。因为你们不常有我，所以你们胜不过你们自己肉体的软弱，更敌不住撒但的攻击。因为你们不常有我，所以你们失去了许多天上属灵的福气。因为你们不常有我，所以你们的生命总是萎靡不振，奄奄一息。因为你们不常有我，所以你们的心中常是充满了愁苦、烦恼、惧怕、失望，总得不着那种属天的喜乐、平安、和胜利。你们不常有我，我并不受什么亏损，受亏损的乃是你们自己。</p>
+<p>如果你们能常有我，你们要看见你们的人生有极大的改变。如果你们能常有我，无论别人怎样苦待你们，伤害你们，辱骂你们，逼迫你们，你们都能欢喜的忍受。如果你们能常有我，你们就是贫穷到什么地步，卑微到什么地步，名誉财产受多么大的损害，你们心中的喜乐还是不受丝毫的影响。如果你们能常有我，你们的肉体就要再无力活动，撒但的攻击临到你们，要像箭射到钢制的盾牌上一般。如果你们能常有我，你们便有丰盛的生命，这种丰盛的生命将要在你们人生的各方面显明出来，使神得着荣耀，使人得着福气。如果你们能常有我，便像枝子连在葡萄树上，又像树木栽在河边，必定四时常青，结实累累。如果你们能常有我，你们便有了一切。可惜！「你们不常有我！」</p>
+<p>酣睡的人哪，醒来罢！流荡的人哪，转回罢！我忍耐你们已经多时，我曾屡次招呼你们，我今日再向你们发出一次呼声。我希望你们不再执迷不悟。你们使我焦急使我伤心已经够了。我希望今后再不用说这一句使我悲伤的话──</p>
+<p>「只是你们不常有我」。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

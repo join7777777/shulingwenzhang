@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>属灵的武装 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>属灵的武装</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/7属灵的武装-01.mp3">🎧 属灵的武装（1/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/7属灵的武装-02.mp3">🎧 属灵的武装（2/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/7属灵的武装-03.mp3">🎧 属灵的武装（3/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/7属灵的武装-04.mp3">🎧 属灵的武装（4/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/7属灵的武装-05.mp3">🎧 属灵的武装（5/5）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「基督既在肉身受苦，你们也当用这样的心志将自己武装起来；因为在肉身受过苦的，就已经与罪断绝了。你们存着这样的心，从今以后，就可以不从人的情欲，只从神的旨意，在世度余下的光阴。」（彼前四1、2）。</p>
+<p>在这一段经文里，中文译本与原文稍有一点出入。中文译本中将「用这样的心志将自己武装起来，」译作「将这样的心志作为兵器」。虽然这种译法大意仍是与原文相同，但它却把一个动词变成了一个名词，详细分析起来，二者的意思也实在有相当的差别。「兵器」是用以攻击敌人的器械。「武装起来」不但是说手中拿着用以攻击敌人的器械，而且包括着自己要穿戴整齐全副的军装盔甲，藉以保护自己不受敌人伤害。</p>
+<p>说这一段话的彼得，曾有一次在撒但和属他的人面前遭遇了极惨痛的失败。他当他的主在大祭司的院子受审的时候，曾三次不敢承认他的主。他非但不敢承认耶稣是他的主，他甚至起誓说，「我不认得那个人」。他为什么失败到这种地步呢？原因就是他怕自己被犹太人捉住，以致受他的主所受的苦。他在那时没有准备受苦，换一句话说，就是他没有用受苦的心志将自己武装起来，所以他就惨败在敌人面前。</p>
+<p>过了不久，他看见了他的主因为受苦不但成全了救赎人类的大工，而且也战胜了掌死权的魔鬼，并从死人中复活了起来。他看见他的主因受苦而得胜，他更明白他自己是因为怕受苦所以遭了失败。他的经验使他彻底了解惟有用受苦的心志将自己武装起来，才可以战胜仇敌的恐吓和攻击，所以他在主耶稣升天以后，天天准备受苦。犹太人的官府和首领把他和他的同伴捉拿管押，又恐吓他们，不许他们再奉耶稣的名讲道；可是他们被释放以后，仍然放胆讲道（见徒四1～31）。过了不多日子，他和别的使徒又为传福音被逮捕了。他们被收在外监。主的使者夜间开了监门，把他们领出来，吩咐他们去站在殿里传讲福音。他们毫不迟疑的在天亮的时候进到殿里去讲道。不久，他们又被带到公会里，受大祭司的责问。他们是那样的勇敢回答说，「顺从神，不顺从人，是应当的。你们挂在木头上杀害的耶稣，我们祖宗的神已经叫他复活。神且用右手将他高举，叫他作君王，作救主，将悔改的心和赦罪的恩赐给以色列人。我们为这事作见证，神赐给顺从的人的圣灵也为这事作见证。」因着他们所说的这些话，激恼了公会的人，以致他们几乎被杀。神却行了奇妙的事，藉着教法师迦玛列的口阻止了公会的人。他们虽然未曾被杀，却挨了一顿打，并且被禁止不许奉耶稣的名讲道，以后就被释放了。他们在被释放以后，仍然每日在殿里，在家里，不住的教训人，传耶稣是基督（见徒五17～42）。彼得到这时竟是这样勇敢，这样刚强，与他在大祭司的院子里不认主的时候相比，竟像完全不同的两个人。一个原因是因为他们在五旬节的时候得着了圣灵的能力；另外的一个原因是因为在前一个时期中他没有用受苦的心志将自己武装起来。他怕受苦，所以他藉着说谎言、不承认主，来逃避苦难，因此遭到了那样惨痛的失败。到了后一个时期中，他用受苦的心志将自己武装起来，他随时准备着受苦。他不逃避苦难，因此仇敌便再不能克服他，他就得到了一连串的胜利。他既然在经验中深深体会了这个真理，所以他勉励教会说，「基督既在肉身受苦，你们也当用这样的心志将自己武装起来。」</p>
+<p>接着彼得又告诉我们说，「因为在肉身受过苦的，就已经与罪断绝了；你们存这样的心，从今以后，就可以不从人的情欲，只从神的旨意，在世度余下的光阴。」这些话说明，神许可我们受苦，正是使我们得益处。许多圣徒的经验都证实了这几句话。我们有许多的罪恶是需要藉着受苦才能离弃的。只有在受苦的时候我们才能清楚看见我们人生中许多的过犯和失败。只有在受苦的时候我们才会在神面前深深的自卑懊悔。只有藉着受苦，我们的渣滓才能被炼净，我们的棱角才能被磨光。试看那些德行最高尚，生活最圣洁的基督徒，有几个是不曾多经痛苦患难的呢？</p>
+<p>我们的肉体拦阻我们，不容我们遵行神的旨意；撒但和他所管辖的世界也拦阻我们，不容我们遵行神的旨意。撒但和他所管辖的世界用种种可怕的事恐吓我们，我们的肉体在我们里面也响应撒但的声音，他们使我们想到因遵行神的旨意所要遭遇的损失、危害、羞辱、患难。如果我们未曾用受苦的心志将自己武装起来，我们便会因逃避苦难而不敢遵行神的旨意。但我们若豫先作好了准备，用受苦的心志将自己武装起来，当撒但、世界、和我们的肉体一齐起来恐吓我们的时候，我们便对他们说，「受苦么？好极了！我早已准备受苦了。我欢迎苦难的临到，像欢迎亲爱的朋友一样。」当我们存着这样的心志，说这样的话语的时候，这些仇敌的进攻便完全失败，我们也「就可以不从人的情欲，只从神的旨意，在世度余下的光阴」了。</p>
+<p>有一些圣徒是在受苦的时候不能得胜，以致倒下去，但更多的圣徒是被撒但用种种恐吓的言语吓倒的。他对他们说，「如果你在反对神的人面前承认主的名，承认你是跟从耶稣的，你将要遭遇许多人的攻击笑骂。如果你坚持你所信的道，绝不作丝毫的让步，你将要丧失你整个前途。如果你要作一个绝对诚实的人，坚决不说一句谎话，你将要遭遇不堪设想的祸患。如果你不取一点不义之财，你将要忍饥受冻。如果你不设法获得不信主的人的同情和谅解，你将要在世上弄得没有立足之地。如果你完全照圣经上的教训去行，只讨神的喜欢，不讨人的喜欢，你将要成为众人的仇敌。如果你要在一切的事上都效法基督，你将要遭遇他所遭遇的惨死。」此外他还将许多可怕的话语送到他们的耳中，送到他们的心内，使他们听了以后心中恐惧，身上战抖。在这种情形之下，他们不敢不让步了，他们不敢完全顺服神的旨意了。起初他们还不准备完全倒下去，还不准备向撒但投降，不过想只让步到某种程度，想得到光荣的妥协。那知道他们向撒但让步，撒但却向他们进攻。他们只好节节败退，至终不至完全作了撒但的俘虏不止。</p>
+<p>他们遭遇这样的惨败，也是必然的结果。军队作战的时候只能向敌人进攻。即使不能进攻，最低的限度也必须坚守自己的阵地，绝不能准备退让。如果退让起来，势必使敌人的势力增加，使自己的阵地缩小。在这种情形之下，自己的地位一定是越来越不利。况且既能作第一次的让步，也就容易作第二次的让步。今日让一尺，明日让一丈，接着三丈、五丈、十丈、二十丈、半里、一里、十里、二十里、五十里、一百里的让下去，请问那种结果还堪设想么？</p>
+<p>我们固然应当时刻准备受苦，但苦难究竟是否临到我们，这还要看神的旨意如何。如果他看我们受苦是与我们有益，他便容苦难临到我们，不然，即使我们准备受苦，苦难也不会临到我们身上。使徒雅各布布被希律杀害；彼得虽然也被希律拿住，下在监里，神却在夜间差遣天使把他从监里领出来，救他脱离了希律的毒手（事见徒十二章）。神是否只能救彼得，却不能救雅各布布呢？还是神待人有偏心呢？二者都不是。神看见雅各布布在地上的工作完毕，就藉着希律的手使雅各布布进入荣耀。神还有许多的事工托付彼得去作，就藉着天使把他从监牢里拯救出来，雅各布布被杀，并不是他比彼得更不幸；彼得被救出监，也不足以证明神待他比待雅各布布更好。神在他们两个人身上有不同的托付和不同的安排，所以他们两个人的遭遇也不一样。我们不必问神要怎样待我们。如果神要使我们作雅各布布，我们要赞美他；如果神要使我们作彼得，我们也要感谢他。我们不但不应当拣选两种遭遇中的任何一种，我们也不当求神使我们知道我们将来的遭遇究竟如何。我们只应当时刻准备受苦，用受苦的心志将自己武装起来，「不从人的情欲，只从神的旨意，在世度余下的光阴。」</p>
+<p>许多基督徒在遭遇危险试炼或听见一些与自己不利的消息的时候，总是愿意知道自己将来的遭遇是吉是凶。这实在是一种不健全的心理。我不求神使我知道我将来要遭遇什么，我只知道按着神的旨意走我今日所当走的道路，作我今日所当作的事工。我不但不求神使我知道我的前途是吉是凶，我也不想知道这些。如果我知道我的前途顺利通达，我怕我要粗心大意，以致落在试探中；如果我知道我将来要遭遇患难痛苦，我怕我会恐惧忧虑，以致给魔鬼留下陷害我的机会。我不愿意知道将来要临到我的事。我只用受苦的心志将自己武装起来，好去应付要临到我的任何事物。</p>
+<p>还有一种不好的现象，也是我们应当避免的，那就是我们喜欢听各样使人惊恐的消息，而且听了以后还喜欢去传述给别人。我们本来应当听那些坚固我们的信心，鼓舞我们向前进步的话语，也应当藉着我们口中所说的话使别人刚强，使别人信靠神。我们不应当听那十个以色列的探子所说的话。如果我们听了，我们要喧嚷哭号，我们要发怨言，我们要起意回埃及去，我们也要招来神的咒诅。我们应当听那有信心的乔舒亚迦勒的话。我们更不应当作报恶信的人，对别人说一些摇动人的信心，使人恐惧软弱的话。我们应当像乔舒亚和迦勒那样，鼓励人仰望神的大能和应许，劝勉人不要看环境，不要看那些可怕的人和那些可怕的事。我们应当对那些胆怯的人说，「有耶和华与我们同在，不要怕他们。」我们那样作，便是尊重神，神也要重看我们，使我们蒙福，正如乔舒亚和迦勒一样。如果我们报恶信，说一些使人软弱，使人恐惧的话，我们不但害了那些听我们的人，而且我们自己也要因为轻看神，以致遭遇神的震怒，如同那十个人遭瘟疫死在耶和华面前一样（事见民十三25～十四38）。</p>
+<p>也许有人说，「我们既然准备受苦，听听那些可怕的消息，好豫先作一些准备，又有什么不可呢？」要知道准备受苦是我们对神的信靠和顺服，但那些报恶信的人所说的话正是从撒但来的，为要藉此使我们因恐惧而失去对神的信靠和顺服。如果我们偶然听见人说报恶信的话，神一定会保守我们，不使我们软弱。但如果我们喜欢听这一类的话，并且设法打听这一类的消息，那便足可以证明我们里面存了一颗惧怕受苦的心了。既然有了惧怕受苦的心，还如何谈得上用受苦的心志武装自己呢？</p>
+<p>撒但对圣徒的攻击无时或休，属灵的战争越来越剧烈，让我们听从神藉着使徒所给我们的教训，用受苦的心志将自己武装起来，好与撒但和他的使者作战，直到我们大获全胜，高唱凯歌的日子。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

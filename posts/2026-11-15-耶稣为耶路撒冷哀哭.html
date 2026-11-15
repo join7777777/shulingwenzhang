@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>耶稣为耶路撒冷哀哭 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>耶稣为耶路撒冷哀哭</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<p><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/2认识主（我们的主）/2耶稣为耶路撒冷哀哭-03--.mp3">🎧 收听本篇音频</a></p>
+<p><strong>正文</strong></p>
+<p>「耶稣快到耶路撒冷，看见城，就为她哀哭，说，『巴不得你在这日子知道关系你平安的事！无奈这事现在是隐藏的，叫你的眼看不出来。因为日子将到，你的仇敌必筑起土垒，周围环绕你，四面困住你，并要扫灭你和你里头的儿女，连一块石头也不留在石头上；因你不知道眷顾你的时候』。」（路十九41～44）。</p>
+<p>希奇！为什么耶稣为耶路撒冷城哀哭呢？耶路撒冷不是神的选民犹太人的京城么？这城中不是有神的殿，而且有大祭司、祭司长、和众祭司，按时在殿外献祭，在殿内焚香么？这城中不是还有文士查考圣经，又向百姓宣读神的律法么？这城中的百姓不是每逢节期都热烈的按着神的律法守节，每逢安息日都严紧的遵着神的诫命安息么？这样的一座城有什么可哭的呢？这样的一座城还能落在仇敌的手中，被他们所毁灭么？神不能伸出有能力的手保护这城脱离一切的危险么？纵使他不为他的殿挂心，他还不看顾这些敬虔的百姓么？这样的一座城若还能遭遇毁灭，神的权能在那里呢？这样热心事奉他的百姓他都不加看顾保护，他还能称为信实慈爱的神么？</p>
+<p>不！不！神使耶路撒冷遭遇毁灭，正是因为这城中有圣殿，有大祭司、祭司长、和众祭司，按着时候献祭焚香；正是因为这城中有文士查考圣经，又向百姓宣读神的律法；正是因为这城中的百姓热烈守节，严紧守安息日；正是因着这些事，他们才遭遇这样重的刑罚。他们有圣殿，然而他们不存诚心敬拜神，他们查考圣经，听人宣读神的律法，然而他们不照着神的律法行；他们谨守节期和安息日，同时他们却多行不义干犯神。他们注意这些形式仪节上的敬虔，却不注重生活行为上的敬虔。他们亲近神，用嘴唇尊敬神，心却远离神。（赛二十九13）「他们的口多显爱情，心却追随财利。」（结三十三31）他们在这些仪式的敬拜上都热心殷勤，但他们的生活中却充满了各样的罪恶不义。如果他们的城中没有圣殿，没有祭司在殿中事奉，也没有文士查考圣经，宣读律法，如果他们未曾谨守节期和安息日，他们或者还容易认罪悔改，诚心归向神。但现在他们因着有这些，便觉得有恃无恐，大胆的多行不义，惹神的震怒，招来不堪设想的灾祸。主耶稣清楚的看明白了这事，所以才为他们哀哭。</p>
+<p>此外还有一样大罪，就是他们自以为虔诚事奉神，却不接待神所差来的基督。虽然耶稣多次在他们中间讲道，又在他们中间显出许多凭据来，证明他是神所差来的，但他们始终硬心不信。他们这样「不尊敬子，就是不尊敬差子来的父。」（约五23）追本溯源，他们不接待基督，还是由于他们不诚心敬畏神，顺从神。正如耶稣说，「我的教训不是我自己的，乃是那差我来者的。人若立志遵着他的旨意行，就必晓得这教训或是出于神，或是出于我凭着自己说的。」（约七16、17）。他们越违背神，越不能接待耶稣，越不能接待耶稣，他们的罪也就越大了。</p>
+<p>可叹！主耶稣为耶路撒冷哀哭，但耶路撒冷的百姓却不为他们自己哀哭，以致到底在主后七十年遭遇了那极惨痛的灾祸。城被罗马将军提多带兵围困，受了几个月极重的苦难，以后到底被罗马军队攻入，以致城中的居民「倒在刀下，又被掳到各国去，耶路撒冷被外邦人践踏」，正如主耶稣所豫言的。（见路二十一20～24）。假使当日耶路撒冷的百姓肯为自己哭，他们必定急速悔改，离弃他们的不义，接待耶稣，这样便可避免了那场惨痛的灾祸。只有主耶稣为他们哀哭，他们却不见自己哀哭，究竟有什么益处呢？</p>
+<p>主耶稣为耶路撒冷哀哭的事与今日的信徒有什么教训么？有，有极大的教训。今日的教会与耶路撒冷的百姓并无差别。教会有拜神的礼拜堂，有教导众人的牧师和许多领袖。他们领着众信徒按时礼拜、歌诗、祈祷；他们也将神的话教训众人。每逢有什么教会的节期，他们也热烈的记念庆祝。在许多礼拜堂中我们可以看见庄严肃静的气象，听见幽雅动人的歌声；牧师在台上宣读圣经，信徒在堂中恭聆宝训。乍一看去，这些人真是敬虔事奉神。但一细观察这些人的生活，哎呀！真了不得！真实敬虔的人固然也有，但究竟很少。大多数的基督徒和大多数的教会领袖，与当日耶路撒冷的百姓比较起来，真可说形影毕肖，毫无两样。他们在礼拜的时候，祈祷的时候，读经的时候，看着真是十分敬虔，及至出了礼拜堂放下圣经以后，他们的生活竟同不信的人没有多少分别，有的比不信的人更坏。如果他们没有礼拜堂和牧师，不会歌诗祈祷，也没有圣经在手中，不知道圣经中的道理，他们或者还容易认罪悔改，诚心归向神。但现今他们因着有这些，会作这些事，他们便总难认识自己的真面目了。你若劝责他们，他们会对你说，「我们是基督徒，我们常去礼拜，我们会歌诗祈祷，我们明白圣经，我们捐过多少钱，我们领过多少人信耶稣。」好像人作过这些便是敬虔的信徒一样。他们不知道真实的敬虔与人生是不能分开的。他们没有想到只会这些仪式上的敬拜，却不在生活上遵行神的命令，便是假冒为善，便是有祸的。</p>
+<p>现代的教会不接待主耶稣，也正像古时耶路撒冷的百姓一样。虽然称为基督徒的都口称耶稣为主，但真正以诚实的心接待他，以他为他们人生中的主人的究竟有多少呢？不是口里喊「和撒那」，心中喊「钉他十字架」的人又有多少呢？比这个更令人痛心的，就是许多基督徒（？）和教会的领袖竟公然的不承认耶稣是代人赎罪的羔羊，复活的救主。他们给他戴上「万世师表」，「完人模范」、「宗教革命家」、「社会改良者」，以及种种好看的帽子，却不信赖他是神和人中间惟一的中保，不信神为他所作的见证。他们庆祝人所编造的「圣诞节」，然而他们不信圣经所记的耶稣奇妙超凡的诞生。他们记念耶稣受难，然而他们不信他在各各他山为世人舍命赎罪。他们守「复活节」，然而他们不信耶稣身体复活。他们说他们崇拜基督，高举基督，同时他们告人说，基督说了许多谎言，作了许多骗人欺世的事。（因为他们不信基督所讲的许多要道和他所作的许多奇事）。他们实在是在那里亵渎基督，抵挡基督，像当日那些耶路撒冷的百姓一样。他们又怎能不有祸呢！</p>
+<p>当日主耶稣看见耶路撒冷城为她哀哭，但耶路撒冷的百姓不哀哭却照常喜笑，以致他们后来遭遇那极大的哀哭。今日教会的情形既与当日的耶路撒冷相似，主耶稣也必是在天上为教会哀哭了，但今日教会中为自己哀哭的有多少呢？为这整个堕落的教会哀哭的又有多少呢？一个人若因为主为他哀哭他也哀哭，这个人必要得安慰，而且免去将来的哀哭。如果主为他哀哭他却喜笑，将来他必不免大大哀哭了。</p>
+<p>「你们哀哭的人有福了！因为你们将要喜笑。」（路六21）。</p>
+<p>「你们喜笑的人有祸了！因为你们将要哀恸哭泣。」（路六25）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

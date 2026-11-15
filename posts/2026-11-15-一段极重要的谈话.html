@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>一段极重要的谈话 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>一段极重要的谈话</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/1一段极重要的谈话-01.mp3">🎧 一段极重要的谈话（1/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/1一段极重要的谈话-02.mp3">🎧 一段极重要的谈话（2/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/1一段极重要的谈话-03.mp3">🎧 一段极重要的谈话（3/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/1一段极重要的谈话-04.mp3">🎧 一段极重要的谈话（4/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/1一段极重要的谈话-05.mp3">🎧 一段极重要的谈话（5/6）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/3呼喊（角声）/1一段极重要的谈话-06.mp3">🎧 一段极重要的谈话（6/6）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>读约翰福音三章一至十五节。</p>
+<p>本段经文是记载主耶稣与尼哥底母的谈话。在这段谈话中，主耶稣发挥了一些极重要的真理，足可以帮助一切寻求救恩的人寻见得救的道路，又可以改正许多基督徒所抱错误的观念，尼哥底母需要听主耶稣这段谈话，现代一切求见耶稣的人，也一样的需要听主耶稣这段谈话，容我们现在仔细思想这一段谈话中要紧的教训。</p>
+<p>尼哥底母的错误 尼哥底母是怎样的一个人，我们不十分清楚知道，这里只说，他是「法利赛人」，是「犹太人的官」，然而从这段故事中，我们也能推测而知他为人的大概，当主耶稣在世传道的时候，法利赛人与犹太人的官，大多数都是反对耶稣的，因为耶稣揭穿了他们的黑幕，暴露了他们的恶迹，以致他们群起而与耶稣为敌，尼哥底母虽然也是法利赛人，也是犹太人的官，他却不与他们取同一的步调，反倒在夜间来见耶稣，与耶稣作一番暗中的晤谈，我们玩味他的谈话不但不含有寻隙陷害的恶意，而且明显他的心中对于耶稣具有一种欢迎的热忱，由此我们可以窥知尼哥底母的人品道德必定是超群出众，他决不是一个贪鄙恶劣的人，像其它法利赛人与官长一样，再从约翰福音七章四十五至五十二节记载中，我们可以看出他是一个公正的人。因为他自己是一个有道德的人，所以他钦佩这一位有道德的耶稣，这大约是他所以不反对耶稣却欢迎耶稣的原故。</p>
+<p>除此以外还有一样事值得我们注意，就是尼哥底母不仅是道德高尚，他的心志也是很清明的。许多法利赛人看见耶稣所行的神迹，非但不相信，反倒毁谤他说，「这个人赶鬼无非是靠着鬼王别西卜」。惟独尼哥底母一看见耶稣所行的神迹，就承认耶稣是从神那里来的，请听他说，「拉比，我们知道你是从神那里来作师傅的；因为你所行的神迹，若没有神同在，无人能行。」处恶劣的环境中，不为他人的妄言所摇动，却能独具只眼，清楚认识耶稣是由神那里来的。尼哥底母的道德高尚，尼哥底母的眼光更清楚，尼哥底母确是法利赛人中的鸡群之鹤阿！</p>
+<p>希奇！为什么耶稣对这一位高尚的人物，不加以推崇赞许，反倒突如其来的说出「我实实在在的告诉你，人若不重生，就不能见神的国」呢？这几句话岂不是打退了尼哥底母的一团高兴，又岂不是看轻了这位高尚的人物；有智慧和爱心的耶稣，怎么竟这样的待起人来呢？我们乍一听这话，似乎很不合理。及至我们明白了圣经中所显示的真理，就知道原来尼哥底母陷在一样极大的错误中。主耶稣爱尼哥底母，不能不纠正他的错误，又不能不将天上的真理显示给他。因此对他说出这一番话来。</p>
+<p>「我们知道你是由神那里来作师傅的。」尼哥底母的错误就是在这里。他承认耶稣是从神那里来的，这是很对，但他以耶稣为来作师傅的，这真是大错了。我们都明白师傅的意思。一个人有好教训可以供他人学习，有好模范可以资他人效法，这个人就是一个师傅。不过从另一方面看，从师傅而学习的人还须有学习的能力，否则有师傅也没有用处，善于教授音乐的人，不能教授哑吧唱歌；善于教授美术的人，不能教授瞎子绘画。有师傅但没有学习的能力，又有什么用处呢？神差他的儿子降世，不是为作世人的师傅。神知道世人都深深沉溺在罪恶中，脱离罪恶的辖制尚且不能，更不用说学习耶稣的教训，效法耶稣的模范了。神差祂的儿子降世，乃是为作世人的救主，救他们脱离罪恶的权势，使他们从他得着新生命。不错，耶稣也是师傅，但他是信他的人的师傅。惟独因信被他从罪恶的权势中拯救出来的人，才有效法他从他学习的可能。尼哥底母未曾认识耶稣的真面目，未曾澈底了解耶稣到世上来的使命，竟贸然称耶稣为师傅，无怪乎主耶稣纠正他的错误了。</p>
+<p>尼哥底母大约较别人更容易陷在这种错误中。因为他自己比别人好一点，所以他想他用不着救主，他想自己已经有许多长处，不过还有几样短处，只要有一位师傅已经足够帮助他进于完全了。假使尼哥底母是一个强盗，或是一个税吏，也许他早已明白人所需要的不是师傅乃是救主。可惜他既不是强盗，又不是税吏，却是一个上等人，是一个有道德的官，是一个法利赛人。他只看自己比强盗和税吏好了许多，比他的同侪也高尚不少，却忘记了神的说话，「世人都偏离正路；一同变为污秽；并没有行善的，连一个也没有。」（诗十四3）。「时常行善而不犯罪的义人。世上实在没有。」（传七20）。「他们最好的不过是蒺藜；最正直的，不过是荆棘篱笆。」（弥七4）。可怜的尼哥底母！竟被自己一点肉体的义将双目遮蔽起来，认不清自己，更认不清耶稣！</p>
+<p>现代的教会中与尼哥底母一样的人有多少呢？不少的基督徒都陷在尼哥底母的错误中。他们以为耶稣降世就是为作师傅来的。他们天天高谈如何效法耶稣的人格、道德、爱心、牺牲；如何学习耶稣所讲的种种好教训。他们忘记了他们自己是什么人。他们不去看看未曾被那稣所拯救的人有几个能效法耶稣。他们一点不晓得旧人的生命是何等败坏，是何等无力行善。他们想要帮助死了多日的人去与活着的基督赛跑。他们想给一只猪洗过澡就称牠为羊。他们只想从皮毛上改良自己，却不想到生命上的改变是何等重要，他们急需听主耶稣对尼哥底母所讲的道。</p>
+<p>我是说凡以耶稣为师傅的人都与尼哥底母一样么？不是的。尼哥底母虽然陷在极大的错误中，究竟他还是一个道德比别人高的人。他虽不认识自己的真面目，但他却不至故意自欺。现今有许多人道德的程度远不及尼哥底母。他们的品行腐败得不堪。他们非但不能效法耶稣，而且也不想效法耶稣。他们不承认耶稣是从那里来的，他们或者连神也不信。他们更绝不欢迎耶稣。他们的心地和品行与尼哥底母相差不啻天壤。同时他们口中还高声讲论说，「耶稣是我们的师傅：我们当效法他的模范，学习他的教训。」这种言不由衷昧良无耻的人，在今日的教会当中，不知道有多少。尼哥底母可怜，这些人不晓得比尼哥底母更可怜几十百倍。心中真以耶稣为师傅的，尚不失为尼哥底母一类的人。至于这些昧良无耻的人，不过是与那些试探耶稣陷害耶稣的法利赛人同类罢了。他们若来到主耶稣这里，恐怕他还不要对他们讲重生的道理，他只对他们说，「你们这假冒为善的人有祸了！」「你们若不悔改，都要如此灭亡。」</p>
+<p>为什么人必须重生？我们覆讨论「为什么人必须重生？」这个题目，必须先清楚认识世人的真面目。可惜许多人陷在极大的错误中而不自觉。他们以为人是良善优美的，只因外面受了一些环境的熏染，所以才变坏了，那么要帮助人变好是很容易的，只须将环境改良一下，再用宗教、道德、教育、训练他们些时，人就可以一变而像神了。这种说法本是完全谬误的，不料有许多人讲，也就有许多人去信。容我们现在不要再受人的欺骗，只要去看神的话是怎样说的。神知道人类的历史比任何历史学家更清楚，神知道人的心怀、意念、言语、行为，远胜过世上最有知人之明的人，不论在人外面或人里面的事，没有一样能逃避他的鉴察，他鉴察世人的结果是什么呢？「耶和华从天上垂看世人，要看有明白的没有，有寻求神的没有，他们都偏离正路，一同变为污秽：并没有行善的，连一个也没有。」（诗十四2、3）。「在你面前凡活着的人，没有一个是义的。」（诗一四三2）。「时常行善而不犯罪的义人，世上实在没有。」（传七20）。神的话说，「没有一个义人。」神这样说，并不是毫无实据，这是他「从天上垂看世人」所发现的。他看见了世人一切的行为。世人在暗中所作那些污秽、淫邪、自私、自利、诈伪、说谎、嫉妒、恼恨、结党、营私、盗窃、舞弊、贪财、受贿、钓誉、沽名，种种隐藏不使人看见的罪恶，神都已经一一清楚的看见。许多人惯在暗中犯罪，到了人的面前便会假冒为善，使人看他好像一位天使那样高尚清洁。其实他在暗中所作的事，早已被神看得清清楚楚，纤毫无遗。我们因为看不见人的里面，所以很容易受人的蒙蔽，但世上总没有一个人能蒙蔽神的眼目。有时我们最仰望尊重一个人，以为他就是世上最好的人，及至与他同处一些日子，才知道就是我们所看为最好的人也有他的缺欠与短处。若是这种在世上好像凤毛麟角的好人尚且如此，何况其余的人呢？神的观察总不会错的。「没有义人，连一个也没有，」因为事实是这样，所以神这样说。</p>
+<p>「都犯了罪，没有义人，」这件事，我们已经看清楚了。那么容我们再进而讨论一个问题：「人是从那里败坏的？」好，容我们再听经上的教训。「我是在罪孽里生的；在我母亲怀胎的时候就有了罪。」（诗五十一5）。「恶人一出母胎，就与神疏远：一离母腹便走错路，说谎话。」（诗五十八3）。我们不希奇世上没有义人了，世人既完全生在罪恶里，长在罪恶里，那里还能寻得到义人呢？许多人说，人的本性是良善优美的，不过因为社会黑暗，环境恶劣，所以渐渐将那本来良善优美的人变坏。这种说法不但十分违反圣经，而且极不合乎情理。我们要问，是先有的个人，还是先有的社会？社会为个人所组成：个人若是好的，社会怎能坏了呢？因为个人坏了，众人坏了，所以才造出黑暗的社会，恶劣的环境来。我不是不承认环境能使人堕落这件事实。但我们要认清楚，恶劣的环境所以能熏陶一个人使他日渐堕落，还是因为他里面先有了罪。不然，主耶稣所处的环境是何等恶劣，祂所遭遇的试诱又是何等剧烈，怎么恶劣的环境竟不能使他堕落呢？一个人本来有一些罪恶。不过因为他的罪恶较别人少许多，我们就称他为好人。后来他接近许多比他坏的人，渐渐将那些人的罪恶都习染在他身上，我们就说他是被环境所变坏了。总而言之，众人若不是坏的，就决不会造出坏的环境；一个人若不是坏的，入到坏环境中，他也决不会变坏。这是事实，这也是圣经中所讲的真理。神的话是怎样说的呢？「人心比万物都诡诈，坏到极处：谁能识透呢？我耶和华是鉴察人心，试验人肺腑的，要照各人所行的，和他作事的结果报应他。」（耶十七9、10），鉴察人心试验人肺腑的耶和华说：「人心比万物都诡诈，坏到极处。」我们还能说什么呢？有谁知道人里面所存的比耶和华知道的更清楚呢？神的话不单是这样说，而且又举出明显的证据来，证明这些话是千真万确的。他说，「从人里面出来的，那才能污秽人，因为从里面，就是从人心里，发出恶念、苟合、偷盗、凶杀、奸淫、贪婪、邪恶、诡诈、淫荡、嫉妒、毁谤、骄傲、狂妄。这一切的恶都是从里面出来，且能污秽人。」（可七20～23）。这真是根本的解释了。世界上种种的罪恶，无一不是以人心为出发点，神说，「人心比万物都诡诈，坏到极处，」岂是虚语么？请问这些坏到极处的东西──恶念、苟合、偷盗、凶杀、奸淫、贪婪，……除了人心以外，还在什么地方能寻得出来呢？</p>
+<p>人若是从外面坏的，那自然是很容易变好。只须将环境改良一下，再作些事业帮助人将行为上的罪恶去掉一些，人便可以变成清洁良善的了。无奈事实不是这样：人是从里面变坏的，如今要从外面改良，那如何能奏效呢？一个果子皮上烂了一块或两块，削去烂的地方自然还可以吃。但如果里外都烂透了，还有什么办法呢？我们可以将它拿到制造蜡果的工厂里去，（注：在工艺中有制造蜡果子的。方法就是用蜡仿照真果子的样式，制成各种果品，形状色彩，都同真果子一样；可以作陈设品）。请工人在它外面包上一层蜡皮。腐烂的情状都被掩盖起来以后，坏了的果子令人从外面看着似乎已经变好了。但这有什么用处？烂透了的果子包上美观的蜡皮，好看固然好看了，无奈本质并未曾改变，一口咬破，仍然是个烂果子。已经坏透了的人，里面若未曾经过改变，只在外面改良一下，它的效果也不过如此。里面的问题决不是从外面能解决的。</p>
+<p>从人的外面看来，似乎是有好的，有坏的，有善的，有恶的，有的人品行高尚，有的人人格卑劣；因为人所能看见的有限。人能看见别人明显的罪，却不能看见别人隐藏的罪。对于自己呢，人又都有「明于观人，闇于观己」的缺点。再加以世人被这世界的王弄瞎了心眼，认不清罪的真象，甚至遍体疮痍，身无完肤，还自以为强健无恙。如果一个人有些显着的恶行，或者还容易自认有罪。若是外面没有什么显着的恶行，四周再有些比自己更坏的人，简直总不承认自己是罪人了。这有什么好处呢？人能欺骗自己，也能欺骗别人，但谁能欺骗那「鉴察人心试验人肺腑的」神呢？欺人的，能得着人的称赞与尊荣；自欺的，可以安慰自己于一时。这两种人一旦到了神的审判台前，看见神荣耀的光辉，他们的罪恶都一一的被显露出来，那时他们要怎样的惊慌惭愧呢？</p>
+<p>人都有罪，并且他们的罪是从里面发生的，从外面救治是无效的了。那么还有挽救与治疗的方法么？有的。神知道人的苦痛与绝望。祂因为爱世人，所以已经为他们预备了一个方法，使他们可以从罪恶中被救出来，并且得以坦然无惧的立在祂的面前，称为祂的儿女。「你们必须重生，」就是祂为世人所预备的方法。旧的人败坏是因为旧的生命败坏了。再生一次因而得着新生命，方能希望有新心志、新行为、新生活。这是一种根本上的治疗。旧的生命败坏了，不能再得神的喜悦；但在一个罪人得了重生有了新的生命以后，他的内心已经变化了，神就看他为新人，正像他从来未犯过罪一样。神是鉴察人心的，除非一个人的内心因得重生而变化过来，他便总不能得神的喜悦；因此主耶稣说，「我实实在在的告诉你，人若不重生，就不能见神的国。」</p>
+<p>怎样方能得重生？ 「怎样方能得重生？」这是一个极重要的问题。然而它的答案却是非常的简单。──「摩西在旷野怎样举蛇，人子也必照样被举起来；叫一切信他的都得永生。」我们若明白了摩西在旷野举蛇的事，也就解决了「怎样方能得重生？」这个问题。容我们现在研究摩西在旷野举蛇的事。（注：本段与第一章重生（四）怎样方能得重生略同）</p>
+<p>「他们从何珥山起行，往红海那条路走，要绕过以东地：百姓因这路难行，心中甚是烦躁，就怨讟神和摩西说，你们为什么把我们从埃及领出来，使我们死在旷野呢？这里没有粮，没有水，我们的心厌恶这淡薄的食物。于是耶和华使火蛇进入百姓中间，蛇就咬他们；以色列人中死了许多。百姓到摩西那里说，我们怨讟耶和华和你有罪了；求你祷告耶和华，叫这些蛇离开我们。于是摩西为百姓祷告。耶和华对摩西说，你制造一条火蛇，挂在杆子上：凡被咬的，一望这蛇，就必得活。摩西便制造一条铜蛇，挂在杆子上；凡被蛇咬的，一望这铜蛇，就活了。」（民二十一4～9）。</p>
+<p>以色列民怨讟神犯罪，被毒蛇所咬，遭遇死亡，耶和华这样待他们原是合理的：因为「犯罪的，他必死亡」；「罪的工价乃是死」。凡被毒蛇所咬的，便再没有生活的盼望。这时他们的生命已经到了尽头。不料神为这些当死且是必死的以色列民预备了奇妙的救法──「凡被咬的，一望这蛇，就必得活。」望铜蛇以后的生命不是他们本有的生命。他们本有的旧生命在被咬以后已经告终了。现在的生命乃是重新得来的生命，因此我们可以称牠为新生命。</p>
+<p>但这新生命是怎样得来的呢？「凡被蛇咬的，一望这铜蛇，就活了。」望铜蛇的人必是先信了神的话。因为信神的话才望铜蛇，因为望铜蛇就有了新生命。那么必死的以色列民得新生命惟一的方法，就是信而仰望──信神的话，仰望被挂的铜蛇。</p>
+<p>摩西所举的铜蛇，就是豫表为世人的罪悬挂在各各他山十字架上的基督。犯罪的以色到民仰望铜蛇就得生命的事，便是清清楚楚的指示我们说，全世界犯了罪当死且是必死的众人，惟有信神的话，仰望被钉的基督，就可脱离因罪而来的咒诅，得着新的生命。犯了罪的以色列民若不仰望被举起来的铜蛇，不能藉着任何方法得存活；世界上的罪人若不仰望被举起来的基督，也不能藉着任何方法得生命。「摩西在旷野怎样举蛇，人子也必照样被举起来；叫一切信他的都得永生。」</p>
+<p>信神的话，仰望被钉的基督，就能得着重生，就有了新生命：主耶稣的话是这样清清楚楚的告诉了我们。这是极奥妙的事，然而这是极坚确的真理。这是那位「昨日今日一直到永远是一样的」主耶稣基督亲口所证实的。从古至今多少人信这话，走这条路，都是这样的蒙了重生，得了新生命。</p>
+<p>得重生的道理是这样简单，除了未曾听过福音的人以外，世人都当得重生了。那知道非但不是这样，连称为基督徒的人当中，也有许多未曾得重生的。这是什么原故呢？最大的原因就是人不承认自己的罪。许多人只因自己有少许的德行，便夜郎自大，自以为义，这等人不肯来仰望基督。许多人设法遮掩自己的罪，恐怕别人知道，也恐怕自己知道，这等人不愿来仰望基督。许多人知道自己有罪，但不愿意想到自己的罪，只抱了一种将错就错的思想，这等人不想来仰望基督。许多人肯解决别的问题，单单不肯解决罪的问题。那知道人的大患就是在这里，罪的问题不澈底解决，一切的问题便都无从下手呢？一个罪人不深深的为自己的罪懊悔自责，他便总不肯仰望神所立的救主。那一个有病却不知道自己有病的人肯寻求医生呢？必须他先深深知道自己病症的危险，以后他方要切切的寻求医生。一个罪人也必须先澈底明了他的罪是何等大，他自己是何等绝望，何等可怜，然后方要深深自卑，俯伏在十字架下，痛心哀求。正是在他满心痛苦，懊悔自责，知道自己一无所有，一无所能，惟要专心仰望基督的时候，神便赦免他一切的罪恶，洗净他一切的污秽，又用道和圣灵重生他，使他得着新心性，新生命，他便一变而为新人：正如经上的话说，「若有人在基督里，他就是新造的人：旧事已过，都变成新的了。」（林后五17）。</p>
+<p>在这里我要加上一段话解释本段谈话中的一个比喻──水。「人若不是从水和圣灵生的，就不能进神的国。」这里的水不是指着物质的水，乃是指着一种属灵的事物，牠的功用正与水一样。「现在你们因我讲给你们的道，已经干净了。」（约十五3）。「你们作丈夫的，要爱你们的妻子，正如基督爱教会，为教会舍己；要用水藉着道，把教会洗净，成为圣洁，可以献给自己，作个荣耀的教会，毫无玷污皱纹等类的病，乃是圣洁没有瑕疵的，」（弗五25～27）。水怎样能洁除我们身体上的污秽，神的道也是这样能洁除我们心灵上的污秽。除去这两段经文以外，我们还可以找到更明显的教训，解释从「水」而生的意思。</p>
+<p>「他按自己的旨意，用真道生了我们，叫我们在他所造的万物中，好像初熟的果子。」（雅一18）。</p>
+<p>「你们蒙了重生，不是由于能坏的种子，乃是由于不能坏的种子，是藉着神活泼常存的道。因为凡有血气的尽都如草，他的美荣都像草上的花。草必枯干，花必凋谢：惟有主的道是永存的。所传给你们的福音就是这道。」（彼前一23～25）。</p>
+<p>神的灵是圣洁的；基督徒是由圣灵而生，因此他们也是圣洁的。神的道是不朽坏的；基督徒是由神的道而生，因此他们也是不朽坏的。基督徒是何等尊贵又是何等有福阿！</p>
+<p>一个罪人得了重生以后，他是从里面完全变化了。旧日所爱的罪，现今成为所最恨恶的。旧日所恋慕的世事，现今成为无足轻重。旧日是从肉身生的，所以凡事都离不了肉身的样子；现今是从圣灵生的，所以凡事都有圣灵的新样式。旧日是要从外面改良一点，现今是已经从里面完全变化过来。旧日所企图的是从枝末下手，今日所成功的是根本的解决。一个得了重生的人爱慕神的道和属天的事，乃是出于自然，并不是矫作的。他离弃罪恶，不是由于人的劝导与强迫，乃是因为他对于罪恶有一种深刻的厌恶。神是恨恶罪恶的，所以神所生的人也恨恶罪恶；神是喜爱良善的，所以神所生的人也喜爱良善；神的心是爱，所以神所生的人也有爱心。得了重生的人里面既然有了这种极重大的改变，外面在言语、行为、动作、生活上，比较从前自然会显出极大的差异来。「风随着意思吹，你听见风的响声，却不晓得从那里来，往那里去：凡从圣灵生的，也是如此。」我们看不见风的本体，也不知道它是从那里来，往那里去：但只要有风吹来，我们必能看见一种特殊的现象──树的枝叶摇摆起来，地上的尘沙扬到空中，湖面的水激起波浪，凡与风接触的各物，都呼呼的发出响声。这样，我们看不见圣灵的实体，也不晓得他是怎样重生一个罪人。但只要有人得了圣灵的重生，我们也必能看见一种特殊的现象──被重生的人完全改变了他的心志、思想、言语、行为、生活、动作、性情、习惯，而成为一个新造的人。</p>
+<p>因为得了重生的人已经有了这种重大的变化，所以他们方能遵行耶稣的教训，效法他的模范，方有希望能以完全像他们在天上的父一样。也正是因为他们有了这种重大的变化，所以他们能以坦然无惧的进到神的面前，蒙他的悦纳，被他称为儿女，并且使他们承受永存的基业。重生的道理是何等重要！蒙了重生的人是何等有福阿！</p>
+<p>请问阅者，你是否已经得了重生？</p>
+<p>「我实实在在的告诉你，人若不重生，就不能见神的国。」</p>
+<p>「我实实在在的告诉你，人若不是从水和圣灵生的，就不能进神的国。」</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>

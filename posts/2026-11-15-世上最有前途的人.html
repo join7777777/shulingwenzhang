@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>世上最有前途的人 · 属灵文章</title>
+<style>
+:root{--bg:#F4F5F9;--surface:#FFF;--ink:#3B4A68;--head:#32325D;--muted:#8898AA;--line:#E9EDF5;
+--accent:#5E72E4;--accent2:#8965E0;--chip:rgba(94,114,228,.12);--radius:12px;
+--shadow:0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#14161C;--surface:#1E222B;--ink:#C9CFDE;--head:#E6E9F2;
+--muted:#8B94A8;--line:#2B303C;--accent:#8B9BF2;--accent2:#A48BF0;--chip:rgba(139,155,242,.16);
+--shadow:0 4px 6px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.75}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:0 1px 4px rgba(50,50,93,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:900;font-size:20px;color:var(--head);text-decoration:none}
+.brand::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%;
+background:var(--accent);margin-right:9px;vertical-align:2px}
+.brand small{font-weight:400;color:var(--muted);font-size:13px;margin-left:8px}
+.nav{font-size:14px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--accent)}
+.banner{background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:var(--radius);
+color:#fff;padding:34px 30px;margin:20px 0 6px;box-shadow:var(--shadow)}
+.banner h1{font-size:30px;font-weight:900;margin:0 0 6px;color:#fff}
+.banner p{margin:0;opacity:.92;font-size:15px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+input.search{flex:1;min-width:200px;padding:10px 16px;border:1px solid var(--line);
+border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;outline:none}
+input.search:focus{border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chips.collapsed{max-height:112px;overflow:hidden}
+.chips-toggle{margin:2px 0 10px;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+background:var(--surface);color:var(--accent);font-size:13px;cursor:pointer}
+.chips-toggle:hover{border-color:var(--accent)}
+.chip{padding:6px 16px;border-radius:999px;background:var(--surface);font-size:14px;cursor:pointer;
+border:1px solid var(--line);color:var(--muted)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.card{display:block;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:20px 24px;margin:16px 0;text-decoration:none;color:inherit;
+transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.1)}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.card h2{font-size:20px;font-weight:700;margin:0 0 6px;color:var(--head)}
+.card:hover h2{color:var(--accent)}
+.card p{font-size:15px;color:var(--muted);margin:0}
+.tag{font-size:12px;background:var(--chip);border-radius:999px;padding:2px 11px;color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 0 44px}
+article.post{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+padding:34px 38px;margin:26px 0;font-size:18px;line-height:1.85}
+@media(max-width:640px){article.post{padding:24px 20px;font-size:17.5px}.banner{padding:26px 22px}}
+.post h1{font-size:29px;font-weight:900;color:var(--head);margin:0 0 8px;line-height:1.35}
+.post .meta{color:var(--muted);font-size:14px;margin-bottom:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.post h2{font-size:22px;font-weight:700;color:var(--head);margin:30px 0 10px;
+padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.post h3{font-size:18.5px;font-weight:700;color:var(--head);margin:24px 0 8px}
+.post img{max-width:100%;border-radius:8px;box-shadow:var(--shadow)}
+.post blockquote{border-left:3px solid var(--accent);background:var(--chip);margin:18px 0;
+padding:12px 18px;border-radius:0 8px 8px 0;color:var(--ink)}
+.post pre{background:#242A38;color:#E6E9F2;padding:16px;border-radius:10px;overflow:auto}
+.post code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--chip);
+padding:1px 6px;border-radius:6px;color:var(--accent)}
+.post pre code{background:none;padding:0;color:inherit}
+.post a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(94,114,228,.35)}
+.post a:hover{border-bottom-color:var(--accent)}
+.back{display:inline-block;margin:6px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.gate-ov{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center}
+.gate-box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:30px;width:min(360px,86vw);text-align:center}
+.gate-box h1{font-size:20px;font-weight:900;color:var(--head);margin:0 0 6px}
+.gate-box p{font-size:13px;color:var(--muted);margin:0 0 18px}
+.gate-box input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:16px;outline:none;background:var(--bg);color:var(--ink)}
+.gate-box input:focus{border-color:var(--accent)}
+.gate-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.gate-box .err{color:#c0392b;font-size:13px;margin-top:10px;min-height:1em}
+.read-tools{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.read-tools button{width:46px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);
+color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+.read-tools button:hover{border-color:var(--accent)}
+.read-tools button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+</style></head>
+<body>
+<div class="gate-ov" id="gate-ov" style="display:none">
+<div class="gate-box">
+<h1>属灵文章</h1>
+<p>请输入访问口令</p>
+<input type="password" id="gate-pwd" placeholder="请输入口令">
+<button id="gate-go">进入</button>
+<div class="err" id="gate-err"></div>
+</div>
+</div>
+<script>
+(function(){
+var PWD="7777777";
+var ov=document.getElementById("gate-ov");
+try{
+var u=new URL(location.href);
+var p=u.searchParams.get("password");
+if(p!==null){
+if(p===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}}
+u.searchParams.delete("password");
+history.replaceState(null,"",u.pathname+u.search+u.hash);
+}
+}catch(e){}
+var ok=false;
+try{ok=localStorage.getItem("gdst_gate")==="1"}catch(e){}
+if(ok){return;}
+ov.style.display="flex";
+document.getElementById("gate-go").addEventListener("click",go);
+document.getElementById("gate-pwd").addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});
+function go(){
+var v=document.getElementById("gate-pwd").value;
+var err=document.getElementById("gate-err");
+if(v===PWD){try{localStorage.setItem("gdst_gate","1")}catch(e){}ov.style.display="none";}
+else{err.textContent="口令不正确";}
+}
+})();
+</script>
+<header class="topbar"><div class="wrap">
+<div class="brand"><a href="../index.html" style="text-decoration:none;color:inherit">属灵文章</a></div>
+<nav class="nav"><a href="../index.html">首页</a></nav>
+</div></header>
+<main class="wrap">
+<a class="back" href="../index.html">← 返回首页</a>
+<article class="post">
+<h1>世上最有前途的人</h1>
+<div class="meta"><span>2026-11-15</span><span>王明道·小径</span></div>
+<p><strong>音频</strong></p>
+<ol><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/9世上最有前途的人-01.mp3">🎧 世上最有前途的人（1/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/9世上最有前途的人-02.mp3">🎧 世上最有前途的人（2/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/9世上最有前途的人-03.mp3">🎧 世上最有前途的人（3/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/9世上最有前途的人-04.mp3">🎧 世上最有前途的人（4/5）</a></li><li><a href="https://pub-f90e8e1dbd654b82944fc25208ceec25.r2.dev/wmd/2二、小径/4时代信息/9世上最有前途的人-05.mp3">🎧 世上最有前途的人（5/5）</a></li></ol>
+<p><strong>正文</strong></p>
+<p>「圭必不离犹大，杖必不离他两脚之间，直等细罗来到，万民都必归顺。」（创四十九10）。</p>
+<p>「我要传圣旨；耶和华曾对我说，『你是我的儿子，我今日生你。你求我，我就将列国赐你为基业，将地极赐你为田产。你必用铁杖打破它们；你必将它们如同匠的瓦器摔碎』。」（诗二7～9）。</p>
+<p>「耶和华对我主说，『你坐在我的右边，等我使你的仇敌作你的脚凳』。耶和华必使你从锡安伸出能力的杖来；你要在你的仇敌中掌权。当你掌权的日子，你的民要以圣洁的装饰为衣，甘心牺牲自己；你的民多如清晨的甘露。」（诗一一○1～3）。</p>
+<p>「从耶西的本必发一条，从他根生的枝子必结果实。耶和华的灵必住在他身上，就是使他有智慧和聪明的灵、谋略和能力的灵、知识和敬畏耶和华的灵。他必以敬畏耶和华为乐；行审判不凭眼见，断是非也不凭耳闻；却要以公义审判贫穷人，以正直判断世上的谦卑人以口中的杖击打世界，以嘴里的气杀戮恶人。公义必当他的腰带，信实必当他胁下的带子。</p>
+<p>「豺狼必与绵羊羔同居，豹子与山羊羔同卧；少壮狮子必吃草与牛犊并肥畜同群，小孩子要牵引牠们；牛必与熊同食，牛犊必与小熊同卧；狮子必吃草与牛一样。吃奶的孩子必玩耍在虺蛇的洞口，断奶的婴儿必按手在毒蛇的穴上。在我圣山的遍处，这一切都不伤人，不害物；因为认识耶和华的知识要充满遍地，好像水充满洋海一般。</p>
+<p>「到那日，耶西的根立作万民的大旗，外邦人必寻求他；他安息之所大有荣耀。」（赛十一1～10）。</p>
+<p>「我的仆人大卫必作他们的王；众民必归一个牧人；他们必顺从我的典章，谨守遵行我的律例。他们必住在我赐给我仆人雅各布布的地上，就是你们列祖所住之地；他们和他们的子孙，并子孙的子孙，都永远住在那里；我的仆人大卫必作他们的王，直到永远。」（结三十七24、25）。（「大卫」这个名字原文的意思是「蒙爱的」，这段豫言中用这个名字豫言神的爱子耶稣基督。）</p>
+<p>「当那列王在位的时候，天上的神必另立一国，永不败坏，也不归别国的人，却要打碎灭绝那一切国，这国必存到永远。」（但二44）。</p>
+<p>「我在夜间的异象中观看，见有一位像人子的，驾着天云而来，被领到亘古常在者面前，得了权柄、荣耀、国度、使各方、各国、各族的人都事奉他；他的权柄是永远的，不能废去，他的国必不败坏。」（但七13、14）。</p>
+<p>「伯利恒以法他阿，你在犹大诸城中为小；将来必有一位从你那里出来，在以色列中为我作掌权的；他的根源从亘古，从太初就有。」（弥五2）。</p>
+<p>「天使对她说，『马利亚，不要怕；你在神面前已经蒙恩了。你要怀孕生子，可以给他起名叫耶稣。他要为大，称为至高者的儿子，主神要把他祖大卫的位给他；他要作雅各布布家的王，直到永远，他的国也没有穷尽』。」（路一30～33）。</p>
+<p>「耶稣对他说，『你说的是；然而我告诉你们，后来你们要看见人子，坐在那权能者的右边，驾着天上的云降临』。」（太二十六64）。</p>
+<p>「世人蒙昧无知的时候，神并不鉴察，如今却吩咐各处的人都要悔改。因为他已经定了日子，要藉着他所设立的人，按公义审判天下；并且叫他从死人里复活，给万人作可信的凭据。」（徒十七30、31）。</p>
+<p>「但基督已经从死人里复活，成为睡了的人初熟的果子。死既是因一人而来，死人复活也是因一人而来。在亚当里众人都死了；照样，在基督里众人也都要复活。但各人是按着自己的次序复活。初熟的果子是基督；以后在他来的时候，是那些属基督的。再后末期到了，那时，基督既将一切执政的、掌权的、有能的，都毁灭了，就把国交与父神。因为基督必要作王，等神把一切仇敌都放在他的脚下；尽末了所毁灭的仇敌就是死。」（林前十五20～26）。</p>
+<p>「第七位天使吹号，天上就有大声音说，『世上的国成了我主和主基督的国；他要作王，直到永永远远』。」（启十一15）。</p>
+<p>主耶稣未曾生在世上以前，神就屡次藉着众先知的口豫言基督要从犹大支派耶西的家族中生出来，要生在伯利恒城。「圭必不离犹大，杖必不离他两脚之间，直等细罗来到，万民都必归顺。」「从耶西的本必发一条，从他根生的枝子必结果实。」「伯利恒以法他阿，你在犹大诸城中为小；将来必有一位从你那里出来，在以色列中为我作掌权的。」先知又豫言基督要在地上施行审判，建立天国，用权柄将地上的列国打碎，他要掌权作王，万民要归向他，全地要因他得福，他要作王直到永远。「他必以敬畏耶和华为乐；行审判不凭眼见，断是非也不凭耳闻；却要以公义审判贫穷人，以正直判断世上的谦卑人；以口中的杖击打世界，以嘴里的气杀戮恶人。」「你求我，我就将列国赐你为基业，将地极赐你为田产。你必用铁杖打破他们；你必将他们如同匠的瓦器摔碎。」「耶和华必使你从锡安伸出能力的杖来；你要在仇敌中掌权。」「当那列王在位的时候，天上的神必另立一国，永不败坏，也不归别国的人，却要打碎灭绝那一切国，那国必存到永远。」「我在夜间的异象中观看，见有一位像人子的，驾着天云而来，被领到亘古常在者面前，得了权柄、荣耀、国度，使各方、各国、各族的人都事奉他；他的权柄是永远的，不能废去，他的国必不败坏。」</p>
+<p>神所定的日期到了。他所立的基督藉着童女马利亚生在世上。当天使加百列报信给马利亚的时候，就说明她所生的儿子「要为大，称为至高者的儿子，主神要把他祖大卫的位给他；他要作雅各布布家的王，直到永远，他的国也没有穷尽。」这些话与旧约众先知的豫言正相符合。当主耶稣在大祭司的院中受审的时候，告诉大察司和他的同人说，「后来你们要看见人子，坐在那权能者的右边，驾着天上的云降临。」保罗在雅各布布对希腊人讲道的时候，说明神要藉着他所设立的基督，「按公义审判天下；并且叫他从死人里复活，给万人作可信的凭据。」保罗又写给哥林多教会的书信里豫言「基督必要作王，等神把一切仇敌都放在他的脚下。」约翰在拔摩海岛上所见的大异象中，听见天上有大声音说，「世上的国成了我主和主基督的国；他要作王，直到永永远远。」</p>
+<p>将旧约和新约中这一些豫言都详细读一下，我们便晓得神将来要藉着基督在地上施行审判，以后又要在地上建立他的国，并且使他所立的基督在这国中掌权为王。神的国是永存的，基督也要在这国中作王，直到永永远远。</p>
+<p>我们再详细读新约各卷，便发现一件奇异的事，那就是神应许叫我们这些跟随耶稣的人在基督审判世界的时候，与他一同施行审判，在基督得国掌权的时候，与他一同得国掌权。容我们读这些应许──</p>
+<p>「耶稣说，『我实在告诉你们，你们这跟从我的人，到复兴的时候，人子坐在他荣耀的宝座上，你们也要坐在十二个宝座上，审判以色列十二个支派』。」（太十九28）。</p>
+<p>「你们中间有彼此相争的事，怎敢在不义的人面前求审，不在圣徒面前求审呢？岂不知圣徒要审判世界么？若世界为你们所审，难道你们不配审判这最小的事么？岂不知我们要审判天使么？何况今生的事呢？」（林前六1～3）。</p>
+<p>「又不守本位，离开自己住处的天使，主用锁链把他们永远拘留在黑暗里，等候大日的审判。」（犹6节）。</p>
+<p>从这几段经文中，我们可以看见基督审判世界的时候，他的十二个使徒要审判以色列十二个支派；不但这十二个使徒要与基督一同施行审判，众圣徒也要与基督一同施行审判。不但审判世界，也要审判天使；不是今日在神面前侍立「听从他命令，成全他旨意」的那些天使，乃是那些「不守本位，离开自己住处的天使」，这些天使今天还被「拘留在黑暗里，等候大日的审判。」</p>
+<p>主耶稣所说的一个比喻，清楚说明了他要他忠心的门徒在他得国掌权的时候与他一同掌权治国。容我们读这个比喻：</p>
+<p>「有一个贵冑往远方去，要得国回来。便叫了他的十个仆人来，交给他们十锭银子，说，『你们去作生意，直等到我回来』。他本国的人却恨他，打发使者随后去说，『我们不愿意这个人作我们的王』。他既得国回来，就吩咐叫那领银子的仆人来，要知道他们作生意赚了多少。头一个上来说，『主阿，你的一锭银子已经赚了十锭』。主人说，『好，良善的仆人；你既在最小的事上有忠心，可以有权柄管十座城』。第二个来说，『主阿，你的一锭银子已经赚了五锭』。主人说，『你可以管五座城』。」（路十九12～19）。</p>
+<p>我们都明白主耶稣所说的这个贵冑是指着他自己说的。十个仆人是指着他的门徒。银子是指着主所给我们的恩赐。贵冑得国回来，是指着主从父领受了权柄回到地上来作王。那赚十锭银子的管十座城，赚五锭银子的管五座城，都是很清楚的说明，主耶稣在他的国中掌权治国的时候，要叫他忠心的门徒和他一同掌权治国。至于每个人将来所领受的工作的大小，就看他们在他再来以先殷勤忠心的多少而定，正如这个比喻所说的赚十锭银子的管十座城，赚五锭银子的管五座城一样。</p>
+<p>在启示录中有一段话更清楚的说明了基督徒将来要与主同掌王权的事──</p>
+<p>「这羔羊前来，从坐宝座的右手里拿了书卷。他既拿了书卷，四活物和二十四位长老就俯伏在羔羊面前，各拿着琴，和盛满了香的金炉，这香就是众圣徒的祈祷。他们唱新歌，说，『你配拿书卷，配揭开七印；因为你曾被杀，用自己的血从各族、各方、各民、各国中买了人来，叫他们归于神，又叫他们成为君王（中文圣经译作『国民』，误），作祭司，归于神；在地上执掌王权』。」（启五7～10）。</p>
+<p>还有什么说法能比这一段话更清楚呢？基督用自己的血把我们买来，是有这样一个伟大的目的，叫我们「成为君王，作祭司，归于神；在地上执掌王权」。这里说明基督徒所得的两种职分；一个是作祭司，另一个是作君王。在主耶稣回来以前，我们的职分是作祭司；一方面在神面前为世上的人祈求，另一方面在世人面前代神传达他的话语。当主回来在地上立国的时候，我们的职分便是与他一同作王掌权了。</p>
+<p>保罗在他所写的书信中也证明了这件事，听他说：</p>
+<p>「有可信的话说，『我们若与基督同死，也必与他同活；我们若能忍耐，也必和他一同作王，我们若不认他，他也必不认我们；我们纵然失信，他仍是可信的；因为他不能背乎自己』。」（提后二11～13）。</p>
+<p>基督曾在地上忍受了诸般痛苦、羞辱、患难。他既行完了神的旨意，顺服至死，才被神升为至高，被神立为君王。我们今日在地上必须先像他那样忍受诸般痛苦、羞辱、患难，以后在他来的时候才能与他一同作王，这不是很合理的事么？</p>
+<p>主耶稣藉着约翰写给推雅推喇教会的信中也说了一段这样的话──</p>
+<p>「那得胜又遵守我命令到底的，我要赐给他权柄制伏列国；他必用铁杖治理（中文圣经译作『辖管』，误）他们，将他们如同户的瓦器打得粉碎，像我从我父领受的权柄一样；我又要把晨星赐给他。」（启二26～28）。</p>
+<p>在前面我们所引的经文中，我们看见神曾应许基督说，「你求我，我就将列国赐你为基业，将地极赐你为田产。你必用铁杖打破他们；你必将他们如同匠的瓦器摔碎。」神怎样将这应许赐给基督，基督也将这应许赐给他的门徒。一想到这宝贵的应许和这种崇高的责任、伟大的事工，我们怎能不兴奋喜乐、殷勤尽忠呢？</p>
+<p>不过我们不可忽略一件要紧的事──这个宝贵的应许是赐给「那得胜又遵守主命令到底的」圣徒的。基督在世上的时候遵守了神的命令，而且遵守到底，「存心顺服，以至于死，且死在十字架上。」他就这样「藉着死败坏了那掌死权的，就是魔鬼。」（来二14）。他得了胜。他胜过了魔鬼，也胜过了世界。他对他的门徒说，「在世上你们有苦难；但你们可以放心，我已经胜了世界。」（约十六33）就是因着他这样顺服，这样得胜，他才领受了这样的权柄；如今他将这样的权柄赐给「那得胜又遵守他命令到底的」圣徒，实在是最恰当合宜的。</p>
+<p>主耶稣藉着约翰写给老底嘉教会的书信里，也说了一段类似的话──</p>
+<p>「得胜的，我要赐他在我的宝座上与我同坐，就如我得了胜，在我父的宝座上与他同坐一般。」（三21）。</p>
+<p>宝座是有荣耀、有权柄的治理者所坐的。神是治理天地万物的，也是有荣耀和权柄的，因此他坐在宝座上。基督得了胜，神就使他在神的宝座上与神同坐。照样，基督也应许要使那得胜的门徒在他的宝座上与他同坐，换一句话说，就是使那得胜的门徒与他一同得荣耀，一同掌权，一同治理他的国。</p>
+<p>得胜的基督徒在基督作王的时候要与他一同作王，这一件事我们已经清清楚楚的明白了。现在还有一个问题必须明白一下──「基督徒与基督一同作王有多少时日呢？」经上的话清楚回答了这个问题──</p>
+<p>「在头一次复活有分的有福了，圣洁了；第二次的死在他们身上没有权柄；他们必作神和基督的祭司，并要与基督一同作王一千年。」（启二十6）。</p>
+<p>「以后再没有咒诅；在城里有神和羔羊的宝座；他的仆人都要事奉他，也要见他的面，他的名字必写在他们的额上。不再有黑夜，他们也不用灯光日光，因为主神要光照他们；他们要作王，直到永永远远。」（启二十二3～5）。</p>
+<p>从这两段经文中我们可以看见，基督和他的门徒一同作王，是分两个阶段的；第一个阶段是在千年国度中作王一千年；及至这一千年过去，基督和他的门徒要审判全世界所有死去的人。再后那永远的国──新天新地──要出现，那时基督和他的门徒便要永远在这国中作王了。</p>
+<p>当这些事尚未成就以前，有一件重要的事必须先成就。保罗藉着主耶稣的启示把这件事清楚的告诉了我们──</p>
+<p>「弟兄们，我告诉你们说，血肉之体不能承受神的国；必朽坏的不能承受不朽坏的。我如今把一件奥秘的事告诉你们，我们不是都要睡（中文圣经在这里多如了一个「觉」字，应当去掉）。乃是都要改变。就在一霎时，眨眼之间，号筒末次吹响的时候，因号筒要响，死人要复活成为不朽坏的，我们也要改变。这必朽坏的总要变成不朽坏的，这必死的总要变成不死的。这必朽坏的既变成不朽坏的，这必死的既变成不死的，那时，经上所记死被得胜吞灭的话就应验了。死阿，你得胜的权势在那里？死阿，你的毒在那里？死的毒就是罪；罪的权势就是律法。感谢神，藉着我们的主耶稣基督赐给我们胜利。」（林前十五50～57）（本段经文最后一句，中文圣经本译得不适宜，特代改正）。</p>
+<p>主耶稣能在神的国里作王，直到永永远远，因为他复活以后，得了不能朽坏、不能死的身体。他在拔摩海岛上向他的使徒约翰显现的时候，曾对约翰说，「我是首先的，我是末后的，又是那活着的（中文圣经译作『存活的』，不甚适宜）。我曾死过，现在又活了，直活到永永远远。」因为他活到永永远远，所以他能作王直到永永远远。我们的身体是必死的，是必朽坏的，如何能与基督一个作王直到永永远远呢？「血肉之体不能承受神的国」。为什么呢？因为「必朽坏的不能承受不朽坏的。」神既要我们承受他的国，他就必须先使我们得着一个不能朽坏，不能死的身体。是，这就是他要作的一件事。到我们的主回来，号筒吹响的时候，死去的圣徒要复活，当他们复活的时候，他们要得着一个新的、不朽坏的身体；那些活着尚未死的圣徒不经过死，活着身体就改变，成为不死的，不朽坏的。这两种圣徒同时要被主接去。保罗在另外一封书信里又说了一段话──</p>
+<p>「因为主必亲自从天降临，有呼叫的声音，和天使长的声音，又有神的号筒；那在基督里死了的人必先复活。以后我们这活着还存留的人必和他们一同被提到云里，在空中与主相遇；这样，我们就要和主永远同在。」（帖前四16、17）。</p>
+<p>这一段经文注重的是圣徒被提；前一段经文注重的是圣徒身体改变。把这段合起来读，整个的真理就更清楚了。此外还有一段经文告诉我们一样更宝贵的真理──</p>
+<p>「我们却是天上的国民，并且等候救主，就是主耶稣基督，从天上降临。他要按着那能叫万有归服自己的大能，将我们这卑贱的身体改变形状，和他自己荣耀的身体相似。」（腓三20、21）。</p>
+<p>将来神要赐给我们的那个新的身体，不但是不死的、不朽坏的，而且是荣耀的，和耶稣复活以后的那个身体相似。这件事也许是令人很难想象的，有些人也许觉得这是使人信不及的。但如果我们晓得主耶稣的权能，我们便知道这并不是难成的事。这里保罗特别说到，「他要按着那能叫万有归服自己的大能，将我们这卑贱的身体改变形状，和他自己荣耀的身体相似。」主耶稣既有能力使万有都归服他，这件事又算得了什么呢？我扪忘记了我们的主在复活以后对他的门徒所宣告的话么？他是怎么说的呢？他说：</p>
+<p>「天上、地上（中文圣经译作『地下』，误）所有的权柄都赐给我了。」（太二十八18）。</p>
+<p>保罗述说我们的主被神升为至高的事，有话说：</p>
+<p>「你们当以基督耶稣的心为心。他本有神的形像，不以自己与神同等为强夺的，反倒虚己，取了奴仆的形像，成为人的样式：既有人的样子，就自己卑微，存心顺服，以至于死，且死在十字架上。所以神将他升为至高，又赐给他那超乎万名之上的名，叫一切在天上的，地上的，和地底下的，因耶稣的名无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。」（腓二5～11）。</p>
+<p>我们的主从死人里复活以后，被神升为至高，得了超乎万名之上的名，不但地上没有任何人的名能与他相比，就连天使长米迦勒的名也不能与他相比。神也把天上与地上的大权都赐给了他。他既有这样高的地位，又有这么大的权柄，那有什么作不到的事呢？是，他是复活的主，得胜的主，有权能的主。他有生命，他也使我们有生命；他复活了，他也要使我们复活；他得了荣耀的、属灵的、不朽坏的、不死的身体，他也要使我们得着与他相似的身体；他显现在荣耀里，他也要使我们与他一同显现在荣耀里（西三4）；他作王直到永永远远，他也要使我们和他一同作王直到永永远远；他是信实的，他必成就他所给我们的一切应许。他是「配得权柄、丰富、能力、尊贵、荣耀、颂赞的。」（启五12）。</p>
+<p>近来我屡次听见圣徒述说他们在他们工作的岗位上或他们读书的学校里，得着同事或同学的劝告，劝他们放弃信仰，不要再作基督徒。其中最普遍的一种劝告就是说，「你们如果仍然持守你们的信仰，你们便没有前途。」许多弟兄听见过这种劝告，许多姊妹听见过这种劝告。这种劝告在一些青年基督徒心中常是具有极大的力量。本来是么，十几岁，二十几岁，三十几岁的青年人，一生的道路才开始，这时候他们最重视自己的前途。他们宁肯舍弃财物，不肯舍弃自己的前途；他们宁肯舍弃性命，不肯舍弃自己的前途。我从青年的时代经过，我很明白青年人的心情。许多青年基督徒竟因此发了软弱；许多青年基督徒竟因此动摇起来；许多青年基督徒竟因此不敢再忠心跟随耶稣；许多青年基督徒竟因此不敢勇敢的承认主，只得暗暗的作主的门徒。更可怜的就是有些人竟背叛了主，离弃了主。不信的人用这种劝告来败坏基督徒，比用打击的方法更容易收效，而且又不至有「干涉信仰」的嫌疑。无怪乎他们常对许多基督徒进这种劝告了。</p>
+<p>持守信仰，跟随耶稣，便「没有前途」么？他们完全说错了。跟随耶稣的人是「最有前途的人」。他们所有的前途是世上任何人不能相比的。世人的前途有多么远呢？一个青年人今年二十岁，如果他能活到六十岁，不是只有四十年的前途么？假使他能活到八十岁，不是只有六十年的前途么？何况他还没有把握准能活到八十岁呢？纵使他能有把握活到八十岁，他在这几十年中是否准能展翅高飞，凌云直上，照着他所想象的成就一些伟大的事业呢？青年人谁不想作一番大事业？但几十年以后，能成就大事业的究竟有几个人呢？再退一步说，一个青年人果真能再活六十岁，也果真能成就一些丰功伟业，最后的结果是什么呢？还不是归于一死么？最远大的前途不过就是这些罢。这有什么值得我们追求羡慕的呢？</p>
+<p>真实远大的前途还是必须来到神的言语里寻找。请听一段足能发人深省的话──</p>
+<p>「有人声说，『你喊叫罢！』有一个说，『我喊叫什么呢？』凡有血气的尽都如草，他的美容都像野地的花。草必枯干，花必凋残，因为耶和华的气吹在其上；百姓诚然是草。草必枯干，花必凋残。惟有我们神的话必永远立定。」（赛四十6～8）。</p>
+<p>神的话使我们明白世上的人不过像草，人所追求羡慕的前途、事业、尊荣、名誉，不过像野地的花。草必枯干，花必凋残；人和他们所追求羡慕的那些东西不久都要过去，像草枯干、花凋残一样。那么，世上有没有永存不朽的东西呢？有。「惟有我们神的话必永远立定。」</p>
+<p>使徒彼得将这些话解释得更清楚一些，他说：</p>
+<p>「你们蒙了重生，不是由于能坏的种子，乃是由于不能坏的种子，是藉着神活的长存的道（中文圣经译作『活泼常存的道』，误）。因为『凡有血气的尽都如草，他的美荣都像草上的花；草必枯干，花必凋谢；惟有主的道是永存的』。所传给你们的福音就是这道。」（彼前一23～25）。</p>
+<p>这里彼得告诉我们说，神的道是活的，也是长存的。注意，神的道不是一种死东西，它是活的，是有生命的，像人和动物一样；并且它是长存的、永存的。接着他引证了以赛亚书中的那一段话，以后他又告诉我们说，我们所听、所信从的「福音」，就是「这道」。</p>
+<p>是的，就是这福音应许我们因信基督可以得着永远的生命，又告诉我们说，如果我们向基督尽忠，靠基督得胜，我们必要和基督一同在荣耀里显现，又和基督一同在他的国里作王，正如我们上文所讲过的。</p>
+<p>基督的门徒是「世上最有前途的人」。任何人的前途也不及他们的前途远大。他们的前途是永远的，也是最光荣的，更是与全世界的人有极大的关系的。神应许亚伯拉罕说，「地上万国都必因你的后裔得福。」（创二十二18）。不幸以色列人中的大多数都不肯敬畏神、顺从神，以致被神弃绝；神将这宝贵的责任交给我们这些跟随基督的人。我们今日藉着祭司的职分使万国得福；在主回来以后，我们要藉着君王的职分使万国得福。</p>
+<p>可叹！可叹！许多基督徒竟因为贪慕面前这几十年的前途，以致舍弃了那永远的前途。他们像古时那个无知的以扫一样，为着贪吃一顿饭食，竟把自己的长子名分出卖，到后来虽然懊悔，也无法挽回自己所铸成的大错。神知道我们的愚昧和软弱，他不愿意我们蹈以扫的覆辙，所以他藉着他的仆人警戒我们说：</p>
+<p>「你们要追求与众人和睦，并要追求圣洁，非圣洁没有人能见主；又要谨慎，恐怕有人失了神的恩；恐怕有毒根生出来扰乱你们，因此叫众人沾染污秽；恐怕有淫乱的，有贪恋世俗如以扫的；他因一点食物，把自己长子的名分卖了。后来想要承受父所祝的福，竟被弃绝，虽然号哭切求，却得不着门路，使他父亲的心意回转，这是你们知道的。」（来十二14～17）。</p>
+<p>亲爱的弟兄姊妹们，不要受人的欺哄。我们不是没有前途的人。我们有最远大、最美好、最光荣的前途。我们的前途不是几十年就过去的。我们有存到永远的前途。我们甘愿为跟随基督的缘故，舍弃这眨眼就逝去的前途。任何事不足累住我们的心。我们在世上无所贪恋，我们在世上也无所惧怕。世界里面没有我们的地位，我们里面也没有世界的地位。我们应当像保罗说，「因这十字架，就我而论，世界已经钉在十字架上；就世界而论，我已经钉在十字架上。」（加六14）。只有这种心志，抱这种态度，我们才能胜过撒但的一切引诱，才能有得胜的人生。</p>
+<p>「你们要思念上面的事，不要思念地上的事。因为你们已经死了，你们的生命与基督一同藏在神里面。基督是我们的生命；他显现的时候，你们也要与他一同显现在荣耀里。」（西三2～4）。</p>
+<p>「不要爱世界、和世界上的事。人若爱世界，爱父的心就不在他里面了。因为凡世界上的事，就像肉体的情欲、眼目的情欲、并今生的骄傲，都不是从父来的，乃是从世界来的。这世界和其上的情欲都要过去；惟独遵行神的旨意的是永远长存。」（约壹二15～17）。</p>
+</article>
+<a class="back" href="../index.html">← 返回首页</a>
+</main>
+<div class="read-tools">
+<button id="rt-plus" title="增大字号">A+</button>
+<button id="rt-minus" title="减小字号">A-</button>
+<button id="rt-bold" title="加粗开关">B</button>
+</div>
+<footer>© 2026 · 静态博客</footer>
+<script>
+(function(){
+var KEY_FS="muse_fs",KEY_B="muse_fb";
+var art=document.querySelector("article.post");
+if(!art){return;}
+var fs=parseFloat(localStorage.getItem(KEY_FS))||18;
+var bold=localStorage.getItem(KEY_B)==="1";
+function apply(){art.style.fontSize=fs+"px";art.style.fontWeight=bold?"600":"";}
+function save(){localStorage.setItem(KEY_FS,fs);localStorage.setItem(KEY_B,bold?"1":"0");}
+var bb=document.getElementById("rt-bold");
+function paint(){bb.classList.toggle("on",bold)}
+bb.addEventListener("click",function(){bold=!bold;apply();save();paint();});
+paint();
+document.getElementById("rt-plus").addEventListener("click",function(){fs=Math.min(26,fs+2);apply();save();});
+document.getElementById("rt-minus").addEventListener("click",function(){fs=Math.max(14,fs-2);apply();save();});
+apply();
+})();
+</script>
+</body></html>
